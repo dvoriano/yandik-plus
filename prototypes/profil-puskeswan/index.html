@@ -41,7 +41,7 @@
       </div>
       <span class="tag">M02 · Prototype</span>
     </section>
-    <section class="facility" aria-labelledby="facility-title">
+    <section id="facility-card" class="facility" aria-labelledby="facility-title">
       <div class="facility-icon" aria-hidden="true">P</div>
       <div>
         <p class="small muted">PUSKESWAN</p>
@@ -50,7 +50,7 @@
       </div>
     </section>
     <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
-    <section class="overview" aria-label="Ringkasan status">
+    <section id="overview" class="overview" aria-label="Ringkasan status">
       <div class="metric"><strong id="metric-verified">2/5</strong><span>Bagian terverifikasi</span></div>
       <div class="metric"><strong id="metric-waiting">1</strong><span>Menunggu verifikasi</span></div>
       <div class="metric"><strong id="metric-corrections">0</strong><span>Perlu diperbaiki</span></div>
@@ -104,6 +104,11 @@
           </div>
         </form>
       </section>
+    </section>
+    <section id="leader-panel" class="panel" aria-labelledby="leader-title" hidden>
+      <h2 id="leader-title">Ringkasan pimpinan</h2>
+      <p>Ringkasan lintas Puskeswan belum tersedia dalam prototype ini. Tampilan pimpinan tidak menampilkan rincian individu atau pengajuan.</p>
+      <p class="small muted">Data dan peran yang dipilih hanya simulasi. Ringkasan wilayah nyata memerlukan hak akses server dan pengujian agregasi.</p>
     </section>
     <aside class="help-box" aria-label="Petunjuk">
       <div class="help-symbol" aria-hidden="true">?</div>

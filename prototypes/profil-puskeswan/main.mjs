@@ -1,6 +1,6 @@
 import {
   SECTION_DEFS, startDemo, useRole, allSections, pendingQueue,
-  saveDraft, submitDraft, reviewRequest, demoMetrics,
+  saveOrSubmit, reviewRequest, demoMetrics,
 } from "./model.mjs";
 
 let state = startDemo();
@@ -51,6 +51,7 @@ function renderProfileCards() {
   clear(list);
   for (const section of allSections(state)) {
     const card = element("article", "card");
+    card.dataset.section = section.id;
     const top = element("div", "card-top");
     const description = element("div");
     description.append(
@@ -75,8 +76,11 @@ function renderProfileCards() {
       ? "Pembaruan data: " + section.latestDate : "Belum ada tanggal pembaruan"));
     const label = section.request?.status === "perlu_perbaikan"
       ? "Perbaiki data" : section.request?.status === "draf"
-      ? "Lanjutkan draf" : "Perbarui";
-    bottom.append(makeButton(label, () => openEditor(section.id), !section.canEdit));
+      ? "Lanjutkan draf" : section.request?.status === "diajukan"
+      ? "Sedang diperiksa" : "Perbarui";
+    const button = makeButton(label, () => openEditor(section.id), !section.canEdit);
+    button.setAttribute("aria-label", label + " " + section.label);
+    bottom.append(button);
     card.append(bottom);
     list.append(card);
   }
@@ -94,6 +98,7 @@ function renderQueue() {
   for (const request of requests) {
     const section = sectionById(request.section);
     const card = element("article", "card");
+    card.dataset.section = request.section;
     const top = element("div", "card-top");
     top.append(element("h3", "", section?.label ?? "Bagian profil"), statusNode(request.status));
     card.append(top, element("p", "current", request.value));
@@ -108,8 +113,11 @@ function render() {
   const actor = state.role;
   const isVerifier = actor === "verifikator_kab" || actor === "verifikator_prov";
   const isLeader = actor === "pimpinan";
-  $("profile-panel").hidden = isVerifier;
+  $("facility-card").hidden = isLeader;
+  $("overview").hidden = isLeader;
+  $("profile-panel").hidden = isVerifier || isLeader;
   $("review-panel").hidden = !isVerifier;
+  $("leader-panel").hidden = !isLeader;
   $("page-title").textContent = isVerifier ? "Verifikasi Profil" : isLeader ? "Ringkasan Profil" : "Profil Saya";
   $("page-subtitle").textContent = isVerifier
     ? "Periksa pengajuan dan berikan alasan jika memerlukan perbaikan."
@@ -119,15 +127,18 @@ function render() {
   $("metric-verified").textContent = metrics.verified + "/" + metrics.total;
   $("metric-waiting").textContent = String(metrics.waiting);
   $("metric-corrections").textContent = String(metrics.corrections);
-  if (isVerifier) renderQueue();
-  else renderProfileCards();
-  if (isLeader) {
-    $("section-cards").hidden = true;
-    $("profile-panel").querySelector(".section-heading").hidden = true;
-    $("editor-panel").hidden = true;
+  // Never render individual fields into the leader's demo view.
+  if (isVerifier) {
+    clear($("section-cards"));
+    renderQueue();
+  } else if (isLeader) {
+    clear($("section-cards"));
+    clear($("review-list"));
+    closeEditor();
+    closeReview();
   } else {
-    $("section-cards").hidden = false;
-    $("profile-panel").querySelector(".section-heading").hidden = false;
+    clear($("review-list"));
+    renderProfileCards();
   }
 }
 
@@ -177,15 +188,13 @@ $("profile-form").addEventListener("submit", (event) => {
   if (!editing) return;
   const intent = event.submitter?.value ?? "save";
   try {
-    const changed = saveDraft(state, editing, $("profile-value").value);
-    const id = changed.requests.find((r) => r.section === editing && r.status === "draf")?.id;
-    if (intent === "submit" && id != null) {
-      state = submitDraft(changed, id);
-      showNotice("Pengajuan berhasil dicatat dalam simulasi dan siap diperiksa.");
-    } else {
-      state = changed;
-      showNotice("Draf tersimpan selama halaman simulasi masih terbuka.");
-    }
+    const result = saveOrSubmit(state, editing, $("profile-value").value, intent);
+    const unchanged = result === state;
+    state = result;
+    showNotice(intent === "submit"
+      ? "Pengajuan berhasil dicatat dalam simulasi dan siap diperiksa."
+      : unchanged ? "Draf sudah tersimpan. Tidak ada perubahan baru."
+      : "Draf tersimpan selama halaman simulasi masih terbuka.");
     closeEditor();
     render();
   } catch (error) {

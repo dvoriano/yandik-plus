@@ -107,6 +107,25 @@ export function saveDraft(state, section, text) {
       : [...state.requests, updated],
   };
 }
+/** User-facing command: unchanged saved drafts may be submitted without retyping. */
+export function saveOrSubmit(state, section, text, intent) {
+  assertRole(state, ["petugas"]);
+  assertSection(section);
+  if (intent !== "save" && intent !== "submit")
+    throw new Error("Tindakan formulir tidak dikenal.");
+  if (typeof text !== "string" || !text.trim() || text.trim().length > 200)
+    throw new Error("Isi perubahan wajib 1 sampai 200 karakter.");
+  const active = currentRequest(state, section);
+  if (active?.status === "diajukan")
+    throw new Error("Pengajuan sedang diperiksa. Tunggu keputusan verifikator.");
+  const unchangedDraft = active?.status === "draf" && active.value === text.trim();
+  if (unchangedDraft) return intent === "submit" ? submitDraft(state, active.id) : state;
+  const saved = saveDraft(state, section, text);
+  if (intent === "save") return saved;
+  const id = currentRequest(saved, section)?.id;
+  if (id == null) throw new Error("Draf tidak ditemukan.");
+  return submitDraft(saved, id);
+}
 export function submitDraft(state, id) {
   assertRole(state, ["petugas"]);
   const request = assertRequest(state, id);

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   startDemo, useRole, sectionSummary, allSections, pendingQueue,
-  saveDraft, submitDraft, reviewRequest, demoMetrics, validateDemo,
+  saveDraft, saveOrSubmit, submitDraft, reviewRequest, demoMetrics, validateDemo,
 } from "../model.mjs";
 
 test("profil memuat lima bagian dan data DEMO", () => {
@@ -106,4 +106,26 @@ test("ID perubahan ganda ditolak", () => {
 });
 test("peran tidak dikenal ditolak", () => {
   assert.throws(() => useRole(startDemo(), "admin"), /tidak dikenal/);
+});
+
+test("draf tersimpan bisa langsung diajukan tanpa mengetik ulang", () => {
+  const draft = saveOrSubmit(startDemo(), "bangunan", "Ruang perlu perbaikan", "save");
+  const sent = saveOrSubmit(draft, "bangunan", "Ruang perlu perbaikan", "submit");
+  assert.equal(sent.requests.find(r => r.section === "bangunan").status, "diajukan");
+  assert.equal(draft.requests.find(r => r.section === "bangunan").status, "draf");
+});
+test("menyimpan draf yang sama tidak membuat revisi ganda", () => {
+  const draft = saveOrSubmit(startDemo(), "bangunan", "Ruang perlu perbaikan", "save");
+  assert.equal(saveOrSubmit(draft, "bangunan", "Ruang perlu perbaikan", "save"), draft);
+});
+test("simpan dan ajukan dalam satu tindakan mengikuti alur resmi", () => {
+  const sent = saveOrSubmit(startDemo(), "wilayah_kerja", "Area demo", "submit");
+  assert.equal(sent.requests.find(r => r.section === "wilayah_kerja").status, "diajukan");
+  assert.equal(sent.sections.wilayah_kerja.value, null);
+});
+test("pengiriman ulang saat masih menunggu ditolak", () => {
+  assert.throws(() => saveOrSubmit(startDemo(), "peralatan", "Ubah", "submit"), /Tunggu keputusan/);
+});
+test("tindakan tak dikenal ditolak", () => {
+  assert.throws(() => saveOrSubmit(startDemo(), "legalitas", "A", "hapus"), /tidak dikenal/);
 });

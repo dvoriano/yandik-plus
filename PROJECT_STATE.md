@@ -6,7 +6,17 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01 dan M02 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M02-S3 (TERBARU) | 10 November 2026
+## PEMBARUAN M02-S4 (TERBARU) | 10 November 2026
+- **Modul Permasalahan Puskeswan (prototype):** [commit c973bdc](https://github.com/dvoriano/yandik-plus/commit/c973bdc3f744805b39c9cd39447cca185444ba95) membuat `problems.mjs` dengan draf, pengajuan, perbaikan, verifikasi, tindak lanjut dan selesai, disertai histori. **Verifikasi masalah bukan persetujuan bantuan/anggaran**.
+- **Ringkasan baca-saja SDM/APEL:** `source_snapshots.mjs` menyediakan **data contoh** berdasarkan ID Puskeswan. APEL nol vs belum melapor dibedakan; tidak ada form input ganda atau total pelayanan resmi palsu. **Bukan koneksi database produksi**.
+- **Halaman dan tes:** [commit f06ee93](https://github.com/dvoriano/yandik-plus/commit/f06ee93c134eac9f03871a7bf590391a41aee8b1) menambahkan kartu sumber data, daftar masalah, formulir dan 3 tes Chromium baru.
+- **CI:** [GitHub Actions #42850233101](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101) **SUCCESS**: 65 tes Python, **45 tes Node**, **9 tes Chromium** = **119 pengujian otomatis**, validator fixture lulus.
+- **Dokumen:** [M02_PROBLEMS_AND_REFERENCES.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md). Semua angka bersifat fiktif, data hilang saat reload, role switch simulasi bukan login.
+- **Status:** M00/M01/M02 masih **SEDANG**; source Flask legacy 171 file belum ada di GitHub. M03/M04 tetap RENCANA; belum Support resmi ataupun website aktif.
+- **Next:** tambah model tautan masalah→kebutuhan Support **tanpa alokasi otomatis**, audit aksesibilitas, lalu selaraskan data/field real hanya setelah source Flask di GitHub.
+- **Larangan tetap:** tidak ada VPS, DB produksi, GitHub Pages, deploy, atau merge ke `main`.
+
+## PEMBARUAN M02-S3 | 10 November 2026
 - **Diperbaiki:** [commit 0ce6b2d](https://github.com/dvoriano/yandik-plus/commit/0ce6b2db1ef0f9ca417eea072f1307c1ee94de30) membuat draf yang sudah disimpan bisa langsung diajukan tanpa mengetik ulang. Mode simulasi pimpinan kini **tidak menampilkan atau merender rincian individu Puskeswan**.
 - **Tes browser:** [commit 78cf52a](https://github.com/dvoriano/yandik-plus/commit/78cf52a06d38874581a6709bf7b22b723704ed40) menambah 6 uji Chromium headless: HP 320/375 px tanpa scroll horizontal, simpan → ajukan draf, koreksi → kirim ulang → setujui, role pimpinan, dan reset data demo saat reload.
 - **Kendala CI terselesaikan:** runner ubuntu-latest berubah ke Ubuntu 26.04 (Playwright 1.56.1 belum mendukung), [commit c810f5f](https://github.com/dvoriano/yandik-plus/commit/c810f5f565843ee9487440bf97da33bc8c8ee7fc) pin job browser ke Ubuntu 24.04.
@@ -81,6 +91,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] **M02-S1** draf profil per bagian, review, scoped auth, audit immutable dan 25 tes tambahan; [CI 65 tes sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389).
 - [x] **M02-S2** halaman demo responsive Profil Saya / antrian verifikasi, 20 tes Node dan CI Python+Node [SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
 - [x] **M02-S3** perbaikan draf dan tampilan pimpinan, **6 tes browser** + **25 tes Node** + **65 tes Python** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703), peta 9 kelompok Profiling 2026 sementara.
+- [x] **M02-S4** Permasalahan Puskeswan + sumber SDM/APEL baca-saja, **119 tes Python/Node/Chromium** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
@@ -101,7 +112,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M02:** lanjut bagian yang belum tertutup dari sembilan domain Profiling, terutama Permasalahan dan tautan baca-saja SDM/APEL; lakukan uji aksesibilitas/UX petugas. Pemetaan field final, API dan database menunggu source Flask asli di GitHub.
+3. **M02/M03:** lanjut model referensi masalah ke kebutuhan Support tanpa otomatis menyetujui bantuan dan tes aksesibilitas UI. Field Profiling final, API dan DB menunggu source Flask asli di GitHub.
 
 
 ## DOKUMEN RUJUKAN

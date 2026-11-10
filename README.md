@@ -43,6 +43,13 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions 96 tes otomatis: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703)
 - **Masih prototype.** Browser headless bukan uji petugas di HP nyata.
 
+## M02-S4: Permasalahan dan ringkasan data lintas modul
+- [Daftar masalah dan proses tindak lanjut](prototypes/profil-puskeswan/problems.mjs)
+- [Contoh ringkasan SDM/APEL baca-saja](prototypes/profil-puskeswan/source_snapshots.mjs)
+- [Dokumen keputusan, batasan dan progres](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md)
+- [GitHub Actions: 119 tes Python/Node/Chromium SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101)
+- Data fiktif; **bukan** pelaporan asli, API, atau persetujuan bantuan.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

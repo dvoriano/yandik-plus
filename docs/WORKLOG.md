@@ -2,6 +2,16 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M02-S4: Permasalahan, SDM/APEL baca-saja, 119 tes otomatis lulus
+**Jenis:** coding model dan UI browser di GitHub, unit test Node, E2E Chromium, dokumentasi. **Status:** M02 SEDANG (prototype), M03/M04 masih rencana.
+- [Commit model dan 20 tes baru](https://github.com/dvoriano/yandik-plus/commit/c973bdc3f744805b39c9cd39447cca185444ba95): register masalah 6 kategori, draf→ajukan→perbaikan→terverifikasi→tindak lanjut→selesai; 6 pemeriksaan sumber data fiktif baca-saja.
+- [Commit UI dan 3 tes Chromium baru](https://github.com/dvoriano/yandik-plus/commit/f06ee93c134eac9f03871a7bf590391a41aee8b1): kartu SDM/APEL, pilihan periode, pembeda nol/belum melapor, daftar masalah, form dan antrian verifikasi.
+- [GitHub Actions #42850233101](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101) **SUCCESS**, 65 Python + 45 Node + 9 browser = **119 tes otomatis**; validator fixture lulus.
+- Detail [M02_PROBLEMS_AND_REFERENCES.md](M02_PROBLEMS_AND_REFERENCES.md).
+- **Batas:** angka SDM/APEL dari snapshot fiktif statis, bukan API real. Masalah tercatat tidak berarti bantuan disetujui. Login role hanya simulasi, semua hilang saat refresh.
+- **Belum:** source Flask legacy 171 file, UI HP fisik, field asli, DB/API, autentikasi, bukti foto, modul Support dan deployment.
+- **Berikutnya:** uji aksesibilitas serta kontrak referensi satu arah dari masalah ke Support tanpa mengubah kewenangan anggaran.
+
 ## 2026-11-10 | M02-S3: perbaikan draf, uji browser Chromium dan peta Profiling
 **Jenis:** coding UI, regresi Node, 6 tes browser E2E melalui GitHub Actions, pemetaan domain sementara. **Status:** M02 SEDANG.
 - [Perbaikan](https://github.com/dvoriano/yandik-plus/commit/0ce6b2db1ef0f9ca417eea072f1307c1ee94de30): draf tersimpan dapat diajukan tanpa edit ulang; pimpinan tidak lagi menampilkan rincian individual.

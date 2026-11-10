@@ -12,6 +12,14 @@
 
 **Penting:** Perubahan tersimpan hanya dalam memori tab, hilang saat refresh. Pergantian peran bukan autentikasi, bukan bukti izin akses sungguhan. Ini sengaja dibuat hanya dengan data fiktif DEMO.
 
+## Tambahan M02-S4
+- **Permasalahan Puskeswan:** catat kategori, judul, uraian, simpan draf/kirim, verifikator bisa meminta perbaikan/menolak/mencatat masalah, lalu menulis tindak lanjut dan menandai selesai. Tidak ada persetujuan bantuan.
+- **SDM/APEL:** dua kartu sumber baca-saja berdata simulasi. Pilih periode untuk memahami beda laporan nol dan belum melapor. Tidak ada input kedua.
+- `problems.mjs`: model masalah fiktif (14 tes baru).
+- `source_snapshots.mjs`: snapshot sumber statis **hanya DEMO** (6 tes baru).
+- `tests/browser.test.mjs`: 3 tes Chromium baru (total 9 browser).
+- [GitHub Actions: 119 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101), [dokumentasi](../../docs/M02_PROBLEMS_AND_REFERENCES.md).
+
 ## Struktur
 - \`index.html\`: struktur semantik, label, skip link, form dan pesan status.
 - \`style.css\`: tampilan mobile-first dan responsif, tombol lebar, status teks (tak mengandalkan warna saja).

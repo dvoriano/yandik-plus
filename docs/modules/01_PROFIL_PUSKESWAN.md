@@ -40,6 +40,13 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 SDM sebagai sumber tenaga; APEL sebagai sumber statistik pelayanan; Support membaca inventaris dan kesenjangan fasilitas; GIS memakai koordinat fasilitas yang disetujui.
 
+## Progres M02-S4: daftar masalah dan data sumber baca-saja
+- [x] Prototype Permasalahan: draf, ajukan, verifikasi, perbaikan, catatan tindak lanjut dan selesai, **bukan** alokasi bantuan.
+- [x] Kartu SDM dan APEL dari snapshot fiktif berdasarkan ID Puskeswan, tanpa input ulang. APEL 0 tidak dianggap belum melapor.
+- [x] 20 tes model Node + 3 tes browser baru; total 119 tes otomatis [GitHub CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
+- [ ] Adapter real SDM/APEL dan register masalah persisten serta izin server/DB belum ada.
+- [Dokumen M02-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md).
+
 ## Progres M02-S3: uji UI dan pemetaan domain
 - [x] Draf tersimpan bisa diajukan tanpa pengetikan ulang; tampilan pimpinan tidak merender rincian individu.
 - [x] Browser Chromium headless diuji pada viewport 320 dan 375 px, termasuk siklus kirim → koreksi → setuju.

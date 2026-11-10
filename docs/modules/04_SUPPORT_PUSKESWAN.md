@@ -48,6 +48,11 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [ ] MOD-04-04: Bangun simulasi penetapan dan rencana paket bantuan
 - [ ] MOD-04-05: Buat pencatatan distribusi, BAST dan evaluasi menggunakan data dummy
 
+## Batas modul dengan M02-S4
+M02 kini memiliki **prototype register Permasalahan Puskeswan** di browser dengan data DEMO. Itu **tidak sama dengan pengajuan kebutuhan, prioritas bantuan, keputusan alokasi, serah terima atau BAST**. M03/M04 tetap RENCANA; nantinya kebutuhan Support boleh merujuk `problem_id`, tanpa auto-approval atau auto-budgeting.
+- [x] Domain sumber masalah teridentifikasi sebagai prototype M02-S4 [bukti](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md).
+- [ ] Tautan transaksi problem → kebutuhan Support, verifikasi bantuan, distribusi dan BAST belum dibuat.
+
 ## 9. Kriteria selesai
 Simulasi satu bantuan dapat ditelusuri dari sumber kebutuhan sampai BAST dan dampaknya; tidak ada penetapan bantuan otomatis tanpa kewenangan manusia.
 

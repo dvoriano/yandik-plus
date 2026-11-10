@@ -30,6 +30,12 @@
 ## Gap kategori Profiling 2026
 Kategori realisasi pelayanan, SDM, surveilans dan Kesmavet tidak boleh ditambah sebagai form pengisian ulang. Terdapat sembilan kelompok Profiling 2026 yang harus dipetakan ke modul sumber; prototype ini baru menampilkan lima kartu ilustratif. Detail di [peta domain](M02_PROFILING_2026_MAPPING.md). Kolom sebenarnya **belum diverifikasi** pada source legacy.
 
+## Pengembangan M02-S4 yang telah diuji
+- [x] Bagian **Permasalahan Puskeswan** di demo dengan draf, ajukan, verifikasi, perbaikan, tindak lanjut dan selesai. Tidak otomatis menyetujui bantuan.
+- [x] Kartu **SDM dan APEL baca-saja** memakai snapshot **fiktif**, tidak terhubung API sumber riil; tidak ada formulir pengisian ulang.
+- [x] Tambahan 20 tes Node dan 3 tes browser (total 119 tes otomatis) [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
+- Detail [M02_PROBLEMS_AND_REFERENCES.md](M02_PROBLEMS_AND_REFERENCES.md).
+
 ## Kriteria yang masih perlu dipenuhi
 - [x] Prototype alur Profil Saya dan Verifikator dalam kode terpisah.
 - [x] Unit test dan cek sintaks otomatis.

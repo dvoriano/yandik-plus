@@ -15,16 +15,19 @@
 | Domain Profiling 2026 | Sumber yang direncanakan | Dalam prototype saat ini | Pengembangan berikutnya |
 |---|---|---|---|
 | **Legalitas** | Profiling Puskeswan | Draf/review satu field status | Rincikan jenis dokumen, nomor referensi internal, masa berlaku, status verifikasi |
-| **SDM** | Modul SDM (master & histori penempatan) | Kontrak master SDM ada; **belum ada tampilan sinkron** | Tampilkan tenaga aktif per tanggal sebagai ringkasan baca-saja, tautkan ke modul SDM |
+| **SDM** | Modul SDM (master & histori penempatan) | Kartu baca-saja **snapshot DEMO**, bukan koneksi modul SDM asli | Hubungkan ke data SDM aktif setelah source dan kewenangan tersedia, jangan input ulang |
 | **Bangunan** | Profiling fasilitas | Draf/review satu field kondisi | Pecah per ruang/jenis bangunan, bukti dan catatan pemeliharaan |
 | **Peralatan klinik** | Profiling sarpras/inventaris | Draf/review satu field kondisi; kontrak histori aset ada | Daftar aset individual, kondisi, tanggal periksa dan kebutuhan perbaikan |
 | **Obat dan BHP** | Profiling ketersediaan/inventaris | Draf/review satu field status | Daftar kategori persediaan dengan tanggal pembaruan; jangan menebak stok |
-| **Pelayanan** | APEL bulanan sebagai sumber realisasi; jenis layanan tersedia di profil jika perlu | Kontrak APEL ada; **belum terhubung ke UI demo** | Ringkasan periode, kepatuhan dan tren tanpa membuat formulir pelayanan kedua |
+| **Pelayanan** | APEL bulanan sebagai sumber realisasi; jenis layanan tersedia di profil jika perlu | Kartu periode APEL **snapshot DEMO** baca-saja, membedakan nol dan belum melapor | Hubungkan ke laporan APEL asli dan periode tanpa membuat formulir pelayanan kedua |
 | **Surveilans** | Profil kemampuan/layanan dan catatan kegiatan surveilans pada sumber sah | Belum ada field UI | Bedakan fasilitas/kapasitas surveilans vs realisasi dan investigasi, hindari input ganda iSIKHNAS |
 | **Kesmavet** | Profil layanan Kesmavet dan APEL kegiatan | Belum ada field UI | Bedakan kesiapan fasilitas/kewenangan layanan vs jumlah pelaksanaan Kesmavet |
-| **Permasalahan** | Catatan masalah Puskeswan; nanti ditautkan ke Support | Belum ada field UI | Alur isu → bukti → verifikasi → rencana tindak lanjut → evaluasi; tidak otomatis menyetujui bantuan |
+| **Permasalahan** | Register masalah fasilitas; nantinya referensi ke Support | Prototype daftar masalah, draf, verifikasi, tindak lanjut dan selesai (DEMO) | Bukti dan catatan resmi, role wilayah, referensi masalah ke Support tanpa persetujuan otomatis |
 
 **Wilayah kerja** ada sebagai bagian tambahan pada demo lima kartu, tetapi belum dapat diklaim sebagai kategori formulir Profiling 2026 yang berdiri sendiri. Harus dipetakan ke identitas fasilitas dan cakupan kewilayahan bila desain final disetujui.
+
+## Tambahan M02-S4
+Prototype UI kini menyajikan **kartu SDM/APEL baca-saja** dan **daftar masalah** sebagai bagian terpisah, bukan field input ganda pada lima kartu Profil. Semua snapshot adalah contoh statis tanpa API. [Detail](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md).
 
 ## Batas lima kartu dalam demo M02-S2
 Prototype saat ini baru memiliki **Legalitas, Bangunan, Peralatan klinik, Obat/BHP, Wilayah kerja**. Setiap bagian masih berupa **satu kolom teks demonstrasi**, bukan replika seluruh pertanyaan Profiling 2026. Tidak ada integrasi backend, DB, SDM, APEL, iSIKHNAS, atau inventaris. Semua tampilan menyatakan status simulasi.

@@ -127,3 +127,24 @@ footer { text-align: center; font-size: .8rem; color: #657985; padding: 20px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* M02-S4: synthetic linked read-only snapshots and problem register */
+
+.linked-panel, .problems-panel { margin-top: 32px; }
+.source-period, #problem-category, #problem-title {
+  border: 1px solid #aabcc8; background: #fff; color: #193449;
+  border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+.source-period { margin-top: 8px; }
+.source-note { color: #14614d; }
+.readout { font-weight: 700; font-size: 1rem; margin: 6px 0; }
+.service-list { list-style: none; padding: 0; margin: 10px 0; }
+.service-list li { display: flex; justify-content: space-between; gap: 20px; padding: 7px 0; border-bottom: 1px solid #e5edf1; }
+.service-list strong { font-variant-numeric: tabular-nums; }
+.primary-cta { border: 1px solid #125f78; background: #125f78; color: white; border-radius: 10px; font-weight: 750; padding: 11px 14px; }
+.problem-card { border-left: 3px solid #95b7c4; }
+#problem-form, #problem-review-form { display: grid; gap: 10px; }
+@media (max-width: 700px) {
+  .problems-panel > .section-heading { flex-direction: column; }
+  .primary-cta { width: 100%; }
+}

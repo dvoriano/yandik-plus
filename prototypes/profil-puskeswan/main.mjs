@@ -2,10 +2,17 @@ import {
   SECTION_DEFS, startDemo, useRole, allSections, pendingQueue,
   saveOrSubmit, reviewRequest, demoMetrics,
 } from "./model.mjs";
+import {
+  PROBLEM_CATEGORIES, PROBLEM_STATUS, visibleProblems, saveProblem,
+  reviewProblem, followUpProblem, problemCounts,
+} from "./problems.mjs";
+import { DEMO_APEL_PERIODS, sourceSummary } from "./source_snapshots.mjs";
 
 let state = startDemo();
 let editing = null;
 let reviewing = null;
+let editingProblem = null;
+let reviewingProblem = null;
 
 const $ = (id) => document.getElementById(id);
 function element(tag, className, text) {
@@ -109,6 +116,139 @@ function renderQueue() {
     list.append(card);
   }
 }
+
+const PROBLEM_CLASS = {
+  draf: "muted", diajukan: "wait", perlu_perbaikan: "warn",
+  tercatat: "ok", ditindaklanjuti: "wait", selesai: "ok", ditolak: "warn",
+};
+function problemStatusNode(status) {
+  return element("span", "status " + (PROBLEM_CLASS[status] ?? "warn"),
+    PROBLEM_STATUS[status] ?? "Status tidak dikenal");
+}
+function problemCategoryLabel(id) {
+  return PROBLEM_CATEGORIES.find((category) => category.id === id)?.label ?? "Lainnya";
+}
+function renderSourceReadOnly() {
+  const record = sourceSummary(state.facility.id, $("apel-period").value);
+  const sdm = $("source-sdm");
+  const apel = $("source-apel");
+  clear(sdm);
+  clear(apel);
+  if (record.sdm.status !== "tersedia") {
+    sdm.append(element("p", "muted", "Data SDM belum tersedia."));
+  } else {
+    sdm.append(
+      element("p", "readout", "Dokter hewan: " + record.sdm.dokter_hewan),
+      element("p", "readout", "Paramedik: " + record.sdm.paramedik),
+      element("p", "small muted", "Per tanggal " + record.sdm.observed_on),
+    );
+  }
+  sdm.append(element("p", "small muted", "Sumber: " + record.sdm.source + " · Baca-saja"));
+  if (record.apel.status === "belum_melapor") {
+    apel.append(element("p", "muted", "Belum ada laporan untuk periode ini. Bukan angka nol."));
+  } else {
+    const labels = {
+      pemeriksaan: "Pemeriksaan", pengobatan: "Pengobatan", vaksinasi: "Vaksinasi",
+      investigasi: "Investigasi", penyuluhan: "Penyuluhan",
+    };
+    const list = element("ul", "service-list");
+    for (const [category, count] of Object.entries(record.apel.kategori)) {
+      const li = element("li");
+      li.append(element("span", "", labels[category] ?? category),
+        element("strong", "", String(count)));
+      list.append(li);
+    }
+    apel.append(element("p", "small source-note", "Laporan sudah masuk. Nilai 0 tetap sah."), list);
+  }
+  apel.append(element("p", "small muted",
+    "Sumber: " + record.apel.source + " · Baca-saja; tidak dihitung menjadi total resmi"));
+}
+function renderProblems() {
+  const list = $("problem-list");
+  clear(list);
+  const actor = state.role;
+  const problems = visibleProblems(state);
+  const counts = problemCounts(state);
+  $("problem-counter").textContent = actor === "petugas"
+    ? counts.total + " permasalahan tercatat" : counts.waiting + " menunggu pemeriksaan";
+  if (problems.length === 0) {
+    const empty = element("div", "card");
+    empty.append(element("h3", "", actor === "petugas" ? "Belum ada permasalahan" : "Tidak ada permasalahan yang dapat diperiksa"),
+      element("p", "muted", "Catatan masalah dalam prototype akan muncul di sini."));
+    list.append(empty);
+    return;
+  }
+  for (const problem of problems) {
+    const card = element("article", "card problem-card");
+    card.dataset.problemId = String(problem.id);
+    const top = element("div", "card-top");
+    const group = element("div");
+    group.append(element("h3", "", problem.title),
+      element("p", "muted", problemCategoryLabel(problem.category)));
+    top.append(group, problemStatusNode(problem.status));
+    card.append(top, element("p", "current", problem.description));
+    if (problem.note && ["perlu_perbaikan", "ditolak", "ditindaklanjuti", "selesai"].includes(problem.status))
+      card.append(element("p", "small muted", "Catatan terakhir: " + problem.note));
+    const bottom = element("div", "detail");
+    bottom.append(element("span", "", "Masalah DEMO #" + problem.id + " · Revisi " + problem.version));
+    if (actor === "petugas" && ["draf", "perlu_perbaikan"].includes(problem.status)) {
+      const btn = makeButton(problem.status === "draf" ? "Lanjutkan draf" : "Perbaiki masalah",
+        () => openProblemEditor(problem.id));
+      btn.setAttribute("aria-label", btn.textContent + " #" + problem.id);
+      bottom.append(btn);
+    } else if (["verifikator_kab", "verifikator_prov"].includes(actor)
+      && ["diajukan", "tercatat", "ditindaklanjuti"].includes(problem.status)) {
+      const btn = makeButton(problem.status === "diajukan" ? "Verifikasi masalah" : "Catat tindak lanjut",
+        () => openProblemReview(problem.id));
+      btn.setAttribute("aria-label", btn.textContent + " #" + problem.id);
+      bottom.append(btn);
+    }
+    card.append(bottom);
+    list.append(card);
+  }
+}
+function fillProblemEditor(problemId) {
+  const p = state.problems.find((item) => item.id === problemId);
+  $("problem-category").value = p?.category ?? "peralatan";
+  $("problem-title").value = p?.title ?? "";
+  $("problem-description").value = p?.description ?? "";
+  $("problem-editor-title").textContent = p ? "Perbarui permasalahan" : "Catat permasalahan baru";
+}
+function openProblemEditor(problemId = null) {
+  if (state.role !== "petugas") return;
+  editingProblem = problemId;
+  fillProblemEditor(problemId);
+  $("problem-form-panel").hidden = false;
+  $("problem-form-panel").scrollIntoView({ block: "nearest" });
+  $("problem-title").focus();
+}
+function closeProblemEditor() {
+  editingProblem = null;
+  $("problem-form-panel").hidden = true;
+}
+function openProblemReview(problemId) {
+  if (!["verifikator_kab", "verifikator_prov"].includes(state.role)) return;
+  const problem = visibleProblems(state).find((p) => p.id === problemId);
+  if (!problem) return;
+  reviewingProblem = problemId;
+  $("problem-review-context").textContent = problemCategoryLabel(problem.category) +
+    ": " + problem.title + ". Status saat ini: " + PROBLEM_STATUS[problem.status];
+  $("problem-review-notes").value = "";
+  const pending = problem.status === "diajukan";
+  $("problem-review-correction").hidden = !pending;
+  $("problem-review-reject").hidden = !pending;
+  $("problem-review-accept").hidden = !pending;
+  $("problem-followup").hidden = problem.status !== "tercatat";
+  $("problem-close").hidden = problem.status !== "ditindaklanjuti";
+  $("problem-review-panel").hidden = false;
+  $("problem-review-panel").scrollIntoView({ block: "nearest" });
+  $("problem-review-notes").focus();
+}
+function closeProblemReview() {
+  reviewingProblem = null;
+  $("problem-review-panel").hidden = true;
+}
+
 function render() {
   const actor = state.role;
   const isVerifier = actor === "verifikator_kab" || actor === "verifikator_prov";
@@ -118,6 +258,16 @@ function render() {
   $("profile-panel").hidden = isVerifier || isLeader;
   $("review-panel").hidden = !isVerifier;
   $("leader-panel").hidden = !isLeader;
+  $("linked-panel").hidden = actor !== "petugas";
+  $("problems-panel").hidden = isLeader;
+  $("add-problem").hidden = actor !== "petugas";
+  if (actor === "petugas") renderSourceReadOnly();
+  else {
+    clear($("source-sdm"));
+    clear($("source-apel"));
+  }
+  if (!isLeader) renderProblems();
+  else clear($("problem-list"));
   $("page-title").textContent = isVerifier ? "Verifikasi Profil" : isLeader ? "Ringkasan Profil" : "Profil Saya";
   $("page-subtitle").textContent = isVerifier
     ? "Periksa pengajuan dan berikan alasan jika memerlukan perbaikan."
@@ -136,6 +286,8 @@ function render() {
     clear($("review-list"));
     closeEditor();
     closeReview();
+    closeProblemEditor();
+    closeProblemReview();
   } else {
     clear($("review-list"));
     renderProfileCards();
@@ -178,6 +330,8 @@ $("role").addEventListener("change", (event) => {
   state = useRole(state, event.target.value);
   closeEditor();
   closeReview();
+  closeProblemEditor();
+  closeProblemReview();
   $("notice").hidden = true;
   render();
 });
@@ -214,6 +368,60 @@ $("review-form").addEventListener("submit", (event) => {
     showNotice(error.message, true);
   }
 });
+
+
+$("apel-period").addEventListener("change", () => {
+  if (state.role === "petugas") renderSourceReadOnly();
+});
+$("add-problem").addEventListener("click", () => openProblemEditor());
+$("cancel-problem").addEventListener("click", closeProblemEditor);
+$("cancel-problem-review").addEventListener("click", closeProblemReview);
+$("problem-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (state.role !== "petugas") return;
+  try {
+    const intent = event.submitter?.value ?? "save";
+    state = saveProblem(state, {
+      category: $("problem-category").value,
+      title: $("problem-title").value,
+      description: $("problem-description").value,
+    }, intent, editingProblem);
+    closeProblemEditor();
+    render();
+    showNotice(intent === "submit"
+      ? "Permasalahan berhasil diajukan dalam simulasi. Ini bukan permohonan bantuan."
+      : "Draf permasalahan tersimpan hanya dalam simulasi browser.");
+  } catch (error) {
+    showNotice(error.message, true);
+  }
+});
+$("problem-review-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (reviewingProblem == null) return;
+  try {
+    const decision = event.submitter?.value;
+    const note = $("problem-review-notes").value;
+    state = ["ditindaklanjuti", "selesai"].includes(decision)
+      ? followUpProblem(state, reviewingProblem, decision, note)
+      : reviewProblem(state, reviewingProblem, decision, note);
+    closeProblemReview();
+    render();
+    showNotice("Status masalah dicatat dalam simulasi. Tidak ada alokasi bantuan atau persetujuan anggaran.");
+  } catch (error) {
+    showNotice(error.message, true);
+  }
+});
+for (const period of DEMO_APEL_PERIODS) {
+  const option = element("option", "", period.label);
+  option.value = period.value;
+  $("apel-period").append(option);
+}
+$("apel-period").value = "2026-10";
+for (const cat of PROBLEM_CATEGORIES) {
+  const option = element("option", "", cat.label);
+  option.value = cat.id;
+  $("problem-category").append(option);
+}
 
 $("role").value = state.role;
 $("facility-title").textContent = state.facility.name;

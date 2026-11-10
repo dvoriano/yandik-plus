@@ -80,6 +80,82 @@
         </form>
       </section>
     </div>
+
+    <section id="linked-panel" aria-labelledby="linked-title" class="linked-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="linked-title">Data dari modul lain</h2>
+          <p class="muted">Sudah tersedia sebagai contoh baca-saja. Data SDM dan pelayanan tidak perlu ditulis ulang pada Profil.</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div>
+            <h3>SDM Puskeswan</h3>
+            <p class="small muted">Ringkasan tenaga yang tercatat aktif. Bukan ukuran kecukupan tenaga.</p>
+          </div>
+          <div id="source-sdm" aria-live="polite"></div>
+        </article>
+        <article class="card">
+          <div>
+            <h3>Pelayanan APEL</h3>
+            <p class="small muted">Rangkuman jumlah per kategori, bukan total pelayanan resmi.</p>
+          </div>
+          <label for="apel-period">Bulan pelaporan</label>
+          <select id="apel-period" class="source-period"></select>
+          <div id="source-apel" aria-live="polite"></div>
+        </article>
+      </div>
+    </section>
+    <section id="problems-panel" aria-labelledby="problems-title" class="problems-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="problems-title">Permasalahan Puskeswan</h2>
+          <p class="muted">Catat masalah dan tindak lanjutnya. Masalah yang diverifikasi tidak otomatis menjadi bantuan.</p>
+          <p id="problem-counter" class="small muted"></p>
+        </div>
+        <button id="add-problem" type="button" class="primary-cta">Catat masalah</button>
+      </div>
+      <div id="problem-list" class="cards" aria-label="Daftar permasalahan"></div>
+      <section id="problem-form-panel" class="panel editor" aria-labelledby="problem-editor-title" hidden>
+        <div class="section-heading">
+          <h3 id="problem-editor-title">Catat permasalahan baru</h3>
+          <button id="cancel-problem" type="button" class="text-button">Tutup</button>
+        </div>
+        <form id="problem-form">
+          <label for="problem-category">Kategori masalah</label>
+          <select id="problem-category" required></select>
+          <label for="problem-title">Judul singkat</label>
+          <input id="problem-title" type="text" minlength="5" maxlength="100" required placeholder="Contoh: Peralatan pendingin rusak">
+          <label for="problem-description">Keterangan masalah</label>
+          <textarea id="problem-description" rows="4" minlength="10" maxlength="500" required placeholder="Jelaskan kondisi dan dampaknya, jangan masukkan data pribadi."></textarea>
+          <p class="small muted">Belum ada unggah foto, tidak ada persetujuan barang atau anggaran pada prototype ini.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf masalah</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan masalah</button>
+          </div>
+        </form>
+      </section>
+      <section id="problem-review-panel" class="panel editor" aria-labelledby="problem-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="problem-review-title">Pemeriksaan dan tindak lanjut masalah</h3>
+          <button id="cancel-problem-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="problem-review-context" class="muted"></p>
+        <form id="problem-review-form">
+          <label for="problem-review-notes">Catatan pemeriksaan atau tindak lanjut</label>
+          <textarea id="problem-review-notes" rows="3" maxlength="300"
+            placeholder="Isi alasan untuk perbaikan/penolakan, atau tindakan yang dicatat."></textarea>
+          <div class="form-actions">
+            <button id="problem-review-correction" type="submit" name="decision" value="perlu_perbaikan" class="secondary">Minta perbaikan</button>
+            <button id="problem-review-reject" type="submit" name="decision" value="ditolak" class="danger">Tolak</button>
+            <button id="problem-review-accept" type="submit" name="decision" value="tercatat" class="primary">Verifikasi masalah</button>
+            <button id="problem-followup" type="submit" name="decision" value="ditindaklanjuti" class="primary" hidden>Catat tindak lanjut</button>
+            <button id="problem-close" type="submit" name="decision" value="selesai" class="primary" hidden>Tandai selesai</button>
+          </div>
+        </form>
+      </section>
+    </section>
     <section id="review-panel" aria-labelledby="review-title" hidden>
       <div class="section-heading">
         <div>

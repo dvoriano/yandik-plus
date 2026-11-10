@@ -48,8 +48,13 @@ jobs:
         run: |
           node --check prototypes/profil-puskeswan/model.mjs
           node --check prototypes/profil-puskeswan/main.mjs
+          node --check prototypes/profil-puskeswan/problems.mjs
+          node --check prototypes/profil-puskeswan/source_snapshots.mjs
       - name: Test profile review prototype model
-        run: node --test prototypes/profil-puskeswan/tests/model.test.mjs
+        run: |
+          node --test prototypes/profil-puskeswan/tests/model.test.mjs
+          node --test prototypes/profil-puskeswan/tests/problems.test.mjs
+          node --test prototypes/profil-puskeswan/tests/source_snapshots.test.mjs
 
   profile-browser-e2e:
     # Pin to supported OS; ubuntu-latest now maps to 26.04, unsupported by Playwright 1.56.1.

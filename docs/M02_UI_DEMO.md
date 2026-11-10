@@ -25,6 +25,9 @@
 - Perubahan hilang saat browser dimuat ulang. Belum ada fitur simpan otomatis atau pencatatan permanen.
 - HTML di GitHub **belum** otomatis tersedia sebagai situs live; GitHub Pages tidak diaktifkan. Jangan membuat publikasi tanpa keputusan eksplisit.
 
+## Gap kategori Profiling 2026
+Kategori realisasi pelayanan, SDM, surveilans dan Kesmavet tidak boleh ditambah sebagai form pengisian ulang. Terdapat sembilan kelompok Profiling 2026 yang harus dipetakan ke modul sumber; prototype ini baru menampilkan lima kartu ilustratif. Detail di [peta domain](M02_PROFILING_2026_MAPPING.md). Kolom sebenarnya **belum diverifikasi** pada source legacy.
+
 ## Kriteria yang masih perlu dipenuhi
 - [x] Prototype alur Profil Saya dan Verifikator dalam kode terpisah.
 - [x] Unit test dan cek sintaks otomatis.

@@ -4,7 +4,7 @@
 **Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
-**Milestone aktif:** **M00 SEDANG** + **M01-S1 SEDANG (prototype)** ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+**Milestone aktif:** **M00 SEDANG** dan **M01 SEDANG (prototype)**; keduanya tercatat dalam ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
 ## PEMBARUAN TERBARU | 10 November 2026
 - **M01 kode prototype:** [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac) berisi hak akses berbasis role+wilayah dan alur kerja audit immutable, ditambah 12 tes.

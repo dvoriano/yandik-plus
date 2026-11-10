@@ -28,7 +28,8 @@
 ## B. Sedang dikerjakan (kode/pekerjaan aktif)
 | ID | Pekerjaan | Status tepat | Syarat selesai |
 |---|---|---|---|
-| M00 | Fondasi pengembangan langsung di GitHub | **SEDANG**: kode kontrak & data contoh teruji di GitHub; source Flask lengkap belum masuk | Lingkungan kode pada branch, dependensi, konfigurasi dummy, tes sintaks/smoke dan pemeriksaan batas data selesai |
+| M00 | Fondasi dan source pengembangan GitHub | **SEDANG**: kontrak, fixture dan CI teruji; Flask legacy 171 file belum masuk repo | Source legacy terimpor, dependensi/config anonim dan tes runtime/regresi APEL berhasil |
+| M01 | Core Platform: role/wilayah dan workflow | **SEDANG**: prototype dan 12 tes tambahan lulus [Actions #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) | Role disepakati; endpoint legacy, transaksi audit dan pengujian akses API tersambung dan lulus |
 
 ### M00: subpekerjaan
 - [x] M00-A: buat branch dan draft PR agar `main` tidak berubah

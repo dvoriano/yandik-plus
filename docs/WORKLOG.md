@@ -2,6 +2,10 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | Sinkronisasi status milestone
+- M00 **SEDANG** karena source Flask legacy belum masuk repo; M01 **SEDANG** hanya untuk prototype.
+- Bukti M01: [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac), [Actions #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) SUCCESS.
+
 ## 2026-11-10 | M01-S1: prototype role/wilayah dan workflow, tes lulus
 **Jenis:** coding, role authorization, audit workflow, pengujian GitHub Actions.  
 **Status:** M01 SEDANG pada prototype, M00 tetap SEDANG menunggu source Flask.

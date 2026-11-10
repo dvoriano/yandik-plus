@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00 SEDANG** dan **M01 SEDANG (prototype)**; keduanya tercatat dalam ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M01-S2 | 10 November 2026
+- Kode [master Puskeswan, histori SDM, sarpras dan profil](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a) serta [18 tes baru](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854) berhasil dibuat di GitHub.
+- [GitHub Actions #42840263033](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) **SUCCESS**, total foundation **40 tes** serta validator data fiktif.
+- Relasi APEL/Support memakai satu ID Puskeswan; tidak melapor berbeda dengan nilai nol; penempatan tenaga dan kondisi alat memiliki riwayat tanggal.
+- M01 **SEDANG**; M02 masih **RENCANA** sebagai fitur pengguna walau sebagian kontrak datanya sudah dibuat.
+- **Next:** lanjut adapter profil/SDM dan hak akses pada kode pengembangan, sambil tetap menunggu source Flask asli masuk langsung melalui GitHub. Belum ada deployment.
+
 ## PEMBARUAN TERBARU | 10 November 2026
 - **M01 kode prototype:** [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac) berisi hak akses berbasis role+wilayah dan alur kerja audit immutable, ditambah 12 tes.
 - **M01 GitHub Actions SUCCESS:** [run #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867); tes kontrak dan validator fixture lulus. Total suite foundation: 22 tes.
@@ -43,6 +50,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] Validator awal `scripts/verify_import.py` ada di branch.
 - [x] Catatan handoff, worklog dan aturan **GitHub-only** dimasukkan ke branch.
 - [x] Kode fondasi `foundation/`, fixture anonim dan 10 tes lulus di GitHub Actions #42837742904.
+- [x] Prototype master Profil/SDM/Sarpras dengan 18 tes tambahan dan total 40 tes foundation, [CI sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG

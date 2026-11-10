@@ -4,6 +4,12 @@
 
 Folder ini berisi **kontrak data kecil** untuk menyiapkan integrasi bertahap pada modul APEL, profil Puskeswan, dan Support Puskeswan. Semua contoh adalah fiktif. Tidak ada koneksi internet, database, VPS, token AI, atau proses deployment.
 
+## Master data terhubung (prototype)
+- Master Puskeswan-SDM-sarpras-profil: [masterdata.py](yandik_base/masterdata.py).
+- Data sintetis: [SDM](fixtures/sdm.json), [penempatan](fixtures/penempatan.json), [sarpras](fixtures/sarpras.json), [profil](fixtures/profil.json).
+- [18 tes tambahan](tests/test_masterdata.py), total foundation 40 tes dan [GitHub Actions sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
+- Belum ada integrasi Flask, DB, atau website produksi.
+
 ## Isi
 - \`yandik_base/contracts.py\`: tipe dan validasi Puskeswan, laporan APEL per bulan, serta kebutuhan dukungan.
 - \`fixtures/\`: data Puskeswan, laporan, dan usulan bantuan dengan ID \`DEMO-...\` saja.

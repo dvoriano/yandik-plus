@@ -39,6 +39,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil Puskeswan, pembinaan, sertifikat terkait kompetensi, dashboard kebutuhan tenaga.
 
+## Progres dasar teknis
+- [x] Prototype ID SDM dan histori penempatan lintas Puskeswan; penempatan tumpang tindih ditolak [GitHub CI](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
+- [ ] Migrasi data SDM asli, edit/validasi kab/kota, dan histori keaktifan pegawai belum dibuat.
+- Lihat [M01-S2](../M01_MASTER_DATA.md). **Status modul tetap RENCANA.**
+
 ## 8. Checklist pengembangan
 - [ ] MOD-03-01: Susun kamus SDM dan aturan minimisasi data
 - [ ] MOD-03-02: Petakan data lama dan deduplikasi SDM

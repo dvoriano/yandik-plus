@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M01-S2 master Puskeswan, SDM, sarpras dan profiling
+**Jenis:** coding langsung di GitHub dan CI; M01 SEDANG, M02 (modul tampilan) masih RENCANA.
+- [Kode master dan 4 jenis fixture](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a) serta [18 tes tambahan dan validator terpadu](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854).
+- Penempatan SDM per tanggal, observasi alat dengan histori, profil terverifikasi, dan hubungan data APEL/Support.
+- [GitHub Actions #42840263033](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) **SUCCESS**. Total 40 tes foundation, tanpa akses VPS.
+- Belum: source Flask 171 file, adapter database/endpoint, UI Profil dan pengujian APEL riil.
+- Berikutnya: lanjut kontrak/adaptor pengembangan dan input profil yang mudah digunakan.
+
 ## 2026-11-10 | Sinkronisasi status milestone
 - M00 **SEDANG** karena source Flask legacy belum masuk repo; M01 **SEDANG** hanya untuk prototype.
 - Bukti M01: [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac), [Actions #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) SUCCESS.

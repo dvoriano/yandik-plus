@@ -41,6 +41,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber identitas ini.
 
+## Progres master data terbaru
+- [x] Prototype master ID Puskeswan, histori SDM/penempatan, kondisi sarpras serta asal/verifikasi profiling.
+- [x] Hubungan ke APEL dan Support serta 18 tes tambahan [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
+- [ ] Migrasi database dan integrasi endpoint Flask asli masih terbuka; rincian [M01-S2](../M01_MASTER_DATA.md).
+
 ## Progres prototype yang sudah terbukti
 - [x] Role/territory check default deny untuk Puskeswan, kab/kota, provinsi, pimpinan.
 - [x] Workflow in-memory dengan audit append-only, koreksi, alasan, dan batas wilayah.

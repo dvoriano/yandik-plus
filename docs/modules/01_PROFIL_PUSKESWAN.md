@@ -40,6 +40,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 SDM sebagai sumber tenaga; APEL sebagai sumber statistik pelayanan; Support membaca inventaris dan kesenjangan fasilitas; GIS memakai koordinat fasilitas yang disetujui.
 
+## Progres dasar teknis
+- [x] Kontrak data Profil/Sarpras, relasi ID Puskeswan, data ber-tanggal dan status verifikasi diuji [GitHub CI](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
+- [ ] Form profiling lama, riwayat perubahan database, kelengkapan per bagian dan UI HP belum diimplementasikan.
+- Lihat [M01-S2](../M01_MASTER_DATA.md). **Status modul tetap RENCANA.**
+
 ## 8. Checklist pengembangan
 - [ ] MOD-01-01: Audit dan petakan field profiling yang sudah ada
 - [ ] MOD-01-02: Definisikan ID tunggal dan data dictionary per bagian profil

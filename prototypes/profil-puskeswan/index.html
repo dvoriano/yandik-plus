@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Profil Saya | Prototype YANDIK+</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip" href="#konten">Langsung ke konten</a>
+  <div class="demo-banner">
+    <strong>SIMULASI YANDIK+</strong>
+    <span>Data fiktif • Bukan website aktif • Perubahan hilang saat halaman dimuat ulang</span>
+  </div>
+  <header class="topbar">
+    <div class="topbar-content">
+      <div class="brand" aria-label="YANDIK Plus">
+        <span class="brandmark" aria-hidden="true">Y+</span>
+        <span>YANDIK<span class="plus">+</span> <small>Ruang Kerja Puskeswan</small></span>
+      </div>
+      <div class="role-control">
+        <label for="role">Lihat sebagai</label>
+        <select id="role" aria-describedby="role-help">
+          <option value="petugas">Petugas Puskeswan</option>
+          <option value="verifikator_kab">Verifikator Kab/Kota</option>
+          <option value="verifikator_prov">Verifikator Provinsi</option>
+          <option value="pimpinan">Pimpinan (ringkasan)</option>
+        </select>
+        <span id="role-help" class="sr-only">Pemilihan peran hanya untuk simulasi, bukan autentikasi.</span>
+      </div>
+    </div>
+  </header>
+  <main id="konten" class="shell" tabindex="-1">
+    <nav aria-label="Navigasi prototype" class="breadcrumbs">Beranda <span aria-hidden="true">›</span> Profil Puskeswan</nav>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">MODUL PROFIL PUSKESWAN</p>
+        <h1 id="page-title">Profil Saya</h1>
+        <p id="page-subtitle" class="lead">Perbarui hanya informasi yang berubah. Data lain tetap tersimpan.</p>
+      </div>
+      <span class="tag">M02 · Prototype</span>
+    </section>
+    <section class="facility" aria-labelledby="facility-title">
+      <div class="facility-icon" aria-hidden="true">P</div>
+      <div>
+        <p class="small muted">PUSKESWAN</p>
+        <h2 id="facility-title">Puskeswan Fiktif A</h2>
+        <p id="facility-area" class="muted">Kabupaten Contoh · DEMO-PSW-001</p>
+      </div>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <section class="overview" aria-label="Ringkasan status">
+      <div class="metric"><strong id="metric-verified">2/5</strong><span>Bagian terverifikasi</span></div>
+      <div class="metric"><strong id="metric-waiting">1</strong><span>Menunggu verifikasi</span></div>
+      <div class="metric"><strong id="metric-corrections">0</strong><span>Perlu diperbaiki</span></div>
+    </section>
+    <div id="profile-panel">
+      <div class="section-heading">
+        <div>
+          <h2>Data profil Puskeswan</h2>
+          <p class="muted">Pilih satu bagian untuk memperbarui data. SDM dan APEL tetap diambil dari modul asalnya.</p>
+        </div>
+      </div>
+      <div id="section-cards" class="cards" aria-label="Bagian Profil Puskeswan"></div>
+      <section id="editor-panel" class="panel editor" aria-labelledby="editor-title" hidden>
+        <div class="section-heading">
+          <h2 id="editor-title">Perbarui bagian profil</h2>
+          <button id="cancel-editor" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="editor-hint" class="muted"></p>
+        <form id="profile-form">
+          <label for="profile-value" id="profile-value-label">Keterangan terbaru</label>
+          <textarea id="profile-value" name="profile-value" rows="3" maxlength="200" required aria-describedby="character-help"></textarea>
+          <p id="character-help" class="small muted">Maksimum 200 karakter. Jangan masukkan data pribadi.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan verifikasi</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <section id="review-panel" aria-labelledby="review-title" hidden>
+      <div class="section-heading">
+        <div>
+          <h2 id="review-title">Antrian Verifikasi</h2>
+          <p class="muted">Periksa usulan dan berikan keputusan. Dalam prototype, semua data adalah contoh.</p>
+        </div>
+      </div>
+      <div id="review-list" class="cards"></div>
+      <section id="review-editor" class="panel editor" hidden aria-labelledby="review-editor-title">
+        <div class="section-heading">
+          <h3 id="review-editor-title">Periksa pengajuan</h3>
+          <button id="cancel-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="review-context" class="muted"></p>
+        <form id="review-form">
+          <label for="review-notes">Catatan untuk petugas</label>
+          <textarea id="review-notes" rows="3" maxlength="300" placeholder="Wajib diisi jika meminta perbaikan atau menolak"></textarea>
+          <div class="form-actions">
+            <button type="submit" name="decision" value="perlu_perbaikan" class="secondary">Minta perbaikan</button>
+            <button type="submit" name="decision" value="ditolak" class="danger">Tolak</button>
+            <button type="submit" name="decision" value="disetujui" class="primary">Setujui</button>
+          </div>
+        </form>
+      </section>
+    </section>
+    <aside class="help-box" aria-label="Petunjuk">
+      <div class="help-symbol" aria-hidden="true">?</div>
+      <div>
+        <h2>Bantuan singkat</h2>
+        <p><strong>Belum lengkap:</strong> belum ada data sah. <strong>Perlu verifikasi:</strong> data sudah ada tetapi belum disahkan. <strong>Menunggu verifikasi:</strong> perubahan sudah dikirim.</p>
+        <p>Ini hanya simulasi di browser. Tidak tersambung ke data Puskeswan atau sistem administrasi yang sebenarnya.</p>
+      </div>
+    </aside>
+  </main>
+  <footer>YANDIK+ Development Prototype · GitHub-only · Tidak mengubah produksi</footer>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

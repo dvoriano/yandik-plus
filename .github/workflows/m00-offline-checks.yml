@@ -6,6 +6,7 @@ on:
       - develop/yandik-foundation
     paths:
       - foundation/**
+      - prototypes/**
       - .github/workflows/m00-offline-checks.yml
       - .env.example
   pull_request:
@@ -13,6 +14,7 @@ on:
       - main
     paths:
       - foundation/**
+      - prototypes/**
       - .github/workflows/m00-offline-checks.yml
       - .env.example
   workflow_dispatch:
@@ -33,3 +35,18 @@ jobs:
         run: python -B -m unittest discover -s foundation/tests -v
       - name: Validate linked synthetic fixtures
         run: python -B -m foundation.validate_fixtures
+
+  profile-ui-demo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check demo script syntax
+        run: |
+          node --check prototypes/profil-puskeswan/model.mjs
+          node --check prototypes/profil-puskeswan/main.mjs
+      - name: Test profile review prototype model
+        run: node --test prototypes/profil-puskeswan/tests/model.test.mjs

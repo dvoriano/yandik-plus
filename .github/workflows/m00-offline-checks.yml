@@ -52,7 +52,8 @@ jobs:
         run: node --test prototypes/profil-puskeswan/tests/model.test.mjs
 
   profile-browser-e2e:
-    runs-on: ubuntu-latest
+    # Pin to supported OS; ubuntu-latest now maps to 26.04, unsupported by Playwright 1.56.1.
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4

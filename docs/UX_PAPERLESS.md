@@ -29,10 +29,11 @@ Petugas yang hanya terbiasa WhatsApp dan formulir sederhana dapat menyelesaikan 
 - Verifikasi tidak menghapus laporan; petugas menerima catatan perbaikan dengan tautan ke isian spesifik.
 - Browser/network yang tidak stabil: simpan draf lokal yang aman, beri peringatan bahwa sinkronisasi belum terjadi, cegah duplikasi kirim.
 
-## Penerapan awal M02-S2
+## Penerapan M02-S2 sampai M02-S3
 - [x] Prototype mobile-first [Profil Saya](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/) memiliki status per bagian, tombol besar, petunjuk singkat, dan langkah draf → ajukan → review.
 - [x] State model 20 tes Node dan lintas-test Python+Node lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
-- [ ] Validasi browser nyata: keyboard, screen reader, ukuran teks, kontras, 320px viewport, internet lambat, serta tes petugas nonteknis masih **belum dilakukan**.
+- [x] Tes Chromium headless pada viewport 320/375 px, tidak ada overflow horizontal, alur draf/perbaikan/verifikasi dan tanpa error JS [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703).
+- [ ] Uji aksesibilitas mendalam: keyboard penuh, screen reader, ukuran teks, kontras, jaringan lambat, HP fisik dan petugas nonteknis **belum dilakukan**.
 - [ ] Uji kemampuan pengguna menyelesaikan tugas tanpa arahan dan pengukuran durasi/kesalahan.
 
 ## Ukuran keberhasilan dalam tes pengguna

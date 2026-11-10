@@ -1,7 +1,7 @@
 # MOD-01 | Profil Puskeswan Terpadu
 
 **Milestone:** M02  
-**Status implementasi GitHub:** SEDANG (prototype draf profil per bagian dan review lulus pengujian; belum ada UI/database/Flask).  
+**Status implementasi GitHub:** SEDANG (prototype UI mobile-first dengan tes browser otomatis berhasil; belum Flask/API/DB maupun penggunaan petugas).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,11 +40,19 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 SDM sebagai sumber tenaga; APEL sebagai sumber statistik pelayanan; Support membaca inventaris dan kesenjangan fasilitas; GIS memakai koordinat fasilitas yang disetujui.
 
+## Progres M02-S3: uji UI dan pemetaan domain
+- [x] Draf tersimpan bisa diajukan tanpa pengetikan ulang; tampilan pimpinan tidak merender rincian individu.
+- [x] Browser Chromium headless diuji pada viewport 320 dan 375 px, termasuk siklus kirim → koreksi → setuju.
+- [x] 65 Python + 25 Node + 6 browser, [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703).
+- [x] [Peta sembilan domain Profiling 2026](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROFILING_2026_MAPPING.md) ditulis sebagai **rancangan**, belum pemetaan field-level nyata.
+- [ ] Uji UX petugas, screen reader, field asal data, API Flask dan persistensi masih terbuka.
+
 ## Progres M02-S2: Tampilan Profil Saya (prototype interaktif)
 - [x] [HTML/CSS/JS mobile-first](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/) untuk petugas dan antrian verifikator, tombol besar dan label bantuan.
 - [x] Status 5 bagian, draf/ajukan/review/perbaikan dapat dicoba pada data fiktif di memori browser.
 - [x] 20 tes model Node serta sintaks JS dan tes Python sebelumnya [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
-- [ ] Uji UX riil, browser E2E, persistensi dan autentikasi API server belum selesai.
+- [x] Browser E2E sintetis telah lulus, [Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703).
+- [ ] Uji UX petugas nyata, persistensi dan autentikasi API server belum selesai.
 - [Dokumen M02-S2](../M02_UI_DEMO.md).
 
 ## Progres M02-S1: pembaruan profil per bagian

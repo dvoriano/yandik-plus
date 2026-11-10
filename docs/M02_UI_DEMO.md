@@ -17,7 +17,9 @@
 - [Commit model dan unit tests](https://github.com/dvoriano/yandik-plus/commit/6c807fa21fd130e0e28093eedb53623b9520e866).
 - [Commit antarmuka dan CI](https://github.com/dvoriano/yandik-plus/commit/3096d64f2b2d113318ba3ee365abe814c2f6a910).
 - [GitHub Actions run #42844096701](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701) = **SUCCESS** pada \`offline-contracts\` dan \`profile-ui-demo\`.
-- Total 65 tes Python existing + 20 tes Node model baru; **belum browser end-to-end**. Sintaks JS diperiksa melalui \`node --check\`.
+- **Update M02-S3:** 65 tes Python, 25 tes unit Node, **6 tes Chromium headless** lulus pada [GitHub Actions #42846236703](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703); `node --check` juga lulus.
+- CI browser menggunakan Ubuntu 24.04 karena Playwright 1.56.1 belum mendukung runner Ubuntu 26.04.
+- Tes browser bukan validasi perangkat fisik atau semua kombinasi aksesibilitas.
 
 ## Batasan keamanan dan simulasi
 - Fitur **"Lihat sebagai"** hanya pengganti role demonstrasi di browser; bukan identifikasi pengguna. API/backend nanti harus memverifikasi token/session, peran dan wilayah secara independen.
@@ -31,11 +33,12 @@ Kategori realisasi pelayanan, SDM, surveilans dan Kesmavet tidak boleh ditambah 
 ## Kriteria yang masih perlu dipenuhi
 - [x] Prototype alur Profil Saya dan Verifikator dalam kode terpisah.
 - [x] Unit test dan cek sintaks otomatis.
-- [ ] Uji browser sungguhan termasuk responsivitas dan aksesibilitas.
+- [x] Uji browser Chromium otomatis untuk alur inti pada viewport 320/375 px, termasuk overflow dan error runtime JS [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703).
+- [ ] Uji aksesibilitas mendalam (screen reader, zoom, keyboard penuh, kontras) serta HP fisik.
 - [ ] Uji pengguna nonteknis: kirim profil, perbaiki, baca status tanpa bantuan.
 - [ ] Mapping seluruh Profiling 2026 ke field yang benar.
 - [ ] Adapter API Flask, database transaksional, bukti foto, hak akses server, logging audit.
 - [ ] Staging dan uji keamanan sebelum eventual deployment, hanya setelah pendanaan/persetujuan.
 
 ## Berikutnya
-Pilih penambahan **validasi UI** yang bisa tetap dilakukan di GitHub (tanpa meminta user setup), lalu integrasikan ke source Flask lama bila tersedia di repository. Jangan menyatakan M02 SELESAI sebelum tes integrasi dan review UX.
+Selaraskan sembilan domain Profiling dan bangun referensi sumber data lintas modul tanpa input ganda; lanjutkan pengujian UX dan aksesibilitas. Adapter Flask hanya setelah source tersedia di GitHub. Jangan menyatakan M02 SELESAI sebelum tes integrasi dan review UX.

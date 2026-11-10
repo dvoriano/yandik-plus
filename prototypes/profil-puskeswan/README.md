@@ -17,16 +17,18 @@
 - \`style.css\`: tampilan mobile-first dan responsif, tombol lebar, status teks (tak mengandalkan warna saja).
 - \`main.mjs\`: interaksi layar tanpa dependensi atau request HTTP, membatasi render konten data memakai \`textContent\`.
 - \`model.mjs\`: state machine murni, pemisahan draft vs terverifikasi, antrian review dan aturan keputusan.
-- \`tests/model.test.mjs\`: pengujian node:test untuk alur inti dan penyalahgunaan peran pada simulasi.
+- \`tests/model.test.mjs\`: 25 unit tes logika JavaScript, termasuk draf yang sudah disimpan.
+- \`tests/browser.test.mjs\`: 6 tes Chromium E2E pada viewport 320/375 px di GitHub Actions.
 
 ## Cara memeriksa di GitHub
 - Kode tersedia pada branch \`develop/yandik-foundation\` dan dapat ditinjau per file.
-- GitHub Actions menjalankan tes Node dan pengecekan sintaks JS tanpa meminta pengaturan laptop.
+- GitHub Actions menjalankan tes Python/Node, pengecekan sintaks, dan Chromium E2E tanpa meminta pengaturan laptop. [Run SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703).
+- Draf yang sudah tersimpan dapat diajukan langsung. Mode pimpinan hanya menjelaskan bahwa agregat belum tersedia dan tidak merender data individu.
 - Repo **tidak mengaktifkan GitHub Pages atau publikasi**. Sebuah file HTML di repository belum otomatis menjadi situs yang bisa dibuka langsung dari URL GitHub.
 - Jangan membuka demo menggunakan data nyata atau menganggap simulasi menggantikan izin API backend.
 
 ## Integrasi berikutnya
-1. Selaraskan label dan field dengan Profiling 2026 yang asli setelah source Flask tersedia di GitHub.
+1. Gunakan [peta domain Profiling 2026](../../docs/M02_PROFILING_2026_MAPPING.md) untuk menghindari input ganda; verifikasi field sebenarnya ketika source Flask tersedia di GitHub.
 2. Bangun API+database staging dengan autentikasi nyata dan pemeriksaan izin pada server, bukan memakai role-switch klien.
 3. Siapkan lampiran bukti, pengingat dan audit permanen.
 4. Uji kemudahan penggunaan dengan petugas Puskeswan pada layar HP.

@@ -2,6 +2,16 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M02-S3: perbaikan draf, uji browser Chromium dan peta Profiling
+**Jenis:** coding UI, regresi Node, 6 tes browser E2E melalui GitHub Actions, pemetaan domain sementara. **Status:** M02 SEDANG.
+- [Perbaikan](https://github.com/dvoriano/yandik-plus/commit/0ce6b2db1ef0f9ca417eea072f1307c1ee94de30): draf tersimpan dapat diajukan tanpa edit ulang; pimpinan tidak lagi menampilkan rincian individual.
+- [Browser tests](https://github.com/dvoriano/yandik-plus/commit/78cf52a06d38874581a6709bf7b22b723704ed40): Chromium 320/375px, tanpa overflow, draf → submit, perbaikan → verifikasi, tampilan pimpinan dan reset demo.
+- Masalah Ubuntu 26.04 pada CI diatasi dengan [pin Ubuntu 24.04](https://github.com/dvoriano/yandik-plus/commit/c810f5f565843ee9487440bf97da33bc8c8ee7fc) tanpa menyentuh website.
+- [GitHub Actions #42846236703](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703): **SUCCESS**, **65 tes Python + 25 Node + 6 Chromium = 96 tes**, validator fixture lulus.
+- [Peta 9 domain Profiling 2026](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROFILING_2026_MAPPING.md) dibuat; ini bukan validasi field legacy karena Flask lama belum ada di repo.
+- Masih perlu: uji pengguna manusia/screen reader, real HP, field-level mapping, autentikasi/API/database dan integrasi.
+- Berikutnya: skema Permasalahan dan referensi baca-saja SDM/APEL tanpa input ganda, tetap GitHub-only.
+
 ## 2026-11-10 | M02-S2: Prototype halaman Profil Saya dan antrian verifikator
 **Jenis:** coding frontend demo GitHub-only + test Node, belum ada deployment. **Status:** M02 SEDANG (prototype interaktif).
 - [Commit model & tes](https://github.com/dvoriano/yandik-plus/commit/6c807fa21fd130e0e28093eedb53623b9520e866): 20 tes alur draf, pengajuan, permintaan perbaikan dan review role-switch simulasi.

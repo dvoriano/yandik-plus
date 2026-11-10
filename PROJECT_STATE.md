@@ -6,7 +6,17 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01 dan M02 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M02-S2 (TERBARU) | 10 November 2026
+## PEMBARUAN M02-S3 (TERBARU) | 10 November 2026
+- **Diperbaiki:** [commit 0ce6b2d](https://github.com/dvoriano/yandik-plus/commit/0ce6b2db1ef0f9ca417eea072f1307c1ee94de30) membuat draf yang sudah disimpan bisa langsung diajukan tanpa mengetik ulang. Mode simulasi pimpinan kini **tidak menampilkan atau merender rincian individu Puskeswan**.
+- **Tes browser:** [commit 78cf52a](https://github.com/dvoriano/yandik-plus/commit/78cf52a06d38874581a6709bf7b22b723704ed40) menambah 6 uji Chromium headless: HP 320/375 px tanpa scroll horizontal, simpan → ajukan draf, koreksi → kirim ulang → setujui, role pimpinan, dan reset data demo saat reload.
+- **Kendala CI terselesaikan:** runner ubuntu-latest berubah ke Ubuntu 26.04 (Playwright 1.56.1 belum mendukung), [commit c810f5f](https://github.com/dvoriano/yandik-plus/commit/c810f5f565843ee9487440bf97da33bc8c8ee7fc) pin job browser ke Ubuntu 24.04.
+- **Bukti CI:** [GitHub Actions #42846236703](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703) **SUCCESS** di 3 job: 65 tes Python, 25 tes unit Node, dan **6 tes browser Chromium**, total **96 tes otomatis**; tes validator fixture juga lulus.
+- **Peta domain Profiling 2026:** [M02_PROFILING_2026_MAPPING.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROFILING_2026_MAPPING.md) membedakan 9 domain, source data SDM/APEL, kesiapan vs realisasi surveilans/Kesmavet, dan kebutuhan Support. Ini **masih rancangan**, kolom source Flask asli belum diaudit.
+- **M02 tetap SEDANG**: prototype UI dan browser smoke siap untuk review, **bukan** aplikasi Flask/DB/akun nyata. Tes browser headless bukan tes perangkat fisik atau pengguna nonteknis.
+- **Next:** rancang referensi data lintas modul + Permasalahan pada prototype tanpa input ganda, dan tetapkan field-level mapping setelah source Flask lengkap ada di GitHub.
+- **Produksi:** website, VPS dan DB tidak disentuh; branch `main` dan PR draft tetap aman.
+
+## PEMBARUAN M02-S2 | 10 November 2026
 **Progres terbaru:** prototype tampilan **Profil Saya** mobile-first dan **Antrian Verifikasi** sudah dikode langsung di GitHub.
 - **State model & 20 tes Node:** [commit 6c807fa](https://github.com/dvoriano/yandik-plus/commit/6c807fa21fd130e0e28093eedb53623b9520e866), `prototypes/profil-puskeswan/model.mjs`.
 - **UI dan GitHub CI:** [commit 3096d64](https://github.com/dvoriano/yandik-plus/commit/3096d64f2b2d113318ba3ee365abe814c2f6a910) berisi `index.html`, `style.css`, `main.mjs`, panduan dan workflow Python + Node.
@@ -70,6 +80,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] Prototype master Profil/SDM/Sarpras dengan 18 tes tambahan dan total 40 tes foundation, [CI sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
 - [x] **M02-S1** draf profil per bagian, review, scoped auth, audit immutable dan 25 tes tambahan; [CI 65 tes sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389).
 - [x] **M02-S2** halaman demo responsive Profil Saya / antrian verifikasi, 20 tes Node dan CI Python+Node [SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
+- [x] **M02-S3** perbaikan draf dan tampilan pimpinan, **6 tes browser** + **25 tes Node** + **65 tes Python** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703), peta 9 kelompok Profiling 2026 sementara.
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
@@ -90,7 +101,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M02:** lanjut pengujian UX nyata/aksesibilitas dan pemetaan field Profiling 2026; setelah source Flask tersedia di GitHub barulah membuat API/database staging. Hindari membuat peran simulasi sebagai autentikasi.
+3. **M02:** lanjut bagian yang belum tertutup dari sembilan domain Profiling, terutama Permasalahan dan tautan baca-saja SDM/APEL; lakukan uji aksesibilitas/UX petugas. Pemetaan field final, API dan database menunggu source Flask asli di GitHub.
 
 
 ## DOKUMEN RUJUKAN

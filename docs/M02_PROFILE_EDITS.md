@@ -37,7 +37,7 @@ Petugas tidak perlu mengisi ulang keseluruhan Profiling Puskeswan ketika hanya k
 ## Tahap lanjutan M02-S2
 - Antarmuka demo mobile-first dan antrian verifikator kini tersedia pada [prototypes/profil-puskeswan/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/).
 - Tes state-model JavaScript (20 kasus), sintaks skrip, dan 65 tes Python sebelumnya lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
-- **Hanya simulasi:** pergantian role pada layar bukan autentikasi; data hilang setelah reload; belum ada tes browser E2E atau akses Flask.
+- **Hanya simulasi:** pergantian role bukan autentikasi; data hilang setelah reload. M02-S3 sudah menambah [6 tes browser Chromium otomatis](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703) namun belum akses Flask.
 - Lihat [M02_UI_DEMO.md](M02_UI_DEMO.md).
 
 ## Implementasi dan tes

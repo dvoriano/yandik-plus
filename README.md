@@ -37,6 +37,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: Python+Node SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701)
 - **Ini kode demonstrasi, bukan website yang dipublikasikan.** Tidak ada akses VPS/Flask.
 
+## M02-S3: browser E2E dan peta Profiling 2026
+- [6 tes Chromium untuk layar HP dan alur verifikasi](prototypes/profil-puskeswan/tests/browser.test.mjs)
+- [Peta 9 domain Profiling 2026 (belum field-level)](docs/M02_PROFILING_2026_MAPPING.md)
+- [GitHub Actions 96 tes otomatis: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703)
+- **Masih prototype.** Browser headless bukan uji petugas di HP nyata.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

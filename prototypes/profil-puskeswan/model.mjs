@@ -35,6 +35,8 @@ export function startDemo() {
     nextId: 2,
     problems: [],
     nextProblemId: 1,
+    supportNeeds: [],
+    nextNeedId: 1,
   };
 }
 

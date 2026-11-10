@@ -22,18 +22,20 @@
 | DONE-05 | UX, workflow, batasan keamanan, changelog | docs/UX_PAPERLESS.md, WORKFLOW_ENGINE.md, CHANGELOG_ROADMAP.md |
 | DONE-06 | Validator kode awal untuk impor dan panduan | scripts/verify_import.py, docs/IMPORT_OFFLINE.md; **belum mengimpor kode Flask** |
 | DONE-07 | Sistem serah-terima lintas chat dan tata kerja GitHub-only | PROJECT_STATE.md, docs/WORKLOG.md, docs/GITHUB_WORKFLOW.md |
+| DONE-08 | Kode kontrak dan fixture fiktif + tes otomatis | [commit 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6), [GitHub Actions: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) |
 
 ## B. Sedang dikerjakan (kode/pekerjaan aktif)
 | ID | Pekerjaan | Status tepat | Syarat selesai |
 |---|---|---|---|
-| M00 | Fondasi pengembangan langsung di GitHub | **SEDANG**: dokumentasi & validator tersedia; source aplikasi lengkap belum masuk | Lingkungan kode pada branch, dependensi, konfigurasi dummy, tes sintaks/smoke dan pemeriksaan batas data selesai |
+| M00 | Fondasi pengembangan langsung di GitHub | **SEDANG**: kode kontrak & data contoh teruji di GitHub; source Flask lengkap belum masuk | Lingkungan kode pada branch, dependensi, konfigurasi dummy, tes sintaks/smoke dan pemeriksaan batas data selesai |
 
 ### M00: subpekerjaan
 - [x] M00-A: buat branch dan draft PR agar `main` tidak berubah
 - [x] M00-B: tulis standar pengembangan, roadmap, modul dan validator awal
 - [x] M00-C: buat handoff permanen lintas percakapan
 - [ ] M00-D: masukkan source Flask hasil snapshot sanitasi **secara langsung melalui kemampuan GitHub yang tersedia**, tanpa meminta pengguna melakukan download/PowerShell/SSH
-- [ ] M00-E: bentuk konfigurasi dummy, dependency specification dan tes yang dapat diperiksa di GitHub
+- [x] M00-E1: `.env.example`, fixture dummy, kontrak Profil/APEL/Support, 10 tes, GitHub Actions SUCCESS
+- [ ] M00-E2: pemetaan dependensi Flask asli, konfigurasi anonim untuk runtime dan tes startup setelah source tersedia
 - [ ] M00-F: test regresi APEL, integritas struktur dan keamanan minimum sebelum M00 ditutup
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.

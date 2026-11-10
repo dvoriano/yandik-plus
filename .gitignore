@@ -218,3 +218,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# YANDIK+ - runtime files excluded
+uploads/
+data/
+backups/
+backup/
+ai_config.json
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.pem
+*.key
+*.p12
+*.pfx

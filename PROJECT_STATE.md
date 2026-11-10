@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00 SEDANG** ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN TERBARU | 10 November 2026
+- **M00 coding:** [commit 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6) memuat 13 file kontrak Python, fixture anonim, 10 tes dan GitHub workflow.
+- **CI terbukti lulus:** [GitHub Actions run #42837742904](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) **SUCCESS**; kedua langkah test kontrak dan validasi fixture berhasil.
+- Kontrak yang diuji: identitas Puskeswan stabil, laporan per bulan/Puskeswan, nol berbeda dengan tidak melapor, referensi data Support, penolakan nilai negatif/format salah.
+- **Bukan aplikasi Flask produksi**; source legacy lengkap masih belum ada di GitHub. M00 **SEDANG**.
+- **Next:** upayakan source legacy hanya lewat GitHub connector; kalau belum bisa, kembangkan kontrak dan pengujian yang tidak bergantung pada source legacy. Tidak meminta setup user.
+
 ## KEPUTUSAN PEMILIK PROYEK | jangan ditanyakan berulang
 1. **HANYA KERJAKAN DI GITHUB**: pengguna tidak mau lagi diminta unduh ZIP, PowerShell, Git lokal, login dari komputer, copy SSH, atau setup lain di luar GitHub untuk saat ini.
 2. **Website produksi tidak boleh diubah sedikit pun.** Tidak ada sambungan GitHub ke VPS YANDIK+, tidak restart service, tidak menyentuh database, tidak CI/CD deploy; semua coding adalah pengembangan calon versi masa depan.
@@ -23,20 +30,22 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 5. Sebelum membalas, **perbarui file ini + ROADMAP + WORKLOG serta issue/PR jika perlu**, lalu verifikasi lewat fetch GitHub. Jangan mengandalkan hanya isi percakapan atau memory.
 
 ## KONDISI NYATA GITHUB SAAT INI
-### SELESAI (dokumentasi/alat, bukan implementasi fitur)
+### SELESAI (dokumentasi/alat dan kontrak fondasi teruji; belum fitur produksi)
 - [x] Repo private dan branch `develop/yandik-foundation`; PR #9 draft.
 - [x] Masterplan `docs/MASTERPLAN.md`, katalog 15 modul `docs/MODULES_INDEX.md`.
 - [x] Spesifikasi terpisah `docs/modules/00_...md` sampai `14_...md` beserta checklist.
 - [x] Roadmap, backlog, changelog, standar UX, workflow dan aturan pengelolaan data.
 - [x] Validator awal `scripts/verify_import.py` ada di branch.
 - [x] Catatan handoff, worklog dan aturan **GitHub-only** dimasukkan ke branch.
+- [x] Kode fondasi `foundation/`, fixture anonim dan 10 tes lulus di GitHub Actions #42837742904.
 
 ### SEDANG
-- **M00 Fondasi repo/source.** Dokumen dan validator dibuat; kerja lanjutan harus langsung via GitHub.
+- **M00 Fondasi repo/source.** Kode kontrak/fixture/tes ada dan CI lulus; source Flask lengkap masih menunggu.
 
 ### BELUM SELESAI / TERBUKA
 - [ ] **Source Flask lengkap belum diimpor ke repository.** Ada snapshot 168 file dan salinan pengembangan 171 file dari percakapan sebelumnya, tetapi *file di chat bukan file GitHub*. Jangan klaim sudah commit.
-- [ ] Dependensi, fixtures data dummy, tes lintas modul dan pengujian aplikasi runtime belum selesai.
+- [x] Fixture dummy Profil/APEL/Support dan pengujian kontrak awal tersedia.
+- [ ] Dependensi aplikasi Flask nyata, tes integrasi/runtime, dan regresi hitungan APEL produksi belum selesai.
 - [ ] Audit serta perbaikan otorisasi, password reset/default, upload dan CSRF di kode pengembangan belum selesai.
 - [ ] M01–M16 adalah rencana implementasi; dokumentasinya tidak sama dengan fiturnya telah dibuat.
 
@@ -44,9 +53,10 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - Jalur impor melalui ZIP/Windows/PowerShell **tidak digunakan atas instruksi pemilik**. Bila transfer source memerlukan jalur yang tidak tersedia di connector GitHub, kerjakan bagian yang memungkinkan langsung di GitHub, jangan minta manual download/setup.
 
 ## PRIORITAS NEXT ACTION
-1. **M00:** buat secara langsung di GitHub konfigurasi dummy, kerangka tes dan struktur code yang kompatibel dengan source Flask, tanpa mengubah kode produksi.
-2. **M00:** imporkan source sanitasi jika dapat dilakukan langsung lewat tools GitHub, lalu verifikasi isi repo dan perbarui status. Jika belum bisa, catat sebagai tertunda, bukan memblokir rancangan.
-3. **M01:** Core Platform (master Puskeswan, role/wilayah, audit, workflow), dilanjutkan M02 Profil + SDM, M03–M04 Support, M05 APEL 2.0.
+1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
+2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
+3. **M01:** mulai komponen Core Platform yang dapat diuji secara independen dari source, lalu Profil/SDM dan Support.
+
 
 ## DOKUMEN RUJUKAN
 - [Status roadmap induk](docs/ROADMAP.md)

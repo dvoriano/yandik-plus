@@ -9,6 +9,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 
 **[Roadmap dan Checklist](docs/ROADMAP.md)** · **[Worklog progres](docs/WORKLOG.md)** · **[Aturan GitHub-only](docs/GITHUB_WORKFLOW.md)**
 
+## Kode fondasi pengembangan (bukan website produksi)
+- [Kontrak Puskeswan, APEL, dan Support](foundation/yandik_base/contracts.py)
+- [Tes otomatis fondasi](foundation/tests/test_contracts.py)
+- [Contoh data fiktif](foundation/fixtures/)
+- [GitHub Actions: berhasil](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904)
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

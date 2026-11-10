@@ -18,10 +18,11 @@
 - Semua kebutuhan dukungan harus merujuk master ID Puskeswan.
 - Pengujian mandiri tidak menggantikan tes login, API, keamanan, atau regresi APEL asli.
 
-## Verifikasi
-- GitHub akan menampilkan status workflow apabila Actions aktif pada repo private.
-- Jika workflow tidak jalan karena kebijakan repo/izin, statusnya **BELUM DIEKSEKUSI DI GITHUB**; commit kode bukan bukti tes lulus.
-- Setelah berhasil, catat run/commit di \`docs/WORKLOG.md\` dan \`PROJECT_STATE.md\`.
+## Verifikasi aktual
+- [GitHub Actions run #42837742904](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) = **SUCCESS**.
+- Job `offline-contracts` selesai; langkah `Test synthetic data contracts` dan `Validate linked synthetic fixtures` lulus.
+- Terdapat 10 tes kontrak standar Python. **Belum** ada tes runtime/keamanan Flask legacy.
+- [Commit sumber 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6).
 
 ## Pekerjaan yang tetap terbuka
 - **M00-D:** source Flask 171 file masih berasal dari arsip percakapan, **belum di GitHub**.

@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M00: fondasi kode dan pengujian GitHub SUCCESS
+**Jenis:** coding + data dummy + pengujian CI. **Status:** M00 tetap SEDANG.
+- Menambahkan `foundation/yandik_base/contracts.py` untuk kontrak identitas Puskeswan, APEL bulanan dan kebutuhan bantuan.
+- Membuat 3 file fixture sintetis, validator, 10 tes Python dan workflow GitHub Actions read-only.
+- Tes memeriksa pelaporan ganda, missing vs nol, referensi master Puskeswan, periode, nilai negatif dan kategori bantuan.
+- [Bukti commit 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6) dan [GitHub Actions run 42837742904](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) dengan hasil **SUCCESS**.
+- **Belum:** source Flask legacy 171 file, integrasi ke website, regresi APEL asli, deployment.
+- **Berikutnya:** M00-D impor source langsung via konektor bila memungkinkan; lanjut kode/test independen di GitHub tanpa meminta setup manual.
+
 ## 2026-11-10 | Penetapan cara kerja GitHub-only
 **Jenis:** keputusan + dokumentasi tata kerja.  
 **Status:** M00 SEDANG; progres dokumentasi selesai, source lengkap masih belum ada di GitHub.

@@ -2,6 +2,16 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M01-S1: prototype role/wilayah dan workflow, tes lulus
+**Jenis:** coding, role authorization, audit workflow, pengujian GitHub Actions.  
+**Status:** M01 SEDANG pada prototype, M00 tetap SEDANG menunggu source Flask.
+- `foundation/yandik_base/access.py`: role provinsi, kab/kota, Puskeswan, pimpinan; default deny dan larangan akses lintas wilayah.
+- `foundation/yandik_base/workflow.py`: transisi draf/pengajuan/verifikasi/perbaikan/tindak lanjut, alasan wajib, audit append-only.
+- `foundation/tests/test_access_workflow.py`: 12 tes tambahan; total suite foundation **22 tes**.
+- **Commit:** [9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac). **Pengujian:** [run #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) **SUCCESS**.
+- **Belum:** diterapkan di login/API Flask, database/BAST, ataupun website produksi.
+- **Berikutnya:** integrasi aman bila source lama tersedia, dan komponen master data + pemeriksaan role dengan data dummy.
+
 ## 2026-11-10 | M00: fondasi kode dan pengujian GitHub SUCCESS
 **Jenis:** coding + data dummy + pengujian CI. **Status:** M00 tetap SEDANG.
 - Menambahkan `foundation/yandik_base/contracts.py` untuk kontrak identitas Puskeswan, APEL bulanan dan kebutuhan bantuan.

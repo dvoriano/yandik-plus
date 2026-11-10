@@ -1,6 +1,6 @@
 # M01 | Prototype Peran, Wilayah dan Workflow
 
-**Status M01-S1:** SEDANG (kode prototype offline, **belum** diintegrasikan ke Flask produksi).
+**Status M01-S1:** SEDANG (kode prototype offline **berhasil diuji**, belum terintegrasi Flask produksi). **Bukti:** [commit](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac), [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867), 12 tes baru.
 
 ## Komponen yang dibuat
 - \`foundation/yandik_base/access.py\`: role dan scope wilayah/Puskeswan, default deny.

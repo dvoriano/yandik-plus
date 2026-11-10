@@ -23,6 +23,7 @@
 | DONE-06 | Validator kode awal untuk impor dan panduan | scripts/verify_import.py, docs/IMPORT_OFFLINE.md; **belum mengimpor kode Flask** |
 | DONE-07 | Sistem serah-terima lintas chat dan tata kerja GitHub-only | PROJECT_STATE.md, docs/WORKLOG.md, docs/GITHUB_WORKFLOW.md |
 | DONE-08 | Kode kontrak dan fixture fiktif + tes otomatis | [commit 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6), [GitHub Actions: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) |
+| DONE-09 | Prototype role/wilayah, workflow immutable dan 12 tes tambahan | [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac), [GitHub Actions: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) |
 
 ## B. Sedang dikerjakan (kode/pekerjaan aktif)
 | ID | Pekerjaan | Status tepat | Syarat selesai |
@@ -40,10 +41,9 @@
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul
+## C. Rencana per modul (M01 sudah masuk daftar SEDANG di atas)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M01 | P0 | Core: hak akses wilayah, master Puskeswan, audit dan workflow | M00 | [Core](modules/00_CORE_PLATFORM.md) |
 | M02 | P0 | Profil dan SDM terpadu, sarpras dan obat, asal data | M01 | [Profil](modules/01_PROFIL_PUSKESWAN.md), [SDM](modules/03_SDM_VETERINER.md) |
 | M03 | P0 | Support: kebutuhan, bukti, verifikasi, prioritas | M02 | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M04 | P0 | Support: alokasi sesuai kewenangan, distribusi dan BAST | M03 | [Support](modules/04_SUPPORT_PUSKESWAN.md) |

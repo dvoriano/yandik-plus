@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG (prototype role/territory + workflow offline diuji; belum terintegrasi Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,6 +40,12 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber identitas ini.
+
+## Progres prototype yang sudah terbukti
+- [x] Role/territory check default deny untuk Puskeswan, kab/kota, provinsi, pimpinan.
+- [x] Workflow in-memory dengan audit append-only, koreksi, alasan, dan batas wilayah.
+- [x] 12 tes tambahan pada [CI GitHub: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867).
+- [ ] Adaptasi ke endpoint, database dan pengesahan matriks kewenangan sebenarnya.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

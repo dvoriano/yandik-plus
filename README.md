@@ -15,6 +15,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [Contoh data fiktif](foundation/fixtures/)
 - [GitHub Actions: berhasil](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904)
 
+## M01 prototype (hak akses dan alur kerja)
+- [Peran dan wilayah](foundation/yandik_base/access.py)
+- [Workflow dan audit](foundation/yandik_base/workflow.py)
+- [Pengujian GitHub: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867)
+- [Batasan dan progres M01](docs/M01_PROTOTYPE.md)
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

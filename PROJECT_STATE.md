@@ -4,9 +4,14 @@
 **Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
-**Milestone aktif:** **M00 SEDANG** ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+**Milestone aktif:** **M00 SEDANG** + **M01-S1 SEDANG (prototype)** ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
 ## PEMBARUAN TERBARU | 10 November 2026
+- **M01 kode prototype:** [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac) berisi hak akses berbasis role+wilayah dan alur kerja audit immutable, ditambah 12 tes.
+- **M01 GitHub Actions SUCCESS:** [run #42838727867](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867); tes kontrak dan validator fixture lulus. Total suite foundation: 22 tes.
+- Keputusan: pekerjaan M01 yang bisa dipisah dari Flask lama **SEDANG**, tetapi belum ada perubahan API, izin login, atau database lama. Ini bukan persetujuan resmi.
+- **Next:** lanjut pengembangan Core Platform teruji dengan data dummy, sambil tetap mencatat source Flask M00-D belum diimpor langsung via GitHub.
+
 - **M00 coding:** [commit 2081606](https://github.com/dvoriano/yandik-plus/commit/2081606d0cd4109eb5f45415688ff4a663937fb6) memuat 13 file kontrak Python, fixture anonim, 10 tes dan GitHub workflow.
 - **CI terbukti lulus:** [GitHub Actions run #42837742904](https://github.com/dvoriano/yandik-plus/actions/runs/42837742904) **SUCCESS**; kedua langkah test kontrak dan validasi fixture berhasil.
 - Kontrak yang diuji: identitas Puskeswan stabil, laporan per bulan/Puskeswan, nol berbeda dengan tidak melapor, referensi data Support, penolakan nilai negatif/format salah.
@@ -38,16 +43,18 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] Validator awal `scripts/verify_import.py` ada di branch.
 - [x] Catatan handoff, worklog dan aturan **GitHub-only** dimasukkan ke branch.
 - [x] Kode fondasi `foundation/`, fixture anonim dan 10 tes lulus di GitHub Actions #42837742904.
+- [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
 - **M00 Fondasi repo/source.** Kode kontrak/fixture/tes ada dan CI lulus; source Flask lengkap masih menunggu.
+- **M01 Core Platform.** Prototype otorisasi teritorial dan workflow audit sudah dikode serta diuji; integrasi dan kewenangan resmi belum.
 
 ### BELUM SELESAI / TERBUKA
 - [ ] **Source Flask lengkap belum diimpor ke repository.** Ada snapshot 168 file dan salinan pengembangan 171 file dari percakapan sebelumnya, tetapi *file di chat bukan file GitHub*. Jangan klaim sudah commit.
 - [x] Fixture dummy Profil/APEL/Support dan pengujian kontrak awal tersedia.
 - [ ] Dependensi aplikasi Flask nyata, tes integrasi/runtime, dan regresi hitungan APEL produksi belum selesai.
 - [ ] Audit serta perbaikan otorisasi, password reset/default, upload dan CSRF di kode pengembangan belum selesai.
-- [ ] M01–M16 adalah rencana implementasi; dokumentasinya tidak sama dengan fiturnya telah dibuat.
+- [ ] M01 baru sebatas prototype otorisasi dan workflow tanpa integrasi; M02–M16 masih rencana implementasi, belum menjadi fitur yang berjalan.
 
 ### TERTUNDA khusus
 - Jalur impor melalui ZIP/Windows/PowerShell **tidak digunakan atas instruksi pemilik**. Bila transfer source memerlukan jalur yang tidak tersedia di connector GitHub, kerjakan bagian yang memungkinkan langsung di GitHub, jangan minta manual download/setup.
@@ -55,7 +62,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M01:** mulai komponen Core Platform yang dapat diuji secara independen dari source, lalu Profil/SDM dan Support.
+3. **M01:** lanjut perbaikan kontrak izin dan workflow teruji, kemudian desain master data Profil/SDM dan Support tanpa menyentuh Flask aktif.
 
 
 ## DOKUMEN RUJUKAN

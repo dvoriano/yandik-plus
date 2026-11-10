@@ -1,0 +1,22 @@
+[
+  {
+    "sdm_id": "DEMO-SDM-001",
+    "jenis": "dokter_hewan",
+    "aktif": true
+  },
+  {
+    "sdm_id": "DEMO-SDM-002",
+    "jenis": "paramedik",
+    "aktif": true
+  },
+  {
+    "sdm_id": "DEMO-SDM-003",
+    "jenis": "dokter_hewan",
+    "aktif": true
+  },
+  {
+    "sdm_id": "DEMO-SDM-004",
+    "jenis": "paramedik",
+    "aktif": false
+  }
+]

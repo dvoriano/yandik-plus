@@ -1,30 +1,26 @@
-# YANDIK+ | Development Workspace
+# YANDIK+ | Pusat Pengembangan GitHub
 
-> **Status:** offline development only. Production at https://yandikvo.my.id/ is **not connected** to this GitHub repository.
+> Website produksi https://yandikvo.my.id/ **tidak diubah**. Pengembangan dilakukan secara offline, tanpa VPS, database produksi, atau deployment otomatis.
 
-## Mission
-Build the next version of YANDIK+ progressively in GitHub, using the current Flask application snapshot as the functional baseline. No VPS connection, no live database, no automatic deployment, and no changes to the existing website until funding, testing, and formal approval are available.
+## Mulai dari sini
+1. **[Masterplan](MASTERPLAN.md):** visi satu ruang kerja paperless seluruh aktivitas teknis.
+2. **[Roadmap & Progres](ROADMAP.md):** satu sumber status SELESAI, SEDANG, RENCANA, TERTUNDA, DIBATALKAN.
+3. **[Katalog Modul](MODULES_INDEX.md):** tautan spesifikasi tersendiri untuk 15 modul.
+4. **[Riwayat Perubahan](CHANGELOG_ROADMAP.md):** menambah, mengedit, menunda atau menghapus rencana dengan jejak keputusan.
+5. **[UX ramah petugas](UX_PAPERLESS.md) dan [Workflow](WORKFLOW_ENGINE.md):** standar lintas modul.
 
-## Existing baseline (snapshot provided 10 Nov 2026)
-- Python 3.12; Flask-style `app.py` served by Gunicorn and Caddy in production, based on earlier operator inspection.
-- Source snapshot contains **168 files** including `app.py`, `core/`, `modules/`, `templates/`, and `static/`; snapshot was sanitized separately from production.
-- APEL Puskeswan, profiles, SDM, authentication, master platform, and web templates are present in the baseline.
-- `modules/pengawasan` and `modules/klinik` contain starter blueprints, **not finished implementations**.
-- Original runtime data and `data/config.json`, `data/puskeswan_list.json`, `uploads/`, and private configuration are **not** included. This snapshot is not a deployable environment as-is.
+## Apa yang sudah ada?
+- Source snapshot Flask aplikasi tersedia sebagai arsip kerja yang sebelumnya diberikan pengguna, dengan paket offline 171 file.
+- **Source aplikasi tersebut belum diimpor ke branch GitHub ini** saat penulisan dokumen, sehingga belum dapat diklaim seluruh fitur telah diuji atau tersedia sebagai repo runnable.
+- Branch pengembangan: `develop/yandik-foundation` dengan PR #9 status draft. Branch `main` tetap terpisah.
+- Sebagian APEL, profiling, SDM, master wilayah, serta halaman/modul awal pengawasan ada dalam snapshot. Detail masing-masing ada dalam dokumen modul.
 
-## Rules
-1. **Production is frozen:** no SSH, no service restart, no DB write or migration in production, no deployment from GitHub.
-2. **Separate from Indodax bot:** no shared repositories, keys, environments, services or workflows.
-3. **Development uses dummy/anonymous data only.** Exclude secrets, tokens, personal information, production files and backups.
-4. **`main` is protected by process:** work in feature branches, test, review in PRs; never push directly to `main` for product changes.
-5. Each feature needs specification, schema/migration proposal, tests, and rollback/deployment notes before it is considered ready.
-6. Later deployment requires separate approval and a staging rehearsal.
+## Aturan operasional
+- Tidak ada koneksi ke VPS YANDIK+ atau VPS bot Indodax.
+- Tidak mengunggah `data/`, `uploads/`, `backups/`, log, data pribadi, akun, token, password, kredensial dan rahasia runtime.
+- Gunakan dummy data, sample config dan tes offline.
+- Pekerjaan baru melalui GitHub issue/branch/PR, dengan bukti tes untuk memindahkan status.
+- Satu status roadmap induk, dan keputusan perubahan wajib dicatat; tidak perlu menciptakan master roadmap lain yang bersaing.
 
-## Entry points
-- [Roadmap](ROADMAP.md)
-- [Backlog and acceptance criteria](BACKLOG.md)
-- [Support Puskeswan specification](SUPPORT_PUSKESWAN.md)
-- [Architecture and baseline constraints](ARCHITECTURE.md)
-- [Data boundary and security debt](SECURITY_AND_DATA.md)
-
-**Current repository state:** this branch initially holds development documentation; **the full code snapshot has not yet been imported into GitHub**. Do not confuse it with the running website.
+## Dokumen teknis sebelumnya
+[BACKLOG.md](BACKLOG.md) · [ARCHITECTURE.md](ARCHITECTURE.md) · [SECURITY_AND_DATA.md](SECURITY_AND_DATA.md) · [SUPPORT_PUSKESWAN.md](SUPPORT_PUSKESWAN.md) · [IMPORT_OFFLINE.md](IMPORT_OFFLINE.md).

@@ -33,6 +33,8 @@ export function startDemo() {
       history: [{ action: "ajukan", actor: "Petugas Puskeswan", version: 1 }],
     }],
     nextId: 2,
+    problems: [],
+    nextProblemId: 1,
   };
 }
 

@@ -45,7 +45,7 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [x] Model kebutuhan yang wajib merujuk masalah terverifikasi melalui `problem_id` dan ID Puskeswan yang sama; tidak menyalin deskripsi.
 - [x] Field contoh: kategori, barang, jumlah, satuan, urgensi, alasan, status & histori.
 - [x] Draf, pengajuan, koreksi, verifikasi, penolakan dan tes akses role wilayah pada data fiktif.
-- [x] UI mobile-first demo dan 15 tes Node + 3 tes browser baru; [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) (status seluruh job wajib diperiksa).
+- [x] UI mobile-first demo dan 15 tes Node + 3 tes browser baru; [GitHub Actions SUCCESS: 137 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - [ ] Skor prioritas adil, dokumen bukti, verifikasi resmi, database, autentikasi, integrasi, alokasi dan BAST belum dibuat.
 - [Rincian M03-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_LINKED_SUPPORT_NEEDS.md).
 

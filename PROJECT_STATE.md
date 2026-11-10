@@ -1,6 +1,6 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 10 November 2026, WIB  
+**Terakhir diperbarui:** 11 November 2026, WIB  
 **Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
@@ -9,7 +9,7 @@
 ## PEMBARUAN M03-S1 (TERBARU) | 11 November 2026
 - **M03 Support mulai DIKERJAKAN, prototype:** [model & 15 tes](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926) membuat usulan kebutuhan yang merujuk `problem_id` terverifikasi, bukan menduplikasi profil/masalah atau menyetujui bantuan.
 - [UI dan 3 tes browser baru](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7): tombol "Usulkan kebutuhan" pada masalah terverifikasi, form kategori/barang/jumlah/satuan/urgensi/alasan, draf, ajukan, review, koreksi/tolak.
-- [GitHub Actions #42862087552](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552): harus dicek semua job sebelum mengklaim 3 job hijau. 65 Python dan 60 Node (45 lama+15 baru) telah lulus; 12 tes browser (9 lama+3 baru) sedang dijalankan saat kode dirapikan.
+- **CI final:** [GitHub Actions #42862700052](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052) **SUCCESS**. Ketiga job lulus: **65 Python + 60 Node + 12 Chromium = 137 tes otomatis**; validator fixture berhasil.
 - **Dokumen tersendiri:** [M03_LINKED_SUPPORT_NEEDS.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_LINKED_SUPPORT_NEEDS.md), [Support Puskeswan](docs/modules/04_SUPPORT_PUSKESWAN.md).
 - **Kewenangan:** masalah tervalidasi ≠ pengajuan kebutuhan; kebutuhan terverifikasi ≠ keputusan anggaran/penetapan alokasi/BAST. M04 tetap RENCANA.
 - **Source Flask legacy 171 file belum di repo**, tidak ada database/API asli, server auth, penggunaan petugas fisik atau deploy.
@@ -102,7 +102,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] **M02-S2** halaman demo responsive Profil Saya / antrian verifikasi, 20 tes Node dan CI Python+Node [SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
 - [x] **M02-S3** perbaikan draf dan tampilan pimpinan, **6 tes browser** + **25 tes Node** + **65 tes Python** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703), peta 9 kelompok Profiling 2026 sementara.
 - [x] **M02-S4** Permasalahan Puskeswan + sumber SDM/APEL baca-saja, **119 tes Python/Node/Chromium** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
-- [x] **M03-S1** model usulan kebutuhan dari masalah terverifikasi, 15 tes Node baru dan UI antrian, [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) (cek status terakhir).
+- [x] **M03-S1** usulan dari masalah terverifikasi, 15 tes Node dan 3 tes browser tambahan, [GitHub Actions 137 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG

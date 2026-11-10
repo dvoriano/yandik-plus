@@ -45,7 +45,7 @@ Persetujuan anggaran, penentuan penerima, BAST dan evaluasi distribusi adalah pe
 ## Bukti dan batas penyelesaian
 - [Commit model dan tes](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926).
 - [Commit form, antrian dan tes browser](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7).
-- [GitHub Actions #42862087552](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552): status job perlu dicek pada setiap kelanjutan; pencatatan **SUCCESS penuh** baru sah jika ketiga job lulus.
+- [GitHub Actions #42862700052](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052) **SUCCESS**: ketiga job lulus, **65 tes Python + 60 tes Node + 12 tes Chromium = 137 tes otomatis**, validator fixture lulus.
 
 ### Yang masih belum
 - [ ] Source Flask legacy 171 file belum tersedia di GitHub, sehingga belum ada adaptasi API/DB.

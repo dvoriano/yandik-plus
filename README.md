@@ -53,7 +53,7 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 ## M03-S1: Support Puskeswan, usulan dari masalah
 - [Kontrak kebutuhan & verifikasi tanpa alokasi](prototypes/profil-puskeswan/support_needs.mjs)
 - [Alur dan kewenangan](docs/M03_LINKED_SUPPORT_NEEDS.md)
-- [Tes GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552): unit dan browser; lihat status run untuk hasil lengkap.
+- [GitHub Actions: 137 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052) (65 Python, 60 Node, 12 Chromium).
 - M03 **SEDANG sebagai prototype**, M04 alokasi dan distribusi tetap RENCANA.
 
 ## Dokumen desain

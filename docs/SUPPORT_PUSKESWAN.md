@@ -54,7 +54,7 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 
 ## Realisasi terbatas M03-S1 | 11 November 2026
 - [x] Prototype `support_needs.mjs`, usulan dari masalah terverifikasi, form dan antrian verifikator terpisah.
-- [x] 15 tes Node untuk kontrak model dan 3 tes browser tambahan, [Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) (cek hasil penuh).
+- [x] 15 tes Node kontrak model dan 3 tes browser tambahan, [GitHub Actions SUCCESS: 137 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - [ ] Belum skema DB/Flask, bukti foto, verifikasi pejabat sebenarnya, peringkat prioritas/adil, paket, distribusi, BAST dan efektivitas.
 - Kategori, satuan dan urgensi masih daftar contoh yang dapat direvisi; urgensi tinggi/darurat tidak memicu alokasi otomatis.
 - [Rincian](M03_LINKED_SUPPORT_NEEDS.md).

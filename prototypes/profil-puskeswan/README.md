@@ -24,7 +24,7 @@
 - Petugas memilih **Usulkan kebutuhan** pada masalah yang telah diverifikasi, mengisi item, kategori, jumlah, satuan, urgensi, alasan, simpan draf atau ajukan.
 - Verifikator membaca usulan (draf belum terlihat), meminta perbaikan/menolak dengan alasan, atau memverifikasi kebutuhan tanpa menyetujui dana.
 - `support_needs.mjs` dan `tests/support_needs.test.mjs`: 15 tes baru, termasuk anti-duplikasi dan anti-alokasi.
-- `tests/browser.test.mjs` memuat 3 pengujian UI baru. [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552).
+- `tests/browser.test.mjs` memuat 3 tes UI baru; [GitHub Actions SUCCESS: 137 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - Tidak ada API, database, keputusan anggaran, pengadaan maupun pengiriman bantuan.
 - [Dokumentasi](../../docs/M03_LINKED_SUPPORT_NEEDS.md).
 

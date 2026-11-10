@@ -20,6 +20,14 @@
 - `tests/browser.test.mjs`: 3 tes Chromium baru (total 9 browser).
 - [GitHub Actions: 119 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101), [dokumentasi](../../docs/M02_PROBLEMS_AND_REFERENCES.md).
 
+## Tambahan M03-S1: Usulan kebutuhan Support
+- Petugas memilih **Usulkan kebutuhan** pada masalah yang telah diverifikasi, mengisi item, kategori, jumlah, satuan, urgensi, alasan, simpan draf atau ajukan.
+- Verifikator membaca usulan (draf belum terlihat), meminta perbaikan/menolak dengan alasan, atau memverifikasi kebutuhan tanpa menyetujui dana.
+- `support_needs.mjs` dan `tests/support_needs.test.mjs`: 15 tes baru, termasuk anti-duplikasi dan anti-alokasi.
+- `tests/browser.test.mjs` memuat 3 pengujian UI baru. [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552).
+- Tidak ada API, database, keputusan anggaran, pengadaan maupun pengiriman bantuan.
+- [Dokumentasi](../../docs/M03_LINKED_SUPPORT_NEEDS.md).
+
 ## Struktur
 - \`index.html\`: struktur semantik, label, skip link, form dan pesan status.
 - \`style.css\`: tampilan mobile-first dan responsif, tombol lebar, status teks (tak mengandalkan warna saja).

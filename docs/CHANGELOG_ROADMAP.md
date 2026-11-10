@@ -1,3 +1,8 @@
+## 2026-11-11 | M03 mulai fase prototype
+- M03 dari **RENCANA** menjadi **SEDANG (prototype)** karena kode usulan kebutuhan dari masalah terverifikasi dan form demo sudah dibuat [model](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926), [UI](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7).
+- Tidak mengubah rencana cakupan M04: bantuan nyata, alokasi, BAST dan distribusi tetap RENCANA. Verifikasi kebutuhan tidak berarti keputusan penyaluran.
+- [Dokumen keputusan](M03_LINKED_SUPPORT_NEEDS.md), [tes](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552).
+
 # Riwayat Keputusan dan Perubahan Roadmap YANDIK+
 
 **Tujuan:** perubahan rencana dapat ditambah, direvisi, ditunda, atau dihapus dari scope aktif tanpa kehilangan jejak keputusan.

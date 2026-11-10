@@ -50,6 +50,11 @@ Verifikator pada role demonstrasi:
 - [ ] Belum ada verifikasi field-level Profiling 2026 terhadap source/DB asli.
 - [ ] Tidak ada deployment, publikasi GitHub Pages maupun perubahan pada branch \`main\`.
 
+## Perkembangan lintas modul M03-S1
+- [x] Kode demo `support_needs.mjs` kini dapat membuat usulan **terpisah** yang merujuk masalah terverifikasi.
+- [x] Link via `problem_id`, histori, pencegahan duplikasi barang aktif, validasi role dan jumlah, review kebutuhan dengan alasan.
+- [ ] Keputusan bantuan, pendanaan, BAST dan distribusi tetap tidak ada. [Dokumen M03-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_LINKED_SUPPORT_NEEDS.md).
+
 ## Lanjutan yang aman
 1. Kembangkan model data **Masalah → Kebutuhan Support** hanya sebagai referensi satu arah dengan riwayat dan izin terpisah, tanpa otomatis menyetujui bantuan.
 2. Tambahkan validasi aksesibilitas UI (keyboard, teks, label, fokus, error) di GitHub Actions.

@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S1: usulan Support dari masalah terverifikasi
+**Jenis:** coding demo, 15 tes Node, formulir, 3 tes browser, dokumentasi per modul. **Status:** M03 SEDANG, M04 RENCANA.
+- [Commit model](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926) membuat `support_needs.mjs`, sumber dari `problem_id`, ruang lingkup dan histori, proteksi duplikasi kebutuhan aktif, larangan approval otomatis.
+- [Commit UI](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7) memasang tombol pada masalah yang telah diverifikasi, draf/ajukan usulan, antrian verifikasi dan pengujian Chromium.
+- [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) untuk 65 Python + 60 Node + 12 browser; **konfirmasi hasil seluruh job** sebelum menandai semuanya SUCCESS.
+- [Dokumen M03-S1](M03_LINKED_SUPPORT_NEEDS.md) memisahkan status kebutuhan terverifikasi dari keputusan bantuan/anggaran/BAST.
+- Belum source Flask 171 file, API/DB, autentikasi, bukti lampiran, prioritas objektif, persetujuan bantuan, distribusi maupun HP fisik.
+- Next: kategori/kriteria bukti dan anti-duplikasi, skor penilaian adil dengan manual override; produksi tetap utuh.
+
 ## 2026-11-10 | M02-S4: Permasalahan, SDM/APEL baca-saja, 119 tes otomatis lulus
 **Jenis:** coding model dan UI browser di GitHub, unit test Node, E2E Chromium, dokumentasi. **Status:** M02 SEDANG (prototype), M03/M04 masih rencana.
 - [Commit model dan 20 tes baru](https://github.com/dvoriano/yandik-plus/commit/c973bdc3f744805b39c9cd39447cca185444ba95): register masalah 6 kategori, draf→ajukan→perbaikan→terverifikasi→tindak lanjut→selesai; 6 pemeriksaan sumber data fiktif baca-saja.

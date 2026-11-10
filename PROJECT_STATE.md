@@ -4,9 +4,19 @@
 **Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
-**Milestone aktif:** **M00, M01 dan M02 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+**Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M02-S4 (TERBARU) | 10 November 2026
+## PEMBARUAN M03-S1 (TERBARU) | 11 November 2026
+- **M03 Support mulai DIKERJAKAN, prototype:** [model & 15 tes](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926) membuat usulan kebutuhan yang merujuk `problem_id` terverifikasi, bukan menduplikasi profil/masalah atau menyetujui bantuan.
+- [UI dan 3 tes browser baru](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7): tombol "Usulkan kebutuhan" pada masalah terverifikasi, form kategori/barang/jumlah/satuan/urgensi/alasan, draf, ajukan, review, koreksi/tolak.
+- [GitHub Actions #42862087552](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552): harus dicek semua job sebelum mengklaim 3 job hijau. 65 Python dan 60 Node (45 lama+15 baru) telah lulus; 12 tes browser (9 lama+3 baru) sedang dijalankan saat kode dirapikan.
+- **Dokumen tersendiri:** [M03_LINKED_SUPPORT_NEEDS.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_LINKED_SUPPORT_NEEDS.md), [Support Puskeswan](docs/modules/04_SUPPORT_PUSKESWAN.md).
+- **Kewenangan:** masalah tervalidasi ≠ pengajuan kebutuhan; kebutuhan terverifikasi ≠ keputusan anggaran/penetapan alokasi/BAST. M04 tetap RENCANA.
+- **Source Flask legacy 171 file belum di repo**, tidak ada database/API asli, server auth, penggunaan petugas fisik atau deploy.
+- **Next:** tes bukti/duplikasi dan rancangan prioritas yang adil, sambil menjaga otorisasi & peran sesuai kedinasan.
+- **Batas:** hanya GitHub development branch, data fiktif; tidak menyentuh VPS, `main`, atau website.
+
+## PEMBARUAN M02-S4 | 10 November 2026
 - **Modul Permasalahan Puskeswan (prototype):** [commit c973bdc](https://github.com/dvoriano/yandik-plus/commit/c973bdc3f744805b39c9cd39447cca185444ba95) membuat `problems.mjs` dengan draf, pengajuan, perbaikan, verifikasi, tindak lanjut dan selesai, disertai histori. **Verifikasi masalah bukan persetujuan bantuan/anggaran**.
 - **Ringkasan baca-saja SDM/APEL:** `source_snapshots.mjs` menyediakan **data contoh** berdasarkan ID Puskeswan. APEL nol vs belum melapor dibedakan; tidak ada form input ganda atau total pelayanan resmi palsu. **Bukan koneksi database produksi**.
 - **Halaman dan tes:** [commit f06ee93](https://github.com/dvoriano/yandik-plus/commit/f06ee93c134eac9f03871a7bf590391a41aee8b1) menambahkan kartu sumber data, daftar masalah, formulir dan 3 tes Chromium baru.
@@ -92,6 +102,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] **M02-S2** halaman demo responsive Profil Saya / antrian verifikasi, 20 tes Node dan CI Python+Node [SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
 - [x] **M02-S3** perbaikan draf dan tampilan pimpinan, **6 tes browser** + **25 tes Node** + **65 tes Python** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42846236703), peta 9 kelompok Profiling 2026 sementara.
 - [x] **M02-S4** Permasalahan Puskeswan + sumber SDM/APEL baca-saja, **119 tes Python/Node/Chromium** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
+- [x] **M03-S1** model usulan kebutuhan dari masalah terverifikasi, 15 tes Node baru dan UI antrian, [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) (cek status terakhir).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
@@ -112,7 +123,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M02/M03:** lanjut model referensi masalah ke kebutuhan Support tanpa otomatis menyetujui bantuan dan tes aksesibilitas UI. Field Profiling final, API dan DB menunggu source Flask asli di GitHub.
+3. **M03:** lanjut validasi bukti/duplikasi dan penilaian prioritas objektif dengan penjelasan, tanpa persetujuan otomatis. UI aksesibilitas dan pemetaan Flask tetap terbuka.
 
 
 ## DOKUMEN RUJUKAN

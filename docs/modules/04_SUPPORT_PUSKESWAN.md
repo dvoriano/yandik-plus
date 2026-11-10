@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04 tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -41,17 +41,26 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S1
+- [x] Model kebutuhan yang wajib merujuk masalah terverifikasi melalui `problem_id` dan ID Puskeswan yang sama; tidak menyalin deskripsi.
+- [x] Field contoh: kategori, barang, jumlah, satuan, urgensi, alasan, status & histori.
+- [x] Draf, pengajuan, koreksi, verifikasi, penolakan dan tes akses role wilayah pada data fiktif.
+- [x] UI mobile-first demo dan 15 tes Node + 3 tes browser baru; [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42862087552) (status seluruh job wajib diperiksa).
+- [ ] Skor prioritas adil, dokumen bukti, verifikasi resmi, database, autentikasi, integrasi, alokasi dan BAST belum dibuat.
+- [Rincian M03-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_LINKED_SUPPORT_NEEDS.md).
+
 ## 8. Checklist pengembangan
-- [ ] MOD-04-01: Definisikan kategori kebutuhan dan data minimum
+- [x] MOD-04-01: Kategori dan data minimum **untuk prototype** ditentukan; perlu review kedinasan sebelum final.
 - [ ] MOD-04-02: Susun kriteria prioritas yang adil bagi Puskeswan terpencil
-- [ ] MOD-04-03: Buat form usulan serta verifikasi dan alasan koreksi
+- [x] MOD-04-03: Form usulan + verifikasi dan alasan koreksi **sebagai prototype fiktif**, belum aplikasi resmi.
 - [ ] MOD-04-04: Bangun simulasi penetapan dan rencana paket bantuan
 - [ ] MOD-04-05: Buat pencatatan distribusi, BAST dan evaluasi menggunakan data dummy
 
 ## Batas modul dengan M02-S4
-M02 kini memiliki **prototype register Permasalahan Puskeswan** di browser dengan data DEMO. Itu **tidak sama dengan pengajuan kebutuhan, prioritas bantuan, keputusan alokasi, serah terima atau BAST**. M03/M04 tetap RENCANA; nantinya kebutuhan Support boleh merujuk `problem_id`, tanpa auto-approval atau auto-budgeting.
+M02 kini memiliki **prototype register Permasalahan Puskeswan** di browser dengan data DEMO. Itu **tidak sama dengan pengajuan kebutuhan, prioritas bantuan, keputusan alokasi, serah terima atau BAST**. M03 **SEDANG (prototype)**, M04 tetap **RENCANA**. Referensi kebutuhan ke `problem_id` sudah ada di kode fiktif, tanpa auto-approval atau auto-budgeting.
 - [x] Domain sumber masalah teridentifikasi sebagai prototype M02-S4 [bukti](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md).
-- [ ] Tautan transaksi problem → kebutuhan Support, verifikasi bantuan, distribusi dan BAST belum dibuat.
+- [x] Tautan **model prototype** problem → kebutuhan dan verifikasi kebutuhan tersedia (bukan transaksi database resmi).
+- [ ] Prioritas akhir, keputusan bantuan sah, distribusi dan BAST belum dibuat.
 
 ## 9. Kriteria selesai
 Simulasi satu bantuan dapat ditelusuri dari sumber kebutuhan sampai BAST dan dampaknya; tidak ada penetapan bantuan otomatis tanpa kewenangan manusia.

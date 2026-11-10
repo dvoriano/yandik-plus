@@ -156,6 +156,65 @@
         </form>
       </section>
     </section>
+
+    <section id="needs-panel" class="problems-panel" aria-labelledby="needs-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="needs-title">Usulan Kebutuhan Support</h2>
+          <p class="muted">Mulai dari masalah yang sudah diverifikasi. Tidak ada persetujuan dana atau distribusi otomatis.</p>
+          <p id="need-counter" class="small muted"></p>
+        </div>
+      </div>
+      <div id="need-list" class="cards" aria-label="Usulan kebutuhan yang merujuk masalah"></div>
+      <section id="need-form-panel" class="panel editor" aria-labelledby="need-form-title" hidden>
+        <div class="section-heading">
+          <h3 id="need-form-title">Usulkan kebutuhan dari permasalahan</h3>
+          <button id="cancel-need" class="text-button" type="button">Tutup</button>
+        </div>
+        <p id="need-context" class="muted"></p>
+        <form id="need-form">
+          <label for="need-category">Kategori kebutuhan</label>
+          <select id="need-category" required></select>
+          <label for="need-item">Barang atau kebutuhan yang diusulkan</label>
+          <input id="need-item" type="text" minlength="5" maxlength="120" required placeholder="Contoh: Coolbox untuk vaksin">
+          <div class="grid-form">
+            <div>
+              <label for="need-quantity">Jumlah</label>
+              <input id="need-quantity" type="number" min="1" max="1000" step="1" required>
+            </div>
+            <div>
+              <label for="need-unit">Satuan</label>
+              <input id="need-unit" type="text" minlength="2" maxlength="30" required value="unit">
+            </div>
+          </div>
+          <label for="need-urgency">Tingkat kebutuhan</label>
+          <select id="need-urgency" required></select>
+          <label for="need-reason">Alasan usulan</label>
+          <textarea id="need-reason" rows="3" minlength="10" maxlength="500" required placeholder="Jelaskan mengapa bantuan diperlukan berdasarkan permasalahan yang telah dicatat."></textarea>
+          <p class="small muted">Verifikasi kebutuhan hanya untuk pencatatan dan kajian. Tidak ada keputusan anggaran, pengadaan atau BAST di demo ini.</p>
+          <div class="form-actions">
+            <button type="submit" class="secondary" name="intent" value="save">Simpan draf kebutuhan</button>
+            <button type="submit" class="primary" name="intent" value="submit">Ajukan kebutuhan</button>
+          </div>
+        </form>
+      </section>
+      <section id="need-review-panel" class="panel editor" aria-labelledby="need-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="need-review-title">Verifikasi Usulan Kebutuhan</h3>
+          <button id="cancel-need-review" class="text-button" type="button">Tutup</button>
+        </div>
+        <p id="need-review-context" class="muted"></p>
+        <form id="need-review-form">
+          <label for="need-review-notes">Catatan verifikasi</label>
+          <textarea id="need-review-notes" rows="3" maxlength="300" placeholder="Wajib diisi jika meminta perbaikan atau menolak."></textarea>
+          <div class="form-actions">
+            <button id="need-review-correction" type="submit" class="secondary" name="decision" value="perlu_perbaikan">Minta perbaikan kebutuhan</button>
+            <button id="need-review-reject" type="submit" class="danger" name="decision" value="ditolak">Tolak kebutuhan</button>
+            <button id="need-review-verify" type="submit" class="primary" name="decision" value="terverifikasi">Verifikasi kebutuhan</button>
+          </div>
+        </form>
+      </section>
+    </section>
     <section id="review-panel" aria-labelledby="review-title" hidden>
       <div class="section-heading">
         <div>

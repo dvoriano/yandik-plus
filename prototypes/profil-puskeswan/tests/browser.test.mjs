@@ -12,6 +12,7 @@ const allowedFiles = new Map([
   ["/model.mjs", ["model.mjs", "text/javascript; charset=utf-8"]],
   ["/problems.mjs", ["problems.mjs", "text/javascript; charset=utf-8"]],
   ["/source_snapshots.mjs", ["source_snapshots.mjs", "text/javascript; charset=utf-8"]],
+  ["/support_needs.mjs", ["support_needs.mjs", "text/javascript; charset=utf-8"]],
 ]);
 let server;
 let browser;
@@ -247,6 +248,68 @@ test("pimpinan tidak melihat daftar masalah, sumber SDM/APEL atau identitas Pusk
     assert.equal(await page.locator("#problem-list").innerHTML(), "");
     assert.equal(await page.locator("#source-sdm").innerHTML(), "");
     assert.equal(await page.locator("#source-apel").innerHTML(), "");
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+
+
+test("usulan kebutuhan wajib berasal dari masalah terverifikasi, bukan masalah draf", async () => {
+  const { page, errors } = await openDemo({ width: 320, height: 640 });
+  try {
+    await page.getByRole("button", { name: "Catat masalah" }).click();
+    await page.locator("#problem-category").selectOption("peralatan");
+    await page.locator("#problem-title").fill("Kulkas vaksin rusak");
+    await page.locator("#problem-description").fill("Pendingin vaksin rusak dan tidak bisa digunakan.");
+    await page.getByRole("button", { name: "Ajukan masalah" }).click();
+    assert.equal(await page.getByRole("button", { name: /Usulkan kebutuhan dari masalah/ }).count(), 0);
+    await page.locator("#role").selectOption("verifikator_kab");
+    await page.getByRole("button", { name: "Verifikasi masalah #1" }).click();
+    await page.getByRole("button", { name: "Verifikasi masalah", exact: true }).click();
+    await page.locator("#role").selectOption("petugas");
+    assert.equal(await page.getByRole("button", { name: "Usulkan kebutuhan dari masalah #1" }).count(), 1);
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+
+test("masalah terverifikasi → draf kebutuhan → ajukan → verifikasi tanpa auto-approval", async () => {
+  const { page, errors } = await openDemo({ width: 375, height: 812 });
+  try {
+    await page.getByRole("button", { name: "Catat masalah" }).click();
+    await page.locator("#problem-category").selectOption("peralatan");
+    await page.locator("#problem-title").fill("Pendingin vaksin rusak");
+    await page.locator("#problem-description").fill("Pendingin vaksin tidak berfungsi dan perlu penanganan.");
+    await page.getByRole("button", { name: "Ajukan masalah" }).click();
+    await page.locator("#role").selectOption("verifikator_prov");
+    await page.getByRole("button", { name: "Verifikasi masalah #1" }).click();
+    await page.getByRole("button", { name: "Verifikasi masalah", exact: true }).click();
+    await page.locator("#role").selectOption("petugas");
+    await page.getByRole("button", { name: "Usulkan kebutuhan dari masalah #1" }).click();
+    await page.locator("#need-category").selectOption("rantai_dingin");
+    await page.locator("#need-item").fill("Coolbox untuk vaksin");
+    await page.locator("#need-quantity").fill("2");
+    await page.locator("#need-unit").fill("unit");
+    await page.locator("#need-urgency").selectOption("tinggi");
+    await page.locator("#need-reason").fill("Pendingin rusak dan tidak dapat menampung vaksin.");
+    await page.getByRole("button", { name: "Simpan draf kebutuhan" }).click();
+    assert.match(await page.locator('#need-list [data-need-id="1"]').innerText(), /Draf kebutuhan/);
+    await page.getByRole("button", { name: "Lanjutkan usulan #1" }).click();
+    await page.getByRole("button", { name: "Ajukan kebutuhan" }).click();
+    await page.locator("#role").selectOption("verifikator_kab");
+    await page.getByRole("button", { name: "Periksa kebutuhan #1" }).click();
+    await page.getByRole("button", { name: "Verifikasi kebutuhan", exact: true }).click();
+    assert.match(await page.locator('#need-list [data-need-id="1"]').innerText(), /Kebutuhan terverifikasi, belum diputuskan/);
+    assert.match(await page.locator("#notice").innerText(), /Belum ada keputusan alokasi/);
+    assert.equal(await page.locator("#need-list").innerText().then(x => x.includes("BAST")), false);
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+
+test("pimpinan tidak merender rincian kebutuhan Support", async () => {
+  const { page, errors } = await openDemo();
+  try {
+    await page.locator("#role").selectOption("pimpinan");
+    assert.equal(await page.locator("#needs-panel").isVisible(), false);
+    assert.equal(await page.locator("#need-list").innerHTML(), "");
     assert.deepEqual(errors, []);
   } finally { await page.close(); }
 });

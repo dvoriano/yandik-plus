@@ -7,12 +7,18 @@ import {
   reviewProblem, followUpProblem, problemCounts,
 } from "./problems.mjs";
 import { DEMO_APEL_PERIODS, sourceSummary } from "./source_snapshots.mjs";
+import {
+  NEED_CATEGORIES, URGENCY, NEED_STATUS, visibleNeeds, createOrEditNeed,
+  verifyNeed, supportCounts,
+} from "./support_needs.mjs";
 
 let state = startDemo();
 let editing = null;
 let reviewing = null;
 let editingProblem = null;
 let reviewingProblem = null;
+let editingNeed = null;
+let reviewingNeed = null;
 
 const $ = (id) => document.getElementById(id);
 function element(tag, className, text) {
@@ -191,6 +197,11 @@ function renderProblems() {
       card.append(element("p", "small muted", "Catatan terakhir: " + problem.note));
     const bottom = element("div", "detail");
     bottom.append(element("span", "", "Masalah DEMO #" + problem.id + " · Revisi " + problem.version));
+    if (actor === "petugas" && ["tercatat", "ditindaklanjuti"].includes(problem.status)) {
+      const link = makeButton("Usulkan kebutuhan", () => openNeedEditor(problem.id));
+      link.setAttribute("aria-label", "Usulkan kebutuhan dari masalah #" + problem.id);
+      bottom.append(link);
+    }
     if (actor === "petugas" && ["draf", "perlu_perbaikan"].includes(problem.status)) {
       const btn = makeButton(problem.status === "draf" ? "Lanjutkan draf" : "Perbaiki masalah",
         () => openProblemEditor(problem.id));
@@ -249,6 +260,102 @@ function closeProblemReview() {
   $("problem-review-panel").hidden = true;
 }
 
+
+function needStatus(status) {
+  const styling = {
+    draf: "muted", diajukan: "wait", perlu_perbaikan: "warn",
+    terverifikasi: "ok", ditolak: "warn",
+  };
+  return element("span", "status " + (styling[status] ?? "warn"),
+    NEED_STATUS[status] ?? "Status tidak dikenal");
+}
+function renderSupportNeeds() {
+  const list = $("need-list");
+  clear(list);
+  const needs = visibleNeeds(state);
+  const counts = supportCounts(state);
+  $("need-counter").textContent = counts.total + " kebutuhan dalam simulasi; " +
+    counts.waiting + " menunggu verifikasi.";
+  if (!needs.length) {
+    const blank = element("article", "card");
+    blank.append(element("h3", "", "Belum ada usulan kebutuhan"),
+      element("p", "muted", state.role === "petugas"
+        ? "Verifikasi permasalahan lebih dahulu, lalu pilih 'Usulkan kebutuhan'."
+        : "Belum ada kebutuhan yang diajukan oleh Puskeswan simulasi."));
+    list.append(blank);
+    return;
+  }
+  for (const need of needs) {
+    const card = element("article", "card");
+    card.dataset.needId = String(need.id);
+    const head = element("div", "card-top");
+    head.append(element("h3", "", need.item), needStatus(need.status));
+    const linked = state.problems.find((x) => x.id === need.problem_id);
+    card.append(head,
+      element("p", "small muted", "Merujuk masalah #" + need.problem_id +
+        " · " + (linked?.title ?? "Referensi tidak tersedia")),
+      element("p", "current", "Jumlah: " + need.quantity + " " + need.unit + " · " +
+        "Urgensi: " + (URGENCY.find((x) => x.id === need.urgency)?.label ?? "Belum jelas")),
+      element("p", "current", need.reason));
+    if (need.note && ["perlu_perbaikan", "ditolak"].includes(need.status))
+      card.append(element("p", "small muted", "Alasan verifikator: " + need.note));
+    const bottom = element("div", "detail");
+    bottom.append(element("span", "", "Kebutuhan DEMO #" + need.id + " · Revisi " + need.version));
+    if (state.role === "petugas" && ["draf", "perlu_perbaikan"].includes(need.status)) {
+      const button = makeButton(need.status === "draf" ? "Lanjutkan usulan" : "Perbaiki usulan",
+        () => openNeedEditor(need.problem_id, need.id));
+      button.setAttribute("aria-label", button.textContent + " #" + need.id);
+      bottom.append(button);
+    } else if (["verifikator_kab", "verifikator_prov"].includes(state.role) &&
+      need.status === "diajukan") {
+      const button = makeButton("Periksa kebutuhan", () => openNeedReview(need.id));
+      button.setAttribute("aria-label", "Periksa kebutuhan #" + need.id);
+      bottom.append(button);
+    }
+    card.append(bottom);
+    list.append(card);
+  }
+}
+function openNeedEditor(problemId, needId = null) {
+  if (state.role !== "petugas") return;
+  const p = state.problems.find((x) => x.id === problemId);
+  if (!p) return;
+  if (needId === null && !["tercatat", "ditindaklanjuti"].includes(p.status)) return;
+  const existing = needId === null ? null : state.supportNeeds.find((x) => x.id === needId);
+  editingNeed = { problemId, needId };
+  $("need-context").textContent = "Referensi: Masalah #" + p.id + " · " + p.title +
+    ". Dokumen masalah tidak diduplikasi pada usulan.";
+  $("need-category").value = existing?.category ?? "peralatan";
+  $("need-item").value = existing?.item ?? "";
+  $("need-quantity").value = String(existing?.quantity ?? 1);
+  $("need-unit").value = existing?.unit ?? "unit";
+  $("need-urgency").value = existing?.urgency ?? "sedang";
+  $("need-reason").value = existing?.reason ?? "";
+  $("need-form-panel").hidden = false;
+  $("need-form-panel").scrollIntoView({ block: "nearest" });
+  $("need-item").focus();
+}
+function closeNeedEditor() {
+  editingNeed = null;
+  $("need-form-panel").hidden = true;
+}
+function openNeedReview(id) {
+  if (!["verifikator_kab", "verifikator_prov"].includes(state.role)) return;
+  const need = visibleNeeds(state).find((x) => x.id === id && x.status === "diajukan");
+  if (!need) return;
+  reviewingNeed = id;
+  $("need-review-context").textContent = need.item + " · " + need.quantity + " " + need.unit +
+    ". Terhubung ke masalah #" + need.problem_id + ". Verifikasi bukan persetujuan anggaran.";
+  $("need-review-notes").value = "";
+  $("need-review-panel").hidden = false;
+  $("need-review-panel").scrollIntoView({ block: "nearest" });
+  $("need-review-notes").focus();
+}
+function closeNeedReview() {
+  reviewingNeed = null;
+  $("need-review-panel").hidden = true;
+}
+
 function render() {
   const actor = state.role;
   const isVerifier = actor === "verifikator_kab" || actor === "verifikator_prov";
@@ -260,14 +367,20 @@ function render() {
   $("leader-panel").hidden = !isLeader;
   $("linked-panel").hidden = actor !== "petugas";
   $("problems-panel").hidden = isLeader;
+  $("needs-panel").hidden = isLeader;
   $("add-problem").hidden = actor !== "petugas";
   if (actor === "petugas") renderSourceReadOnly();
   else {
     clear($("source-sdm"));
     clear($("source-apel"));
   }
-  if (!isLeader) renderProblems();
-  else clear($("problem-list"));
+  if (!isLeader) {
+    renderProblems();
+    renderSupportNeeds();
+  } else {
+    clear($("problem-list"));
+    clear($("need-list"));
+  }
   $("page-title").textContent = isVerifier ? "Verifikasi Profil" : isLeader ? "Ringkasan Profil" : "Profil Saya";
   $("page-subtitle").textContent = isVerifier
     ? "Periksa pengajuan dan berikan alasan jika memerlukan perbaikan."
@@ -288,6 +401,8 @@ function render() {
     closeReview();
     closeProblemEditor();
     closeProblemReview();
+    closeNeedEditor();
+    closeNeedReview();
   } else {
     clear($("review-list"));
     renderProfileCards();
@@ -332,6 +447,8 @@ $("role").addEventListener("change", (event) => {
   closeReview();
   closeProblemEditor();
   closeProblemReview();
+  closeNeedEditor();
+  closeNeedReview();
   $("notice").hidden = true;
   render();
 });
@@ -421,6 +538,56 @@ for (const cat of PROBLEM_CATEGORIES) {
   const option = element("option", "", cat.label);
   option.value = cat.id;
   $("problem-category").append(option);
+}
+
+
+$("cancel-need").addEventListener("click", closeNeedEditor);
+$("cancel-need-review").addEventListener("click", closeNeedReview);
+$("need-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!editingNeed || state.role !== "petugas") return;
+  try {
+    const intent = event.submitter?.value ?? "save";
+    state = createOrEditNeed(state, {
+      problem_id: editingNeed.problemId,
+      category: $("need-category").value,
+      item: $("need-item").value,
+      quantity: Number($("need-quantity").value),
+      unit: $("need-unit").value,
+      urgency: $("need-urgency").value,
+      reason: $("need-reason").value,
+    }, intent, editingNeed.needId);
+    closeNeedEditor();
+    render();
+    showNotice(intent === "submit"
+      ? "Usulan kebutuhan dikirim untuk verifikasi, bukan persetujuan bantuan."
+      : "Draf kebutuhan tersimpan dalam simulasi.");
+  } catch (error) {
+    showNotice(error.message, true);
+  }
+});
+$("need-review-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (reviewingNeed == null) return;
+  try {
+    const decision = event.submitter?.value;
+    state = verifyNeed(state, reviewingNeed, decision, $("need-review-notes").value);
+    closeNeedReview();
+    render();
+    showNotice("Hasil pemeriksaan kebutuhan tercatat. Belum ada keputusan alokasi atau BAST.");
+  } catch (error) {
+    showNotice(error.message, true);
+  }
+});
+for (const category of NEED_CATEGORIES) {
+  const option = element("option", "", category.label);
+  option.value = category.id;
+  $("need-category").append(option);
+}
+for (const urgency of URGENCY) {
+  const option = element("option", "", urgency.label);
+  option.value = urgency.id;
+  $("need-urgency").append(option);
 }
 
 $("role").value = state.role;

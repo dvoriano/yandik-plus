@@ -1,0 +1,20 @@
+[
+  {
+    "puskeswan_id": "DEMO-PSW-001",
+    "nama": "Puskeswan Fiktif A",
+    "kab_kota": "Kabupaten Contoh",
+    "status": "aktif"
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-002",
+    "nama": "Puskeswan Fiktif B",
+    "kab_kota": "Kota Contoh",
+    "status": "aktif"
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-003",
+    "nama": "Puskeswan Fiktif C",
+    "kab_kota": "Kabupaten Contoh",
+    "status": "aktif"
+  }
+]

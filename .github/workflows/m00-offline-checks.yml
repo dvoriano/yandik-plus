@@ -1,0 +1,35 @@
+name: M00 - YANDIK+ offline foundation checks
+
+on:
+  push:
+    branches:
+      - develop/yandik-foundation
+    paths:
+      - foundation/**
+      - .github/workflows/m00-offline-checks.yml
+      - .env.example
+  pull_request:
+    branches:
+      - main
+    paths:
+      - foundation/**
+      - .github/workflows/m00-offline-checks.yml
+      - .env.example
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test synthetic data contracts
+        run: python -B -m unittest discover -s foundation/tests -v
+      - name: Validate linked synthetic fixtures
+        run: python -B -m foundation.validate_fixtures

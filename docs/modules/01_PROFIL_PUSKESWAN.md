@@ -40,6 +40,13 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 SDM sebagai sumber tenaga; APEL sebagai sumber statistik pelayanan; Support membaca inventaris dan kesenjangan fasilitas; GIS memakai koordinat fasilitas yang disetujui.
 
+## Progres M02-S2: Tampilan Profil Saya (prototype interaktif)
+- [x] [HTML/CSS/JS mobile-first](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/) untuk petugas dan antrian verifikator, tombol besar dan label bantuan.
+- [x] Status 5 bagian, draf/ajukan/review/perbaikan dapat dicoba pada data fiktif di memori browser.
+- [x] 20 tes model Node serta sintaks JS dan tes Python sebelumnya [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
+- [ ] Uji UX riil, browser E2E, persistensi dan autentikasi API server belum selesai.
+- [Dokumen M02-S2](../M02_UI_DEMO.md).
+
 ## Progres M02-S1: pembaruan profil per bagian
 - [x] Prototype draf/edit/ajukan, verifikasi/koreksi/tolak dengan alasan, akses role/wilayah dan versi optimistis.
 - [x] Status 5 bagian profil dan audit tanpa menimpa catatan terdahulu.

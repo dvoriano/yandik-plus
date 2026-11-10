@@ -31,6 +31,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [Spesifikasi dan alur UX](docs/M02_PROFILE_EDITS.md)
 - [65 tes foundation lulus](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389)
 
+## Prototype antarmuka Profil Puskeswan (M02-S2)
+- [HTML, CSS dan JS halaman Profil Saya + antrian verifikator](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/)
+- [Dokumen status, batasan dan roadmap UI](docs/M02_UI_DEMO.md)
+- [GitHub Actions: Python+Node SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701)
+- **Ini kode demonstrasi, bukan website yang dipublikasikan.** Tidak ada akses VPS/Flask.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

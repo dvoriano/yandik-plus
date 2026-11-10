@@ -6,7 +6,17 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01 dan M02 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M02-S1 (TERBARU) | 10 November 2026
+## PEMBARUAN M02-S2 (TERBARU) | 10 November 2026
+**Progres terbaru:** prototype tampilan **Profil Saya** mobile-first dan **Antrian Verifikasi** sudah dikode langsung di GitHub.
+- **State model & 20 tes Node:** [commit 6c807fa](https://github.com/dvoriano/yandik-plus/commit/6c807fa21fd130e0e28093eedb53623b9520e866), `prototypes/profil-puskeswan/model.mjs`.
+- **UI dan GitHub CI:** [commit 3096d64](https://github.com/dvoriano/yandik-plus/commit/3096d64f2b2d113318ba3ee365abe814c2f6a910) berisi `index.html`, `style.css`, `main.mjs`, panduan dan workflow Python + Node.
+- **CI:** [GitHub Actions #42844096701](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701) **SUCCESS** (job `offline-contracts` dan `profile-ui-demo`). 65 tes Python sebelumnya tetap lulus, ditambah 20 tes model JS. UI HTML/CSS belum diuji oleh manusia pada browser sungguhan.
+- **Apa yang berfungsi dalam demo:** 5 kartu bagian profil, indikator belum lengkap/perlu verifikasi, simpan draf, ajukan, role-switch simulasi, antrian verifikator, koreksi dengan alasan, persetujuan dan perbaikan, tampilan responsif dengan label & teks status.
+- **Status M02 tetap SEDANG (prototype interaktif)**, belum halaman Flask asli. **Pergantian role hanyalah simulasi, BUKAN autentikasi**; penyimpanan hanya memori tab dan hilang saat refresh. Jangan pernah pakai data nyata.
+- **Berikutnya:** review alur UI terhadap standar UX & field Profiling 2026, tambah test markup/interaksi browser, lalu adapter API/DB jika source Flask lama bisa masuk GitHub tanpa VPS/laptop.
+- **M00 masih terhalang:** source Flask lama 171 file belum berada di GitHub. Website produksi, VPS, DB tetap tidak disentuh.
+
+## PEMBARUAN M02-S1 | 10 November 2026
 - **Kode per bagian:** [commit ee9ccee](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8) membuat `foundation/yandik_base/profile_updates.py`, izin `VERIFY_PROFILE`, draf, ajukan, review, alasan koreksi, dan versi perubahan.
 - **Pengujian lulus:** [commit 12007b6](https://github.com/dvoriano/yandik-plus/commit/12007b6d8cc1c96011e0b521510b0adf6d600557), **25 tes baru; 65 tes fondasi** keseluruhan. [GitHub Actions #42842163389](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) **SUCCESS**.
 - **Status M02:** SEDANG (prototype). Ringkasan 5 bagian profil, draft/edit/submit/approval telah diuji; belum ada layar pengguna, API Flask, penyimpanan DB, unggah foto maupun notifikasi.
@@ -59,12 +69,13 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] Kode fondasi `foundation/`, fixture anonim dan 10 tes lulus di GitHub Actions #42837742904.
 - [x] Prototype master Profil/SDM/Sarpras dengan 18 tes tambahan dan total 40 tes foundation, [CI sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
 - [x] **M02-S1** draf profil per bagian, review, scoped auth, audit immutable dan 25 tes tambahan; [CI 65 tes sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389).
+- [x] **M02-S2** halaman demo responsive Profil Saya / antrian verifikasi, 20 tes Node dan CI Python+Node [SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
 - **M00 Fondasi repo/source.** Kode kontrak/fixture/tes ada dan CI lulus; source Flask lengkap masih menunggu.
 - **M01 Core Platform.** Prototype akses wilayah, master data dan workflow tersedia; belum terintegrasi ke Flask.
-- **M02 Profil Puskeswan.** Prototype draf per bagian dan verifikasi teruji di GitHub; UI/DB belum ada.
+- **M02 Profil Puskeswan.** Prototype draf dan verifikasi **serta UI interaktif responsif** ada di GitHub; belum Flask/API/DB, belum uji pengguna.
 
 ### BELUM SELESAI / TERBUKA
 - [ ] **Source Flask lengkap belum diimpor ke repository.** Ada snapshot 168 file dan salinan pengembangan 171 file dari percakapan sebelumnya, tetapi *file di chat bukan file GitHub*. Jangan klaim sudah commit.
@@ -79,7 +90,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M02:** lanjut tampilan prototype Profil Saya dan halaman tugas verifikator yang mudah digunakan; tes contoh pengguna. Tetap tanpa menyentuh Flask aktif.
+3. **M02:** lanjut pengujian UX nyata/aksesibilitas dan pemetaan field Profiling 2026; setelah source Flask tersedia di GitHub barulah membuat API/database staging. Hindari membuat peran simulasi sebagai autentikasi.
 
 
 ## DOKUMEN RUJUKAN

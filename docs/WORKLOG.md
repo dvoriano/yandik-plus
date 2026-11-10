@@ -2,6 +2,16 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M02-S2: Prototype halaman Profil Saya dan antrian verifikator
+**Jenis:** coding frontend demo GitHub-only + test Node, belum ada deployment. **Status:** M02 SEDANG (prototype interaktif).
+- [Commit model & tes](https://github.com/dvoriano/yandik-plus/commit/6c807fa21fd130e0e28093eedb53623b9520e866): 20 tes alur draf, pengajuan, permintaan perbaikan dan review role-switch simulasi.
+- [Commit UI & CI](https://github.com/dvoriano/yandik-plus/commit/3096d64f2b2d113318ba3ee365abe814c2f6a910): HTML semantik, CSS responsif, JS interaktif, 5 bagian profil, status/indikator, antrian review dan panduan.
+- [GitHub Actions #42844096701](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701) **SUCCESS**, job `offline-contracts` dan `profile-ui-demo` berhasil. 65 tes Python sebelumnya dan 20 tes model Node.
+- Demo ini **bukan** login nyata: role picker hanya simulasi, data fiktif, perubahan memori browser hilang ketika refresh. Tidak ada server/API/database.
+- [Dokumen UI demo](M02_UI_DEMO.md), [folder sumber](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/).
+- **Belum:** uji UX dengan petugas manusia, browser E2E, mapping Profiling asli, source Flask legacy, database, deploy.
+- **Next:** periksa aksesibilitas, uji alur mobile secara terkontrol dan mapping komponen real bila source tersedia di GitHub.
+
 ## 2026-11-10 | M02-S1: Profil per bagian dan 65 tes GitHub berhasil
 **Jenis:** coding + unit test, tanpa VPS. **Status:** M02 SEDANG hanya sebagai prototype; M00/M01 masih SEDANG.
 - [Kode](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8): draf satu bagian, submit, review kab/kota/provinsi sesuai wilayah, koreksi, alasan, audit dan proteksi versi lama.

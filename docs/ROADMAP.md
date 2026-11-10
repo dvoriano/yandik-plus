@@ -27,13 +27,14 @@
 
 | DONE-10 | Kontrak master data Puskeswan, SDM/penempatan, profil, sarpras + 18 tes tambahan | [kode](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a), [tes](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854), [GitHub Actions sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) |
 | DONE-11 | Prototype perubahan Profil per bagian, review, 25 tes tambahan | [kode](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8), [tes](https://github.com/dvoriano/yandik-plus/commit/12007b6d8cc1c96011e0b521510b0adf6d600557), [Actions: SUCCESS, 65 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) |
+| DONE-12 | M02-S2 Prototype UI HP Profil Saya + antrian verifikator, 20 tes model Node dan CI | [kode](https://github.com/dvoriano/yandik-plus/commit/3096d64f2b2d113318ba3ee365abe814c2f6a910), [GitHub Actions Python+Node SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701); **belum tes interaksi browser sungguhan** |
 
 ## B. Sedang dikerjakan (kode/pekerjaan aktif)
 | ID | Pekerjaan | Status tepat | Syarat selesai |
 |---|---|---|---|
 | M00 | Fondasi dan source pengembangan GitHub | **SEDANG**: kontrak, fixture dan CI teruji; Flask legacy 171 file belum masuk repo | Source legacy terimpor, dependensi/config anonim dan tes runtime/regresi APEL berhasil |
 | M01 | Core Platform: role/wilayah dan workflow | **SEDANG**: role/workflow dan master Profil/SDM/Sarpras prototype; **40 tes foundation** lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) | Role disepakati; endpoint legacy, transaksi audit dan pengujian akses API tersambung dan lulus |
-| M02 | Profil Puskeswan terpadu | **SEDANG (prototype)**: draf/edit per bagian, pengajuan/verifikasi scoped dan audit, 25 tes baru [CI berhasil](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) | UI ramah HP, data profil asli dipetakan, database serta tes integrasi |
+| M02 | Profil Puskeswan terpadu | **SEDANG (prototype UI)**: draf/review teruji, [UI mobile-first](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/prototypes/profil-puskeswan/), 20 tes Node + 65 tes Python, [Actions sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42844096701) | Validasi UX pengguna HP, field Profiling lama, autentikasi/API/database sebenarnya dan integrasi Flask |
 
 ### M00: subpekerjaan
 - [x] M00-A: buat branch dan draft PR agar `main` tidak berubah

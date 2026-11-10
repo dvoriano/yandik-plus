@@ -44,7 +44,7 @@ Petugas tidak perlu mengisi ulang keseluruhan Profiling Puskeswan ketika hanya k
 - [x] Model draf per bagian dan validasi field.
 - [x] Alur kirim/koreksi/verifikasi dan riwayat.
 - [x] Akses role/area dan proteksi pengiriman versi lama.
-- [ ] GitHub Actions **SUCCESS** untuk kode baru, baru boleh ditandai lulus.
+- [x] 25 tes baru lulus, total 65 tes foundation pada [GitHub Actions #42842163389](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) **SUCCESS**.
 - [ ] Pemetaan field Profiling 2026 yang sebenarnya dari source Flask.
 - [ ] UI HP untuk petugas nonteknis, penyimpanan DB, upload bukti, notifikasi, audit permanen, tes integrasi.
 

@@ -26,12 +26,14 @@
 | DONE-09 | Prototype role/wilayah, workflow immutable dan 12 tes tambahan | [commit 9fe3ce0](https://github.com/dvoriano/yandik-plus/commit/9fe3ce0fd2723fe077cc05aabb634a3df3a1b2ac), [GitHub Actions: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867) |
 
 | DONE-10 | Kontrak master data Puskeswan, SDM/penempatan, profil, sarpras + 18 tes tambahan | [kode](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a), [tes](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854), [GitHub Actions sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) |
+| DONE-11 | Prototype perubahan Profil per bagian, review, 25 tes tambahan | [kode](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8), [tes](https://github.com/dvoriano/yandik-plus/commit/12007b6d8cc1c96011e0b521510b0adf6d600557), [Actions: SUCCESS, 65 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) |
 
 ## B. Sedang dikerjakan (kode/pekerjaan aktif)
 | ID | Pekerjaan | Status tepat | Syarat selesai |
 |---|---|---|---|
 | M00 | Fondasi dan source pengembangan GitHub | **SEDANG**: kontrak, fixture dan CI teruji; Flask legacy 171 file belum masuk repo | Source legacy terimpor, dependensi/config anonim dan tes runtime/regresi APEL berhasil |
 | M01 | Core Platform: role/wilayah dan workflow | **SEDANG**: role/workflow dan master Profil/SDM/Sarpras prototype; **40 tes foundation** lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) | Role disepakati; endpoint legacy, transaksi audit dan pengujian akses API tersambung dan lulus |
+| M02 | Profil Puskeswan terpadu | **SEDANG (prototype)**: draf/edit per bagian, pengajuan/verifikasi scoped dan audit, 25 tes baru [CI berhasil](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) | UI ramah HP, data profil asli dipetakan, database serta tes integrasi |
 
 ### M00: subpekerjaan
 - [x] M00-A: buat branch dan draft PR agar `main` tidak berubah
@@ -44,10 +46,9 @@
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul (M01 sudah masuk daftar SEDANG di atas)
+## C. Rencana per modul (M01 dan M02 sudah berada di daftar SEDANG)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M02 | P0 | Profil dan SDM terpadu, sarpras dan obat, asal data | M01 | [Profil](modules/01_PROFIL_PUSKESWAN.md), [SDM](modules/03_SDM_VETERINER.md) |
 | M03 | P0 | Support: kebutuhan, bukti, verifikasi, prioritas | M02 | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M04 | P0 | Support: alokasi sesuai kewenangan, distribusi dan BAST | M03 | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |

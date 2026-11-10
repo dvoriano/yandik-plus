@@ -41,6 +41,10 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber identitas ini.
 
+## Tambahan izin verifikasi M02
+- [x] `VERIFY_PROFILE` untuk verifikator provinsi dan kab/kota sesuai wilayah; penulis tidak dapat menyetujui sendiri.
+- [x] 25 tes baru pada kode profile review [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389); belum terhubung endpoint Flask.
+
 ## Progres master data terbaru
 - [x] Prototype master ID Puskeswan, histori SDM/penempatan, kondisi sarpras serta asal/verifikasi profiling.
 - [x] Hubungan ke APEL dan Support serta 18 tes tambahan [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).

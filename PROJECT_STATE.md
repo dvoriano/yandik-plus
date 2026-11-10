@@ -4,7 +4,14 @@
 **Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
-**Milestone aktif:** **M00 SEDANG** dan **M01 SEDANG (prototype)**; keduanya tercatat dalam ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+**Milestone aktif:** **M00, M01 dan M02 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN M02-S1 (TERBARU) | 10 November 2026
+- **Kode per bagian:** [commit ee9ccee](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8) membuat `foundation/yandik_base/profile_updates.py`, izin `VERIFY_PROFILE`, draf, ajukan, review, alasan koreksi, dan versi perubahan.
+- **Pengujian lulus:** [commit 12007b6](https://github.com/dvoriano/yandik-plus/commit/12007b6d8cc1c96011e0b521510b0adf6d600557), **25 tes baru; 65 tes fondasi** keseluruhan. [GitHub Actions #42842163389](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) **SUCCESS**.
+- **Status M02:** SEDANG (prototype). Ringkasan 5 bagian profil, draft/edit/submit/approval telah diuji; belum ada layar pengguna, API Flask, penyimpanan DB, unggah foto maupun notifikasi.
+- **Batas:** SDM dan APEL hanya direferensikan, bukan diinput ulang; source Flask lama 171 file belum ada di GitHub; website/VPS tidak disentuh.
+- **Berikutnya:** buat tampilan prototype Profil Saya yang sederhana/mobile-first dan pengujian jalur tugas/verifikasi memakai data fiktif, tetap di GitHub.
 
 ## PEMBARUAN M01-S2 | 10 November 2026
 - Kode [master Puskeswan, histori SDM, sarpras dan profil](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a) serta [18 tes baru](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854) berhasil dibuat di GitHub.
@@ -51,18 +58,20 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] Catatan handoff, worklog dan aturan **GitHub-only** dimasukkan ke branch.
 - [x] Kode fondasi `foundation/`, fixture anonim dan 10 tes lulus di GitHub Actions #42837742904.
 - [x] Prototype master Profil/SDM/Sarpras dengan 18 tes tambahan dan total 40 tes foundation, [CI sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
+- [x] **M02-S1** draf profil per bagian, review, scoped auth, audit immutable dan 25 tes tambahan; [CI 65 tes sukses](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
 - **M00 Fondasi repo/source.** Kode kontrak/fixture/tes ada dan CI lulus; source Flask lengkap masih menunggu.
-- **M01 Core Platform.** Prototype otorisasi teritorial dan workflow audit sudah dikode serta diuji; integrasi dan kewenangan resmi belum.
+- **M01 Core Platform.** Prototype akses wilayah, master data dan workflow tersedia; belum terintegrasi ke Flask.
+- **M02 Profil Puskeswan.** Prototype draf per bagian dan verifikasi teruji di GitHub; UI/DB belum ada.
 
 ### BELUM SELESAI / TERBUKA
 - [ ] **Source Flask lengkap belum diimpor ke repository.** Ada snapshot 168 file dan salinan pengembangan 171 file dari percakapan sebelumnya, tetapi *file di chat bukan file GitHub*. Jangan klaim sudah commit.
 - [x] Fixture dummy Profil/APEL/Support dan pengujian kontrak awal tersedia.
 - [ ] Dependensi aplikasi Flask nyata, tes integrasi/runtime, dan regresi hitungan APEL produksi belum selesai.
 - [ ] Audit serta perbaikan otorisasi, password reset/default, upload dan CSRF di kode pengembangan belum selesai.
-- [ ] M01 baru sebatas prototype otorisasi dan workflow tanpa integrasi; M02–M16 masih rencana implementasi, belum menjadi fitur yang berjalan.
+- [ ] M01 dan M02 masih **prototype GitHub**, bukan fitur Flask berjalan; M03–M16 tetap rencana implementasi.
 
 ### TERTUNDA khusus
 - Jalur impor melalui ZIP/Windows/PowerShell **tidak digunakan atas instruksi pemilik**. Bila transfer source memerlukan jalur yang tidak tersedia di connector GitHub, kerjakan bagian yang memungkinkan langsung di GitHub, jangan minta manual download/setup.
@@ -70,7 +79,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M01:** lanjut perbaikan kontrak izin dan workflow teruji, kemudian desain master data Profil/SDM dan Support tanpa menyentuh Flask aktif.
+3. **M02:** lanjut tampilan prototype Profil Saya dan halaman tugas verifikator yang mudah digunakan; tes contoh pengguna. Tetap tanpa menyentuh Flask aktif.
 
 
 ## DOKUMEN RUJUKAN

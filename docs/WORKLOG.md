@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-10 | M02-S1: Profil per bagian dan 65 tes GitHub berhasil
+**Jenis:** coding + unit test, tanpa VPS. **Status:** M02 SEDANG hanya sebagai prototype; M00/M01 masih SEDANG.
+- [Kode](https://github.com/dvoriano/yandik-plus/commit/ee9cceecfe4a61c315e6bef6a38f0e6c9b4e30e8): draf satu bagian, submit, review kab/kota/provinsi sesuai wilayah, koreksi, alasan, audit dan proteksi versi lama.
+- [25 pengujian](https://github.com/dvoriano/yandik-plus/commit/12007b6d8cc1c96011e0b521510b0adf6d600557) mencakup akses lintas wilayah, larangan self-approval, edit hanya di bagian terkait, optimistic version, dan apply hanya setelah persetujuan.
+- [GitHub Actions #42842163389](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389) **SUCCESS**: total 65 tes foundation, validasi fixture juga berhasil.
+- [Spesifikasi](M02_PROFILE_EDITS.md). SDM/APEL tidak diduplikasi.
+- Belum: aplikasi Flask, UI HP, penyimpanan DB, unggahan bukti dan deployment.
+- Berikutnya: prototipe antarmuka Profil Saya dan alur antrian verifikator.
+
 ## 2026-11-10 | M01-S2 master Puskeswan, SDM, sarpras dan profiling
 **Jenis:** coding langsung di GitHub dan CI; M01 SEDANG, M02 (modul tampilan) masih RENCANA.
 - [Kode master dan 4 jenis fixture](https://github.com/dvoriano/yandik-plus/commit/420354a885c6291c609e4ab6f25347cadbd2360a) serta [18 tes tambahan dan validator terpadu](https://github.com/dvoriano/yandik-plus/commit/43ee5ff342659fb1bb96eac552bad687e3ab0854).

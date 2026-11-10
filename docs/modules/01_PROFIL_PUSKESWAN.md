@@ -1,7 +1,7 @@
 # MOD-01 | Profil Puskeswan Terpadu
 
 **Milestone:** M02  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG (prototype draf profil per bagian dan review lulus pengujian; belum ada UI/database/Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,10 +40,17 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 SDM sebagai sumber tenaga; APEL sebagai sumber statistik pelayanan; Support membaca inventaris dan kesenjangan fasilitas; GIS memakai koordinat fasilitas yang disetujui.
 
+## Progres M02-S1: pembaruan profil per bagian
+- [x] Prototype draf/edit/ajukan, verifikasi/koreksi/tolak dengan alasan, akses role/wilayah dan versi optimistis.
+- [x] Status 5 bagian profil dan audit tanpa menimpa catatan terdahulu.
+- [x] 25 tes tambahan, total 65 tes fondasi [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42842163389).
+- [ ] UI petugas dari HP, field Profiling riil, persistensi DB, upload bukti belum tersedia.
+- Detail: [M02_PROFILE_EDITS.md](../M02_PROFILE_EDITS.md).
+
 ## Progres dasar teknis
 - [x] Kontrak data Profil/Sarpras, relasi ID Puskeswan, data ber-tanggal dan status verifikasi diuji [GitHub CI](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033).
 - [ ] Form profiling lama, riwayat perubahan database, kelengkapan per bagian dan UI HP belum diimplementasikan.
-- Lihat [M01-S2](../M01_MASTER_DATA.md). **Status modul tetap RENCANA.**
+- Lihat [M01-S2](../M01_MASTER_DATA.md) untuk kontrak data. **Status M02 kini SEDANG sebagai prototype**, belum modul operasional.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-01-01: Audit dan petakan field profiling yang sudah ada

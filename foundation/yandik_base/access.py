@@ -21,6 +21,7 @@ class Action(str, Enum):
     SUBMIT_NEED = "submit_need"
     SUBMIT_APEL = "submit_apel"
     VERIFY_NEED = "verify_need"
+    VERIFY_PROFILE = "verify_profile"
     RECORD_FOLLOWUP = "record_followup"
     VIEW_AGGREGATE = "view_aggregate"
 
@@ -60,10 +61,11 @@ def permitted(actor: Principal, action: Action, resource: ResourceScope | None =
             Action.VIEW_NEED, Action.RECORD_FOLLOWUP,
         }
     if actor.role is Role.PROVINSI_VERIFIKATOR:
-        return action in {Action.VIEW_PROFILE, Action.VIEW_NEED, Action.VERIFY_NEED}
+        return action in {Action.VIEW_PROFILE, Action.VIEW_NEED, Action.VERIFY_NEED, Action.VERIFY_PROFILE}
     if actor.role is Role.KAB_KOTA:
         return actor.kab_kota == resource.kab_kota and action in {
             Action.VIEW_PROFILE, Action.VIEW_NEED, Action.VERIFY_NEED,
+            Action.VERIFY_PROFILE,
         }
     if actor.role is Role.PUSKESWAN:
         return (

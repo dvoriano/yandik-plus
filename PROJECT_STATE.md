@@ -6,7 +6,16 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S8 | PERSYARATAN SOP DAN PERUBAHAN KATALOG (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S9 | REGISTER TINDAK LANJUT HASIL PEMBAHASAN KELEMBAGAAN (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit register](https://github.com/dvoriano/yandik-plus/commit/1f3a4f47118e8fb6c3c1ccb2fe143fc9bb9eab65) dan [perbaikan kode topik tambahan](https://github.com/dvoriano/yandik-plus/commit/d1624a7dcab447a88b9768065891590ee651a9db) menyimpan enam berkas [`drafts/m04-institutional-followup/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) untuk tindak lanjut kelembagaan dari M04-S8 DEMO.
+- **Tiga sumber temuan:** persyaratan kelembagaan yang belum diperiksa/perlu klarifikasi, usulan perubahan katalog dan topik pembahasan DEMO. Setiap item mempunyai uraian kekurangan, dampak, rencana koreksi, penanggung jawab, tanggal rencana, progres, hasil, telaah dan histori.
+- **Transisi:** draf → tercatat → dalam proses → menunggu telaah → perlu perbaikan/ditutup administratif; bisa dibatalkan dengan alasan. Sumber M04-S8/M04-S7 yang berubah akan ditandai untuk kajian ulang.
+- **Batas:** `catatan_ditutup` **BUKAN** persyaratan resmi terpenuhi atau sistem siap diintegrasikan. Tidak mengubah SOP/katalog/sumber, tidak menerbitkan keputusan pejabat, alokasi, pengadaan, distribusi atau BAST. Pelaku/data DEMO di memori browser, bukan autentikasi/audit.
+- **Dokumen:** [Spesifikasi M04-S9](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md) dan [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Mode CODE_ONLY: **tanpa CL, tes, CI dan deploy**.
+- **Status:** M04-S1 sampai S9 SEDANG hanya kode draft **BELUM DIUJI**; keputusan resmi/paket/BAST M04-S10+ **RENCANA**. PR #9 tetap DRAFT; branch `main`, website, VPS dan bot Indodax tidak disentuh.
+- **Next:** rekap daftar temuan kelembagaan yang perlu keputusan/perbaikan manusia, bukan status siap integrasi otomatis.
+
+## PEMBARUAN M04-S8 | PERSYARATAN SOP DAN PERUBAHAN KATALOG | 11 November 2026
 - **Pemeriksaan baca-kode (tanpa eksekusi), 11 Nov 2026:** seluruh lingkup M04-S8 telah tersedia pada draft sebelumnya. [Perbaikan kecil UI](https://github.com/dvoriano/yandik-plus/commit/0b9f4320b50a485f140f2205a9c23253a31a921c) mengaktifkan kembali kolom bukti saat unsur checklist `bahan_tersedia` dibuka ulang; **BELUM DIUJI** dan tidak mengubah proses resmi.
 - **KODE DITULIS, BELUM DIUJI:** [kode M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) pada [commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) dan [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a) menambah 12 unsur pemeriksaan kelembagaan, usulan perubahan unit tambah/ubah/nonaktif, dampak ke M04-S6/RACI M04-S7/SOP, rollback dan dua alur telaah DEMO.
 - Hasil `bahan_tersedia`/`dicatat_untuk_pembahasan` **BUKAN** pengesahan SOP, bukti surat sah, atau perubahan katalog aktif. Sumber M04-S7 disimpan sebagai snapshot; histori di memori browser bukan audit resmi.

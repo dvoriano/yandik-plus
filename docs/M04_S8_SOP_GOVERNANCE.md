@@ -58,4 +58,4 @@ QA tertunda mencakup: impor M04-S1/S2/S3/S5/S6/S7/S8, validasi 12 syarat, status
 **Tidak menjalankan CL, tes kode, browser, CI atau deployment.** Keberadaan file di GitHub tidak membuktikan perilakunya benar.
 
 ## Status selanjutnya
-**M04-S1 sampai S8: KODE DITULIS, BELUM DIUJI.** M04-S9+ untuk keputusan resmi, anggaran, paket, pengadaan, distribusi dan BAST **RENCANA**. Kandidat tahap berikut adalah *register hasil pembahasan dan tindak lanjut koreksi kelembagaan*, tetap tanpa mengaktifkan aturan secara otomatis.
+**M04-S1 sampai S9: KODE DITULIS, BELUM DIUJI.** [Register tindak lanjut pembahasan dan koreksi kelembagaan M04-S9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) telah ditulis sebagai draft, **BELUM DIUJI**, tanpa perubahan checklist/katalog otomatis. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md). M04-S10+ untuk keputusan resmi, anggaran, paket, pengadaan, distribusi dan BAST tetap **RENCANA**.

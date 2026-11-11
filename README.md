@@ -72,6 +72,11 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: 154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - M03 tetap SEDANG (prototype); bukti belum diunggah sungguhan, M04 tetap RENCANA.
 
+## M04-S9 | Register tindak lanjut kelembagaan (draft, BELUM DIUJI)
+- [Kode register dan koreksi administrasi DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup): kekurangan M04-S8, rencana perbaikan, penanggung jawab, tenggat, progres, review dan histori.
+- [Spesifikasi M04-S9](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md) serta [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Tidak mengubah SOP/katalog, tidak menyatakan integrasi siap, atau menyetujui bantuan/anggaran/BAST.
+
 ## M04-S8 | Kesiapan SOP dan perubahan katalog (draft, BELUM DIUJI)
 - [Kode M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance): 12 checklist, usulan tambah/ubah/nonaktif unit DEMO, dampak dan telaah, tanpa apply otomatis.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukan SOP berlaku, bantuan, anggaran atau BAST.

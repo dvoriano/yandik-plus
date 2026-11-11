@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9: register tindak lanjut kelembagaan (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan yang ditunda | Status |
+|---|---|---|
+| QA-M04S9-01 | Impor lintas M04-S1/S2/S3/S5/S6/S7/S8/S9 dan fixture DEMO | BELUM DIUJI |
+| QA-M04S9-02 | Sumber M04-S8 belum ditelaah, bukan DEMO atau SOP M04-S7 usang harus ditolak | BELUM DIUJI |
+| QA-M04S9-03 | Tiga jenis temuan, validasi ID checklist/usulan/kode DEMO topik diskusi | BELUM DIUJI |
+| QA-M04S9-04 | Duplikasi item aktif dari sumber sama, ID unik serta kapasitas 35 temuan | BELUM DIUJI |
+| QA-M04S9-05 | Validasi deskripsi, dampak, rencana perbaikan, keluaran, penanggung jawab dan tanggal | BELUM DIUJI |
+| QA-M04S9-06 | Draf/revisi, catat penugasan, mulai, progres, hasil, return/revise/close dan pembatalan | BELUM DIUJI |
+| QA-M04S9-07 | Pemisahan koordinator, petugas dan reviewer DEMO; bukan autentikasi resmi | BELUM DIUJI |
+| QA-M04S9-08 | Sumber berubah atau temuan tidak relevan membuat tindakan tertahan | BELUM DIUJI |
+| QA-M04S9-09 | Histori tidak hilang, hasil/bukti hanya metadata, catatan ditutup bukan syarat resmi terpenuhi | BELUM DIUJI |
+| QA-M04S9-10 | Rekap tanggal acuan manual, aktif/tertunda/telaah/stale, kasus data kosong dan filter | BELUM DIUJI |
+| QA-M04S9-11 | Semua catatan ditutup tidak membuat hasil siap integrasi, SOP sah atau anggaran disetujui | BELUM DIUJI |
+| QA-M04S9-12 | UI HP 320/375px, keyboard, pembaca layar, form kode topik DEMO dan pesan kesalahan | BELUM DIUJI |
+| QA-M04S9-13 | Pembatasan akses, integritas data, XSS, input berbahaya dan tidak ada pengiriman/persistensi | BELUM DIUJI |
+| QA-M04S9-14 | Proses kelembagaan nyata, SPBE, kewenangan, arsip, SOP dan tata naskah | BUTUH KEPUTUSAN |
+| QA-M04S9-15 | Autentikasi/DB, audit tahan perubahan, keamanan API dan dokumen resmi | TERTUNDA UJI |
+
+[Spesifikasi M04-S9](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md). Tidak ada eksekusi kode/tes baru.
+
 ## Antrean M04-S8: kesiapan SOP dan perubahan unit (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda | Status |
@@ -214,7 +236,7 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04-S1/S2/S3/S4/S5/S6/S7: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi, matriks rute dan katalog RACI tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S9+ tetap RENCANA.
+- M04-S1 sampai S9: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi, matriks/rute, katalog RACI, kesiapan SOP dan register koreksi kelembagaan tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S10+ tetap RENCANA.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

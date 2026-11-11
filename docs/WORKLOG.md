@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S9: register tindak lanjut hasil pembahasan kelembagaan
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tanpa CL, CI, tes Node/Chromium atau deployment.
+- [Commit modul](https://github.com/dvoriano/yandik-plus/commit/1f3a4f47118e8fb6c3c1ccb2fe143fc9bb9eab65) menambahkan [enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) berisi item temuan dari M04-S8 yang sudah ditelaah DEMO, rencana perbaikan, penanggung jawab, tanggal rencana, progres, hasil dan review terpisah.
+- [Commit koreksi form](https://github.com/dvoriano/yandik-plus/commit/d1624a7dcab447a88b9768065891590ee651a9db) memungkinkan referensi topik pembahasan tambahan `DEMO-` diisi mandiri dan tidak dibatasi dua opsi.
+- **Pembatasan:** penutupan catatan tidak sama dengan kesiapan integrasi, checklist M04-S8 selesai, keabsahan SOP atau kewenangan bantuan. Sumber M04-S8/M04-S7 tidak diubah otomatis.
+- [Spesifikasi M04-S9](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Kode belum diuji maupun dijalankan.
+- M04-S1 hingga S9 SEDANG sebagai kode draft BELUM DIUJI; M04-S10+ keputusan resmi, anggaran, pengadaan, distribusi dan BAST RENCANA.
+
 ## 2026-11-11 | M04-S8: kesiapan SOP dan tata kelola perubahan katalog
 - **Peninjauan statis lanjutan:** M04-S8 sudah ada; tidak dibuat modul duplikat. [Commit UI 0b9f432](https://github.com/dvoriano/yandik-plus/commit/0b9f4320b50a485f140f2205a9c23253a31a921c) memperbaiki ketereditan kode bukti DEMO ketika checklist berstatus `bahan_tersedia` dibuka kembali. **Tidak menjalankan aplikasi, tes, CL atau CI.**
 **KODE DITULIS, BELUM DIUJI.** [Enam berkas M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) [commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) dan [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a) menyiapkan 12 checklist kelembagaan, perubahan unit tambah/ubah/nonaktif, penjelasan dampak dan rollback, telaah beralasan serta histori. Katalog sumber tidak berubah; hasil kajian bukan SOP sah. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) diperbarui. Tidak ada CL, tes, CI atau deploy; M04-S9+ proses bantuan resmi/BAST RENCANA.

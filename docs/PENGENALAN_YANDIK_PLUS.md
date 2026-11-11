@@ -276,7 +276,6 @@ Bagian ini adalah **isu yang perlu ditelaah bersama**, bukan pernyataan bahwa se
 YANDIK+ merupakan **pengembangan sarana kerja digital**. Walaupun tujuan utamanya membantu pelaksanaan tugas teknis, komponen yang berupa aplikasi, basis data, integrasi, layanan pengguna dan dokumen elektronik **tetap perlu dinilai dalam tata kelola SPBE serta ketentuan instansi yang berlaku**.
 
 Sebelum penetapan penerapan resmi, perlu kejelasan mengenai:
-- Pengampu proses bisnis dan penanggung jawab sistem/data.
 - Apakah fungsi tertentu sudah tersedia pada aplikasi pemerintah yang wajib digunakan; hindari pembangunan layanan ganda.
 - Arsitektur dan integrasi data yang sesuai kebijakan instansi, termasuk infrastruktur, pengelolaan akun, keamanan dan pencadangan.
 - Mekanisme evaluasi, persetujuan, pencatatan aset digital, serta pembagian tanggung jawab operasional.

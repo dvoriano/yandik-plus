@@ -1,0 +1,23 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#153848;background:#f4f8fa;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:1050px;margin:0 auto;padding:18px 14px 50px}
+header,section{background:#fff;border:1px solid #d8e5ed;border-radius:14px;padding:22px;margin-bottom:17px}
+h1{font-size:clamp(1.5rem,3vw,2.1rem)}h2{font-size:1.19rem}p,li{line-height:1.55}
+.eyebrow{color:#2a627c;font-weight:750}.warning{color:#884500;font-weight:720}.muted{color:#526d7a}
+form{display:grid;gap:12px;margin-bottom:16px}label{display:grid;gap:7px;font-weight:650}
+textarea,input,select{min-width:0;width:100%;min-height:44px;font:inherit;padding:11px;border:1px solid #a7bcc7;color:#153848;background:#fff;border-radius:9px}
+input:disabled,textarea:disabled{color:#536d79;background:#f1f6f8}
+button{font:inherit;min-height:44px;font-weight:700;background:#245e7d;border:0;border-radius:9px;color:#fff;padding:10px 14px;cursor:pointer}
+button.secondary{background:#eff5f8;color:#245c79;border:1px solid #adc7d1}
+.actions{display:flex;flex-wrap:wrap;gap:9px;padding:8px 0}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px}
+.metric{border:1px solid #dce7ee;padding:12px;border-radius:10px;background:#f8fbfd}
+.metric strong{display:block;font-size:1.65rem;font-variant-numeric:tabular-nums}
+.metric span{font-size:.9rem}
+.table-wrap{overflow-x:auto;border:1px solid #dce6ec;border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:.91rem}
+th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid #e4ebef;overflow-wrap:anywhere}
+th{background:#eff6f9}#changes li{margin:10px 0;overflow-wrap:anywhere}
+[hidden]{display:none!important}:focus-visible{outline:3px solid #b57816;outline-offset:2px}
+#handoff{font:.87rem/1.52 ui-monospace,monospace}
+footer{text-align:center;color:#536d79;font-size:.87rem}
+@media(max-width:560px){header,section{padding:15px}.wrap{padding:12px}.actions{display:grid}.actions button{width:100%}}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S8 | Kesiapan SOP dan Tata Kelola Katalog (DEMO)</title>
+<link rel="stylesheet" href="./style.css"></head>
+<body><main class="wrap">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S8 · RANCANGAN</p>
+<h1>Kesiapan SOP dan Perubahan Katalog Unit</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Semua data, surat, unit dan petugas adalah contoh DEMO.</p>
+<p>Periksa kelengkapan kelembagaan, dokumentasikan perubahan unit, dan siapkan bahan telaah. <strong>Catatan lengkap dan hasil telaah tidak berarti SOP disahkan atau katalog diperbarui.</strong></p>
+</header>
+<section aria-labelledby="source-heading">
+<h2 id="source-heading">1. Sumber dan ringkasan kajian</h2>
+<p id="source" class="muted"></p>
+<div class="metrics" id="metrics"></div>
+<p id="status" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="check-heading">
+<h2 id="check-heading">2. Checklist kesiapan kelembagaan</h2>
+<p>Semua bukti masih berupa kode metadata fiktif. Unsur wajib tidak boleh dinyatakan tidak berlaku tanpa keputusan kelembagaan yang sah.</p>
+<form id="check-form">
+<label for="check-id">Unsur pemeriksaan
+<select id="check-id"></select></label>
+<label for="check-status">Hasil penelaahan awal
+<select id="check-status"></select></label>
+<label for="check-evidence">Kode rujukan bukti DEMO- (hanya bila bahan tersedia)
+<input id="check-evidence" autocomplete="off" spellcheck="false" maxlength="60"></label>
+<label for="check-note">Catatan dan kekurangan, minimal 35 karakter
+<textarea id="check-note" rows="3" minlength="35" maxlength="650" required></textarea></label>
+<button type="submit">Catat hasil pemeriksaan DEMO</button>
+</form>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Persyaratan</th><th scope="col">Prioritas</th><th scope="col">Status</th></tr></thead>
+<tbody id="requirements"></tbody>
+</table></div>
+</section>
+<section aria-labelledby="change-heading">
+<h2 id="change-heading">3. Usulan perubahan katalog unit (tidak diterapkan)</h2>
+<p>Usulan dapat berupa penambahan, perubahan, atau penonaktifan unit DEMO. Seluruh konsekuensi terhadap rute, RACI, dan naskah SOP wajib dijelaskan.</p>
+<form id="change-form">
+<label for="change-type">Jenis perubahan
+<select id="change-type"></select></label>
+<label for="change-unit">Unit / kunci unit DEMO
+<select id="change-unit"></select></label>
+<label for="new-key" id="new-key-label" hidden>Kunci unit baru, format nama_demo
+<input id="new-key" autocomplete="off" spellcheck="false" maxlength="50"></label>
+<label for="unit-id">ID unit DEMO-
+<input id="unit-id" maxlength="60" autocomplete="off" spellcheck="false" required></label>
+<label for="unit-label">Nama tampilan unit
+<input id="unit-label" maxlength="120" required></label>
+<label for="unit-role">Fungsi unit usulan
+<textarea id="unit-role" rows="3" minlength="35" maxlength="500" required></textarea></label>
+<label for="unit-boundary">Batas kewenangan
+<textarea id="unit-boundary" rows="3" minlength="35" maxlength="500" required></textarea></label>
+<label for="unit-precondition">Prasyarat penanganan
+<textarea id="unit-precondition" rows="3" minlength="35" maxlength="500" required></textarea></label>
+<label for="unit-contact">Kontak fiktif DEMO-
+<input id="unit-contact" maxlength="60" autocomplete="off" spellcheck="false" required></label>
+<label for="reason">Alasan perubahan, minimal 50 karakter
+<textarea id="reason" rows="3" minlength="50" maxlength="850" required></textarea></label>
+<label for="routes">Dampak pada rute M04-S6, minimal 45 karakter
+<textarea id="routes" rows="3" minlength="45" maxlength="750" required></textarea></label>
+<label for="raci">Dampak pada RACI M04-S7, minimal 45 karakter
+<textarea id="raci" rows="3" minlength="45" maxlength="750" required></textarea></label>
+<label for="sop-impact">Dampak terhadap naskah SOP dan arsip, minimal 45 karakter
+<textarea id="sop-impact" rows="3" minlength="45" maxlength="750" required></textarea></label>
+<label for="rollback">Rencana pembatalan usulan, minimal 45 karakter
+<textarea id="rollback" rows="3" minlength="45" maxlength="750" required></textarea></label>
+<button type="submit">Tambah usulan katalog DEMO</button>
+</form>
+<ul id="changes"></ul>
+<div class="actions">
+<button id="change-submit" type="button" hidden>Ajukan usulan terpilih untuk telaah</button>
+</div>
+<form id="change-review" hidden>
+<label for="change-action">Telaah usulan katalog
+<select id="change-action">
+<option value="catat_untuk_pembahasan">Catat untuk dibahas, BUKAN diterapkan</option>
+<option value="minta_perbaikan">Perlu perbaikan konsep</option>
+<option value="tidak_direkomendasikan">Tidak direkomendasikan</option>
+</select></label>
+<label for="change-review-note">Alasan telaah perubahan, minimal 50 karakter
+<textarea id="change-review-note" rows="3" minlength="50" maxlength="750" required></textarea></label>
+<button type="submit">Catat telaah perubahan DEMO</button>
+</form>
+</section>
+<section aria-labelledby="review-heading">
+<h2 id="review-heading">4. Telaah daftar kesiapan (bukan pengesahan SOP)</h2>
+<div class="actions">
+<button id="readiness-submit" type="button">Ajukan berkas kesiapan untuk telaah DEMO</button>
+</div>
+<form id="readiness-review" hidden>
+<label for="readiness-action">Hasil telaah kelembagaan
+<select id="readiness-action">
+<option value="catat_untuk_pembahasan">Catat untuk pembahasan, tidak mengesahkan</option>
+<option value="minta_perbaikan">Kembalikan untuk perbaikan</option>
+<option value="tidak_direkomendasikan">Tidak direkomendasikan</option>
+</select></label>
+<label for="readiness-review-note">Catatan penelaah, minimal 50 karakter
+<textarea id="readiness-review-note" rows="3" minlength="50" maxlength="850" required></textarea></label>
+<button type="submit">Catat hasil kajian DEMO</button>
+</form>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="handoff-heading">
+<h2 id="handoff-heading">5. Rekap untuk diperiksa manusia</h2>
+<label for="handoff">Naskah baca-saja, bukan surat keputusan atau berita acara resmi
+<textarea id="handoff" rows="20" readonly spellcheck="false"></textarea></label>
+</section>
+<footer>Simulasi dalam memori browser. Tidak ada aktivasi SOP, penggantian katalog asli, login dinas, koneksi server, penetapan bantuan, anggaran, pengadaan, penyaluran atau BAST.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

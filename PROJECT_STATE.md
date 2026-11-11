@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9B | REKAP EKSEKUTIF PEMBAHASAN KELEMBAGAAN | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [tujuh berkas baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md); sumber M04-S8/S9 DEMO dibaca tanpa mutasi. [Commit 96e0914](https://github.com/dvoriano/yandik-plus/commit/96e091411249c46f444d19cd4f62694bf36458fc).
+- Ringkasan 12 unsur (10 wajib, 2 opsional), daftar kekurangan wajib tanpa register aktif, penanggung jawab dan rencana koreksi, tenggat contoh, sumber berubah serta usulan perubahan unit.
+- Daftar pertanyaan diperuntukkan bagi manusia/pemilik proses. Status kelayakan integrasi tetap **BELUM DINILAI**, walau semua catatan ditutup; bukan hasil audit, pengesahan SOP atau keputusan bantuan.
+- QA-M04S9B masih **BELUM DIUJI** pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Tidak ada CL, CI, browser, tes, deployment, main atau produksi; PR #9 tetap DRAFT.
+- Lanjutan: audit statis dan penyiapan QA, tanpa menjalankan pengujian sampai izin owner. M04-S10+ keputusan sah pejabat/anggaran/pengadaan/distribusi/BAST tetap **RENCANA**.
+
 ## PEMBARUAN M04-S9 | REGISTER TINDAK LANJUT HASIL PEMBAHASAN KELEMBAGAAN (TERBARU) | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit register](https://github.com/dvoriano/yandik-plus/commit/1f3a4f47118e8fb6c3c1ccb2fe143fc9bb9eab65) dan [perbaikan kode topik tambahan](https://github.com/dvoriano/yandik-plus/commit/d1624a7dcab447a88b9768065891590ee651a9db) menyimpan enam berkas [`drafts/m04-institutional-followup/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) untuk tindak lanjut kelembagaan dari M04-S8 DEMO.
 - **Tiga sumber temuan:** persyaratan kelembagaan yang belum diperiksa/perlu klarifikasi, usulan perubahan katalog dan topik pembahasan DEMO. Setiap item mempunyai uraian kekurangan, dampak, rencana koreksi, penanggung jawab, tanggal rencana, progres, hasil, telaah dan histori.

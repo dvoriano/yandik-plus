@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S9B: rekap eksekutif kelembagaan baca-saja
+**Status:** KODE DITULIS, **BELUM DIUJI**, tanpa CL, CI, tes Node/Chromium atau deployment.
+- [Commit 96e0914](https://github.com/dvoriano/yandik-plus/commit/96e091411249c46f444d19cd4f62694bf36458fc) membuat [tujuh berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) untuk rekap M04-S8/M04-S9 dengan tanggal acuan manual, 12 unsur dan daftar kekurangan yang belum punya register aktif.
+- Draf mengelompokkan item M04-S9 DEMO menurut tugas, perbaikan, penanggung jawab, status, sumber berubah, tanggal serta rencana koreksi; menyajikan pertanyaan untuk telaah manusia.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md) dan antrean QA-M04S9B di TEST_BACKLOG. Ini **bukan** hasil kajian riil, pengesahan SOP, izin integrasi, anggaran atau bantuan; tidak mengubah sumber.
+- Branch main, PR #9, website produksi, VPS, database, dan bot Indodax tidak diubah.
+
 ## 2026-11-11 | M04-S9: register tindak lanjut hasil pembahasan kelembagaan
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tanpa CL, CI, tes Node/Chromium atau deployment.
 - [Commit modul](https://github.com/dvoriano/yandik-plus/commit/1f3a4f47118e8fb6c3c1ccb2fe143fc9bb9eab65) menambahkan [enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) berisi item temuan dari M04-S8 yang sudah ditelaah DEMO, rencana perbaikan, penanggung jawab, tanggal rencana, progres, hasil dan review terpisah.

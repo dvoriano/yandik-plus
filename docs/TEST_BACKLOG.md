@@ -186,6 +186,26 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9B: rekap eksekutif kelembagaan (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan yang perlu dilakukan | Status |
+|---|---|---|
+| QA-M04S9B-01 | Impor berantai M04-S7/S8/S9/S9B dan fixture DEMO tanpa memerlukan sumber produksi | BELUM DIUJI |
+| QA-M04S9B-02 | Tepat 12 unsur, 10 wajib/2 opsional, status bahan tersedia bukan bukti telah disahkan | BELUM DIUJI |
+| QA-M04S9B-03 | Seluruh kekurangan wajib yang belum diperiksa/perlu klarifikasi tetap terlihat walau tanpa register aktif | BELUM DIUJI |
+| QA-M04S9B-04 | Hubungan temuan ketiga jenis sumber dengan perbaikan, penanggung jawab, keluaran, status dan histori | BELUM DIUJI |
+| QA-M04S9B-05 | Jumlah item aktif, menunggu telaah, revisi, terlambat berdasar tanggal manual dan sumber berubah benar | BELUM DIUJI |
+| QA-M04S9B-06 | Docket M04-S8 atau SOP M04-S7 yang berubah mendapat penanda tanpa menutup atau mengubah register | BELUM DIUJI |
+| QA-M04S9B-07 | Input invalid, tanggal kalender tidak sah dan sumber non-DEMO/gagal validasi ditolak | BELUM DIUJI |
+| QA-M04S9B-08 | Empty state, semua catatan tertutup, katalog kosong, filter tanpa hasil, keluaran teks paparan | BELUM DIUJI |
+| QA-M04S9B-09 | UI HP 320/375px, urutan keyboard, label, pembaca layar, fokus, pesan error, teks panjang | BELUM DIUJI |
+| QA-M04S9B-10 | Tidak ada script injection melalui teks, mutasi M04-S8/M04-S9, storage, API atau pengiriman | BELUM DIUJI |
+| QA-M04S9B-11 | Status kesiapan tetap BELUM DINILAI, termasuk bila tidak ada item aktif atau semua item ditutup | BELUM DIUJI |
+| QA-M04S9B-12 | Telaah tupoksi, pemilik proses, tata naskah, SOP, retensi, keamanan, SPBE dan akuntabilitas | BUTUH KEPUTUSAN |
+| QA-M04S9B-13 | Autentikasi, kontrol akses wilayah, DB, audit persisten dan keamanan API untuk integrasi nanti | TERTUNDA UJI |
+
+[Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md). Tidak ada eksekusi tes maupun CI/CL.
+
 ## Antrean M04-S9: register tindak lanjut kelembagaan (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan yang ditunda | Status |

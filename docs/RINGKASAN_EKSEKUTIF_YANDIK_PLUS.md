@@ -114,4 +114,4 @@ Pada tahap ini, diperlukan **masukan dan arahan** mengenai:
 
 **Dokumen pendukung:** [Pengenalan Lengkap YANDIK+](PENGENALAN_YANDIK_PLUS.md) · [Katalog 15 Modul](MODULES_INDEX.md) · [Roadmap Pengembangan](ROADMAP.md)
 
-**Status naskah:** Draf untuk telaah internal. Repositori GitHub saat ini bersifat **private**; penyampaian kepada pihak lain mengikuti ketentuan akses dan tata naskah instansi.
+**Status naskah:** Draf untuk telaah internal. Metadata GitHub yang diperiksa 11 November 2026 menunjukkan repositori berstatus **PUBLIC**; keterbukaan kode tidak menggantikan persetujuan klasifikasi, tata naskah dan distribusi dokumen instansi.

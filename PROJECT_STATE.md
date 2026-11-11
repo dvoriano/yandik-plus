@@ -1,10 +1,14 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
 **Terakhir diperbarui:** 11 November 2026, WIB  
-**Kanonik:** repository private [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus)  
+**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 11 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## RISIKO TERBUKA | VISIBILITAS REPOSITORI DAN AUDIT STATIS | 11 November 2026
+- **GitHub metadata: PUBLIC**, sedangkan beberapa catatan lama menyebut PRIVATE. Koreksi penjelasan dilakukan pada dokumen; **pengaturan visibilitas GitHub belum diubah**. Lihat [catatan audit statis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_STATIC_REVIEW.md).
+- Tidak ada bukti QA untuk M04-S9B atau persetujuan kelembagaan; jangan memuat data riil/rahasia ke kode publik. Keputusan visibilitas dan klasifikasi berada pada pemilik repositori.
 
 ## PEMBARUAN M04-S9B | REKAP EKSEKUTIF PEMBAHASAN KELEMBAGAAN | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [tujuh berkas baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md); sumber M04-S8/S9 DEMO dibaca tanpa mutasi. [Commit 96e0914](https://github.com/dvoriano/yandik-plus/commit/96e091411249c46f444d19cd4f62694bf36458fc).
@@ -91,7 +95,7 @@
 - **Fungsi rancangan:** menyiapkan teks bahan penyusunan berita acara dengan identitas DEMO, alasan dan bobot perbandingan, hasil tinjauan, **histori rekomendasi/pengembalian/perbaikan**, dan tindak lanjut. Tidak membuat nomor resmi, berita acara sah, tanda tangan, penerima bantuan, pengadaan atau alokasi.
 - **Batas:** semua data fiktif; output teks hanya di memori browser, harus dipilih/disalin manual. Peran adalah label demo; belum ada pemeriksaan resmi, koneksi API/DB, integrasi SRIKANDI atau pengujian browser.
 - **Dokumen:** [rancangan M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md) dan [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); 176 tes lama hanya untuk M03-S3. **TIDAK MENJALANKAN CL/CI/TEST**.
-- **Status:** M03-S4A/B/C KODE DITULIS, BELUM DIUJI; M03 keseluruhan SEDANG; M04 RENCANA. Repo private, PR Draft, `main`/VPS/website produksi tidak disentuh.
+- **Status:** M03-S4A/B/C KODE DITULIS, BELUM DIUJI; M03 keseluruhan SEDANG; M04 RENCANA. Status akses repo pada catatan lama tertulis private, tetapi **terdeteksi PUBLIC pada 11 November 2026**; PR Draft, main/VPS/website produksi tidak disentuh.
 - **Berikutnya:** rancang alur administrasi keputusan pejabat yang **terpisah** dari rekomendasi skor. Tidak otomatis memproses bantuan/anggaran.
 
 ## PEMBARUAN M03-S4B | TELAHAH PERBANDINGAN PRIORITAS | 11 November 2026
@@ -115,7 +119,7 @@
 - **Dokumen sudah ditulis di GitHub:** [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) dan [Pengenalan Lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md), [commit](https://github.com/dvoriano/yandik-plus/commit/19eae9de3525838593b6347d20400bf4faec2cc8). Dokumen lengkap menerangkan data induk, hak akses, tugas, bukti, verifikasi, permasalahan, usulan Support, penilaian prioritas, tindak lanjut, dashboard, administrasi, pengingat, dan histori.
 - **Status isi:** **DRAF BAHAN TELAAH**, bukan pengesahan kebijakan, penganggaran atau legitimasi SPBE. Tidak mengklaim seluruh modul aktif; APEL layanan yang sudah ada dipisah dari prototype/rencana. Posisi AI opsional dan batas iSIKHNAS/SRIKANDI/OSS/pengadaan dijelaskan.
 - **Telaah substansi:** [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21) mencatat daftar cek masukan pimpinan, Inspektorat, Diskominfotik dan pengelola modul; seluruhnya **BELUM DITELAAH FORMAL**.
-- **Akses:** repository **PRIVATE**; penerima harus memiliki akses GitHub. Jangan mempublikasikan repo atau berkas ke pihak luar tanpa persetujuan penanggung jawab.
+- **Akses aktual pada pemeriksaan 11 November 2026: PUBLIC menurut metadata GitHub.** Kode dapat diakses publik; status ini belum ditelaah sebagai keputusan publikasi bahan kedinasan. Review visibilitas/isi repository sebelum memasukkan data riil.
 - **Mode kerja tetap:** tanpa CL/CI/tes baru. Pembuatan dan penautan dokumen saja, tidak menjalankan aplikasi, tidak menyentuh website/VPS/`main`.
 - **Berikutnya:** pemilik proyek dapat memberikan koreksi substansi/istilah/kewenangan setelah dokumen dibaca; catat perubahan versi. Coding M03-S4 tetap **BELUM DIUJI**.
 
@@ -231,7 +235,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 
 ## KONDISI NYATA GITHUB SAAT INI
 ### SELESAI (dokumentasi/alat dan kontrak fondasi teruji; belum fitur produksi)
-- [x] Repo private dan branch `develop/yandik-foundation`; PR #9 draft.
+- [x] Pernyataan historis: repo sebelumnya dicatat private; **pemeriksaan 11 November 2026 menunjukkan PUBLIC**. Branch develop/yandik-foundation; PR #9 draft.
 - [x] Masterplan `docs/MASTERPLAN.md`, katalog 15 modul `docs/MODULES_INDEX.md`.
 - [x] Spesifikasi terpisah `docs/modules/00_...md` sampai `14_...md` beserta checklist.
 - [x] Roadmap, backlog, changelog, standar UX, workflow dan aturan pengelolaan data.

@@ -18,7 +18,7 @@
 
 Pemeriksaan dan persetujuan substansi dicatat pada [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21), **masih terbuka**.
 
-Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak mengesahkan aturan prioritas/anggaran, tidak menjadi bukti pengujian kode baru, dan tidak menambah pengeluaran CL/CI. Repositori masih **private**, sehingga pembaca membutuhkan izin GitHub.
+Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak mengesahkan aturan prioritas/anggaran, tidak menjadi bukti pengujian kode baru, dan tidak menambah pengeluaran CL/CI. Pemeriksaan metadata GitHub 11 November 2026 menunjukkan repositori berstatus **PUBLIC**; pembaca tautan tidak harus diberi izin GitHub. Keterbukaan kode bukan persetujuan penggunaan atau publikasi data kedinasan.
 
 ## Arti status
 - **SELESAI:** keluaran/commit dan bukti telah ada untuk ruang lingkup yang disebut; dokumentasi selesai tidak berarti modul terimplementasi.
@@ -33,7 +33,7 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 |---|---|---|
 | DONE-01 | Pemetaan aplikasi Flask aktif melalui inspeksi read-only terdahulu | Catatan arsitektur di docs/ARCHITECTURE.md |
 | DONE-02 | Snapshot source terpisah dan audit statis awal | Arsip sumber 168 file; paket pengembangan 171 file di percakapan, **bukan di repo** |
-| DONE-03 | Repository private + branch pengembangan + PR draft | `develop/yandik-foundation`, [PR #9](https://github.com/dvoriano/yandik-plus/pull/9) |
+| DONE-03 | Setup repository (historis: tercatat private; terdeteksi PUBLIC 11 Nov 2026) + branch pengembangan + PR draft | `develop/yandik-foundation`, [PR #9](https://github.com/dvoriano/yandik-plus/pull/9) |
 | DONE-04 | Masterplan, 15 spesifikasi modul dan katalog | docs/MASTERPLAN.md + docs/modules/* |
 | DONE-05 | UX, workflow, batasan keamanan, changelog | docs/UX_PAPERLESS.md, WORKFLOW_ENGINE.md, CHANGELOG_ROADMAP.md |
 | DONE-06 | Validator kode awal untuk impor dan panduan | scripts/verify_import.py, docs/IMPORT_OFFLINE.md; **belum mengimpor kode Flask** |
@@ -67,6 +67,10 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | M04-S8 | Persyaratan SOP dan tata kelola katalog | **SEDANG (kode draft), BELUM DIUJI**: [12 unsur dan perubahan unit DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance), telaah terpisah, histori revisi, tidak menerapkan perubahan | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) · [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); bukan SOP resmi/bantuan/anggaran |
 | M04-S9 | Register tindak lanjut pembahasan kelembagaan | **SEDANG (kode draft), BELUM DIUJI**: [register temuan, penanggung jawab, tenggat, progres dan histori](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) dari telaah M04-S8 DEMO | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); penutupan catatan **bukan** izin integrasi |
 | M04-S9B | Rekap eksekutif pembahasan kelembagaan | **SEDANG (kode draft), BELUM DIUJI**: [model dan tampilan baca-saja DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) menggabungkan 12 unsur M04-S8 dengan temuan, penanggung jawab, rencana, status dan usulan katalog M04-S9 | [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md); QA tertunda; tidak membuat keputusan SOP/anggaran atau izin integrasi |
+
+### Catatan audit statis M04-S9B / akses GitHub (11 Nov 2026)
+- [x] [Catatan pembacaan statis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_STATIC_REVIEW.md): status repo PUBLIC terdeteksi, klaim private di dokumen diperbarui. Tidak ada pengujian atau deploy.
+- [ ] Keputusan pemilik mengenai visibilitas repo dan klasifikasi isi, pembuktian kode, SOP, SPBE, akses dan audit sebelum integrasi riil masih terbuka.
 
 ### M04-S9B: rekap eksekutif kelembagaan (KODE DITULIS / BELUM DIUJI)
 - [x] [Tujuh berkas rancangan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) serta [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_EXECUTIVE_BRIEFING.md) untuk laporan baca-saja dari M04-S8/M04-S9 fiktif. [Commit](https://github.com/dvoriano/yandik-plus/commit/96e091411249c46f444d19cd4f62694bf36458fc).

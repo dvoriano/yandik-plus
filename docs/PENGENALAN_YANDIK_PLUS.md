@@ -14,7 +14,7 @@
 
 > **Pesan utama:** YANDIK+ dirancang sebagai ruang kerja digital terpadu yang membantu petugas Puskeswan, kabupaten/kota, dan provinsi mengelola data, kegiatan, pengawasan, pembinaan, kebutuhan, serta tindak lanjut. Data dicatat pada sumber yang tepat, dapat digunakan kembali sesuai hak akses, dan dapat ditelusuri ketika diperiksa. **YANDIK+ tidak mengambil alih keputusan pejabat, proses pengadaan, penerbitan dokumen resmi, atau aplikasi pemerintah yang sudah menjadi rujukan.**
 
-**Cara membagikan:** Repositori GitHub saat ini bersifat **private**; tautan hanya dapat dibuka pembaca yang telah diberi akses. Naskah ini disiapkan untuk telaah terbatas, bukan publikasi bebas. Apabila diperlukan distribusi resmi di luar GitHub, penanggung jawab dapat menentukan format, klasifikasi, dan jalur penyampaian sesuai prosedur instansi.
+**Cara membagikan:** Pada pemeriksaan metadata GitHub 11 November 2026, repositori berstatus **PUBLIC** sehingga tautan kode dapat diakses publik. Naskah ini tetap **draf telaah** dan status repositori tidak berarti dokumen/isi dinas disetujui untuk publikasi; hindari menambahkan data riil atau rahasia. Apabila diperlukan distribusi resmi di luar GitHub, penanggung jawab dapat menentukan format, klasifikasi, dan jalur penyampaian sesuai prosedur instansi.
 
 **Panduan baca:** Untuk gambaran dalam waktu singkat, lihat [Ringkasan Eksekutif YANDIK+](RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md). Dokumen ini menjelaskan **apa yang dikerjakan sistem dan bagaimana prosesnya**, bukan kode atau perangkat lunaknya. Status kemajuan terkini tersedia terpisah di [ROADMAP](ROADMAP.md).
 

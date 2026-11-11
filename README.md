@@ -12,7 +12,7 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 2. **[DOKUMEN PENGENALAN LENGKAP YANDIK+](docs/PENGENALAN_YANDIK_PLUS.md)**: tujuan, 15 modul, fitur dan fungsi, 14 sistem kerja internal, contoh alur pelayanan, pemisahan kewenangan, pengawasan, tata kelola SPBE dan pertanyaan pemeriksaan.
 3. **[KATALOG 15 MODUL](docs/MODULES_INDEX.md)**: rincian modul jika ingin membaca lebih jauh.
 
-**Status naskah:** **DRAF UNTUK TELAAH**, belum disahkan sebagai kebijakan atau persetujuan implementasi. Repositori ini **private**; tautan dapat dibuka hanya oleh pengguna GitHub yang diberi akses. Jangan mengubahnya menjadi publik tanpa peninjauan/izin.
+**Status naskah:** **DRAF UNTUK TELAAH**, belum disahkan sebagai kebijakan atau persetujuan implementasi. Pada pemeriksaan metadata GitHub 11 November 2026, repositori dvoriano/yandik-plus berstatus PUBLIC. Akses publik ke kode tidak berarti bahan dinas boleh dipublikasikan atau dijadikan data produksi; hindari memasukkan rahasia/data riil sebelum klasifikasi dan keputusan pemilik repositori.
 
 ## BACA INI DULU SETIAP CHAT / PROGRES TERBARU
 **[PROJECT_STATE.md: STATUS TERAKHIR + LANGKAH SELANJUTNYA](PROJECT_STATE.md)**

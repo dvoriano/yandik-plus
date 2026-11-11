@@ -2,6 +2,11 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | Pemeriksaan statis M04-S9B dan koreksi status akses repo
+**Bukan pengujian.** Metadata koneksi GitHub menunjukkan repo PUBLIC meskipun dokumen lama menyebut PRIVATE. Keterangan akses pada README, PROJECT_STATE, ROADMAP, PENGENALAN dan RINGKASAN_EKSEKUTIF diselaraskan, tanpa mengubah visibilitas repo.
+- [Catatan audit](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_STATIC_REVIEW.md) merangkum batas kode DEMO, QA tertunda, kebutuhan pemilik proses/otorisasi/SPBE dan risiko akses dokumen.
+- Tidak ada eksekusi Node/browser/CL/CI, deploy, perubahan main, data produksi atau keputusan resmi.
+
 ## 2026-11-11 | M04-S9B: rekap eksekutif kelembagaan baca-saja
 **Status:** KODE DITULIS, **BELUM DIUJI**, tanpa CL, CI, tes Node/Chromium atau deployment.
 - [Commit 96e0914](https://github.com/dvoriano/yandik-plus/commit/96e091411249c46f444d19cd4f62694bf36458fc) membuat [tujuh berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-briefing) untuk rekap M04-S8/M04-S9 dengan tanggal acuan manual, 12 unsur dan daftar kekurangan yang belum punya register aktif.

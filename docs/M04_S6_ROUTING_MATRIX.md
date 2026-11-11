@@ -93,5 +93,6 @@ Lihat pula [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/y
 ## 8. Status dan kelanjutan
 
 - **M04-S1 sampai S6:** **SEDANG hanya pada kode draft / BELUM DIUJI**.
-- **M04-S7+** untuk keputusan pejabat, alokasi, paket, pengadaan, distribusi, BAST dan evaluasi **RENCANA**.
+- **M04-S7:** [katalog unit dan RACI serta draf SOP](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) sudah ditulis **BELUM DIUJI**, bukan penetapan organisasi/aturan dinas.
+- **M04-S8+** untuk keputusan pejabat, alokasi, paket, pengadaan, distribusi, BAST dan evaluasi **RENCANA**.
 - **Langkah desain berikut:** penyiapan *katalog rujukan unit dan tata penerusan* yang dapat ditelaah pemilik proses; sebelum diaktifkan resmi, wajib disahkan menurut prosedur kedinasan.

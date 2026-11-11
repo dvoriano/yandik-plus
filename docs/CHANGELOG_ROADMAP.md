@@ -1,3 +1,9 @@
+## 2026-11-11 | M04-S7 katalog unit tujuan dan RACI DEMO (BELUM DIUJI)
+- [Kode katalog M04-S7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) menambah empat unit tujuan dan enam aktivitas RACI, serta rancangan naskah koordinasi yang dapat ditelaah berdasarkan M04-S6. [Commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb).
+- Tidak ada kewenangan unit riil, pengesahan SOP, penugasan/disposisi, keputusan bantuan atau anggaran. [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- M04-S1 hingga S7 SEDANG **kode draft BELUM DIUJI**; proses resmi, pengadaan, distribusi, BAST M04-S8+ RENCANA.
+- Tanpa CL/CI/tests/deploy atau modifikasi `main`, VPS, website dan bot Indodax.
+
 ## 2026-11-11 | M04-S6 matriks rute eskalasi administratif DEMO (BELUM DIUJI)
 - [Kode matriks M04-S6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) mengusulkan rute berdasarkan 5 kategori × 3 urgensi dari eskalasi M04-S5, memungkinkan pilihan berbeda dengan alasan dan telaah DEMO. [Commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84).
 - **Tidak membuat disposisi, mengesahkan dokumen, keputusan bantuan/anggaran, atau BAST**. Unit tujuan masih fiktif/belum menjadi SOP.

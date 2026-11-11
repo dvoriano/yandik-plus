@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S7: katalog unit tujuan, RACI dan konsep aturan koordinasi
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menjalankan CL/CI/tes.
+- [Commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb) menambah [enam berkas DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) untuk katalog empat unit tujuan yang konsisten dengan M04-S6, matriks enam kegiatan RACI, draf lingkup koordinasi, minimum checks, pengecualian, catatan arsip dan telaah naskah.
+- Sumber harus catatan rute M04-S6 yang sudah **dicatat untuk pembahasan** dan sumber M04-S5 tidak berubah. Catatan `dicatat_untuk_bahan_sop` **BUKAN** SOP yang berlaku.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md); daftar pemeriksaan kode, unit, kewenangan dan UI [ditunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Tidak ada disposisi dinas/pengiriman data, perubahan M04-S5/S6, keputusan pejabat, uang, pembelian, paket, distribusi atau BAST.
+- Status M04-S1 sampai S7 sebagai kode draft BELUM DIUJI; keputusan resmi/pengadaan/distribusi/BAST M04-S8+ RENCANA.
+
 ## 2026-11-11 | M04-S6: matriks alur eskalasi administratif dan tanggung jawab DEMO
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak memakai CL/CI/tes ataupun deployment.
 - [Commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84) menambah [enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) untuk matriks 5×3 kategori/urgensi, pilihan unit DEMO, alasan jika berbeda, review peran terpisah, penanda sumber berubah dan teks ringkasan.

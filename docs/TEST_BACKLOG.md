@@ -166,11 +166,31 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md); semua tes ditunda sesuai instruksi owner.
 
+## Antrean M04-S7: Katalog unit, matriks RACI dan draf SOP (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan nanti | Status |
+|---|---|---|
+| QA-M04S7-01 | Import M04-S1/S2/S3/S5/S6/S7 dan fixture DEMO | BELUM DIUJI |
+| QA-M04S7-02 | Empat unit/kode/prasyarat/batas konsisten dengan M04-S6 | BELUM DIUJI |
+| QA-M04S7-03 | Enam aktivitas RACI, peran R/A/C/I tepat dan tidak mengklaim jabatan/kewenangan resmi | BELUM DIUJI |
+| QA-M04S7-04 | Hanya note M04-S6 ditelaah `dicatat_untuk_pembahasan` yang dapat jadi sumber | BELUM DIUJI |
+| QA-M04S7-05 | Kendala M04-S5 stale, batal/ditutup, perubahan note M04-S6 dan sumber tidak konsisten harus ditolak | BELUM DIUJI |
+| QA-M04S7-06 | Unit proposal harus sama dengan unit M04-S6, tidak boleh mengubah rute diam-diam | BELUM DIUJI |
+| QA-M04S7-07 | Draf, submit, review, return, revisi, histori; penelaah DEMO berbeda | BELUM DIUJI |
+| QA-M04S7-08 | Tanggal, teks minimum/maksimum dan atribut SOP resmi/approval/anggaran/BAST dilarang | BELUM DIUJI |
+| QA-M04S7-09 | Tidak mengirim surat/disposisi, tidak mengubah sumber M04-S5/S6 atau memicu CI | BELUM DIUJI |
+| QA-M04S7-10 | Tabel katalog/RACI, form HP 320/375px, keyboard, screen reader, pesan kesalahan | BELUM DIUJI |
+| QA-M04S7-11 | Rekap baca-saja dan klaim status `dicatat_untuk_bahan_sop` tidak jadi SOP berlaku | BELUM DIUJI |
+| QA-M04S7-12 | Telaah kewenangan resmi, tupoksi, bagan organisasi, SOP, SPBE, tata naskah/arsip | BUTUH KEPUTUSAN |
+| QA-M04S7-13 | Integrasi autentikasi/role/wilayah nyata, DB, audit permanen dan dokumen resmi setelah disahkan | TERTUNDA UJI |
+
+[Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
+
 ## Antrean lintas modul yang belum diujikan
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04-S1/S2/S3/S4/S5/S6: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi dan matriks rute tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S7+ tetap RENCANA.
+- M04-S1/S2/S3/S4/S5/S6/S7: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi, matriks rute dan katalog RACI tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S8+ tetap RENCANA.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

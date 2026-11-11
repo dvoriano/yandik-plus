@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S6 | MATRIKS PENERUSAN KENDALA DEMO (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S7 | KATALOG UNIT, RACI, DRAF ATURAN KOORDINASI (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb) menambah enam berkas pada [drafts/m04-unit-catalog/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog): katalog empat unit tujuan DEMO konsisten dengan M04-S6, matriks RACI enam kegiatan, draf naskah koordinasi, telaah, pengembalian dan histori.
+- **Sumber rancangan:** hanya catatan rute M04-S6 `dicatat_untuk_pembahasan` dan sumber M04-S5 yang tidak berubah. Unit tidak dapat diganti diam-diam; penelaah DEMO berbeda bisa mencatat sebagai **bahan SOP, bukan pengesahan**.
+- **Batas:** tidak membentuk SOP resmi, kewenangan petugas, disposisi, pengiriman, perubahan status M04-S5/S6, keputusan bantuan, anggaran, pengadaan, distribusi, atau BAST. Data/peran/kontak DEMO di memori browser, belum backend/otorisasi/audit.
+- **Dokumen:** [spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md); [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) QA tertunda. Tidak ada CL, tes, browser, CI atau deploy; keberhasilan 176 tes lama tidak berlaku.
+- **Status:** M04-S1 sampai S7 SEDANG hanya **kode draft BELUM DIUJI**; M04-S8+ kegiatan resmi/keuangan/paket/distribusi/BAST tetap **RENCANA**. PR #9 tetap DRAFT; `main`, produksi YANDIK+, VPS dan Indodax tidak disentuh.
+- **Next:** prasyarat penetapan SOP, review otorisasi/katalog serta tata kelola perubahan, bukan otomatisasi keputusan bantuan.
+
+## PEMBARUAN M04-S6 | MATRIKS PENERUSAN KENDALA DEMO | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84) membuat enam berkas [drafts/m04-escalation-matrix/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) berisi matriks 5 kategori × 3 urgensi, unit tujuan DEMO, alasan, perubahan pilihan unit dengan justifikasi, telaah terpisah dan histori.
 - **Batas eksplisit:** matriks **hanya menyarankan** alur pembahasan dari kendala M04-S5 yang telah dilaporkan. Pencatatan pilihan **tidak memanggil routeEscalation**, tidak mengirim tugas/berkas, tidak membuat disposisi atau keputusan bantuan. Kategori/struktur unit belum menjadi SOP kedinasan.
 - **Keterlacakan:** snapshot sumber/stale guard; opsi `mendesak_kajian` untuk prioritas pembahasan DEMO, **bukan hak persetujuan tambahan**; data fiktif dan peran label DEMO, hanya memori browser.

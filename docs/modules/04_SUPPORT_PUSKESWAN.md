@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala dan matriks penanganan; **keputusan dan proses riil M04-S7+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6/S7 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala, matriks dan katalog RACI; **keputusan dan proses riil M04-S8+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -41,12 +41,20 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M04-S7: katalog unit, RACI dan draf SOP, BELUM DIUJI
+- [x] [Kode M04-S7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog): empat unit DEMO, enam aktivitas RACI, draf aturan koordinasi, penelaahan/revisi, histori dan keluaran baca-saja.
+- [x] Sumber hanya catatan M04-S6 yang `dicatat_untuk_pembahasan`, status bahan SOP **bukan pengesahan** dan tidak menjalankan disposisi.
+- [x] [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md) dan [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Kode/UI belum diuji; unit riil/tupoksi/otorisasi/kebijakan SPBE dan SOP belum ditetapkan.
+- [ ] M04-S8+ keputusan, dana, pengadaan, distribusi, BAST dan evaluasi masih RENCANA.
+
 ## Progres M04-S6: matriks rute dan penanggung jawab, BELUM DIUJI
 - [x] [Kode matriks M04-S6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix): 5 kategori × 3 urgensi, saran unit DEMO, alasan jalur berbeda, penelaahan peran lain dan histori baca-saja.
 - [x] Tidak mengirim penerusan otomatis ke M04-S5, tidak menetapkan keputusan/anggaran, tidak menggantikan disposisi atau SOP resmi.
 - [x] [Spesifikasi M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Seluruh kode belum diuji, identitas/struktur unit belum disahkan sebagai kebijakan; backend, data riil dan pengamanan akses belum ada.
-- [ ] M04-S7+ keputusan/anggaran/paket/distribusi/BAST tetap RENCANA.
+- [x] M04-S7: kode katalog unit dan RACI, draf aturan koordinasi ditulis, BELUM DIUJI.
+- [ ] M04-S8+ keputusan/anggaran/paket/distribusi/BAST tetap RENCANA.
 
 ## Progres M04-S5: kendala dan eskalasi administratif, BELUM DIUJI
 - [x] [Kode M04-S5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) memuat pencatatan kendala tugas M04-S3, urgensi, penerusan lintas petugas/unit, tanggapan, telaah dan histori DEMO.
@@ -54,7 +62,7 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [x] [Spesifikasi M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) serta [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Belum autentikasi/DB, verifikasi fakta, SOP resmi, QA kode/HP, integrasi ke surat atau sistem keuangan.
 - [x] M04-S6: draf matriks penerusan DEMO ditulis, BELUM DIUJI.
-- [ ] M04-S7+ keputusan resmi, pengadaan, distribusi, BAST dan evaluasi tetap RENCANA.
+- [ ] M04-S8+ keputusan resmi, pengadaan, distribusi, BAST dan evaluasi tetap RENCANA.
 
 ## Progres M04-S4: dashboard antrean administratif, BELUM DIUJI
 - [x] [Enam berkas dashboard draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) merangkum status tugas, tenggat fiktif, penanggung jawab, sumber berubah serta catatan ditutup administratif.
@@ -63,7 +71,7 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [ ] Sintaks, hasil perhitungan, akses, HP/UX, sumber riil, audit, keamanan dan proses dinas BELUM DIUJI.
 - [x] M04-S5: draf kendala dan eskalasi lintas petugas DEMO sudah ditulis, BELUM DIUJI.
 - [x] M04-S6: kode matriks alur DEMO ditulis, BELUM DIUJI.
-- [ ] M04-S7+ keputusan/paket/distribusi/BAST melalui proses sah tetap RENCANA.
+- [ ] M04-S8+ keputusan/paket/distribusi/BAST melalui proses sah tetap RENCANA.
 
 ## Progres M04-S3: tindak lanjut administratif, BELUM DIUJI
 - [x] [Kode rencana tindak lanjut DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) untuk tugas, penanggung jawab, tenggat contoh, catatan, penelaahan, pengembalian, pembatalan dan histori.
@@ -73,7 +81,7 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [x] M04-S4: dashboard antrean tugas administratif baca-saja sudah ditulis, BELUM DIUJI.
 - [x] M04-S5: pelaporan kendala dan koordinasi DEMO sudah ditulis, BELUM DIUJI.
 - [x] M04-S6: draft pembagian unit tujuan DEMO dan telaah alasan, BELUM DIUJI.
-- [ ] M04-S7+ perencanaan paket, distribusi, BAST dan proses resmi lainnya tetap RENCANA.
+- [ ] M04-S8+ perencanaan paket, distribusi, BAST dan proses resmi lainnya tetap RENCANA.
 
 ## Progres M04-S2: referensi keputusan/dokumen eksternal (BELUM DIUJI)
 - [x] [Kode M04-S2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference): register metadata dokumen fiktif yang **diklaim terbit di luar YANDIK+**, pemeriksaan metadata, perbaikan, histori, anti-duplikat dan penanda sumber usang.

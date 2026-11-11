@@ -62,6 +62,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: 154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - M03 tetap SEDANG (prototype); bukti belum diunggah sungguhan, M04 tetap RENCANA.
 
+## M03-S3: penilaian prioritas yang dapat dijelaskan
+- [Model lima faktor, perhitungan dan review](prototypes/profil-puskeswan/support_priority.mjs).
+- [Dokumen rancangan bobot, keadilan dan batas](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md).
+- [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270) (65 Python, 94 Node, 17 Chromium).
+- **Bobot belum menjadi kebijakan dinas.** Ini hanya prototype dengan DEMO, bukan penetapan bantuan atau fitur website aktif.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

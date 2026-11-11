@@ -47,10 +47,10 @@ Menekan usulan bantuan yang tidak memiliki bukti administratif dan mencegah penc
 - [ ] Belum ada autentikasi resmi, izin server kab/kota/provinsi, atau audit bukti yang tidak bisa diubah.
 - [ ] Source Flask lama 171 file belum terimpor ke GitHub; belum ada mapping field real.
 - [ ] Belum ada uji pengguna nonteknis, HP fisik, screen reader dan aksesibilitas mendalam.
-- [ ] **M03-S3** penilaian prioritas transparan dan adil belum dibuat.
+- [x] **M03-S3 dalam prototype:** model penilaian transparan dan review beralasan telah dibuat [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md), [CI SUCCESS 176 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Evaluasi bobot/keadilan resmi belum dilakukan.
 - [ ] **M04** keputusan bantuan, alokasi dana, paket, distribusi dan BAST tetap RENCANA.
 
-## Berikutnya: M03-S3
+## Kelanjutan M03-S3: validasi kebijakan dan uji keadilan nyata
 Rancang prioritas bantuan berdasarkan bukti kesenjangan fasilitas, risiko pelayanan, kondisi SDM, jangkauan wilayah dan urgensi, disertai alasan dan kesempatan review manusia. Hindari skema yang sekadar mengutamakan Puskeswan dengan jumlah pelayanan terbesar. Tidak boleh menghasilkan pendanaan atau penetapan bantuan otomatis.
 
 **Rujukan:** [M03-S1](M03_LINKED_SUPPORT_NEEDS.md) · [Support Puskeswan](modules/04_SUPPORT_PUSKESWAN.md) · [ROADMAP](ROADMAP.md) · [PROJECT_STATE](../PROJECT_STATE.md).

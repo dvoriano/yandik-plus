@@ -35,6 +35,13 @@
 - [15 tes Node dan 2 Chromium baru, 154 tes keseluruhan SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [Dokumen khusus](../../docs/M03_EVIDENCE_AND_DEDUP.md).
 
+## Tambahan M03-S3: Prioritas kebutuhan, bukan keputusan anggaran
+- Verifikator kab/kota mengisi lima indikator tingkat 0–3 dengan alasan dan kode sumber DEMO. Draf tidak lengkap dapat disimpan tetapi tidak diajukan.
+- Bobot percobaan: risiko 30%, fasilitas 25%, akses 20%, SDM 15%, persediaan 10%. Total pelayanan APEL mentah tidak menjadi poin.
+- Verifikator provinsi menerima, meminta perbaikan, atau mengoreksi kategori rekomendasi dengan alasan; skor dasar tidak berubah.
+- Versi sumber lama ditandai, review palsu ditolak, tidak ada alokasi otomatis.
+- [176 tes otomatis lulus](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270); [Dokumen M03-S3](../../docs/M03_PRIORITY_ASSESSMENT.md).
+
 ## Struktur
 - \`index.html\`: struktur semantik, label, skip link, form dan pesan status.
 - \`style.css\`: tampilan mobile-first dan responsif, tombol lebar, status teks (tak mengandalkan warna saja).

@@ -52,6 +52,14 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Realisasi terbatas M03-S3 | 11 November 2026
+- [x] Scorecard prioritas percobaan 5 faktor (risiko 30, fasilitas 25, akses 20, SDM 15, stok 10), tingkat 0–3 beserta sumber dan alasan.
+- [x] Kabupaten/kota menilai, provinsi meninjau/mengembalikan/mengoreksi rekomendasi beralasan tanpa menimpa skor dasar.
+- [x] Data kosong tidak diberi skor, total pelayanan APEL mentah tidak menjadi bobot otomatis, versi sumber usang diberi peringatan.
+- [x] [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270), termasuk browser HP simulasi.
+- [ ] Bobot/kriteria resmi, data asli, evaluasi keadilan lintas Puskeswan, autentikasi serta alokasi bantuan belum tersedia.
+- [Dokumen penilaian percobaan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md).
+
 ## Realisasi terbatas M03-S2 | 11 November 2026
 - [x] Minimum satu kode bukti DEMO untuk pengajuan; verifikator secara eksplisit memeriksa **metadata**, bukan isi file.
 - [x] Deteksi item sama dalam satu fasilitas, termasuk lintas masalah; penolakan lama dapat menjadi referensi pengajuan ulang beralasan.

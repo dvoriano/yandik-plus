@@ -1,3 +1,9 @@
+## 2026-11-11 | M03-S3 scorecard prioritas percobaan
+- Menambahkan lima indikator berbobot percobaan, alasan/sumber, review kab/kota → provinsi, koreksi kategori rekomendasi beralasan tanpa mengubah skor dasar.
+- M03 tetap SEDANG (prototype), M04 tetap RENCANA. Tidak ada alokasi dana, pemilihan penerima, pengadaan atau BAST otomatis.
+- Bobot/ambang belum disahkan sebagai kebijakan kedinasan; masih perlu uji keadilan dan persetujuan metodologi.
+- [Spesifikasi M03-S3](M03_PRIORITY_ASSESSMENT.md), [GitHub Actions SUCCESS 176 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270).
+
 ## 2026-11-11 | M03-S2 kelengkapan metadata dan pencegahan duplikasi
 - Pekerjaan baru pada M03: kode bukti DEMO, gate pengajuan/verifikasi, duplikat item di satu Puskeswan lintas masalah dan alasan pengajuan ulang bila sebelumnya ditolak.
 - Status M03 tetap **SEDANG (prototype)**, M04 tetap **RENCANA**; tidak mengubah kewenangan pengadaan/penetapan bantuan.

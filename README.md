@@ -4,9 +4,9 @@
 
 Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan yang paperless, mudah dipakai petugas, dan terintegrasi.
 
-## MULAI DI SINI | Untuk pimpinan, Inspektorat, dan Diskominfotik
+## Dokumen Pengenalan dan Gambaran Umum YANDIK+
 
-**Tanpa perlu memahami pemrograman:**
+**Dokumen rujukan:**
 
 1. **[RINGKASAN EKSEKUTIF YANDIK+](docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md)**: pengantar singkat untuk rapat/paparan.
 2. **[DOKUMEN PENGENALAN LENGKAP YANDIK+](docs/PENGENALAN_YANDIK_PLUS.md)**: tujuan, 15 modul, fitur dan fungsi, 14 sistem kerja internal, contoh alur pelayanan, pemisahan kewenangan, pengawasan, tata kelola SPBE dan pertanyaan pemeriksaan.

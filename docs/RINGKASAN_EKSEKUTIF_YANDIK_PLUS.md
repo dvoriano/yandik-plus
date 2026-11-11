@@ -1,87 +1,117 @@
-# YANDIK+ | Ringkasan Eksekutif
-## Ringkasan untuk Pimpinan, Inspektorat, dan Diskominfotik
+# YANDIK+ | RINGKASAN EKSEKUTIF
+### Pengembangan Sistem Kerja Terpadu Pelayanan dan Kesehatan Hewan
 
-**Bahan presentasi dan telaah awal | Draf 1.0, 11 November 2026**
+**Dinas Peternakan dan Kesehatan Hewan Provinsi Sumatera Barat**  
+**Dokumen konsep untuk pembahasan pimpinan dan telaah perangkat daerah terkait**  
+**Draf revisi 1.1 | 11 November 2026**
 
-> **YANDIK+ adalah konsep ruang kerja digital terpadu untuk membantu pelayanan dan kesehatan hewan.** Tujuannya: data tidak diketik berkali-kali, pekerjaan mempunyai status yang jelas, bukti kegiatan dapat ditelusuri, dan pimpinan memperoleh rekap yang dapat diperiksa sumbernya.
+> **Pokok usulan:** Mengembangkan YANDIK+ secara bertahap sebagai sarana kerja digital yang menghubungkan pendataan, pelayanan, pengawasan, pembinaan, dan tindak lanjut kesehatan hewan. Pelaksanaannya memerlukan penataan proses bisnis, pengendalian data, koordinasi tata kelola SPBE, serta **dukungan AI Agent sebagai sarana bantu pengembangan sistem**. AI Agent membantu tim membangun dan menyempurnakan sistem; **tidak menggantikan pejabat, tenaga teknis, atau prosedur pengesahan resmi**.
 
-**Kedudukan:** Rancangan pengembangan bertahap pada lingkup Dinas Peternakan dan Kesehatan Hewan Provinsi Sumatera Barat. **Bukan** dokumen pengesahan sistem, permohonan pengadaan, atau keputusan bahwa seluruh modul telah tersedia.
+## 1. Latar Belakang dan Kebutuhan
 
-## Masalah yang ingin diselesaikan
+Penyelenggaraan pelayanan dan kesehatan hewan melibatkan Puskeswan, perangkat daerah kabupaten/kota, serta provinsi. Data profil fasilitas, sumber daya manusia, kegiatan pelayanan, pengawasan sarana, pembinaan, dan kebutuhan operasional masih berpotensi tercatat pada beberapa formulir, dokumen, atau media kerja yang terpisah.
 
-- Data profil fasilitas, SDM, pelayanan dan kegiatan tersebar pada formulir atau berkas yang berbeda.
-- Rekap dan dokumen kegiatan perlu disusun berulang.
-- Sulit melihat proses sesudah laporan dikirim: apakah sudah diperiksa, dikoreksi atau ditindaklanjuti.
-- Kebutuhan fasilitas dan hasil pengawasan belum selalu terhubung dengan kondisi nyata yang mendasarinya.
-- Petugas lapangan memerlukan sistem yang nyaman dipakai dari HP, mudah dipahami dan tahan kendala koneksi.
+Kondisi ini menimbulkan kebutuhan untuk meningkatkan konsistensi data, mengurangi pengisian berulang, mempermudah penyusunan laporan, dan memastikan setiap temuan atau usulan dapat ditelusuri sampai tahap tindak lanjut. Selain itu, keterbatasan sumber daya pengembangan mendorong perlunya metode pembangunan sistem yang bertahap, hemat sumber daya, dan tetap dapat dikendalikan.
 
-## Apa yang akan dikerjakan YANDIK+?
+**YANDIK+ diusulkan sebagai sarana pendukung pelaksanaan tugas**, bukan untuk membentuk kewenangan baru atau menggantikan aplikasi resmi yang telah ditetapkan.
 
-| Kelompok pekerjaan | Fungsi yang dituju |
+## 2. Tujuan Pengembangan
+
+Pengembangan YANDIK+ diarahkan untuk:
+
+1. **Mengintegrasikan informasi kerja** melalui satu identitas rujukan Puskeswan dan penggunaan kembali data sesuai kewenangan.
+2. **Memperkuat tertib administrasi dan akuntabilitas** dengan status pekerjaan, bukti pendukung, riwayat perbaikan, serta pemisahan pihak pengisi dan pemeriksa.
+3. **Mendukung pelayanan dan pembinaan berbasis kebutuhan** dengan menghubungkan kondisi fasilitas, hasil pelayanan, permasalahan, dan rekomendasi tindak lanjut.
+4. **Menyediakan informasi manajerial** yang jelas sumber, periode, definisi, dan status verifikasinya.
+5. **Memudahkan petugas lapangan** melalui rancangan penggunaan ponsel, formulir sederhana, dan pengurangan pekerjaan berulang.
+
+Manfaat tersebut merupakan **sasaran yang akan diukur**, bukan klaim hasil efisiensi yang telah diverifikasi.
+
+## 3. Ruang Lingkup Sistem
+
+YANDIK+ dirancang dalam **15 modul** yang dikelompokkan ke dalam fungsi berikut.
+
+| Kelompok fungsi | Ruang lingkup yang direncanakan | Hasil kerja yang dituju |
+|---|---|---|
+| **Data dasar dan pelayanan** | Pengelolaan identitas fasilitas, Profil Puskeswan, APEL Puskeswan, dan SDM veteriner | Data induk, laporan pelayanan, kondisi fasilitas, serta informasi ketersediaan tenaga |
+| **Kebutuhan dan dukungan layanan** | Pencatatan masalah, usulan kebutuhan, verifikasi, penilaian prioritas, dan pemantauan tindak lanjut | Dasar informasi untuk pembinaan dan pertimbangan kebutuhan secara lebih tertelusur |
+| **Pengawasan dan kesehatan hewan** | Pengawasan obat hewan, klinik/praktik dokter hewan, PHMS/zoonosis, serta sertifikat veteriner dan lalu lintas | Catatan pemeriksaan, rekomendasi, pemantauan, dan referensi administrasi sesuai kewenangan |
+| **Pembinaan dan administrasi** | Pembinaan/Bimtek, dokumen kegiatan, daftar tugas, dan notifikasi | Rekam kegiatan, laporan kerja, pengingat, dan pemantauan penyelesaian |
+| **Informasi dan dukungan pengetahuan** | Dashboard pimpinan, peta wilayah/GIS, regulasi, panduan, dan fungsi bantuan informasi | Informasi untuk evaluasi serta akses panduan kerja yang lebih seragam |
+
+Seluruh fungsi menggunakan **mekanisme bersama** berupa pembagian hak akses, status pekerjaan, pemeriksaan kelengkapan, verifikasi, riwayat perubahan, dan pelacakan tindak lanjut.
+
+**Contoh proses:** Kerusakan alat pada Puskeswan dicatat sebagai permasalahan → diperiksa oleh petugas berwenang → dapat menjadi usulan kebutuhan → dinilai dan ditelaah berdasarkan alasan serta bukti → ditindaklanjuti sesuai keputusan dan prosedur yang berlaku. **Verifikasi kebutuhan maupun skor prioritas tidak sama dengan persetujuan bantuan, pengadaan, atau anggaran.**
+
+## 4. Dukungan AI Agent untuk Pengembangan YANDIK+
+
+### 4.1. Kedudukan dan kebutuhan
+
+Dalam metode pengembangan yang diusulkan, **AI Agent menjadi salah satu sarana kerja yang dibutuhkan untuk mempercepat pembangunan dan penyempurnaan YANDIK+ secara bertahap**, terutama ketika kapasitas pengembangan internal terbatas dan kebutuhan modul cukup luas.
+
+**AI Agent pengembangan berbeda dari chatbot untuk pengguna layanan.** Chatbot umumnya berfungsi menjawab pertanyaan; AI Agent pengembangan digunakan oleh tim yang ditugaskan untuk membantu mengerjakan tahapan teknis secara terarah, seperti menyiapkan rancangan, menghasilkan dan memperbaiki kode, menelusuri keterkaitan modul, menyusun dokumentasi, serta membantu menyiapkan pemeriksaan kualitas. Hasilnya tetap memerlukan **penilaian dan pengesahan manusia**.
+
+| Peran AI Agent dalam pengembangan | Keluaran yang dapat diperiksa |
 |---|---|
-| **Pelayanan Puskeswan** | Profil fasilitas, tenaga, pelaporan APEL, masalah dan usulan kebutuhan |
-| **Pengawasan** | Sarana obat hewan, klinik/praktik dokter hewan, jadwal, checklist, temuan dan perbaikan |
-| **Kesehatan hewan** | Koordinasi informasi PHMS/zoonosis, hasil rujukan dan sertifikat/lalu lintas menurut kewenangan |
-| **Pembinaan dan administrasi** | Jadwal, bukti kegiatan, laporan, rekomendasi, histori dan pengingat |
-| **Informasi pimpinan** | Dashboard, peta kebutuhan, ringkasan indikator dan status tindak lanjut |
-| **Panduan kerja** | SOP, juknis, FAQ, template dan opsi asisten AI jika disetujui |
+| Menjabarkan kebutuhan kerja menjadi rancangan modul dan alur pengguna | Rancangan proses, daftar kebutuhan fitur, dan spesifikasi |
+| Membantu penulisan serta penyempurnaan komponen sistem | Perubahan kode yang terdokumentasi dan dapat ditinjau |
+| Membantu penataan hubungan antarbagian dan migrasi data secara terkendali | Pemetaan data, catatan perubahan, dan rencana integrasi |
+| Membantu penyusunan dokumentasi, petunjuk penggunaan, serta bahan telaah | Naskah, panduan, dan riwayat pengembangan |
+| Membantu identifikasi masalah serta menyiapkan skenario pemeriksaan | Daftar temuan dan rencana pengujian yang dapat diverifikasi |
 
-Keseluruhan rancangan terdiri dari **15 modul** yang terhubung oleh sistem dasar bersama.
+Penggunaan AI Agent **bukan pengganti pengembang yang bertanggung jawab, bukan bukti bahwa kode telah diuji, dan bukan dasar untuk melakukan perubahan otomatis pada sistem produksi**.
 
-## Bukan sekadar kumpulan menu
+### 4.2. Bentuk kebutuhan layanan dan pembiayaan
 
-YANDIK+ dirancang mempunyai **cara kerja yang tertib**:
+AI Agent pengembangan pada umumnya memerlukan **akses ke layanan model AI melalui kredit/token atau kuota pemakaian**, yang konsumsinya bergantung pada volume pekerjaan. Mekanisme ini **berbeda dari langganan chatbot dengan biaya tetap**, dan kebutuhan kredit dapat muncul kembali selama kegiatan pengembangan, perbaikan, dokumentasi, maupun pemeliharaan.
 
-1. **Satu data induk:** setiap Puskeswan memiliki identitas rujukan; APEL, SDM, sarpras dan Support mengambil informasi pada sumber yang tepat.
-2. **Hak akses sesuai peran:** petugas mengisi; verifikator menelaah; pimpinan membaca ringkasan; keputusan pejabat tetap pada kewenangannya.
-3. **Status pekerjaan:** draf → diajukan → diperiksa → perbaikan bila perlu → ditindaklanjuti → selesai.
-4. **Bukti dan histori:** informasi penting, alasan koreksi serta tindak lanjut dapat ditelusuri.
-5. **Satu sumber angka:** laporan bernilai nol tidak disamakan dengan belum melapor; laporan tidak diganti diam-diam pada dashboard.
-6. **Prioritas yang dapat dijelaskan:** kebutuhan fasilitas dinilai dari kondisi/risiko/akses/SDM, bukan otomatis dari banyaknya jumlah pelayanan.
-7. **Dokumen kerja:** sistem membantu membuat draf dan rekap, sedangkan pengesahan resmi melalui mekanisme berwenang.
+Untuk itu, dibutuhkan **telaah penyediaan akses dan kuota pemakaian AI Agent**, termasuk kemungkinan mekanisme pembelian di muka atau isi ulang (*prepaid/top-up*) jika sesuai dengan ketentuan penganggaran dan pengadaan. Pemilihan penyedia, satuan belanja, komponen standar harga, besaran biaya, serta bukti pertanggungjawaban **belum ditetapkan melalui dokumen ini**.
 
-**Contoh:** Puskeswan mencatat alat pendingin vaksin rusak → masalah diperiksa → petugas mengajukan kebutuhan barang → usulan ditelaah → rekomendasi kebutuhan disusun. **Persetujuan bantuan, anggaran, distribusi dan BAST tidak terjadi otomatis**, melainkan tetap mengikuti proses resmi.
+Pengendalian yang diusulkan mencakup batas penggunaan, catatan konsumsi kredit, pembatasan akses anggota tim, peninjauan keluaran, serta pembandingan keluaran terhadap biaya. **Tidak ada ketergantungan yang harus ditetapkan pada satu merek atau penyedia.**
 
-## Apa yang sudah ada dan apa yang belum?
+### 4.3. Pemisahan dari layanan operasional YANDIK+
 
-| Kelompok | Keterangan |
+**Fungsi dasar YANDIK+ tidak harus memanggil layanan AI berbayar setiap kali petugas mengisi data, melapor, memverifikasi, atau membuka dashboard.** Kebutuhan AI Agent yang dijelaskan di sini terutama merupakan **dukungan pada proses pembangunan dan pengembangan sistem**. Apabila pada masa mendatang AI ditambahkan sebagai fitur untuk pengguna, kebutuhan, risiko, akses data, dan biayanya harus dibahas secara terpisah.
+
+Kode, data, dan dokumen yang diproses dengan bantuan AI Agent wajib mengikuti persetujuan akses serta pembatasan informasi. **Data pribadi, kredensial, berkas rahasia, dan data produksi tidak boleh diserahkan ke layanan eksternal tanpa dasar, pengamanan, dan persetujuan yang sesuai.**
+
+## 5. Kondisi Pengembangan dan Tahapan Pelaksanaan
+
+| Kondisi | Penjelasan |
 |---|---|
-| **Layanan yang telah ada** | APEL Puskeswan memiliki layanan daring awal. Ini bukan bukti seluruh YANDIK+ sudah berjalan. |
-| **Prototype pengembangan** | Data induk, Profil, daftar permasalahan, usulan kebutuhan, bukti metadata contoh, alur verifikasi dan skor prioritas percobaan. Belum menjadi aplikasi terpadu yang digunakan petugas sebenarnya. |
-| **Kode baru belum diuji** | Laboratorium M03-S4 untuk enam fasilitas **fiktif** dan tiga bobot perbandingan. Belum diintegrasikan ke layanan. |
-| **Masih direncanakan** | Pengawasan dan pembinaan terpadu, sertifikat/lalu lintas, PHMS, dokumen, notifikasi, GIS, dashboard lintas modul, serta alokasi/BAST sesuai kewenangan. |
+| **Layanan yang telah berjalan** | APEL Puskeswan mempunyai layanan daring awal sebagai salah satu sumber pengalaman pengembangan. |
+| **Prototype yang telah disusun** | Model data dasar, Profil, pencatatan masalah, usulan kebutuhan, beberapa alur verifikasi, dan penilaian prioritas menggunakan data simulasi. **Belum terintegrasi dengan pengguna dan basis data produksi.** |
+| **Rancangan baru yang belum diuji** | Perbandingan prioritas fasilitas menggunakan contoh data fiktif; belum digunakan sebagai dasar pengambilan keputusan. |
+| **Modul yang masih direncanakan** | Pengawasan terpadu, PHMS, sertifikat/lalu lintas, pembinaan, dashboard lintas modul, GIS, notifikasi, serta administrasi bantuan/BAST sesuai kewenangan. |
 
-**Seluruh pengembangan terpadu belum disahkan untuk penerapan produksi.** Status tiap bagian dijaga dalam [ROADMAP](ROADMAP.md).
+Tahapan yang diusulkan meliputi: penyepakatan kebutuhan dan proses bisnis → pengembangan modul prioritas dengan dukungan AI Agent → telaah tata kelola dan keamanan → pengujian pengguna dan kesesuaian data → penerapan terbatas setelah persetujuan → evaluasi dan pengembangan lanjutan.
 
-## Pokok perhatian bagi masing-masing pembaca
+**Dokumen ini tidak menyatakan YANDIK+ terpadu telah siap dioperasikan.**
 
-**Pimpinan:** apakah arah ini menjawab kebutuhan tugas nyata; modul mana diprioritaskan; siapa penanggung jawab proses dan data; bagaimana hasil akan diukur?
+## 6. Tata Kelola dan Pengendalian
 
-**Inspektorat:** siapa membuat dan memeriksa data; apakah bukti dan histori terjaga; apakah penilaian, verifikasi, dan keputusan bantuan/anggaran dipisahkan; bagaimana tindak lanjut diperiksa?
+**Pimpinan perangkat daerah** diperlukan untuk menetapkan arah, prioritas, penanggung jawab proses dan data, serta pengendalian pelaksanaan.
 
-**Diskominfotik:** bagaimana kedudukan YANDIK+ dalam tata kelola SPBE, arsitektur aplikasi dan data, keamanan, infrastruktur, akses pengguna dan integrasi tanpa membuat layanan pemerintah ganda?
+**Inspektorat** diharapkan dapat memberikan masukan mengenai pemisahan tugas, kelengkapan bukti, pengendalian perubahan, ketertelusuran rekomendasi, serta pertanggungjawaban penggunaan sumber daya pengembangan, termasuk AI Agent apabila diadakan.
 
-**Prinsip penting:** Disebut *alat bantu kerja* bukan berarti otomatis berada di luar ketentuan SPBE. Kedudukannya perlu **ditelaah dan ditentukan bersama pengampu yang berwenang**. YANDIK+ juga tidak dimaksudkan menggantikan iSIKHNAS, SRIKANDI, OSS, sistem pengadaan atau kepegawaian.
+**Diskominfotik/pengelola SPBE** diharapkan memberikan telaah mengenai kesesuaian pengembangan dengan kebijakan SPBE, arsitektur dan integrasi sistem, keamanan informasi, pengelolaan akses, serta kebutuhan pengelolaan infrastruktur.
 
-## Apakah wajib membeli AI?
+YANDIK+ **tidak dimaksudkan menggantikan iSIKHNAS, SRIKANDI, sistem perizinan, kepegawaian, atau pengadaan/keuangan resmi**. Kedudukan dan integrasinya perlu ditentukan oleh pihak yang berwenang. Penyebutan sebagai *sarana kerja* tidak dengan sendirinya mengecualikan pengembangan dari tata kelola SPBE.
 
-**Tidak.** Pendataan, checklist, verifikasi, rekap dan penyusunan template dasar tidak mensyaratkan token AI berbayar. AI hanya opsi untuk mencari panduan, meringkas data atau membantu draf apabila dinilai bermanfaat dan disetujui. Pengadaan/biaya operasional, bila diperlukan, harus dibahas melalui proses tersendiri.
+## 7. Arahan yang Diharapkan
 
-## Langkah berikutnya yang diusulkan
+Pada tahap ini, diperlukan **masukan dan arahan** mengenai:
 
-1. Menyepakati proses kerja, pemilik data dan prioritas modul bersama pengguna.
-2. Menelaah kedudukan dan integrasi SPBE dengan Diskominfotik serta pengendalian dengan Inspektorat.
-3. Melakukan uji pengguna, keamanan, akurasi data dan kewajaran penilaian prioritas **setelah tahapan penulisan rancangan selesai dan pengujian diizinkan**.
-4. Menentukan kebutuhan penerapan, pemeliharaan, pembiayaan dan penanggung jawab sebelum penggunaan resmi.
+1. **Persetujuan arah kajian** pengembangan YANDIK+ secara bertahap berdasarkan kebutuhan pelayanan dan kesehatan hewan.
+2. **Penetapan prioritas modul serta penanggung jawab** proses bisnis, pengelolaan data, dan peninjauan hasil.
+3. **Koordinasi telaah SPBE dan pengendalian internal** sebelum penerapan lebih luas.
+4. **Penelaahan kebutuhan sarana pengembangan**, termasuk akses AI Agent berbasis kredit/token/kuota pemakaian, kesesuaian mekanisme pembiayaan dan pertanggungjawaban.
+5. **Rencana evaluasi** yang mengukur manfaat, ketepatan informasi, beban petugas, dan keamanan sebelum implementasi resmi.
 
-**Keputusan yang dimohon pada tahap ini:** **masukan dan arahan atas konsep serta proses bisnis**, bukan persetujuan otomatis atas seluruh modul, anggaran, atau deployment.
+**Penegasan:** Ringkasan ini merupakan **bahan pertimbangan awal**, bukan persetujuan pengadaan, pengesahan anggaran, penetapan aplikasi baru, atau pernyataan bahwa seluruh persyaratan tata kelola telah dipenuhi.
 
 ---
 
-**Cara berbagi:** Dokumen ini ada di repository **private**. Pembaca harus terlebih dahulu memiliki akses GitHub yang diberikan secara sah. Jangan menjadikan repository publik tanpa penelaahan dan persetujuan.
+**Dokumen pendukung:** [Pengenalan Lengkap YANDIK+](PENGENALAN_YANDIK_PLUS.md) · [Katalog 15 Modul](MODULES_INDEX.md) · [Roadmap Pengembangan](ROADMAP.md)
 
-**Baca penjelasan selengkapnya:** [Dokumen Pengenalan YANDIK+](PENGENALAN_YANDIK_PLUS.md) · [Katalog 15 Modul](MODULES_INDEX.md) · [Roadmap dan Status](ROADMAP.md)
-
-**Saran dan koreksi substansi:** dicatat di [Issue telaah dokumen #21](https://github.com/dvoriano/yandik-plus/issues/21) sebelum naskah dinyatakan disetujui.
-
-**Naskah ini tidak menggantikan juknis, regulasi, SOP, atau keputusan pejabat yang berlaku.**
+**Status naskah:** Draf untuk telaah internal. Repositori GitHub saat ini bersifat **private**; penyampaian kepada pihak lain mengikuti ketentuan akses dan tata naskah instansi.

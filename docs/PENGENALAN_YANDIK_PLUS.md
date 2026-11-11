@@ -330,11 +330,17 @@ Dokumen ini **tidak memuat kata sandi, data pribadi, hasil pemeriksaan rahasia, 
 
 Integrasi teknis dan pertukaran data baru boleh disusun setelah dasar kewenangan, mutu data, dan pengamanan disepakati.
 
-### 10.6. Posisi AI dan kebutuhan biaya
+### 10.6. AI Agent sebagai sarana pengembangan dan kebutuhan biaya
 
-**YANDIK+ tidak mensyaratkan pembelian token AI untuk menjalankan fungsi dasar** seperti pendataan, checklist, verifikasi, rekap dan penyusunan template terstruktur. AI dapat menjadi **opsi pendukung** untuk pencarian panduan, rangkuman, dan penyusunan draf setelah disetujui.
+**Kebutuhan AI Agent untuk mengembangkan YANDIK+ perlu dibedakan dari fitur AI yang kelak mungkin dipakai petugas.** Dalam metode pengembangan yang diusulkan, AI Agent diperlukan sebagai sarana bantu untuk mempercepat perancangan modul, penulisan dan peninjauan kode, pemetaan data, penyusunan dokumentasi, serta penyiapan skenario pengujian. Hal ini relevan untuk mendukung tim yang memiliki kapasitas pengembangan terbatas dan lingkup pekerjaan lintas modul. Keluaran AI Agent tetap diperiksa, diputuskan, dan dipertanggungjawabkan oleh manusia.
 
-Jika kelak diusulkan biaya layanan AI, hosting, integrasi atau operasional, kebutuhan, keluaran, cara pembelian, pembebanan dan dasar penganggarannya perlu dijelaskan **secara terpisah**. Dokumen ini **bukan permohonan persetujuan belanja** dan tidak menilai legalitas satuan biaya tertentu.
+Penggunaan layanan AI Agent dalam pengembangan **dapat menimbulkan kebutuhan kredit/token atau kuota penggunaan model AI yang dihitung berdasarkan pemakaian**, termasuk apabila tersedia pilihan pembelian di muka atau top-up. Sifat biaya ini **tidak identik dengan langganan chatbot bulanan**. Oleh sebab itu, usulan dukungan perlu menjelaskan kebutuhan, hasil kerja yang diharapkan, jenis satuan/kuota layanan, batas konsumsi, pencatatan penggunaan dan alternatif penyedia secara terukur. Klasifikasi belanja, satuan harga, mekanisme pengadaan serta pertanggungjawaban **harus ditelaah dan disetujui melalui proses yang berwenang**.
+
+**Pengendalian:** AI Agent hanya mengakses sumber yang diizinkan, menggunakan contoh/data yang telah disetujui, tidak diberi akses bebas ke kredensial atau data rahasia, dan tidak melakukan perubahan produksi tanpa pemeriksaan dan otorisasi. Hasil kode tidak dianggap benar sebelum pengujian serta reviu.
+
+**Fungsi operasional dasar YANDIK+ tidak harus mengonsumsi token AI berbayar** untuk setiap pengisian, verifikasi, rekap atau tampilan dashboard. Fitur chatbot/asisten AI untuk pengguna, jika kelak dipertimbangkan, merupakan kebutuhan **terpisah** yang memerlukan telaah manfaat, biaya, keamanan dan tata kelola sendiri.
+
+Penjelasan kebutuhan AI Agent untuk pengembangan juga tersedia dalam [Ringkasan Eksekutif](RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md). Dokumen ini **bukan permohonan persetujuan belanja** dan tidak menilai legalitas satuan biaya tertentu.
 
 ---
 
@@ -400,8 +406,8 @@ Tidak boleh disimpulkan demikian. Komponen digital dan integrasinya perlu dikaji
 **Apakah seluruh data dapat dibuka kepada pimpinan atau masyarakat?**  
 Tidak. Ringkasan, rincian dan data sensitif harus dibedakan menurut tujuan dan kewenangan.
 
-**Apakah pengembangan ini membutuhkan langganan AI berbayar?**  
-Tidak untuk fungsi dasarnya. AI hanya opsi yang memerlukan kajian manfaat, biaya dan perlindungan data tersendiri.
+**Mengapa diusulkan AI Agent untuk pengembangan YANDIK+?**  
+AI Agent merupakan sarana bantu yang dibutuhkan dalam metode pengembangan yang diusulkan untuk mempercepat penyusunan modul, peninjauan perubahan, dokumentasi dan perencanaan pengujian. Layanan ini dapat memerlukan kredit/token berdasarkan pemakaian dan perlu ditelaah dari sisi biaya, hasil, pengadaan serta pengendalian. **Operasional dasar aplikasi untuk petugas tidak harus memakai token AI setiap saat.**
 
 **Apakah dokumen ini berarti anggaran pembangunan atau pengadaan telah disetujui?**  
 Tidak. Naskah ini menjadi **bahan pemahaman dan telaah**, bukan dasar tunggal untuk melakukan pengeluaran.

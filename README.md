@@ -8,7 +8,7 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 
 **Dokumen rujukan:**
 
-1. **[RINGKASAN EKSEKUTIF YANDIK+](docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md)**: pengantar singkat untuk rapat/paparan.
+1. **[RINGKASAN EKSEKUTIF YANDIK+](docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md)**: bahan penjelasan kebijakan, kebutuhan pengembangan, tata kelola, dan dukungan AI Agent sebagai sarana bantu pembangunan sistem.
 2. **[DOKUMEN PENGENALAN LENGKAP YANDIK+](docs/PENGENALAN_YANDIK_PLUS.md)**: tujuan, 15 modul, fitur dan fungsi, 14 sistem kerja internal, contoh alur pelayanan, pemisahan kewenangan, pengawasan, tata kelola SPBE dan pertanyaan pemeriksaan.
 3. **[KATALOG 15 MODUL](docs/MODULES_INDEX.md)**: rincian modul jika ingin membaca lebih jauh.
 

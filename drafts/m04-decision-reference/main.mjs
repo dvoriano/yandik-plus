@@ -87,6 +87,15 @@ $("review-form").addEventListener("submit",event=>{
     notice("Penelaahan metadata dicatat. Keaslian dan keberlakuan dokumen belum diperiksa.");
   }catch(err){notice(err.message,true);}
 });
+$("new-ref").addEventListener("click",()=>{
+  selected=null;
+  $("reference-form").reset();
+  $("review-reason").value="";
+  $("ack").checked=false;
+  show();
+  notice("Form baru siap. Catatan referensi sebelumnya tetap tersimpan di memori halaman.");
+  $("reference").focus();
+});
 $("clear").addEventListener("click",()=>{
   register=createReferenceRegister();selected=null;
   $("reference-form").reset();$("review-reason").value="";$("ack").checked=false;

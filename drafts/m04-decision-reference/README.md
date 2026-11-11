@@ -8,7 +8,7 @@ Mencatat **metadata referensi** terhadap dokumen yang **diklaim telah diterbitka
 ## Komponen
 - `reference_register.mjs`: model register hingga 25 catatan, anti-duplikat nomor DEMO, draf → pengajuan pemeriksaan → catatan metadata/perlu klarifikasi/tidak sesuai, histori dan penanda sumber usang.
 - `fixtures.mjs`: membuat sumber dossier dari fungsi M04-S1 pada data fiktif, bukan mengambil data asli.
-- `main.mjs`, `index.html`, `style.css`: contoh form dan daftar metadata, pemeriksaan dua peran DEMO, ringkasan baca-saja.
+- `main.mjs`, `index.html`, `style.css`: contoh form dan daftar metadata, pilihan tambah referensi baru tanpa menghapus daftar lama, pemeriksaan dua peran DEMO, ringkasan baca-saja.
 - [Spesifikasi proses bisnis M04-S2](../../docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md).
 
 ## Aturan pengendalian

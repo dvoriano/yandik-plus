@@ -1,0 +1,15 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#153747;background:#f4f8fa;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:940px;margin:0 auto;padding:18px 14px 50px}
+header,section{background:#fff;border:1px solid #dae6ed;border-radius:14px;padding:22px;margin:0 0 16px}
+h1{font-size:clamp(1.5rem,3vw,2.2rem)}h2{font-size:1.16rem}p,li{line-height:1.55}
+.eyebrow{font-weight:750;color:#33617b}.warning{color:#8b4200;font-weight:800}.muted{color:#536c78}
+form{display:grid;gap:12px}label{display:grid;gap:7px;font-weight:650}
+input,textarea,select{min-width:0;width:100%;min-height:44px;font:inherit;padding:10px 12px;border-radius:10px;border:1px solid #a3b9c5;background:#fff;color:#153747}
+button{font:inherit;font-weight:700;min-height:44px;border-radius:10px;border:0;padding:11px 14px;background:#245a78;color:white;cursor:pointer}
+button.secondary{background:#eaf2f6;color:#245a78;border:1px solid #adc3cf}
+.actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:6px}
+:focus-visible{outline:3px solid #b77713;outline-offset:2px}
+[hidden]{display:none!important}#task-list li{margin:10px 0;overflow-wrap:anywhere}
+#handoff{font: .89rem/1.5 ui-monospace,monospace}
+footer{text-align:center;color:#526d7a;font-size:.89rem;padding:12px}
+@media(max-width:560px){header,section{padding:16px}.shell{padding:12px}.actions{display:grid}.actions button{width:100%}}

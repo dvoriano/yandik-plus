@@ -58,6 +58,14 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | M02 | Profil Puskeswan terpadu | **SEDANG (prototype interaktif)**: form per bagian, Masalah→tindak lanjut, SDM/APEL baca-saja dummy; **65 Python + 45 Node + 9 Chromium = 119 tes** [Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101) | Uji UX dan aksesibilitas pada HP nyata, field Profiling lama, otorisasi/API/DB server, integrasi sumber asli |
 | M03 | Support Puskeswan: kebutuhan dan prioritas | **SEDANG**: M03-S1..S3 prototype teruji sebelumnya [176 tes lama](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270); **M03-S4A/S4B/S4C kode draft BELUM DIUJI**, [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) | Pending test [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); evaluasi fairness, bobot kebijakan, source real/Flask, keamanan backend, uji petugas; tidak ada alokasi otomatis |
 | M04-S1 | Support: berkas administrasi sebelum keputusan resmi | **SEDANG (kode draft) / BELUM DIUJI**: [enam berkas simulasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dari kebutuhan terverifikasi DEMO; pemeriksaan lima kelengkapan dan pencatatan bahan pertimbangan tanpa keputusan. [Commit](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) | [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), sumber M03 asli, otorisasi dan aturan administrasi belum divalidasi; **bukan persetujuan bantuan** |
+| M04-S2 | Register referensi keputusan/dokumen eksternal | **SEDANG (kode draft), BELUM DIUJI**: metadata dari dokumen yang diklaim terbit di luar sistem, pemeriksaan fiktif oleh dua peran, anti-duplikat, histori dan sumber usang [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference) | [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); bukan autentikasi keaslian, penerbitan SK atau persetujuan bantuan |
+
+### M04-S2: Register referensi eksternal (KODE DITULIS / BELUM DIUJI)
+- [x] Enam [berkas kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference) dengan data kebutuhan/berkas M04-S1 fiktif, referensi dokumen eksternal, tahap telaah metadata dan daftar multi-entri.
+- [x] [Dokumen prosedur dan pembatasan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md), [commit model](https://github.com/dvoriano/yandik-plus/commit/edcc66dfd03ffba302ff7e88422a32d6b61a79ef), [commit UI](https://github.com/dvoriano/yandik-plus/commit/7b177e2de92ec380971006a3f3497d775e4682b8).
+- [ ] Semua tes, penelusuran ke penerbit asli, pemeriksaan hukum, peran resmi dan API/DB **BELUM DIUJI/TERSEDIA**.
+- [ ] Metadata tercatat **bukan** bukti keputusan sah, bantuan disetujui atau anggaran tersedia.
+- [ ] M04-S3+ paket, penyaluran, BAST dan evaluasi tetap RENCANA.
 
 ### M04-S1: Berkas pertimbangan administrasi (KODE DITULIS / BELUM DIUJI)
 - [x] Rancangan fungsi [draf administrasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review), lima checklist, pengajuan, pengembalian, riwayat dan teks pertimbangan dari data fiktif.
@@ -98,10 +106,10 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul (M01, M02, M03 dan draf M04-S1 sudah di daftar SEDANG)
+## C. Rencana per modul (M01, M02, M03 dan draf M04-S1/S2 sudah di daftar SEDANG)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M04-S2+ | P0 | Support: referensi keputusan pejabat resmi, alokasi sesuai kewenangan, distribusi dan BAST | M04-S1 serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
+| M04-S3+ | P0 | Support: tindak lanjut administrasi, keputusan resmi melalui pihak berwenang, alokasi dan distribusi/BAST | M04-S2 serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |
 | M06 | P1 | Pengawasan Obat Hewan | M01 | [Obat](modules/05_PENGAWASAN_OBAT_HEWAN.md) |
 | M07 | P1 | Klinik/Praktik Dokter Hewan | M01 | [Klinik](modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md) |

@@ -52,6 +52,12 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Draft M04-S2 | 11 November 2026 | BELUM DIUJI
+- [x] [Register referensi eksternal fiktif](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference) ditulis untuk mencatat metadata dokumen yang **diklaim diterbitkan di luar sistem** setelah berkas M04-S1 tersedia sebagai bahan pertimbangan.
+- [x] Nomor DEMO, sumber berkas/versi, pemeriksaan metadata dua peran, histori, klarifikasi, anti-duplikat dan catatan penelusuran.
+- [ ] Pemeriksaan keaslian, kewenangan/keputusan resmi, anggaran, paket, distribusi dan BAST **belum dibuat**. Kode dan tampilan **belum diuji**.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). M04-S3+ masih RENCANA.
+
 ## Draft M04-S1 | 11 November 2026 | BELUM DIUJI
 - [x] Enam berkas [`drafts/m04-admin-review/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dibuat untuk persiapan berkas administratif kebutuhan fiktif yang sudah terverifikasi.
 - [x] Rancangan lima cek kelengkapan, draf/pengajuan/perbaikan, catatan penelaah sebagai bahan pertimbangan dan teks ringkasan baca-saja.

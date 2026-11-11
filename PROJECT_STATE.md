@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S1 | BERKAS ADMINISTRASI USULAN (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S2 | REGISTER REFERENSI KEPUTUSAN EKSTERNAL (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit model edcc66d](https://github.com/dvoriano/yandik-plus/commit/edcc66dfd03ffba302ff7e88422a32d6b61a79ef) dan [perbaikan multi-entri 7b177e2](https://github.com/dvoriano/yandik-plus/commit/7b177e2de92ec380971006a3f3497d775e4682b8) menambah enam berkas di [`drafts/m04-decision-reference/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference), termasuk model register, data DEMO, formulir, daftar dan status telaah.
+- **Alur:** M04-S1 `tercatat_untuk_pertimbangan` (DEMO) → draf referensi eksternal yang **diklaim terbit di luar sistem** → ajukan pemeriksaan metadata → catat metadata, minta klarifikasi atau tandai tidak sesuai. Nomor sama dicegah dalam register DEMO; sumber berubah ditandai usang.
+- **Batas kewenangan:** `metadata_tercatat` **BUKAN** verifikasi keaslian atau keputusan pejabat; tidak ada penerbitan SK, penetapan penerima, anggaran, pengadaan, distribusi atau BAST. Role DEMO bukan login; semua data fiktif dan hanya di memori browser.
+- **Dokumen:** [M04-S2 prosedur dan batas](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md); QA ditunda pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Tidak menggunakan CL, Node test, Chromium maupun CI.
+- **Status:** **M04-S1/S2 SEDANG (kode draft) / BELUM DIUJI**; M04-S3+ keputusan resmi/penyaluran/BAST RENCANA, M03-S4A/B/C BELUM DIUJI. `main`, VPS dan produksi tidak disentuh, PR #9 tetap DRAFT.
+- **Selanjutnya:** rancangan tindak lanjut administratif M04-S3 pada referensi yang sudah dicatat untuk penelusuran, **bukan** otomatis menetapkan bantuan atau pengadaan.
+
+## PEMBARUAN M04-S1 | BERKAS ADMINISTRASI USULAN | 11 November 2026
 - **Kode tersimpan, BELUM DIUJI:** [commit 9051571](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) menambahkan [drafts/m04-admin-review/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dengan `dossier.mjs`, `fixtures.mjs`, `main.mjs`, `index.html`, `style.css` dan README.
 - **Alur terpisah dari skor M03:** kebutuhan dari sumber fiktif yang berstatus terverifikasi → draf berkas administrasi → checklist lima kelengkapan → pemeriksaan administrasi oleh peran DEMO berbeda → dikembalikan atau **dicatat sebagai bahan pertimbangan**. Tidak ada status persetujuan atau alokasi otomatis.
 - **Batas penting:** ID pelaku DEMO bukan autentikasi, bukti hanya metadata, sumber M03 riil belum disambungkan, tidak ada DB/audit sah atau dokumen resmi. Tidak ada nominal, keputusan pejabat, pengadaan, penyaluran atau BAST.

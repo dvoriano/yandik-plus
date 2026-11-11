@@ -1,3 +1,9 @@
+## 2026-11-11 | M04-S2 register referensi dokumen eksternal (BELUM DIUJI)
+- Enam [berkas draft M04-S2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference) ditambahkan untuk mencatat metadata keputusan/dokumen yang **diklaim berasal dari penerbit di luar YANDIK+**, dengan histori, pemeriksaan metadata, klarifikasi, anti-duplikat dan peringatan sumber berubah.
+- **Bukan bukti keputusan resmi:** tidak menerbitkan SK, tidak memverifikasi keaslian/keabsahan hukum, tidak menetapkan penerima, anggaran, pengadaan atau BAST.
+- Status M04-S2 **SEDANG (kode draft) / BELUM DIUJI**; M04-S3+ tetap RENCANA. [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md) · [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) · [commit kode](https://github.com/dvoriano/yandik-plus/commit/edcc66dfd03ffba302ff7e88422a32d6b61a79ef) · [commit UI](https://github.com/dvoriano/yandik-plus/commit/7b177e2de92ec380971006a3f3497d775e4682b8).
+- Tanpa CL, tes/CI, perubahan website, VPS atau branch `main`.
+
 ## 2026-11-11 | M04-S1 draf berkas pertimbangan administrasi
 - [Kode administratif DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) disusun untuk menjembatani kebutuhan terverifikasi dan pemeriksaan berkas oleh peran terpisah.
 - Terdapat lima checklist, draf/pengajuan/perbaikan, catatan pertimbangan dan histori. **Bukan** proses penerbitan keputusan, penyaluran bantuan, belanja/pengadaan atau BAST.

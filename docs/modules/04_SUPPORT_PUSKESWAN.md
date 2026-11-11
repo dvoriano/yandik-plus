@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1 SEDANG (kode draft) / BELUM DIUJI** untuk berkas administratif; **keputusan dan proses riil M04-S2+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2 SEDANG (kode draft) / BELUM DIUJI** untuk berkas administratif dan register referensi eksternal; **keputusan dan proses riil M04-S3+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -41,12 +41,20 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M04-S2: referensi keputusan/dokumen eksternal (BELUM DIUJI)
+- [x] [Kode M04-S2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference): register metadata dokumen fiktif yang **diklaim terbit di luar YANDIK+**, pemeriksaan metadata, perbaikan, histori, anti-duplikat dan penanda sumber usang.
+- [x] **Tidak** menerbitkan keputusan, tidak memeriksa keaslian file, tidak menentukan bantuan/anggaran. Status `metadata_tercatat` hanya catatan penelusuran.
+- [x] [Spesifikasi M04-S2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md) dan [QA ditunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Semua uji kode, konfirmasi penerbit, dokumen riil, akun/DB, SPBE dan SOP resmi belum dilakukan.
+- [ ] M04-S3+ tindak lanjut dan realisasi dukungan/BAST masih RENCANA.
+
 ## Progres M04-S1: rancangan berkas administrasi, BELUM DIUJI
 - [x] Kode [`drafts/m04-admin-review/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) untuk memilih kebutuhan DEMO terverifikasi, mengisi alasan dan kode bukti metadata serta mengecek lima unsur kelengkapan.
 - [x] Penyusun dan penelaah DEMO terpisah; status akhir hanya **tercatat untuk pertimbangan**, bukan bantuan disetujui.
 - [x] [Dokumen M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Belum uji kode/UI, autentikasi, kewenangan resmi, data riil, alokasi dana, pengadaan, paket, distribusi atau BAST.
-- [ ] M04-S2+: pencatatan keputusan resmi dari sistem/pejabat berwenang, lalu distribusi dan pertanggungjawaban sesuai prosedur, masih RENCANA.
+- [x] M04-S2 (draft): register **metadata referensi** keputusan eksternal sudah ditulis [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference), BELUM DIUJI; bukan verifikasi surat resmi.
+- [ ] M04-S3+: tindak lanjut menurut keputusan sah, paket, penyaluran dan pertanggungjawaban sesuai prosedur tetap RENCANA.
 
 ## Progres M03-S4C: rancangan bahan BA telaah, BELUM DIUJI
 - [x] [Kode draft bahan penyusunan berita acara](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) menyusun teks dari bobot percobaan, rincian skor fiktif, pendapat provinsi dan riwayat rekomendasi/perbaikan.
@@ -99,7 +107,8 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [x] MOD-04-03a: Cek bukti metadata dan deteksi duplikat **di prototype**, [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [x] MOD-04-03: Form usulan + verifikasi dan alasan koreksi **sebagai prototype fiktif**, belum aplikasi resmi.
 - [x] MOD-04-04a: Draft pemeriksaan administrasi **tanpa simulasi keputusan pejabat** dibuat [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review), BELUM DIUJI.
-- [ ] MOD-04-04b: Rancang referensi keputusan pejabat dari luar sistem dan rencana paket setelah prosedur disepakati (tidak otomatis memutuskan).
+- [x] MOD-04-04b1: Kode register **metadata referensi** eksternal DEMO, belum teruji/terhubung proses sah.
+- [ ] MOD-04-04b2: Verifikasi formal ke sumber, penetapan prosedur, rencana paket dan tindakan resmi yang berwenang.
 - [ ] MOD-04-05: Buat pencatatan distribusi, BAST dan evaluasi menggunakan data dummy
 
 ## Batas modul dengan M02-S4

@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S2: register referensi dokumen eksternal pada berkas Support
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menggunakan CL/CI/Node test/browser.
+- [Commit model](https://github.com/dvoriano/yandik-plus/commit/edcc66dfd03ffba302ff7e88422a32d6b61a79ef) dan [commit navigasi multi-entri](https://github.com/dvoriano/yandik-plus/commit/7b177e2de92ec380971006a3f3497d775e4682b8) menyimpan [enam file draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference), menghubungkan sumber M04-S1 *fiktif* ke metadata referensi dokumen yang **diklaim terbit di luar sistem**.
+- Model menyiapkan draf/ajukan/telaah/klarifikasi/tidak sesuai, pencatatan histori, anti-duplikat referensi dan peringatan sumber berkas berubah, tanpa status persetujuan.
+- **Batas penting:** nomor dan instansi DEMO, autentikasi/konfirmasi penerbit/arsip asli belum ada; metadata `tercatat` bukan validasi legalitas, SK, bantuan atau anggaran. Tidak ada data riil, database atau audit persisten.
+- [Dokumentasi M04-S2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md) serta [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) dibuat.
+- **M04-S1 dan S2 SEDANG pada draft BELUM DIUJI**; M04-S3+ RENCANA; produksi, VPS dan bot Indodax tidak disentuh.
+
 ## 2026-11-11 | M04-S1: bahan pertimbangan administratif usulan Support
 **Status:** KODE DITULIS, **BELUM DIUJI**. M04-S1 SEDANG dalam `drafts/`; keputusan bantuan, alokasi, pengadaan dan BAST M04 lainnya masih RENCANA.
 - [Commit 9051571](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) menambah [enam file](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) untuk sumber kebutuhan DEMO terverifikasi, checklist administrasi, draf, pengajuan dan catatan telaah oleh peran DEMO terpisah.

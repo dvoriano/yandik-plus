@@ -183,8 +183,12 @@ function checkDocket(docket){
        !c.author||!DEMO.test(c.author.id??""))
       throw Error("Usulan perubahan/riwayat katalog tidak konsisten.");
     changeIds.add(c.id);
-    const normalized=validateChangeInput({...c.input,
+    const normalized=validateChangeInput({
+      type:c.input.type,unit_key:c.input.unit_key,
       candidate:{...c.input.candidate},
+      reason:c.input.impact.reason,impact_routes:c.input.impact.impact_routes,
+      impact_raci:c.input.impact.impact_raci,impact_sop:c.input.impact.impact_sop,
+      rollback_note:c.input.impact.rollback_note,
     });
     if(JSON.stringify(normalized)!==JSON.stringify(c.input))
       throw Error("Data usulan katalog tidak konsisten.");
@@ -228,6 +232,8 @@ export function recordRequirement(docket,sop,id,status,reference,note,owner){
   if(!["draf","perlu_perbaikan"].includes(d.status)||d.author.id!==who.id)
     throw Error("Checklist hanya diubah penyusun pada draf/hasil pengembalian.");
   if(!sameSource(d,sop))throw Error("Sumber M04-S7 berubah; hentikan perubahan.");
+  if(status==="belum_diperiksa")
+    throw Error("Pilih hasil kajian, bukan status belum diperiksa.");
   const data=evidence(id,status,reference,note);
   return update(d,"catat_persyaratan",who,
     "Kondisi persyaratan "+id+" diperbarui pada simulasi.",
@@ -252,6 +258,19 @@ export function proposeCatalogChange(docket,sop,input,owner){
   };
   return update(d,"tambah_usulan",who,"Usulan perubahan unit DEMO dibuat.",
     {status:"draf",review:null,changes:[...d.changes,change]});
+}
+export function reviseCatalogChange(docket,sop,id,input,owner){
+  const d=checkDocket(docket),who=actor(owner,"pengampu_kelembagaan_demo");
+  const c=changeAt(d,id);
+  if(!["draf","perlu_perbaikan"].includes(d.status)||d.author.id!==who.id||
+     c.author.id!==who.id||!["draf","perlu_perbaikan"].includes(c.status))
+    throw Error("Hanya pengampu asal boleh merevisi usulan yang masih draf atau dikembalikan.");
+  if(!sameSource(d,sop))throw Error("Sumber M04-S7 berubah.");
+  const normalized=validateChangeInput(input);
+  if(normalized.unit_key!==c.input.unit_key||normalized.type!==c.input.type)
+    throw Error("Identitas dan tipe perubahan tidak boleh diganti saat revisi.");
+  return changeReplace(d,{...c,input:normalized,status:"draf",review:null},
+    who,"revisi_usulan","Usulan diperbaiki; histori telaah sebelumnya tetap ada.");
 }
 export function submitCatalogChange(docket,sop,id,owner){
   const d=checkDocket(docket),who=actor(owner,"pengampu_kelembagaan_demo");

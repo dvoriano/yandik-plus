@@ -3,7 +3,7 @@ import { SOP_SOURCE_DEMO,PREPARER_DEMO,REVIEWER_DEMO,CHANGE_DEMO } from "./fixtu
 import {
   REQUIREMENTS,CHECK_STATES,CHANGE_TYPES,CHANGE_STATES,
   createGovernanceDocket,recordRequirement,proposeCatalogChange,
-  submitCatalogChange,reviewCatalogChange,submitGovernanceDocket,
+  reviseCatalogChange,submitCatalogChange,reviewCatalogChange,submitGovernanceDocket,
   reviewGovernanceDocket,governanceBoard,governanceHandoff,
 } from "./governance.mjs";
 import { unitCatalog } from "../m04-unit-catalog/unit_catalog.mjs";
@@ -88,11 +88,32 @@ function render(){
       " · "+change.status);
     const choose=el("button","Pilih "+change.id);
     choose.type="button";choose.className="secondary";
-    choose.addEventListener("click",()=>{selectedChange=change.id;render();});
+    choose.addEventListener("click",()=>{
+      selectedChange=change.id;
+      const saved=docket.changes.find(x=>x.id===selectedChange);
+      if(saved&&["draf","perlu_perbaikan"].includes(saved.status)){
+        const v=saved.input,unit=v.candidate;
+        $("change-type").value=v.type;$("change-unit").value=v.unit_key;
+        $("new-key").value=v.unit_key;fillUnit();
+        $("unit-id").value=unit.id;$("unit-label").value=unit.label;
+        $("unit-role").value=unit.role;$("unit-boundary").value=unit.boundary;
+        $("unit-precondition").value=unit.precondition;
+        $("unit-contact").value=unit.example_contact;
+        $("reason").value=v.impact.reason;
+        $("routes").value=v.impact.impact_routes;
+        $("raci").value=v.impact.impact_raci;
+        $("sop-impact").value=v.impact.impact_sop;
+        $("rollback").value=v.impact.rollback_note;
+      }
+      render();
+    });
     li.append(el("span","  "),choose);changes.append(li);
   }
   const selected=docket.changes.find(x=>x.id===selectedChange);
   $("change-submit").hidden=!selected||selected.status!=="draf";
+  $("change-form").querySelector("button[type=submit]").textContent=
+    selected&&["draf","perlu_perbaikan"].includes(selected.status)
+      ?"Simpan revisi usulan terpilih":"Tambah usulan katalog DEMO";
   $("change-review").hidden=!selected||selected.status!=="menunggu_telaah";
   const editable=["draf","perlu_perbaikan"].includes(docket.status);
   $("check-form").hidden=!editable;
@@ -119,15 +140,24 @@ $("check-form").addEventListener("submit",event=>{
     render();message("Pemeriksaan unsur DEMO dicatat; belum diverifikasi atau disahkan.");
   }catch(error){message(error.message,true);}
 });
-$("change-type").addEventListener("change",fillUnit);
-$("change-unit").addEventListener("change",fillUnit);
+$("change-type").addEventListener("change",()=>{selectedChange=null;fillUnit();render();});
+$("change-unit").addEventListener("change",()=>{selectedChange=null;fillUnit();render();});
 $("change-form").addEventListener("submit",event=>{
   event.preventDefault();
   try{
-    docket=proposeCatalogChange(docket,SOP_SOURCE_DEMO,changePayload(),PREPARER_DEMO);
-    selectedChange=docket.changes.at(-1).id;render();
-    message("Usulan perubahan dicatat. Katalog dasar M04-S7 TIDAK diubah.");
+    const current=docket.changes.find(c=>c.id===selectedChange);
+    docket=current&&["draf","perlu_perbaikan"].includes(current.status)
+      ?reviseCatalogChange(docket,SOP_SOURCE_DEMO,current.id,changePayload(),PREPARER_DEMO)
+      :proposeCatalogChange(docket,SOP_SOURCE_DEMO,changePayload(),PREPARER_DEMO);
+    if(!current)selectedChange=docket.changes.at(-1).id;
+    render();message("Usulan/revisi dicatat. Katalog dasar M04-S7 TIDAK diubah.");
   }catch(error){message(error.message,true);}
+});
+$("change-new").addEventListener("click",()=>{
+  selectedChange=null;$("change-form").reset();$("new-key").value="";
+  fillUnit();fillImpact();render();
+  message("Form usulan baru disiapkan; catatan lama tetap ada pada memori DEMO.");
+  $("change-type").focus();
 });
 $("change-submit").addEventListener("click",()=>{
   try{

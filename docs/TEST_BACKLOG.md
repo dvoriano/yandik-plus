@@ -203,6 +203,7 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 | QA-M04S8-11 | Katalog sumber tidak dimutasi, tidak ada apply SOP/approval bantuan/BAST | BELUM DIUJI |
 | QA-M04S8-12 | Input tidak sah, teks baca-saja, kebersihan/privasi data DEMO | BELUM DIUJI |
 | QA-M04S8-13 | HP 320/375px, keyboard, pembaca layar dan kontrol form tersembunyi | BELUM DIUJI |
+| QA-M04S8-16 | Membuka kembali unsur `bahan_tersedia`: referensi bukti DEMO terisi dan kolom dapat diedit; selain status itu kolom dinonaktifkan | BELUM DIUJI |
 | QA-M04S8-14 | Tupoksi, arsip, tata naskah, SPBE dan pemilik kewenangan | BUTUH KEPUTUSAN |
 | QA-M04S8-15 | Integrasi akun riil, API/DB, audit dan approval resmi di luar demo | TERTUNDA UJI |
 

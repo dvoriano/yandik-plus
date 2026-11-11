@@ -3,6 +3,7 @@
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
 ## 2026-11-11 | M04-S8: kesiapan SOP dan tata kelola perubahan katalog
+- **Peninjauan statis lanjutan:** M04-S8 sudah ada; tidak dibuat modul duplikat. [Commit UI 0b9f432](https://github.com/dvoriano/yandik-plus/commit/0b9f4320b50a485f140f2205a9c23253a31a921c) memperbaiki ketereditan kode bukti DEMO ketika checklist berstatus `bahan_tersedia` dibuka kembali. **Tidak menjalankan aplikasi, tes, CL atau CI.**
 **KODE DITULIS, BELUM DIUJI.** [Enam berkas M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) [commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) dan [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a) menyiapkan 12 checklist kelembagaan, perubahan unit tambah/ubah/nonaktif, penjelasan dampak dan rollback, telaah beralasan serta histori. Katalog sumber tidak berubah; hasil kajian bukan SOP sah. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) diperbarui. Tidak ada CL, tes, CI atau deploy; M04-S9+ proses bantuan resmi/BAST RENCANA.
 
 ## 2026-11-11 | M04-S7: katalog unit tujuan, RACI dan konsep aturan koordinasi

@@ -1,3 +1,10 @@
+## 2026-11-11 | Penambahan dokumen pengenalan YANDIK+ untuk pimpinan dan unit pengawas
+- Dua dokumen baru disusun untuk pembaca nonteknis: [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) dan [Pengenalan Lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md).
+- Penekanan: 15 modul beserta fungsi, sistem kerja/otorisasi/verifikasi/tindak lanjut, manfaat terukur yang **belum diklaim**, pertimbangan SPBE dan pengendalian internal.
+- Status **DRAF BAHAN TELAAH**. Tidak mengubah target, membuat alokasi bantuan, menyatakan kepatuhan hukum/SPBE otomatis atau mengubah status rilis fitur.
+- Kode M03-S4 tetap BELUM DIUJI; tidak ada CL/CI/tes, penerapan, atau perubahan produksi.
+- Dokumen berada dalam repo private. Pendistribusian hanya kepada pembaca yang diberi akses dan sesuai kebijakan organisasi.
+
 ## 2026-11-11 | Perubahan cara kerja: coding dahulu, testing nanti
 - Instruksi baru owner: **hindari penggunaan CL** karena anggarannya disisihkan untuk bot Indodax; pada YANDIK+ **tidak menjalankan tes/CI dahulu**.
 - [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) diberlakukan: kode draft ditempatkan di luar jalur workflow otomatis, diberi `[skip ci]`, ditandai **BELUM DIUJI**, dan setiap test dicatat di [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).

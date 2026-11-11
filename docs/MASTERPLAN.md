@@ -4,6 +4,8 @@
 **Ditetapkan sebagai arah pengembangan:** 10 November 2026  
 **Sifat:** perencanaan dan pengembangan offline, **bukan** persetujuan deployment atau perubahan website produksi.
 
+**Dokumen untuk pembaca nonteknis:** [Ringkasan Eksekutif YANDIK+](RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) dan [Pengenalan Lengkap YANDIK+](PENGENALAN_YANDIK_PLUS.md), keduanya berstatus draf bahan telaah, bukan penetapan resmi.
+
 ## Visi
 **YANDIK+: Kerja sudah sulit, administrasi jangan rumit.**  
 Satu ruang kerja digital bidang pelayanan dan kesehatan hewan: data dicatat sekali pada sumber yang tepat, digunakan kembali untuk pelayanan, pengawasan, pembinaan, dukungan, monitoring, pelaporan, dan keputusan.

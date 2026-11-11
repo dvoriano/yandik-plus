@@ -1,5 +1,7 @@
 # Katalog Modul YANDIK+
 
+Untuk pembaca nonteknis: mulai dari **[Ringkasan Eksekutif](RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md)**, lalu **[Dokumen Pengenalan Lengkap](PENGENALAN_YANDIK_PLUS.md)**. Keduanya dirancang sebagai bahan telaah pimpinan, Inspektorat dan Diskominfotik, berstatus DRAF.
+
 Semua modul memiliki **dokumen tersendiri**, bukan satu spesifikasi raksasa. Status pengembangan yang berlaku hanya di [ROADMAP.md](ROADMAP.md).
 
 | Kode | Modul | Kondisi dari snapshot | Dokumen |

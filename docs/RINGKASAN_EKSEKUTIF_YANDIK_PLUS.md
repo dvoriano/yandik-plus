@@ -1,4 +1,4 @@
-# YANDIK+ dalam 2 Halaman
+# YANDIK+ | Ringkasan Eksekutif
 ## Ringkasan untuk Pimpinan, Inspektorat, dan Diskominfotik
 
 **Bahan presentasi dan telaah awal | Draf 1.0, 11 November 2026**
@@ -77,6 +77,8 @@ YANDIK+ dirancang mempunyai **cara kerja yang tertib**:
 **Keputusan yang dimohon pada tahap ini:** **masukan dan arahan atas konsep serta proses bisnis**, bukan persetujuan otomatis atas seluruh modul, anggaran, atau deployment.
 
 ---
+
+**Cara berbagi:** Dokumen ini ada di repository **private**. Pembaca harus terlebih dahulu memiliki akses GitHub yang diberikan secara sah. Jangan menjadikan repository publik tanpa penelaahan dan persetujuan.
 
 **Baca penjelasan selengkapnya:** [Dokumen Pengenalan YANDIK+](PENGENALAN_YANDIK_PLUS.md) · [Katalog 15 Modul](MODULES_INDEX.md) · [Roadmap dan Status](ROADMAP.md)
 

@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | Dokumen publikasi terbatas: pengenalan YANDIK+ untuk pimpinan dan pemeriksa
+**Status:** dua naskah **DRAF untuk telaah**, selesai ditulis di GitHub tetapi belum disetujui secara kedinasan. Tidak ada pengujian/CL/CI.
+- [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md): tujuan, manfaat, kelompok modul, mekanisme operasional, batasan dan titik konsultasi dengan pimpinan/Inspektorat/Diskominfotik.
+- [Pengenalan Lengkap YANDIK+](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md): fungsi 15 modul, 14 sistem kerja bersama, alur APEL/Support/Pengawasan/Pembinaan, matriks pengguna, pengelolaan data, pertanyaan pengawasan, SPBE, perlindungan informasi dan kedudukan AI opsional.
+- [Commit pembuatan dua naskah](https://github.com/dvoriano/yandik-plus/commit/19eae9de3525838593b6347d20400bf4faec2cc8), penautan dari README, katalog modul, masterplan, project state dan roadmap.
+- **Penting:** dokumen nonteknis menjelaskan rancangan; tidak menyatakan keseluruhan modul siap digunakan, tidak menggantikan kewenangan pejabat atau sistem resmi. Belum ada review formal.
+- Repository private, pihak eksternal harus memiliki akses GitHub; tidak diubah menjadi public.
+- Mode coding tanpa CL/CI tetap berlaku; M03-S4 masih **BELUM DIUJI**, M04 **RENCANA**.
+
 ## 2026-11-11 | M03-S4: draft simulasi fairness, tanpa CL/CI dan tanpa tes
 **Status:** M03-S4 SEDANG / KODE DITULIS / **BELUM DIUJI** (bukan SELESAI).
 - Atas instruksi owner, mode coding GitHub-only **tanpa CL dan tanpa pengujian/CI** diterapkan. Jatah CL disisihkan untuk bot Indodax.

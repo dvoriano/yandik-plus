@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M03-S4 (TERBARU) | 11 November 2026
+## PEMBARUAN DOKUMEN PENJELASAN YANDIK+ (TERBARU) | 11 November 2026
+- **Permintaan pemilik:** susun dokumen YANDIK+ yang mudah dipahami pimpinan, Inspektorat, Diskominfotik, tidak membahas koding sebagai fokus; menjelaskan 15 modul, fitur/fungsi, dan sistem kerja termasuk kewenangan serta tata kelola.
+- **Dokumen sudah ditulis di GitHub:** [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) dan [Pengenalan Lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md), [commit](https://github.com/dvoriano/yandik-plus/commit/19eae9de3525838593b6347d20400bf4faec2cc8). Dokumen lengkap menerangkan data induk, hak akses, tugas, bukti, verifikasi, permasalahan, usulan Support, penilaian prioritas, tindak lanjut, dashboard, administrasi, pengingat, dan histori.
+- **Status isi:** **DRAF BAHAN TELAAH**, bukan pengesahan kebijakan, penganggaran atau legitimasi SPBE. Tidak mengklaim seluruh modul aktif; APEL layanan yang sudah ada dipisah dari prototype/rencana. Posisi AI opsional dan batas iSIKHNAS/SRIKANDI/OSS/pengadaan dijelaskan.
+- **Akses:** repository **PRIVATE**; penerima harus memiliki akses GitHub. Jangan mempublikasikan repo atau berkas ke pihak luar tanpa persetujuan penanggung jawab.
+- **Mode kerja tetap:** tanpa CL/CI/tes baru. Pembuatan dan penautan dokumen saja, tidak menjalankan aplikasi, tidak menyentuh website/VPS/`main`.
+- **Berikutnya:** pemilik proyek dapat memberikan koreksi substansi/istilah/kewenangan setelah dokumen dibaca; catat perubahan versi. Coding M03-S4 tetap **BELUM DIUJI**.
+
+## PEMBARUAN M03-S4 | 11 November 2026
 **INSTRUKSI PEMILIK PROYEK TERBARU: MODE KODE SAJA, TANPA CL DAN TANPA PENGUJIAN/CI DULU.** Baca [CODE_ONLY_MODE.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) dan [TEST_BACKLOG.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) sebelum bekerja pada setiap chat YANDIK+ berikutnya. Jatah CL disisihkan untuk bot Indodax. Tidak boleh menjalankan workflow GitHub Actions, node test, unittest, Playwright atau tes manual hingga izin eksplisit berikutnya.
 - **Kode telah ditulis, BELUM DIUJI:** [drafts/m03-s4-fairness/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) dengan `comparison.mjs`, `fixtures.mjs`, `app.mjs`, `index.html`, `style.css`, dan README. [Commit kode](https://github.com/dvoriano/yandik-plus/commit/3e30ac406a24ec17ee604b654251c7b3eb1cee7c) menggunakan `[skip ci]`, file berada di `drafts/` di luar jalur workflow otomatis.
 - **Konten M03-S4:** enam contoh Puskeswan anonim fiktif; skor tiga bobot percobaan (baseline, akses/SDM, kontinuitas); kasus data belum lengkap tanpa skor, skor seri seimbang, penanda perubahan peringkat untuk review manusia. **Jumlah layanan hanya ilustrasi, bukan komponen nilai.**

@@ -66,6 +66,11 @@ Semua pilihan pada tampilan menggunakan frasa yang **tidak menyatakan persetujua
 
 Daftar pemeriksaan lintas modul terdapat dalam [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). **Jangan jalankan tes atau CL/CI tanpa instruksi eksplisit pemilik proyek.**
 
+## Kelanjutan M03-S4C: draf bahan penyusunan berita acara
+- [x] Kode [M03-S4C](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) telah ditulis untuk menyusun teks draf dari hasil dan histori kajian, **BELUM DIUJI**.
+- [x] [Spesifikasi draf M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md) membedakan bahan kerja dari berita acara yang disahkan.
+- [ ] Format tata naskah, paraf/pejabat, penyimpanan dokumen, dan keputusan resmi belum diterapkan.
+
 ## Kelanjutan
 
 Setelah penulisan kode berikutnya, tetap gunakan direktori `drafts/` dan penanda **BELUM DIUJI**. Keluaran yang kelak dapat dipertimbangkan adalah **berita acara hasil telaah metodologi sebagai draf** dan bahan perbandingan untuk pengambilan keputusan manusia. Bukan keputusan yang dibuat oleh program.

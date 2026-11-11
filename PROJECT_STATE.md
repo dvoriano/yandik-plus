@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M03-S4B | TELAHAH PERBANDINGAN PRIORITAS (TERBARU) | 11 November 2026
+## PEMBARUAN M03-S4C | DRAF BAHAN BERITA ACARA TELAAH (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79) menambahkan `draft_minutes.mjs`, bagian form agenda/tindak lanjut dan teks draf baca-saja pada [review.html](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness/review.html), serta jembatan baca riwayat kajian. Semua berada di `drafts/`.
+- **Fungsi rancangan:** menyiapkan teks bahan penyusunan berita acara dengan identitas DEMO, alasan dan bobot perbandingan, hasil tinjauan, **histori rekomendasi/pengembalian/perbaikan**, dan tindak lanjut. Tidak membuat nomor resmi, berita acara sah, tanda tangan, penerima bantuan, pengadaan atau alokasi.
+- **Batas:** semua data fiktif; output teks hanya di memori browser, harus dipilih/disalin manual. Peran adalah label demo; belum ada pemeriksaan resmi, koneksi API/DB, integrasi SRIKANDI atau pengujian browser.
+- **Dokumen:** [rancangan M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md) dan [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); 176 tes lama hanya untuk M03-S3. **TIDAK MENJALANKAN CL/CI/TEST**.
+- **Status:** M03-S4A/B/C KODE DITULIS, BELUM DIUJI; M03 keseluruhan SEDANG; M04 RENCANA. Repo private, PR Draft, `main`/VPS/website produksi tidak disentuh.
+- **Berikutnya:** rancang alur administrasi keputusan pejabat yang **terpisah** dari rekomendasi skor. Tidak otomatis memproses bantuan/anggaran.
+
+## PEMBARUAN M03-S4B | TELAHAH PERBANDINGAN PRIORITAS | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/bfa697af515479ec05735badcde4c89222e8c5d8) membuat `review_ledger.mjs`, `review_ui.mjs` dan `review.html`, serta menautkannya dari [laboratorium M03-S4](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness). Semua berada di `drafts/`, bukan aplikasi aktif.
 - **Fungsi konsep:** mencatat alasan pemilihan bobot percobaan, risiko/perubahan urutan, keterbatasan data, kode sumber DEMO, pengajuan oleh peran kab/kota, dan penelaahan oleh peran provinsi. Hasil review hanya **dicatat untuk pembahasan / dikembalikan / tidak direkomendasikan**, tidak ada pengesahan.
 - **Batas:** identitas peran hanya label DEMO, data di memori browser, tidak ada login/DB/audit sah, tidak ada keputusan bantuan, pagu/anggaran, BAST, atau perubahan bobot resmi. Rancangan belum pernah dijalankan.

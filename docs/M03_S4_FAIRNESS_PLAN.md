@@ -44,6 +44,11 @@ Semua ini hanya bobot **eksperimental**. Penilaian sumber 0–3 dan alasan per i
 - [ ] Belum dijalankan/diperiksa via tes. Status M03-S4A maupun M03-S4B tetap **BELUM DIUJI**.
 - [ ] Proses review yang sah, sumber data riil, identitas petugas terautentikasi dan dokumen resmi memerlukan keputusan instansi.
 
+## Tambahan M03-S4C: draf bahan berita acara
+- [x] Teks draf dapat dirancang dari catatan kajian M03-S4B dengan histori rekomendasi, pengembalian dan perbaikan; [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness), [commit](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79).
+- [x] [Dokumen M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md) dan catatan uji tertunda.
+- [ ] **KODE BELUM DIUJI.** Tidak ada nomor resmi, pengesahan, atau keputusan bantuan/anggaran.
+
 ## Perlu disisir nanti, tidak diuji pada sesi ini
 
 | ID | Pemeriksaan | Status |

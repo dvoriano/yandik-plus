@@ -41,6 +41,12 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S4C: rancangan bahan BA telaah, BELUM DIUJI
+- [x] [Kode draft bahan penyusunan berita acara](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) menyusun teks dari bobot percobaan, rincian skor fiktif, pendapat provinsi dan riwayat rekomendasi/perbaikan.
+- [x] Mengingatkan agar dokumen ditelaah manusia, **tanpa** nomor resmi, tanggal berita acara, tanda tangan atau persetujuan bantuan otomatis.
+- [ ] Semua tes, hak akses server, format resmi, pengarsipan dan persetujuan kebijakan belum dilakukan.
+- [Spesifikasi M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md) · [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+
 ## Progres M03-S4B: pendapat metodologi, BELUM DIUJI
 - [x] Rancangan formulir dan histori telaah pemilihan bobot di [direktori draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
 - [x] Peran kab/kota dan provinsi berupa label **DEMO**, keluaran hanya catatan kajian, bukan pengesahan bobot/bantuan.

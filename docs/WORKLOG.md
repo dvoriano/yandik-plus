@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S4C: rancangan draf bahan penyusunan berita acara
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menggunakan CL atau menjalankan CI, Node test maupun browser.
+- [Commit M03-S4C](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79) menambah `draft_minutes.mjs`, jembatan baca `review_ledger.mjs`, serta form agenda/tindak lanjut dan keluaran teks baca-saja di `review.html` / `review_ui.mjs`.
+- Teks yang dirancang memuat pilihan bobot, rincian skor fiktif, alasan, status pendapat provinsi, histori **pengajuan/rekomendasi/perbaikan**, serta tindak lanjut.
+- **Bukan berita acara resmi:** tanpa nomor/tanggal yang diverifikasi, nama pejabat, tanda tangan, pengadaan, anggaran, penetapan penerima, atau BAST. Data di memori browser, tidak diunggah/dikirim otomatis.
+- [Spesifikasi M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md); pemeriksaan nanti dicatat di [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Status M03-S4A/B/C tetap **BELUM DIUJI**.
+- Next: rancangan proses administrasi keputusan berwenang yang terpisah; M04 masih RENCANA.
+
 ## 2026-11-11 | M03-S4B: rancangan formulir dan histori telaah metodologi
 **Status:** kode dan dokumen tercatat, **BELUM DIUJI**; tidak memakai CL/CI.
 - [Commit M03-S4B](https://github.com/dvoriano/yandik-plus/commit/bfa697af515479ec05735badcde4c89222e8c5d8) membuat registrasi review metode `review_ledger.mjs`, UI DEMO terpisah dan navigasi dari simulasi perbandingan.

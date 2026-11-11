@@ -1,4 +1,10 @@
 ## 2026-11-11 | M04-S9 register tindak lanjut pembahasan kelembagaan (BELUM DIUJI)
+
+## 11 November 2026 | M04-S9C dan tata kelola akses repository
+- [M04-S9C](https://github.com/dvoriano/yandik-plus/commit/f36d5cc2af45543e416e8b2cb58b4d1ad3bb9bfb) menambah agenda telaah kelembagaan DEMO berbasis M04-S9B (10 unsur wajib, usulan katalog, perhatian akses, QA) serta tujuh skenario uji tertulis tanpa eksekusi.
+- [Kajian akses repository](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/REPOSITORY_ACCESS_DECISION.md) menegaskan repo PUBLIC menurut metadata 11 November 2026; keputusan perubahan visibility dan klasifikasi isi **belum dilakukan**.
+- Dokumen SECURITY_AND_DATA, PROJECT_STATE, ROADMAP, WORKLOG dan TEST_BACKLOG diselaraskan. Semua kode M04-S9C BELUM DIUJI, tidak ada CL/CI/deploy.
+
 - [Enam berkas kode draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) disiapkan untuk kekurangan dari checklist kelembagaan M04-S8, usulan katalog unit, dan topik diskusi tambahan, masing-masing dengan rencana perbaikan, penanggung jawab DEMO, tenggat contoh, progres, review dan histori.
 - Penutupan catatan tidak menandakan kesiapan integrasi, SOP sah, keputusan bantuan atau anggaran. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9_INSTITUTIONAL_FOLLOWUP.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [Commit awal](https://github.com/dvoriano/yandik-plus/commit/1f3a4f47118e8fb6c3c1ccb2fe143fc9bb9eab65); [perbaikan form](https://github.com/dvoriano/yandik-plus/commit/d1624a7dcab447a88b9768065891590ee651a9db). **KODE DITULIS, BELUM DIUJI**, tanpa CL/CI.

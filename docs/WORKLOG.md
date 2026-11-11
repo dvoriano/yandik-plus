@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S9C agenda telaah dan kajian akses repository
+**Status:** KODE DITULIS, BELUM DIUJI. [Commit](https://github.com/dvoriano/yandik-plus/commit/f36d5cc2af45543e416e8b2cb58b4d1ad3bb9bfb) menambah [7 berkas M04-S9C](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-review), termasuk 7 skenario tes yang **belum dijalankan**.
+- Agenda 10 persyaratan wajib M04-S8, usulan katalog, pengampu *usulan*, kebutuhan bukti keamanan/SPBE/QA, pertanyaan manusia dan status observasi repository 11 Nov 2026. Tidak memberikan keputusan SOP/izin integrasi.
+- [Kajian akses repository](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/REPOSITORY_ACCESS_DECISION.md): PUBLIC teramati; pemeriksaan terbatas pada nama 195 entri, .env.example berupa contoh dan aturan .gitignore. Tidak menjamin seluruh isi atau histori bersih. Setting akses belum diubah.
+- [Dokumen M04-S9C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9C_INSTITUTIONAL_REVIEW.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), dan SECURITY_AND_DATA diperbarui.
+- Tidak ada CL, Node, browser, CI, workflow, deployment atau tindakan pada main/VPS/produksi.
+
 ## 2026-11-11 | Pemeriksaan statis M04-S9B dan koreksi status akses repo
 **Bukan pengujian.** Metadata koneksi GitHub menunjukkan repo PUBLIC meskipun dokumen lama menyebut PRIVATE. Keterangan akses pada README, PROJECT_STATE, ROADMAP, PENGENALAN dan RINGKASAN_EKSEKUTIF diselaraskan, tanpa mengubah visibilitas repo.
 - [Catatan audit](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_STATIC_REVIEW.md) merangkum batas kode DEMO, QA tertunda, kebutuhan pemilik proses/otorisasi/SPBE dan risiko akses dokumen.

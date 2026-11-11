@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9C: agenda telaah kelembagaan dan akses repository (BELUM DIUJI)
+
+| ID | Pemeriksaan | Status |
+|---|---|---|
+| QA-M04S9C-01 | Import M04-S7/S8/S9/S9B/S9C dan fixture DEMO tanpa backend | BELUM DIUJI |
+| QA-M04S9C-02 | Tepat 10 persyaratan wajib masuk agenda sekalipun bahan DEMO tersedia | BELUM DIUJI |
+| QA-M04S9C-03 | Repo PUBLIC teramati diberi perhatian dan tidak mengubah setting GitHub | BELUM DIUJI |
+| QA-M04S9C-04 | Status PRIVATE/UNKNOWN tetap memerlukan penetapan manusia, tidak otomatis siap | BELUM DIUJI |
+| QA-M04S9C-05 | Tanggal observasi invalid dan label visibilitas di luar kontrak ditolak | BELUM DIUJI |
+| QA-M04S9C-06 | Ringkasan sumber usang dan perubahan katalog tidak disembunyikan | BELUM DIUJI |
+| QA-M04S9C-07 | Setiap baris memiliki rujukan, pengampu usulan dan daftar bukti tanpa menerbitkan keputusan | BELUM DIUJI |
+| QA-M04S9C-08 | Semua status bersifat belum diputuskan; tidak ada atribut approval/SOP/anggaran/BAST | BELUM DIUJI |
+| QA-M04S9C-09 | UI HP 320/375px, keyboard, label, error, status dan filter kelompok | BELUM DIUJI |
+| QA-M04S9C-10 | Sanitasi teks, tanpa innerHTML dinamis, fetch, storage, perubahan sumber atau pengiriman | BELUM DIUJI |
+| QA-M04S9C-11 | Tujuh skenario Node di file draft tests/decision_matrix.test.mjs ditulis, belum dijalankan | BELUM DIUJI |
+| QA-M04S9C-12 | Pemilik repo memutuskan privacy/klasifikasi dan penanganan kemungkinan paparan historis | BUTUH KEPUTUSAN |
+| QA-M04S9C-13 | Pengampu institusi menguji kecocokan tupoksi/RACI/SOP/arsip/keamanan/SPBE | BUTUH KEPUTUSAN |
+| QA-M04S9C-14 | Pengujian fungsional/regresi setelah izin eksplisit owner, tanpa mengubah produksi | TERTUNDA UJI |
+
+[Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9C_INSTITUTIONAL_REVIEW.md) · [kajian akses](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/REPOSITORY_ACCESS_DECISION.md). Mode CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9B: rekap eksekutif kelembagaan (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan yang perlu dilakukan | Status |

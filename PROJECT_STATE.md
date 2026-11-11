@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9C | AGENDA TELAAH KELEMBAGAAN DAN AKSES REPO | 11 November 2026
+- [Kode M04-S9C](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-review) **DITULIS, BELUM DIUJI**, [commit](https://github.com/dvoriano/yandik-plus/commit/f36d5cc2af45543e416e8b2cb58b4d1ad3bb9bfb). Paket baca-saja dari DEMO M04-S9B untuk kebutuhan bukti 10 unsur wajib, usulan perubahan unit, pertanyaan pengampu proses, QA dan risiko repository PUBLIC.
+- [Dokumen M04-S9C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9C_INSTITUTIONAL_REVIEW.md) dan [kajian akses repository](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/REPOSITORY_ACCESS_DECISION.md). Pemeriksaan nama 195 entri branch pengembangan hanya melihat .env.example sebagai file nama sensitif, **bukan** audit isi/history yang lengkap.
+- Tujuh skenario tes draft tersimpan dan **tidak dijalankan**. Akses repository **tidak diubah**; keputusan privat/publik oleh pemilik. Hasil kajian, status siap integrasi, SOP, keputusan belanja tetap belum ada.
+- Seluruh status QA tetap BELUM DIUJI; no CL, CI, tests, deploy, main, VPS atau produksi. PR #9 tetap DRAFT.
+- **Next:** keputusan akses/klasifikasi repository oleh pemilik, pemeriksaan instansi dan eksekusi QA hanya ketika ada izin uji eksplisit.
+
 ## RISIKO TERBUKA | VISIBILITAS REPOSITORI DAN AUDIT STATIS | 11 November 2026
 - **GitHub metadata: PUBLIC**, sedangkan beberapa catatan lama menyebut PRIVATE. Koreksi penjelasan dilakukan pada dokumen; **pengaturan visibilitas GitHub belum diubah**. Lihat [catatan audit statis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9B_STATIC_REVIEW.md).
 - Tidak ada bukti QA untuk M04-S9B atau persetujuan kelembagaan; jangan memuat data riil/rahasia ke kode publik. Keputusan visibilitas dan klasifikasi berada pada pemilik repositori.

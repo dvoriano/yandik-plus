@@ -1,3 +1,7 @@
+## 2026-11-11 | M04-S9E peta perhatian kelembagaan DEMO
+- [Model/tulis tes](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255) menambah 7 berkas baru di [drafts M04-S9E](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight). Semua kode dan 9 skenario tes **BELUM DIUJI**.
+- Dashboard baca-saja dari M04-S9C/S9D memuat catatan kosong, batal, overdue contoh, status telaah dan stale source. Tidak mengesahkan SOP/keputusan bantuan atau kesiapan integrasi.
+- [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9E_OVERSIGHT_BOARD.md), ROADMAP, TEST_BACKLOG, WORKLOG dan PROJECT_STATE diselaraskan. Tanpa CL/CI/tes/produksi.
 ## 2026-11-11 | M04-S9D register catatan pembahasan
 - [Commit](https://github.com/dvoriano/yandik-plus/commit/3f413a06d7a5de953ea70d95e19df9be6c3f00b6) menambah [6 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-minutes) termasuk 8 skenario QA tertulis tetapi belum dijalankan. Sumber agenda dari M04-S9C, penelaah DEMO, histori, catatan perlu bukti dan tindak lanjut.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9D_DISCUSSION_NOTES.md), roadmap, WORKLOG, TEST_BACKLOG dan PROJECT_STATE diperbarui. Tanpa status siap integrasi, keputusan SOP/anggaran/BAST atau perubahan produksi.

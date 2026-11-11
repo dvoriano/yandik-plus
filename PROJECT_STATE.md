@@ -6,10 +6,17 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9E | PETA PERHATIAN TINDAK LANJUT DEMO | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9E](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight) dari M04-S9C/S9D. [Commit model](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255).
+- Papan baca-saja memuat semua agenda termasuk tanpa catatan, catatan batal, lewat tenggat DEMO, menunggu telaah, perbaikan dan sumber berubah, dengan klasifikasi prioritas pembahasan (bukan prioritas bantuan resmi).
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9E_OVERSIGHT_BOARD.md) dan QA-M04S9E pada TEST_BACKLOG. **9 skenario tes ditulis, tidak dieksekusi**, tanpa CI/CL/deploy. Tidak ada status siap integrasi/SOP sah/keputusan bantuan.
+- Repo tetap PUBLIC pada metadata GitHub 11 November 2026. Perubahan ke PRIVATE direncanakan Sabtu 14 November 2026, **pengingat terjadwal tetapi pengaturan belum diubah**.
+- PR #9 tetap DRAFT, branch main, produksi, VPS dan bot Indodax tidak disentuh.
+
 ## PEMBARUAN M04-S9D | REGISTER CATATAN PEMBAHASAN DEMO | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [6 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-minutes) dengan register catatan M04-S9C, form masukan dan bukti, rencana tindak lanjut, penelaah terpisah, histori serta ringkasan. [Commit](https://github.com/dvoriano/yandik-plus/commit/3f413a06d7a5de953ea70d95e19df9be6c3f00b6). Delapan skenario tes ditulis dan tidak dieksekusi.
 - [Dokumen M04-S9D](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9D_DISCUSSION_NOTES.md) dan QA-M04S9D di TEST_BACKLOG. Semua keputusan manusia, SOP, keamanan, SPBE, integrasi, pendanaan/BAST masih butuh pembahasan; status tidak naik menjadi TERUJI.
-- **Rencana pemilik:** ubah repository menjadi PRIVATE pada **Sabtu, 14 November 2026**, **BELUM DILAKUKAN**. Hingga terverifikasi, perlakukan repo sebagai PUBLIC, tanpa data riil/rahasia. Tidak ada penjadwalan otomatis atau pengubahan visibility.
+- **Rencana pemilik:** ubah repository menjadi PRIVATE pada **Sabtu, 14 November 2026**, **BELUM DILAKUKAN**. Hingga terverifikasi, perlakukan repo sebagai PUBLIC, tanpa data riil/rahasia. Pengingat Sabtu 14 November 2026 sudah terjadwal secara terpisah; pengubahan visibility belum dilakukan.
 - [PR #9](https://github.com/dvoriano/yandik-plus/pull/9) tetap DRAFT. Mode CODE_ONLY: tanpa CL, tes, CI, deploy, main, website atau VPS.
 
 ## PEMBARUAN M04-S9C | AGENDA TELAAH KELEMBAGAAN DAN AKSES REPO | 11 November 2026

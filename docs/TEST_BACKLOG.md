@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9E: peta perhatian kelembagaan (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan yang ditunda | Status |
+|---|---|---|
+| QA-M04S9E-01 | Import berantai M04-S7/S8/S9/S9B/S9C/S9D/S9E dengan DEMO, tanpa backend | BELUM DIUJI |
+| QA-M04S9E-02 | Seluruh agenda tetap tampil saat register M04-S9D kosong | BELUM DIUJI |
+| QA-M04S9E-03 | Satu catatan M04-S9D dan agenda lain tanpa catatan dihitung tanpa duplikasi | BELUM DIUJI |
+| QA-M04S9E-04 | Pembatalan tidak dianggap selesai dan tetap terlacak | BELUM DIUJI |
+| QA-M04S9E-05 | Tenggat DEMO berdasar tanggal acuan manual, termasuk tanggal kalender invalid | BELUM DIUJI |
+| QA-M04S9E-06 | Perubahan snapshot M04-S9C menandai semua agenda untuk peninjauan ulang | BELUM DIUJI |
+| QA-M04S9E-07 | Klasifikasi status prioritas: stale, kosong, batal, terlambat, revisi, menunggu, draf, bahan | BELUM DIUJI |
+| QA-M04S9E-08 | Semua catatan sebagai bahan tidak pernah menghasilkan status siap integrasi | BELUM DIUJI |
+| QA-M04S9E-09 | Sumber bukan DEMO, ID agenda salah dan duplikasi ditolak | BELUM DIUJI |
+| QA-M04S9E-10 | Tampilan HP 320/375px, keyboard, fokus, empty state, label, teks panjang dan status filter | BELUM DIUJI |
+| QA-M04S9E-11 | Text injection/XSS dan tidak ada fetch, storage, mutasi register, endpoint atau pengiriman | BELUM DIUJI |
+| QA-M04S9E-12 | Sembilan skenario tes Node yang ditulis pada tests/oversight.test.mjs belum dijalankan | BELUM DIUJI |
+| QA-M04S9E-13 | Telaah tupoksi, pemilik proses, SPBE, keamanan, SOP, arsip, retensi dan wewenang | BUTUH KEPUTUSAN |
+| QA-M04S9E-14 | Pengujian regresi lintas modul, autentikasi/DB/audit setelah izin owner | TERTUNDA UJI |
+
+[Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9E_OVERSIGHT_BOARD.md). Kode belum dieksekusi, mode CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9D: catatan pembahasan kelembagaan (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda | Status |

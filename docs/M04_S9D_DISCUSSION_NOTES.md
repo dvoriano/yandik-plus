@@ -35,7 +35,7 @@ Form dan ringkasan disiapkan pada index.html + main.mjs. Riwayat berada di memor
 Delapan skenario pengujian ditulis pada folder tests, namun **tidak dijalankan**. Rinciannya dicatat pada TEST_BACKLOG. Tidak ada CL, CI, tes browser, deployment atau perubahan main dan produksi.
 
 ## Rencana akses GitHub
-Pemilik menyampaikan rencana **mengubah repo menjadi private pada Sabtu, 14 November 2026**. Ini status **RENCANA / MENUNGGU TINDAKAN PEMILIK**, bukan perubahan yang telah dilakukan atau pengingat otomatis yang sudah dibuat. Sampai GitHub menunjukkan private pada pemeriksaan berikutnya, perlakukan repo sebagai **PUBLIC** dan larang data riil/rahasia.
+Pemilik menyampaikan rencana **mengubah repo menjadi private pada Sabtu, 14 November 2026**. Ini status **RENCANA / MENUNGGU TINDAKAN PEMILIK**, bukan perubahan yang telah dilakukan; pengingat Sabtu sudah dijadwalkan secara terpisah. Sampai GitHub menunjukkan private pada pemeriksaan berikutnya, perlakukan repo sebagai **PUBLIC** dan larang data riil/rahasia.
 
 ## Tahap berikut
 Penutupan daftar keputusan akses dan klasifikasi informasi, pemetaan pengampu proses asli, telaah kelembagaan/SPBE, kemudian QA berurutan **hanya setelah izin eksplisit pemilik**. M04-S10+ untuk proses keputusan resmi/pengadaan/distribusi/BAST tetap RENCANA.

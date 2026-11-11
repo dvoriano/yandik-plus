@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S9E peta perhatian tindak lanjut pembahasan
+**Status: KODE DITULIS, BELUM DIUJI.** [Model dan tes](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d), [tampilan/README](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255) pada [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight).
+- Rekap hanya baca-saja dari agenda M04-S9C dan catatan M04-S9D, menampilkan seluruh agenda tanpa menyembunyikan yang belum dicatat atau dibatalkan.
+- Kategori perhatian: sumber berubah, tanpa catatan, batal, lewat tenggat contoh, perbaikan, menunggu, draf dan hanya bahan. Tidak menganggap catatan selesai sebagai izin integrasi.
+- [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9E_OVERSIGHT_BOARD.md) serta backlog QA diperbarui. Sembilan tes tertulis **belum dijalankan**, termasuk pemantauan HP, keamanan teks, tanggal dan perhitungan.
+- Repo masih PUBLIC; pengingat perubahan private Sabtu 14 November sudah terjadwal, setting belum diubah.
+- Tanpa CL, Node/browser test, CI, deployment, PR merge, main, VPS, YANDIK+ aktif ataupun bot Indodax.
+
 ## 2026-11-11 | M04-S9D: catatan pembahasan kelembagaan DEMO
 **KODE DITULIS, BELUM DIUJI.** [Commit](https://github.com/dvoriano/yandik-plus/commit/3f413a06d7a5de953ea70d95e19df9be6c3f00b6) membuat [6 berkas kode draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-minutes), termasuk 8 skenario tes yang belum dieksekusi.
 - Sumber M04-S9C: masukan, kebutuhan bukti, rencana tindak lanjut, petugas DEMO, tanggal contoh, revisi, pembacaan oleh peran berbeda dan riwayat; tanpa keputusan resmi atau persetujuan integrasi.

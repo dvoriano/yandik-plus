@@ -19,24 +19,23 @@ for(const [k,v] of Object.entries(FOLLOWUP_STATES))opt($("status-filter"),k,v);
 const all=el("option","Semua status");all.value="all";
 $("status-filter").prepend(all);$("status-filter").value="all";
 function populateRefs(prefer=null){
-  const kind=$("kind").value,target=$("source-ref");
-  target.replaceChildren();
+  const kind=$("kind").value,options=$("source-options"),field=$("source-ref");
+  options.replaceChildren();
+  const codes=[];
+  function add(value,label){opt(options,value,label);codes.push(value);}
   if(kind==="syarat_kelembagaan"){
     for(const rule of REQUIREMENTS){
       const record=DOCKET_DEMO.checklist.find(x=>x.id===rule.id);
       if(record&&["belum_diperiksa","perlu_klarifikasi"].includes(record.status))
-        opt(target,rule.id,rule.title+" ("+record.status+")");
+        add(rule.id,rule.title+" ("+record.status+")");
     }
   }else if(kind==="usulan_katalog"){
     for(const change of DOCKET_DEMO.changes)
-      opt(target,change.id,change.input.unit_key+" · "+CHANGE_STATES[change.status]);
+      add(change.id,change.input.unit_key+" · "+CHANGE_STATES[change.status]);
   }else{
-    opt(target,"DEMO-BAHAS-KELEMBAGAAN-01",
-      "Topik diskusi tambahan DEMO-BAHAS-KELEMBAGAAN-01");
-    opt(target,"DEMO-BAHAS-KELEMBAGAAN-02",
-      "Topik diskusi tambahan DEMO-BAHAS-KELEMBAGAAN-02");
+    add("DEMO-BAHAS-KELEMBAGAAN-01","Contoh topik diskusi tambahan");
   }
-  if(prefer&&[...target.options].some(o=>o.value===prefer))target.value=prefer;
+  field.value=prefer??(codes[0]??"");
 }
 function values(){
   return {

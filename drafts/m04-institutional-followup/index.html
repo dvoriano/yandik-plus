@@ -23,7 +23,10 @@
 <label for="kind">Sumber temuan
 <select id="kind"></select></label>
 <label for="source-ref">Unsur atau referensi sumber DEMO
-<select id="source-ref"></select></label>
+<input id="source-ref" list="source-options" autocomplete="off" maxlength="60" required
+  aria-describedby="source-hint">
+<datalist id="source-options"></datalist></label>
+<p id="source-hint" class="muted">Untuk unsur/katalog, pilih kode yang tersedia. Untuk catatan tambahan, ketik ID baru diawali DEMO-.</p>
 <label for="description">Uraian kekurangan (minimal 45 karakter)
 <textarea id="description" rows="3" minlength="45" maxlength="700" required></textarea></label>
 <label for="impact">Dampak jika tidak diperbaiki (minimal 35 karakter)

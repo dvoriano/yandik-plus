@@ -1,3 +1,7 @@
+## 2026-11-12 | M04-S9G matriks ketergantungan lintas modul (BELUM DIUJI)
+- [Model dan 11 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/427320fe50ca2e8a349d3acc080771e5bfc2bf4c) serta [UI dan README](https://github.com/dvoriano/yandik-plus/commit/17bfabee99d769ee8c91f79c35b2c1c2e3d16b12) menambah 7 berkas baru di [draft M04-S9G](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-dependency-matrix). Semua **KODE DITULIS, BELUM DIUJI**.
+- 18 prasyarat M04-S9F diberi hubungan pendahulu, urutan dan fase diskusi P0–P3; semua belum dimulai, bukan izin QA/deploy atau keputusan bantuan.
+- [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md), PROJECT_STATE, ROADMAP, WORKLOG, TEST_BACKLOG dan M04-S9F diperbarui. Repo PUBLIC per 12 Nov; pengingat private 14 Nov tetap aktif, belum terlaksana.
 ## 2026-11-11 | M04-S9F: checklist prasyarat integrasi lintas modul
 - [Model + 10 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) dan [UI responsif/README](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511) pada [drafts M04-S9F](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist). **KODE DITULIS, BELUM DIUJI**.
 - 18 prasyarat kelembagaan, keamanan, data, Support, QA dan integrasi. Empat gelombang tes belum dimulai; tidak ada hasil lulus, SOP resmi atau izin integrasi.

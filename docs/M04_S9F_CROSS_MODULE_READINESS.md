@@ -51,3 +51,6 @@ Seluruh gelombang **BELUM DIMULAI**. P3 bukan otomatis izin deploy; segala perub
 - Setelah keputusan pengampu proses/akses data dan izin eksplisit owner, lakukan QA berurutan serta pemeriksaan keamanan yang sesuai.
 - M04-S10+ keputusan resmi, pengadaan, anggaran, penyaluran dan BAST tetap RENCANA.
 - Branch `main`, PR #9, VPS, website produksi YANDIK+, dan bot Indodax tidak disentuh.
+
+## Rencana ketergantungan sesudah M04-S9F
+Peta hubungan dan urutan pembahasan tiap butir tersedia pada [M04-S9G](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md). Pemetaan hanya rancangan baca-saja; empat gelombang dan seluruh QA tetap BELUM DIMULAI. Tidak ada kewenangan otomatis untuk menguji atau mengintegrasikan.

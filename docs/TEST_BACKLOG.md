@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9G: matriks ketergantungan prasyarat integrasi (BELUM DIUJI)
+
+| ID | Rencana pemeriksaan setelah izin eksplisit | Status |
+|---|---|---|
+| QA-M04S9G-01 | Import berantai M04-S9F sampai S9G, fixture DEMO dan tanpa akses produksi | BELUM DIUJI |
+| QA-M04S9G-02 | Tepat 18 butir, semua ID unik, fase P0–P3 lengkap, rujukan pendahulu dikenal | BELUM DIUJI |
+| QA-M04S9G-03 | Topological order: setiap prasyarat muncul sebelum turunan langsung dan tidak melompat fase mundur | BELUM DIUJI |
+| QA-M04S9G-04 | Penolakan ID asing, dependensi duplikat, self-loop, siklus, dan fase mundur | BELUM DIUJI |
+| QA-M04S9G-05 | Hitungan jumlah hubungan langsung, lapisan serta downstream affected sesuai graph | BELUM DIUJI |
+| QA-M04S9G-06 | Sumber non-DEMO, status selesai palsu, wave sudah dijalankan, dan izin tes otomatis ditolak | BELUM DIUJI |
+| QA-M04S9G-07 | Sumber stale menjadi perhatian tanpa mengubah status M04-S9F dan tidak menyatakan layak integrasi | BELUM DIUJI |
+| QA-M04S9G-08 | Snapshot PRIVATE/UNKNOWN tidak dianggap bukti keamanan atau izin deployment; PUBLIC memberi peringatan | BELUM DIUJI |
+| QA-M04S9G-09 | Item tanpa pendahulu hanya usulan diskusi; seluruh authorized_to_act=false dan verified=false | BELUM DIUJI |
+| QA-M04S9G-10 | UI HP 320/375px, keyboard, label, screen reader, overflow, filter fase/domain dan empty state | BELUM DIUJI |
+| QA-M04S9G-11 | Input XSS/text, tidak ada innerHTML dinamis, fetch, storage, mutasi, API atau pengiriman | BELUM DIUJI |
+| QA-M04S9G-12 | 11 skenario Node di tests/dependencies.test.mjs tertulis namun belum dijalankan | BELUM DIUJI |
+| QA-M04S9G-13 | Telaah dependensi dengan pemilik proses, tupoksi, RACI, SPBE, keamanan, pengelola APEL dan pengampu IT | BUTUH KEPUTUSAN |
+| QA-M04S9G-14 | Pengujian regresi M03/M04, review staging, audit dan rollback hanya setelah owner izinkan | TERTUNDA UJI |
+
+[Dokumen M04-S9G](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md). CODE_ONLY tetap berlaku, tidak ada CL/CI/tes/deploy.
+
 ## Antrean M04-S9F: prasyarat integrasi lintas modul (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda | Status |

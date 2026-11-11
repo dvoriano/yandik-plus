@@ -1,10 +1,17 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 11 November 2026, WIB  
-**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 11 November 2026; jangan masukkan data riil/rahasia**)  
+**Terakhir diperbarui:** 12 November 2026, WIB  
+**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 12 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN M04-S9G | MATRIKS KETERGANTUNGAN DAN URUTAN HAMBATAN | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9G](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-dependency-matrix) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/427320fe50ca2e8a349d3acc080771e5bfc2bf4c) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/17bfabee99d769ee8c91f79c35b2c1c2e3d16b12). Berisi dependensi desain 18 persyaratan M04-S9F, pengurutan topologis, dampak lanjutan, filter fase/domain dan teks ringkasan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md) dan QA-M04S9G dicatat pada TEST_BACKLOG. **11 skenario tes ditulis, tidak dijalankan**. Semua fase P0–P3 tetap BELUM_DIMULAI; tidak ada status persetujuan atau izin pengujian.
+- Dua topik tanpa pendahulu dalam rancangan: GOV-01 pengampu proses dan SEC-01 klasifikasi repository. Ini **hanya bahan diskusi**, bukan perintah atau penetapan resmi.
+- Metadata GitHub 12 Nov 2026 masih PUBLIC; pengingat PRIVATE untuk Sabtu 14 Nov aktif namun pengaturan belum diubah. Jangan masukkan data rahasia.
+- PR #9 tetap DRAFT, CODE_ONLY tetap berlaku tanpa CL/CI/tes/deploy/merge atau perubahan main/produksi.
 
 ## PEMBARUAN M04-S9F | PRASYARAT INTEGRASI LINTAS MODUL | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas model, UI dan tes M04-S9F](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist) disimpan pada [commit model](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511).

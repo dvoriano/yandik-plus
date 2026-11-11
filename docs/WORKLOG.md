@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9G matriks ketergantungan prasyarat integrasi
+**Status: KODE DITULIS, BELUM DIUJI.** [Model dan 11 skenario tes](https://github.com/dvoriano/yandik-plus/commit/427320fe50ca2e8a349d3acc080771e5bfc2bf4c) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/17bfabee99d769ee8c91f79c35b2c1c2e3d16b12) tersimpan pada [7 berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-dependency-matrix).
+- Menguraikan 18 prasyarat M04-S9F menjadi hubungan pendahulu, lapisan, fase P0–P3 dan dampak lanjutan, dengan penolakan siklus yang **baru dirancang**, bukan terbukti teruji.
+- Urutan hanya bahan diskusi; tidak menganggap item tanpa pendahulu boleh dieksekusi, tidak menyetujui SOP, keamanan, anggaran, bantuan, BAST atau integrasi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md), ROADMAP, PROJECT_STATE, CHANGELOG_ROADMAP, TEST_BACKLOG dan rujukan M04-S9F diperbarui.
+- Repo masih PUBLIC pada metadata 12 Nov 2026, pengingat perubahan private Sabtu 14 Nov aktif, pengaturan belum diubah.
+- Tidak ada Node/Chromium, CL, CI, workflow, deployment, PR merge, perubahan main/VPS/database/YANDIK+ aktif/Indodax.
+
 ## 2026-11-11 | M04-S9F: checklist prasyarat integrasi lintas modul
 **KODE DITULIS, BELUM DIUJI.** [Model dan tes](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist).
 - Checklist inventaris 18 butir kebutuhan pembuktian (kelembagaan 4, keamanan 4, data 3, alur 3, QA 2, integrasi 2) yang tidak mengubah status lulus, sumber maupun kebijakan.

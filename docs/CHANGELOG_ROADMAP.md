@@ -1,3 +1,8 @@
+## 2026-11-11 | M03-S2 kelengkapan metadata dan pencegahan duplikasi
+- Pekerjaan baru pada M03: kode bukti DEMO, gate pengajuan/verifikasi, duplikat item di satu Puskeswan lintas masalah dan alasan pengajuan ulang bila sebelumnya ditolak.
+- Status M03 tetap **SEDANG (prototype)**, M04 tetap **RENCANA**; tidak mengubah kewenangan pengadaan/penetapan bantuan.
+- [Dokumentasi](M03_EVIDENCE_AND_DEDUP.md), [GitHub Actions SUCCESS 154 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
+
 ## 2026-11-11 | M03 mulai fase prototype
 - M03 dari **RENCANA** menjadi **SEDANG (prototype)** karena kode usulan kebutuhan dari masalah terverifikasi dan form demo sudah dibuat [model](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926), [UI](https://github.com/dvoriano/yandik-plus/commit/02cd5e3bd3f7ce84dac5aaadab4333ae914bc5e7).
 - Tidak mengubah rencana cakupan M04: bantuan nyata, alokasi, BAST dan distribusi tetap RENCANA. Verifikasi kebutuhan tidak berarti keputusan penyaluran.

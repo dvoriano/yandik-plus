@@ -52,6 +52,12 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Realisasi terbatas M03-S2 | 11 November 2026
+- [x] Minimum satu kode bukti DEMO untuk pengajuan; verifikator secara eksplisit memeriksa **metadata**, bukan isi file.
+- [x] Deteksi item sama dalam satu fasilitas, termasuk lintas masalah; penolakan lama dapat menjadi referensi pengajuan ulang beralasan.
+- [x] 154 tes otomatis lulus [CI](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527); [rincian](M03_EVIDENCE_AND_DEDUP.md).
+- [ ] Bukti unggah sebenarnya, anti-duplikat transaksi DB, prioritas dan penetapan dukungan belum dilakukan.
+
 ## Realisasi terbatas M03-S1 | 11 November 2026
 - [x] Prototype `support_needs.mjs`, usulan dari masalah terverifikasi, form dan antrian verifikator terpisah.
 - [x] 15 tes Node kontrak model dan 3 tes browser tambahan, [GitHub Actions SUCCESS: 137 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).

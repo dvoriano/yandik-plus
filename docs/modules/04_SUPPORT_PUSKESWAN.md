@@ -41,6 +41,13 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S2
+- [x] Pemeriksaan metadata bukti DEMO sebelum pengajuan dan checkbox pemeriksa sebelum kebutuhan berstatus terverifikasi.
+- [x] Cegah usulan barang serupa dalam satu Puskeswan meskipun sumber permasalahannya berbeda; histori penolakan memerlukan alasan pengajuan ulang.
+- [x] [GitHub Actions SUCCESS: 154 tes](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527), termasuk 15 Node dan 2 Chromium baru.
+- [ ] **Bukan** unggah foto, validasi keaslian bukti, pemeriksaan fisik, penyimpanan DB atau persetujuan alokasi.
+- Detail [M03-S2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_EVIDENCE_AND_DEDUP.md).
+
 ## Progres M03-S1
 - [x] Model kebutuhan yang wajib merujuk masalah terverifikasi melalui `problem_id` dan ID Puskeswan yang sama; tidak menyalin deskripsi.
 - [x] Field contoh: kategori, barang, jumlah, satuan, urgensi, alasan, status & histori.
@@ -51,7 +58,8 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 
 ## 8. Checklist pengembangan
 - [x] MOD-04-01: Kategori dan data minimum **untuk prototype** ditentukan; perlu review kedinasan sebelum final.
-- [ ] MOD-04-02: Susun kriteria prioritas yang adil bagi Puskeswan terpencil
+- [ ] MOD-04-02: Susun kriteria prioritas yang adil bagi Puskeswan terpencil (next M03-S3).
+- [x] MOD-04-03a: Cek bukti metadata dan deteksi duplikat **di prototype**, [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [x] MOD-04-03: Form usulan + verifikasi dan alasan koreksi **sebagai prototype fiktif**, belum aplikasi resmi.
 - [ ] MOD-04-04: Bangun simulasi penetapan dan rencana paket bantuan
 - [ ] MOD-04-05: Buat pencatatan distribusi, BAST dan evaluasi menggunakan data dummy

@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S2: bukti metadata dan anti-duplikasi lintas masalah
+**Status:** M03 SEDANG (prototype); M04 RENCANA.
+- [Model bukti dan pencarian item serupa](https://github.com/dvoriano/yandik-plus/commit/41ce4079840af89e4f8216d3f31124ac5fb3e815): kode DEMO, validasi format, normalisasi barang, riwayat usulan ditolak dan alasan pengajuan ulang.
+- [15 tes tambahan](https://github.com/dvoriano/yandik-plus/commit/49326c9b9a9d6233dddf25e9e4a132ac607068f4); [UI](https://github.com/dvoriano/yandik-plus/commit/82691922ca6c602d22089951f8f0f0c4e26d75e1) menambah kolom bukti dan konfirmasi verifikator; [2 tes browser baru](https://github.com/dvoriano/yandik-plus/commit/77f0f344127e1d81a404caf041b883260754474e).
+- [GitHub Actions #42936090527](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527): **SUCCESS** 3 job, **65 Python + 75 Node + 14 Chromium = 154 tes**; validator fixture lulus.
+- [Dokumen M03-S2](M03_EVIDENCE_AND_DEDUP.md).
+- **Batas:** kode bukti bukan file terunggah/diperiksa; tidak ada transaksi DB, dukungan anggaran, API, BAST, atau produksi.
+- **Next:** M03-S3 prioritas bantuan terukur dan adil dengan penjelasan serta keputusan manusia.
+
 ## 2026-11-11 | M03-S1: usulan Support dari masalah terverifikasi
 **Jenis:** coding demo, 15 tes Node, formulir, 3 tes browser, dokumentasi per modul. **Status:** M03 SEDANG, M04 RENCANA.
 - [Commit model](https://github.com/dvoriano/yandik-plus/commit/35f923ba6d974182c9c55ced13b9cea09ec07926) membuat `support_needs.mjs`, sumber dari `problem_id`, ruang lingkup dan histori, proteksi duplikasi kebutuhan aktif, larangan approval otomatis.

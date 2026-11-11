@@ -56,6 +56,12 @@ Persetujuan anggaran, penentuan penerima, BAST dan evaluasi distribusi adalah pe
 - [ ] Uji pemakaian petugas nonteknis di HP sebenarnya, aksesibilitas dan jaringan buruk.
 - [ ] Tidak ada koneksi API/website produksi, deployment, GitHub Pages, atau merge ke \`main\`.
 
+## Kelanjutan M03-S2
+- [x] Draf tetap boleh tanpa bukti, tetapi pengajuan membutuhkan kode referensi DEMO, bukan file.
+- [x] Pemeriksaan metadata eksplisit sebelum verifikasi kebutuhan dan deteksi item serupa di Puskeswan yang sama lintas masalah.
+- [x] 154 tes otomatis [GitHub Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527), [rincian](M03_EVIDENCE_AND_DEDUP.md).
+- [ ] Unggah file sebenarnya, keamanan dokumen, aturan per periode dan pemadanan barang setara masih terbuka.
+
 ## Arah pengembangan
 M03-S2: **verifikasi kelengkapan bukti dan pencegahan usulan duplikat lintas waktu** memakai fixture; M03-S3: aturan prioritas berbasis kebutuhan objektif dan manual override beralasan, belum berupa persetujuan; M04 terpisah setelah wewenang/data legal jelas.
 

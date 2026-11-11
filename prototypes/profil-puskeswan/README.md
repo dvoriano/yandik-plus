@@ -28,6 +28,13 @@
 - Tidak ada API, database, keputusan anggaran, pengadaan maupun pengiriman bantuan.
 - [Dokumentasi](../../docs/M03_LINKED_SUPPORT_NEEDS.md).
 
+## Tambahan M03-S2: metadata bukti dan pencegahan duplikat
+- **Draf tanpa bukti boleh**, tetapi pengajuan hanya dengan kode bukti `DEMO-...`; URL/path nyata ditolak.
+- Verifikator wajib mengonfirmasi pemeriksaan metadata, **bukan** file fisik; keputusan bantuan tetap tidak tersedia.
+- Normalisasi nama barang dan deteksi duplikat dalam satu Puskeswan lintas masalah; pengajuan ulang setelah penolakan perlu alasan.
+- [15 tes Node dan 2 Chromium baru, 154 tes keseluruhan SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
+- [Dokumen khusus](../../docs/M03_EVIDENCE_AND_DEDUP.md).
+
 ## Struktur
 - \`index.html\`: struktur semantik, label, skip link, form dan pesan status.
 - \`style.css\`: tampilan mobile-first dan responsif, tombol lebar, status teks (tak mengandalkan warna saja).

@@ -56,6 +56,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: 137 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052) (65 Python, 60 Node, 12 Chromium).
 - M03 **SEDANG sebagai prototype**, M04 alokasi dan distribusi tetap RENCANA.
 
+## M03-S2: referensi bukti dan pencegahan duplikat
+- [Validasi kode bukti dan normalisasi barang](prototypes/profil-puskeswan/support_evidence.mjs).
+- [Dokumen M03-S2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_EVIDENCE_AND_DEDUP.md) beserta batasan metadata, anti-duplikat dan review manusia.
+- [GitHub Actions: 154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
+- M03 tetap SEDANG (prototype); bukti belum diunggah sungguhan, M04 tetap RENCANA.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

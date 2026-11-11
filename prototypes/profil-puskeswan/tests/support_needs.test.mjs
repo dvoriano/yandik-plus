@@ -15,6 +15,7 @@ const fields = {
   problem_id: 1, category: "rantai_dingin", item: "Coolbox untuk vaksin",
   quantity: 2, unit: "unit", urgency: "tinggi",
   reason: "Pendingin yang tersedia tidak berfungsi sehingga dukungan diperlukan.",
+  evidence: [{ type: "foto", ref: "DEMO-BUKTI-001" }],
 };
 function source() {
   const submitted = saveProblem(startDemo(), problemForm, "submit");
@@ -66,7 +67,7 @@ test("verifikator berbeda dari pengusul", () => {
 });
 test("persetujuan verifikasi hanya mengubah status kebutuhan, bukan dana", () => {
   const submitted = useRole(createOrEditNeed(source(), fields, "submit"), "verifikator_prov");
-  const verified = verifyNeed(submitted, 1, "terverifikasi", "Kebutuhan tercatat untuk kajian");
+  const verified = verifyNeed(submitted, 1, "terverifikasi", "Kebutuhan tercatat untuk kajian", { evidenceReviewed: true });
   assert.equal(verified.supportNeeds[0].status, "terverifikasi");
   assert.equal(Object.hasOwn(verified.supportNeeds[0], "funding_approved"), false);
   assert.equal(Object.hasOwn(verified.supportNeeds[0], "bast"), false);
@@ -79,14 +80,14 @@ test("alur koreksi memerlukan alasan dan ajukan ulang", () => {
   const corrected = verifyNeed(submitted, 1, "perlu_perbaikan", "Jumlah barang harus dijelaskan");
   const owner = useRole(corrected, "petugas");
   const amended = createOrEditNeed(owner, { ...fields, quantity: 1 }, "submit", 1);
-  const verified = verifyNeed(useRole(amended, "verifikator_prov"), 1, "terverifikasi");
+  const verified = verifyNeed(useRole(amended, "verifikator_prov"), 1, "terverifikasi", "", { evidenceReviewed: true });
   assert.equal(verified.supportNeeds[0].quantity, 1);
   assert.equal(verified.supportNeeds[0].status, "terverifikasi");
   assert.equal(verified.supportNeeds[0].history.length, verified.supportNeeds[0].version);
 });
 test("draf dengan item sama untuk masalah sama ditolak", () => {
   const draft = createOrEditNeed(source(), fields, "save");
-  assert.throws(() => createOrEditNeed(draft, fields, "save"), /barang yang sama/);
+  assert.throws(() => createOrEditNeed(draft, fields, "save"), /Usulan barang serupa/);
   const otherItem = createOrEditNeed(draft, { ...fields, item: "Termometer digital" }, "save");
   assert.equal(otherItem.supportNeeds.length, 2);
 });

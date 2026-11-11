@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S4B: rancangan formulir dan histori telaah metodologi
+**Status:** kode dan dokumen tercatat, **BELUM DIUJI**; tidak memakai CL/CI.
+- [Commit M03-S4B](https://github.com/dvoriano/yandik-plus/commit/bfa697af515479ec05735badcde4c89222e8c5d8) membuat registrasi review metode `review_ledger.mjs`, UI DEMO terpisah dan navigasi dari simulasi perbandingan.
+- Pembuat kajian memasukkan alasan dan batas data, mengajukan; peran provinsi mencatat tinjauan atau meminta perbaikan. Review **bukan** persetujuan bobot resmi, alokasi atau penerima bantuan.
+- Kode tidak memakai login maupun database, hanya identitas fiktif dan memori browser. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4B_REVIEW_POLICY.md).
+- [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) mencatat pemeriksaan yang ditunda. Tidak ada angka keberhasilan tes baru.
+- M03 tetap SEDANG; M04 RENCANA; produksi dan bot Indodax tidak berubah.
+
 ## 2026-11-11 | Penyempurnaan ringkasan eksekutif dan kebutuhan AI Agent
 **Status:** DRAF 1.1 untuk pimpinan/Inspektorat/Diskominfotik; belum ada persetujuan substansi.
 - [Revisi Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) ([commit](https://github.com/dvoriano/yandik-plus/commit/ad054783b5fec427651b1ea1d57e30b906a61876)): latar belakang, tujuan, kelompok modul, alur, status pengembangan, tata kelola, dan arahan kelembagaan diperjelas dalam gaya naskah kebijakan.

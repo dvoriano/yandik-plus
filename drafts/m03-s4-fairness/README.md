@@ -4,6 +4,13 @@
 No GitHub Actions/CL usage is requested for this stage. This draft is deliberately
 located under \`drafts/\` and not wired into the active prototype or production.
 
+## M03-S4B | Rancangan telaah pilihan bobot, belum diuji
+- `review_ledger.mjs`: proses draf, pengajuan, catatan provinsi, perbaikan dan histori, seluruhnya DEMO.
+- `review_ui.mjs` dan `review.html`: form alasan bobot, dampak, batas data dan review. `index.html` berisi tautan ke halaman ini.
+- [Spesifikasi tata kerja](../../docs/M03_S4B_REVIEW_POLICY.md) dan [backlog](../../docs/TEST_BACKLOG.md).
+- Label peran bukan autentikasi. Data tidak disimpan ke server. **Tidak ada pengesahan kebijakan atau alokasi.**
+- **KODE DITULIS, BELUM DIUJI**. Tidak ada test runner, browser, CL maupun CI yang digunakan.
+
 ## Files
 - \`comparison.mjs\`: imports the M03-S3 factor validation and calculates side-by-side indicative results for three experimental weight profiles; incomplete inputs are unranked, equal scores share a rank, output is **not** a funding decision.
 - \`fixtures.mjs\`: six entirely invented facility scenarios (remote low-volume, busy urban, staffing constraint, cold-chain emergency, incomplete, and deliberate tie).

@@ -41,6 +41,12 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S4B: pendapat metodologi, BELUM DIUJI
+- [x] Rancangan formulir dan histori telaah pemilihan bobot di [direktori draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
+- [x] Peran kab/kota dan provinsi berupa label **DEMO**, keluaran hanya catatan kajian, bukan pengesahan bobot/bantuan.
+- [ ] Keakuratan kode, akses, UI dan aturan review **belum diuji**. [Rincian](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4B_REVIEW_POLICY.md) dan [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Integrasi produksi, sumber riil dan tata kelola penetapan kebijakan belum dibangun.
+
 ## Progres M03-S4: laboratorium fairness (KODE DITULIS, BELUM DIUJI)
 - [x] Enam skenario Puskeswan anonim fiktif dan tiga bobot percobaan ditulis dalam [draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
 - [x] Rancangan analisis skor seri, data kosong dan sensitivitas perubahan urutan, tidak ada keputusan penerima bantuan.

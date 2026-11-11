@@ -1,3 +1,8 @@
+## 2026-11-11 | M03-S4B rancangan catatan telaah metodologi prioritas
+- Menambah [kode register dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) untuk mendokumentasikan alasan pilihan bobot, keterbatasan, dampak perubahan urutan, serta catatan provinsi.
+- Status **KODE DITULIS, BELUM DIUJI**, di luar prototype aktif; tidak ada keputusan bantuan atau pengesahan kebijakan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4B_REVIEW_POLICY.md), [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), [commit](https://github.com/dvoriano/yandik-plus/commit/bfa697af515479ec05735badcde4c89222e8c5d8). Tanpa CL/CI/tes, VPS, merge, atau deploy.
+
 ## 2026-11-11 | Ringkasan Eksekutif 1.1: kebutuhan AI Agent pembangunan
 - Ringkasan diperbaharui menjadi naskah formal untuk bahan pertimbangan pimpinan, Inspektorat dan Diskominfotik.
 - **AI Agent untuk pengembangan** dibedakan dari chatbot operasional. Kebutuhan token/kredit/kuota berbasis pemakaian, manfaat dan pengendalian biaya dijelaskan dengan penekanan pengadaan perlu telaah.

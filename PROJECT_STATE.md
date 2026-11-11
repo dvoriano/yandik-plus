@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## REVISI RINGKASAN EKSEKUTIF DAN KEBUTUHAN AI AGENT (TERBARU) | 11 November 2026
+## PEMBARUAN M03-S4B | TELAHAH PERBANDINGAN PRIORITAS (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/bfa697af515479ec05735badcde4c89222e8c5d8) membuat `review_ledger.mjs`, `review_ui.mjs` dan `review.html`, serta menautkannya dari [laboratorium M03-S4](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness). Semua berada di `drafts/`, bukan aplikasi aktif.
+- **Fungsi konsep:** mencatat alasan pemilihan bobot percobaan, risiko/perubahan urutan, keterbatasan data, kode sumber DEMO, pengajuan oleh peran kab/kota, dan penelaahan oleh peran provinsi. Hasil review hanya **dicatat untuk pembahasan / dikembalikan / tidak direkomendasikan**, tidak ada pengesahan.
+- **Batas:** identitas peran hanya label DEMO, data di memori browser, tidak ada login/DB/audit sah, tidak ada keputusan bantuan, pagu/anggaran, BAST, atau perubahan bobot resmi. Rancangan belum pernah dijalankan.
+- **Panduan:** [dokumen M03-S4B](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4B_REVIEW_POLICY.md), [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); **tanpa CL/CI/tes** sesuai instruksi owner. Angka 176 tes terdahulu tidak mencakup kode ini.
+- **Status:** M03 tetap SEDANG (prototype), M03-S4A/S4B **BELUM DIUJI**, M04 RENCANA; `main`, VPS dan website produksi tidak disentuh.
+- **Next:** lanjut draft catatan hasil telaah dan prosedur pemeriksaan metodologi, tanpa aktivitas testing/implementasi produksi.
+
+## REVISI RINGKASAN EKSEKUTIF DAN KEBUTUHAN AI AGENT | 11 November 2026
 - **Ringkasan Eksekutif 1.1** direvisi lebih formal dan berorientasi keputusan, [dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md), [commit](https://github.com/dvoriano/yandik-plus/commit/ad054783b5fec427651b1ea1d57e30b906a61876).
 - Bagian **AI Agent untuk pengembangan YANDIK+** diangkat secara eksplisit sebagai sarana bantu tim mengembangkan modul, kode, dokumentasi, pemetaan data dan persiapan QA; **berbeda dari chatbot/fitur AI pengguna**.
 - Kebutuhan **akses kredit/token/kuota berbasis pemakaian** dan opsi prepaid/top-up dijelaskan secara vendor-netral, dengan catatan biaya, satuan pengadaan, pengendalian dan pertanggungjawaban **masih memerlukan telaah**. Fungsi dasar aplikasi untuk petugas tidak harus menggunakan AI berbayar per transaksi.

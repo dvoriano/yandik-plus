@@ -38,6 +38,12 @@ Semua ini hanya bobot **eksperimental**. Penilaian sumber 0–3 dan alasan per i
 
 **Keluaran yang direncanakan:** tabel urutan indikatif untuk tiap profil bobot, pemisahan kasus belum lengkap, rincian kontribusi per faktor, flag ketika peringkat berubah ≥2 posisi, dan kebutuhan review manusia. **Tidak boleh menghasilkan status penerima, pagu, alokasi, BAST, surat keputusan atau pengadaan.**
 
+## Tambahan M03-S4B: pencatatan telaah metodologi
+- [x] **Kode ditulis, BELUM DIUJI:** [form & model review](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) untuk alasan pilihan bobot, keterbatasan, perbandingan urutan, dan hasil review oleh peran provinsi (simulasi).
+- [x] [Spesifikasi M03-S4B](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4B_REVIEW_POLICY.md), termasuk pembatasan agar review tidak menyatakan persetujuan bantuan atau anggaran.
+- [ ] Belum dijalankan/diperiksa via tes. Status M03-S4A maupun M03-S4B tetap **BELUM DIUJI**.
+- [ ] Proses review yang sah, sumber data riil, identitas petugas terautentikasi dan dokumen resmi memerlukan keputusan instansi.
+
 ## Perlu disisir nanti, tidak diuji pada sesi ini
 
 | ID | Pemeriksaan | Status |

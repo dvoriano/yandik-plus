@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN DOKUMEN PENJELASAN YANDIK+ (TERBARU) | 11 November 2026
+## REVISI RINGKASAN EKSEKUTIF DAN KEBUTUHAN AI AGENT (TERBARU) | 11 November 2026
+- **Ringkasan Eksekutif 1.1** direvisi lebih formal dan berorientasi keputusan, [dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md), [commit](https://github.com/dvoriano/yandik-plus/commit/ad054783b5fec427651b1ea1d57e30b906a61876).
+- Bagian **AI Agent untuk pengembangan YANDIK+** diangkat secara eksplisit sebagai sarana bantu tim mengembangkan modul, kode, dokumentasi, pemetaan data dan persiapan QA; **berbeda dari chatbot/fitur AI pengguna**.
+- Kebutuhan **akses kredit/token/kuota berbasis pemakaian** dan opsi prepaid/top-up dijelaskan secara vendor-netral, dengan catatan biaya, satuan pengadaan, pengendalian dan pertanggungjawaban **masih memerlukan telaah**. Fungsi dasar aplikasi untuk petugas tidak harus menggunakan AI berbayar per transaksi.
+- Penjelasan pada [Dokumen Pengenalan Lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md) dan navigasi README diselaraskan. Naskah **DRAF BAHAN TELAAH**, belum persetujuan SPBE, anggaran, atau pengadaan.
+- [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21) untuk telaah institusional tetap terbuka.
+- **Mode tanpa CL/CI/tes masih berlaku**, tidak ada perubahan kode sistem, VPS, website, atau branch main.
+
+## PEMBARUAN DOKUMEN PENJELASAN YANDIK+ | 11 November 2026
 - **Permintaan pemilik:** susun dokumen YANDIK+ yang mudah dipahami pimpinan, Inspektorat, Diskominfotik, tidak membahas koding sebagai fokus; menjelaskan 15 modul, fitur/fungsi, dan sistem kerja termasuk kewenangan serta tata kelola.
 - **Dokumen sudah ditulis di GitHub:** [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) dan [Pengenalan Lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md), [commit](https://github.com/dvoriano/yandik-plus/commit/19eae9de3525838593b6347d20400bf4faec2cc8). Dokumen lengkap menerangkan data induk, hak akses, tugas, bukti, verifikasi, permasalahan, usulan Support, penilaian prioritas, tindak lanjut, dashboard, administrasi, pengingat, dan histori.
 - **Status isi:** **DRAF BAHAN TELAAH**, bukan pengesahan kebijakan, penganggaran atau legitimasi SPBE. Tidak mengklaim seluruh modul aktif; APEL layanan yang sudah ada dipisah dari prototype/rencana. Posisi AI opsional dan batas iSIKHNAS/SRIKANDI/OSS/pengadaan dijelaskan.

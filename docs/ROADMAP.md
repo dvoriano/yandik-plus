@@ -9,6 +9,8 @@
 
 ## Dokumen penjelasan untuk pembaca nonteknis (11 November 2026)
 
+**Revisi Ringkasan Eksekutif 1.1:** [dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) sekarang menegaskan **AI Agent sebagai sarana bantu pengembangan YANDIK+**, dengan kebutuhan kredit/token/kuota pemakaian yang perlu ditelaah pembiayaan dan pengendaliannya. Bukan persetujuan belanja, penggunaan layanan AI operasional, atau bukti sistem selesai.
+
 | Keluaran | Keterangan | Kedudukan |
 |---|---|---|
 | [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) | Bahan paparan singkat tujuan, manfaat, fungsi, kendali dan pertanyaan kelembagaan | **DRAF, SIAP DIBACA / BELUM DITELAAH FORMAL** |

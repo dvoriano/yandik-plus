@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | Penyempurnaan ringkasan eksekutif dan kebutuhan AI Agent
+**Status:** DRAF 1.1 untuk pimpinan/Inspektorat/Diskominfotik; belum ada persetujuan substansi.
+- [Revisi Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) ([commit](https://github.com/dvoriano/yandik-plus/commit/ad054783b5fec427651b1ea1d57e30b906a61876)): latar belakang, tujuan, kelompok modul, alur, status pengembangan, tata kelola, dan arahan kelembagaan diperjelas dalam gaya naskah kebijakan.
+- Penjelasan khusus **AI Agent sebagai sarana bantu pembangunan YANDIK+**, berbeda dari chatbot bagi pengguna. Kredit/token/kuota penggunaan dan mekanisme top-up dibahas sebagai **kebutuhan untuk ditelaah**, bukan belanja yang sudah disetujui.
+- [Pengenalan Lengkap](PENGENALAN_YANDIK_PLUS.md) diselaraskan pada bagian AI dan FAQ; halaman utama README diperbarui.
+- Tetap tanpa CL, CI, uji kode, merge, deploy, dan perubahan produksi. Review formal pada Issue #21 masih terbuka.
+
 ## 2026-11-11 | Dokumen publikasi terbatas: pengenalan YANDIK+ untuk pimpinan dan pemeriksa
 **Status:** dua naskah **DRAF untuk telaah**, selesai ditulis di GitHub tetapi belum disetujui secara kedinasan. Tidak ada pengujian/CL/CI.
 - [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md): tujuan, manfaat, kelompok modul, mekanisme operasional, batasan dan titik konsultasi dengan pimpinan/Inspektorat/Diskominfotik.

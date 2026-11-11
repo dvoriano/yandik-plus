@@ -3,6 +3,8 @@
  * Verification != funding allocation, budget approval, BAST or delivery.
  * Demo only, no real authentication, database or live API.
  */
+import { parseEvidence, evidenceCompleteness, priorSimilarNeeds } from "./support_evidence.mjs";
+
 export const NEED_CATEGORIES = Object.freeze([
   { id: "peralatan", label: "Peralatan klinik" },
   { id: "rantai_dingin", label: "Rantai dingin" },
@@ -78,13 +80,11 @@ function parseFields(fields) {
   if (!Number.isSafeInteger(qty) || qty < 1 || qty > 1000)
     throw new Error("Jumlah harus bilangan bulat 1-1000.");
   const unit = text(fields.unit, "Satuan", 2, 30);
-  return { category: fields.category, urgency: fields.urgency, item, reason, quantity: qty, unit };
-}
-function activeDuplicate(state, sourceId, item, exceptId = null) {
-  return state.supportNeeds.some((x) =>
-    x.problem_id === sourceId && x.item.toLocaleLowerCase("id") === item.toLocaleLowerCase("id")
-    && x.id !== exceptId && x.status !== "ditolak"
-  );
+  const evidence = parseEvidence(fields.evidence);
+  const repeat_reason = fields.repeat_reason == null || fields.repeat_reason === ""
+    ? "" : text(fields.repeat_reason, "Alasan pengajuan ulang", 10, 300);
+  return { category: fields.category, urgency: fields.urgency, item, reason, quantity: qty, unit,
+    evidence, repeat_reason };
 }
 export function visibleNeeds(state) {
   if (state.role === "pimpinan") return [];
@@ -101,12 +101,18 @@ export function createOrEditNeed(state, fields, intent, needId = null) {
   let need, base;
   if (needId === null) {
     const src = problem(state, fields.problem_id, true);
-    if (activeDuplicate(state, src.id, cleaned.item))
-      throw new Error("Kebutuhan barang yang sama masih tercatat untuk masalah ini.");
+    const duplicate = priorSimilarNeeds(state, {
+      puskeswan_id: state.facility.id, kab_kota: state.facility.region, item: cleaned.item,
+    });
+    if (duplicate.active)
+      throw new Error("Usulan barang serupa masih tercatat di Puskeswan ini (#" + duplicate.active.id + ").");
+    if (duplicate.rejected && !cleaned.repeat_reason)
+      throw new Error("Usulan serupa pernah ditolak. Isi alasan pengajuan ulang.");
     need = {
       id: state.nextNeedId, problem_id: src.id,
       puskeswan_id: state.facility.id, kab_kota: state.facility.region,
       source_problem_version: src.version,
+      previous_rejected_need_id: duplicate.rejected?.id ?? null,
       ...cleaned, status: "draf", version: 1, note: "",
       history: [{ action: "simpan_draf", actor: "petugas", version: 1, note: "" }],
     };
@@ -121,13 +127,23 @@ export function createOrEditNeed(state, fields, intent, needId = null) {
     if (fields.problem_id !== original.problem_id)
       throw new Error("Referensi permasalahan tidak boleh diganti.");
     const src = problem(state, original.problem_id, true);
-    if (activeDuplicate(state, src.id, cleaned.item, needId))
-      throw new Error("Kebutuhan barang yang sama masih tercatat untuk masalah ini.");
-    const unchanged = Object.entries(cleaned).every(([key, value]) => original[key] === value);
+    const duplicate = priorSimilarNeeds(state, {
+      puskeswan_id: state.facility.id, kab_kota: state.facility.region,
+      item: cleaned.item, excludingId: needId,
+    });
+    if (duplicate.active)
+      throw new Error("Usulan barang serupa masih tercatat di Puskeswan ini (#" + duplicate.active.id + ").");
+    if (duplicate.rejected && !cleaned.repeat_reason)
+      throw new Error("Usulan serupa pernah ditolak. Isi alasan pengajuan ulang.");
+    const unchanged = Object.entries(cleaned).every(([key, value]) =>
+      key === "evidence" ? JSON.stringify(original.evidence) === JSON.stringify(value)
+        : original[key] === value);
     if (unchanged && original.status === "draf")
       return intent === "submit" ? submitNeed(state, original.id) : state;
     need = {
-      ...original, ...cleaned, status: "draf", version: original.version + 1,
+      ...original, ...cleaned,
+      previous_rejected_need_id: duplicate.rejected?.id ?? null,
+      status: "draf", version: original.version + 1,
       history: event(original, "simpan_draf", "petugas"),
     };
     base = update(state, need);
@@ -139,12 +155,15 @@ export function submitNeed(state, needId) {
   const need = getNeed(state, needId);
   if (need.status !== "draf") throw new Error("Hanya draf kebutuhan dapat diajukan.");
   problem(state, need.problem_id, true);
+  const check = evidenceCompleteness(need);
+  if (!check.complete)
+    throw new Error("Pengajuan membutuhkan minimal satu referensi bukti DEMO.");
   return update(state, {
     ...need, status: "diajukan", version: need.version + 1,
     history: event(need, "ajukan", "petugas"),
   });
 }
-export function verifyNeed(state, needId, decision, notes = "") {
+export function verifyNeed(state, needId, decision, notes = "", options = {}) {
   role(state, REVIEWERS);
   if (!["terverifikasi", "perlu_perbaikan", "ditolak"].includes(decision))
     throw new Error("Keputusan kebutuhan tidak dikenal.");
@@ -154,9 +173,22 @@ export function verifyNeed(state, needId, decision, notes = "") {
     throw new Error("Catatan verifikasi tidak sah.");
   if (decision !== "terverifikasi" && !notes.trim())
     throw new Error("Alasan wajib untuk perbaikan atau penolakan.");
+  const completeness = evidenceCompleteness(need);
+  if (decision === "terverifikasi" && !completeness.complete)
+    throw new Error("Bukti administratif usulan belum lengkap.");
+  if (decision === "terverifikasi" && options?.evidenceReviewed !== true)
+    throw new Error("Verifikator harus menandai pemeriksaan metadata bukti.");
+  // This acknowledgment checks metadata completeness, never proves a file exists.
+  const evidence_review = decision === "terverifikasi"
+    ? {
+        actor: state.role, mode: "metadata_saja_demo",
+        references: need.evidence.map((e) => e.ref),
+        at_version: need.version + 1,
+      }
+    : null;
   // A verified need is still ONLY a documented need.
   return update(state, {
-    ...need, status: decision, note: notes.trim(),
+    ...need, status: decision, note: notes.trim(), evidence_review,
     version: need.version + 1,
     history: event(need, decision, state.role, notes),
   });
@@ -180,7 +212,23 @@ export function validateNeeds(state) {
     const src = problem(state, need.problem_id);
     if (need.puskeswan_id !== src.puskeswan_id || need.kab_kota !== src.kab_kota)
       throw new Error("Referensi wilayah kebutuhan tidak cocok.");
-    parseFields(need);
+    const fields = parseFields(need);
+    if (["diajukan", "terverifikasi"].includes(need.status) &&
+        !evidenceCompleteness(need).complete)
+      throw new Error("Pengajuan tanpa metadata bukti tidak valid.");
+    if (need.status === "terverifikasi" &&
+        (need.evidence_review?.mode !== "metadata_saja_demo" ||
+          need.evidence_review?.references?.join("|") !==
+          fields.evidence.map((e) => e.ref).join("|")))
+      throw new Error("Pemeriksaan metadata bukti harus terlacak.");
+    if (need.previous_rejected_need_id != null &&
+        (!Number.isSafeInteger(need.previous_rejected_need_id) ||
+          !state.supportNeeds.some((x) =>
+            x.id === need.previous_rejected_need_id &&
+            x.status === "ditolak" &&
+            x.puskeswan_id === need.puskeswan_id) ||
+          !need.repeat_reason))
+      throw new Error("Jejak pengajuan ulang historis tidak valid.");
     if (!Object.keys(NEED_STATUS).includes(need.status) ||
         !Number.isSafeInteger(need.version) || need.version < 1 ||
         !Array.isArray(need.history) || need.history.length !== need.version ||

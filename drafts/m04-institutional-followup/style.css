@@ -1,0 +1,19 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#18394b;background:#f3f7fa;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:1040px;margin:0 auto;padding:20px 14px 50px}
+header,section{background:#fff;border:1px solid #dbe8ee;border-radius:14px;padding:22px;margin-bottom:17px}
+h1{font-size:clamp(1.52rem,3vw,2.18rem)}h2{font-size:1.17rem}p,li{line-height:1.55}
+.eyebrow{font-weight:750;color:#2b607c}.warning{font-weight:730;color:#844400}.muted{color:#506d7b}
+form{display:grid;gap:12px}label{display:grid;gap:7px;font-weight:650}
+input,select,textarea{width:100%;min-width:0;min-height:44px;padding:11px;border:1px solid #a6becb;border-radius:10px;background:#fff;color:#18394b;font:inherit}
+button{font:inherit;font-weight:690;min-height:44px;padding:11px 14px;border:0;border-radius:9px;background:#255f7e;color:#fff;cursor:pointer}
+button.secondary{background:#eef5f8;color:#255f7e;border:1px solid #b2c9d4}
+.actions{display:flex;gap:9px;flex-wrap:wrap;padding-top:7px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.metric{border:1px solid #dce9ef;border-radius:10px;background:#f8fbfd;padding:12px}
+.metric strong{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+.metric span{font-size:.91rem;line-height:1.35}
+.registry{list-style:disc;padding-left:23px}.registry li{margin:12px 0;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid #b67818;outline-offset:2px}[hidden]{display:none!important}
+#handoff{font:.88rem/1.55 ui-monospace,monospace}
+footer{text-align:center;color:#526c79;font-size:.88rem}
+@media(max-width:560px){.shell{padding:12px}header,section{padding:16px}.actions{display:grid}.actions button{width:100%}}

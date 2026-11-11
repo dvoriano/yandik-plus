@@ -1,0 +1,18 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f3f7fa;color:#163343;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:970px;padding:20px 14px 56px;margin:0 auto}
+header,section{background:#fff;border:1px solid #dbe6ec;border-radius:14px;padding:22px;margin:0 0 18px}
+h1{font-size:clamp(1.5rem,3vw,2.1rem)}h2{font-size:1.18rem}p,li{line-height:1.55}
+.eyebrow{font-weight:750;color:#315e78}.warning{font-weight:750;color:#854100}.muted{color:#536c77}
+form{display:grid;gap:12px}label{display:grid;gap:7px;font-weight:640}
+input,select,textarea{min-width:0;width:100%;border:1px solid #9ab1bd;border-radius:9px;background:#fff;color:#163343;padding:11px;font:inherit;min-height:44px}
+fieldset{border:1px solid #c3d2db;padding:13px;border-radius:10px;min-width:0}
+fieldset label{display:flex;gap:9px;align-items:start;font-weight:500}
+input[type=checkbox]{height:20px;min-height:20px;width:20px;flex:none}
+.controls{display:flex;flex-wrap:wrap;gap:9px;padding-top:10px}
+button{font:inherit;font-weight:680;border:0;border-radius:9px;padding:11px 14px;min-height:44px;background:#245d78;color:white;cursor:pointer}
+button.secondary{background:#e9f2f6;color:#245d78;border:1px solid #aac2ce}
+:focus-visible{outline:3px solid #bc770c;outline-offset:2px}
+[hidden]{display:none!important}.record-list{padding-left:22px}.record-list li{margin-bottom:9px;overflow-wrap:anywhere}
+.output{font: .86rem/1.5 ui-monospace,monospace}.notice{min-height:28px}
+footer{text-align:center;color:#526f7d;font-size:.89rem;padding:12px}
+@media(max-width:580px){header,section{padding:15px}.wrap{padding:12px}.controls{display:grid}.controls button{width:100%}}

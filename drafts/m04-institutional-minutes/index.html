@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S9D | Catatan Pembahasan DEMO</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#17364a;background:#f2f6f9}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:1000px;margin:auto;padding:12px}
+header,section,footer{background:white;border:1px solid #dce4eb;border-radius:12px;
+padding:16px;margin:0 0 12px}h1{font-size:1.6rem}.warning{color:#88401f}
+label{display:block;font-weight:600;margin:10px 0}
+input,textarea,select{display:block;width:100%;padding:8px;font:inherit;max-width:100%}
+button{padding:9px 13px;margin:6px;font:inherit;border-radius:7px;cursor:pointer}
+button.secondary{background:#e6edf1;color:#17364a}
+ul{list-style:none;padding:0}li{border:1px solid #dce4eb;padding:10px;margin:8px 0;border-radius:7px}
+:focus-visible{outline:3px solid #1d6dab;outline-offset:2px}
+textarea[readonly]{min-height:250px}
+@media(max-width:420px){header,section,footer{padding:12px}.shell{padding:6px}h1{font-size:1.35rem}}
+</style></head><body><main class="shell">
+<header><p>YANDIK+ · M04-S9D · DRAF GITHUB</p>
+<h1>Register Catatan Pembahasan Kelembagaan</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Semua agenda, penanggung jawab dan hasil adalah DEMO.</p>
+<p>Catatan dibaca sebagai bahan. Bukan berita acara, pengesahan SOP, keputusan bantuan atau izin integrasi.</p></header>
+<section><h2>1. Ringkasan</h2><label for="asof">Tanggal acuan contoh
+<input id="asof" type="date" value="2026-11-11"></label><p id="summary"></p>
+<p class="warning">Status integrasi: BELUM DINILAI.</p></section>
+<section><h2>2. Catat hasil pembahasan contoh</h2><p id="chosen" role="status" aria-live="polite"></p>
+<form id="form">
+<label for="agenda">Butir agenda <select id="agenda"></select></label>
+<label for="discussion">Masukan pembahasan (min. 45)
+<textarea id="discussion" minlength="45" maxlength="1000" required></textarea></label>
+<label for="evidence">Bukti perlu disiapkan (min. 35)
+<textarea id="evidence" minlength="35" maxlength="750" required></textarea></label>
+<label for="next">Rencana tindak lanjut (min. 45)
+<textarea id="next" minlength="45" maxlength="800" required></textarea></label>
+<label for="assignee">Penanggung jawab DEMO-
+<input id="assignee" required maxlength="60"></label>
+<label for="due">Tanggal rencana contoh <input id="due" type="date" required></label>
+<button type="submit">Simpan catatan DEMO</button></form>
+<button id="new" class="secondary" type="button">Buat catatan baru</button>
+<button id="submit-review" type="button" hidden>Ajukan pembacaan DEMO</button></section>
+<section><h2>3. Pembacaan catatan, bukan persetujuan</h2>
+<form id="review" hidden><label for="decision">Hasil telaah
+<select id="decision"><option value="minta_perbaikan">Kembalikan untuk perbaikan</option>
+<option value="catat_sebagai_bahan">Catat sebagai bahan saja</option></select></label>
+<label for="reason">Alasan (min. 50)
+<textarea id="reason" minlength="50" maxlength="800" required></textarea></label>
+<button type="submit">Catat telaah DEMO</button></form></section>
+<section><h2>4. Catatan dan riwayat</h2>
+<label for="filter">Filter status <select id="filter"><option value="all">Semua</option></select></label>
+<ul id="records"></ul>
+<form id="cancel" hidden><label for="cancel-reason">Alasan pembatalan (min. 45)
+<textarea id="cancel-reason" minlength="45" maxlength="700" required></textarea></label>
+<button type="submit">Batalkan DEMO</button></form>
+<p id="notice" role="status" aria-live="polite"></p></section>
+<section><h2>5. Teks ringkasan baca-saja</h2>
+<label for="handoff">Bahan telaah manual</label>
+<textarea id="handoff" rows="14" readonly spellcheck="false"></textarea></section>
+<footer>Memori browser saja. Tidak ada akun riil, surat, API, database, audit resmi atau perubahan produksi.</footer>
+<script type="module" src="./main.mjs"></script></main></body></html>

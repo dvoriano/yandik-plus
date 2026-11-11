@@ -14,7 +14,7 @@ Alur yang dipisahkan berdasarkan kewenangan:
 2. **M04-S1:** penyusunan kelengkapan administratif → telaah → `tercatat_untuk_pertimbangan` (bukan approval).
 3. **M04-S2:** pencatatan referensi **dokumen eksternal yang diklaim terbit melalui proses berwenang** → pemeriksaan metadata → klarifikasi atau pencatatan untuk penelusuran.
 4. **Di luar kode sekarang:** konfirmasi ke penerbit/arsip asli, pemeriksaan substansi/keabsahan dan keputusan pejabat sesuai kewenangannya.
-5. **M04-S3 dan seterusnya (RENCANA):** rencana tindak lanjut administratif, paket, penyaluran, BAST, dan evaluasi **hanya apabila dasar dan prosedur resminya telah dipenuhi**.
+5. **M04-S3 (kode draft BELUM DIUJI):** rencana dan catatan tindak lanjut administratif yang tidak mengesahkan dokumen. **M04-S4+ (RENCANA):** paket, penyaluran, BAST, dan evaluasi hanya sesuai kewenangan dan prosedur resmi.
 
 **Penting:** M04-S2 tidak menghasilkan, menyalin atau menggantikan dokumen keputusan resmi. Bahkan status `metadata_tercatat` **bukan bukti** bahwa keputusan benar telah diterbitkan, sah, masih berlaku, mencakup barang tertentu atau berimplikasi pada ketersediaan anggaran.
 
@@ -95,8 +95,13 @@ Tidak ada status `disetujui`, `keputusan_sah`, `bantuan_diberikan`, atau `anggar
 
 Seluruh pemeriksaan dirinci juga pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) dan **belum dijalankan**.
 
+## Pengembangan M04-S3: tindak lanjut administratif
+- [x] [Rancangan M04-S3](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) telah ditulis untuk mencatat tugas administratif dari referensi fiktif yang hanya diakui metadatanya.
+- [x] [Spesifikasi M04-S3](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S3_ADMIN_FOLLOWUP.md) menjelaskan batas penutupan catatan kerja dan kewenangan pejabat.
+- [ ] **BELUM DIUJI**, tidak ada konfirmasi penerbit, pengesahan dokumen, alokasi, paket atau BAST.
+
 ## 8. Status dan kelanjutan
 
-**M04-S2:** **SEDANG (kode draft) / BELUM DIUJI**. **M04-S1:** kode draft, BELUM DIUJI. **M04-S3+: RENCANA**. Tidak ada perubahan aplikasi produksi atau kewenangan pejabat.
+**M04-S2:** **SEDANG (kode draft) / BELUM DIUJI**. **M04-S1:** kode draft, BELUM DIUJI. **M04-S3: kode draft BELUM DIUJI**; **M04-S4+: RENCANA**. Tidak ada perubahan aplikasi produksi atau kewenangan pejabat.
 
 **Arah berikut:** M04-S3 dapat dimulai sebagai **rancangan tindak lanjut administratif** terhadap referensi yang sudah ditelaah, dengan kegiatan yang *menunggu klarifikasi/pembahasan*. Itu tetap **bukan otomatis mengizinkan alokasi, pembelian, paket, distribusi, atau BAST**.

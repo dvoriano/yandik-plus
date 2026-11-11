@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S3: rencana tindak lanjut administratif dari referensi eksternal
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menjalankan CL, Node test, browser, CI atau workflow.
+- [Commit M04-S3](https://github.com/dvoriano/yandik-plus/commit/805a052a11a7ceddeb5efdf382d209b344f03825) menambah [enam berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) untuk contoh daftar tugas, penanggung jawab/tanggal DEMO, proses, catatan, pengembalian, pembatalan dan pemeriksaan oleh peran DEMO.
+- [Commit kontrol form](https://github.com/dvoriano/yandik-plus/commit/b4041ee90d70dd3505591531f508ba0ce8d01d54) memisahkan pembuatan rencana baru dan alasan pembatalan dari form utama.
+- Data sumber berasal dari M04-S2 yang `metadata_tercatat` **bukan keaslian**. Status `ditutup_administratif` hanya catatan telah ditelaah, bukan konfirmasi surat, persetujuan bantuan atau realisasi anggaran.
+- [Spesifikasi M04-S3](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S3_ADMIN_FOLLOWUP.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Tidak ada integrasi server/DB, akun resmi atau data riil.
+- M04-S1/S2/S3 masih **kode draft BELUM DIUJI**. M04-S4+ serta semua fungsi keputusan resmi, pengadaan, distribusi, BAST **RENCANA**.
+
 ## 2026-11-11 | M04-S2: register referensi dokumen eksternal pada berkas Support
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menggunakan CL/CI/Node test/browser.
 - [Commit model](https://github.com/dvoriano/yandik-plus/commit/edcc66dfd03ffba302ff7e88422a32d6b61a79ef) dan [commit navigasi multi-entri](https://github.com/dvoriano/yandik-plus/commit/7b177e2de92ec380971006a3f3497d775e4682b8) menyimpan [enam file draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference), menghubungkan sumber M04-S1 *fiktif* ke metadata referensi dokumen yang **diklaim terbit di luar sistem**.

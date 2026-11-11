@@ -90,11 +90,29 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Dokumen M04-S2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md). Kode tidak dijalankan; 176 tes lama hanya sampai M03-S3.
 
+## Antrean M04-S3: tindak lanjut administrasi (SELURUHNYA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S3-01 | Kesesuaian import dan kontrak antara model M04-S1/S2/S3 dengan fixture fiktif | BELUM DIUJI |
+| QA-M04S3-02 | Sumber bukan `metadata_tercatat`, catatan M04-S2 tanpa review dan source stale ditolak | BELUM DIUJI |
+| QA-M04S3-03 | Draf, penugasan, mulai catatan, submit, telaah, revisi, pembatalan dan histori | BELUM DIUJI |
+| QA-M04S3-04 | Pemisahan koordinator, petugas dan penelaah; label DEMO bukan autentikasi | BELUM DIUJI |
+| QA-M04S3-05 | Duplikasi tugas satu jenis pada referensi aktif, hingga 30 tugas, penanganan ID dan tanggal | BELUM DIUJI |
+| QA-M04S3-06 | Referensi berubah setelah pembuatan tugas, operasi diblokir tanpa review ulang | BELUM DIUJI |
+| QA-M04S3-07 | Field alokasi, penerima, pembayaran, pengadaan, keputusan dan BAST dilarang | BELUM DIUJI |
+| QA-M04S3-08 | Status `ditutup_administratif` tidak mengubah keaslian surat, alokasi/BAST, atau makna M04-S2 | BELUM DIUJI |
+| QA-M04S3-09 | UI 320/375 px, tombol rencana baru, cancel beralasan, keyboard, screen reader dan kesalahan form | BELUM DIUJI |
+| QA-M04S3-10 | SOP pemberi tugas, konfirmasi dokumen penerbit asli, keamanan, arsip/retensi dan SPBE | BUTUH KEPUTUSAN |
+| QA-M04S3-11 | Integrasi Flask/DB/role nyata, audit tahan perubahan dan pengingat tenggat yang sah | TERTUNDA UJI |
+
+[Spesifikasi M04-S3](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S3_ADMIN_FOLLOWUP.md). Tidak ada kode baru yang diuji pada sesi ini.
+
 ## Antrean lintas modul yang belum diujikan
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04-S1 dan M04-S2: kode draft administrasi dan register referensi eksternal tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S3+ tetap RENCANA.
+- M04-S1/S2/S3: kode draft administrasi, register referensi dan tindak lanjut tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S4+ tetap RENCANA.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

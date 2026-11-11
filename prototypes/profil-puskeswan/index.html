@@ -230,6 +230,55 @@
         </form>
       </section>
     </section>
+
+    <section id="priority-panel" class="problems-panel" aria-labelledby="priority-title" hidden>
+      <div class="section-heading">
+        <div>
+          <h2 id="priority-title">Penilaian Prioritas Kebutuhan</h2>
+          <p class="muted">Penilaian ini hanya rekomendasi. Verifikator kab/kota mengisi indikator; provinsi meninjau dan dapat mengoreksi dengan alasan. Tidak menghitung total pelayanan mentah.</p>
+          <p id="priority-count" class="small muted"></p>
+        </div>
+      </div>
+      <div id="priority-list" class="cards" aria-label="Penilaian prioritas untuk verifikator"></div>
+      <section id="priority-form-panel" class="panel editor" aria-labelledby="priority-form-title" hidden>
+        <div class="section-heading">
+          <h3 id="priority-form-title">Nilai Prioritas Kebutuhan</h3>
+          <button id="cancel-priority" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="priority-context" class="muted"></p>
+        <p class="small muted">Pilih tingkat 0 sampai 3 untuk lima indikator. Tidak tahu berarti kosong, <strong>bukan 0</strong>. Tulis alasan dan kode sumber fiktif. Bobot masih kebijakan percobaan untuk ditinjau.</p>
+        <form id="priority-form">
+          <div id="priority-fields" class="priority-factor-list"></div>
+          <p id="priority-preview" class="priority-preview" role="status" aria-live="polite">Belum lengkap, skor tidak tersedia.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf penilaian</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan penilaian ke provinsi</button>
+          </div>
+        </form>
+      </section>
+      <section id="priority-review-panel" class="panel editor" aria-labelledby="priority-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="priority-review-title">Tinjauan Prioritas oleh Provinsi</h3>
+          <button id="cancel-priority-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <div id="priority-review-context" class="priority-review-context"></div>
+        <form id="priority-review-form">
+          <label for="priority-review-band">Band pengganti (hanya untuk koreksi prioritas)</label>
+          <select id="priority-review-band">
+            <option value="">Tidak ada koreksi</option>
+          </select>
+          <label for="priority-review-reason">Alasan tinjauan</label>
+          <textarea id="priority-review-reason" rows="3" maxlength="400"
+            placeholder="Minimal 20 karakter jika meminta perbaikan atau mengoreksi rekomendasi."></textarea>
+          <div class="form-actions">
+            <button type="submit" name="decision" value="kembalikan" class="secondary">Minta perbaikan penilaian</button>
+            <button type="submit" name="decision" value="koreksi_prioritas" class="secondary">Koreksi rekomendasi</button>
+            <button type="submit" name="decision" value="terima" class="primary">Terima hasil penilaian</button>
+          </div>
+        </form>
+        <p class="small muted">Review hanya menyimpan rekomendasi dengan histori, tidak mengubah skor dasar atau mengalokasikan barang/anggaran.</p>
+      </section>
+    </section>
     <section id="review-panel" aria-labelledby="review-title" hidden>
       <div class="section-heading">
         <div>

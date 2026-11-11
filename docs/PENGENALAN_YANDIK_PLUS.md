@@ -292,9 +292,7 @@ Pengendalian yang dirancang harus mampu menjawab:
 - Dari mana setiap angka berasal, periode apa, dan kapan diperbarui?
 - Apakah alasan revisi, penolakan dan perubahan prioritas tetap terbaca?
 - Apakah bukti kegiatan benar ada dan dapat diakses hanya oleh pemeriksa berwenang?
-- Apakah hasil verifikasi secara keliru dipersepsikan sebagai persetujuan anggaran?
 - Bagaimana konflik data, usulan berulang, informasi kedaluwarsa dan kesalahan input diperbaiki?
-- Siapa menandatangani dokumen resmi dan pada sistem apa?
 - Apakah pengembangan, pengadaan dan operasional mengikuti prosedur dan penganggaran yang sah?
 
 **Status:** Konsep kontrol sudah ditulis dan sebagian disimulasikan pada prototype. **Belum dapat diklaim sebagai sistem pengendalian internal yang sudah berjalan penuh**.

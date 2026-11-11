@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S4 | Dashboard Antrean Administrasi (DEMO / BELUM DIUJI)</title>
+<link rel="stylesheet" href="./style.css">
+</head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S4 · PROTOTYPE DRAF</p>
+<h1>Pemantauan Tindak Lanjut Administratif</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Seluruh fasilitas, petugas, referensi dan tenggat adalah data fiktif.</p>
+<p>Dashboard baca-saja untuk melihat tugas klarifikasi dan penyiapan dokumen. <strong>Ini bukan dashboard pemberian bantuan</strong>, bukan pemeriksaan keabsahan surat dan bukan laporan anggaran/penyaluran.</p>
+</header>
+<section aria-labelledby="summary-title">
+<h2 id="summary-title">Ringkasan antrean keseluruhan</h2>
+<p class="muted">Ringkasan dihitung dari seluruh tugas sebelum filter. Tanggal acuan dipilih manual dan bukan penilaian waktu server.</p>
+<div class="metrics" id="metrics" aria-label="Ringkasan jumlah tugas"></div>
+<p id="global-status" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="filter-title">
+<h2 id="filter-title">Saring pekerjaan</h2>
+<form id="filters">
+<label for="as-of">Tanggal acuan simulasi
+<input id="as-of" type="date" required></label>
+<label for="status">Status pekerjaan
+<select id="status"></select></label>
+<label for="attention">Perlu perhatian
+<select id="attention"></select></label>
+<label for="assignee">Penanggung jawab DEMO
+<select id="assignee"></select></label>
+<div class="actions">
+<button type="submit">Tampilkan rekap sesuai filter</button>
+<button type="button" class="secondary" id="reset">Kembalikan filter awal</button>
+</div>
+</form>
+<p id="filter-status" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="tasks-title">
+<h2 id="tasks-title">Daftar tugas menurut tingkat perhatian</h2>
+<p class="muted">Penanda sumber berubah dan tanggal terlewat adalah indikasi administrasi saja. Tugas tertutup tidak dihitung sebagai pekerjaan terlambat.</p>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th scope="col">Tugas dan referensi</th>
+<th scope="col">Penanggung jawab</th>
+<th scope="col">Tanggal rencana</th>
+<th scope="col">Status</th>
+<th scope="col">Perhatian</th>
+</tr></thead>
+<tbody id="task-rows"></tbody>
+</table>
+</div>
+<p id="empty" hidden>Tidak ada tugas yang cocok dengan pilihan filter.</p>
+</section>
+<section aria-labelledby="report-title">
+<h2 id="report-title">Bahan rekap untuk diperiksa</h2>
+<p>Ringkasan ini hanya teks dari contoh data yang dapat dipilih dan disalin manual. Tidak ada persetujuan, penyimpanan server, pengiriman, atau dokumen resmi.</p>
+<label for="report">Teks rekap antrean administratif DEMO
+<textarea id="report" rows="17" readonly spellcheck="false"></textarea></label>
+</section>
+<footer>Semua data DEMO tersimpan sementara di memori halaman. Tidak ada backend, login resmi, laporan penerima bantuan, dana, pembelian, distribusi ataupun BAST. BELUM DIUJI.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

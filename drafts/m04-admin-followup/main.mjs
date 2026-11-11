@@ -52,7 +52,7 @@ function render(){
   $("start").hidden=!t||t.state!=="ditugaskan";
   $("completion-form").hidden=!t||!["dalam_proses","perlu_perbaikan"].includes(t.state);
   $("review-form").hidden=!t||t.state!=="menunggu_telaah";
-  $("cancel").hidden=!t||["dibatalkan","ditutup_administratif"].includes(t.state);
+  $("cancel-form").hidden=!t||["dibatalkan","ditutup_administratif"].includes(t.state);
   $("handoff").value=t?followupHandoffText(list,t.id,DEMO_REGISTER,DEMO_DOSSIER):"";
 }
 $("plan-form").addEventListener("submit",event=>{
@@ -89,11 +89,12 @@ $("review-form").addEventListener("submit",event=>{
     render();note("Hanya catatan kerja yang ditelaah. Tidak ada pengesahan bantuan.");}
   catch(err){note(err.message,true);}
 });
-$("cancel").addEventListener("click",()=>{
-  // Text is supplied explicitly by the coordinator; no automatic cancellation.
-  const reason=$("limitations").value;
-  try{list=cancelFollowup(list,selected,DEMO_REGISTER,DEMO_DOSSIER,coordinator,reason);
-    render();note("Rencana fiktif dibatalkan dengan alasan dari kolom batas pemeriksaan.");}
+$("cancel-form").addEventListener("submit",event=>{
+  event.preventDefault();
+  try{list=cancelFollowup(list,selected,DEMO_REGISTER,DEMO_DOSSIER,coordinator,
+    $("cancel-reason").value);
+    $("cancel-reason").value="";render();
+    note("Pembatalan rencana DEMO dicatat dengan alasan terpisah.");}
   catch(err){note(err.message,true);}
 });
 $("new").addEventListener("click",()=>{

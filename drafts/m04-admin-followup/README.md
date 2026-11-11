@@ -5,7 +5,7 @@
 M04-S3 mengambil referensi **metadata_tercatat** dari M04-S2 **DEMO** (bukan keputusan sah) lalu menyiapkan rencana tindak lanjut berupa permintaan klarifikasi dan penyusunan bahan administrasi. Penutupan tugas tidak berarti dokumen eksternal asli, bantuan disetujui, atau proses pengadaan/BAST boleh berjalan.
 
 ## Isi
-- `followup.mjs`: daftar tugas immutable, gerbang sumber dan versi, kategori tugas, penanggung jawab DEMO, draf, penugasan, proses, catatan pekerjaan, telaah dan pembatalan, histori serta ringkasan baca-saja.
+- `followup.mjs`: daftar tugas immutable, gerbang sumber dan versi, kategori tugas, penanggung jawab DEMO, draf, penugasan, proses, catatan pekerjaan, telaah dan pembatalan beralasan, histori serta ringkasan baca-saja.
 - `fixtures.mjs`: menghasilkan berkas M04-S1 dan referensi M04-S2 fiktif lewat kontrak yang telah ditulis, bukan data produksi.
 - `index.html`, `main.mjs`, `style.css`: tampilan formulir contoh untuk HP, tugas, status, dan teks ringkasan. Belum diuji, tidak boleh menyatakan berfungsi nyata.
 

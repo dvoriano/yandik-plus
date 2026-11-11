@@ -34,8 +34,8 @@
 <div class="actions">
 <button type="submit">Simpan draf administratif</button>
 <button id="assign" type="button" hidden>Tugaskan dalam simulasi</button>
-<button id="new" type="button" class="secondary">Rencana baru</button>
 </div></form>
+<div class="actions"><button id="new" type="button" class="secondary">Rencana baru</button></div>
 </section>
 <section aria-labelledby="work-heading">
 <h2 id="work-heading">3. Pelaksanaan dan catatan kerja DEMO</h2>
@@ -63,7 +63,11 @@
 <p class="muted">Setiap pekerjaan tetap dibedakan dari keputusan resmi. Bila referensi sumber berubah, tugas harus ditinjau ulang.</p>
 <p id="task-status" role="status" aria-live="polite"></p>
 <ul id="task-list"></ul>
-<div class="actions"><button id="cancel" class="secondary" type="button" hidden>Batalkan rencana dengan alasan</button></div>
+<form id="cancel-form" hidden>
+<label for="cancel-reason">Alasan pembatalan administratif, minimal 40 karakter
+<textarea id="cancel-reason" rows="3" minlength="40" maxlength="500" required></textarea></label>
+<button class="secondary" type="submit">Catat pembatalan rencana DEMO</button>
+</form>
 <label for="handoff">Draf ringkasan tindak lanjut, untuk diperiksa manusia
 <textarea id="handoff" rows="16" readonly spellcheck="false"></textarea></label>
 <p id="notice" role="status" aria-live="polite"></p>

@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9D | REGISTER CATATAN PEMBAHASAN DEMO | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [6 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-minutes) dengan register catatan M04-S9C, form masukan dan bukti, rencana tindak lanjut, penelaah terpisah, histori serta ringkasan. [Commit](https://github.com/dvoriano/yandik-plus/commit/3f413a06d7a5de953ea70d95e19df9be6c3f00b6). Delapan skenario tes ditulis dan tidak dieksekusi.
+- [Dokumen M04-S9D](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9D_DISCUSSION_NOTES.md) dan QA-M04S9D di TEST_BACKLOG. Semua keputusan manusia, SOP, keamanan, SPBE, integrasi, pendanaan/BAST masih butuh pembahasan; status tidak naik menjadi TERUJI.
+- **Rencana pemilik:** ubah repository menjadi PRIVATE pada **Sabtu, 14 November 2026**, **BELUM DILAKUKAN**. Hingga terverifikasi, perlakukan repo sebagai PUBLIC, tanpa data riil/rahasia. Tidak ada penjadwalan otomatis atau pengubahan visibility.
+- [PR #9](https://github.com/dvoriano/yandik-plus/pull/9) tetap DRAFT. Mode CODE_ONLY: tanpa CL, tes, CI, deploy, main, website atau VPS.
+
 ## PEMBARUAN M04-S9C | AGENDA TELAAH KELEMBAGAAN DAN AKSES REPO | 11 November 2026
 - [Kode M04-S9C](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-review) **DITULIS, BELUM DIUJI**, [commit](https://github.com/dvoriano/yandik-plus/commit/f36d5cc2af45543e416e8b2cb58b4d1ad3bb9bfb). Paket baca-saja dari DEMO M04-S9B untuk kebutuhan bukti 10 unsur wajib, usulan perubahan unit, pertanyaan pengampu proses, QA dan risiko repository PUBLIC.
 - [Dokumen M04-S9C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9C_INSTITUTIONAL_REVIEW.md) dan [kajian akses repository](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/REPOSITORY_ACCESS_DECISION.md). Pemeriksaan nama 195 entri branch pengembangan hanya melihat .env.example sebagai file nama sensitif, **bukan** audit isi/history yang lengkap.

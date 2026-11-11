@@ -4,6 +4,9 @@
 **Kedudukan:** bahan rekomendasi, bukan keputusan pemilik repository atau instansi.  
 **Pengaturan repository BELUM DIUBAH.**
 
+## Rencana waktu yang dinyatakan pemilik
+Pemilik berencana mengubah repository menjadi **PRIVATE pada Sabtu, 14 November 2026**. Per 11 November 2026 tindakan ini **BELUM DILAKUKAN** dan tidak ada otomasi perubahan visibilitas yang dijalankan. Pemeriksaan terbaru hanya menunjukkan PUBLIC. Pada hari pelaksanaan, konfirmasi ulang hasil perubahan dan akses kolaborator; jangan menganggapnya selesai dari rencana saja.
+
 ## Temuan terbatas yang teramati
 - Koneksi GitHub menyatakan repository dvoriano/yandik-plus memiliki visibilitas **PUBLIC** pada 11 November 2026. Ini berarti pembatasan akses pembaca yang diasumsikan pada beberapa naskah lama tidak berlaku.
 - Branch pengembangan adalah develop/yandik-foundation; Pull Request #9 masih draft ke main saat diperiksa.

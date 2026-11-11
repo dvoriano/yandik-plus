@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9D: catatan pembahasan kelembagaan (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S9D-01 | Import berantai M04-S8/S9/S9B/S9C/S9D dengan fixture sintetik DEMO | BELUM DIUJI |
+| QA-M04S9D-02 | Semua agenda M04-S9C tetap terlihat jika register masih kosong | BELUM DIUJI |
+| QA-M04S9D-03 | Satu catatan per agenda, kode unik, batas jumlah 40 dan histori tidak terhapus | BELUM DIUJI |
+| QA-M04S9D-04 | Validasi kode DEMO, field berbahaya/unknown, teks minimum/maksimum dan tanggal kalender | BELUM DIUJI |
+| QA-M04S9D-05 | Alur draf → telaah → perbaikan/revisi atau catat sebagai bahan; pembatalan beralasan | BELUM DIUJI |
+| QA-M04S9D-06 | Penelaah berbeda dari sekretariat/penanggung jawab; bukan autentikasi riil | BELUM DIUJI |
+| QA-M04S9D-07 | Snapshot agenda berubah menahan mutasi, namun daftar historis masih terbaca | BELUM DIUJI |
+| QA-M04S9D-08 | Rekap total/terbuka/telat berdasarkan tanggal acuan manual, status sumber berubah | BELUM DIUJI |
+| QA-M04S9D-09 | Semua catatan ditutup sebagai bahan tetap tidak menghasilkan status siap integrasi | BELUM DIUJI |
+| QA-M04S9D-10 | Tampilan HP 320/375px, fokus, keyboard, reader, label, pesan error, filter dan status kosong | BELUM DIUJI |
+| QA-M04S9D-11 | XSS/sanitasi teks, memori browser, tanpa API, mutasi M04-S9C, penyimpanan atau pengiriman | BELUM DIUJI |
+| QA-M04S9D-12 | Delapan skenario tes pada tests/register.test.mjs yang sudah ditulis, belum dijalankan | BELUM DIUJI |
+| QA-M04S9D-13 | Telaah struktur/tupoksi, SOP, kewenangan, retensi, SPBE, keamanan, klasifikasi data | BUTUH KEPUTUSAN |
+| QA-M04S9D-14 | Keputusan/perubahan repo PRIVATE 14 Nov masih rencana sampai metadata terverifikasi | TERTUNDA |
+| QA-M04S9D-15 | Uji API/DB/otorisasi serta persetujuan owner untuk menjalankan QA lintas modul | TERTUNDA UJI |
+
+[Dokumen M04-S9D](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9D_DISCUSSION_NOTES.md). Kode MODE CODE_ONLY tanpa pengujian/CI/CL.
+
 ## Antrean M04-S9C: agenda telaah kelembagaan dan akses repository (BELUM DIUJI)
 
 | ID | Pemeriksaan | Status |

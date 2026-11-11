@@ -1,3 +1,8 @@
+## 2026-11-11 | M04-S9D register catatan pembahasan
+- [Commit](https://github.com/dvoriano/yandik-plus/commit/3f413a06d7a5de953ea70d95e19df9be6c3f00b6) menambah [6 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-minutes) termasuk 8 skenario QA tertulis tetapi belum dijalankan. Sumber agenda dari M04-S9C, penelaah DEMO, histori, catatan perlu bukti dan tindak lanjut.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9D_DISCUSSION_NOTES.md), roadmap, WORKLOG, TEST_BACKLOG dan PROJECT_STATE diperbarui. Tanpa status siap integrasi, keputusan SOP/anggaran/BAST atau perubahan produksi.
+- Rencana pemilik mengubah repository menjadi private Sabtu 14 November 2026 dicatat sebagai **BELUM DILAKUKAN**. Akses repo tidak diubah.
+
 ## 2026-11-11 | M04-S9 register tindak lanjut pembahasan kelembagaan (BELUM DIUJI)
 
 ## 11 November 2026 | M04-S9C dan tata kelola akses repository

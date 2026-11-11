@@ -9,6 +9,13 @@
 4. `docs/modules/*.md`: spesifikasi, alur dan checklist per modul.
 5. `docs/CHANGELOG_ROADMAP.md`: keputusan menambah/mengubah/menghapus ruang lingkup.
 
+## Mode aktif sejak 11 November 2026: coding tanpa CL/CI
+- Perintah owner: **tulis kode dulu, jangan gunakan CL maupun menjalankan tes/CI**, simpan jatah CL untuk bot Indodax.
+- Baca [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) dan simpan item QA di [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Kode baru yang belum perlu terintegrasi masuk direktori `drafts/`, bukan `prototypes/` atau `foundation/` yang dapat memicu workflow.
+- Commit tambahkan `[skip ci]`, tidak menjalankan `workflow_dispatch` atau tes otomatis/manusia.
+- Status wajib **KODE DITULIS, BELUM DIUJI** sampai owner mengizinkan penyisiran. Tidak mengubah status SUCCESS kode lama.
+
 ## Satu siklus pekerjaan
 1. **READ**: GitHub fetch state + roadmap + log + branch head + issue/PR relevan.
 2. **DO**: kerjakan satu unit kecil melalui GitHub connector, di branch pengembangan dan gunakan data sintetis.

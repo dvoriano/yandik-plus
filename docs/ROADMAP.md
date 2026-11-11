@@ -1,13 +1,16 @@
 # ROADMAP & PROGRES YANDIK+ | Sumber Status Utama
 
-**Diperbarui:** 10 November 2026 (WIB)  
+**Diperbarui:** 11 November 2026 (WIB)  
 **Ruang lingkup:** pengembangan **langsung di GitHub**, tanpa VPS, perangkat lokal, atau deployment.  
 **Mulai sesi baru:** [PROJECT_STATE.md](../PROJECT_STATE.md) → dokumen ini → [WORKLOG.md](WORKLOG.md) → [Issue #1](https://github.com/dvoriano/yandik-plus/issues/1).  
 **Acuan:** [MASTERPLAN](MASTERPLAN.md) · [Indeks 15 modul](MODULES_INDEX.md) · [Riwayat perubahan](CHANGELOG_ROADMAP.md).
 
+**MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
+
 ## Arti status
 - **SELESAI:** keluaran/commit dan bukti telah ada untuk ruang lingkup yang disebut; dokumentasi selesai tidak berarti modul terimplementasi.
 - **SEDANG:** pekerjaan nyata sedang dilakukan; ada file/commit/issue yang dapat diperiksa.
+- **BELUM DIUJI:** kode ditulis dan tersimpan di GitHub, tanpa eksekusi dan tanpa bukti lulus; tidak boleh dipindah ke SELESAI tanpa izin dan bukti QA.
 - **RENCANA:** belum dikerjakan, termasuk usulan.
 - **TERTUNDA:** menunggu sumber, keputusan atau dependensi tanpa menghalangi pekerjaan lain.
 - **DIBATALKAN:** dikeluarkan dari scope aktif, dengan alasan tercatat di changelog.
@@ -40,7 +43,15 @@
 | M00 | Fondasi dan source pengembangan GitHub | **SEDANG**: kontrak, fixture dan CI teruji; Flask legacy 171 file belum masuk repo | Source legacy terimpor, dependensi/config anonim dan tes runtime/regresi APEL berhasil |
 | M01 | Core Platform: role/wilayah dan workflow | **SEDANG**: role/workflow dan master Profil/SDM/Sarpras prototype; **40 tes foundation** lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) | Role disepakati; endpoint legacy, transaksi audit dan pengujian akses API tersambung dan lulus |
 | M02 | Profil Puskeswan terpadu | **SEDANG (prototype interaktif)**: form per bagian, Masalah→tindak lanjut, SDM/APEL baca-saja dummy; **65 Python + 45 Node + 9 Chromium = 119 tes** [Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101) | Uji UX dan aksesibilitas pada HP nyata, field Profiling lama, otorisasi/API/DB server, integrasi sumber asli |
-| M03 | Support Puskeswan: kebutuhan dan prioritas | **SEDANG (prototype)**: M03-S1 pengajuan, M03-S2 bukti/anti-duplikat, M03-S3 skor transparan dan review provinsi beralasan; [176 tes CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270) | Uji keadilan dan kesesuaian bobot, data/berkas resmi, auth/API/DB Flask, uji petugas; tanpa alokasi otomatis |
+| M03 | Support Puskeswan: kebutuhan dan prioritas | **SEDANG**: M03-S1..S3 prototype teruji sebelumnya [176 tes lama](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270); **M03-S4 kode draft BELUM DIUJI**, [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) | Pending test [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); evaluasi fairness, bobot kebijakan, source real/Flask, keamanan backend, uji petugas; tidak ada alokasi otomatis |
+
+### M03-S4: Draft baru, sengaja BELUM DIUJI
+- [x] **KODE ADA:** draft modul komparasi enam skenario anonim fiktif, tiga profil bobot dan indikator sensitivitas; [commit](https://github.com/dvoriano/yandik-plus/commit/3e30ac406a24ec17ee604b654251c7b3eb1cee7c).
+- [x] **DOKUMEN ADA:** [rencana](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md), [backlog semua pemeriksaan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), [mode tanpa CL/CI](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md).
+- [ ] **QA/tes kode:** TIDAK dijalankan atas instruksi pemilik. Syntax, perhitungan, browser HP dan integrasi masih **BELUM DIUJI**.
+- [ ] **Keputusan kebijakan:** bobot dan batas skor belum disetujui; tidak boleh menjadi keputusan dukungan/anggaran.
+- [ ] **Integrasi:** draft di `drafts/`, bukan modul aplikasi aktif; lanjut hanya ketika tes diizinkan dan hasil dikaji.
+**M03-S4 tidak dimasukkan ke tabel SELESAI dan tidak mendapat DONE-18.** Tes terakhir M03-S3 tidak berlaku untuk draft ini.
 
 ### M00: subpekerjaan
 - [x] M00-A: buat branch dan draft PR agar `main` tidak berubah
@@ -78,6 +89,8 @@
 - **GOV-01 P1:** kamus data, kewenangan, dan peninjauan SPBE sebelum sistem resmi diintegrasikan.
 
 ## E. Aturan pembaruan
+**Ketentuan baru:** buat kode tanpa tes/CL/CI terlebih dahulu, tandai **BELUM DIUJI**, letakkan di luar jalur workflow otomatis bila memungkinkan, tambahkan ke [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); `[skip ci]` di pesan commit. Tes baru hanya setelah owner memberi izin. Bukti tes lama tidak otomatis membenarkan kode baru.
+
 **Setiap ada progres nyata**, perbarui paling sedikit:
 1. [PROJECT_STATE.md](../PROJECT_STATE.md): status terbaru dan langkah berikut, ringkas untuk chat baru.
 2. Dokumen ini: ubah checklist/status hanya dengan bukti hasil.

@@ -68,6 +68,12 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270) (65 Python, 94 Node, 17 Chromium).
 - **Bobot belum menjadi kebijakan dinas.** Ini hanya prototype dengan DEMO, bukan penetapan bantuan atau fitur website aktif.
 
+## M03-S4 | Draft komparasi fairness, BELUM DIUJI
+- [Kode laboratorium enam skenario fiktif](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
+- [Rencana M03-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md), [backlog tes tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), [mode tanpa CL/CI](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md).
+- **Belum diuji, belum diintegrasikan**, tidak boleh dipakai memilih penerima bantuan.
+- Bukti 176 tes sebelumnya hanya untuk M03-S3.
+
 ## Dokumen desain
 - [Masterplan](docs/MASTERPLAN.md)
 - [Katalog 15 modul](docs/MODULES_INDEX.md)

@@ -41,6 +41,14 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S4: laboratorium fairness (KODE DITULIS, BELUM DIUJI)
+- [x] Enam skenario Puskeswan anonim fiktif dan tiga bobot percobaan ditulis dalam [draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
+- [x] Rancangan analisis skor seri, data kosong dan sensitivitas perubahan urutan, tidak ada keputusan penerima bantuan.
+- [ ] Review kebenaran sintaks, model, UI dan keadilan: **BELUM DIUJI** sesuai [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Integrasi ke prototype aktif: **belum**, seluruh berkas baru hanya di `drafts/`.
+- [ ] Bobot/kriteria kebijakan perlu persetujuan manusia dan data aktual yang berwenang.
+- [Ketentuan mode kerja](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) · [Rencana M03-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md).
+
 ## Progres M03-S3: penilaian prioritas percobaan
 - [x] Lima faktor berbobot, alasan dan sumber DEMO, tiap faktor 0–3; kosong tidak dihitung sebagai 0.
 - [x] Tidak memakai total pelayanan APEL mentah sebagai dasar skor; memperhatikan risiko, akses sulit, SDM dan sarana.

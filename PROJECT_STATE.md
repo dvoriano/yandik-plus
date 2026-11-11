@@ -6,7 +6,16 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M03-S3 (TERBARU) | 11 November 2026
+## PEMBARUAN M03-S4 (TERBARU) | 11 November 2026
+**INSTRUKSI PEMILIK PROYEK TERBARU: MODE KODE SAJA, TANPA CL DAN TANPA PENGUJIAN/CI DULU.** Baca [CODE_ONLY_MODE.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) dan [TEST_BACKLOG.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) sebelum bekerja pada setiap chat YANDIK+ berikutnya. Jatah CL disisihkan untuk bot Indodax. Tidak boleh menjalankan workflow GitHub Actions, node test, unittest, Playwright atau tes manual hingga izin eksplisit berikutnya.
+- **Kode telah ditulis, BELUM DIUJI:** [drafts/m03-s4-fairness/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) dengan `comparison.mjs`, `fixtures.mjs`, `app.mjs`, `index.html`, `style.css`, dan README. [Commit kode](https://github.com/dvoriano/yandik-plus/commit/3e30ac406a24ec17ee604b654251c7b3eb1cee7c) menggunakan `[skip ci]`, file berada di `drafts/` di luar jalur workflow otomatis.
+- **Konten M03-S4:** enam contoh Puskeswan anonim fiktif; skor tiga bobot percobaan (baseline, akses/SDM, kontinuitas); kasus data belum lengkap tanpa skor, skor seri seimbang, penanda perubahan peringkat untuk review manusia. **Jumlah layanan hanya ilustrasi, bukan komponen nilai.**
+- **Sumber tunggal perubahan:** [rencana/limitasi M03-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md). Semua pemeriksaan yang belum dilakukan dicatat pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Belum diintegrasikan ke prototype aktif, Flask, database, website, atau sistem keputusan bantuan.
+- **Status:** M03-S4 = **SEDANG / KODE DITULIS / BELUM DIUJI**, **BUKAN SELESAI**. M03 keseluruhan SEDANG, M04 RENCANA. M00 source Flask legacy 171 file tetap belum ada di repo.
+- **176 tes SUCCESS sebelumnya** hanya mencerminkan kode M03-S3 sebelum draft baru, **tidak membuktikan M03-S4**.
+- **Next:** lanjut coding melalui GitHub-only dalam `drafts/` dan dokumentasi, catat semua pending test. Jangan jalankan CI/CL, jangan ubah `main`, VPS atau website.
+
+## PEMBARUAN M03-S3 | 11 November 2026
 - **Penilaian prioritas Support berbobot (prototype):** lima faktor 30% risiko gangguan pelayanan, 25% kesenjangan fasilitas, 20% akses wilayah, 15% SDM dan 10% kekurangan stok. Tingkat 0–3, alasan serta kode sumber DEMO wajib. **Data kosong bukan nol, jumlah pelayanan mentah tidak ikut skor.**
 - **Alur review:** verifikator kab/kota membuat scorecard kebutuhan terverifikasi, provinsi meninjau, meminta perbaikan, atau mengoreksi kategori rekomendasi dengan alasan. Skor hitung dasar tidak ditimpa.
 - **Pengamanan:** nomor versi kebutuhan/masalah, penilaian usang bila sumber berubah, validator menolak review palsu dan field anggaran/alokasi/BAST.
@@ -124,6 +133,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] **M03-S1** usulan dari masalah terverifikasi, 15 tes Node dan 3 tes browser tambahan, [GitHub Actions 137 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - [x] **M03-S2** pemeriksaan metadata bukti dan deteksi item duplikat lintas masalah, [154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [x] **M03-S3** model scorecard prioritas percobaan, review manusia dan peringatan sumber usang; [176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270).
+- [ ] **M03-S4 BELUM DIUJI**: kode lab fairness fiktif telah dibuat di `drafts/`, belum ada test atau integrasi. [Pekerjaan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) · [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
@@ -144,7 +154,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M03 selanjutnya:** uji skenario komparatif antar fasilitas secara anonim, evaluasi metodologi dan kewenangan review; bobot percobaan belum boleh menjadi dasar penetapan bantuan. Keamanan server/field Flask masih terbuka.
+3. **M03-S4 dan modul berikut:** lanjut tulis kode di GitHub tanpa CL/CI/tes sesuai instruksi terbaru; tandai setiap tugas **BELUM DIUJI** dan isi TEST_BACKLOG. Jangan menjalankan simulasi sampai owner mengizinkan. Bobot percobaan belum boleh dipakai sebagai dasar bantuan.
 
 
 ## DOKUMEN RUJUKAN

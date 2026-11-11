@@ -73,6 +73,11 @@ Penilaian memiliki ID tersendiri, ID kebutuhan, versi kebutuhan/masalah sumber, 
 - [ ] Login server, database asli, bukti fisik dan hak akses legal.
 - [ ] **M04** keputusan bantuan/anggaran, alokasi, paket, distribusi dan BAST tetap RENCANA.
 
+## Pengembangan draft berikutnya: M03-S4
+- [x] Rancangan komparasi skenario fiktif telah ditulis pada [drafts/m03-s4-fairness](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness).
+- [ ] **BELUM DIUJI:** kode M03-S4 belum pernah dijalankan; jangan menganggap hasil M03-S3 yang teruji sebagai verifikasi untuk draft ini.
+- [Rencana dan daftar QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md) · [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+
 ## Berikutnya
 
 Buat skenario offline perbandingan Puskeswan secara anonim dan dokumentasi uji keadilan, sambil mempersiapkan review bobot/aturan bersama pemilik proses. Jangan mengubah data/website produksi atau menyebut skor percobaan sebagai keputusan bantuan.

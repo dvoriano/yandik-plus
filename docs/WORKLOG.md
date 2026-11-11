@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S4: draft simulasi fairness, tanpa CL/CI dan tanpa tes
+**Status:** M03-S4 SEDANG / KODE DITULIS / **BELUM DIUJI** (bukan SELESAI).
+- Atas instruksi owner, mode coding GitHub-only **tanpa CL dan tanpa pengujian/CI** diterapkan. Jatah CL disisihkan untuk bot Indodax.
+- [Commit 3e30ac4](https://github.com/dvoriano/yandik-plus/commit/3e30ac406a24ec17ee604b654251c7b3eb1cee7c) menyimpan enam berkas draft baru pada [drafts/m03-s4-fairness](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness), di luar filter workflow otomatis, berpesan `[skip ci]`.
+- Isi kode: perbandingan enam skenario fiktif antar Puskeswan, bobot baseline/akses-SDM/kontinuitas, data kosong tidak dihitung nol, tie bersama, analisis sensitivitas. **Ini hanya rancangan belum dijalankan**.
+- [Rencana M03-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md), [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) dan [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) sebagai acuan semua pekerjaan berikut.
+- **Tidak ada tes yang dijalankan untuk M03-S4.** Angka 176 tes di M03-S3 berasal dari commit sebelumnya dan tidak membuktikan draft ini.
+- Berikutnya: lanjut coding langsung di GitHub tanpa mengaktifkan CI, catat QA tertunda; tidak ada implementasi alokasi/BAST atau deploy.
+
 ## 2026-11-11 | M03-S3: scorecard prioritas transparan dan review provinsi
 **Jenis:** coding prototype, UI HP, 19 tes Node priority dan 3 tes Chromium baru. **Status:** M03 SEDANG; M04 RENCANA.
 - Lima indikator berbobot percobaan dengan alasan dan sumber DEMO, skor dibedakan dari data kosong, total pelayanan APEL mentah tidak dihitung.

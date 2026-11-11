@@ -1,3 +1,10 @@
+## 2026-11-11 | Perubahan cara kerja: coding dahulu, testing nanti
+- Instruksi baru owner: **hindari penggunaan CL** karena anggarannya disisihkan untuk bot Indodax; pada YANDIK+ **tidak menjalankan tes/CI dahulu**.
+- [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md) diberlakukan: kode draft ditempatkan di luar jalur workflow otomatis, diberi `[skip ci]`, ditandai **BELUM DIUJI**, dan setiap test dicatat di [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- M03-S4 ditambahkan sebagai **SEDANG / KODE DITULIS / BELUM DIUJI**, bukan DONE. [Commit kode](https://github.com/dvoriano/yandik-plus/commit/3e30ac406a24ec17ee604b654251c7b3eb1cee7c); [Rencana dan batas](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4_FAIRNESS_PLAN.md).
+- M03-S3 memiliki 176 tes lulus sebelumnya, namun keberhasilan tersebut **tidak diwariskan** ke M03-S4 atau kode baru.
+- Tidak ada perubahan M04: tetap RENCANA, termasuk alokasi, bantuan, pengiriman dan BAST.
+
 ## 2026-11-11 | M03-S3 scorecard prioritas percobaan
 - Menambahkan lima indikator berbobot percobaan, alasan/sumber, review kab/kota → provinsi, koreksi kategori rekomendasi beralasan tanpa mengubah skor dasar.
 - M03 tetap SEDANG (prototype), M04 tetap RENCANA. Tidak ada alokasi dana, pemilihan penerima, pengadaan atau BAST otomatis.

@@ -60,6 +60,13 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | M04-S1 | Support: berkas administrasi sebelum keputusan resmi | **SEDANG (kode draft) / BELUM DIUJI**: [enam berkas simulasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dari kebutuhan terverifikasi DEMO; pemeriksaan lima kelengkapan dan pencatatan bahan pertimbangan tanpa keputusan. [Commit](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) | [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), sumber M03 asli, otorisasi dan aturan administrasi belum divalidasi; **bukan persetujuan bantuan** |
 | M04-S2 | Register referensi keputusan/dokumen eksternal | **SEDANG (kode draft), BELUM DIUJI**: metadata dari dokumen yang diklaim terbit di luar sistem, pemeriksaan fiktif oleh dua peran, anti-duplikat, histori dan sumber usang [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-decision-reference) | [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S2_EXTERNAL_DECISION_REFERENCE.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); bukan autentikasi keaslian, penerbitan SK atau persetujuan bantuan |
 | M04-S3 | Support: penugasan tindak lanjut administratif | **SEDANG (kode draft), BELUM DIUJI**: tugas dengan penanggung jawab DEMO, tenggat contoh, catatan, telaah/revisi dan histori; [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S3_ADMIN_FOLLOWUP.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); penutupan catatan **bukan** konfirmasi surat/bantuan/anggaran |
+| M04-S4 | Dashboard antrean tindak lanjut administratif | **SEDANG (kode draft), BELUM DIUJI**: [rekap dan filter baca-saja](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) berdasar tugas DEMO M04-S3; tanggal acuan eksplisit, perhatian, perbaikan dan status sumber | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); bukan dashboard bantuan/anggaran atau konfirmasi surat resmi |
+
+### M04-S4: Dashboard antrean administrasi (KODE DITULIS / BELUM DIUJI)
+- [x] [Enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) berisi rekap tugas, perhatian, tanggal acuan manual, filter, daftar urutan dan teks rekap baca-saja menggunakan data fiktif. [Commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef).
+- [x] [Spesifikasi indikator, sumber dan batas kewenangan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md) dan [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Semua perhitungan, impor, skenario sumber stale, UI HP, aksesibilitas dan integrasi **BELUM DIUJI**.
+- [ ] M04-S5+ keputusan pejabat, pengadaan, paket, distribusi dan BAST **RENCANA**, tidak boleh dianggap disetujui.
 
 ### M04-S3: tindak lanjut administratif DEMO (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas rancangan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) untuk tugas, penanggung jawab dan tenggat fiktif, status, catatan, pengembalian/telaah, pembatalan dan histori.
@@ -115,10 +122,10 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul (M01, M02, M03 dan draf M04-S1/S2/S3 sudah di daftar SEDANG)
+## C. Rencana per modul (M01, M02, M03 dan draf M04-S1/S2/S3/S4 sudah di daftar SEDANG)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M04-S4+ | P0 | Support: ringkasan proses, keputusan resmi oleh pihak berwenang, alokasi, paket dan distribusi/BAST | M04-S3 dan prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
+| M04-S5+ | P0 | Support: proses resmi oleh pihak berwenang, alokasi, paket, distribusi dan BAST | M04-S4 dan prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |
 | M06 | P1 | Pengawasan Obat Hewan | M01 | [Obat](modules/05_PENGAWASAN_OBAT_HEWAN.md) |
 | M07 | P1 | Klinik/Praktik Dokter Hewan | M01 | [Klinik](modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md) |

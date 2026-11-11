@@ -1,3 +1,8 @@
+## 2026-11-11 | M04-S4 dashboard antrean administratif (BELUM DIUJI)
+- [Kode dashboard baca-saja](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) ditambahkan, dengan delapan tugas DEMO, filter tanggal acuan, penanggung jawab, status dan kebutuhan perhatian. [Commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef).
+- Tidak ada data produksi, keputusan bantuan, pemilihan penerima, anggaran, distribusi atau BAST. **KODE DITULIS, BELUM DIUJI**, tanpa CL/CI.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Status M04-S1/S2/S3/S4 SEDANG hanya pada kode draft, M04-S5+ RENCANA.
+
 ## 2026-11-11 | M04-S3 tindak lanjut administratif DEMO (BELUM DIUJI)
 - [Enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) ditambahkan untuk rencana tugas fiktif, penanggung jawab/tenggat, tahapan proses, catatan, telaah, pengembalian dan pembatalan.
 - **Tugas ditutup hanya administrasi**, bukan konfirmasi keaslian atau keputusan pemberian bantuan. [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S3_ADMIN_FOLLOWUP.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) · [commit kode](https://github.com/dvoriano/yandik-plus/commit/805a052a11a7ceddeb5efdf382d209b344f03825) · [commit UI](https://github.com/dvoriano/yandik-plus/commit/b4041ee90d70dd3505591531f508ba0ce8d01d54).

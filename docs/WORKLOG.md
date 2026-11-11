@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S4: Dashboard antrean tindak lanjut administratif
+**Status:** KODE DITULIS, **BELUM DIUJI**, tanpa CL/CI/Node test/browser.
+- [Commit M04-S4](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef) membuat [enam berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard): model rekap, delapan tugas contoh dari dua referensi DEMO, tabel, filter status/penanggung jawab/perhatian, tanggal acuan manual dan teks baca-saja.
+- Dashboard hanya mengolah status M04-S3 tanpa mengubah tugas atau menjadikan `metadata_tercatat` M04-S2 sebagai dokumen resmi. Status selesai administratif bukan persetujuan bantuan/anggaran.
+- [Dokumen M04-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md); [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) menampung pemeriksaan model, tanggal, filter, UI, source stale dan keamanan yang belum dilakukan.
+- M04-S1/S2/S3/S4 SEDANG hanya sebagai **kode draft BELUM DIUJI**; keputusan resmi/paket/distribusi/BAST M04-S5+ tetap RENCANA. Produksi dan `main` tidak berubah.
+
 ## 2026-11-11 | M04-S3: rencana tindak lanjut administratif dari referensi eksternal
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menjalankan CL, Node test, browser, CI atau workflow.
 - [Commit M04-S3](https://github.com/dvoriano/yandik-plus/commit/805a052a11a7ceddeb5efdf382d209b344f03825) menambah [enam berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) untuk contoh daftar tugas, penanggung jawab/tanggal DEMO, proses, catatan, pengembalian, pembatalan dan pemeriksaan oleh peran DEMO.

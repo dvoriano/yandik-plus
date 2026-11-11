@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S3 | TINDAK LANJUT ADMINISTRASI (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S4 | DASHBOARD ANTREAN ADMINISTRATIF (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef) menambahkan enam berkas di [drafts/m04-admin-dashboard/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) untuk **dashboard baca-saja** dari delapan tugas dan dua referensi fiktif M04-S3/M04-S2.
+- **Fitur rancangan:** total/aktif, menunggu telaah, perlu perbaikan, lewat tanggal rencana, sumber berubah, ditutup administratif, dibatalkan; filter status/penanggung jawab/perhatian dan **tanggal acuan DEMO yang dipilih**; daftar urut perhatian serta teks rekap baca-saja.
+- **Batas:** ringkasan **sebelum filter** dipisah dari jumlah yang ditampilkan. Tidak ada konfirmasi keaslian dokumen, approval, anggaran, penerima bantuan, pengadaan, distribusi, BAST atau tugas resmi. Role dan data fiktif di memori browser.
+- **Rujukan:** [Spesifikasi M04-S4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md), [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); **tidak menjalankan CL/CI/tes**. Angka 176 tes terdahulu tidak mencakup M03-S4 atau M04.
+- **Status:** M04-S1/S2/S3/S4 **SEDANG (draft) / BELUM DIUJI**; keputusan pejabat/paket/penyaluran/BAST M04-S5+ **RENCANA**. PR #9 tetap DRAFT; `main`, website, VPS dan Indodax tidak disentuh.
+- **Next:** susun draft pencatatan kendala dan eskalasi administratif lintas petugas bila dibutuhkan, tanpa kewenangan pengesahan otomatis.
+
+## PEMBARUAN M04-S3 | TINDAK LANJUT ADMINISTRASI | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit model/UI](https://github.com/dvoriano/yandik-plus/commit/805a052a11a7ceddeb5efdf382d209b344f03825) menambahkan enam berkas [drafts/m04-admin-followup/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup); [commit perbaikan kontrol](https://github.com/dvoriano/yandik-plus/commit/b4041ee90d70dd3505591531f508ba0ce8d01d54) memisahkan tombol rencana baru dan alasan pembatalan.
 - **Alur DEMO:** referensi `metadata_tercatat` M04-S2 (BUKAN dokumen sah) → draf rencana → penugasan fiktif → penyusunan catatan → telaah manusia DEMO → dikembalikan atau ditutup **administratif saja**. Ada anti-duplikat tugas sejenis dan penanda sumber berubah.
 - **Batas:** tugas ditutup bukan konfirmasi keaslian surat, pengesahan keputusan, persetujuan bantuan/anggaran, pengadaan, distribusi atau BAST. Role hanya string DEMO, tidak ada akses nyata/DB/audit permanen, semua data fiktif.

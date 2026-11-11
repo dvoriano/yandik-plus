@@ -90,9 +90,9 @@ Daftar terpusat juga tersedia di [TEST_BACKLOG](https://github.com/dvoriano/yand
 ## 8. Status setelah penulisan kode
 
 - **M04-S1/S2/S3:** SEDANG pada rancangan kode di GitHub, seluruhnya **BELUM DIUJI**.
-- **M04-S4+** (proses resmi, paket, penyaluran, BAST, evaluasi): **RENCANA**.
+- **M04-S4:** dashboard antrean administratif **kode draft BELUM DIUJI**. **M04-S5+** (proses resmi, paket, penyaluran, BAST, evaluasi): **RENCANA**.
 - M03-S4A/B/C masih **BELUM DIUJI**; keberhasilan 176 tes lama hanya mencakup snapshot M03-S3.
 - Tidak ada pengoperasian website YANDIK+, sumber Flask asli, akun/DB, VPS atau branch `main`.
 - PR #9 tetap Draft dan repository private.
 
-**Rencana berikutnya:** menyusun *dashboard antrean tindak lanjut administratif* dari status tugas contoh secara baca-saja, bukan dashboard penetapan bantuan, sambil mengumpulkan perbaikan model untuk sesi pemeriksaan setelah izin.
+**Pengembangan M04-S4:** [kode dashboard antrean administratif](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md) sudah ditulis, **BELUM DIUJI**. Keluaran hanya rekap tugas contoh baca-saja, bukan dashboard keputusan bantuan. Perbaikan menunggu pemeriksaan setelah izin.

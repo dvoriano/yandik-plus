@@ -72,6 +72,11 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: 154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - M03 tetap SEDANG (prototype); bukti belum diunggah sungguhan, M04 tetap RENCANA.
 
+## M04-S6 | Matriks penerusan kendala administratif (draft, BELUM DIUJI)
+- [Kode matriks DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix): 5 kategori × 3 urgensi, unit yang disarankan, alasan perubahan alur, catatan telaah dan histori.
+- [Dokumen M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md) serta [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Bukan struktur pejabat yang disahkan, bukan disposisi, keputusan bantuan atau anggaran; belum diuji.
+
 ## M04-S5 | Kendala dan eskalasi administratif (draft, BELUM DIUJI)
 - [Kode rancangan M04-S5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) untuk laporan kendala, urgensi, penerusan petugas/unit DEMO, tanggapan, klarifikasi, review serta riwayat.
 - [Dokumen M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).

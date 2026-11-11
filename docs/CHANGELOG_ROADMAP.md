@@ -1,3 +1,9 @@
+## 2026-11-11 | M04-S6 matriks rute eskalasi administratif DEMO (BELUM DIUJI)
+- [Kode matriks M04-S6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) mengusulkan rute berdasarkan 5 kategori × 3 urgensi dari eskalasi M04-S5, memungkinkan pilihan berbeda dengan alasan dan telaah DEMO. [Commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84).
+- **Tidak membuat disposisi, mengesahkan dokumen, keputusan bantuan/anggaran, atau BAST**. Unit tujuan masih fiktif/belum menjadi SOP.
+- [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). M04-S1 hingga S6 SEDANG pada kode draft **BELUM DIUJI**, M04-S7+ resmi RENCANA.
+- Tidak menjalankan CL/CI/tes atau menyentuh website produksi, VPS, `main` dan Indodax.
+
 ## 2026-11-11 | M04-S5 kendala dan eskalasi administratif DEMO (BELUM DIUJI)
 - [Kode eskalasi M04-S5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) menyusun laporan kendala, urgensi, penanggung jawab, penerusan, tanggapan, telaah catatan dan pembatalan dengan histori DEMO. [Commit](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e).
 - Penutupan kendala **bukan** penyelesaian masalah pokok/konfirmasi keaslian/approval bantuan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).

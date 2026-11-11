@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S5 | KENDALA DAN ESKALASI ADMINISTRATIF (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S6 | MATRIKS PENERUSAN KENDALA DEMO (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84) membuat enam berkas [drafts/m04-escalation-matrix/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) berisi matriks 5 kategori × 3 urgensi, unit tujuan DEMO, alasan, perubahan pilihan unit dengan justifikasi, telaah terpisah dan histori.
+- **Batas eksplisit:** matriks **hanya menyarankan** alur pembahasan dari kendala M04-S5 yang telah dilaporkan. Pencatatan pilihan **tidak memanggil routeEscalation**, tidak mengirim tugas/berkas, tidak membuat disposisi atau keputusan bantuan. Kategori/struktur unit belum menjadi SOP kedinasan.
+- **Keterlacakan:** snapshot sumber/stale guard; opsi `mendesak_kajian` untuk prioritas pembahasan DEMO, **bukan hak persetujuan tambahan**; data fiktif dan peran label DEMO, hanya memori browser.
+- **Dokumen:** [spesifikasi proses M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md); [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) berisi QA tertunda. Tidak ada CL, unit test, browser, CI atau deploy.
+- **Status:** M04-S1/S2/S3/S4/S5/S6 **SEDANG hanya kode draft / BELUM DIUJI**. Keputusan, alokasi, pengadaan, distribusi dan BAST **M04-S7+ RENCANA**. PR #9 tetap DRAFT; `main`, produksi YANDIK+, VPS dan Indodax tidak disentuh.
+- **Next:** katalog unit tujuan dan SOP pemilihan rute yang perlu diverifikasi pemilik proses; tetap tanpa approval otomatis.
+
+## PEMBARUAN M04-S5 | KENDALA DAN ESKALASI ADMINISTRATIF | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e) menambahkan enam berkas di [drafts/m04-admin-escalations/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) untuk kendala M04-S3 fiktif, kategori/urgensi, pelaporan, penerusan lintas petugas, tanggapan, telaah, pembatalan beralasan dan histori.
 - **Alur DEMO:** pelapor assignee M04-S3 → koordinator meneruskan kepada penerima → penerima mencatat tanggapan → penelaah terpisah minta klarifikasi atau **menutup catatan administratif saja**. Deteksi sumber berubah dan pencegahan duplikat kendala aktif sejenis menjadi batas rancangan.
 - **Batas:** penutupan eskalasi tidak menyatakan surat sah, masalah pokok selesai, bantuan disetujui, dana tersedia, pengadaan, distribusi atau BAST. Role/data DEMO dan memori browser, bukan autentikasi/audit nyata. Tanpa CL/CI/tes.

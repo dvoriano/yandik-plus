@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S6: matriks alur eskalasi administratif dan tanggung jawab DEMO
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak memakai CL/CI/tes ataupun deployment.
+- [Commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84) menambah [enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) untuk matriks 5×3 kategori/urgensi, pilihan unit DEMO, alasan jika berbeda, review peran terpisah, penanda sumber berubah dan teks ringkasan.
+- Tidak ada pemanggilan penerusan otomatis ke M04-S5, tidak ada disposisi dinas maupun keputusan bantuan, anggaran, pengadaan atau BAST. Unit yang disarankan belum mewakili struktur organisasi sah.
+- [Spesifikasi M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md), [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) dan PROJECT_STATE disinkronkan. Tidak ada data produksi/akun resmi/DB/arsip.
+- Status M04-S1 hingga S6 **kode draft BELUM DIUJI**; M04-S7+ untuk proses keputusan resmi, paket, distribusi dan BAST tetap RENCANA.
+
 ## 2026-11-11 | M04-S5: kendala dan eskalasi administratif lintas petugas
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak ada CL, CI, Node test, browser atau deploy.
 - [Commit M04-S5](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e) menambahkan [enam file draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations): register kendala, fixture M04-S3, form pelaporan, penerusan, respons, telaah, pembatalan beralasan, daftar dan rekap histori.

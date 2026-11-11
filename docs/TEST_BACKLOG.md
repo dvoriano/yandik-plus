@@ -146,11 +146,31 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md). Seluruh kode BELUM DIUJI, belum ada CL/CI baru.
 
+## Antrean M04-S6: matriks eskalasi administratif DEMO (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S6-01 | Impor M04-S1/S2/S3/S5/S6 dan fixture sumber DEMO tanpa data riil | BELUM DIUJI |
+| QA-M04S6-02 | Matriks lima kategori dan tiga urgensi (15 rute), label/tujuan/penjelasan konsisten | BELUM DIUJI |
+| QA-M04S6-03 | Urgensi mendesak hanya usulan pembahasan koordinator, bukan penetapan bantuan | BELUM DIUJI |
+| QA-M04S6-04 | Draf, belum dilaporkan, ditutup/dibatalkan atau sumber usang tidak bisa dipilih | BELUM DIUJI |
+| QA-M04S6-05 | Alasan override minimum 60 karakter; unit tujuan harus termasuk daftar DEMO | BELUM DIUJI |
+| QA-M04S6-06 | Draf → submit → review/return/revise, pemisahan pelaku dan kelengkapan histori | BELUM DIUJI |
+| QA-M04S6-07 | Sumber eskalasi berubah setelah draf/pengajuan, tidak dapat melanjutkan tanpa kaji ulang | BELUM DIUJI |
+| QA-M04S6-08 | Tidak ada `routeEscalation()` otomatis, notifikasi atau mutasi status M04-S5 | BELUM DIUJI |
+| QA-M04S6-09 | Atribut persetujuan, anggaran, penerima, pengadaan dan BAST tidak diterima | BELUM DIUJI |
+| QA-M04S6-10 | Tabel 15 opsi, form, aksesibilitas dan HP 320/375px, filter, navigasi keyboard | BELUM DIUJI |
+| QA-M04S6-11 | Format rekap, perubahan status, catatan review dan sanitasi input teks | BELUM DIUJI |
+| QA-M04S6-12 | Validitas alur kelembagaan, petugas pengampu, SPO/SOP, tata naskah, SPBE | BUTUH KEPUTUSAN |
+| QA-M04S6-13 | Integrasi backend dengan login, kontrol akses wilayah, audit tahan perubahan setelah disetujui | TERTUNDA UJI |
+
+[Spesifikasi M04-S6](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md); semua tes ditunda sesuai instruksi owner.
+
 ## Antrean lintas modul yang belum diujikan
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04-S1/S2/S3/S4/S5: kode draft administrasi, referensi, tindak lanjut, dashboard dan eskalasi tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S6+ tetap RENCANA.
+- M04-S1/S2/S3/S4/S5/S6: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi dan matriks rute tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S7+ tetap RENCANA.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

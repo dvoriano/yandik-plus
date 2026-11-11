@@ -93,5 +93,6 @@ Daftar terpusat: [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/dev
 ## 8. Status dan langkah berikut
 
 - **M04-S1 sampai M04-S5:** SEDANG hanya pada **kode draft BELUM DIUJI**; belum API/DB/akun nyata atau penerapan layanan.
-- **M04-S6+** untuk keputusan resmi, alokasi sesuai kewenangan, paket, penyaluran, BAST dan evaluasi **RENCANA**.
+- **M04-S6:** rancangan [matriks alur dan tanggung jawab DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) telah ditulis, **BELUM DIUJI**. Tidak membuat disposisi otomatis.
+- **M04-S7+** untuk keputusan resmi, alokasi sesuai kewenangan, paket, penyaluran, BAST dan evaluasi **RENCANA**.
 - **Langkah desain berikut yang mungkin:** merancang katalog aturan eskalasi dan matriks penerima sesuai struktur organisasi, lalu meninjau dokumen bersama penanggung jawab proses. Tidak mengubah batas keputusan pejabat.

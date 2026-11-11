@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S7 | Katalog Unit dan RACI (DRAF)</title>
+<link rel="stylesheet" href="./style.css">
+</head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S7 · DRAF GITHUB-ONLY</p>
+<h1>Katalog Unit Tujuan dan Aturan Koordinasi</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Unit dan peran di sini sepenuhnya contoh DEMO, bukan struktur organisasi yang disahkan.</p>
+<p>Petakan unit, fungsi, batas tanggung jawab, serta naskah aturan koordinasi untuk ditelaah. <strong>Tidak ada pengiriman, disposisi dinas, penerbitan SOP, persetujuan bantuan, atau anggaran.</strong></p>
+</header>
+<section aria-labelledby="catalog-title">
+<h2 id="catalog-title">1. Katalog unit tujuan (belum resmi)</h2>
+<p>Fungsi di bawah hanya rancangan untuk pembagian tugas administratif. Identitas petugas dan unit yang nyata harus diputuskan melalui proses berwenang.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Unit DEMO</th><th scope="col">Fungsi yang disarankan</th><th scope="col">Batas kewenangan</th></tr></thead>
+<tbody id="catalog-rows"></tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="raci-title">
+<h2 id="raci-title">2. Matriks tanggung jawab RACI (contoh)</h2>
+<p class="muted">R: pelaksana. A: penanggung jawab proses DEMO. C: pihak konsultasi. I: pihak diberi informasi. Semua pembagian ini <strong>belum ditetapkan sebagai kewenangan pegawai</strong>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th scope="col">Kegiatan</th><th scope="col">R</th><th scope="col">A</th><th scope="col">C</th><th scope="col">I</th></tr></thead>
+<tbody id="raci-rows"></tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="draft-title">
+<h2 id="draft-title">3. Draf aturan koordinasi (dari M04-S6 DEMO)</h2>
+<p id="source" class="muted"></p>
+<form id="draft-form">
+<label for="unit">Unit yang sudah dicatat untuk pembahasan pada M04-S6
+<select id="unit" disabled></select></label>
+<label for="scope">Lingkup koordinasi yang diusulkan
+<textarea id="scope" minlength="45" maxlength="600" rows="3" required></textarea></label>
+<label for="minimum">Pemeriksaan minimum sebelum koordinasi
+<textarea id="minimum" minlength="50" maxlength="700" rows="3" required></textarea></label>
+<label for="exception">Jika ada perubahan sumber atau kendala lanjutan
+<textarea id="exception" minlength="45" maxlength="650" rows="3" required></textarea></label>
+<label for="records">Rancangan pencatatan dan pengarsipan
+<textarea id="records" minlength="40" maxlength="600" rows="3" required></textarea></label>
+<label for="review-date">Tanggal rencana telaah DEMO (bukan jadwal resmi)
+<input id="review-date" type="date" required></label>
+<label for="rationale">Alasan pengusulan aturan koordinasi
+<textarea id="rationale" minlength="45" maxlength="650" rows="3" required></textarea></label>
+<button type="submit">Simpan draf aturan koordinasi DEMO</button>
+</form>
+<div class="actions">
+<button id="submit" type="button" hidden>Ajukan telaah naskah DEMO</button>
+<button id="reset" class="secondary" type="button">Kosongkan draf simulasi</button>
+</div>
+</section>
+<section aria-labelledby="review-title">
+<h2 id="review-title">4. Telaah naskah, bukan pengesahan SOP</h2>
+<form id="review-form" hidden>
+<label for="action">Hasil telaah konsep
+<select id="action">
+<option value="catat_untuk_bahan_sop">Catat sebagai bahan penyusunan SOP, bukan pengesahan</option>
+<option value="minta_perbaikan">Minta perbaikan naskah</option>
+<option value="tidak_direkomendasikan">Tidak direkomendasikan</option>
+</select></label>
+<label for="review-reason">Pertimbangan penelaah DEMO (minimal 50 karakter)
+<textarea id="review-reason" minlength="50" maxlength="750" rows="4" required></textarea></label>
+<button type="submit">Catat hasil telaah DEMO</button>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="handoff-title">
+<h2 id="handoff-title">5. Bahan naskah koordinasi untuk dibahas</h2>
+<p>Teks baca-saja ini hanya rancangan. Untuk menjadikannya SOP, masih diperlukan penetapan format, kewenangan, tata naskah, dan persetujuan resmi di luar halaman ini.</p>
+<label for="handoff">Draf naskah dan riwayat telaah
+<textarea id="handoff" rows="19" readonly spellcheck="false"></textarea></label>
+</section>
+<footer>Memori browser saja, bukan audit sah. Tidak ada API, database, penugasan nyata, keputusan pejabat, anggaran, pengadaan, distribusi, atau BAST.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

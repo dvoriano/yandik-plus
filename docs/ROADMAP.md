@@ -14,6 +14,8 @@
 | [Ringkasan Eksekutif](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md) | Bahan paparan singkat tujuan, manfaat, fungsi, kendali dan pertanyaan kelembagaan | **DRAF, SIAP DIBACA / BELUM DITELAAH FORMAL** |
 | [Pengenalan Lengkap YANDIK+](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md) | 15 modul, fitur/fungsi, sistem kerja, peran, alur, mutu data, keamanan, hubungan SPBE, tahapan dan FAQ | **DRAF, SIAP DIBACA / BELUM DITELAAH FORMAL** |
 
+Pemeriksaan dan persetujuan substansi dicatat pada [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21), **masih terbuka**.
+
 Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak mengesahkan aturan prioritas/anggaran, tidak menjadi bukti pengujian kode baru, dan tidak menambah pengeluaran CL/CI. Repositori masih **private**, sehingga pembaca membutuhkan izin GitHub.
 
 ## Arti status

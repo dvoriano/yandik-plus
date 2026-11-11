@@ -8,6 +8,7 @@
 - [Pengenalan Lengkap YANDIK+](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/PENGENALAN_YANDIK_PLUS.md): fungsi 15 modul, 14 sistem kerja bersama, alur APEL/Support/Pengawasan/Pembinaan, matriks pengguna, pengelolaan data, pertanyaan pengawasan, SPBE, perlindungan informasi dan kedudukan AI opsional.
 - [Commit pembuatan dua naskah](https://github.com/dvoriano/yandik-plus/commit/19eae9de3525838593b6347d20400bf4faec2cc8), penautan dari README, katalog modul, masterplan, project state dan roadmap.
 - **Penting:** dokumen nonteknis menjelaskan rancangan; tidak menyatakan keseluruhan modul siap digunakan, tidak menggantikan kewenangan pejabat atau sistem resmi. Belum ada review formal.
+- [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21) dibuat untuk mengumpulkan masukan formal/operasional, tanpa menyatakan sudah ada persetujuan pihak terkait.
 - Repository private, pihak eksternal harus memiliki akses GitHub; tidak diubah menjadi public.
 - Mode coding tanpa CL/CI tetap berlaku; M03-S4 masih **BELUM DIUJI**, M04 **RENCANA**.
 

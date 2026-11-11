@@ -82,4 +82,6 @@ YANDIK+ dirancang mempunyai **cara kerja yang tertib**:
 
 **Baca penjelasan selengkapnya:** [Dokumen Pengenalan YANDIK+](PENGENALAN_YANDIK_PLUS.md) · [Katalog 15 Modul](MODULES_INDEX.md) · [Roadmap dan Status](ROADMAP.md)
 
+**Saran dan koreksi substansi:** dicatat di [Issue telaah dokumen #21](https://github.com/dvoriano/yandik-plus/issues/21) sebelum naskah dinyatakan disetujui.
+
 **Naskah ini tidak menggantikan juknis, regulasi, SOP, atau keputusan pejabat yang berlaku.**

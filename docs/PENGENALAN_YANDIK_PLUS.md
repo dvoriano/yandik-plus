@@ -433,6 +433,8 @@ Tidak. Naskah ini menjadi **bahan pemahaman dan telaah**, bukan dasar tunggal un
 
 Dokumen ini dirangkum dari dokumen internal pengembangan: [Masterplan](MASTERPLAN.md), [Katalog Modul](MODULES_INDEX.md), [Standar kemudahan pengguna](UX_PAPERLESS.md), [Rancangan alur kerja](WORKFLOW_ENGINE.md), [Batas keamanan dan data](SECURITY_AND_DATA.md), serta [ROADMAP](ROADMAP.md). Ketentuan operasional dan aturan penilaian yang berlaku **tetap merujuk juknis/peraturan resmi**, bukan dokumen pengenalan ini.
 
+**Proses koreksi naskah:** [Issue #21](https://github.com/dvoriano/yandik-plus/issues/21) disediakan untuk catatan perubahan dari pimpinan, Inspektorat, Diskominfotik dan pengguna layanan. Belum ada persetujuan formal yang dinyatakan.
+
 **Catatan versi:** Setiap perubahan substansial pada lingkup modul, alur persetujuan, kedudukan SPBE atau status implementasi perlu dicatat di dokumen ini dan [riwayat perubahan proyek](CHANGELOG_ROADMAP.md). Untuk melihat progres terbaru, gunakan [PROJECT_STATE](../PROJECT_STATE.md).
 
 **Penegasan penutup:** YANDIK+ diusulkan untuk memudahkan pekerjaan teknis dan membuat proses lebih tertelusur. Pengembangan fungsi digital, pemrosesan data, penggunaan anggaran dan keputusan resmi **tetap membutuhkan persetujuan serta pengendalian sesuai kewenangan masing-masing**.

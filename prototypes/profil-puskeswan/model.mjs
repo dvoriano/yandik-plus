@@ -37,6 +37,8 @@ export function startDemo() {
     nextProblemId: 1,
     supportNeeds: [],
     nextNeedId: 1,
+    priorityAssessments: [],
+    nextPriorityId: 1,
   };
 }
 

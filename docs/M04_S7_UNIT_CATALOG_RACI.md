@@ -99,5 +99,6 @@ Berkas telah tersimpan pada [commit](https://github.com/dvoriano/yandik-plus/com
 ## 8. Status dan tahap selanjutnya
 
 - **M04-S1 sampai M04-S7:** KODE DITULIS, BELUM DIUJI dalam branch pengembangan.
-- **M04-S8+** untuk keputusan resmi, anggaran, pengadaan, paket, penyaluran, BAST dan evaluasi: **RENCANA**, bukan ruang lingkup katalog.
+- **M04-S8:** [kesiapan SOP dan perubahan katalog DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) telah ditulis, BELUM DIUJI, tidak mengesahkan tata kerja.
+- **M04-S9+** untuk keputusan resmi, anggaran, pengadaan, paket, penyaluran, BAST dan evaluasi: RENCANA.
 - **Arah desain berikut:** susun daftar persyaratan implementasi SOP dan tata kelola perubahan katalog, dengan kejelasan peran pejabat yang berwenang, tanpa mengaktifkan penyaluran atau keputusan bantuan.

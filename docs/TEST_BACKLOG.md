@@ -186,11 +186,34 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S8: kesiapan SOP dan perubahan unit (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S8-01 | Import berantai M04-S1/S2/S3/S5/S6/S7/S8 dan fixtures | BELUM DIUJI |
+| QA-M04S8-02 | Sumber M04-S7 harus `dicatat_untuk_bahan_sop` dan versi tepat | BELUM DIUJI |
+| QA-M04S8-03 | 12 unsur, 10 wajib/2 opsional, ID unik dan rekap | BELUM DIUJI |
+| QA-M04S8-04 | Bukti `DEMO-`, alasan, pilihan tidak berlaku hanya bagi opsional | BELUM DIUJI |
+| QA-M04S8-05 | Berkas parsial dapat diajukan tanpa status pengesahan/siap produksi | BELUM DIUJI |
+| QA-M04S8-06 | Usulan unit tambah/ubah/nonaktif, ID, profil dan no-duplicate aktif | BELUM DIUJI |
+| QA-M04S8-07 | Dampak alur M04-S6, RACI M04-S7, SOP/arsip, rollback tertulis | BELUM DIUJI |
+| QA-M04S8-08 | Telaah usulan, pengembalian dan revisi dengan histori tidak hilang | BELUM DIUJI |
+| QA-M04S8-09 | Telaah checklist dan katalog terpisah, penelaah bukan penyusun | BELUM DIUJI |
+| QA-M04S8-10 | Perubahan source/versi menahan pencatatan dan penelaahan | BELUM DIUJI |
+| QA-M04S8-11 | Katalog sumber tidak dimutasi, tidak ada apply SOP/approval bantuan/BAST | BELUM DIUJI |
+| QA-M04S8-12 | Input tidak sah, teks baca-saja, kebersihan/privasi data DEMO | BELUM DIUJI |
+| QA-M04S8-13 | HP 320/375px, keyboard, pembaca layar dan kontrol form tersembunyi | BELUM DIUJI |
+| QA-M04S8-14 | Tupoksi, arsip, tata naskah, SPBE dan pemilik kewenangan | BUTUH KEPUTUSAN |
+| QA-M04S8-15 | Integrasi akun riil, API/DB, audit dan approval resmi di luar demo | TERTUNDA UJI |
+
+[Dokumen M04-S8](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md). Tidak ada pengujian dijalankan.
+
+
 ## Antrean lintas modul yang belum diujikan
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04-S1/S2/S3/S4/S5/S6/S7: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi, matriks rute dan katalog RACI tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S8+ tetap RENCANA.
+- M04-S1/S2/S3/S4/S5/S6/S7: kode draft administrasi, referensi, tindak lanjut, dashboard, eskalasi, matriks rute dan katalog RACI tersimpan, **BELUM DIUJI**; keputusan resmi, anggaran, distribusi dan BAST M04-S9+ tetap RENCANA.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

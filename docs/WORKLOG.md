@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S8: kesiapan SOP dan tata kelola perubahan katalog
+**KODE DITULIS, BELUM DIUJI.** [Enam berkas M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) [commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) dan [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a) menyiapkan 12 checklist kelembagaan, perubahan unit tambah/ubah/nonaktif, penjelasan dampak dan rollback, telaah beralasan serta histori. Katalog sumber tidak berubah; hasil kajian bukan SOP sah. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) dan [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) diperbarui. Tidak ada CL, tes, CI atau deploy; M04-S9+ proses bantuan resmi/BAST RENCANA.
+
 ## 2026-11-11 | M04-S7: katalog unit tujuan, RACI dan konsep aturan koordinasi
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menjalankan CL/CI/tes.
 - [Commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb) menambah [enam berkas DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) untuk katalog empat unit tujuan yang konsisten dengan M04-S6, matriks enam kegiatan RACI, draf lingkup koordinasi, minimum checks, pengecualian, catatan arsip dan telaah naskah.

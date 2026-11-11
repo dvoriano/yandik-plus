@@ -52,11 +52,18 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Draft M04-S8 | 11 November 2026 | BELUM DIUJI
+- [x] [Kesiapan SOP dan usulan katalog DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance): checklist 12 unsur, perubahan unit beralasan, dampak dan rollback.
+- [x] Dua telaah berbeda, keduanya hanya bahan pembahasan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) · [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] SOP asli, unit riil, otorisasi, tes dan proses bantuan masih belum ada.
+- M04-S9+ bantuan resmi/distribusi/BAST RENCANA.
+
+
 ## Draft M04-S7 | 11 November 2026 | BELUM DIUJI
 - [x] [Katalog unit/RACI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog): empat unit, enam aktivitas pembagian peran, rancangan naskah dan telaah aturan koordinasi dari M04-S6.
 - [x] Naskah dicatat sebagai bahan SOP, **bukan** SOP berlaku; unit/jabatan fiktif, tidak mengirim disposisi atau menyetujui bantuan.
 - [ ] Belum diuji kode, peran/struktur riil, keamanan, integrasi dan SOP. [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md) · [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
-- M04-S8+ keputusan/anggaran/paket/distribusi/BAST masih RENCANA.
+- M04-S9+ keputusan/anggaran/paket/distribusi/BAST masih RENCANA.
 
 ## Draft M04-S6 | 11 November 2026 | BELUM DIUJI
 - [x] [Kode matriks rekomendasi unit DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) dari 5 kategori × 3 urgensi M04-S5; dapat diubah dengan alasan dan telaah peran lain.
@@ -68,13 +75,13 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 - [x] [Kode pelaporan kendala dan eskalasi DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) menaut ke tugas aktif M04-S3 dan mencatat laporan, penerusan, tanggapan, review/clarifikasi, histori.
 - [x] Rekap kendala aktif dan ditutup administratif serta penanda sumber berubah; data dan peran masih fiktif, tidak ada keputusan bantuan otomatis.
 - [ ] Tidak ada uji kode/HP, autentikasi/API/DB, konfirmasi surat, anggaran, paket, distribusi atau BAST.
-- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Proses resmi M04-S8+ tetap RENCANA.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Proses resmi M04-S9+ tetap RENCANA.
 
 ## Draft M04-S4 | 11 November 2026 | BELUM DIUJI
 - [x] [Dashboard tugas administratif DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) berisi rekap status, perhatian, tanggal acuan manual, filter, serta ringkasan baca-saja.
 - [x] Jumlah rekap keseluruhan dipisah dari daftar hasil filter; status `ditutup_administratif` bukan penetapan bantuan.
 - [ ] Tidak ada uji kode/UI, sumber/akses nyata, persetujuan/anggaran, distribusi atau BAST.
-- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md) · [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Proses resmi M04-S8+ RENCANA.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md) · [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Proses resmi M04-S9+ RENCANA.
 
 ## Draft M04-S3 | 11 November 2026 | BELUM DIUJI
 - [x] [Kode tugas administratif DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) menyiapkan rencana klarifikasi dan pembahasan setelah metadata referensi tercatat, tidak memverifikasi keaslian/keputusan.

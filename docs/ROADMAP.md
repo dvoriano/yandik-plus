@@ -64,31 +64,38 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | M04-S5 | Kendala dan eskalasi administratif lintas petugas | **SEDANG (kode draft), BELUM DIUJI**: [pelaporan, penerusan, tanggapan dan telaah DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) terhubung pada tugas M04-S3 simulasi, dengan catatan riwayat | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md); [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); tidak menerbitkan perintah dinas, memverifikasi surat atau menyetujui bantuan |
 | M04-S6 | Matriks arah eskalasi dan tanggung jawab DEMO | **SEDANG (kode draft), BELUM DIUJI**: [rute 5×3 dan catatan pilihan beralasan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix) dari M04-S5, telaah terpisah tanpa meneruskan otomatis | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); **bukan SOP, disposisi, atau persetujuan bantuan** |
 | M04-S7 | Katalog unit DEMO, matriks RACI, draf aturan koordinasi | **SEDANG (kode draft) / BELUM DIUJI**: [empat unit dan enam aktivitas RACI](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog), catatan SOP berbasis rute M04-S6 ditelaah DEMO tanpa pengesahan | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md), [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); **bukan SOP/disposisi resmi**, tidak ada keputusan bantuan |
+| M04-S8 | Persyaratan SOP dan tata kelola katalog | **SEDANG (kode draft), BELUM DIUJI**: [12 unsur dan perubahan unit DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance), telaah terpisah, histori revisi, tidak menerapkan perubahan | [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) · [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); bukan SOP resmi/bantuan/anggaran |
+
+### M04-S8: kesiapan SOP dan perubahan unit (KODE DITULIS / BELUM DIUJI)
+- [x] [Enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance): checklist 12 persyaratan, perubahan unit tambah/ubah/nonaktif, alasan dan dampak M04-S6/M04-S7 serta rollback. [Commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) · [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a).
+- [x] Dua jalur telaah konseptual, riwayat perubahan dan [dokumen proses](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md).
+- [ ] Seluruh QA di [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) **BELUM DIUJI**, belum ada SOP/struktur resmi atau implementasi perubahan katalog.
+- [ ] M04-S9+ keputusan bantuan, anggaran, paket, distribusi dan BAST tetap RENCANA.
 
 ### M04-S7: katalog unit, RACI dan aturan koordinasi (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas kode draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) untuk katalog empat unit DEMO, enam aktivitas RACI, naskah koordinasi dari catatan M04-S6 dan telaah oleh peran lain. [Commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb).
 - [x] [Dokumen batas kewenangan dan proses M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Sintaks/impor, kecocokan unit, aturan RACI, kontrol versi, form, keamanan dan aksesibilitas **BELUM DIUJI**.
-- [ ] Penetapan SOP, struktur resmi, autentikasi, anggaran dan keputusan bantuan belum tersedia; proses bantuan M04-S8+ RENCANA.
+- [ ] Penetapan SOP, struktur resmi, autentikasi, anggaran dan keputusan bantuan belum tersedia; proses bantuan M04-S9+ RENCANA.
 
 ### M04-S6: matriks alur eskalasi dan penanggung jawab (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas draft M04-S6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-escalation-matrix): matriks 5 kategori × 3 urgensi, saran unit tujuan DEMO, alasan koordinator, telaah peran terpisah, histori dan teks baca-saja. [Commit](https://github.com/dvoriano/yandik-plus/commit/0456b4307d982fa04c7891d9e1ee0c5a36b21b84).
 - [x] [Dokumen batas proses dan tanggung jawab](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S6_ROUTING_MATRIX.md) serta [backlog pemeriksaan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] **BELUM DIUJI:** kode, impor lintas modul, form, status, stale guard, keamanan, HP dan aksesibilitas.
-- [ ] Tidak ada penerusan otomatis, persetujuan, disposisi dinas atau klaim struktur resmi; M04-S8+ keputusan/paket/pengadaan/distribusi/BAST **RENCANA**.
+- [ ] Tidak ada penerusan otomatis, persetujuan, disposisi dinas atau klaim struktur resmi; M04-S9+ keputusan/paket/pengadaan/distribusi/BAST **RENCANA**.
 
 ### M04-S5: Kendala dan eskalasi administratif (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) untuk kategori kendala, urgensi, pelaporan, penerusan ke petugas/unit tujuan DEMO, tanggapan, review terpisah, klarifikasi, pembatalan dan histori.
 - [x] Deteksi sumber M04-S3 berubah, pencegahan kendala aktif sejenis ganda pada tugas yang sama, dan rekap antrean simulasi. [Commit](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e).
 - [x] [Dokumen proses M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) dan [backlog QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Kode, UI, validasi dan akses nyata **BELUM DIUJI**; tidak ada notifikasi/disposisi/surat dinas otomatis.
-- [ ] **M04-S8+ RENCANA:** keputusan pejabat, anggaran, pengadaan, paket, distribusi, BAST dan evaluasi melalui prosedur berwenang.
+- [ ] **M04-S9+ RENCANA:** keputusan pejabat, anggaran, pengadaan, paket, distribusi, BAST dan evaluasi melalui prosedur berwenang.
 
 ### M04-S4: Dashboard antrean administrasi (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) berisi rekap tugas, perhatian, tanggal acuan manual, filter, daftar urutan dan teks rekap baca-saja menggunakan data fiktif. [Commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef).
 - [x] [Spesifikasi indikator, sumber dan batas kewenangan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S4_FOLLOWUP_DASHBOARD.md) dan [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - [ ] Semua perhitungan, impor, skenario sumber stale, UI HP, aksesibilitas dan integrasi **BELUM DIUJI**.
-- [ ] M04-S8+ keputusan pejabat, pengadaan, paket, distribusi dan BAST **RENCANA**, tidak boleh dianggap disetujui.
+- [ ] M04-S9+ keputusan pejabat, pengadaan, paket, distribusi dan BAST **RENCANA**, tidak boleh dianggap disetujui.
 
 ### M04-S3: tindak lanjut administratif DEMO (KODE DITULIS / BELUM DIUJI)
 - [x] [Enam berkas rancangan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-followup) untuk tugas, penanggung jawab dan tenggat fiktif, status, catatan, pengembalian/telaah, pembatalan dan histori.
@@ -144,10 +151,10 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul (M01, M02, M03 dan draf M04-S1/S2/S3/S4/S5/S6/S7 sudah di daftar SEDANG)
+## C. Rencana per modul (M01, M02, M03 dan draf M04-S1/S2/S3/S4/S5/S6/S7/S8 sudah di daftar SEDANG)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M04-S8+ | P0 | Support: proses resmi oleh pejabat berwenang, alokasi, paket, distribusi dan BAST | M04-S7 serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
+| M04-S9+ | P0 | Support: proses resmi oleh pejabat berwenang, alokasi, paket, distribusi dan BAST | M04-S8 serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |
 | M06 | P1 | Pengawasan Obat Hewan | M01 | [Obat](modules/05_PENGAWASAN_OBAT_HEWAN.md) |
 | M07 | P1 | Klinik/Praktik Dokter Hewan | M01 | [Klinik](modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md) |

@@ -3,7 +3,7 @@
 **KODE DITULIS, BELUM DIUJI.** Draft GitHub-only. Dilarang menjalankan CL, unit test, Chromium, workflow CI, deployment maupun menginput data kedinasan nyata.
 
 ## Lingkup
-- **12 persyaratan kesiapan kelembagaan** pada empat kelompok: kelembagaan, kewenangan, tata kelola, sistem dan implementasi (kelompok dapat berjumlah lima pada tampilan).
+- **12 persyaratan kesiapan kelembagaan** pada lima kelompok: kelembagaan, kewenangan, tata kelola, sistem, dan implementasi.
 - Checklist per unsur dengan status belum diperiksa, perlu klarifikasi, bahan tersedia sebagai rujukan DEMO, atau tidak berlaku untuk unsur opsional yang beralasan. Semua catatan memerlukan alasan tertulis. Unsur wajib yang belum tersedia tidak pernah dianggap lolos.
 - **Usulan perubahan katalog unit** bertipe tambah, ubah, atau nonaktifkan. Wajib mencantumkan profil DEMO, alasan, dampak pada rute M04-S6, RACI M04-S7, SOP/arsip, serta langkah rollback.
 - Telaah perubahan unit terpisah dari telaah checklist kelembagaan. Usulan yang dikembalikan dapat direvisi dengan histori yang tetap tersedia. Hasil hanya untuk pembahasan, tidak ada aksi apply, publish, update catalog, enact SOP, atau approval bantuan.

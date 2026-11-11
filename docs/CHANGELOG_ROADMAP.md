@@ -1,3 +1,8 @@
+## 2026-11-11 | M04-S8 kesiapan SOP dan perubahan katalog DEMO (BELUM DIUJI)
+- [Kode M04-S8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-sop-governance) memuat checklist 12 persyaratan dan tata kelola usulan tambah/ubah/nonaktif unit serta histori, dampak dan rollback. [Commit](https://github.com/dvoriano/yandik-plus/commit/aa6b8949b20094df481bd06b64504cfa6cff27a8) · [revisi](https://github.com/dvoriano/yandik-plus/commit/8a510f46f7a428f78df6d0a18d1f4d95165da10a).
+- Tidak ada pengesahan SOP, update katalog aktif, keputusan bantuan/anggaran atau BAST. [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S8_SOP_GOVERNANCE.md) · [QA](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Kode draft M04-S1 sampai S8 BELUM DIUJI; M04-S9+ proses resmi RENCANA. Tanpa CL/CI/tes/produksi.
+
 ## 2026-11-11 | M04-S7 katalog unit tujuan dan RACI DEMO (BELUM DIUJI)
 - [Kode katalog M04-S7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-unit-catalog) menambah empat unit tujuan dan enam aktivitas RACI, serta rancangan naskah koordinasi yang dapat ditelaah berdasarkan M04-S6. [Commit](https://github.com/dvoriano/yandik-plus/commit/64493b20e5abb3078f15f5abd48ffab3c77902eb).
 - Tidak ada kewenangan unit riil, pengesahan SOP, penugasan/disposisi, keputusan bantuan atau anggaran. [Dokumentasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).

@@ -124,8 +124,13 @@ function render(){
 }
 $("check-id").addEventListener("change",()=>{
   const item=docket.checklist.find(x=>x.id===$("check-id").value);
-  if(item){$("check-status").value=item.status;
-    $("check-note").value=item.note;$("check-evidence").value=item.reference_demo;}
+  if(item){
+    $("check-status").value=item.status;
+    $("check-note").value=item.note;
+    $("check-evidence").value=item.reference_demo;
+    // A previously saved DEMO evidence reference must remain editable when reopened.
+    $("check-evidence").disabled=item.status!=="bahan_tersedia";
+  }
 });
 $("check-status").addEventListener("change",()=>{
   $("check-evidence").disabled=$("check-status").value!=="bahan_tersedia";

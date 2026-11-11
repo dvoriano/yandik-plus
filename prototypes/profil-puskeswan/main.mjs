@@ -11,6 +11,7 @@ import {
   NEED_CATEGORIES, URGENCY, NEED_STATUS, visibleNeeds, createOrEditNeed,
   verifyNeed, supportCounts,
 } from "./support_needs.mjs";
+import { EVIDENCE_TYPES, evidenceCompleteness } from "./support_evidence.mjs";
 
 let state = startDemo();
 let editing = null;
@@ -296,7 +297,9 @@ function renderSupportNeeds() {
         " · " + (linked?.title ?? "Referensi tidak tersedia")),
       element("p", "current", "Jumlah: " + need.quantity + " " + need.unit + " · " +
         "Urgensi: " + (URGENCY.find((x) => x.id === need.urgency)?.label ?? "Belum jelas")),
-      element("p", "current", need.reason));
+      element("p", "current", need.reason),
+      element("p", "small muted", "Bukti DEMO: " + evidenceCompleteness(need).count +
+        " kode referensi (belum ada unggahan file)."));
     if (need.note && ["perlu_perbaikan", "ditolak"].includes(need.status))
       card.append(element("p", "small muted", "Alasan verifikator: " + need.note));
     const bottom = element("div", "detail");
@@ -331,6 +334,9 @@ function openNeedEditor(problemId, needId = null) {
   $("need-unit").value = existing?.unit ?? "unit";
   $("need-urgency").value = existing?.urgency ?? "sedang";
   $("need-reason").value = existing?.reason ?? "";
+  $("need-evidence-kind").value = existing?.evidence?.[0]?.type ?? "foto";
+  $("need-evidence-ref").value = existing?.evidence?.[0]?.ref ?? "";
+  $("need-repeat-reason").value = existing?.repeat_reason ?? "";
   $("need-form-panel").hidden = false;
   $("need-form-panel").scrollIntoView({ block: "nearest" });
   $("need-item").focus();
@@ -347,6 +353,10 @@ function openNeedReview(id) {
   $("need-review-context").textContent = need.item + " · " + need.quantity + " " + need.unit +
     ". Terhubung ke masalah #" + need.problem_id + ". Verifikasi bukan persetujuan anggaran.";
   $("need-review-notes").value = "";
+  $("need-evidence-ack").checked = false;
+  $("need-review-evidence").textContent = "Pemeriksaan hanya metadata: " +
+    (need.evidence ?? []).map((x) => x.type + ": " + x.ref).join("; ") +
+    ". File sungguhan tidak disimpan atau diperiksa.";
   $("need-review-panel").hidden = false;
   $("need-review-panel").scrollIntoView({ block: "nearest" });
   $("need-review-notes").focus();
@@ -556,6 +566,10 @@ $("need-form").addEventListener("submit", (event) => {
       unit: $("need-unit").value,
       urgency: $("need-urgency").value,
       reason: $("need-reason").value,
+      evidence: $("need-evidence-ref").value.trim()
+        ? [{ type: $("need-evidence-kind").value, ref: $("need-evidence-ref").value.trim() }]
+        : [],
+      repeat_reason: $("need-repeat-reason").value.trim(),
     }, intent, editingNeed.needId);
     closeNeedEditor();
     render();
@@ -571,7 +585,8 @@ $("need-review-form").addEventListener("submit", (event) => {
   if (reviewingNeed == null) return;
   try {
     const decision = event.submitter?.value;
-    state = verifyNeed(state, reviewingNeed, decision, $("need-review-notes").value);
+    state = verifyNeed(state, reviewingNeed, decision, $("need-review-notes").value,
+      { evidenceReviewed: $("need-evidence-ack").checked });
     closeNeedReview();
     render();
     showNotice("Hasil pemeriksaan kebutuhan tercatat. Belum ada keputusan alokasi atau BAST.");
@@ -583,6 +598,11 @@ for (const category of NEED_CATEGORIES) {
   const option = element("option", "", category.label);
   option.value = category.id;
   $("need-category").append(option);
+}
+for (const evidence of EVIDENCE_TYPES) {
+  const option = element("option", "", evidence.label);
+  option.value = evidence.id;
+  $("need-evidence-kind").append(option);
 }
 for (const urgency of URGENCY) {
   const option = element("option", "", urgency.label);

@@ -191,7 +191,17 @@
           <select id="need-urgency" required></select>
           <label for="need-reason">Alasan usulan</label>
           <textarea id="need-reason" rows="3" minlength="10" maxlength="500" required placeholder="Jelaskan mengapa bantuan diperlukan berdasarkan permasalahan yang telah dicatat."></textarea>
-          <p class="small muted">Verifikasi kebutuhan hanya untuk pencatatan dan kajian. Tidak ada keputusan anggaran, pengadaan atau BAST di demo ini.</p>
+          <fieldset class="evidence-group">
+            <legend>Referensi bukti (hanya metadata DEMO)</legend>
+            <p class="small muted">Draf boleh tanpa bukti. Untuk mengajukan isi minimal satu kode, misalnya DEMO-BUKTI-001. Jangan memasukkan URL, berkas asli, atau data pribadi.</p>
+            <label for="need-evidence-kind">Jenis bukti</label>
+            <select id="need-evidence-kind"></select>
+            <label for="need-evidence-ref">Kode referensi bukti</label>
+            <input id="need-evidence-ref" type="text" maxlength="55" autocomplete="off" spellcheck="false" placeholder="DEMO-BUKTI-001">
+          </fieldset>
+          <label for="need-repeat-reason">Alasan pengajuan ulang (jika barang serupa pernah ditolak)</label>
+          <textarea id="need-repeat-reason" rows="2" maxlength="300" placeholder="Berikan penjelasan pengajuan ulang, bila relevan."></textarea>
+          <p class="small muted">Nama barang serupa dicek pada Puskeswan ini. Verifikasi bukan persetujuan dana, barang atau BAST.</p>
           <div class="form-actions">
             <button type="submit" class="secondary" name="intent" value="save">Simpan draf kebutuhan</button>
             <button type="submit" class="primary" name="intent" value="submit">Ajukan kebutuhan</button>
@@ -204,7 +214,12 @@
           <button id="cancel-need-review" class="text-button" type="button">Tutup</button>
         </div>
         <p id="need-review-context" class="muted"></p>
+        <p id="need-review-evidence" class="small muted"></p>
         <form id="need-review-form">
+          <label class="evidence-check" for="need-evidence-ack">
+            <input id="need-evidence-ack" type="checkbox">
+            Saya memeriksa kelengkapan <strong>metadata referensi bukti DEMO</strong>, bukan isi foto atau dokumen asli.
+          </label>
           <label for="need-review-notes">Catatan verifikasi</label>
           <textarea id="need-review-notes" rows="3" maxlength="300" placeholder="Wajib diisi jika meminta perbaikan atau menolak."></textarea>
           <div class="form-actions">

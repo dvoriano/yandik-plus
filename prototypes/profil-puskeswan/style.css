@@ -159,3 +159,11 @@ footer { text-align: center; font-size: .8rem; color: #657985; padding: 20px; }
 .grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .grid-form > div { display: grid; gap: 7px; }
 @media (max-width: 390px) { .grid-form { grid-template-columns: 1fr; } }
+
+/* M03-S2: metadata-only proof checklist */
+.evidence-group { min-width: 0; border: 1px solid #cbdce4; border-radius: 12px; padding: 14px; display: grid; gap: 9px; }
+.evidence-group legend { font-weight: 750; padding: 0 6px; }
+#need-evidence-kind, #need-evidence-ref { width: 100%; min-height: 44px; border: 1px solid #aabcc8; border-radius: 10px; padding: 10px 12px; background: #fff; color: #193449; }
+#need-repeat-reason { width: 100%; border: 1px solid #aabcc8; border-radius: 10px; padding: 10px 12px; }
+.evidence-check { display: flex; align-items: start; gap: 12px; padding: 12px; border: 1px solid #cbdce4; border-radius: 12px; line-height: 1.45; }
+.evidence-check input { flex: none; width: 20px; height: 20px; margin: 2px; }

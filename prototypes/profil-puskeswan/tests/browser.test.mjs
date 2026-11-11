@@ -14,6 +14,7 @@ const allowedFiles = new Map([
   ["/source_snapshots.mjs", ["source_snapshots.mjs", "text/javascript; charset=utf-8"]],
   ["/support_needs.mjs", ["support_needs.mjs", "text/javascript; charset=utf-8"]],
   ["/support_evidence.mjs", ["support_evidence.mjs", "text/javascript; charset=utf-8"]],
+  ["/support_priority.mjs", ["support_priority.mjs", "text/javascript; charset=utf-8"]],
 ]);
 let server;
 let browser;
@@ -367,6 +368,99 @@ test("verifikator harus mencentang pemeriksaan metadata, bukan file", async () =
     await page.locator("#need-evidence-ack").check();
     await page.getByRole("button", { name: "Verifikasi kebutuhan", exact: true }).click();
     assert.match(await page.locator('[data-need-id="1"]').innerText(), /Kebutuhan terverifikasi/);
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+
+
+async function setupVerifiedPriorityNeed(page) {
+  await page.getByRole("button", { name: "Catat masalah" }).click();
+  await page.locator("#problem-title").fill("Pendingin vaksin rusak");
+  await page.locator("#problem-description").fill("Pendingin vaksin tidak berfungsi untuk kegiatan pelayanan.");
+  await page.getByRole("button", { name: "Ajukan masalah" }).click();
+  await page.locator("#role").selectOption("verifikator_kab");
+  await page.getByRole("button", { name: "Verifikasi masalah #1" }).click();
+  await page.getByRole("button", { name: "Verifikasi masalah", exact: true }).click();
+  await page.locator("#role").selectOption("petugas");
+  await page.getByRole("button", { name: "Usulkan kebutuhan dari masalah #1" }).click();
+  await page.locator("#need-item").fill("Coolbox untuk vaksin");
+  await page.locator("#need-reason").fill("Perlu pendukung rantai dingin karena alat asli rusak.");
+  await page.locator("#need-evidence-ref").fill("DEMO-BUKTI-001");
+  await page.getByRole("button", { name: "Ajukan kebutuhan" }).click();
+  await page.locator("#role").selectOption("verifikator_kab");
+  await page.getByRole("button", { name: "Periksa kebutuhan #1" }).click();
+  await page.locator("#need-evidence-ack").check();
+  await page.getByRole("button", { name: "Verifikasi kebutuhan", exact: true }).click();
+}
+const priorityFactors = [
+  "facility_gap", "continuity_risk", "access_difficulty",
+  "staff_constraints", "verified_stock_gap",
+];
+async function fillAllPriorityFactors(page, level = "3") {
+  for (let i = 0; i < priorityFactors.length; i++) {
+    const id = priorityFactors[i];
+    await page.locator("#priority-level-" + id).selectOption(level);
+    await page.locator("#priority-reason-" + id).fill(
+      "Bukti pengamatan contoh untuk indikator " + id + " sudah dicatat."
+    );
+    await page.locator("#priority-source-" + id).fill("DEMO-INDIKATOR-" + (i + 1));
+  }
+}
+test("penilaian prioritas tidak ada sebelum kebutuhan terverifikasi, pemilik hanya baca status", async () => {
+  const { page, errors } = await openDemo({ width: 320, height: 640 });
+  try {
+    assert.equal(await page.locator("#priority-panel").isVisible(), false);
+    await setupVerifiedPriorityNeed(page);
+    assert.equal(await page.getByRole("button", { name: "Nilai prioritas kebutuhan #1" }).count(), 1);
+    await page.locator("#role").selectOption("petugas");
+    assert.equal(await page.locator("#priority-panel").isVisible(), false);
+    assert.equal(await page.getByRole("button", { name: "Nilai prioritas kebutuhan #1" }).count(), 0);
+    await page.locator("#role").selectOption("pimpinan");
+    assert.equal(await page.locator("#priority-panel").isVisible(), false);
+    assert.equal(await page.locator("#priority-list").innerHTML(), "");
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+test("kab/kota dapat menyimpan draft skor tidak lengkap, tetapi tidak boleh submit sebagai skor nol", async () => {
+  const { page, errors } = await openDemo({ width: 375, height: 812 });
+  try {
+    await setupVerifiedPriorityNeed(page);
+    await page.getByRole("button", { name: "Nilai prioritas kebutuhan #1" }).click();
+    assert.match(await page.locator("#priority-preview").innerText(), /Belum lengkap/);
+    await page.getByRole("button", { name: "Simpan draf penilaian" }).click();
+    assert.match(await page.locator('[data-priority-id="1"]').innerText(), /Belum lengkap/);
+    await page.getByRole("button", { name: "Lanjutkan penilaian #1" }).click();
+    await page.getByRole("button", { name: "Ajukan penilaian ke provinsi" }).click();
+    assert.match(await page.locator("#notice").innerText(), /Lengkapi kelima indikator/);
+    await fillAllPriorityFactors(page);
+    assert.match(await page.locator("#priority-preview").innerText(), /100.00/);
+    await page.getByRole("button", { name: "Ajukan penilaian ke provinsi" }).click();
+    assert.match(await page.locator('[data-priority-id="1"]').innerText(), /Menunggu review provinsi/);
+    assert.deepEqual(errors, []);
+  } finally { await page.close(); }
+});
+test("provinsi dapat koreksi rekomendasi beralasan, skor dasar tetap dan tidak otomatis alokasi", async () => {
+  const { page, errors } = await openDemo({ width: 375, height: 812 });
+  try {
+    await setupVerifiedPriorityNeed(page);
+    await page.getByRole("button", { name: "Nilai prioritas kebutuhan #1" }).click();
+    await fillAllPriorityFactors(page);
+    await page.getByRole("button", { name: "Ajukan penilaian ke provinsi" }).click();
+    await page.locator("#role").selectOption("verifikator_prov");
+    await page.getByRole("button", { name: "Tinjau penilaian #1" }).click();
+    assert.match(await page.locator("#priority-review-context").innerText(), /100.00/);
+    await page.locator("#priority-review-band").selectOption("sedang");
+    await page.getByRole("button", { name: "Koreksi rekomendasi" }).click();
+    assert.match(await page.locator("#notice").innerText(), /Alasan review wajib/);
+    await page.locator("#priority-review-reason").fill(
+      "Terdapat alat alternatif yang masih dapat digunakan sementara."
+    );
+    await page.getByRole("button", { name: "Koreksi rekomendasi" }).click();
+    const card = page.locator('[data-priority-id="1"]');
+    assert.match(await card.innerText(), /100.00/);
+    assert.match(await card.innerText(), /Rekomendasi setelah tinjauan provinsi/);
+    assert.match(await card.innerText(), /sedang/);
+    assert.match(await page.locator("#notice").innerText(), /bukan persetujuan anggaran/);
     assert.deepEqual(errors, []);
   } finally { await page.close(); }
 });

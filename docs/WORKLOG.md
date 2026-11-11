@@ -2,6 +2,15 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M03-S3: scorecard prioritas transparan dan review provinsi
+**Jenis:** coding prototype, UI HP, 19 tes Node priority dan 3 tes Chromium baru. **Status:** M03 SEDANG; M04 RENCANA.
+- Lima indikator berbobot percobaan dengan alasan dan sumber DEMO, skor dibedakan dari data kosong, total pelayanan APEL mentah tidak dihitung.
+- Alur kab/kota menilai → provinsi menerima, mengembalikan, atau mengoreksi rekomendasi dengan alasan; baseline tetap, tidak ada alokasi bantuan.
+- Model, tes, UI dan guard versi sumber tercatat pada [M03_PRIORITY_ASSESSMENT.md](M03_PRIORITY_ASSESSMENT.md).
+- [GitHub Actions #42939237270](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270) **SUCCESS** tiga job, 65 Python + 94 Node + 17 Chromium = **176 tes otomatis**; validator fixture berhasil.
+- **Belum:** validasi kriteria/bobot oleh instansi, pembanding fasilitas riil, source Flask lama di GitHub, API/DB dan otorisasi resmi, upload bukti, uji petugas HP fisik.
+- Next: skenario anonymized cross-Puskeswan dan penilaian kewajaran metodologi, bukan keputusan bantuan.
+
 ## 2026-11-11 | M03-S2: bukti metadata dan anti-duplikasi lintas masalah
 **Status:** M03 SEDANG (prototype); M04 RENCANA.
 - [Model bukti dan pencarian item serupa](https://github.com/dvoriano/yandik-plus/commit/41ce4079840af89e4f8216d3f31124ac5fb3e815): kode DEMO, validasi format, normalisasi barang, riwayat usulan ditolak dan alasan pengajuan ulang.

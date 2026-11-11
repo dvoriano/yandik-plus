@@ -41,6 +41,15 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
 
+## Progres M03-S3: penilaian prioritas percobaan
+- [x] Lima faktor berbobot, alasan dan sumber DEMO, tiap faktor 0–3; kosong tidak dihitung sebagai 0.
+- [x] Tidak memakai total pelayanan APEL mentah sebagai dasar skor; memperhatikan risiko, akses sulit, SDM dan sarana.
+- [x] Review kab/kota/provinsi pada prototype, koreksi rekomendasi beralasan tanpa menimpa skor dasar.
+- [x] Penilaian usang ketika sumber berubah ditandai; validator menolak field alokasi dan review palsu.
+- [x] [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270).
+- [ ] Kriteria/bobot resmi, uji fairness lintas wilayah dan data sebenarnya **belum**; tidak ada penetapan bantuan otomatis.
+- [Dokumen M03-S3](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md).
+
 ## Progres M03-S2
 - [x] Pemeriksaan metadata bukti DEMO sebelum pengajuan dan checkbox pemeriksa sebelum kebutuhan berstatus terverifikasi.
 - [x] Cegah usulan barang serupa dalam satu Puskeswan meskipun sumber permasalahannya berbeda; histori penolakan memerlukan alasan pengajuan ulang.
@@ -58,7 +67,8 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 
 ## 8. Checklist pengembangan
 - [x] MOD-04-01: Kategori dan data minimum **untuk prototype** ditentukan; perlu review kedinasan sebelum final.
-- [ ] MOD-04-02: Susun kriteria prioritas yang adil bagi Puskeswan terpencil (next M03-S3).
+- [x] MOD-04-02a: Konsep prioritas 5 faktor dan penjelasan pada **prototype**, belum disahkan.
+- [ ] MOD-04-02b: Validasi kriteria/bobot, kewajaran lintas fasilitas dan penetapan SOP resmi.
 - [x] MOD-04-03a: Cek bukti metadata dan deteksi duplikat **di prototype**, [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [x] MOD-04-03: Form usulan + verifikasi dan alasan koreksi **sebagai prototype fiktif**, belum aplikasi resmi.
 - [ ] MOD-04-04: Bangun simulasi penetapan dan rencana paket bantuan

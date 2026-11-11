@@ -6,7 +6,17 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M03-S2 (TERBARU) | 11 November 2026
+## PEMBARUAN M03-S3 (TERBARU) | 11 November 2026
+- **Penilaian prioritas Support berbobot (prototype):** lima faktor 30% risiko gangguan pelayanan, 25% kesenjangan fasilitas, 20% akses wilayah, 15% SDM dan 10% kekurangan stok. Tingkat 0–3, alasan serta kode sumber DEMO wajib. **Data kosong bukan nol, jumlah pelayanan mentah tidak ikut skor.**
+- **Alur review:** verifikator kab/kota membuat scorecard kebutuhan terverifikasi, provinsi meninjau, meminta perbaikan, atau mengoreksi kategori rekomendasi dengan alasan. Skor hitung dasar tidak ditimpa.
+- **Pengamanan:** nomor versi kebutuhan/masalah, penilaian usang bila sumber berubah, validator menolak review palsu dan field anggaran/alokasi/BAST.
+- **Bukti tes:** [GitHub Actions #42939237270](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270) **SUCCESS tiga job**, 65 Python + 94 Node + 17 Chromium = **176 tes otomatis**; fixture valid.
+- **Dokumen teknis:** [M03_PRIORITY_ASSESSMENT.md](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md); bobot, ambang dan peran merupakan **rancangan percobaan**, bukan kebijakan resmi.
+- **Status M03 masih SEDANG (prototype), M04 RENCANA.** Source Flask legacy 171 file belum di repo; belum API/DB/login resmi, upload bukti, atau uji petugas HP fisik.
+- **Next:** uji keadilan dengan skenario beberapa fasilitas secara anonim, persiapkan review bobot/aturan oleh pemilik proses, tetap tanpa alokasi otomatis.
+- Website/VPS/branch main tidak disentuh.
+
+## PEMBARUAN M03-S2 | 11 November 2026
 - **Bukti kebutuhan:** [kode](https://github.com/dvoriano/yandik-plus/commit/41ce4079840af89e4f8216d3f31124ac5fb3e815) menambah metadata bukti DEMO; draf tanpa bukti bisa disimpan, pengajuan membutuhkan minimal 1 kode bukti, verifikator wajib mencentang pemeriksaan metadata sebelum menyatakan kebutuhan terverifikasi. **Belum ada unggah atau pemeriksaan file sebenarnya.**
 - **Duplikasi kebutuhan:** nama barang dinormalisasi (kapital/spasi/tanda baca), usulan serupa diblokir di satu Puskeswan meskipun dari masalah berbeda. Jika usulan terdahulu ditolak, wajib alasan pengajuan ulang dan tautan ke kebutuhan sebelumnya.
 - **Tes & UI:** [15 tes Node tambahan](https://github.com/dvoriano/yandik-plus/commit/49326c9b9a9d6233dddf25e9e4a132ac607068f4), [form/checkbox](https://github.com/dvoriano/yandik-plus/commit/82691922ca6c602d22089951f8f0f0c4e26d75e1), [2 tes Chromium baru](https://github.com/dvoriano/yandik-plus/commit/77f0f344127e1d81a404caf041b883260754474e). [GitHub Actions #42936090527](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527) **SUCCESS ketiga job**, **65 Python + 75 Node + 14 Chromium = 154 tes otomatis**, validator fixture lulus.
@@ -113,6 +123,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 - [x] **M02-S4** Permasalahan Puskeswan + sumber SDM/APEL baca-saja, **119 tes Python/Node/Chromium** [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101).
 - [x] **M03-S1** usulan dari masalah terverifikasi, 15 tes Node dan 3 tes browser tambahan, [GitHub Actions 137 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42862700052).
 - [x] **M03-S2** pemeriksaan metadata bukti dan deteksi item duplikat lintas masalah, [154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
+- [x] **M03-S3** model scorecard prioritas percobaan, review manusia dan peringatan sumber usang; [176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270).
 - [x] Prototype hak akses wilayah dan workflow audit (12 tes tambahan) lulus di GitHub Actions #42838727867.
 
 ### SEDANG
@@ -133,7 +144,7 @@ Jika pengguna berkata **"cek GitHub", "lanjutkan", "cek perkembangan", "kerjakan
 ## PRIORITAS NEXT ACTION
 1. **M00-D:** masukkan source Flask sanitasi lewat GitHub connector jika bisa tanpa tindakan pengguna; jika tidak, pertahankan status tertunda.
 2. **M00-F:** lengkapi tes dan perbaikan keamanan setelah source tersedia, petakan aturan hitung APEL resmi; pertahankan regresi.
-3. **M03-S3:** rancang penilaian prioritas Support yang transparan, tidak berat sebelah pada pelayanan terbanyak, dengan alasan tiap indikator dan review manusia. M03-S2 bukti/duplikasi hanya prototype metadata; upload sebenarnya dan Flask tetap terbuka.
+3. **M03 selanjutnya:** uji skenario komparatif antar fasilitas secara anonim, evaluasi metodologi dan kewenangan review; bobot percobaan belum boleh menjadi dasar penetapan bantuan. Keamanan server/field Flask masih terbuka.
 
 
 ## DOKUMEN RUJUKAN

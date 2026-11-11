@@ -6,7 +6,7 @@ import { createOrEditNeed, verifyNeed } from "../support_needs.mjs";
 import {
   FACTORS, POLICY_VERSION, emptyFactors, parseFactors, previewPriority,
   createOrEditPriority, submitPriority, reviewPriority, visiblePriorityAssessments,
-  validatePriorityAssessments,
+  validatePriorityAssessments, prioritySourceStale,
 } from "../support_priority.mjs";
 
 const proof = [{ type: "foto", ref: "DEMO-PROOF-001" }];
@@ -163,4 +163,32 @@ test("status review yang sudah ditinjau tidak bisa ditinjau ulang tanpa versi ba
   s = reviewPriority(useRole(s, "verifikator_prov"), 1, "terima");
   assert.throws(() => reviewPriority(s, 1, "terima"), /tidak sedang/);
   assert.throws(() => createOrEditPriority(useRole(s, "verifikator_kab"), 1, factors(), "submit", 1), /tidak dapat diedit/);
+});
+
+
+test("review palsu atau rekomendasi tanpa alasan tidak lolos validasi", () => {
+  let s = createOrEditPriority(useRole(verifiedNeed(), "verifikator_kab"), 1, factors(), "submit");
+  s = reviewPriority(useRole(s, "verifikator_prov"), 1, "koreksi_prioritas",
+    "Alat cadangan tersedia untuk sementara waktu.", "sedang");
+  const fake = (review) => ({
+    ...s, priorityAssessments: s.priorityAssessments.map((a) => ({ ...a, review })),
+  });
+  assert.throws(() => validatePriorityAssessments(fake({
+    ...s.priorityAssessments[0].review, allocation: 1000000,
+  })), /Review penilaian/);
+  assert.throws(() => validatePriorityAssessments(fake({
+    ...s.priorityAssessments[0].review, rationale: "kurang",
+  })), /Review penilaian/);
+  assert.throws(() => validatePriorityAssessments(fake({
+    ...s.priorityAssessments[0].review, recommendation_band: "tinggi",
+  })), /Review penilaian/);
+});
+test("penilaian historis menjadi usang ketika versi masalah berubah", () => {
+  let s = createOrEditPriority(useRole(verifiedNeed(), "verifikator_kab"), 1, factors(), "submit");
+  s = reviewPriority(useRole(s, "verifikator_prov"), 1, "terima");
+  assert.equal(prioritySourceStale(s, s.priorityAssessments[0]), false);
+  s = followUpProblem(s, 1, "ditindaklanjuti",
+    "Tindak lanjut sarana telah dimulai pada fasilitas contoh.");
+  assert.equal(prioritySourceStale(s, s.priorityAssessments[0]), true);
+  assert.equal(validatePriorityAssessments(s), true); // snapshot historis tetap ada
 });

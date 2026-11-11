@@ -130,6 +130,16 @@ function withUpdated(state, record) {
 function audit(record, action, actor, note = "") {
   return [...record.history, { action, actor, note, version: record.version + 1 }];
 }
+/** Historical scorecards are not silently treated as current after source changes. */
+export function prioritySourceStale(state, record) {
+  const need = state.supportNeeds.find((x) => x.id === record.need_id);
+  const problem = need && state.problems.find((x) => x.id === need.problem_id);
+  return !need || !problem ||
+    need.status !== "terverifikasi" ||
+    !["tercatat", "ditindaklanjuti"].includes(problem.status) ||
+    need.version !== record.source_need_version ||
+    problem.version !== record.source_problem_version;
+}
 export function visiblePriorityAssessments(state) {
   if (!["verifikator_kab", "verifikator_prov"].includes(state.role)) return [];
   return state.priorityAssessments.filter((x) =>
@@ -220,6 +230,7 @@ export function reviewPriority(state, assessmentId, decision, reason = "", overr
     recommendation_band: recommendation,
     rationale: note, policy_version: POLICY_VERSION,
     source_need_version: record.source_need_version,
+    source_problem_version: record.source_problem_version,
   };
   return withUpdated(state, {
     ...record, status: decision === "kembalikan" ? "perlu_perbaikan" : "ditinjau",
@@ -253,7 +264,19 @@ export function validatePriorityAssessments(state) {
         (!record.review || record.review.calculated_score !== preview.score ||
           record.review.calculated_band !== preview.band ||
           !["terima", "koreksi_prioritas"].includes(record.review.action) ||
-          record.review.policy_version !== POLICY_VERSION))
+          record.review.policy_version !== POLICY_VERSION ||
+          record.review.reviewer_role !== "verifikator_prov" ||
+          record.review.source_need_version !== record.source_need_version ||
+          record.review.source_problem_version !== record.source_problem_version ||
+          !PRIORITY_BANDS.some((b) => b.id === record.review.recommendation_band) ||
+          (record.review.action === "terima" &&
+            record.review.recommendation_band !== preview.band) ||
+          (record.review.action === "koreksi_prioritas" &&
+            (record.review.recommendation_band === preview.band ||
+             typeof record.review.rationale !== "string" ||
+             record.review.rationale.trim().length < 20)) ||
+          ["approved_budget", "allocation", "bast", "recipient_selected"].some((field) =>
+            Object.hasOwn(record.review, field))))
       throw new Error("Review penilaian tidak sesuai hasil dasar.");
     if (record.status !== "ditinjau" && record.review !== null)
       throw new Error("Review tidak boleh terpasang pada penilaian belum selesai.");

@@ -15,7 +15,7 @@ import { EVIDENCE_TYPES, evidenceCompleteness } from "./support_evidence.mjs";
 import {
   FACTORS, LEVELS, PRIORITY_BANDS, ASSESSMENT_STATUSES, POLICY_VERSION,
   emptyFactors, previewPriority, visiblePriorityAssessments,
-  createOrEditPriority, reviewPriority,
+  createOrEditPriority, reviewPriority, prioritySourceStale,
 } from "./support_priority.mjs";
 
 let state = startDemo();
@@ -414,6 +414,10 @@ function renderPriorities() {
         ? "Skor percobaan: " + record.preview.score.toFixed(2) + "/100. " +
           bandLabel(record.preview.band)
         : "Belum lengkap: " + record.preview.missing.length + " indikator perlu diisi."));
+    if (prioritySourceStale(state, record)) {
+      card.append(element("p", "status warn",
+        "Data sumber berubah atau masalah selesai; hasil ini historis, perlu penilaian ulang."));
+    }
     if (record.review) {
       card.append(element("p", "current", "Rekomendasi setelah tinjauan provinsi: " +
         bandLabel(record.review.recommendation_band)),

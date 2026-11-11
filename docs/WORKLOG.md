@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S5: kendala dan eskalasi administratif lintas petugas
+**Status:** KODE DITULIS, **BELUM DIUJI**. Tidak ada CL, CI, Node test, browser atau deploy.
+- [Commit M04-S5](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e) menambahkan [enam file draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations): register kendala, fixture M04-S3, form pelaporan, penerusan, respons, telaah, pembatalan beralasan, daftar dan rekap histori.
+- Peran DEMO (pelapor, koordinator, penerima, penelaah) dipisah secara konseptual. Anti-duplikat kendala aktif sejenis dan sumber berubah menjadi persyaratan rancangan, bukan pengamanan server yang sudah diverifikasi.
+- `ditutup_administratif` berarti catatan koordinasi ditutup, **tidak** membuktikan dokumen eksternal sah, masalah substantif selesai, bantuan diterima, anggaran, pengadaan atau BAST.
+- [Spesifikasi M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md); [backlog pemeriksaan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Seluruh sumber masih fiktif; tanpa autentikasi, API/DB dan audit permanen.
+- M04-S1 hingga S5 berstatus SEDANG hanya pada kode draft BELUM DIUJI. Keputusan resmi dan distribusi/BAST M04-S6+ RENCANA.
+
 ## 2026-11-11 | M04-S4: Dashboard antrean tindak lanjut administratif
 **Status:** KODE DITULIS, **BELUM DIUJI**, tanpa CL/CI/Node test/browser.
 - [Commit M04-S4](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef) membuat [enam berkas](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard): model rekap, delapan tugas contoh dari dua referensi DEMO, tabel, filter status/penanggung jawab/perhatian, tanggal acuan manual dan teks baca-saja.

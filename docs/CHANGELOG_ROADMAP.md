@@ -1,3 +1,9 @@
+## 2026-11-11 | M04-S5 kendala dan eskalasi administratif DEMO (BELUM DIUJI)
+- [Kode eskalasi M04-S5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) menyusun laporan kendala, urgensi, penanggung jawab, penerusan, tanggapan, telaah catatan dan pembatalan dengan histori DEMO. [Commit](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e).
+- Penutupan kendala **bukan** penyelesaian masalah pokok/konfirmasi keaslian/approval bantuan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md) · [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- M04-S1 sampai S5 berstatus SEDANG hanya sebagai KODE DITULIS, BELUM DIUJI; M04-S6+ proses resmi/paket/BAST tetap RENCANA.
+- Tidak ada CL, CI, tests, deploy, perubahan `main`, VPS, YANDIK+ produksi atau Indodax.
+
 ## 2026-11-11 | M04-S4 dashboard antrean administratif (BELUM DIUJI)
 - [Kode dashboard baca-saja](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) ditambahkan, dengan delapan tugas DEMO, filter tanggal acuan, penanggung jawab, status dan kebutuhan perhatian. [Commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef).
 - Tidak ada data produksi, keputusan bantuan, pemilihan penerima, anggaran, distribusi atau BAST. **KODE DITULIS, BELUM DIUJI**, tanpa CL/CI.

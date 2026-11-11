@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M04-S4 | DASHBOARD ANTREAN ADMINISTRATIF (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S5 | KENDALA DAN ESKALASI ADMINISTRATIF (TERBARU) | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/3db79c4b0199fa635597d2caffde21ad3ca9838e) menambahkan enam berkas di [drafts/m04-admin-escalations/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations) untuk kendala M04-S3 fiktif, kategori/urgensi, pelaporan, penerusan lintas petugas, tanggapan, telaah, pembatalan beralasan dan histori.
+- **Alur DEMO:** pelapor assignee M04-S3 → koordinator meneruskan kepada penerima → penerima mencatat tanggapan → penelaah terpisah minta klarifikasi atau **menutup catatan administratif saja**. Deteksi sumber berubah dan pencegahan duplikat kendala aktif sejenis menjadi batas rancangan.
+- **Batas:** penutupan eskalasi tidak menyatakan surat sah, masalah pokok selesai, bantuan disetujui, dana tersedia, pengadaan, distribusi atau BAST. Role/data DEMO dan memori browser, bukan autentikasi/audit nyata. Tanpa CL/CI/tes.
+- **Dokumen:** [Spesifikasi M04-S5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S5_ADMIN_ESCALATIONS.md); [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) untuk seluruh pengujian tertunda. Hasil 176 tes historis tidak meliputi kode ini.
+- **Status:** M04-S1/S2/S3/S4/S5 **SEDANG (draft) / BELUM DIUJI**. Proses resmi/paket/BAST M04-S6+ **RENCANA**. PR #9 DRAFT; branch `main`, website, VPS dan bot Indodax tidak disentuh.
+- **Next:** rancangan matriks penerusan kendala dan penanggung jawab yang perlu ditetapkan pemilik proses; tetap tanpa approval otomatis.
+
+## PEMBARUAN M04-S4 | DASHBOARD ANTREAN ADMINISTRATIF | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/a2bcc8ef931c0c0363bb92efd0d2d75671d447ef) menambahkan enam berkas di [drafts/m04-admin-dashboard/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-dashboard) untuk **dashboard baca-saja** dari delapan tugas dan dua referensi fiktif M04-S3/M04-S2.
 - **Fitur rancangan:** total/aktif, menunggu telaah, perlu perbaikan, lewat tanggal rencana, sumber berubah, ditutup administratif, dibatalkan; filter status/penanggung jawab/perhatian dan **tanggal acuan DEMO yang dipilih**; daftar urut perhatian serta teks rekap baca-saja.
 - **Batas:** ringkasan **sebelum filter** dipisah dari jumlah yang ditampilkan. Tidak ada konfirmasi keaslian dokumen, approval, anggaran, penerima bantuan, pengadaan, distribusi, BAST atau tugas resmi. Role dan data fiktif di memori browser.

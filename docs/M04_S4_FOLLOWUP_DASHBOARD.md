@@ -20,7 +20,8 @@ Dashboard ini **tidak** memantau keputusan bantuan atau realisasi anggaran. Tuga
 | M04-S2 | **Metadata referensi** dokumen yang diklaim terbit di luar sistem | Bukan keaslian/keberlakuan hukum dokumen |
 | M04-S3 | Catatan pekerjaan klarifikasi dan penyiapan informasi | Penutupan catatan bukan penerbitan SK/bantuan |
 | **M04-S4** | **Ringkasan antrean administratif baca-saja** dari M04-S3 | Tidak mengubah status atau menugaskan petugas |
-| **M04-S5+** | Proses resmi, paket, distribusi, BAST dan evaluasi | **RENCANA**, hanya berdasarkan kewenangan dan dasar yang sah |
+| **M04-S5** | Pencatatan kendala dan eskalasi administratif pada tugas M04-S3 | **KODE DITULIS, BELUM DIUJI**, bukan approval atau disposisi dinas |
+| **M04-S6+** | Proses resmi, paket, distribusi, BAST dan evaluasi | **RENCANA**, hanya berdasarkan kewenangan dan dasar yang sah |
 
 **Sumber yang digunakan untuk contoh:** delapan tugas dari dua referensi dokumen fiktif. Data disusun menggunakan fungsi rancangan M04-S1, S2 dan S3. Data sumber **tidak disalin dari Puskeswan, dokumen pejabat atau database sungguhan**.
 
@@ -100,5 +101,6 @@ Bila tidak ada data yang cocok, daftar dapat menampilkan keterangan kosong. Teks
 ## 8. Status dan arah kelanjutan
 
 - **M04-S1/S2/S3/S4:** kode draft **SEDANG / BELUM DIUJI**, belum terhubung produksi.
-- **M04-S5+** yang mencakup keputusan resmi, paket dan distribusi, BAST serta evaluasi: **RENCANA**, tidak diimplementasikan di dashboard.
+- **M04-S5:** pencatatan kendala dan eskalasi administratif di [drafts/m04-admin-escalations/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-escalations), **KODE BELUM DIUJI**. Tidak ada keterhubungan otomatis dengan dashboard ini.
+- **M04-S6+** yang mencakup keputusan resmi, paket dan distribusi, BAST serta evaluasi: **RENCANA**, tidak diimplementasikan di dashboard.
 - **Sesi berikut yang dapat dikerjakan tanpa CL/CI:** melanjutkan contoh rancangan *daftar kendala/eskalasi administratif* untuk koordinasi lintas peran. Isi dapat diperbaiki kemudian setelah pemilik proses menilai kesesuaiannya, sambil menjaga pembatasan keputusan resmi.

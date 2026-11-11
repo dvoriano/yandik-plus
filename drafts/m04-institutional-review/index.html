@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9C | Agenda Telaah Kelembagaan (DEMO)</title>
+<link rel="stylesheet" href="./style.css"></head><body>
+<main class="shell"><header>
+<p class="eyebrow">YANDIK+ · M04-S9C · DRAF GITHUB</p>
+<h1>Agenda Pembahasan Kelembagaan</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Data M04-S8/S9 adalah DEMO. Observasi GitHub bersifat snapshot, bukan status real-time.</p>
+<p>Daftar persyaratan, bukti yang perlu dicari, pengampu yang diusulkan dan pertanyaan untuk pembahasan manusia. Tidak ada persetujuan elektronik ataupun penetapan kewenangan.</p>
+<p><strong>Status kelayakan integrasi: BELUM DINILAI.</strong></p></header>
+<section><h2>1. Ringkasan untuk pembahasan</h2>
+<label for="asof">Tanggal acuan data DEMO
+<input type="date" value="2026-11-11" id="asof"></label>
+<p id="summary" role="status" aria-live="polite"></p>
+<p id="snapshot" class="muted"></p></section>
+<section><h2>2. Butir agenda dan bukti minimum</h2>
+<label for="filter">Jenis pembahasan
+<select id="filter"><option value="semua">Semua</option>
+<option value="Perlindungan informasi">Perlindungan informasi</option>
+<option value="Persyaratan wajib">Persyaratan wajib</option>
+<option value="Perubahan katalog">Perubahan katalog</option>
+<option value="Kelayakan teknis">Kelayakan teknis</option>
+</select></label>
+<ol id="agenda" class="cards"></ol></section>
+<section><h2>3. Draf agenda untuk ditelaah</h2>
+<label for="handoff">Teks baca-saja, dapat disalin secara manual
+<textarea id="handoff" rows="18" readonly spellcheck="false"></textarea></label>
+<p id="notice" role="status" aria-live="polite"></p>
+<p id="error" role="alert" class="warning"></p></section>
+<footer>Tanpa API/DB, hasil rapat, dokumen resmi, SOP berlaku, keputusan anggaran, distribusi, BAST atau izin integrasi.</footer>
+<script type="module" src="./main.mjs"></script></main></body></html>

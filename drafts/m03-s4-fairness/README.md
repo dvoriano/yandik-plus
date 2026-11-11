@@ -11,6 +11,13 @@ located under \`drafts/\` and not wired into the active prototype or production.
 - Label peran bukan autentikasi. Data tidak disimpan ke server. **Tidak ada pengesahan kebijakan atau alokasi.**
 - **KODE DITULIS, BELUM DIUJI**. Tidak ada test runner, browser, CL maupun CI yang digunakan.
 
+## M03-S4C | Bahan penyusunan berita acara, bukan BA resmi (BELUM DIUJI)
+- `draft_minutes.mjs` menyusun teks Markdown dari catatan DEMO yang sudah tersedia, termasuk skor pembanding fiktif, alasan, pendapat penelaah, serta seluruh riwayat pengajuan, rekomendasi, dan perbaikan.
+- `review.html` dan `review_ui.mjs` menampilkan form agenda/tindak lanjut serta area teks yang dapat dipilih dan disalin setelah pengguna sendiri memeriksa hasilnya.
+- Teks **tidak memiliki nomor berita acara, tanggal resmi, nama peserta, autentikasi, tanda tangan, persetujuan bantuan atau anggaran**.
+- Keluaran dan data hanya berada di memori browser. **Kode belum diuji, belum boleh dipakai untuk penerbitan dokumen kedinasan.**
+- [Spesifikasi M03-S4C](../../docs/M03_S4C_DRAFT_MINUTES.md) dan [TEST_BACKLOG](../../docs/TEST_BACKLOG.md).
+
 ## Files
 - \`comparison.mjs\`: imports the M03-S3 factor validation and calculates side-by-side indicative results for three experimental weight profiles; incomplete inputs are unranked, equal scores share a rank, output is **not** a funding decision.
 - \`fixtures.mjs\`: six entirely invented facility scenarios (remote low-volume, busy urban, staffing constraint, cold-chain emergency, incomplete, and deliberate tie).

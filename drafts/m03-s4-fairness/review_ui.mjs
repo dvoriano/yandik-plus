@@ -1,6 +1,7 @@
 /** M03-S4B DRAF / BELUM DIUJI. UI review is local and DEMO only. */
 import { PROFILES } from "./comparison.mjs";
 import { createDraft,submitDraft,reviewDraft,reviseDraft,STATUS,DECISIONS } from "./review_ledger.mjs";
+import { buildMinutesDraft } from "./draft_minutes.mjs";
 const $=id=>document.getElementById(id);
 const element=(tag,content="")=>{const e=document.createElement(tag);e.textContent=content;return e};
 const kab={role:"verifikator_kab",id:"DEMO-KAB-OPERATOR-01"};
@@ -37,6 +38,11 @@ function render(){
   }
   list.append(ul);
   if(record.review)list.append(element("p","Catatan penelaah (DEMO): "+record.review.notes));
+  // A change invalidates any previously composed report; regenerate explicitly.
+  $("minutes-output").value="";
+  $("minutes-status").textContent=record
+    ?"Sumber berubah atau diperbarui. Susun ulang draf bahan berita acara."
+    :"Buat catatan kajian terlebih dahulu.";
   if(record.status==="dikembalikan"){
     $("profile").value=record.profile_id;
     $("rationale").value=record.rationale;
@@ -63,3 +69,23 @@ $("review").addEventListener("submit",e=>{
   catch(err){notify(err.message,true)}
 });
 render();
+
+
+$("minutes-form").addEventListener("submit",event=>{
+  event.preventDefault();
+  try {
+    if(record===null)throw Error("Buat atau ajukan catatan kajian DEMO terlebih dahulu.");
+    const result=buildMinutesDraft(record,{
+      agenda:$("minutes-agenda").value,
+      follow_up:$("minutes-followup").value,
+    });
+    $("minutes-output").value=result.text;
+    $("minutes-status").textContent="Draf bahan berita acara dibuat untuk simulasi. " +
+      "Belum diuji, belum ada tanda tangan, dan bukan dokumen resmi.";
+    $("minutes-output").focus();
+    $("minutes-output").select();
+  } catch(err) {
+    $("minutes-output").value="";
+    $("minutes-status").textContent="Draf belum dibuat: "+err.message;
+  }
+});

@@ -44,6 +44,31 @@ Tidak terdapat persetujuan kebijakan, pengadaan, anggaran, ataupun penerima bant
 <button type="submit">Catat hasil kajian, bukan persetujuan</button>
 </form>
 <p id="notice" role="status" aria-live="polite"></p></section>
+
+<section aria-labelledby="minutes-title">
+<h2 id="minutes-title">4. Draf bahan penyusunan berita acara (SIMULASI)</h2>
+<p class="warning"><strong>BELUM DIUJI. BUKAN BERITA ACARA RESMI.</strong></p>
+<p>Teks berikut disusun dari catatan telaah dan riwayat yang tersedia di memori browser.
+Tidak ada nomor surat, tanggal resmi, tanda tangan, atau penetapan bantuan otomatis.
+Jangan masukkan nama, data pribadi atau dokumen asli pada simulasi ini.</p>
+<form id="minutes-form">
+<label for="minutes-agenda">Agenda pembahasan contoh (minimal 20 karakter)
+<textarea id="minutes-agenda" rows="3" minlength="20" maxlength="300"
+required placeholder="Pembahasan kesesuaian indikator bobot terhadap kebutuhan Puskeswan fiktif."></textarea></label>
+<label for="minutes-followup">Rencana tindak lanjut contoh (minimal 30 karakter)
+<textarea id="minutes-followup" rows="3" minlength="30" maxlength="600"
+required placeholder="Telaah metodologi oleh pemilik proses, lengkapi data dan periksa kesesuaian dengan SOP."></textarea></label>
+<button type="submit">Susun draf hasil telaah, bukan berita acara resmi</button>
+</form>
+<p id="minutes-status" role="status" aria-live="polite">
+Buat catatan kajian DEMO sebelum menyusun bahan berita acara.
+</p>
+<label for="minutes-output">Teks draf untuk disalin ke dokumen kerja setelah diperiksa
+<textarea id="minutes-output" rows="19" readonly
+aria-describedby="minutes-instruction" spellcheck="false"></textarea></label>
+<p id="minutes-instruction">Teks ini dapat dipilih dan disalin secara manual.
+Tidak ada penyimpanan server, unduhan otomatis atau pengiriman dokumen.</p>
+</section>
 <footer>Semua catatan hanya memori browser; hilang setelah reload. Peran DEMO bukan
 autentikasi. Tidak ada API, database, tanda tangan atau penerapan produksi.</footer>
 </main><script type="module" src="./review_ui.mjs"></script></body></html>

@@ -129,3 +129,9 @@ export function reviseDraft(record,form,author){
     history:[...record.history,audit("revisi",p.role,p.id,version,"Penjelasan diperbarui; histori sebelumnya disimpan.")],
   };
 }
+
+/** Read-only bridge for the draft report builder. Not a security/auth guarantee. */
+export function validateDraftSource(record) {
+  checkRecord(record);
+  return true;
+}

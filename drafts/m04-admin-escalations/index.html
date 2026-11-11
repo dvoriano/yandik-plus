@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S5 | Kendala dan Eskalasi Administrasi (DRAF)</title>
+<link rel="stylesheet" href="./style.css"></head>
+<body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S5 · SIMULASI</p>
+<h1>Catatan Kendala dan Eskalasi Administratif</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Seluruh data dan petugas hanya contoh fiktif.</p>
+<p>Catat kendala pada tugas M04-S3, teruskan untuk memperoleh tanggapan, dan telaah catatan penyelesaiannya. <strong>Eskalasi bukan persetujuan bantuan, pengesahan surat, atau penugasan dinas.</strong></p>
+</header>
+<section aria-labelledby="summary-title">
+<h2 id="summary-title">1. Ringkasan koordinasi</h2>
+<div class="metrics" id="metrics"></div>
+<p id="source-info" class="muted"></p>
+</section>
+<section aria-labelledby="report-title">
+<h2 id="report-title">2. Laporan kendala (petugas DEMO)</h2>
+<form id="obstacle-form">
+<label for="category">Jenis kendala<select id="category"></select></label>
+<label for="urgency">Urgensi koordinasi<select id="urgency"></select></label>
+<label for="description">Uraian kendala, minimal 40 karakter
+<textarea id="description" minlength="40" maxlength="600" rows="3" required></textarea></label>
+<label for="effect">Dampak terhadap pekerjaan, minimal 30 karakter
+<textarea id="effect" minlength="30" maxlength="500" rows="3" required></textarea></label>
+<label for="attempted">Upaya yang sudah dicatat, minimal 30 karakter
+<textarea id="attempted" minlength="30" maxlength="500" rows="3" required></textarea></label>
+<label for="needed">Koordinasi yang dibutuhkan, minimal 30 karakter
+<textarea id="needed" minlength="30" maxlength="500" rows="3" required></textarea></label>
+<label for="evidence">Kode metadata bukti fiktif, diawali DEMO-
+<input id="evidence" maxlength="60" spellcheck="false" autocomplete="off" required></label>
+<button type="submit">Simpan draf kendala</button>
+</form>
+<div class="actions">
+<button type="button" id="report" hidden>Laporkan kendala DEMO</button>
+<button type="button" id="new" class="secondary">Buat catatan baru</button>
+</div>
+</section>
+<section aria-labelledby="route-title">
+<h2 id="route-title">3. Penerusan oleh koordinator (DEMO)</h2>
+<form id="route-form" hidden>
+<label for="recipient">Kode petugas/unit tujuan DEMO-
+<input id="recipient" autocomplete="off" spellcheck="false" maxlength="60" required></label>
+<label for="due">Tanggal tanggapan contoh (bukan tenggat dinas)
+<input id="due" type="date" required></label>
+<label for="instruction">Arahan koordinasi contoh, minimal 35 karakter
+<textarea id="instruction" rows="3" minlength="35" maxlength="500" required></textarea></label>
+<button type="submit">Teruskan untuk tanggapan DEMO</button>
+</form>
+<p class="muted">Tindakan ini tidak mengirim notifikasi, surat tugas, atau permintaan resmi.</p>
+</section>
+<section aria-labelledby="response-title">
+<h2 id="response-title">4. Tanggapan dan telaah catatan</h2>
+<form id="response-form" hidden>
+<label for="response">Tanggapan administratif, minimal 50 karakter
+<textarea id="response" rows="4" minlength="50" maxlength="800" required></textarea></label>
+<label for="remaining">Kendala yang masih perlu ditelaah, minimal 30 karakter
+<textarea id="remaining" rows="3" minlength="30" maxlength="500" required></textarea></label>
+<label for="response-evidence">Kode metadata hasil DEMO-
+<input id="response-evidence" autocomplete="off" spellcheck="false" maxlength="60" required></label>
+<button type="submit">Catat tanggapan penerima DEMO</button>
+</form>
+<form id="review-form" hidden>
+<label for="review-action">Hasil telaah catatan
+<select id="review-action">
+<option value="minta_klarifikasi">Kembalikan untuk klarifikasi</option>
+<option value="tutup_catatan">Tutup catatan administratif, bukan keputusan bantuan</option>
+</select></label>
+<label for="review-reason">Alasan penelaahan, minimal 40 karakter
+<textarea id="review-reason" rows="3" minlength="40" maxlength="700" required></textarea></label>
+<button type="submit">Catat hasil telaah DEMO</button>
+</form>
+</section>
+<section aria-labelledby="register-title">
+<h2 id="register-title">5. Register kendala dan histori</h2>
+<p>Semua data sementara dalam memori browser. Pilih catatan untuk melihat riwayat dan menyusun rekap baca-saja.</p>
+<div class="filters">
+<label for="as-of">Tanggal acuan contoh
+<input id="as-of" type="date" value="2026-11-11"></label>
+<label for="state-filter">Status<select id="state-filter"></select></label>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<ul id="tickets" class="ticket-list"></ul>
+<form id="cancel-form" hidden>
+<label for="cancel-reason">Alasan pembatalan administratif, minimal 40 karakter
+<textarea id="cancel-reason" minlength="40" maxlength="500" rows="3" required></textarea></label>
+<button class="secondary" type="submit">Catat pembatalan DEMO</button>
+</form>
+<label for="handoff">Rekap teks untuk ditinjau manusia
+<textarea id="handoff" rows="16" readonly spellcheck="false"></textarea></label>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<footer>Tidak ada keputusan pejabat, autentikasi nyata, layanan API, arsip resmi, penetapan penerima, uang, pengadaan, distribusi atau BAST.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

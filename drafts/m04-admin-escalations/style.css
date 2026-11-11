@@ -1,0 +1,18 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#173747;background:#f3f7fa;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:940px;margin:auto;padding:20px 14px 48px}
+header,section{background:#fff;border:1px solid #d6e4eb;border-radius:14px;padding:21px;margin-bottom:17px}
+h1{font-size:clamp(1.4rem,3vw,2.2rem)}h2{font-size:1.16rem}p,li{line-height:1.55}
+.eyebrow{color:#2c6580;font-weight:750}.warning{color:#884600}.muted{color:#536d7b}
+form{display:grid;gap:12px}label{display:grid;gap:6px;font-weight:650}
+input,select,textarea{width:100%;min-width:0;min-height:44px;border:1px solid #9cb6c4;background:#fff;color:#173747;border-radius:9px;padding:11px;font:inherit}
+button{font:inherit;font-weight:680;border-radius:10px;border:0;background:#265d78;color:#fff;padding:11px 14px;min-height:44px;cursor:pointer}
+button.secondary{background:#edf3f6;border:1px solid #a9c4d1;color:#25536a}
+.actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:12px}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.metric{border:1px solid #dbe7ec;border-radius:10px;background:#f7fbfc;padding:12px}
+.metric strong{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+.metric span{font-size:.9rem}.ticket-list li{margin:10px 0;overflow-wrap:anywhere}
+:focus-visible{outline:3px solid #b87814;outline-offset:2px}
+[hidden]{display:none!important}#handoff{font:.86rem/1.5 ui-monospace,monospace}
+footer{text-align:center;color:#536f7e;font-size:.88rem}
+@media(max-width:570px){header,section{padding:15px}.shell{padding:12px}.actions{display:grid}.actions button{width:100%}}

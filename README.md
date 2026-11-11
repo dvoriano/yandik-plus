@@ -72,6 +72,11 @@ Repository pengembangan YANDIK+ untuk mewujudkan sistem kerja kesehatan hewan ya
 - [GitHub Actions: 154 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - M03 tetap SEDANG (prototype); bukti belum diunggah sungguhan, M04 tetap RENCANA.
 
+## M04-S1 | Administrasi usulan Support (draft, BELUM DIUJI)
+- [Enam berkas rancangan proses pemeriksaan administratif](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review), tanpa keputusan/anggaran otomatis.
+- [Dokumen M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md) dan [backlog pemeriksaan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- Baru ditulis di GitHub `drafts/`, belum dijalankan atau diintegrasikan ke website/VPS. M04-S2+ tetap RENCANA.
+
 ## M03-S3: penilaian prioritas yang dapat dijelaskan
 - [Model lima faktor, perhitungan dan review](prototypes/profil-puskeswan/support_priority.mjs).
 - [Dokumen rancangan bobot, keadilan dan batas](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_PRIORITY_ASSESSMENT.md).

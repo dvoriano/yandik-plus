@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S1: bahan pertimbangan administratif usulan Support
+**Status:** KODE DITULIS, **BELUM DIUJI**. M04-S1 SEDANG dalam `drafts/`; keputusan bantuan, alokasi, pengadaan dan BAST M04 lainnya masih RENCANA.
+- [Commit 9051571](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) menambah [enam file](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) untuk sumber kebutuhan DEMO terverifikasi, checklist administrasi, draf, pengajuan dan catatan telaah oleh peran DEMO terpisah.
+- Draf administrasi lengkap **hanya dicatat sebagai bahan pertimbangan**; tidak menyediakan otorisasi/nominal/penetapan/penyaluran resmi. Riwayat dan teks memo hanya memori browser.
+- [Spesifikasi M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md), [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); tidak menjalankan CL, CI, Node test, browser atau runtime.
+- Tidak menghubungkan source Flask/APEL nyata atau mengubah kode M03 aktif, website dan VPS. Seluruh contoh fiktif.
+- Berikutnya: rancangan register **referensi keputusan resmi** yang berasal dari pejabat/sistem berwenang, dengan verifikasi manual, bukan penerbitan keputusan.
+
 ## 2026-11-11 | M03-S4C: rancangan draf bahan penyusunan berita acara
 **Status:** KODE DITULIS, **BELUM DIUJI**. Tidak menggunakan CL atau menjalankan CI, Node test maupun browser.
 - [Commit M03-S4C](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79) menambah `draft_minutes.mjs`, jembatan baca `review_ledger.mjs`, serta form agenda/tindak lanjut dan keluaran teks baca-saja di `review.html` / `review_ui.mjs`.

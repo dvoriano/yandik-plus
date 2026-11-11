@@ -1,3 +1,9 @@
+## 2026-11-11 | M04-S1 draf berkas pertimbangan administrasi
+- [Kode administratif DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) disusun untuk menjembatani kebutuhan terverifikasi dan pemeriksaan berkas oleh peran terpisah.
+- Terdapat lima checklist, draf/pengajuan/perbaikan, catatan pertimbangan dan histori. **Bukan** proses penerbitan keputusan, penyaluran bantuan, belanja/pengadaan atau BAST.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) dan [commit](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04). KODE DITULIS, BELUM DIUJI, tanpa CL/CI.
+- Status M04-S1 menjadi **SEDANG (draft tidak aktif)**. M04-S2+ yang memuat keputusan sah, alokasi, distribusi, BAST dan evaluasi tetap RENCANA.
+
 ## 2026-11-11 | M03-S4C draf bahan penyusunan berita acara telaah
 - [Kode penyusun draf berbasis kajian DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) ditambah; mencakup alasan, hasil pembanding, status tinjauan dan histori rekomendasi/perbaikan.
 - Keluaran yang dirancang hanya teks kerja untuk diperiksa manusia, **bukan** BA resmi, keputusan bantuan, penetapan bobot, anggaran, pengadaan atau BAST.

@@ -57,6 +57,14 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | M01 | Core Platform: role/wilayah dan workflow | **SEDANG**: role/workflow dan master Profil/SDM/Sarpras prototype; **40 tes foundation** lulus [GitHub Actions](https://github.com/dvoriano/yandik-plus/actions/runs/42840263033) | Role disepakati; endpoint legacy, transaksi audit dan pengujian akses API tersambung dan lulus |
 | M02 | Profil Puskeswan terpadu | **SEDANG (prototype interaktif)**: form per bagian, Masalah→tindak lanjut, SDM/APEL baca-saja dummy; **65 Python + 45 Node + 9 Chromium = 119 tes** [Actions SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42850233101) | Uji UX dan aksesibilitas pada HP nyata, field Profiling lama, otorisasi/API/DB server, integrasi sumber asli |
 | M03 | Support Puskeswan: kebutuhan dan prioritas | **SEDANG**: M03-S1..S3 prototype teruji sebelumnya [176 tes lama](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270); **M03-S4A/S4B/S4C kode draft BELUM DIUJI**, [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) | Pending test [backlog](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md); evaluasi fairness, bobot kebijakan, source real/Flask, keamanan backend, uji petugas; tidak ada alokasi otomatis |
+| M04-S1 | Support: berkas administrasi sebelum keputusan resmi | **SEDANG (kode draft) / BELUM DIUJI**: [enam berkas simulasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dari kebutuhan terverifikasi DEMO; pemeriksaan lima kelengkapan dan pencatatan bahan pertimbangan tanpa keputusan. [Commit](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) | [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md), sumber M03 asli, otorisasi dan aturan administrasi belum divalidasi; **bukan persetujuan bantuan** |
+
+### M04-S1: Berkas pertimbangan administrasi (KODE DITULIS / BELUM DIUJI)
+- [x] Rancangan fungsi [draf administrasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review), lima checklist, pengajuan, pengembalian, riwayat dan teks pertimbangan dari data fiktif.
+- [x] [Dokumen proses bisnis M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md); [commit kode](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04).
+- [ ] Semua QA dan uji browser, validasi lintas modul, kebijakan dan autentikasi resmi **BELUM DIUJI**.
+- [ ] **M04-S2 dan seterusnya RENCANA:** pencatatan keputusan dari sistem/pejabat berwenang, rencana paket, distribusi, BAST, evaluasi.
+- **Tidak ada penerbitan SK, keputusan alokasi, nominal belanja, pembelian, atau BAST secara otomatis.**
 
 ### M03-S4C: Bahan penyusunan berita acara telaah (KODE DITULIS / BELUM DIUJI)
 - [x] **Kode draft:** [generator teks dan form simulasi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) serta [commit](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79). Memuat alasan, skor fiktif, catatan penelaah, histori rekomendasi dan revisi, serta tindak lanjut.
@@ -90,10 +98,10 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 
 **Catatan dependensi:** M00-D mungkin belum dapat diselesaikan dalam satu operasi melalui akses GitHub saat ini. Tidak boleh menyatakan source sudah di repo atau memaksa langkah manual; tetap kerjakan bagian yang memungkinkan langsung di GitHub, dengan status sesuai bukti.
 
-## C. Rencana per modul (M01, M02 dan M03 sudah di daftar SEDANG)
+## C. Rencana per modul (M01, M02, M03 dan draf M04-S1 sudah di daftar SEDANG)
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
-| M04 | P0 | Support: alokasi sesuai kewenangan, distribusi dan BAST | M03 | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
+| M04-S2+ | P0 | Support: referensi keputusan pejabat resmi, alokasi sesuai kewenangan, distribusi dan BAST | M04-S1 serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
 | M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |
 | M06 | P1 | Pengawasan Obat Hewan | M01 | [Obat](modules/05_PENGAWASAN_OBAT_HEWAN.md) |
 | M07 | P1 | Klinik/Praktik Dokter Hewan | M01 | [Klinik](modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md) |

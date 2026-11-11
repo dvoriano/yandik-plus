@@ -55,11 +55,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Dokumen M03-S4C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M03_S4C_DRAFT_MINUTES.md). Tidak ada uji otomatis atau manual pada sesi ini.
 
+## Antrean M04-S1: berkas administrasi Support (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S1-01 | Kontrak sumber DEMO terverifikasi vs diajukan; status bukti metadata, versi dan fasilitas | BELUM DIUJI |
+| QA-M04S1-02 | Draf belum lengkap boleh disimpan; pengajuan wajib seluruh lima checklist `ada` | BELUM DIUJI |
+| QA-M04S1-03 | Penelaah DEMO berbeda dari penyusun, hak transisi, pengembalian/perbaikan dan histori | BELUM DIUJI |
+| QA-M04S1-04 | Larangan field allocation/approved_budget/recipient/SK/BAST dalam dokumen dan output | BELUM DIUJI |
+| QA-M04S1-05 | Kategori prioritas sumber tidak menjadi auto-approve; angka pelayanan tidak memicu keputusan | BELUM DIUJI |
+| QA-M04S1-06 | Source stale, perubahan versi dan penguncian referensi kebutuhan saat revisi | BELUM DIUJI |
+| QA-M04S1-07 | Teks keluaran, karakter tak aman, validasi error, batas field dan penyimpanan memori saja | BELUM DIUJI |
+| QA-M04S1-08 | UI HP 320/375 px, keyboard, pembaca layar, overflow dan navigasi | BELUM DIUJI |
+| QA-M04S1-09 | Kesesuaian proses kewenangan, bukti, tata naskah, SPBE dan SOP daerah | BUTUH KEPUTUSAN |
+| QA-M04S1-10 | Adapter sumber M03 asli, autentikasi, API/DB, audit, transaksi dan retensi resmi | TERTUNDA UJI |
+
+[Dokumen M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md). Tidak ada CL, tes atau workflow yang dijalankan. Angka 176 tes lama hanya berlaku sampai M03-S3.
+
 ## Antrean lintas modul yang belum diujikan
 - Flask legacy belum tersedia lengkap di repo; perlu audit integrasi, startup dan regresi APEL jika sudah tersedia.
 - Akun/otorisasi API per wilayah, audit persisten, CSRF, password reset dan akses bukti.
 - Pengguna nonteknis di HP fisik dan jaringan terbatas.
-- M04: baru rencana, tidak boleh menganggap keputusan bantuan sudah tersedia.
+- M04-S1: kode draft administrasi tersimpan, **BELUM DIUJI**, sedangkan keputusan bantuan, anggaran, distribusi dan BAST M04-S2+ **masih rencana**.
 
 **Terakhir lulus sebelum mode kode-saja:** M03-S3, [GitHub Actions 176 tes SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42939237270). Itu **bukan** pengujian M03-S4 atau kode draft berikutnya.
 

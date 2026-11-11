@@ -6,7 +6,15 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
-## PEMBARUAN M03-S4C | DRAF BAHAN BERITA ACARA TELAAH (TERBARU) | 11 November 2026
+## PEMBARUAN M04-S1 | BERKAS ADMINISTRASI USULAN (TERBARU) | 11 November 2026
+- **Kode tersimpan, BELUM DIUJI:** [commit 9051571](https://github.com/dvoriano/yandik-plus/commit/9051571aeee25a2611850aa43406aceb6fe66a04) menambahkan [drafts/m04-admin-review/](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) dengan `dossier.mjs`, `fixtures.mjs`, `main.mjs`, `index.html`, `style.css` dan README.
+- **Alur terpisah dari skor M03:** kebutuhan dari sumber fiktif yang berstatus terverifikasi → draf berkas administrasi → checklist lima kelengkapan → pemeriksaan administrasi oleh peran DEMO berbeda → dikembalikan atau **dicatat sebagai bahan pertimbangan**. Tidak ada status persetujuan atau alokasi otomatis.
+- **Batas penting:** ID pelaku DEMO bukan autentikasi, bukti hanya metadata, sumber M03 riil belum disambungkan, tidak ada DB/audit sah atau dokumen resmi. Tidak ada nominal, keputusan pejabat, pengadaan, penyaluran atau BAST.
+- **Dokumen M04-S1:** [alur dan batas kewenangan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md); [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) menampung seluruh QA tertunda.
+- **Status:** M04-S1 **SEDANG (kode draft) / BELUM DIUJI**, fungsi keputusan/pendanaan/distribusi/BAST M04 lainnya tetap **RENCANA**. M03-S4A/B/C juga BELUM DIUJI. **Tanpa CL/CI/test**, `main`/produksi/VPS tidak disentuh.
+- **Next:** desain M04-S2 register **referensi keputusan pejabat yang sudah diterbitkan di luar sistem** dengan konfirmasi manusia, bukan fitur penerbitan keputusan atau persetujuan otomatis.
+
+## PEMBARUAN M03-S4C | DRAF BAHAN BERITA ACARA TELAAH | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [commit](https://github.com/dvoriano/yandik-plus/commit/93a0d7df9e446af1db4f350ac47b34c56faf1c79) menambahkan `draft_minutes.mjs`, bagian form agenda/tindak lanjut dan teks draf baca-saja pada [review.html](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness/review.html), serta jembatan baca riwayat kajian. Semua berada di `drafts/`.
 - **Fungsi rancangan:** menyiapkan teks bahan penyusunan berita acara dengan identitas DEMO, alasan dan bobot perbandingan, hasil tinjauan, **histori rekomendasi/pengembalian/perbaikan**, dan tindak lanjut. Tidak membuat nomor resmi, berita acara sah, tanda tangan, penerima bantuan, pengadaan atau alokasi.
 - **Batas:** semua data fiktif; output teks hanya di memori browser, harus dipilih/disalin manual. Peran adalah label demo; belum ada pemeriksaan resmi, koneksi API/DB, integrasi SRIKANDI atau pengujian browser.

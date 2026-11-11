@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04 tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1 SEDANG (kode draft) / BELUM DIUJI** untuk berkas administratif; **keputusan dan proses riil M04-S2+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,6 +40,13 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
+
+## Progres M04-S1: rancangan berkas administrasi, BELUM DIUJI
+- [x] Kode [`drafts/m04-admin-review/`](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review) untuk memilih kebutuhan DEMO terverifikasi, mengisi alasan dan kode bukti metadata serta mengecek lima unsur kelengkapan.
+- [x] Penyusun dan penelaah DEMO terpisah; status akhir hanya **tercatat untuk pertimbangan**, bukan bantuan disetujui.
+- [x] [Dokumen M04-S1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S1_ADMIN_HANDOFF.md), [QA tertunda](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
+- [ ] Belum uji kode/UI, autentikasi, kewenangan resmi, data riil, alokasi dana, pengadaan, paket, distribusi atau BAST.
+- [ ] M04-S2+: pencatatan keputusan resmi dari sistem/pejabat berwenang, lalu distribusi dan pertanggungjawaban sesuai prosedur, masih RENCANA.
 
 ## Progres M03-S4C: rancangan bahan BA telaah, BELUM DIUJI
 - [x] [Kode draft bahan penyusunan berita acara](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m03-s4-fairness) menyusun teks dari bobot percobaan, rincian skor fiktif, pendapat provinsi dan riwayat rekomendasi/perbaikan.
@@ -91,11 +98,12 @@ Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashbo
 - [ ] MOD-04-02b: Validasi kriteria/bobot, kewajaran lintas fasilitas dan penetapan SOP resmi.
 - [x] MOD-04-03a: Cek bukti metadata dan deteksi duplikat **di prototype**, [CI SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42936090527).
 - [x] MOD-04-03: Form usulan + verifikasi dan alasan koreksi **sebagai prototype fiktif**, belum aplikasi resmi.
-- [ ] MOD-04-04: Bangun simulasi penetapan dan rencana paket bantuan
+- [x] MOD-04-04a: Draft pemeriksaan administrasi **tanpa simulasi keputusan pejabat** dibuat [kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-admin-review), BELUM DIUJI.
+- [ ] MOD-04-04b: Rancang referensi keputusan pejabat dari luar sistem dan rencana paket setelah prosedur disepakati (tidak otomatis memutuskan).
 - [ ] MOD-04-05: Buat pencatatan distribusi, BAST dan evaluasi menggunakan data dummy
 
 ## Batas modul dengan M02-S4
-M02 kini memiliki **prototype register Permasalahan Puskeswan** di browser dengan data DEMO. Itu **tidak sama dengan pengajuan kebutuhan, prioritas bantuan, keputusan alokasi, serah terima atau BAST**. M03 **SEDANG (prototype)**, M04 tetap **RENCANA**. Referensi kebutuhan ke `problem_id` sudah ada di kode fiktif, tanpa auto-approval atau auto-budgeting.
+M02 kini memiliki **prototype register Permasalahan Puskeswan** di browser dengan data DEMO. Itu **tidak sama dengan pengajuan kebutuhan, prioritas bantuan, keputusan alokasi, serah terima atau BAST**. M03 **SEDANG (prototype)**, M04-S1 baru **DRAFT BELUM DIUJI** dan proses bantuan riil M04-S2+ **RENCANA**. Referensi kebutuhan ke `problem_id` sudah ada di kode fiktif, tanpa auto-approval atau auto-budgeting.
 - [x] Domain sumber masalah teridentifikasi sebagai prototype M02-S4 [bukti](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M02_PROBLEMS_AND_REFERENCES.md).
 - [x] Tautan **model prototype** problem → kebutuhan dan verifikasi kebutuhan tersedia (bukan transaksi database resmi).
 - [ ] Prioritas akhir, keputusan bantuan sah, distribusi dan BAST belum dibuat.

@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-11 | M04-S9F: checklist prasyarat integrasi lintas modul
+**KODE DITULIS, BELUM DIUJI.** [Model dan tes](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist).
+- Checklist inventaris 18 butir kebutuhan pembuktian (kelembagaan 4, keamanan 4, data 3, alur 3, QA 2, integrasi 2) yang tidak mengubah status lulus, sumber maupun kebijakan.
+- Rencana QA berurutan P0-P3 seluruhnya BELUM DIMULAI; 10 skenario tes tertulis belum dijalankan. Tidak ada izin uji eksplisit.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9F_CROSS_MODULE_READINESS.md), TEST_BACKLOG, ROADMAP, PROJECT_STATE serta MASTERPLAN diselaraskan.
+- Repository masih PUBLIC pada metadata 11 Nov. Pengingat perubahan ke PRIVATE pada Sabtu 14 November aktif, tetapi setting tidak diubah.
+- Tanpa CL, CI, Node/browser tes, deployment, main, database, website YANDIK+ aktif atau bot Indodax.
+
 ## 2026-11-11 | M04-S9E peta perhatian tindak lanjut pembahasan
 **Status: KODE DITULIS, BELUM DIUJI.** [Model dan tes](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d), [tampilan/README](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255) pada [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight).
 - Rekap hanya baca-saja dari agenda M04-S9C dan catatan M04-S9D, menampilkan seluruh agenda tanpa menyembunyikan yang belum dicatat atau dibatalkan.

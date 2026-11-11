@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9F | PRASYARAT INTEGRASI LINTAS MODUL | 11 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas model, UI dan tes M04-S9F](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist) disimpan pada [commit model](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511).
+- Ada 18 prasyarat lintas kelembagaan, keamanan, Profil/SDM/APEL, Support M03/M04, QA dan operasi. Empat gelombang QA hanya **rencana belum dimulai**. Semua status prasyarat masih BUTUH_KEPUTUSAN, BELUM_DIBUKTIKAN, atau MENUNGGU_IZIN_UJI.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9F_CROSS_MODULE_READINESS.md) dan QA-M04S9F dicatat dalam TEST_BACKLOG. 10 skenario tes ditulis, **tidak dijalankan**. Tidak ada status siap integrasi, persetujuan anggaran/SOP ataupun deploy.
+- Repository **PUBLIC** pada metadata 11 Nov 2026, owner sudah memiliki pengingat untuk perubahan PRIVATE Sabtu 14 Nov 2026; perubahan belum dilaksanakan. Kode tetap memakai fixture sintetis tanpa data asli.
+- CODE_ONLY tetap berlaku, PR #9 DRAFT, main dan produksi tidak berubah. Berikutnya: konsolidasi dependency QA/keputusan kelembagaan atau lanjut spesifikasi modul berikutnya, tanpa tes sebelum izin.
+
 ## PEMBARUAN M04-S9E | PETA PERHATIAN TINDAK LANJUT DEMO | 11 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9E](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight) dari M04-S9C/S9D. [Commit model](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255).
 - Papan baca-saja memuat semua agenda termasuk tanpa catatan, catatan batal, lewat tenggat DEMO, menunggu telaah, perbaikan dan sumber berubah, dengan klasifikasi prioritas pembahasan (bukan prioritas bantuan resmi).

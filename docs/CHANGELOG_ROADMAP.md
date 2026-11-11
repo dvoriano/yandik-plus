@@ -1,3 +1,7 @@
+## 2026-11-11 | M04-S9F: checklist prasyarat integrasi lintas modul
+- [Model + 10 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/40533bfb0afa58a0598cfa473998e283a9c6c492) dan [UI responsif/README](https://github.com/dvoriano/yandik-plus/commit/d480cbf3c18c474f037ef022ecd2fff942a2d511) pada [drafts M04-S9F](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-preintegration-checklist). **KODE DITULIS, BELUM DIUJI**.
+- 18 prasyarat kelembagaan, keamanan, data, Support, QA dan integrasi. Empat gelombang tes belum dimulai; tidak ada hasil lulus, SOP resmi atau izin integrasi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9F_CROSS_MODULE_READINESS.md), PROJECT_STATE, ROADMAP, WORKLOG, TEST_BACKLOG dan penjelasan MASTERPLAN sinkron. Tanpa CL/CI/tes/deploy.
 ## 2026-11-11 | M04-S9E peta perhatian kelembagaan DEMO
 - [Model/tulis tes](https://github.com/dvoriano/yandik-plus/commit/561ccc970edde3abc9dc80e2d64149ba9277892d) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/7c2aeb5e43373d7928e70c7adb89d76860fa3255) menambah 7 berkas baru di [drafts M04-S9E](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-oversight). Semua kode dan 9 skenario tes **BELUM DIUJI**.
 - Dashboard baca-saja dari M04-S9C/S9D memuat catatan kosong, batal, overdue contoh, status telaah dan stale source. Tidak mengesahkan SOP/keputusan bantuan atau kesiapan integrasi.

@@ -186,6 +186,26 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9F: prasyarat integrasi lintas modul (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S9F-01 | Impor berantai M04-S9C/S9D/S9E/S9F dengan data sintetis, tidak menyentuh produksi | BELUM DIUJI |
+| QA-M04S9F-02 | Jumlah 18 prasyarat, ID unik, pembagian 6 kelompok dan rujukan sumber terdokumentasi | BELUM DIUJI |
+| QA-M04S9F-03 | Semua item menampilkan butuh keputusan, belum dibuktikan, atau menunggu izin uji, tanpa status lulus otomatis | BELUM DIUJI |
+| QA-M04S9F-04 | Tidak ada mutasi M04-S9E, APEL, master Profil/SDM, basis data atau API | BELUM DIUJI |
+| QA-M04S9F-05 | Repo PUBLIC diperhatikan; snapshot PRIVATE sekalipun tidak menyatakan aman atau layak integrasi | BELUM DIUJI |
+| QA-M04S9F-06 | Sumber M04-S9E berubah menampilkan perhatian, bukan kelulusan atau pembatalan otomatis | BELUM DIUJI |
+| QA-M04S9F-07 | Menolak sumber non-DEMO, schema salah, agenda duplikat, mode uji/produksi yang dilarang | BELUM DIUJI |
+| QA-M04S9F-08 | Empat gelombang P0-P3 tetap BELUM DIMULAI, tanpa jalur mengeksekusi tes dari UI | BELUM DIUJI |
+| QA-M04S9F-09 | Export teks eksplisit menyatakan belum diverifikasi dan belum izin deploy | BELUM DIUJI |
+| QA-M04S9F-10 | UI HP 320/375px, navigasi keyboard, filter, label, teks panjang, error, aksesibilitas dan XSS | BELUM DIUJI |
+| QA-M04S9F-11 | Sepuluh skenario Node pada tests/checklist.test.mjs ditulis, belum dijalankan | BELUM DIUJI |
+| QA-M04S9F-12 | Klasifikasi data, risiko repo publik, SPO/SOP, tupoksi, RACI, SPBE, retensi dan persetujuan pejabat | BUTUH KEPUTUSAN |
+| QA-M04S9F-13 | Role/wilayah, integritas APEL historis, security review, staging, backup, rollback dan regresi setelah izin owner | TERTUNDA UJI |
+
+[Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9F_CROSS_MODULE_READINESS.md). Empat gelombang hanya rencana dan **seluruh pengujian tetap ditahan** oleh CODE_ONLY.
+
 ## Antrean M04-S9E: peta perhatian kelembagaan (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan yang ditunda | Status |

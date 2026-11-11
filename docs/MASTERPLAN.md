@@ -52,7 +52,7 @@ Contoh: alat rantai dingin rusak tercatat pada profil; Puskeswan mengonfirmasi k
 - Koreksi dilacak, jangan mengubah laporan historis tanpa jejak versi/periode.
 
 ## Strategi implementasi tanpa anggaran
-- GitHub private untuk dokumen, source salinan sanitasi, issues, tests, PR; data sintetis.
+- GitHub dipakai untuk dokumen, source salinan sanitasi, issues, draf tes dan PR dengan **data sintetis**. Metadata pada 11 November 2026 menunjukkan repository **PUBLIC**; pemilik merencanakan perubahan PRIVATE pada Sabtu 14 November 2026. Hingga perubahan terverifikasi, jangan menaruh data atau dokumen rahasia.
 - Tidak ada koneksi ke VPS YANDIK+ ataupun bot Indodax; tidak ada deployment otomatis.
 - Pengembangan berurutan mengikuti [Roadmap](ROADMAP.md), dengan [UX](UX_PAPERLESS.md) dan [Workflow bersama](WORKFLOW_ENGINE.md) menjadi standar tiap modul.
 - Funding di kemudian hari digunakan untuk staging, migrasi, keamanan, pelatihan dan deployment resmi; kemampuan membuat kode tidak memerlukan dana tersebut.

@@ -186,6 +186,24 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9R: audit statis 12 modul (BELUM DIUJI)
+
+| ID | Pengujian yang ditunda sampai izin owner eksplisit | Status |
+|---|---|---|
+| QA-M04S9R-01 | Keberadaan 12 model, fixture, HTML, UI, file tes dan rantai dependensi | BELUM DIUJI |
+| QA-M04S9R-02 | Import/export Node dari S9F–S9Q dan kontrak schema/builder | BELUM DIUJI |
+| QA-M04S9R-03 | Regresi S9J: fase/dependensi/peran/dokumen/judul berubah membuat catatan lama ditolak | BELUM DIUJI |
+| QA-M04S9R-04 | Tidak ada ID/pertanyaan/bahan hilang sepanjang 18 butir dan 6 fungsi | BELUM DIUJI |
+| QA-M04S9R-05 | Urutan P0–P3, siklus dependensi, stale snapshot dan ID invalid | BELUM DIUJI |
+| QA-M04S9R-06 | Larangan perubahan status bukti terverifikasi/tugas/keputusan/izin QA atau deploy | BELUM DIUJI |
+| QA-M04S9R-07 | Browser/DOM, HTML, XSS, keyboard, screen reader, mobile dan teks panjang | BELUM DIUJI |
+| QA-M04S9R-08 | Network/storage/side effect dan potensi data rahasia di kode produksi | BELUM DIUJI |
+| QA-M04S9R-09 | Katalog tes: 140 skenario modul dan 12 skenario audit tambahan | BELUM DIUJI |
+| QA-M04S9R-10 | Jalankan 12 tes audit static_contracts.test.mjs hanya setelah izin eksplisit | TERTUNDA UJI |
+| QA-M04S9R-11 | Telaah SOP, SPBE, klasifikasi data, kewenangan penelaah dan arsip | BUTUH KEPUTUSAN |
+| QA-M04S9R-12 | Pengubahan repo PRIVATE serta pemeriksaan histori paparan oleh owner | BUTUH KEPUTUSAN OWNER |
+
+[Laporan M04-S9R](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9R_STATIC_CONSOLIDATION.md). Semua tes tetap tertunda.
 ## Antrean M04-S9Q: paket ringkasan pembahasan fase DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin owner eksplisit | Status |

@@ -46,3 +46,7 @@ Pengisian tidak berarti pertemuan sungguhan terlaksana. Tombol hanya mengganti o
 
 ## Register tindak lanjut DEMO sesudah M04-S9J
 Peta usulan yang mengacu pada catatan ini tersedia pada [M04-S9K](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md). Kolom usulan yang diisi hanya menghasilkan status **usulan contoh untuk ditelaah**, bukan tugas resmi, dan keseluruhan kode tetap BELUM DIUJI.
+
+## Temuan audit statis M04-S9R (12 November 2026)
+Fingerprint source_identity yang lama tidak mengikat beberapa atribut agenda, termasuk fase, dependensi, peran dan dokumen. [Kode diperketat](https://github.com/dvoriano/yandik-plus/commit/b5c08b5b400be2c80022f7a5326dc9ad1f33f14d) dan satu skenario regresi tambahan hanya ditulis, **BELUM DIJALANKAN**. Catatan DEMO yang tidak cocok sumber harus ditolak ketika kelak diuji; tidak ada pengesahan kedinasan.
+Rincian: [Laporan M04-S9R](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9R_STATIC_CONSOLIDATION.md).

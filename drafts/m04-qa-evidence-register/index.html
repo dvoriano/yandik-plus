@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9T | Register Kebutuhan Bukti QA DEMO</title>
+<link rel="stylesheet" href="./style.css"></head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9T · DRAF GITHUB</p>
+<h1>Register Kebutuhan Bukti QA</h1>
+<p class="alert"><strong>KODE DITULIS, BELUM DIUJI.</strong> Seluruh contoh sintetis.</p>
+<p>Halaman ini hanya merinci bukti yang <strong>akan diperlukan</strong>
+untuk menelaah modul M04-S9F sampai S9S. Belum ada bukti diterima,
+pengujian dijalankan, atau keputusan penutupan temuan.</p>
+</header>
+<section>
+<h2>Ikhtisar bahan pemeriksaan</h2>
+<p id="overview" role="status" aria-live="polite"></p>
+<p id="snapshot" class="subtle"></p>
+</section>
+<section>
+<h2>Gerbang pemeriksaan yang diusulkan</h2>
+<p>G0 memerlukan persetujuan eksplisit pemilik sebelum pemeriksaan teknis G1–G4.
+G5 merupakan telaah kelembagaan oleh manusia, bukan pemeriksaan otomatis.</p>
+<ol id="stages" class="tiles"></ol>
+</section>
+<section>
+<h2>Temuan audit yang belum ditutup</h2>
+<ol id="findings" class="tiles"></ol>
+</section>
+<section>
+<h2>Kebutuhan bukti yang belum dipenuhi</h2>
+<label for="filter-kind">Tampilkan
+<select id="filter-kind"><option value="all">Semua kebutuhan</option>
+<option value="gerbang">Kebutuhan per gerbang QA</option>
+<option value="temuan">Kebutuhan per temuan audit</option></select></label>
+<p id="shown" role="status" aria-live="polite"></p>
+<ol id="requests" class="tiles"></ol>
+</section>
+<section><h2>Batasan penggunaan</h2><ul id="warnings"></ul></section>
+<section>
+<h2>Rekap teks baca-saja</h2>
+<p>Bukan perintah untuk menjalankan tes, bukan formulir persetujuan,
+dan bukan dokumen hasil pemeriksaan.</p>
+<label for="report">Ringkasan DEMO sesuai filter
+<textarea id="report" rows="17" spellcheck="false" readonly></textarea></label>
+<p id="error" role="alert" class="alert"></p>
+</section>
+<footer>Tanpa login, backend, API, penyimpanan, upload, notifikasi,
+pengiriman, tanda tangan, tes, CI, keputusan, atau deployment.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

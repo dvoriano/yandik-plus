@@ -186,6 +186,26 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9U: konsistensi kebutuhan bukti (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9U-01 | Rantai fixture S9S → S9T → S9U dan schema sesuai | BELUM DIUJI |
+| QA-M04S9U-02 | Tepat 14 ID unik, enam kebutuhan gerbang dan delapan kebutuhan temuan | BELUM DIUJI |
+| QA-M04S9U-03 | Kecocokan dua arah grup, ID, deskripsi, pendahulu, dan snapshot | BELUM DIUJI |
+| QA-M04S9U-04 | Penolakan ID duplikat, hilang, asing dan uraian dimodifikasi | BELUM DIUJI |
+| QA-M04S9U-05 | Tolak dokumen diterima, verifikasi, reviewer, izin dan keputusan palsu | BELUM DIUJI |
+| QA-M04S9U-06 | G0 tidak memberi izin otomatis, G1–G4 tidak dijalankan, G5 telaah manusia | BELUM DIUJI |
+| QA-M04S9U-07 | Tidak ada temuan ditutup, status PASS atau readiness score | BELUM DIUJI |
+| QA-M04S9U-08 | Perbedaan struktur dan kelengkapan bukti riil tetap jelas | BELUM DIUJI |
+| QA-M04S9U-09 | UI filter, ekspor teks, mobile, DOM, keyboard dan XSS | BELUM DIUJI |
+| QA-M04S9U-10 | Tidak ada fetch, API, storage, upload atau pengiriman | BELUM DIUJI |
+| QA-M04S9U-11 | Dua belas skenario tes baru ditulis, belum dijalankan | BELUM DIUJI |
+| QA-M04S9U-12 | Total 172 sebelumnya + 12 = 184 skenario tertulis | BELUM DIUJI |
+| QA-M04S9U-13 | Review SOP/SPBE, kearsipan, klasifikasi dan bukti resmi | BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-S9U](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9U_QA_EVIDENCE_CONSISTENCY.md). Mode CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9T: register kebutuhan bukti QA DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda hingga izin eksplisit owner | Status |

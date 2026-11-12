@@ -2,6 +2,10 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9S tindak lanjut audit statis dan persiapan QA
+**KODE DITULIS, BELUM DIUJI.** Pemeriksaan kode menemukan manifest S9R tidak lengkap untuk impor langsung beberapa modul. [Manifest diperbaiki dan pengecekan dua arah ditulis](https://github.com/dvoriano/yandik-plus/commit/d4f932e943f015542a4e7771c9a0528ed448bf40), lalu [perbaikan matcher dan STATIC-04](https://github.com/dvoriano/yandik-plus/commit/e03b312ccf04a99ee82c20db007eb6683fa7a961).
+- [Paket persiapan QA G0–G5 dengan 10 skenario baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-preflight) dibuat, belum dijalankan. Total tes tertulis 162. Semua temuan STATIC-01–04 masih memerlukan bukti dan/atau keputusan; **tidak ada yang ditutup resmi**.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9S_QA_PREFLIGHT_AND_FINDINGS.md) mencatat gerbang izin owner G0 serta urutan QA terisolasi dan review kelembagaan. Tanpa tes/CI, merge, main, deployment, VPS, DB produksi, website aktif atau bot Indodax.
 ## 2026-11-12 | M04-S9R audit statis dan konsolidasi M04-S9F–S9Q
 **AUDIT STATIS TERTULIS, KODE BELUM DIUJI.** Menyisir inventaris dan kontrak 12 modul. Temuan STATIC-01 source fingerprint M04-S9J belum mencakup perubahan fase/dependensi/peran, diperbaiki di commit b5c08b5 dan 1 tes regresi ditulis. 12 tes audit S9R ditulis di commit 0a261b6.
 - 139 skenario lama + 1 regresi S9J + 12 skenario audit S9R = **152 tertulis**, **0 dijalankan di S9R**. [Laporan audit](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9R_STATIC_CONSOLIDATION.md).

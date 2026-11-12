@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9N | Register Pertanyaan Terbuka DEMO</title>
+<link rel="stylesheet" href="./style.css"></head><body>
+<main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9N · DRAF GITHUB</p>
+<h1>Register Pertanyaan yang Belum Terjawab</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Semua pertanyaan berasal dari fixture DEMO.</p>
+<p>Mengurai paket M04-S9M menjadi pertanyaan per fungsi, referensi butir,
+bukti yang perlu disiapkan dan ketergantungan pembahasan.</p>
+<p><strong>Belum ada jawaban resmi, penugasan, keputusan atau izin pengujian.</strong></p>
+</header>
+<section>
+<h2>1. Jumlah pertanyaan DEMO</h2>
+<p id="counts" role="status" aria-live="polite"></p>
+<p id="snapshot" class="muted"></p>
+<div class="table-scroll">
+<table>
+<caption>Daftar menurut fungsi usulan, bukan jumlah pertanyaan resmi instansi</caption>
+<thead><tr><th scope="col">Fungsi usulan</th><th scope="col">Butir</th>
+<th scope="col">Pertanyaan</th><th scope="col">Ada catatan kekurangan DEMO</th>
+<th scope="col">Kolom kekurangan kosong</th><th scope="col">Jawaban resmi</th>
+</tr></thead><tbody id="matrix"></tbody></table></div>
+</section>
+<section>
+<h2>2. Pertanyaan terbuka per fungsi</h2>
+<div class="filters">
+<label for="function">Fungsi telaah usulan
+<select id="function"><option value="all">Semua fungsi</option></select></label>
+<label for="gap">Keberadaan catatan kekurangan bukti DEMO
+<select id="gap"><option value="all">Semua catatan</option></select></label>
+</div>
+<p id="selected" role="status" aria-live="polite"></p>
+<ol id="questions" class="questions"></ol>
+</section>
+<section><h2>3. Batasan pemanfaatan</h2><ul id="warnings"></ul></section>
+<section>
+<h2>4. Ringkasan baca-saja</h2>
+<p>Ringkasan ini untuk memeriksa rancangan pertanyaan, bukan notulen rapat,
+berita acara, jawaban pejabat, ataupun hasil verifikasi bukti.</p>
+<label for="export">Teks DEMO sesuai filter
+<textarea id="export" rows="18" readonly spellcheck="false"></textarea></label>
+<p id="error" role="alert" class="warning"></p>
+</section>
+<footer>Tidak ada formulir jawaban, tanda tangan, API, storage, database,
+pengiriman, unggahan berkas, persetujuan SOP, pengadaan, bantuan, BAST,
+otorisasi QA atau deployment.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

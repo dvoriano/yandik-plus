@@ -46,3 +46,6 @@ Repository GitHub menurut pemeriksaan **12 November 2026 masih PUBLIC**. Penging
 - Regresi validasi sumber dan urutan lintas fase, kecocokan pertanyaan/bukti, filter/UX HP/aksesibilitas, XSS, serta kontrak izin disimpan di [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - Rekomendasi lanjutan: **M04-S9R**, konsolidasi dan pemeriksaan statis antarmodul DEMO M04-S9F–S9Q beserta antrean QA. Ini tetap pembacaan kode tanpa mengeksekusi tes maupun menganggap kode telah lulus.
 - M04-S10+ bantuan, anggaran, pengadaan, distribusi dan BAST tetap RENCANA. Tidak ada CL, CI, Node/browser test, GitHub Actions, merge ke `main`, deployment, VPS, database produksi, YANDIK+ aktif atau bot Indodax.
+
+## Audit statis lintas modul M04-S9R
+Paket pembahasan M04-S9Q termasuk dalam [inventaris dan audit statis M04-S9R](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9R_STATIC_CONSOLIDATION.md). Kode, impor, urutan, tampilan browser dan 12 skenario audit tambahan **BELUM DIUJI**. Audit tidak memberi izin pengiriman, penugasan atau deployment.

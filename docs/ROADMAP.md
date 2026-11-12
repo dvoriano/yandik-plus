@@ -20,6 +20,12 @@ Pemeriksaan dan persetujuan substansi dicatat pada [Issue #21](https://github.co
 
 Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak mengesahkan aturan prioritas/anggaran, tidak menjadi bukti pengujian kode baru, dan tidak menambah pengeluaran CL/CI. Pemeriksaan metadata GitHub 11 November 2026 menunjukkan repositori berstatus **PUBLIC**; pembaca tautan tidak harus diberi izin GitHub. Keterbukaan kode bukan persetujuan penggunaan atau publikasi data kedinasan.
 
+## Pengenalan repository untuk pembaca umum (12 November 2026)
+
+- [x] [README.md](../README.md) pada `develop/yandik-foundation` telah ditulis ulang secara ringkas dan profesional, menerangkan **apa YANDIK+, hasil akhir yang dituju, siapa pengguna, alur contoh, dan status pengembangan**.
+- [ ] README pada `main` tetap versi lama sampai ada review dan merge PR #9 sesuai keputusan owner. **Tidak boleh menyamakan pembaruan README dengan penyelesaian modul maupun pengujian.**
+- Tidak ada pengujian, CL/CI, deploy, atau perubahan situs yang berjalan.
+
 ## Arti status
 - **SELESAI:** keluaran/commit dan bukti telah ada untuk ruang lingkup yang disebut; dokumentasi selesai tidak berarti modul terimplementasi.
 - **SEDANG:** pekerjaan nyata sedang dilakukan; ada file/commit/issue yang dapat diperiksa.

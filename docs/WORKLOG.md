@@ -2,6 +2,10 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | Pembaruan README pengenalan YANDIK+
+**DOKUMENTASI DITULIS, TANPA PENGUJIAN.** README branch pengembangan dirapikan dari riwayat teknis yang panjang menjadi pengenalan sederhana dan profesional: tujuan, masalah yang diselesaikan, hasil akhir, contoh alur, pembaca sasaran, 15 modul, serta pembeda antara layanan APEL yang sudah ada dan pengembangan YANDIK+ terpadu.
+- Dokumentasi teknis tetap tersedia melalui PROJECT_STATE, ROADMAP, WORKLOG dan dokumen modul. Tidak ada perubahan `main`, fitur produksi, QA, CI, deployment atau keputusan kelembagaan.
+
 ## 2026-11-12 | M04-S9S tindak lanjut audit statis dan persiapan QA
 **KODE DITULIS, BELUM DIUJI.** Pemeriksaan kode menemukan manifest S9R tidak lengkap untuk impor langsung beberapa modul. [Manifest diperbaiki dan pengecekan dua arah ditulis](https://github.com/dvoriano/yandik-plus/commit/d4f932e943f015542a4e7771c9a0528ed448bf40), lalu [perbaikan matcher dan STATIC-04](https://github.com/dvoriano/yandik-plus/commit/e03b312ccf04a99ee82c20db007eb6683fa7a961).
 - [Paket persiapan QA G0–G5 dengan 10 skenario baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-preflight) dibuat, belum dijalankan. Total tes tertulis 162. Semua temuan STATIC-01–04 masih memerlukan bukti dan/atau keputusan; **tidak ada yang ditutup resmi**.

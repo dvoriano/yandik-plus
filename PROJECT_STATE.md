@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN README | PENGENALAN DAN HASIL AKHIR YANDIK+ | 12 November 2026
+- README branch `develop/yandik-foundation` disederhanakan untuk pembaca umum: tujuan YANDIK+, manfaat, hasil akhir yang dituju, contoh alur, pengguna, 15 modul dan status pengembangan sebenarnya.
+- Halaman repo `main` **belum diubah**; README baru terlihat di branch pengembangan sampai PR #9 kelak ditelaah dan digabungkan oleh owner. Tidak ada klaim sistem telah diterapkan, diuji, atau disahkan.
+- Hanya perubahan dokumentasi dengan `[skip ci]`, tanpa CL/CI, tes, merge, deployment atau produksi.
+
 ## PEMBARUAN M04-S9S | TINDAK LANJUT AUDIT DAN PERSIAPAN QA | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** temuan STATIC-04 (impor langsung yang belum tercatat) diperbaiki pada manifest S9R dan kontrak pengecekan dua arah. [Paket preflight G0–G5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-preflight) dengan 10 skenario QA tertulis.
 - [Spesifikasi dan register tindak lanjut](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9S_QA_PREFLIGHT_AND_FINDINGS.md) membedakan STATIC-01/04 perbaikan kode tertulis namun belum divalidasi, STATIC-02 pengujian menunggu izin owner, dan STATIC-03 repository PUBLIC memerlukan tindakan owner.

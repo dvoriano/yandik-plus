@@ -1,3 +1,7 @@
+## 2026-11-12 | Perapian README pengenalan YANDIK+
+- [README branch pengembangan](../README.md) diganti dengan ringkasan tujuan YANDIK+, hasil akhir yang diharapkan, contoh alur, pengguna dan status sebenarnya. Rincian teknis dialihkan ke dokumen khusus.
+- Hanya dokumentasi, tanpa perubahan status modul, tes/CI, merge main atau produksi. `main` tetap lama sampai review dan merge sesuai keputusan owner.
+
 ## 2026-11-12 | M04-S9S tindak lanjut temuan statis dan persiapan QA
 - Manifest dependensi S9R dilengkapi untuk impor langsung S9L/S9N/S9O/S9P/S9Q. Pemeriksaan dua arah tertulis, pola matcher dikoreksi; temuan STATIC-04 ditambahkan. **Semua BELUM DIUJI.**
 - [Paket preflight G0–G5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-preflight) dengan 10 skenario QA tertulis. Total 162 skenario tertulis; 0 dijalankan di M04-S9S.

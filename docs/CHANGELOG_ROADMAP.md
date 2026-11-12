@@ -1,3 +1,9 @@
+## 2026-11-12 | M04-S9S tindak lanjut temuan statis dan persiapan QA
+- Manifest dependensi S9R dilengkapi untuk impor langsung S9L/S9N/S9O/S9P/S9Q. Pemeriksaan dua arah tertulis, pola matcher dikoreksi; temuan STATIC-04 ditambahkan. **Semua BELUM DIUJI.**
+- [Paket preflight G0–G5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-preflight) dengan 10 skenario QA tertulis. Total 162 skenario tertulis; 0 dijalankan di M04-S9S.
+- [Spesifikasi dan kriteria bukti](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9S_QA_PREFLIGHT_AND_FINDINGS.md) memisahkan perbaikan kode dari penutupan temuan yang memerlukan bukti atau keputusan owner. STATIC-01–04 tetap belum ditutup resmi.
+- CODE_ONLY, PR #9 DRAFT, repo PUBLIC per pemeriksaan 12 Nov; tidak ada tes, CI, merge atau deployment.
+
 ## 2026-11-12 | M04-S9R audit statis konsolidasi M04-S9F–S9Q
 - Inventaris 12 modul dan [laporan audit](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9R_STATIC_CONSOLIDATION.md) dibuat dari pembacaan kode. Fingerprint S9J diperluas dan satu skenario regresi ditulis (commit b5c08b5). Dua belas skenario pemeriksaan statis baru ditulis (commit 0a261b6). Semua BELUM DIUJI.
 - Total **152 skenario tertulis dan 0 dijalankan pada S9R**. Repo masih PUBLIC pada 12 Nov; pengingat PRIVATE 14 Nov aktif, belum mengubah pengaturan. CODE_ONLY, PR #9 DRAFT, tidak menyentuh main/produksi.

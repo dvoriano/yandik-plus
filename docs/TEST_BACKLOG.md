@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9S: tindak lanjut temuan statis dan preflight QA (BELUM DIUJI)
+
+| ID | Bukti / pemeriksaan tertunda hingga izin eksplisit | Status |
+|---|---|---|
+| QA-M04S9S-01 | Cocokkan manifest impor S9F–S9Q dengan seluruh sumber model secara dua arah, termasuk S9I/G yang dipakai lintas modul | BELUM DIUJI |
+| QA-M04S9S-02 | Pastikan regex pemeriksaan impor langsung benar dan bisa mendeteksi dependensi hilang maupun berlebihan | BELUM DIUJI |
+| QA-M04S9S-03 | Periksa regresi STATIC-01: fingerprint catatan S9J menolak agenda berubah (fase, dependensi, peran, dokumen, urutan) | BELUM DIUJI |
+| QA-M04S9S-04 | Jangan tutup STATIC-01/04 sebelum bukti tes diisolasi; STATIC-02 dan STATIC-03 tetap terbuka | BELUM DIUJI |
+| QA-M04S9S-05 | G0: izin eksplisit owner, ruang lingkup, data sintetis dan batas lingkungan sebelum menjalankan tes | BUTUH IZIN OWNER |
+| QA-M04S9S-06 | G1: pemeriksaan sintaks dan import/export semua modul di lingkungan terisolasi | TERTUNDA UJI |
+| QA-M04S9S-07 | G2: unit kontrak S9F–S9J, perubahan sumber serta penolakan klaim persetujuan | TERTUNDA UJI |
+| QA-M04S9S-08 | G3: alur fixture S9K–S9Q, 18 butir, 6 fungsi, 4 fase, pertanyaan/bukti dan relasi dependensi | TERTUNDA UJI |
+| QA-M04S9S-09 | G4: HTML, DOM/XSS, network/storage, keyboard, mobile, aksesibilitas dan audit keamanan | TERTUNDA UJI |
+| QA-M04S9S-10 | G5: pemeriksaan kelembagaan oleh pihak berwenang, SOP/SPBE, kearsipan, legalitas bukti | BUTUH KEPUTUSAN |
+| QA-M04S9S-11 | Skenario preflight baru `tests/preflight.test.mjs` (10 kasus) hanya ditulis, bukan dijalankan | BELUM DIUJI |
+| QA-M04S9S-12 | Total tes tertulis 152 lama + 10 baru = 162; 0 dijalankan selama milestone S9S, tanpa bukti PASS | BELUM DIUJI |
+| QA-M04S9S-13 | Repo PUBLIC berdasarkan metadata 12 November; owner perlu menilai PRIVATE dan histori paparan | BUTUH KEPUTUSAN OWNER |
+
+[Laporan dan register M04-S9S](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9S_QA_PREFLIGHT_AND_FINDINGS.md). MODE CODE_ONLY tetap berlaku; jangan mengeksekusi skenario tanpa izin owner.
 ## Antrean M04-S9R: audit statis 12 modul (BELUM DIUJI)
 
 | ID | Pengujian yang ditunda sampai izin owner eksplisit | Status |

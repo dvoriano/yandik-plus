@@ -64,3 +64,6 @@ Daftar pendahulu merupakan **hipotesis desain yang harus ditelaah manusia**, buk
 Backlog QA rinci tersedia pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 Langkah berikutnya adalah konsolidasi *blocking issues* untuk telaah manusia dan QA berizin bila pemilik meminta. M04-S10+ keputusan, paket, anggaran, distribusi dan BAST tetap RENCANA.
 Branch main, PR #9, VPS, database, website YANDIK+ aktif, dan bot Indodax tidak diubah.
+
+## Paket telaah setelah M04-S9G
+Daftar 18 hambatan beserta kebutuhan bukti, pengampu/penelaah usulan dan perhatian terdapat pada [M04-S9H](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9H_BLOCKER_TRIAGE.md). Tetap bahan DEMO dan **BELUM DIUJI**, tidak ada penetapan kewenangan.

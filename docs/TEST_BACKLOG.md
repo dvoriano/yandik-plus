@@ -186,6 +186,26 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9H: konsolidasi hambatan dan bahan bukti (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M04S9H-01 | Rantai impor M04-S9F/G/H dengan fixture DEMO tanpa produksi | BELUM DIUJI |
+| QA-M04S9H-02 | Seluruh 18 butir unik, pendahulu serta urutan sumber tetap konsisten | BELUM DIUJI |
+| QA-M04S9H-03 | Bukti diminta, pengampu usulan dan penelaah usulan tidak diklaim sudah resmi | BELUM DIUJI |
+| QA-M04S9H-04 | Snapshot PUBLIC menyoroti klasifikasi repo, PRIVATE tidak otomatis berarti aman | BELUM DIUJI |
+| QA-M04S9H-05 | Source stale mengutamakan kaji ulang tanpa mengubah sumber | BELUM DIUJI |
+| QA-M04S9H-06 | Dua topik tanpa pendahulu tetap tidak diberi izin eksekusi | BELUM DIUJI |
+| QA-M04S9H-07 | Semua bukti, penelaah, keputusan, izin tes/deploy tetap nol/false | BELUM DIUJI |
+| QA-M04S9H-08 | Penolakan data non-DEMO, duplicate, fake approval, invalid dependensi dan fase | BELUM DIUJI |
+| QA-M04S9H-09 | Filter fase/perhatian, HP 320/375px, keyboard, fokus, screen reader dan pesan kosong | BELUM DIUJI |
+| QA-M04S9H-10 | XSS/input teks, tanpa API, storage, fetch, data rahasia, notifikasi atau mutasi sumber | BELUM DIUJI |
+| QA-M04S9H-11 | Sebelas skenario pada tests/triage.test.mjs tertulis, tidak dijalankan | BELUM DIUJI |
+| QA-M04S9H-12 | Kesesuaian tupoksi, pengampu, SOP/SPBE, klasifikasi data, keamanan, arsip dan kewenangan | BUTUH KEPUTUSAN |
+| QA-M04S9H-13 | QA regresi/keamanan/HP dan review staging setelah izin owner | TERTUNDA UJI |
+
+[Spesifikasi M04-S9H](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9H_BLOCKER_TRIAGE.md). Mode CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9G: matriks ketergantungan prasyarat integrasi (BELUM DIUJI)
 
 | ID | Rencana pemeriksaan setelah izin eksplisit | Status |

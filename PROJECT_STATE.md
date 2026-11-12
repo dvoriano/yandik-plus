@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9H | PAKET TELAAH HAMBATAN DAN BUKTI | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9H](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-blocker-triage) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/5f62897756ae204df31f4aac2247946a50fd43dd) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/0d775de0f6188f9105473bca0d3412ab387cbee7). 18 hambatan mempunyai kebutuhan bukti, pengampu dan penelaah usulan, ketergantungan dan perhatian.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9H_BLOCKER_TRIAGE.md) dan QA-M04S9H masuk TEST_BACKLOG. Sebelas skenario tes **DITULIS, BELUM DIJALANKAN**.
+- Tidak ada bukti diverifikasi, penelaah resmi, keputusan, atau izin tes/deploy. Fase P0–P3 masih BELUM DIMULAI; semua data DEMO.
+- Repository PUBLIC menurut metadata 12 Nov; pengingat PRIVATE Sabtu 14 November sudah ada, perubahan belum dilakukan.
+- CODE_ONLY tetap aktif, PR #9 DRAFT, tidak menyentuh main dan produksi.
+
 ## PEMBARUAN M04-S9G | MATRIKS KETERGANTUNGAN DAN URUTAN HAMBATAN | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9G](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-dependency-matrix) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/427320fe50ca2e8a349d3acc080771e5bfc2bf4c) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/17bfabee99d769ee8c91f79c35b2c1c2e3d16b12). Berisi dependensi desain 18 persyaratan M04-S9F, pengurutan topologis, dampak lanjutan, filter fase/domain dan teks ringkasan.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9G_DEPENDENCY_PLAN.md) dan QA-M04S9G dicatat pada TEST_BACKLOG. **11 skenario tes ditulis, tidak dijalankan**. Semua fase P0–P3 tetap BELUM_DIMULAI; tidak ada status persetujuan atau izin pengujian.

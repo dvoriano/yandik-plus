@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M03-S4B | Kajian Bobot Prioritas (DRAF BELUM DIUJI)</title>
+<link rel="stylesheet" href="./style.css">
+<style>
+form{display:grid;gap:12px}textarea,input{border:1px solid #99b0bb;border-radius:10px;
+ padding:10px;width:100%;font:inherit;color:#1b3340;background:white}
+button{min-height:44px;padding:11px 14px;border:0;border-radius:10px;color:white;
+ background:#235779;font:inherit;font-weight:700;cursor:pointer}
+:focus-visible{outline:3px solid #ad6900;outline-offset:2px}
+[hidden]{display:none!important}.success{color:#126246;font-weight:700}
+#impact{overflow-wrap:anywhere}label{display:grid;gap:6px}
+</style></head><body><main class="shell">
+<header><p class="eyebrow">YANDIK+ · M03-S4B · GitHub-only</p>
+<h1>Telaah Metodologi Prioritas Puskeswan</h1>
+<p class="warning"><strong>DRAF BELUM DIUJI. Semua data dan peran bersifat fiktif.</strong></p>
+<p>Alur kabupaten/kota menyiapkan alasan bobot → provinsi mencatat pendapat metodologi.
+Tidak terdapat persetujuan kebijakan, pengadaan, anggaran, ataupun penerima bantuan.</p></header>
+<section><h2>1. Alasan dan batas perbandingan bobot</h2>
+<form id="draft">
+<label for="profile">Pilihan bobot untuk ditelaah<select id="profile"></select></label>
+<label for="rationale">Alasan pemilihan bobot (minimal 40 karakter)
+<textarea id="rationale" required minlength="40" maxlength="500" rows="3"></textarea></label>
+<label for="risks">Dampak bagi wilayah/SDM dan perubahan peringkat (minimal 30 karakter)
+<textarea id="risks" required minlength="30" maxlength="500" rows="3"></textarea></label>
+<label for="limits">Keterbatasan data dan metode (minimal 30 karakter)
+<textarea id="limits" required minlength="30" maxlength="500" rows="3"></textarea></label>
+<label for="evidence">Kode referensi sumber fiktif
+<input id="evidence" required value="DEMO-KAJIAN-001" autocomplete="off"></label>
+<button type="submit">Simpan draf kajian (DEMO)</button>
+</form>
+<p><button id="submit" type="button" hidden>Ajukan untuk telaah provinsi (DEMO)</button></p>
+</section>
+<section><h2>2. Rekam alasan dan perubahan urutan</h2>
+<p id="record-status" role="status" aria-live="polite"></p>
+<div id="impact"></div></section>
+<section><h2>3. Telaah provinsi (simulasi, bukan pengesahan)</h2>
+<form id="review" hidden>
+<label for="decision">Hasil kajian metodologi<select id="decision"></select></label>
+<label for="notes">Alasan penelaah, minimal 30 karakter
+<textarea id="notes" required minlength="30" maxlength="700" rows="3"></textarea></label>
+<button type="submit">Catat hasil kajian, bukan persetujuan</button>
+</form>
+<p id="notice" role="status" aria-live="polite"></p></section>
+
+<section aria-labelledby="minutes-title">
+<h2 id="minutes-title">4. Draf bahan penyusunan berita acara (SIMULASI)</h2>
+<p class="warning"><strong>BELUM DIUJI. BUKAN BERITA ACARA RESMI.</strong></p>
+<p>Teks berikut disusun dari catatan telaah dan riwayat yang tersedia di memori browser.
+Tidak ada nomor surat, tanggal resmi, tanda tangan, atau penetapan bantuan otomatis.
+Jangan masukkan nama, data pribadi atau dokumen asli pada simulasi ini.</p>
+<form id="minutes-form">
+<label for="minutes-agenda">Agenda pembahasan contoh (minimal 20 karakter)
+<textarea id="minutes-agenda" rows="3" minlength="20" maxlength="300"
+required placeholder="Pembahasan kesesuaian indikator bobot terhadap kebutuhan Puskeswan fiktif."></textarea></label>
+<label for="minutes-followup">Rencana tindak lanjut contoh (minimal 30 karakter)
+<textarea id="minutes-followup" rows="3" minlength="30" maxlength="600"
+required placeholder="Telaah metodologi oleh pemilik proses, lengkapi data dan periksa kesesuaian dengan SOP."></textarea></label>
+<button type="submit">Susun draf hasil telaah, bukan berita acara resmi</button>
+</form>
+<p id="minutes-status" role="status" aria-live="polite">
+Buat catatan kajian DEMO sebelum menyusun bahan berita acara.
+</p>
+<label for="minutes-output">Teks draf untuk disalin ke dokumen kerja setelah diperiksa
+<textarea id="minutes-output" rows="19" readonly
+aria-describedby="minutes-instruction" spellcheck="false"></textarea></label>
+<p id="minutes-instruction">Teks ini dapat dipilih dan disalin secara manual.
+Tidak ada penyimpanan server, unduhan otomatis atau pengiriman dokumen.</p>
+</section>
+<footer>Semua catatan hanya memori browser; hilang setelah reload. Peran DEMO bukan
+autentikasi. Tidak ada API, database, tanda tangan atau penerapan produksi.</footer>
+</main><script type="module" src="./review_ui.mjs"></script></body></html>

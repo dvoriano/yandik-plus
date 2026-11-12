@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S3 | Rencana Tindak Lanjut Administrasi (BELUM DIUJI)</title>
+<link rel="stylesheet" href="./style.css">
+</head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S3 · DRAF GitHub-only</p>
+<h1>Rencana Tindak Lanjut Administratif</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Identitas dan seluruh rujukan bersifat fiktif.</p>
+<p>Menyiapkan tugas klarifikasi dan pemeriksaan administrasi dari referensi M04-S2 yang <strong>baru dicatat metadatanya</strong>. Status pekerjaan tidak menunjukkan keputusan pejabat, keaslian dokumen, persetujuan bantuan, anggaran maupun penyaluran.</p>
+</header>
+<section aria-labelledby="source-heading">
+<h2 id="source-heading">1. Referensi dan batas kewenangan</h2>
+<p id="reference-info" role="status"></p>
+<p>Contoh M04-S2 ini belum dikonfirmasi penerbit. Proses baru dapat digunakan pada dokumen nyata setelah pemilik proses menyetujui SOP, hak akses dan pemeriksaan sumber resmi.</p>
+</section>
+<section aria-labelledby="plan-heading">
+<h2 id="plan-heading">2. Rencana dan penanggung jawab</h2>
+<form id="plan-form">
+<label for="task-type">Jenis tindak lanjut administratif
+<select id="task-type"></select></label>
+<label for="description">Rincian pekerjaan, minimal 40 karakter
+<textarea id="description" rows="3" minlength="40" maxlength="500" required></textarea></label>
+<label for="expected">Keluaran yang diharapkan, minimal 30 karakter
+<textarea id="expected" rows="3" minlength="30" maxlength="400" required></textarea></label>
+<label for="assignee">Petugas yang ditunjuk, kode DEMO-
+<input id="assignee" required autocomplete="off" spellcheck="false" maxlength="60"></label>
+<label for="due">Tanggal rencana contoh (bukan jadwal dinas)
+<input id="due" type="date" required></label>
+<label for="limitations">Batas pemeriksaan, minimal 30 karakter
+<textarea id="limitations" rows="3" minlength="30" maxlength="500" required></textarea></label>
+<div class="actions">
+<button type="submit">Simpan draf administratif</button>
+<button id="assign" type="button" hidden>Tugaskan dalam simulasi</button>
+</div></form>
+<div class="actions"><button id="new" type="button" class="secondary">Rencana baru</button></div>
+</section>
+<section aria-labelledby="work-heading">
+<h2 id="work-heading">3. Pelaksanaan dan catatan kerja DEMO</h2>
+<div class="actions"><button id="start" type="button" hidden>Mulai menyusun catatan kerja</button></div>
+<form id="completion-form" hidden>
+<label for="completion">Catatan tindakan yang telah disusun, minimal 50 karakter
+<textarea id="completion" rows="4" minlength="50" maxlength="800" required></textarea></label>
+<label for="result-ref">Kode metadata hasil DEMO-, bukan bukti file asli
+<input id="result-ref" value="DEMO-CATATAN-001" required maxlength="60" spellcheck="false"></label>
+<button type="submit">Ajukan catatan untuk telaah DEMO</button>
+</form>
+<form id="review-form" hidden>
+<label for="review-action">Telaah catatan administratif
+<select id="review-action">
+<option value="kembalikan">Kembalikan untuk perbaikan catatan</option>
+<option value="catat_selesai">Tutup catatan administrasi, bukan persetujuan bantuan</option>
+</select></label>
+<label for="review-reason">Alasan pemeriksaan, minimal 40 karakter
+<textarea id="review-reason" rows="3" minlength="40" maxlength="700" required></textarea></label>
+<button type="submit">Catat hasil pemeriksaan DEMO</button>
+</form>
+</section>
+<section aria-labelledby="list-heading">
+<h2 id="list-heading">4. Daftar tugas dan riwayat</h2>
+<p class="muted">Setiap pekerjaan tetap dibedakan dari keputusan resmi. Bila referensi sumber berubah, tugas harus ditinjau ulang.</p>
+<p id="task-status" role="status" aria-live="polite"></p>
+<ul id="task-list"></ul>
+<form id="cancel-form" hidden>
+<label for="cancel-reason">Alasan pembatalan administratif, minimal 40 karakter
+<textarea id="cancel-reason" rows="3" minlength="40" maxlength="500" required></textarea></label>
+<button class="secondary" type="submit">Catat pembatalan rencana DEMO</button>
+</form>
+<label for="handoff">Draf ringkasan tindak lanjut, untuk diperiksa manusia
+<textarea id="handoff" rows="16" readonly spellcheck="false"></textarea></label>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<footer>Simulasi hanya berada dalam memori browser. Tidak ada akun, API/DB, surat resmi, tanda tangan, perintah dinas, paket, pengadaan, bantuan, BAST atau perubahan produksi.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

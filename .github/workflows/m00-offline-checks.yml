@@ -1,0 +1,82 @@
+name: M00 - YANDIK+ offline foundation checks
+
+on:
+  push:
+    branches:
+      - develop/yandik-foundation
+    paths:
+      - foundation/**
+      - prototypes/**
+      - .github/workflows/m00-offline-checks.yml
+      - .env.example
+  pull_request:
+    branches:
+      - main
+    paths:
+      - foundation/**
+      - prototypes/**
+      - .github/workflows/m00-offline-checks.yml
+      - .env.example
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test synthetic data contracts
+        run: python -B -m unittest discover -s foundation/tests -v
+      - name: Validate linked synthetic fixtures
+        run: python -B -m foundation.validate_fixtures
+
+  profile-ui-demo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check demo script syntax
+        run: |
+          node --check prototypes/profil-puskeswan/model.mjs
+          node --check prototypes/profil-puskeswan/main.mjs
+          node --check prototypes/profil-puskeswan/problems.mjs
+          node --check prototypes/profil-puskeswan/source_snapshots.mjs
+          node --check prototypes/profil-puskeswan/support_needs.mjs
+          node --check prototypes/profil-puskeswan/support_evidence.mjs
+          node --check prototypes/profil-puskeswan/support_priority.mjs
+      - name: Test profile review prototype model
+        run: |
+          node --test prototypes/profil-puskeswan/tests/model.test.mjs
+          node --test prototypes/profil-puskeswan/tests/problems.test.mjs
+          node --test prototypes/profil-puskeswan/tests/source_snapshots.test.mjs
+          node --test prototypes/profil-puskeswan/tests/support_needs.test.mjs
+          node --test prototypes/profil-puskeswan/tests/support_evidence.test.mjs
+          node --test prototypes/profil-puskeswan/tests/support_priority.test.mjs
+
+  profile-browser-e2e:
+    # Pin to supported OS; ubuntu-latest now maps to 26.04, unsupported by Playwright 1.56.1.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned browser automation
+        working-directory: prototypes/profil-puskeswan
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
+      - name: Install Chromium for ephemeral CI
+        working-directory: prototypes/profil-puskeswan
+        run: npx playwright install --with-deps chromium
+      - name: Test real browser workflows (320px and 375px)
+        working-directory: prototypes/profil-puskeswan
+        run: node --test tests/browser.test.mjs

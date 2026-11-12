@@ -1,0 +1,24 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#183747;background:#f3f7fa;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:1100px;margin:auto;padding:20px 14px 48px}
+header,section{background:white;border:1px solid #dae5eb;border-radius:14px;padding:22px;margin-bottom:17px}
+h1{font-size:clamp(1.5rem,3vw,2.2rem)}h2{font-size:1.13rem}p{line-height:1.6}
+.eyebrow{color:#2c617e;font-weight:750}.warning{font-weight:780;color:#814400}.muted{color:#55717e;font-size:.95rem}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.metric{border:1px solid #dbe6ec;background:#f8fbfd;border-radius:10px;padding:12px}
+.metric strong{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+.metric span{display:block;font-size:.92rem;line-height:1.4}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;align-items:end}
+label{display:grid;gap:7px;font-weight:650}input,select,textarea{
+  min-width:0;width:100%;padding:11px 12px;min-height:44px;border-radius:9px;
+  border:1px solid #a8bdc7;background:white;color:#183747;font:inherit}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-weight:680;background:#245e7e;color:white;border:0;border-radius:9px;min-height:44px;padding:10px 14px;cursor:pointer}
+button.secondary{background:#edf4f8;color:#245e7e;border:1px solid #aec8d6}
+:focus-visible{outline:3px solid #b97416;outline-offset:2px}
+.table-wrap{overflow-x:auto;border:1px solid #dce6ec;border-radius:10px}table{width:100%;border-collapse:collapse;font-size:.91rem}
+th,td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #e2e9ed;overflow-wrap:anywhere}
+th{background:#f1f7f9;font-weight:750}td small{display:block;color:#53707c;margin-top:4px}
+.empty{color:#53707c}[hidden]{display:none!important}
+#report{font: .87rem/1.55 ui-monospace,monospace}
+footer{text-align:center;color:#526d78;font-size:.9rem}
+@media(max-width:560px){.shell{padding:12px}header,section{padding:16px}form{grid-template-columns:1fr}.actions{display:grid}.actions button{width:100%}}

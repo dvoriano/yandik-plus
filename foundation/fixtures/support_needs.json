@@ -1,0 +1,16 @@
+[
+  {
+    "need_id": "DEMO-NEED-001",
+    "puskeswan_id": "DEMO-PSW-001",
+    "kategori": "alat_klinik",
+    "jumlah": 2,
+    "status": "diajukan"
+  },
+  {
+    "need_id": "DEMO-NEED-002",
+    "puskeswan_id": "DEMO-PSW-003",
+    "kategori": "rantai_dingin",
+    "jumlah": 1,
+    "status": "draf"
+  }
+]

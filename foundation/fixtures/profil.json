@@ -1,0 +1,34 @@
+[
+  {
+    "puskeswan_id": "DEMO-PSW-001",
+    "bidang": "legalitas_status",
+    "nilai": "tercatat",
+    "observed_on": "2026-05-12",
+    "sumber": "profiling",
+    "terverifikasi": true
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-001",
+    "bidang": "bangunan_kondisi",
+    "nilai": "perlu_perbaikan",
+    "observed_on": "2026-10-02",
+    "sumber": "observasi",
+    "terverifikasi": false
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-002",
+    "bidang": "legalitas_status",
+    "nilai": null,
+    "observed_on": "2026-08-01",
+    "sumber": "profiling",
+    "terverifikasi": false
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-003",
+    "bidang": "wilayah_kerja_keterangan",
+    "nilai": "wilayah_fiktif",
+    "observed_on": "2026-09-15",
+    "sumber": "survei",
+    "terverifikasi": true
+  }
+]

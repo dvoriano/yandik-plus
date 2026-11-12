@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S9 | Register Tindak Lanjut Kelembagaan (DEMO)</title>
+<link rel="stylesheet" href="./style.css"></head>
+<body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9 · GITHUB-ONLY</p>
+<h1>Register Tindak Lanjut Pembahasan Kelembagaan</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Seluruh tugas, dokumen, penanggung jawab dan tanggal adalah DEMO.</p>
+<p>Mencatat kekurangan, rencana perbaikan dan penanggung jawab setelah telaah M04-S8. <strong>Menutup catatan tidak berarti persyaratan riil terpenuhi, SOP disahkan, atau integrasi sudah diperbolehkan.</strong></p>
+</header>
+<section aria-labelledby="summary-heading">
+<h2 id="summary-heading">1. Ringkasan catatan dan status</h2>
+<p id="source-info" class="muted"></p>
+<div class="metrics" id="metrics"></div>
+<p class="warning">Status kesiapan integrasi: <strong>BELUM DINILAI DAN TIDAK DAPAT DIPUTUSKAN DARI REGISTER INI.</strong></p>
+</section>
+<section aria-labelledby="plan-heading">
+<h2 id="plan-heading">2. Catat kekurangan dan rencana perbaikan</h2>
+<form id="finding-form">
+<label for="kind">Sumber temuan
+<select id="kind"></select></label>
+<label for="source-ref">Unsur atau referensi sumber DEMO
+<input id="source-ref" list="source-options" autocomplete="off" maxlength="60" required
+  aria-describedby="source-hint">
+<datalist id="source-options"></datalist></label>
+<p id="source-hint" class="muted">Untuk unsur/katalog, pilih kode yang tersedia. Untuk catatan tambahan, ketik ID baru diawali DEMO-.</p>
+<label for="description">Uraian kekurangan (minimal 45 karakter)
+<textarea id="description" rows="3" minlength="45" maxlength="700" required></textarea></label>
+<label for="impact">Dampak jika tidak diperbaiki (minimal 35 karakter)
+<textarea id="impact" rows="3" minlength="35" maxlength="650" required></textarea></label>
+<label for="plan">Rencana tindakan perbaikan (minimal 50 karakter)
+<textarea id="plan" rows="3" minlength="50" maxlength="850" required></textarea></label>
+<label for="deliverable">Keluaran yang diharapkan (minimal 35 karakter)
+<textarea id="deliverable" rows="3" minlength="35" maxlength="600" required></textarea></label>
+<label for="assignee">Penanggung jawab fiktif (DEMO-)
+<input id="assignee" maxlength="60" autocomplete="off" spellcheck="false" required></label>
+<label for="due">Tanggal rencana fiktif
+<input id="due" type="date" required></label>
+<button type="submit">Simpan draf perbaikan DEMO</button>
+</form>
+<div class="actions">
+<button type="button" id="record" hidden>Catat penugasan DEMO</button>
+<button type="button" id="new" class="secondary">Buat catatan baru</button>
+</div>
+</section>
+<section aria-labelledby="progress-heading">
+<h2 id="progress-heading">3. Pelaksanaan dan hasil perbaikan (catatan saja)</h2>
+<div class="actions"><button id="start" type="button" hidden>Mulai catatan kerja DEMO</button></div>
+<form id="progress-form" hidden>
+<label for="progress-note">Progres pekerjaan, minimal 45 karakter
+<textarea id="progress-note" minlength="45" maxlength="850" rows="3" required></textarea></label>
+<label for="progress-evidence">Kode metadata bukti progres DEMO-
+<input id="progress-evidence" value="DEMO-BUKTI-PROGRES-001" maxlength="60" spellcheck="false" required></label>
+<button type="submit">Tambahkan progres DEMO</button>
+</form>
+<form id="result-form" hidden>
+<label for="result-note">Hasil catatan perbaikan, minimal 60 karakter
+<textarea id="result-note" minlength="60" maxlength="900" rows="4" required></textarea></label>
+<label for="result-evidence">Referensi hasil fiktif DEMO-
+<input id="result-evidence" value="DEMO-BUKTI-HASIL-001" maxlength="60" spellcheck="false" required></label>
+<button type="submit">Ajukan hasil untuk telaah DEMO</button>
+</form>
+<form id="review-form" hidden>
+<label for="decision">Hasil pemeriksaan catatan
+<select id="decision">
+<option value="kembalikan">Kembalikan untuk perbaikan catatan</option>
+<option value="tutup_catatan">Tutup catatan administratif (BUKAN izin integrasi)</option>
+</select></label>
+<label for="reason">Alasan penelaah, minimal 50 karakter
+<textarea id="reason" minlength="50" maxlength="850" rows="3" required></textarea></label>
+<button type="submit">Catat telaah DEMO</button>
+</form>
+</section>
+<section aria-labelledby="register-heading">
+<h2 id="register-heading">4. Register dan histori tindak lanjut</h2>
+<div class="actions">
+<label for="as-of">Tanggal acuan DEMO
+<input id="as-of" type="date" value="2026-11-11"></label>
+<label for="status-filter">Filter status
+<select id="status-filter"></select></label>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<ul id="items" class="registry"></ul>
+<form id="cancel-form" hidden>
+<label for="cancel-reason">Alasan pembatalan rencana (minimal 45 karakter)
+<textarea id="cancel-reason" rows="3" minlength="45" maxlength="650" required></textarea></label>
+<button type="submit" class="secondary">Catat pembatalan DEMO</button>
+</form>
+<label for="handoff">Draf ringkasan temuan untuk ditelaah
+<textarea id="handoff" rows="18" readonly spellcheck="false"></textarea></label>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<footer>Hanya memori browser, tanpa arsip atau audit resmi. Tidak ada keputusan pejabat, pengesahan SOP, status layak integrasi, anggaran, pengadaan, distribusi atau BAST.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

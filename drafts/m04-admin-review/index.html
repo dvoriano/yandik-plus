@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S1 | Bahan Administrasi Dukungan Puskeswan (DRAF)</title>
+<link rel="stylesheet" href="./style.css">
+</head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S1 · SIMULASI</p>
+<h1>Administrasi Usulan Dukungan Puskeswan</h1>
+<p class="warning" role="status">KODE DITULIS, BELUM DIUJI. Semua data fiktif dan peran hanya contoh.</p>
+<p>Halaman ini menyiapkan <strong>berkas pertimbangan administratif</strong>. Pemeriksaan kebutuhan dan skor prioritas tidak memberikan kewenangan menyetujui bantuan, menetapkan anggaran, mengadakan atau menyalurkan barang.</p>
+</header>
+<section aria-labelledby="editor-title">
+<h2 id="editor-title">1. Penyusunan berkas contoh</h2>
+<form id="dossier-form">
+<label for="source">Sumber kebutuhan yang akan ditelaah
+<select id="source"></select></label>
+<p id="source-description" class="muted" aria-live="polite"></p>
+<label for="purpose">Tujuan dan manfaat pengusulan
+<textarea id="purpose" rows="3" minlength="35" maxlength="550" required placeholder="Tuliskan kebutuhan dan manfaatnya untuk kegiatan pelayanan Puskeswan contoh."></textarea></label>
+<label for="technical">Kondisi fasilitas dan dasar teknis
+<textarea id="technical" rows="3" minlength="35" maxlength="550" required placeholder="Jelaskan dampak kekurangan fasilitas terhadap kesinambungan pelayanan."></textarea></label>
+<label for="limitations">Keterbatasan dan hal yang perlu diputuskan melalui prosedur resmi
+<textarea id="limitations" rows="3" minlength="30" maxlength="550" required placeholder="Perlu pemeriksaan kewenangan, stok, kegiatan/program dan tata kelola yang berlaku."></textarea></label>
+<label for="evidence">Kode referensi bukti metadata DEMO
+<input id="evidence" maxlength="60" value="DEMO-BUKTI-ADM-001" required autocomplete="off" spellcheck="false"></label>
+<fieldset id="checklist">
+<legend>Pemeriksaan kelengkapan administratif (simulasi)</legend>
+<p>Centang dengan memilih status tiap unsur. "Ada" hanya berarti tercatat dalam simulasi, <strong>bukan</strong> bukti telah diperiksa secara resmi.</p>
+</fieldset>
+<div class="actions">
+<button type="submit" id="save">Simpan draf administrasi</button>
+<button type="button" id="reset" class="secondary">Kosongkan simulasi</button>
+</div>
+</form>
+<div class="actions"><button type="button" id="submit" hidden>Ajukan untuk pemeriksaan administratif DEMO</button></div>
+</section>
+<section aria-labelledby="review-title">
+<h2 id="review-title">2. Pemeriksaan kelengkapan administratif</h2>
+<p>Penelaah DEMO berbeda dari penyusun DEMO. Tahap ini <strong>tidak</strong> memiliki tombol menyetujui bantuan atau anggaran.</p>
+<form id="review-form" hidden>
+<label for="action">Hasil pemeriksaan berkas
+<select id="action">
+<option value="kembalikan">Kembalikan untuk dilengkapi</option>
+<option value="catat_bahan">Catat sebagai bahan pertimbangan, bukan persetujuan</option>
+</select></label>
+<label for="reason">Alasan pemeriksaan (minimal 35 karakter)
+<textarea id="reason" rows="3" minlength="35" maxlength="650" required></textarea></label>
+<button type="submit">Catat hasil pemeriksaan DEMO</button>
+</form>
+<p id="status" role="status" aria-live="polite">Belum ada berkas simulasi.</p>
+<div id="history" aria-label="Riwayat proses administrasi"></div>
+</section>
+<section aria-labelledby="handoff-title">
+<h2 id="handoff-title">3. Draf bahan pertimbangan</h2>
+<p>Bukan nota dinas, SK, keputusan pemberian bantuan atau BAST. Draf di bawah dapat dipilih dan disalin untuk dikaji manusia melalui proses resmi kelak.</p>
+<label for="handoff">Teks bahan pertimbangan dari data simulasi
+<textarea id="handoff" rows="18" readonly spellcheck="false" aria-describedby="handoff-hint"></textarea></label>
+<p id="handoff-hint" class="muted">Tidak ada pengiriman, unduhan otomatis, penyimpanan server, atau pengesahan.</p>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<footer>DEMO tanpa login resmi, anggaran, pengadaan, keputusan, penyaluran atau BAST. Data hilang ketika halaman dimuat ulang. Belum diuji dan belum disetujui untuk penggunaan dinas.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

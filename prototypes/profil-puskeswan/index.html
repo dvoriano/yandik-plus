@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Profil Saya | Prototype YANDIK+</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip" href="#konten">Langsung ke konten</a>
+  <div class="demo-banner">
+    <strong>SIMULASI YANDIK+</strong>
+    <span>Data fiktif • Bukan website aktif • Perubahan hilang saat halaman dimuat ulang</span>
+  </div>
+  <header class="topbar">
+    <div class="topbar-content">
+      <div class="brand" aria-label="YANDIK Plus">
+        <span class="brandmark" aria-hidden="true">Y+</span>
+        <span>YANDIK<span class="plus">+</span> <small>Ruang Kerja Puskeswan</small></span>
+      </div>
+      <div class="role-control">
+        <label for="role">Lihat sebagai</label>
+        <select id="role" aria-describedby="role-help">
+          <option value="petugas">Petugas Puskeswan</option>
+          <option value="verifikator_kab">Verifikator Kab/Kota</option>
+          <option value="verifikator_prov">Verifikator Provinsi</option>
+          <option value="pimpinan">Pimpinan (ringkasan)</option>
+        </select>
+        <span id="role-help" class="sr-only">Pemilihan peran hanya untuk simulasi, bukan autentikasi.</span>
+      </div>
+    </div>
+  </header>
+  <main id="konten" class="shell" tabindex="-1">
+    <nav aria-label="Navigasi prototype" class="breadcrumbs">Beranda <span aria-hidden="true">›</span> Profil Puskeswan</nav>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">MODUL PROFIL PUSKESWAN</p>
+        <h1 id="page-title">Profil Saya</h1>
+        <p id="page-subtitle" class="lead">Perbarui hanya informasi yang berubah. Data lain tetap tersimpan.</p>
+      </div>
+      <span class="tag">M02 · Prototype</span>
+    </section>
+    <section id="facility-card" class="facility" aria-labelledby="facility-title">
+      <div class="facility-icon" aria-hidden="true">P</div>
+      <div>
+        <p class="small muted">PUSKESWAN</p>
+        <h2 id="facility-title">Puskeswan Fiktif A</h2>
+        <p id="facility-area" class="muted">Kabupaten Contoh · DEMO-PSW-001</p>
+      </div>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <section id="overview" class="overview" aria-label="Ringkasan status">
+      <div class="metric"><strong id="metric-verified">2/5</strong><span>Bagian terverifikasi</span></div>
+      <div class="metric"><strong id="metric-waiting">1</strong><span>Menunggu verifikasi</span></div>
+      <div class="metric"><strong id="metric-corrections">0</strong><span>Perlu diperbaiki</span></div>
+    </section>
+    <div id="profile-panel">
+      <div class="section-heading">
+        <div>
+          <h2>Data profil Puskeswan</h2>
+          <p class="muted">Pilih satu bagian untuk memperbarui data. SDM dan APEL tetap diambil dari modul asalnya.</p>
+        </div>
+      </div>
+      <div id="section-cards" class="cards" aria-label="Bagian Profil Puskeswan"></div>
+      <section id="editor-panel" class="panel editor" aria-labelledby="editor-title" hidden>
+        <div class="section-heading">
+          <h2 id="editor-title">Perbarui bagian profil</h2>
+          <button id="cancel-editor" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="editor-hint" class="muted"></p>
+        <form id="profile-form">
+          <label for="profile-value" id="profile-value-label">Keterangan terbaru</label>
+          <textarea id="profile-value" name="profile-value" rows="3" maxlength="200" required aria-describedby="character-help"></textarea>
+          <p id="character-help" class="small muted">Maksimum 200 karakter. Jangan masukkan data pribadi.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan verifikasi</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <section id="linked-panel" aria-labelledby="linked-title" class="linked-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="linked-title">Data dari modul lain</h2>
+          <p class="muted">Sudah tersedia sebagai contoh baca-saja. Data SDM dan pelayanan tidak perlu ditulis ulang pada Profil.</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div>
+            <h3>SDM Puskeswan</h3>
+            <p class="small muted">Ringkasan tenaga yang tercatat aktif. Bukan ukuran kecukupan tenaga.</p>
+          </div>
+          <div id="source-sdm" aria-live="polite"></div>
+        </article>
+        <article class="card">
+          <div>
+            <h3>Pelayanan APEL</h3>
+            <p class="small muted">Rangkuman jumlah per kategori, bukan total pelayanan resmi.</p>
+          </div>
+          <label for="apel-period">Bulan pelaporan</label>
+          <select id="apel-period" class="source-period"></select>
+          <div id="source-apel" aria-live="polite"></div>
+        </article>
+      </div>
+    </section>
+    <section id="problems-panel" aria-labelledby="problems-title" class="problems-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="problems-title">Permasalahan Puskeswan</h2>
+          <p class="muted">Catat masalah dan tindak lanjutnya. Masalah yang diverifikasi tidak otomatis menjadi bantuan.</p>
+          <p id="problem-counter" class="small muted"></p>
+        </div>
+        <button id="add-problem" type="button" class="primary-cta">Catat masalah</button>
+      </div>
+      <div id="problem-list" class="cards" aria-label="Daftar permasalahan"></div>
+      <section id="problem-form-panel" class="panel editor" aria-labelledby="problem-editor-title" hidden>
+        <div class="section-heading">
+          <h3 id="problem-editor-title">Catat permasalahan baru</h3>
+          <button id="cancel-problem" type="button" class="text-button">Tutup</button>
+        </div>
+        <form id="problem-form">
+          <label for="problem-category">Kategori masalah</label>
+          <select id="problem-category" required></select>
+          <label for="problem-title">Judul singkat</label>
+          <input id="problem-title" type="text" minlength="5" maxlength="100" required placeholder="Contoh: Peralatan pendingin rusak">
+          <label for="problem-description">Keterangan masalah</label>
+          <textarea id="problem-description" rows="4" minlength="10" maxlength="500" required placeholder="Jelaskan kondisi dan dampaknya, jangan masukkan data pribadi."></textarea>
+          <p class="small muted">Belum ada unggah foto, tidak ada persetujuan barang atau anggaran pada prototype ini.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf masalah</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan masalah</button>
+          </div>
+        </form>
+      </section>
+      <section id="problem-review-panel" class="panel editor" aria-labelledby="problem-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="problem-review-title">Pemeriksaan dan tindak lanjut masalah</h3>
+          <button id="cancel-problem-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="problem-review-context" class="muted"></p>
+        <form id="problem-review-form">
+          <label for="problem-review-notes">Catatan pemeriksaan atau tindak lanjut</label>
+          <textarea id="problem-review-notes" rows="3" maxlength="300"
+            placeholder="Isi alasan untuk perbaikan/penolakan, atau tindakan yang dicatat."></textarea>
+          <div class="form-actions">
+            <button id="problem-review-correction" type="submit" name="decision" value="perlu_perbaikan" class="secondary">Minta perbaikan</button>
+            <button id="problem-review-reject" type="submit" name="decision" value="ditolak" class="danger">Tolak</button>
+            <button id="problem-review-accept" type="submit" name="decision" value="tercatat" class="primary">Verifikasi masalah</button>
+            <button id="problem-followup" type="submit" name="decision" value="ditindaklanjuti" class="primary" hidden>Catat tindak lanjut</button>
+            <button id="problem-close" type="submit" name="decision" value="selesai" class="primary" hidden>Tandai selesai</button>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <section id="needs-panel" class="problems-panel" aria-labelledby="needs-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="needs-title">Usulan Kebutuhan Support</h2>
+          <p class="muted">Mulai dari masalah yang sudah diverifikasi. Tidak ada persetujuan dana atau distribusi otomatis.</p>
+          <p id="need-counter" class="small muted"></p>
+        </div>
+      </div>
+      <div id="need-list" class="cards" aria-label="Usulan kebutuhan yang merujuk masalah"></div>
+      <section id="need-form-panel" class="panel editor" aria-labelledby="need-form-title" hidden>
+        <div class="section-heading">
+          <h3 id="need-form-title">Usulkan kebutuhan dari permasalahan</h3>
+          <button id="cancel-need" class="text-button" type="button">Tutup</button>
+        </div>
+        <p id="need-context" class="muted"></p>
+        <form id="need-form">
+          <label for="need-category">Kategori kebutuhan</label>
+          <select id="need-category" required></select>
+          <label for="need-item">Barang atau kebutuhan yang diusulkan</label>
+          <input id="need-item" type="text" minlength="5" maxlength="120" required placeholder="Contoh: Coolbox untuk vaksin">
+          <div class="grid-form">
+            <div>
+              <label for="need-quantity">Jumlah</label>
+              <input id="need-quantity" type="number" min="1" max="1000" step="1" required>
+            </div>
+            <div>
+              <label for="need-unit">Satuan</label>
+              <input id="need-unit" type="text" minlength="2" maxlength="30" required value="unit">
+            </div>
+          </div>
+          <label for="need-urgency">Tingkat kebutuhan</label>
+          <select id="need-urgency" required></select>
+          <label for="need-reason">Alasan usulan</label>
+          <textarea id="need-reason" rows="3" minlength="10" maxlength="500" required placeholder="Jelaskan mengapa bantuan diperlukan berdasarkan permasalahan yang telah dicatat."></textarea>
+          <fieldset class="evidence-group">
+            <legend>Referensi bukti (hanya metadata DEMO)</legend>
+            <p class="small muted">Draf boleh tanpa bukti. Untuk mengajukan isi minimal satu kode, misalnya DEMO-BUKTI-001. Jangan memasukkan URL, berkas asli, atau data pribadi.</p>
+            <label for="need-evidence-kind">Jenis bukti</label>
+            <select id="need-evidence-kind"></select>
+            <label for="need-evidence-ref">Kode referensi bukti</label>
+            <input id="need-evidence-ref" type="text" maxlength="55" autocomplete="off" spellcheck="false" placeholder="DEMO-BUKTI-001">
+          </fieldset>
+          <label for="need-repeat-reason">Alasan pengajuan ulang (jika barang serupa pernah ditolak)</label>
+          <textarea id="need-repeat-reason" rows="2" maxlength="300" placeholder="Berikan penjelasan pengajuan ulang, bila relevan."></textarea>
+          <p class="small muted">Nama barang serupa dicek pada Puskeswan ini. Verifikasi bukan persetujuan dana, barang atau BAST.</p>
+          <div class="form-actions">
+            <button type="submit" class="secondary" name="intent" value="save">Simpan draf kebutuhan</button>
+            <button type="submit" class="primary" name="intent" value="submit">Ajukan kebutuhan</button>
+          </div>
+        </form>
+      </section>
+      <section id="need-review-panel" class="panel editor" aria-labelledby="need-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="need-review-title">Verifikasi Usulan Kebutuhan</h3>
+          <button id="cancel-need-review" class="text-button" type="button">Tutup</button>
+        </div>
+        <p id="need-review-context" class="muted"></p>
+        <p id="need-review-evidence" class="small muted"></p>
+        <form id="need-review-form">
+          <label class="evidence-check" for="need-evidence-ack">
+            <input id="need-evidence-ack" type="checkbox">
+            Saya memeriksa kelengkapan <strong>metadata referensi bukti DEMO</strong>, bukan isi foto atau dokumen asli.
+          </label>
+          <label for="need-review-notes">Catatan verifikasi</label>
+          <textarea id="need-review-notes" rows="3" maxlength="300" placeholder="Wajib diisi jika meminta perbaikan atau menolak."></textarea>
+          <div class="form-actions">
+            <button id="need-review-correction" type="submit" class="secondary" name="decision" value="perlu_perbaikan">Minta perbaikan kebutuhan</button>
+            <button id="need-review-reject" type="submit" class="danger" name="decision" value="ditolak">Tolak kebutuhan</button>
+            <button id="need-review-verify" type="submit" class="primary" name="decision" value="terverifikasi">Verifikasi kebutuhan</button>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <section id="priority-panel" class="problems-panel" aria-labelledby="priority-title" hidden>
+      <div class="section-heading">
+        <div>
+          <h2 id="priority-title">Penilaian Prioritas Kebutuhan</h2>
+          <p class="muted">Penilaian ini hanya rekomendasi. Verifikator kab/kota mengisi indikator; provinsi meninjau dan dapat mengoreksi dengan alasan. Tidak menghitung total pelayanan mentah.</p>
+          <p id="priority-count" class="small muted"></p>
+        </div>
+      </div>
+      <div id="priority-list" class="cards" aria-label="Penilaian prioritas untuk verifikator"></div>
+      <section id="priority-form-panel" class="panel editor" aria-labelledby="priority-form-title" hidden>
+        <div class="section-heading">
+          <h3 id="priority-form-title">Nilai Prioritas Kebutuhan</h3>
+          <button id="cancel-priority" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="priority-context" class="muted"></p>
+        <p class="small muted">Pilih tingkat 0 sampai 3 untuk lima indikator. Tidak tahu berarti kosong, <strong>bukan 0</strong>. Tulis alasan dan kode sumber fiktif. Bobot masih kebijakan percobaan untuk ditinjau.</p>
+        <form id="priority-form">
+          <div id="priority-fields" class="priority-factor-list"></div>
+          <p id="priority-preview" class="priority-preview" role="status" aria-live="polite">Belum lengkap, skor tidak tersedia.</p>
+          <div class="form-actions">
+            <button type="submit" name="intent" value="save" class="secondary">Simpan draf penilaian</button>
+            <button type="submit" name="intent" value="submit" class="primary">Ajukan penilaian ke provinsi</button>
+          </div>
+        </form>
+      </section>
+      <section id="priority-review-panel" class="panel editor" aria-labelledby="priority-review-title" hidden>
+        <div class="section-heading">
+          <h3 id="priority-review-title">Tinjauan Prioritas oleh Provinsi</h3>
+          <button id="cancel-priority-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <div id="priority-review-context" class="priority-review-context"></div>
+        <form id="priority-review-form">
+          <label for="priority-review-band">Band pengganti (hanya untuk koreksi prioritas)</label>
+          <select id="priority-review-band">
+            <option value="">Tidak ada koreksi</option>
+          </select>
+          <label for="priority-review-reason">Alasan tinjauan</label>
+          <textarea id="priority-review-reason" rows="3" maxlength="400"
+            placeholder="Minimal 20 karakter jika meminta perbaikan atau mengoreksi rekomendasi."></textarea>
+          <div class="form-actions">
+            <button type="submit" name="decision" value="kembalikan" class="secondary">Minta perbaikan penilaian</button>
+            <button type="submit" name="decision" value="koreksi_prioritas" class="secondary">Koreksi rekomendasi</button>
+            <button type="submit" name="decision" value="terima" class="primary">Terima hasil penilaian</button>
+          </div>
+        </form>
+        <p class="small muted">Review hanya menyimpan rekomendasi dengan histori, tidak mengubah skor dasar atau mengalokasikan barang/anggaran.</p>
+      </section>
+    </section>
+    <section id="review-panel" aria-labelledby="review-title" hidden>
+      <div class="section-heading">
+        <div>
+          <h2 id="review-title">Antrian Verifikasi</h2>
+          <p class="muted">Periksa usulan dan berikan keputusan. Dalam prototype, semua data adalah contoh.</p>
+        </div>
+      </div>
+      <div id="review-list" class="cards"></div>
+      <section id="review-editor" class="panel editor" hidden aria-labelledby="review-editor-title">
+        <div class="section-heading">
+          <h3 id="review-editor-title">Periksa pengajuan</h3>
+          <button id="cancel-review" type="button" class="text-button">Tutup</button>
+        </div>
+        <p id="review-context" class="muted"></p>
+        <form id="review-form">
+          <label for="review-notes">Catatan untuk petugas</label>
+          <textarea id="review-notes" rows="3" maxlength="300" placeholder="Wajib diisi jika meminta perbaikan atau menolak"></textarea>
+          <div class="form-actions">
+            <button type="submit" name="decision" value="perlu_perbaikan" class="secondary">Minta perbaikan</button>
+            <button type="submit" name="decision" value="ditolak" class="danger">Tolak</button>
+            <button type="submit" name="decision" value="disetujui" class="primary">Setujui</button>
+          </div>
+        </form>
+      </section>
+    </section>
+    <section id="leader-panel" class="panel" aria-labelledby="leader-title" hidden>
+      <h2 id="leader-title">Ringkasan pimpinan</h2>
+      <p>Ringkasan lintas Puskeswan belum tersedia dalam prototype ini. Tampilan pimpinan tidak menampilkan rincian individu atau pengajuan.</p>
+      <p class="small muted">Data dan peran yang dipilih hanya simulasi. Ringkasan wilayah nyata memerlukan hak akses server dan pengujian agregasi.</p>
+    </section>
+    <aside class="help-box" aria-label="Petunjuk">
+      <div class="help-symbol" aria-hidden="true">?</div>
+      <div>
+        <h2>Bantuan singkat</h2>
+        <p><strong>Belum lengkap:</strong> belum ada data sah. <strong>Perlu verifikasi:</strong> data sudah ada tetapi belum disahkan. <strong>Menunggu verifikasi:</strong> perubahan sudah dikirim.</p>
+        <p>Ini hanya simulasi di browser. Tidak tersambung ke data Puskeswan atau sistem administrasi yang sebenarnya.</p>
+      </div>
+    </aside>
+  </main>
+  <footer>YANDIK+ Development Prototype · GitHub-only · Tidak mengubah produksi</footer>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

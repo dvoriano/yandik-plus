@@ -1,0 +1,23 @@
+/* M04-S9C | KODE DITULIS, BELUM DIUJI. */
+:root{color-scheme:light;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;
+  color:#19374c;background:#f4f8fa}
+*{box-sizing:border-box}body{margin:0}
+.shell{max-width:1050px;padding:16px;margin:auto}
+header,section,footer{border:1px solid #dce6eb;background:#fff;
+  border-radius:12px;padding:18px;margin:0 0 14px}
+h1{font-size:1.65rem;line-height:1.22}h2{font-size:1.17rem}
+.eyebrow{font-weight:700;font-size:.85rem;color:#3f6880}
+.warning{color:#8a321e}.muted{color:#496479}
+label{display:block;max-width:520px;font-weight:600;margin:12px 0}
+input,select,textarea{display:block;width:100%;max-width:100%;
+  padding:9px;border:1px solid #77929e;border-radius:7px;
+  color:inherit;background:white;font:inherit}
+textarea{min-height:240px;resize:vertical}
+.cards{padding-left:24px;display:grid;gap:10px}
+.cards li{border:1px solid #d8e4ea;border-radius:9px;padding:12px;
+  background:#fbfdfe;overflow-wrap:anywhere}
+.cards p{margin:5px 0}
+:focus-visible{outline:3px solid #1e70ae;outline-offset:2px}
+footer{color:#506879;font-size:.85rem}
+@media(max-width:420px){.shell{padding:7px}header,section,footer{padding:12px}
+h1{font-size:1.35rem}.cards{padding-left:18px}.cards li{padding:9px}}

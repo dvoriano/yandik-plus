@@ -1,0 +1,35 @@
+[
+  {
+    "puskeswan_id": "DEMO-PSW-001",
+    "periode": "2026-10",
+    "jumlah_layanan": {
+      "pemeriksaan": 12,
+      "pengobatan": 9,
+      "vaksinasi": 17,
+      "investigasi": 1,
+      "penyuluhan": 2
+    }
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-002",
+    "periode": "2026-10",
+    "jumlah_layanan": {
+      "pemeriksaan": 0,
+      "pengobatan": 0,
+      "vaksinasi": 0,
+      "investigasi": 0,
+      "penyuluhan": 0
+    }
+  },
+  {
+    "puskeswan_id": "DEMO-PSW-001",
+    "periode": "2026-11",
+    "jumlah_layanan": {
+      "pemeriksaan": 5,
+      "pengobatan": 4,
+      "vaksinasi": 0,
+      "investigasi": 1,
+      "penyuluhan": 0
+    }
+  }
+]

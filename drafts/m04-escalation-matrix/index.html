@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S6 | Matriks Eskalasi (DRAF BELUM DIUJI)</title>
+<link rel="stylesheet" href="./style.css"></head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S6 · GITHUB-ONLY</p>
+<h1>Matriks Penerusan Kendala Administratif</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Semua unit, petugas dan kendala di halaman ini adalah DEMO.</p>
+<p>Menunjukkan <strong>saran unit tujuan untuk pembahasan kendala</strong>, disertai alasan apabila koordinator memilih jalur lain. Tidak ada penerusan otomatis, surat, disposisi, persetujuan bantuan, pengadaan atau BAST.</p>
+</header>
+<section aria-labelledby="matrix-title">
+<h2 id="matrix-title">1. Matriks tujuan dan tingkat perhatian (simulasi)</h2>
+<p class="muted">Kategori/urgensi membantu mengusulkan jalur koordinasi. Jalur ini <strong>belum disahkan sebagai SOP</strong> dan tidak menjadi aturan pembagian kewenangan resmi.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Jenis kendala</th><th scope="col">Urgensi</th><th scope="col">Saran unit tujuan DEMO</th><th scope="col">Pertimbangan</th></tr></thead>
+<tbody id="matrix-rows"></tbody>
+</table></div>
+</section>
+<section aria-labelledby="proposal-title">
+<h2 id="proposal-title">2. Usulan alur untuk satu kendala contoh</h2>
+<p id="source" aria-live="polite"></p>
+<p id="suggestion" class="suggestion"></p>
+<form id="proposal-form">
+<label for="unit">Pilihan unit tujuan untuk dibahas
+<select id="unit"></select></label>
+<label for="reason">Alasan pemilihan/penggantian alur (40 karakter; bila berbeda minimal 60)
+<textarea id="reason" rows="4" minlength="40" maxlength="700" required></textarea></label>
+<label for="limits">Keterbatasan sumber dan hal yang masih harus diperiksa (min. 35)
+<textarea id="limits" rows="3" minlength="35" maxlength="550" required></textarea></label>
+<button type="submit">Catat draf pilihan alur DEMO</button>
+</form>
+<div class="actions">
+<button type="button" id="submit" hidden>Ajukan untuk telaah alasan DEMO</button>
+<button type="button" class="secondary" id="reset">Kosongkan catatan DEMO</button>
+</div>
+</section>
+<section aria-labelledby="review-title">
+<h2 id="review-title">3. Telaah alasan pemilihan alur (bukan persetujuan)</h2>
+<form id="review-form" hidden>
+<label for="review-action">Hasil penelaahan DEMO
+<select id="review-action">
+<option value="catat_untuk_pembahasan">Catat untuk pembahasan, bukan disposisi</option>
+<option value="minta_perbaikan">Kembalikan alasan untuk diperbaiki</option>
+<option value="tidak_direkomendasikan">Tidak direkomendasikan untuk dibahas</option>
+</select></label>
+<label for="review-reason">Pertimbangan penelaah, minimal 45 karakter
+<textarea id="review-reason" rows="4" minlength="45" maxlength="750" required></textarea></label>
+<button type="submit">Simpan catatan telaah metodologi DEMO</button>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+<p id="notice" role="status" aria-live="polite"></p>
+</section>
+<section aria-labelledby="report-title">
+<h2 id="report-title">4. Bahan pembahasan dan histori</h2>
+<p>Catatan tidak otomatis diterapkan ke buku eskalasi M04-S5. Teks ini baca-saja agar dapat ditelaah sebelum digunakan pada prosedur resmi.</p>
+<label for="report">Rekap pilihan alur administratif
+<textarea id="report" rows="20" readonly spellcheck="false"></textarea></label>
+</section>
+<footer>Memori browser saja, tidak ada backend, hak akses sungguhan, surat tugas, pengesahan dokumen, keputusan pejabat, anggaran, penyaluran atau BAST.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

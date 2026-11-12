@@ -1,0 +1,17 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1a3544;background:#f1f6f9;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:880px;margin:auto;padding:20px 14px 48px}
+header,section{background:#fff;border:1px solid #d7e2e9;padding:22px;border-radius:14px;margin:0 0 18px}
+h1{font-size:clamp(1.45rem,3vw,2rem)}h2{font-size:1.16rem}p,li{line-height:1.55}
+.eyebrow{font-weight:750;color:#30627d}.warning{font-weight:800;color:#844500}.muted{color:#4b6573}
+form{display:grid;gap:12px}label{display:grid;gap:7px;font-weight:650}
+textarea,input,select{background:#fff;color:#1a3544;border:1px solid #99b0bc;border-radius:9px;padding:11px 12px;width:100%;font:inherit;min-height:44px}
+fieldset{border:1px solid #b9cbd6;border-radius:10px;padding:14px;display:grid;gap:12px;min-width:0}
+fieldset legend{font-weight:750;padding:0 8px}
+fieldset label{font-weight:500}.actions{display:flex;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-weight:700;border-radius:10px;border:0;background:#235879;color:#fff;padding:11px 14px;min-height:44px;cursor:pointer}
+button.secondary{background:#eaf2f6;color:#23516b;border:1px solid #a7c0cf}
+button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #b56c08;outline-offset:2px}
+[hidden]{display:none!important}
+#history{overflow-wrap:anywhere}#handoff{font-family:ui-monospace,monospace;font-size:.86rem;line-height:1.55}
+footer{text-align:center;color:#526f7d;font-size:.9rem;padding:12px}
+@media(max-width:580px){header,section{padding:16px}.shell{padding:12px}.actions{display:grid}.actions button{width:100%}}

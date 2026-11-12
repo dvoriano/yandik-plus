@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M04-S9B | Rekap Eksekutif Kelembagaan DEMO</title>
+<link rel="stylesheet" href="./style.css"></head>
+<body><main class="shell">
+<header><p class="eyebrow">YANDIK+ · M04-S9B · GITHUB-ONLY</p>
+<h1>Rekap Eksekutif Pembahasan Kelembagaan</h1>
+<p class="warning">KODE DITULIS, BELUM DIUJI. Seluruh sumber, tanggal dan petugas adalah DEMO, bukan catatan resmi.</p>
+<p>Menghubungkan daftar 12 unsur M04-S8 dan tindak lanjut M04-S9 agar kekurangan serta rencana koreksi lebih mudah ditelaah.</p>
+<p><strong>Status kesiapan integrasi: BELUM DINILAI.</strong> Catatan ditutup pun tidak mengesahkan SOP ataupun integrasi.</p></header>
+<section><h2>1. Informasi untuk pembahasan</h2>
+<label for="asof">Tanggal acuan DEMO <input type="date" id="asof" value="2026-11-11"></label>
+<p id="source" class="muted"></p><div id="stats" class="metrics"></div></section>
+<section><h2>2. Persyaratan dan kekurangan</h2>
+<label for="reqfilter">Tampilkan
+<select id="reqfilter">
+<option value="all">Semua 12 unsur</option>
+<option value="missing">Perlu klarifikasi/belum diperiksa</option>
+<option value="unregistered">Unsur wajib tanpa register aktif</option>
+</select></label><ul id="requirements" class="cards"></ul></section>
+<section><h2>3. Tindak lanjut dan penanggung jawab</h2>
+<label class="inline" for="attention"><input id="attention" type="checkbox">
+Hanya catatan yang perlu perhatian pada simulasi</label>
+<ul id="findings" class="cards"></ul></section>
+<section><h2>4. Usulan perubahan katalog</h2><ul id="changes" class="cards"></ul></section>
+<section><h2>5. Pertanyaan untuk keputusan manusia</h2>
+<p>Bukan penetapan pejabat atau jawaban otomatis atas kewenangan.</p>
+<ul id="questions" class="cards"></ul></section>
+<section><h2>6. Naskah paparan baca-saja</h2>
+<label for="handoff">Draf teks yang harus ditelaah manual</label>
+<textarea id="handoff" rows="18" readonly spellcheck="false"></textarea>
+<p id="status" role="status" aria-live="polite"></p>
+<p id="error" class="warning" role="alert"></p></section>
+<footer>Tanpa autentikasi, penyimpanan, API, pengesahan SOP, perubahan katalog, bantuan, anggaran, pengadaan, distribusi, BAST atau produksi.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

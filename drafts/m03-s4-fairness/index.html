@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>M03-S4 | Laboratorium Keadilan Prioritas (DRAF)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">YANDIK+ · Rancangan GitHub-only</p>
+      <h1>Laboratorium Perbandingan Prioritas</h1>
+      <p id="status" class="warning" role="status">DRAF BELUM DIUJI</p>
+      <p>Menilai kepekaan skor terhadap bobot, bukan menentukan Puskeswan penerima bantuan. Seluruh fasilitas, wilayah, angka dan bukti adalah <strong>fiktif</strong>.</p>
+    </header>
+    <section aria-labelledby="controls-title">
+      <h2 id="controls-title">Bandingkan tiga pilihan bobot percobaan</h2>
+      <div class="controls">
+        <label for="profile">Skenario bobot
+          <select id="profile"></select>
+        </label>
+        <label for="facility">Lihat alasan tiap indikator
+          <select id="facility"></select>
+        </label>
+      </div>
+      <div id="summary" aria-live="polite"></div>
+    </section>
+    <section aria-labelledby="table-title">
+      <h2 id="table-title">Urutan indikatif, bukan daftar penerima</h2>
+      <p>Volume layanan hanya ditampilkan sebagai ilustrasi. Angka tersebut <strong>tidak dihitung sebagai poin</strong>. Data kosong tidak dipaksa menjadi nol; skor sama berbagi peringkat.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Urutan</th><th scope="col">Skenario fiktif</th><th scope="col">Volume ilustrasi</th><th scope="col">Skor</th><th scope="col">Kategori</th><th scope="col">Catatan</th></tr>
+          </thead>
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+    </section>
+    <section aria-label="Kajian bobot dan tinjauan manusia (DRAF)">
+      <h2>Formulir telaah bobot percobaan</h2>
+      <p>Penjelasan perbandingan dan alasan perubahan bobot disusun pada halaman simulasi terpisah, tanpa persetujuan bantuan.</p>
+      <p><a href="./review.html">Buka rancangan telaah metodologi (BELUM DIUJI)</a></p>
+    </section>
+    <section id="detail" aria-label="Rincian alasan dan sumber skenario" aria-live="polite"></section>
+    <footer>Belum diintegrasikan ke API, basis data, modul anggaran, BAST, website produksi atau aplikasi layanan. Belum diuji dan belum disahkan.</footer>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

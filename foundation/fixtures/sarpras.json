@@ -1,0 +1,29 @@
+[
+  {
+    "asset_id": "DEMO-ASSET-001",
+    "puskeswan_id": "DEMO-PSW-001",
+    "kategori": "rantai_dingin",
+    "kondisi": "baik",
+    "observed_on": "2026-06-01",
+    "sumber": "profiling",
+    "terverifikasi": true
+  },
+  {
+    "asset_id": "DEMO-ASSET-001",
+    "puskeswan_id": "DEMO-PSW-001",
+    "kategori": "rantai_dingin",
+    "kondisi": "rusak",
+    "observed_on": "2026-10-02",
+    "sumber": "observasi",
+    "terverifikasi": false
+  },
+  {
+    "asset_id": "DEMO-ASSET-002",
+    "puskeswan_id": "DEMO-PSW-002",
+    "kategori": "alat_klinik",
+    "kondisi": "baik",
+    "observed_on": "2026-09-14",
+    "sumber": "profiling",
+    "terverifikasi": true
+  }
+]

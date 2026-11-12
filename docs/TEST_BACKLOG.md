@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9M: paket bahan telaah manusia DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan sesudah izin eksplisit pemilik | Status |
+|---|---|---|
+| QA-M04S9M-01 | Rantai impor M04-S9I dan M04-S9L/S9K dari fixture synthetic CODE_ONLY tanpa produksi | BELUM DIUJI |
+| QA-M04S9M-02 | Cakupan enam fungsi, 18 ID dan 18 kebutuhan bukti tanpa duplikasi/hilang | BELUM DIUJI |
+| QA-M04S9M-03 | Seluruh pertanyaan dari M04-S9I terpelihara dan belum dinyatakan dijawab | BELUM DIUJI |
+| QA-M04S9M-04 | Semua kebutuhan bukti, revisi dan rujukan dependensi cocok dengan sumber M04-S9L | BELUM DIUJI |
+| QA-M04S9M-05 | Tiga usulan dan tiga catatan kekurangan fiktif, 15 butir tanpa catatan tidak dianggap selesai | BELUM DIUJI |
+| QA-M04S9M-06 | Menolak mismatch source repo snapshot, flag stale yang berbeda, ID/fase/bukti palsu | BELUM DIUJI |
+| QA-M04S9M-07 | Menolak klaim rapat/undangan, penelaah ditetapkan, keputusan, verifikasi atau izin tes dari sumber | BELUM DIUJI |
+| QA-M04S9M-08 | Menolak rujukan antarfungsi keliru atau dependensi pada ID tak dikenal | BELUM DIUJI |
+| QA-M04S9M-09 | Handoff_sent, official_assignment, official_review, official_decision, permission QA/deploy tetap nol/false | BELUM DIUJI |
+| QA-M04S9M-10 | UI filter fungsi, rekap salin manual, empty state dan peringatan tidak menjadi surat/berita acara | BELUM DIUJI |
+| QA-M04S9M-11 | UI HP 320/375px, keyboard, screen reader, teks panjang, XSS dan tanpa API/storage/fetch/submit | BELUM DIUJI |
+| QA-M04S9M-12 | 12 skenario Node pada tests/handoff.test.mjs tertulis dan BELUM DIJALANKAN | BELUM DIUJI |
+| QA-M04S9M-13 | Telaah fungsi pengampu, kewenangan kelembagaan, SOP/SPBE, klasifikasi bukti dan kearsipan | BUTUH KEPUTUSAN |
+| QA-M04S9M-14 | Regresi keamanan, kesiapan QA/staging dan integrasi hanya setelah izin eksplisit owner | TERTUNDA UJI |
+
+[Spesifikasi M04-S9M](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9M_HUMAN_REVIEW_HANDOFF.md). Mode CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9L: rekap lintas fungsi dan kekurangan bukti (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah owner memberi izin eksplisit | Status |

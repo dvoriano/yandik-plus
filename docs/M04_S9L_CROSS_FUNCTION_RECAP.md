@@ -41,3 +41,6 @@ Kelompok fungsi: kelembagaan, keamanan informasi, data Profil/SDM/APEL, alur Sup
 - Tahap selanjutnya yang dapat dirancang ialah *paket handoff telaah manusia* berisi ringkasan per fungsi dan daftar pertanyaan terbuka, tanpa mengirimnya otomatis atau menyatakan pihak berwenang telah menyetujui.
 - Semua M04-S10+ keputusan bantuan, anggaran, pengadaan, penyaluran dan BAST tetap RENCANA.
 - CODE_ONLY tanpa CL, CI, Node/browser tes, GitHub Actions manual, merge `main`, deployment, VPS, database produksi, website YANDIK+ aktif ataupun bot Indodax.
+
+## Paket bahan telaah manusia sesudah M04-S9L
+Keluaran M04-S9L dikombinasikan dengan pertanyaan M04-S9I menjadi [paket M04-S9M](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9M_HUMAN_REVIEW_HANDOFF.md). Seluruh status tetap DEMO/BELUM DIUJI; paket belum dikirim dan tidak menghasilkan keputusan resmi.

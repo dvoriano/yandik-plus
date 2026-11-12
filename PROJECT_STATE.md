@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9M | PAKET BAHAN TELAAH MANUSIA DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9M](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-human-review-handoff) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/d433a03010daa9b6fe43dcbb23b3f125db2b4f91) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/d01d915c031a09ef85bbc41edd668bef39e1de4d). Menggabungkan rekap M04-S9L dan seluruh pertanyaan M04-S9I menjadi paket untuk 6 fungsi dan 18 butir.
+- Semua bukti masih diminta, pertanyaan terbuka, penelaah hanya usulan, catatan 3+3 fiktif dari fixture; tidak ada handoff dikirim, rapat, keputusan, izin QA/deploy atau pengesahan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9M_HUMAN_REVIEW_HANDOFF.md) dan QA-M04S9M ditambahkan pada TEST_BACKLOG. **12 skenario tes ditulis, BELUM DIJALANKAN**. Kode tetap hanya DEMO baca-saja.
+- Repo PUBLIC pada metadata GitHub 12 Nov 2026, pengingat perubahan PRIVATE Sabtu 14 Nov aktif tetapi setting belum diubah. PR #9 DRAFT; CODE_ONLY tanpa CL/CI/tes/deploy/merge/main/produksi.
+
 ## PEMBARUAN M04-S9L | REKAP LINTAS FUNGSI DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9L](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-cross-function-recap) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/68b056363aa302898baf75fd604c6fe9d5618023) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/dfb9ee472b4916bf15b0c0d206869164640acfd1). Rekap 18 butir M04-S9K, 6 fungsi, catatan usulan/kekurangan bukti DEMO serta dependensi lintas fungsi.
 - Fixture hanya memiliki 3 usulan dan 3 catatan kekurangan bukti fiktif; 15 butir lain tidak mempunyai catatan contoh, **bukan berarti tidak ada masalah nyata**. Semua tugas, keputusan, verifikasi dan izin tes/deploy masih nol.

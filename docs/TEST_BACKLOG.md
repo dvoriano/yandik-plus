@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9K: register usulan tindak lanjut DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda setelah owner memberikan izin | Status |
+|---|---|---|
+| QA-M04S9K-01 | Rantai impor M04-S9I→S9J→S9K dengan fixture DEMO tanpa produksi | BELUM DIUJI |
+| QA-M04S9K-02 | Enam fungsi dan 18 ID unik di register serta hubungan dengan butir sumber tepat | BELUM DIUJI |
+| QA-M04S9K-03 | Hanya teks tindak lanjut terisi yang menghasilkan status USULAN_CONTOH, kekosongan bukan klaim selesai | BELUM DIUJI |
+| QA-M04S9K-04 | Fixture 3 usulan fiktif dan 15 kosong, tanpa data riil atau identitas | BELUM DIUJI |
+| QA-M04S9K-05 | Pertahankan fungsi, revisi catatan, fase, bukti, rujukan pendahulu dan dokumen sumber | BELUM DIUJI |
+| QA-M04S9K-06 | Menolak mismatch snapshot repo, status stale tidak cocok, ID/fungsi/judul/bukti berubah | BELUM DIUJI |
+| QA-M04S9K-07 | Menolak sumber dengan keputusan, rapat, penelaah/otorisasi atau bukti diverifikasi palsu | BELUM DIUJI |
+| QA-M04S9K-08 | Status assigned_officer/deadline null; official review/decision/assignment/test/deploy false | BELUM DIUJI |
+| QA-M04S9K-09 | Export teks menurut fungsi/status, aman jika hasil kosong dan dengan peringatan bukan tugas | BELUM DIUJI |
+| QA-M04S9K-10 | UI desktop/HP 320-375px, label, filter, aksesibilitas keyboard, screen reader dan teks panjang | BELUM DIUJI |
+| QA-M04S9K-11 | XSS dan larangan HTML dinamis, API, storage, fetch, unggah, notifikasi, tanda tangan, mutasi sumber | BELUM DIUJI |
+| QA-M04S9K-12 | 12 skenario tes pada tests/followups.test.mjs tertulis, tidak dieksekusi | BELUM DIUJI |
+| QA-M04S9K-13 | Review pemilik proses terkait batas penugasan, SOP/SPBE/arsip, bukti dan keputusan manusia | BUTUH KEPUTUSAN |
+| QA-M04S9K-14 | Pelaksanaan QA/regresi/staging setelah izin eksplisit owner, tanpa menyentuh APEL historis | TERTUNDA UJI |
+
+[Spesifikasi M04-S9K](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md). CODE_ONLY masih melarang tes.
+
 ## Antrean M04-S9J: catatan pembahasan contoh per fungsi (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda setelah izin eksplisit owner | Status |

@@ -6,6 +6,13 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9K | REGISTER USULAN TINDAK LANJUT DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9K](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e). Register menelusuri 18 butir dari M04-S9J dengan asal fungsi, ID, revisi, bukti, pendahulu dan usulan.
+- Tiga contoh usulan sintetis tersedia hanya untuk GOV-01, SEC-01, DAT-01; 15 sisanya tidak memiliki usulan contoh. Tidak ada tugas, pengampu resmi, tenggat, verifikasi bukti, keputusan atau izin uji/deploy.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md) dan QA-M04S9K dicatat di TEST_BACKLOG. **12 skenario tes ditulis tetapi BELUM DIJALANKAN**.
+- Repository masih PUBLIC berdasarkan metadata 12 November 2026; pengingat perubahan PRIVATE Sabtu 14 Nov aktif namun setting belum diubah. Data tetap DEMO tanpa rahasia.
+- PR #9 tetap DRAFT; CODE_ONLY tanpa CL, CI, tes, deploy, merge, main atau produksi.
+
 ## PEMBARUAN M04-S9J | LEMBAR CATATAN PEMBAHASAN CONTOH PER FUNGSI | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9J](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-discussion-confirmation) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/dda23595beba7936a716490e9c0ccfbeb2fe7cc6) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/82db145f0266517fdb310f7f51a3ea3d6f23cda7). Enam fungsi serta 18 butir M04-S9I kini memiliki rancangan lembar contoh masukan, kekurangan bukti dan usulan tindak lanjut.
 - Catatan dibuat hanya di memori tab dengan fungsi pembaruan DEMO dan histori revisi, tanpa persistensi, API, pengiriman, keputusan atau validasi resmi. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9J_DISCUSSION_CONFIRMATION.md) dan QA-M04S9J dicatat di TEST_BACKLOG. **12 skenario tes ditulis, BELUM DIJALANKAN**.

@@ -1,3 +1,7 @@
+## 2026-11-12 | M04-S9K register usulan tindak lanjut DEMO (BELUM DIUJI)
+- [Model + 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e) menambah [7 berkas M04-S9K](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups). Semua **KODE DITULIS, BELUM DIUJI**.
+- Register 18 butir berasal dari M04-S9J, dengan tiga teks usulan fiktif dan 15 tanpa usulan; tidak membentuk penugasan, keputusan, atau izin tes/deploy.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md), PROJECT_STATE, ROADMAP, WORKLOG, TEST_BACKLOG serta M04-S9J diselaraskan. Repo PUBLIC per 12 Nov, pengingat private Sabtu 14 Nov aktif, belum dilakukan.
 ## 2026-11-12 | M04-S9J lembar catatan pembahasan DEMO (BELUM DIUJI)
 - [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/dda23595beba7936a716490e9c0ccfbeb2fe7cc6) serta [UI/README dan koreksi konsistensi sumber](https://github.com/dvoriano/yandik-plus/commit/82db145f0266517fdb310f7f51a3ea3d6f23cda7) menambah 7 berkas draft [M04-S9J](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-discussion-confirmation). Semua **KODE DITULIS, BELUM DIUJI**.
 - Memungkinkan rancangan masukan, kekurangan bukti, dan usulan tindak lanjut per 18 butir M04-S9I dalam memori halaman, tanpa persistensi atau keputusan resmi.

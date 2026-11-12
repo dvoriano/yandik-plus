@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9K register usulan tindak lanjut DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups).
+- Menyusun 18 register butir sumber M04-S9J. Hanya 3 usulan contoh sintetis sengaja diisi (GOV-01, SEC-01, DAT-01), 15 lainnya tanpa usulan contoh dan tidak dinyatakan selesai.
+- Referensi butir/fungsi/revisi, kebutuhan bukti, pendahulu dan pengampu/penelaah usulan tersedia; tidak ada penugasan resmi, keputusan, izin QA/deploy atau integrasi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan M04-S9J diperbarui.
+- Repo masih PUBLIC pada metadata 12 Nov; pengingat PRIVATE Sabtu 14 Nov aktif tetapi pengaturan tidak diubah.
+- Tanpa Node/browser tes, CL/CI/Actions, deployment, main, PR merge, VPS, database, website aktif atau bot Indodax.
+
 ## 2026-11-12 | M04-S9J lembar catatan pembahasan DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 tes tertulis](https://github.com/dvoriano/yandik-plus/commit/dda23595beba7936a716490e9c0ccfbeb2fe7cc6) serta [UI/README dan koreksi konsistensi sumber statis](https://github.com/dvoriano/yandik-plus/commit/82db145f0266517fdb310f7f51a3ea3d6f23cda7) tersimpan dalam [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-discussion-confirmation).
 - Enam fungsi dan 18 butir M04-S9I mempunyai tiga kolom catatan DEMO: masukan, kekurangan bukti, usulan tindak lanjut. Pembaruan hanya dalam memori tab, dilengkapi histori revisi contoh.

@@ -43,3 +43,6 @@ Pengisian tidak berarti pertemuan sungguhan terlaksana. Tombol hanya mengganti o
 - Tahap lanjut yang dimungkinkan: konsep daftar tindak lanjut pasca pembahasan dengan referensi catatan DEMO, tetapi tidak boleh dianggap sebagai penugasan atau persetujuan resmi.
 - M04-S10+ alokasi bantuan, pengadaan, anggaran, distribusi dan BAST tetap RENCANA.
 - PR #9 tetap DRAFT; tidak ada merge `main`, CL/CI/Node/Chromium, deployment, VPS, DB produksi, website YANDIK+ aktif ataupun perubahan bot Indodax.
+
+## Register tindak lanjut DEMO sesudah M04-S9J
+Peta usulan yang mengacu pada catatan ini tersedia pada [M04-S9K](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9K_PROPOSED_FOLLOWUPS.md). Kolom usulan yang diisi hanya menghasilkan status **usulan contoh untuk ditelaah**, bukan tugas resmi, dan keseluruhan kode tetap BELUM DIUJI.

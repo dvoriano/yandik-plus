@@ -67,14 +67,20 @@ test("reject wrong revision, source snapshot or tampered evidence",()=>{
   assert.throws(()=>buildMaterialGapSequence(swapFirstRow({verified_official_evidence:true}),HANDOFF_DEMO));
   assert.throws(()=>buildMaterialGapSequence(swapFirstRow({required_material_description:"ubah"}),HANDOFF_DEMO));
 });
-test("reject unknown predecessor, cycle and reverse-phase link",()=>{
+test("reject unknown predecessor, a real same-phase cycle and reverse-phase link",()=>{
   assert.throws(()=>buildMaterialGapSequence(
     MATERIAL_MATRIX_DEMO,swapFirstEntry({dependency_ids:["UNKNOWN"]})));
-  const forward={...HANDOFF_DEMO,groups:HANDOFF_DEMO.groups.map(g=>({
+  // GOV-03 already depends on GOV-01; both are P0, so this closes a cycle.
+  const cycle={...HANDOFF_DEMO,groups:HANDOFF_DEMO.groups.map(g=>({
+    ...g,entries:g.entries.map(x=>x.id==="GOV-01"?
+      {...x,dependency_ids:["GOV-03"]}:x),
+  }))};
+  assert.throws(()=>buildMaterialGapSequence(MATERIAL_MATRIX_DEMO,cycle));
+  const reversePhase={...HANDOFF_DEMO,groups:HANDOFF_DEMO.groups.map(g=>({
     ...g,entries:g.entries.map(x=>x.id==="GOV-01"?
       {...x,dependency_ids:["INT-02"]}:x),
   }))};
-  assert.throws(()=>buildMaterialGapSequence(MATERIAL_MATRIX_DEMO,forward));
+  assert.throws(()=>buildMaterialGapSequence(MATERIAL_MATRIX_DEMO,reversePhase));
 });
 test("reject duplicated matrix source id and unauthorized approval",()=>{
   const m={...MATERIAL_MATRIX_DEMO,rows:MATERIAL_MATRIX_DEMO.rows.map((x,i)=>

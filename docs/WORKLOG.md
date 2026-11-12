@@ -2,6 +2,11 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9T register kebutuhan bukti QA DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 10 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/ead7112c6f9a42d94df3dc79ca3a68ea033b5f6e) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/a51de40aae0ed0cbf007ad6dd177221ee698d419) tersimpan sebagai [7 berkas M04-S9T](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-register).
+- Empat temuan STATIC-01–04 dan enam gerbang QA G0–G5 dijabarkan menjadi **14 kebutuhan bukti DEMO**. Seluruhnya belum diterima atau diverifikasi; nol hasil tes dan penutupan temuan resmi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG dan CHANGELOG dicatat. Total 172 skenario tertulis, 0 dijalankan selama S9T.
+- Tidak ada CL/CI, Node/browser tes, workflow, merge main, VPS, DB, situs produksi atau bot Indodax. Repo PUBLIC per 12 Nov dan PR #9 tetap Draft.
 ## 2026-11-12 | Pembaruan README pengenalan YANDIK+
 **DOKUMENTASI DITULIS, TANPA PENGUJIAN.** README branch pengembangan dirapikan dari riwayat teknis yang panjang menjadi pengenalan sederhana dan profesional: tujuan, masalah yang diselesaikan, hasil akhir, contoh alur, pembaca sasaran, 15 modul, serta pembeda antara layanan APEL yang sudah ada dan pengembangan YANDIK+ terpadu.
 - Dokumentasi teknis tetap tersedia melalui PROJECT_STATE, ROADMAP, WORKLOG dan dokumen modul. Tidak ada perubahan `main`, fitur produksi, QA, CI, deployment atau keputusan kelembagaan.

@@ -186,6 +186,24 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9T: register kebutuhan bukti QA DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda hingga izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9T-01 | Impor fixture M04-S9S dan keluaran daftar 6 gerbang, 4 temuan, 14 permintaan bukti | BELUM DIUJI |
+| QA-M04S9T-02 | Semua ID permintaan bukti unik dan tertaut ke gerbang/temuan yang tepat | BELUM DIUJI |
+| QA-M04S9T-03 | Jenis bukti yang diminta identik dengan sumber M04-S9S | BELUM DIUJI |
+| QA-M04S9T-04 | G0 tetap mensyaratkan izin owner, G1–G4 tidak dapat otomatis menjadi aktif | BELUM DIUJI |
+| QA-M04S9T-05 | Semua status bukti diterima/diperiksa, jawaban, tugas dan keputusan resmi tetap false/null | BELUM DIUJI |
+| QA-M04S9T-06 | Penolakan sumber yang mengaku already approved, executed atau findings closed | BELUM DIUJI |
+| QA-M04S9T-07 | Penolakan baris bukti palsu, perubahan deskripsi, ID hilang/duplikat | BELUM DIUJI |
+| QA-M04S9T-08 | Filter gerbang/temuan, rekap teks dan peringatan bahwa ini bukan hasil QA | BELUM DIUJI |
+| QA-M04S9T-09 | UI layar HP, keyboard, aksesibilitas, DOM/XSS dan ketiadaan jaringan/storage | BELUM DIUJI |
+| QA-M04S9T-10 | Total 162 tes tertulis sebelum S9T + 10 tes baru = 172 tertulis; tidak ada tes yang dijalankan selama milestone | BELUM DIUJI |
+| QA-M04S9T-11 | Keputusan visibility repository, klasifikasi data dan histori paparan | BUTUH KEPUTUSAN OWNER |
+| QA-M04S9T-12 | Penutupan temuan audit dan kesesuaian kelembagaan memerlukan bukti serta keputusan berwenang | BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-S9T](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md). CODE_ONLY tetap aktif.
 ## Antrean M04-S9S: tindak lanjut temuan statis dan preflight QA (BELUM DIUJI)
 
 | ID | Bukti / pemeriksaan tertunda hingga izin eksplisit | Status |

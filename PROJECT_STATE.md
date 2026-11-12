@@ -6,6 +6,10 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9T | REGISTER KEBUTUHAN BUKTI QA DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [register, antarmuka read-only dan 10 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-register) menghubungkan enam gerbang QA G0–G5 dan empat temuan STATIC-01–04 dengan 14 jenis bukti yang kelak diperlukan.
+- **Tidak ada bukti diterima, tes dijalankan, izin owner atau temuan ditutup**. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md) dan QA-M04S9T tercatat. Total skenario tertulis kini **172**, 0 dijalankan pada milestone.
+- CODE_ONLY tetap berlaku, PR #9 tetap Draft, repository PUBLIC per metadata 12 Nov; produksi dan main tidak disentuh pada pekerjaan ini.
 ## PEMBARUAN README | PENGENALAN DAN HASIL AKHIR YANDIK+ | 12 November 2026
 - README branch `develop/yandik-foundation` disederhanakan untuk pembaca umum: tujuan YANDIK+, manfaat, hasil akhir yang dituju, contoh alur, pengguna, 15 modul dan status pengembangan sebenarnya.
 - Halaman repo `main` **belum diubah**; README baru terlihat di branch pengembangan sampai PR #9 kelak ditelaah dan digabungkan oleh owner. Tidak ada klaim sistem telah diterapkan, diuji, atau disahkan.

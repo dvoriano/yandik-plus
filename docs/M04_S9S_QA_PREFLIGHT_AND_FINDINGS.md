@@ -41,3 +41,6 @@ Pada akhir M04-S9R ada **152 skenario tertulis** pada 12 modul beserta audit sta
 - Jangan menjalankan Node/browser tests, CL, CI, GitHub Actions, workflow, SSH, VPS atau mengubah YANDIK+ produksi, database, branch `main`, maupun bot Indodax.
 - PR #9 tetap Draft. Belum ada pengiriman paket ke pejabat, persetujuan SOP/SPBE, penugasan, keputusan bantuan, pengadaan atau BAST.
 - Jika owner kelak mengizinkan pengujian, gunakan daftar G0–G4 sebagai *rencana*, lakukan verifikasi berjenjang pada lingkungan isolasi, dan perbarui register temuan berdasarkan bukti aktual. Belum ada izin pada tanggal dokumen ini.
+
+## Lanjutan M04-S9T (12 November 2026)
+Jenis bukti yang kelak diperlukan untuk enam gerbang dan empat temuan dijabarkan dalam [M04-S9T](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md). Semua bukti tetap **belum diterima/belum diverifikasi** dan tidak ada izin uji atau penutupan temuan. Sepuluh skenario baru masih **BELUM DIJALANKAN**.

@@ -1,3 +1,8 @@
+## 2026-11-12 | M04-S9T register kebutuhan bukti QA DEMO
+- [Model dan 10 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/commit/ead7112c6f9a42d94df3dc79ca3a68ea033b5f6e) serta [UI/README baca-saja](https://github.com/dvoriano/yandik-plus/commit/a51de40aae0ed0cbf007ad6dd177221ee698d419) menghasilkan [7 berkas M04-S9T](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-register). **KODE DITULIS, BELUM DIUJI.**
+- Enam gerbang G0–G5 dan empat temuan STATIC-01–04 dipetakan menjadi 14 kebutuhan bukti sintetis. Tidak ada bukti diterima atau diverifikasi, keputusan resmi, tes dijalankan maupun temuan ditutup.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md) dan PROJECT_STATE/ROADMAP/WORKLOG/TEST_BACKLOG disinkronkan. Total 172 skenario tertulis. PR #9 tetap Draft, tidak merge main atau produksi.
+
 ## 2026-11-12 | Perapian README pengenalan YANDIK+
 - [README branch pengembangan](../README.md) diganti dengan ringkasan tujuan YANDIK+, hasil akhir yang diharapkan, contoh alur, pengguna dan status sebenarnya. Rincian teknis dialihkan ke dokumen khusus.
 - Hanya dokumentasi, tanpa perubahan status modul, tes/CI, merge main atau produksi. `main` tetap lama sampai review dan merge sesuai keputusan owner.

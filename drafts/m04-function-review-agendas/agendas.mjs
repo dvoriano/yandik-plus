@@ -35,7 +35,7 @@ function validate(packet){
       !functions.has(row.group)||ids.has(row.id)||
       !Number.isSafeInteger(row.discussion_order)||row.discussion_order<1||
       numbers.has(row.discussion_order)||!Array.isArray(row.dependency_ids)||
-      !Array.isArray(row.dependency_ids)&&row.dependency_ids.length>18||
+      row.dependency_ids.length>18||
       typeof row.evidence_request!=="string"||row.evidence_request.length<12||
       typeof row.review_question!=="string"||row.review_question.length<12||
       typeof row.suggested_next_discussion!=="string"||

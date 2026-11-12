@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9I | Agenda Telaah Per Fungsi DEMO</title>
+<link rel="stylesheet" href="./style.css"></head><body>
+<main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9I · DRAF GITHUB</p>
+<h1>Agenda Telaah menurut Fungsi Pengampu</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Semua sumber hanya DEMO.</p>
+<p>Enam paket agenda pembahasan, pertanyaan konfirmasi dan dokumen yang perlu disiapkan.
+Fungsi pengampu dan penelaah masih usulan, belum ditetapkan.</p>
+<p><strong>Status: BELUM DITELAAH RESMI. Bukan undangan atau notulen rapat.</strong></p>
+</header>
+<section>
+<h2>1. Ikhtisar agenda</h2>
+<p id="counts" role="status" aria-live="polite"></p>
+<p id="snapshot" class="muted"></p>
+</section>
+<section>
+<h2>2. Agenda dan daftar pertanyaan</h2>
+<label for="function">Lihat bahan menurut fungsi telaah
+<select id="function"><option value="all">Semua fungsi pengampu</option></select>
+</label>
+<p id="selected-count" role="status" aria-live="polite"></p>
+<div id="agendas"></div>
+</section>
+<section>
+<h2>3. Peringatan dan batasan</h2>
+<ul id="warnings"></ul>
+</section>
+<section>
+<h2>4. Draf ringkasan baca-saja</h2>
+<p>Isi ini hanya dapat disalin untuk persiapan pembahasan manual,
+bukan naskah dinas, pengesahan SOP, persetujuan anggaran atau izin pengujian.</p>
+<label for="summary">Naskah agenda DEMO sesuai pilihan fungsi</label>
+<textarea id="summary" readonly rows="20" spellcheck="false"></textarea>
+<p id="error" role="alert" class="warning"></p>
+</section>
+<footer>Tanpa API, database, penyimpanan lokal, autentikasi, unggah berkas,
+pengiriman undangan, notifikasi, tanda tangan, keputusan bantuan,
+pengadaan, BAST, pengujian atau deployment.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

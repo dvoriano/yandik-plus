@@ -2,6 +2,11 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9U konsistensi struktur kebutuhan bukti QA DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model/fixture/12 skenario](https://github.com/dvoriano/yandik-plus/commit/f55c61a50c0859ce062cae3192048607ebfe56a7) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/b5c3e461c170322a8cd30ea6a101fc440a05d451) tersimpan.
+- Keterkaitan 14 permintaan pada enam gerbang dan empat temuan ditulis sebagai kontrak DEMO. Kecocokan ID bukan dokumen resmi yang diterima. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9U_QA_EVIDENCE_CONSISTENCY.md).
+- Total 184 skenario tertulis, 0 dijalankan pada S9U. CODE_ONLY, repo PUBLIC per 12 November, PR #9 Draft, tanpa tes/CI/merge/produksi.
+
 ## 2026-11-12 | M04-S9T register kebutuhan bukti QA DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 10 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/ead7112c6f9a42d94df3dc79ca3a68ea033b5f6e) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/a51de40aae0ed0cbf007ad6dd177221ee698d419) tersimpan sebagai [7 berkas M04-S9T](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-register).
 - Empat temuan STATIC-01–04 dan enam gerbang QA G0–G5 dijabarkan menjadi **14 kebutuhan bukti DEMO**. Seluruhnya belum diterima atau diverifikasi; nol hasil tes dan penutupan temuan resmi.

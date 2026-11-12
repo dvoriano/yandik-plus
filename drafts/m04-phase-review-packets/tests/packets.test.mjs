@@ -19,10 +19,18 @@ test("four P0-P3 packets cover 18 unique source items",()=>{
   assert.equal(entries.length,18);
   assert.equal(new Set(entries.map(x=>x.source_id)).size,18);
 });
-test("phase order preserves global source discussion sequence",()=>{
-  const p=create(),entries=p.packets.flatMap(x=>x.entries);
-  for(let i=1;i<entries.length;i++)
-    assert.ok(entries[i-1].discussion_sequence<entries[i].discussion_sequence);
+test("each phase preserves the original sequence indices, not a new work order",()=>{
+  const p=create();
+  const source=new Map(SEQUENCE_DEMO.rows.map(x=>
+    [x.source_item_id,x.discussion_sequence]));
+  for(const phase of p.packets){
+    const entries=phase.entries;
+    for(let i=0;i<entries.length;i++){
+      assert.equal(entries[i].discussion_sequence,source.get(entries[i].source_id));
+      if(i>0)assert.ok(entries[i-1].discussion_sequence<
+        entries[i].discussion_sequence);
+    }
+  }
 });
 test("questions are preserved verbatim, without answers",()=>{
   const p=create();

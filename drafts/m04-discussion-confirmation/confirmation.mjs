@@ -56,6 +56,7 @@ function identity(source){
     source.source.snapshot_changed?"STALE":"CURRENT_DEMO",
     source.source.repo_snapshot.visibility,
     source.source.repo_snapshot.observed_on,
+    source.source_stale===true?"STALE_VIEW":"CURRENT_VIEW",
     ...source.groups.flatMap(g=>[
       g.id,...g.items.map(x=>x.id+"#"+x.title+"#"+x.evidence_needed+
         "#"+x.proposed_questions.join("|")),

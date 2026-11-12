@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9J | Catatan Pembahasan Contoh</title>
+<link rel="stylesheet" href="./style.css"></head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9J · DRAF GITHUB</p>
+<h1>Lembar Catatan Pembahasan per Fungsi</h1>
+<p class="warning"><strong>KODE DITULIS, BELUM DIUJI.</strong> Hanya simulasi dengan data fiktif.</p>
+<p>Rancang masukan, kekurangan bukti dan usulan tindak lanjut berdasarkan agenda M04-S9I.
+Tidak merekam rapat atau keputusan instansi.</p>
+<p><strong>Jangan masukkan identitas, dokumen kedinasan, kredensial atau data riil.</strong></p>
+</header>
+<section>
+<h2>1. Posisi DEMO</h2>
+<p id="counter" role="status" aria-live="polite"></p>
+<p id="snapshot" class="muted"></p>
+<p>Catatan hanya berada di memori tab. Tidak ada penyimpanan, pengiriman, autentikasi,
+tanda tangan, berita acara, atau status persetujuan.</p>
+</section>
+<section>
+<h2>2. Catatan contoh per butir</h2>
+<form id="edit-form">
+<label for="function">Fungsi telaah usulan
+<select id="function" required></select></label>
+<label for="item">Butir pembahasan
+<select id="item" required></select></label>
+<h3 id="title"></h3>
+<p id="required-evidence"></p>
+<p id="dependencies" class="muted"></p>
+<p><strong>Pertanyaan agenda untuk telaah manusia:</strong></p>
+<ul id="questions"></ul>
+<label for="masukan_demo">Masukan contoh, bukan hasil rapat
+<textarea id="masukan_demo" maxlength="500" rows="3" placeholder="Contoh fiktif saja"></textarea></label>
+<label for="kekurangan_bukti_demo">Kekurangan bukti contoh, bukan hasil verifikasi
+<textarea id="kekurangan_bukti_demo" maxlength="500" rows="3" placeholder="Contoh kekurangan bukti"></textarea></label>
+<label for="tindak_lanjut_usulan_demo">Usulan tindak lanjut contoh, bukan penugasan
+<textarea id="tindak_lanjut_usulan_demo" maxlength="500" rows="3" placeholder="Contoh langkah pembahasan"></textarea></label>
+<p id="rev" class="muted"></p>
+<div class="actions">
+<button type="submit">Simpan catatan contoh di memori</button>
+<button id="reset" type="button" class="secondary">Kosongkan semua contoh</button>
+</div>
+</form>
+<p id="notice" role="status" aria-live="polite"></p>
+<p id="error" class="warning" role="alert"></p>
+</section>
+<section>
+<h2>3. Ringkasan DEMO baca-saja</h2>
+<p>Ringkasan ini dapat disalin sebagai bahan perancangan. Bukan notulen resmi
+atau dokumen untuk ditandatangani.</p>
+<label for="summary">Rekap seluruh fungsi dan 18 butir
+<textarea id="summary" readonly rows="18" spellcheck="false"></textarea></label>
+</section>
+<footer>Mode CODE_ONLY. Tidak ada API, database, localStorage, unggahan,
+notifikasi, undangan, pengesahan SOP, keputusan bantuan/anggaran, QA, BAST,
+integrasi, atau deployment.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

@@ -38,3 +38,6 @@ Jumlah tes tertulis dalam rangkaian praintegrasi ini menjadi **172 skenario** (1
 ## Batasan proyek
 Repository GitHub masih PUBLIC menurut pemeriksaan metadata 12 November 2026. Jangan menyimpan dokumen kedinasan, informasi pribadi atau rahasia. M04-S9T menggunakan data fiktif dan tidak boleh dihubungkan ke sistem YANDIK+ aktif atau proses penganggaran/pengadaan/BAST.
 Branch `develop/yandik-foundation` tetap untuk pengembangan; PR #9 tetap Draft dan tidak digabung ke main. Mode [CODE_ONLY](CODE_ONLY_MODE.md) berlaku. Owner perlu izin eksplisit terlebih dahulu untuk tes, lalu pihak berwenang menelaah substansi kelembagaan.
+
+## Lanjutan rancangan M04-S9U (12 November 2026)
+Konsistensi 14 permintaan bukti terhadap gerbang dan temuan dijabarkan dalam [M04-S9U](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9U_QA_EVIDENCE_CONSISTENCY.md). Kode **BELUM DIUJI**; tautan data yang terdaftar bukan bukti dokumen diterima atau izin QA.

@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9I | AGENDA TELAAH PER FUNGSI PENGAMPU DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9I](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-function-review-agendas) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/dc7675ce7130813c770fa1e732f5a0364a86bdaa) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/da76b445ad2ca4f03655a8d9983bebc2fe9d6e48). Mengelompokkan 18 butir M04-S9H menjadi enam agenda fungsi dengan kebutuhan bukti dan pertanyaan konfirmasi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9I_FUNCTION_REVIEW_AGENDAS.md) serta QA-M04S9I sudah ditambahkan. **11 skenario Node ditulis tetapi tidak dijalankan**. Tidak ada undangan rapat, pejabat resmi, notulen/berita acara, penugasan, keputusan atau izin uji.
+- Metadata repository 12 Nov 2026 masih PUBLIC; pengingat perubahan ke PRIVATE Sabtu 14 Nov aktif namun setting belum diubah. Semua data contoh.
+- PR #9 tetap DRAFT. MODE CODE_ONLY aktif, tanpa CL/CI/tes/deploy/merge, main, VPS, database, YANDIK+ aktif atau bot Indodax.
+
 ## PEMBARUAN M04-S9H | PAKET TELAAH HAMBATAN DAN BUKTI | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9H](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-blocker-triage) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/5f62897756ae204df31f4aac2247946a50fd43dd) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/0d775de0f6188f9105473bca0d3412ab387cbee7). 18 hambatan mempunyai kebutuhan bukti, pengampu dan penelaah usulan, ketergantungan dan perhatian.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9H_BLOCKER_TRIAGE.md) dan QA-M04S9H masuk TEST_BACKLOG. Sebelas skenario tes **DITULIS, BELUM DIJALANKAN**.

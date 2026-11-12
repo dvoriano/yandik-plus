@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9I: agenda telaah per fungsi (SEMUA BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9I-01 | Rantai impor M04-S9H→S9I hanya menggunakan fixture sintetik DEMO | BELUM DIUJI |
+| QA-M04S9I-02 | Enam paket fungsi unik dan 18 butir tercakup tanpa duplikasi/hilang | BELUM DIUJI |
+| QA-M04S9I-03 | Pengampu penyiap dan penelaah tetap usulan; tanpa nama atau surat tugas resmi | BELUM DIUJI |
+| QA-M04S9I-04 | Semua butir membawa bukti diminta dan dependensi yang sama dengan M04-S9H | BELUM DIUJI |
+| QA-M04S9I-05 | Pertanyaan telaah per item tidak hilang dan pertanyaan khusus SEC-01/QA tampak | BELUM DIUJI |
+| QA-M04S9I-06 | Snapshot PUBLIC memunculkan peringatan klasifikasi; PRIVATE tidak mengesahkan keamanan | BELUM DIUJI |
+| QA-M04S9I-07 | Sumber stale tetap memberi peringatan dan tidak mengubah status sumber | BELUM DIUJI |
+| QA-M04S9I-08 | Non-DEMO, MODE LIVE, fake approval, keputusan/QA berjalan, ID duplikat atau pendahulu invalid ditolak | BELUM DIUJI |
+| QA-M04S9I-09 | Seluruh undangan, rapat, notulen resmi, keputusan serta bukti terverifikasi tetap nol/false | BELUM DIUJI |
+| QA-M04S9I-10 | Filter fungsi, hasil kosong, teks panjang, HP 320/375px, keyboard, fokus, screen reader | BELUM DIUJI |
+| QA-M04S9I-11 | Tidak ada XSS, innerHTML dinamis, fetch, API, storage, pengiriman, unggah berkas atau mutasi sumber | BELUM DIUJI |
+| QA-M04S9I-12 | Sebelas skenario tes Node pada tests/agendas.test.mjs ditulis, TIDAK DIJALANKAN | BELUM DIUJI |
+| QA-M04S9I-13 | Penentuan fungsi/jabatan sebenarnya, tata naskah, SPBE, keamanan, kearsipan dan batas SOP | BUTUH KEPUTUSAN |
+| QA-M04S9I-14 | QA regresi, penelaahan nyata, staging dan rollback hanya setelah izin eksplisit | TERTUNDA UJI |
+
+[Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9I_FUNCTION_REVIEW_AGENDAS.md). CODE_ONLY tetap melarang tes dan deploy.
+
 ## Antrean M04-S9H: konsolidasi hambatan dan bahan bukti (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda | Status |

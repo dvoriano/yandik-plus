@@ -43,3 +43,6 @@ Keduanya hanya usulan topik, bukan penugasan resmi atau pemberian izin.
 - Tahap berikutnya: menyiapkan agenda telaah per fungsi pengampu dan pertanyaan konfirmasi, tetap DEMO tanpa surat/keputusan resmi.
 - M04-S10+ pengadaan, anggaran, keputusan bantuan, distribusi dan BAST tetap RENCANA.
 - Tidak ada CL, CI, Node/Chromium, deploy, main, VPS, DB, website aktif, atau bot Indodax.
+
+## Agenda pembahasan menurut fungsi (tahap berikut)
+Enam paket agenda DEMO, pertanyaan konfirmasi dan kebutuhan bahan tersedia pada [M04-S9I](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9I_FUNCTION_REVIEW_AGENDAS.md). Ini bukan undangan, notulen atau penetapan pengampu resmi. Tetap KODE DITULIS, BELUM DIUJI.

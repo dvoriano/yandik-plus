@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9I agenda pembahasan menurut fungsi pengampu
+**KODE DITULIS, BELUM DIUJI.** [Model dan 11 tes tertulis](https://github.com/dvoriano/yandik-plus/commit/dc7675ce7130813c770fa1e732f5a0364a86bdaa) serta [UI/README dan koreksi validasi statis](https://github.com/dvoriano/yandik-plus/commit/da76b445ad2ca4f03655a8d9983bebc2fe9d6e48) tersimpan pada [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-function-review-agendas).
+- Mengelompokkan 18 hambatan M04-S9H menjadi 6 paket pembahasan dan pertanyaan khusus, dengan pengampu/penelaah fungsi **usulan** serta daftar bahan yang perlu disiapkan.
+- Tidak ada undangan/rapat, notulen, persetujuan, pengiriman, penugasan riil, pencantuman data rahasia atau perubahan sumber.
+- [Spesifikasi M04-S9I](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9I_FUNCTION_REVIEW_AGENDAS.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP serta catatan M04-S9H diperbarui.
+- Repo PUBLIC saat diperiksa 12 Nov; pengingat PRIVATE Sabtu 14 November aktif, tetapi perubahan belum dilaksanakan.
+- Tidak menjalankan CL, CI, Node/Chromium, workflow, deployment, PR merge, main, VPS, database, website produksi atau bot Indodax.
+
 ## 2026-11-12 | M04-S9H konsolidasi hambatan dan kebutuhan bukti
 **KODE DITULIS, BELUM DIUJI.** [Model dan 11 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/5f62897756ae204df31f4aac2247946a50fd43dd) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/0d775de0f6188f9105473bca0d3412ab387cbee7) tersimpan sebagai [7 berkas M04-S9H](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-blocker-triage).
 - Delapan belas prasyarat terhubung ke bukti perlu disiapkan, pengampu/penelaah usulan, perhatian dan dependensi M04-S9G.

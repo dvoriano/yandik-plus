@@ -10,3 +10,5 @@
 - Tidak ada perubahan `main`, sistem produksi, database, VPS, website aktif, bot trading, keputusan bantuan, penugasan, pengadaan atau BAST.
 
 Audit naratif lengkap: `docs/M04_S9R_STATIC_CONSOLIDATION.md`.
+## Penyempurnaan M04-S9S (kode belum diuji)
+Manifest dependency langsung diperluas hingga semua impor model yang masih di dalam cakupan S9F–S9Q. S9F tetap memiliki dependensi luar cakupan ke M04-S9E. Skenario QA diperketat untuk menolak impor tambahan yang tidak tercatat (bukan hanya memeriksa kecocokan satu arah). STATIC-04 adalah temuan baru dan perbaikan ini belum diuji.

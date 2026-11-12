@@ -112,7 +112,8 @@ export const MODULES=Object.freeze([
     "schemaSymbol": "RECAP_SCHEMA",
     "builderSymbol": "buildCrossFunctionRecap",
     "upstream": [
-      "S9K"
+      "S9K",
+      "S9I"
     ],
     "writtenTests": 12,
     "status": "KODE_DITULIS_BELUM_DIUJI"
@@ -145,7 +146,8 @@ export const MODULES=Object.freeze([
     "schemaSymbol": "QUESTION_SCHEMA",
     "builderSymbol": "buildOpenQuestionRegister",
     "upstream": [
-      "S9M"
+      "S9M",
+      "S9I"
     ],
     "writtenTests": 12,
     "status": "KODE_DITULIS_BELUM_DIUJI"
@@ -162,7 +164,8 @@ export const MODULES=Object.freeze([
     "builderSymbol": "buildEvidenceReadinessMatrix",
     "upstream": [
       "S9N",
-      "S9M"
+      "S9M",
+      "S9I"
     ],
     "writtenTests": 12,
     "status": "KODE_DITULIS_BELUM_DIUJI"
@@ -179,7 +182,8 @@ export const MODULES=Object.freeze([
     "builderSymbol": "buildMaterialGapSequence",
     "upstream": [
       "S9O",
-      "S9M"
+      "S9M",
+      "S9I"
     ],
     "writtenTests": 12,
     "status": "KODE_DITULIS_BELUM_DIUJI"
@@ -196,7 +200,9 @@ export const MODULES=Object.freeze([
     "builderSymbol": "buildPhaseReviewPackets",
     "upstream": [
       "S9P",
-      "S9M"
+      "S9M",
+      "S9G",
+      "S9I"
     ],
     "writtenTests": 12,
     "status": "KODE_DITULIS_BELUM_DIUJI"

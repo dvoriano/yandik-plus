@@ -57,14 +57,16 @@ test("each module exports its declared schema and builder",async()=>{
     assert.match(s,/CODE_ONLY/);
   }
 });
-test("declared source-to-source dependencies occur in model imports",async()=>{
-  for(const m of MODULES){
-    const s=await read(m.model);
-    for(const prev of m.upstream){
-      const parent=MODULES.find(x=>x.id===prev);
-      assert.ok(s.includes("../"+parent.folder+"/"),
-        m.id+" missing import from "+prev);
-    }
+test("manifest equals exact in-scope direct imports, not just a subset",async()=>{
+  const byFolder=new Map(MODULES.map(m=>[m.folder,m.id]));
+  for(const module of MODULES){
+    const s=await read(module.model);
+    const imported=[...s.matchAll(/\\bfrom\\s+["']\\.\\.\\/([^/]+)\\/[^"']+["']/g)]
+      .map(m=>byFolder.get(m[1])).filter(Boolean);
+    assert.equal(new Set(imported).size,imported.length,
+      module.id+" duplicates in-scope module imports");
+    assert.deepEqual(imported.sort(),[...module.upstream].sort(),
+      module.id+" missing or extra direct imports");
   }
 });
 test("every local relative model and fixture import target exists",async()=>{

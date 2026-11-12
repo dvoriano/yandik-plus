@@ -212,6 +212,7 @@ export const FINDINGS=Object.freeze([
   Object.freeze({id:"STATIC-01",scope:"S9J",severity:"PERLU_PERBAIKAN",description:"Fingerprint sumber awal tidak mencakup fase, pendahulu, peran, dan metadata agenda.",change:"Perluasan fingerprint dan satu skenario QA tertulis",status:"KODE_DIPERBAIKI_BELUM_DIUJI"}),
   Object.freeze({id:"STATIC-02",scope:"S9F-S9Q",severity:"PENGUJIAN_TERTUNDA",description:"Skenario tertulis belum pernah dijalankan pada mode CODE_ONLY.",change:"Audit sumber dan backlog tanpa test runner",status:"BUTUH_IZIN_UJI"}),
   Object.freeze({id:"STATIC-03",scope:"REPOSITORY",severity:"RISIKO_KELEMBAGAAN",description:"Repository PUBLIC menurut pemeriksaan 12 November 2026; hanya fixture fiktif boleh disimpan.",change:"Pengaturan PRIVATE hanya oleh owner dan telaah histori paparan",status:"BUTUH_KEPUTUSAN_OWNER"}),
+  Object.freeze({id:"STATIC-04",scope:"S9L-S9Q",severity:"INVENTARIS_DEPENDENSI_TIDAK_LENGKAP",description:"Manifest S9R mengabaikan beberapa impor model langsung dari modul lain yang masih dalam cakupan.",change:"Lengkapi upstream untuk S9L/S9N/S9O/S9P/S9Q dan perketat audit menjadi pencocokan dua arah",status:"KODE_DIPERBAIKI_BELUM_DIUJI"}),
 ]);
 export const TOTALS=Object.freeze({modules:12,writtenTestsBeforeS9R:139,
   newRegressionScenariosInS9J:1,writtenS9RScenarios:12,

@@ -61,7 +61,7 @@ test("manifest equals exact in-scope direct imports, not just a subset",async()=
   const byFolder=new Map(MODULES.map(m=>[m.folder,m.id]));
   for(const module of MODULES){
     const s=await read(module.model);
-    const imported=[...s.matchAll(/\\bfrom\\s+["']\\.\\.\\/([^/]+)\\/[^"']+["']/g)]
+    const imported=[...s.matchAll(/\bfrom\s+["']\.\.\/([^/]+)\/[^"']+["']/g)]
       .map(m=>byFolder.get(m[1])).filter(Boolean);
     assert.equal(new Set(imported).size,imported.length,
       module.id+" duplicates in-scope module imports");

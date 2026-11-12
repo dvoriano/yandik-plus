@@ -6,7 +6,6 @@
 | Keterangan | Isi |
 |---|---|
 | Jenis dokumen | Naskah pengenalan dan konsep operasional, bukan spesifikasi pemrograman |
-| Sasaran pembaca | Pimpinan, Inspektorat, Diskominfotik, perencana, pemeriksa, serta pengelola layanan kesehatan hewan |
 | Konteks pengusul | Lingkup pelayanan dan kesehatan hewan pada Dinas Peternakan dan Kesehatan Hewan Provinsi Sumatera Barat |
 | Versi | Draf pengenalan 1.0, 11 November 2026 |
 | Kedudukan | **Bahan penjelasan dan telaah. Bukan persetujuan kebijakan, penganggaran, penerapan sistem, atau penetapan kewenangan.** |

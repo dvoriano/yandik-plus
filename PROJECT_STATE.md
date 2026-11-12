@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9P | INDEKS CATATAN KESENJANGAN DAN URUTAN DISKUSI DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9P](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-material-gap-sequence) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/67092bea986d221f8e2dcc59086c47cf65126cf9) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/cb3bb070c4cad7025a2fb76f910f135262547748). Menghubungkan 18 butir M04-S9O ke pendahulu M04-S9M untuk menampilkan urutan membaca bahan secara topologis dan empat kelompok P0-P3.
+- Tiga butir mempunyai teks catatan kekurangan fiktif; 15 kosong bukan pernyataan cukup. Nol bukti resmi terverifikasi, nol tugas, nol keputusan atau izin QA/deploy. Urutan bukan prioritas, jadwal, atau perintah.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9P_MATERIAL_GAP_SEQUENCE.md) dan QA-M04S9P ditambahkan pada TEST_BACKLOG. **12 skenario tes ditulis tetapi BELUM DIJALANKAN**.
+- Repo PUBLIC menurut metadata GitHub 12 Nov 2026; pengingat owner ubah PRIVATE Sabtu 14 Nov aktif namun setting belum diubah. PR #9 DRAFT; CODE_ONLY tanpa CL/CI/tes/deploy/merge/main/produksi.
+
 ## PEMBARUAN M04-S9O | MATRIKS PERSIAPAN BAHAN PEMBAHASAN DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9O](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-evidence-readiness-matrix) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/36e2d40e67a8b2a96a8ac6c95162e968c6a1f649) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/a5f956cc31356207978ef4b8a016dd5d0cd8c3ac). Memisahkan 18 jenis bahan diminta, 3 catatan bahan DEMO fiktif dan 0 bukti resmi diverifikasi.
 - Enam fungsi dan ID pertanyaan dari M04-S9N tetap terhubung ke butir M04-S9M. Seluruh status kesiapan **TIDAK DAPAT DINILAI DARI DEMO**, tanpa persetujuan/penugasan/izin tes/deploy atau keputusan bantuan.

@@ -40,3 +40,6 @@ Catatan kekurangan bukti pada tiga butir contoh juga hanya teks fiktif, bukan te
 - Tahap berikut yang bisa dirancang: **M04-S9P**, indeks kesenjangan bahan pembahasan dan urutan penelaahan berdasarkan dependensi, tanpa menetapkan kelulusan/penugasan resmi.
 - M04-S10+ bantuan, anggaran, pengadaan, penyaluran dan BAST tetap RENCANA.
 - PR #9 tetap Draft, tidak merge `main`, tidak menjalankan CL/CI, Node/browser test, workflow, deployment, VPS, database produksi, situs YANDIK+ aktif atau bot Indodax.
+
+## Indeks dan urutan pembahasan tahap berikut
+Kebutuhan bahan pada matriks ini dihubungkan dengan dependensi M04-S9M melalui [M04-S9P](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9P_MATERIAL_GAP_SEQUENCE.md). Urutan hanya untuk membaca bahan DEMO, **bukan prioritas atau tugas resmi**, dan **BELUM DIUJI**.

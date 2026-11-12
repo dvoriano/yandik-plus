@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9P: indeks kesenjangan bahan dan urutan diskusi DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda sampai izin owner eksplisit | Status |
+|---|---|---|
+| QA-M04S9P-01 | Rantai impor fixture M04-S9M → S9O → S9P tanpa produksi atau data asli | BELUM DIUJI |
+| QA-M04S9P-02 | Tepat 18 butir/6 fungsi, ID matriks/pertanyaan/revisi/kebutuhan bahan cocok | BELUM DIUJI |
+| QA-M04S9P-03 | Urutan topologis menempatkan semua pendahulu sebelum penerus, tie-break fase lalu ID | BELUM DIUJI |
+| QA-M04S9P-04 | Lapis dependensi dan jumlah penerus langsung/tidak langsung konsisten dengan graph | BELUM DIUJI |
+| QA-M04S9P-05 | Empat kelompok P0–P3 tidak boleh tampil sebagai tahap resmi telah dimulai | BELUM DIUJI |
+| QA-M04S9P-06 | Tolak siklus satu fase, self-loop, ID pendahulu asing dan dependensi fase mundur | BELUM DIUJI |
+| QA-M04S9P-07 | Tolak daftar rujukan lintas fungsi yang tidak sama dengan sumber | BELUM DIUJI |
+| QA-M04S9P-08 | Tolak snapshot/revisi/ID/teks bahan matriks yang berbeda dengan handoff | BELUM DIUJI |
+| QA-M04S9P-09 | Tiga catatan kekurangan DEMO/15 kosong tidak berubah menjadi temuan audit atau bukti lengkap | BELUM DIUJI |
+| QA-M04S9P-10 | Sumber stale hanya peringatan; repo PRIVATE tidak memberi otorisasi | BELUM DIUJI |
+| QA-M04S9P-11 | Nol bukti resmi, tugas, keputusan, izin QA/deploy; tidak ada skor prioritas atau readiness | BELUM DIUJI |
+| QA-M04S9P-12 | Teks rekap dan filter fungsi/catatan kosong; semua 12 skenario Node ditulis tidak dijalankan | BELUM DIUJI |
+| QA-M04S9P-13 | UI HP 320/375px, keyboard/screen reader, teks panjang, XSS dan tanpa API/storage/fetch | BELUM DIUJI |
+| QA-M04S9P-14 | Kewenangan SOP, SPBE, kearsipan dan urutan penelaahan manusia tetap memerlukan keputusan instansi | BUTUH KEPUTUSAN |
+| QA-M04S9P-15 | Uji regresi, keamanan, staging, kesiapan deploy setelah izin eksplisit owner | TERTUNDA UJI |
+
+[Spesifikasi M04-S9P](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9P_MATERIAL_GAP_SEQUENCE.md). CODE_ONLY belum dicabut.
+
 ## Antrean M04-S9O: matriks persiapan bahan pembahasan DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda sampai ada izin eksplisit pemilik | Status |

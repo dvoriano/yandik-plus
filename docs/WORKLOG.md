@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9P indeks catatan kesenjangan dan urutan telaah DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/67092bea986d221f8e2dcc59086c47cf65126cf9) serta [UI/README dan penyempurnaan skenario siklus](https://github.com/dvoriano/yandik-plus/commit/cb3bb070c4cad7025a2fb76f910f135262547748) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-material-gap-sequence).
+- Urutan diskusi dari 18 butir pada 6 fungsi dan P0–P3 mengutamakan hubungan pendahulu; ini bukan ranking, prioritas kedinasan, daftar tugas atau instruksi kerja.
+- Tiga teks catatan kekurangan DEMO dan 15 kosong bukan temuan audit; nol bukti resmi terverifikasi/izin QA/deploy/keputusan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9P_MATERIAL_GAP_SEQUENCE.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan rujukan M04-S9O diperbarui.
+- Repo PUBLIC per metadata 12 Nov; pengingat PRIVATE Sabtu 14 Nov aktif tetapi setting belum diubah. Tidak menjalankan CL/CI, Node/browser tes, Actions, PR merge, main, VPS, DB/website YANDIK+ produksi maupun bot Indodax.
+
 ## 2026-11-12 | M04-S9O matriks persiapan bahan pembahasan DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/36e2d40e67a8b2a96a8ac6c95162e968c6a1f649) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/a5f956cc31356207978ef4b8a016dd5d0cd8c3ac) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-evidence-readiness-matrix).
 - Membedakan permintaan 18 bahan dari M04-S9M, 3 catatan teks contoh dan 0 bukti resmi diverifikasi. Rujukan seluruh pertanyaan M04-S9N dipertahankan; tidak ada hasil kelulusan/kesiapan integrasi.

@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9U | KONSISTENSI STRUKTUR BUKTI QA DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [model, UI dan 12 skenario QA baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-consistency) memetakan 14 kebutuhan bukti ke enam gerbang G0–G5 dan empat temuan STATIC-01–04.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9U_QA_EVIDENCE_CONSISTENCY.md). Kecocokan struktur bukan bukti diterima atau diverifikasi; nol bukti dan keputusan resmi, **184 skenario tertulis / 0 dijalankan pada S9U**.
+- PR #9 tetap Draft, repo PUBLIC menurut metadata 12 Nov, mode CODE_ONLY, main dan produksi tidak disentuh.
+
 ## PEMBARUAN M04-S9T | REGISTER KEBUTUHAN BUKTI QA DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [register, antarmuka read-only dan 10 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-register) menghubungkan enam gerbang QA G0–G5 dan empat temuan STATIC-01–04 dengan 14 jenis bukti yang kelak diperlukan.
 - **Tidak ada bukti diterima, tes dijalankan, izin owner atau temuan ditutup**. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9T_QA_EVIDENCE_REGISTER.md) dan QA-M04S9T tercatat. Total skenario tertulis kini **172**, 0 dijalankan pada milestone.

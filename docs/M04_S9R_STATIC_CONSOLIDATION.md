@@ -26,3 +26,7 @@ Inventaris model/fixture/tes/UI/HTML serta dependensi upstream dicatat pada [man
 Uji regresi perubahan sumber S9J, impor berantai S9F–S9Q, urutan dependensi, validasi 18 butir/6 fungsi/P0–P3, pertanyaan terbuka, kasus data rusak, serta UI, aksesibilitas dan XSS **hanya setelah izin eksplisit owner**. Penelaahan SOP/SPBE, kewenangan, kearsipan, perlindungan data serta bukti resmi membutuhkan keputusan manusia.
 
 Semua kode tetap CODE_ONLY, tidak ada CI/CL/Node/browser tes, GitHub Actions, deploy, merge main, perubahan YANDIK+ produksi, VPS, database, bot Indodax, keputusan bantuan, anggaran, pengadaan ataupun BAST.
+
+## Tindak lanjut M04-S9S (12 November 2026, KODE BELUM DIUJI)
+Dalam audit ulang manifest, ditemukan STATIC-04: hubungan impor model langsung belum seluruhnya tercatat, terutama impor fungsi dan fase yang dipakai oleh S9L/S9N/S9O/S9P/S9Q. Manifest dan pemeriksaan kecocokan dua arah telah diperbarui **tanpa menjalankan tes**.
+Tahapan dan kriteria bukti yang masih diperlukan didokumentasikan dalam [M04-S9S](M04_S9S_QA_PREFLIGHT_AND_FINDINGS.md). STATIC-01 sampai STATIC-04 tetap **belum ditutup secara resmi**; kesiapan QA dan keputusan institusional tidak berubah.

@@ -50,18 +50,42 @@ function requireAgenda(source){
   return source;
 }
 function identity(source){
-  // Non-cryptographic local consistency token; NOT an audit hash.
-  return [
-    source.schema,source.source.as_of_demo,
-    source.source.snapshot_changed?"STALE":"CURRENT_DEMO",
-    source.source.repo_snapshot.visibility,
-    source.source.repo_snapshot.observed_on,
-    source.source_stale===true?"STALE_VIEW":"CURRENT_VIEW",
-    ...source.groups.flatMap(g=>[
-      g.id,...g.items.map(x=>x.id+"#"+x.title+"#"+x.evidence_needed+
-        "#"+x.proposed_questions.join("|")),
-    ]),
-  ].join("\n");
+  // Non-cryptographic consistency token, NOT an audit hash or authorization.
+  // Bind every field affecting the meaning, order, dependencies or review roles.
+  // A changed agenda must invalidate existing notes even if its titles match.
+  return JSON.stringify({
+    schema:source.schema,
+    source_schema:source.source.schema,
+    as_of_demo:source.source.as_of_demo,
+    snapshot_changed:source.source.snapshot_changed,
+    source_stale:source.source_stale,
+    visibility:source.source.repo_snapshot.visibility,
+    observed_on:source.source.repo_snapshot.observed_on,
+    groups:source.groups.map(g=>({
+      id:g.id,title:g.title,goal:g.goal,
+      suggested_reviewer_role:g.suggested_reviewer_role,
+      source_ids:[...g.source_ids],
+      suggested_materials:g.suggested_materials.map(x=>({
+        id:x.id,description:x.description,
+      })),
+      questions:g.questions.map(x=>({
+        item_id:x.item_id,question_number:x.question_number,
+        question:x.question,
+      })),
+      items:g.items.map(x=>({
+        id:x.id,title:x.title,phase:x.phase,
+        origin_discussion_order:x.origin_discussion_order,
+        evidence_needed:x.evidence_needed,
+        dependency_ids:[...x.dependency_ids],
+        proposed_preparer_role:x.proposed_preparer_role,
+        proposed_reviewer_role:x.proposed_reviewer_role,
+        attention_code:x.attention_code,attention_label:x.attention_label,
+        source_document:x.source_document,
+        proposed_questions:[...x.proposed_questions],
+        followup_discussion:x.followup_discussion,
+      })),
+    })),
+  });
 }
 function emptyNotes(){
   return {masukan_demo:"",kekurangan_bukti_demo:"",tindak_lanjut_usulan_demo:""};

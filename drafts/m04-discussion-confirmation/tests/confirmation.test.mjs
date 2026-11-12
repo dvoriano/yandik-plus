@@ -85,3 +85,27 @@ test("in-memory edits never imply sending or persisting, source remains immutabl
   assert.equal(next.records.find(x=>x.item_id==="FLOW-01").official_decision,false);
   assert.equal(next.records.find(x=>x.item_id==="FLOW-01").history[0].official,false);
 });
+
+test("M04-S9R static audit: draft is stale when phase, dependencies, roles or group title change",()=>{
+  const existing=book();
+  const mutate=(patch)=>({
+    ...AGENDA_DEMO,
+    groups:AGENDA_DEMO.groups.map(g=>g.id==="kelembagaan"?{
+      ...g,
+      items:g.items.map(x=>x.id==="GOV-01"?{...x,...patch}:x),
+    }:g),
+  });
+  for(const patch of [
+    {phase:"P1"},
+    {dependency_ids:["SEC-01"]},
+    {proposed_reviewer_role:"Fungsi DEMO berubah"},
+    {source_document:"docs/CHANGED_DEMO.md"},
+    {origin_discussion_order:99},
+  ]){
+    assert.throws(()=>confirmationView(existing,mutate(patch)));
+  }
+  const renamed={...AGENDA_DEMO,
+    groups:AGENDA_DEMO.groups.map(g=>g.id==="kelembagaan"?
+      {...g,title:"Judul fungsi DEMO berubah"}:g)};
+  assert.throws(()=>confirmationView(existing,renamed));
+});

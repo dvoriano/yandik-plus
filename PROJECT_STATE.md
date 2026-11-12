@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9O | MATRIKS PERSIAPAN BAHAN PEMBAHASAN DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9O](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-evidence-readiness-matrix) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/36e2d40e67a8b2a96a8ac6c95162e968c6a1f649) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/a5f956cc31356207978ef4b8a016dd5d0cd8c3ac). Memisahkan 18 jenis bahan diminta, 3 catatan bahan DEMO fiktif dan 0 bukti resmi diverifikasi.
+- Enam fungsi dan ID pertanyaan dari M04-S9N tetap terhubung ke butir M04-S9M. Seluruh status kesiapan **TIDAK DAPAT DINILAI DARI DEMO**, tanpa persetujuan/penugasan/izin tes/deploy atau keputusan bantuan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9O_EVIDENCE_READINESS_MATRIX.md) dan QA-M04S9O ditambahkan ke TEST_BACKLOG. **12 skenario tes hanya ditulis, BELUM DIJALANKAN**.
+- Repo PUBLIC pada metadata GitHub 12 Nov 2026; pengingat perubahan PRIVATE Sabtu 14 Nov aktif tetapi setting belum berubah. PR #9 DRAFT; CODE_ONLY tanpa CL/CI/tes/deploy/merge/main/produksi.
+
 ## PEMBARUAN M04-S9N | REGISTER PERTANYAAN BELUM TERJAWAB DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9N](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-open-question-register) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/997c329930940658e754070fac3b51ff89979b56) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/85fbf1384e50462ccd7658b2449daa90a0018b6f). Setiap pertanyaan dari M04-S9M memperoleh ID DEMO sendiri, tautan ke 18 butir/6 fungsi, kebutuhan bukti dan ketergantungan.
 - Semua jawaban resmi tetap kosong; tidak ada penelaah ditetapkan, rapat, penugasan, keputusan, izin QA/deploy atau bukti terverifikasi. Ketiadaan catatan kekurangan bukti bukan hasil kelulusan.

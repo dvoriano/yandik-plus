@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9O: matriks persiapan bahan pembahasan DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda sampai ada izin eksplisit pemilik | Status |
+|---|---|---|
+| QA-M04S9O-01 | Rantai impor fixture M04-S9M dan M04-S9N tetap sintetis CODE_ONLY | BELUM DIUJI |
+| QA-M04S9O-02 | Cakupan enam fungsi/18 butir serta tepat satu permintaan bahan per butir | BELUM DIUJI |
+| QA-M04S9O-03 | Catatan teks DEMO dibedakan dari dokumen diterima dan bukti resmi terverifikasi | BELUM DIUJI |
+| QA-M04S9O-04 | Tiga catatan teks contoh / 15 kosong / nol bukti terverifikasi, tanpa klaim kelulusan | BELUM DIUJI |
+| QA-M04S9O-05 | ID pertanyaan, revisi, fase, fungsi dan bahan diminta cocok dengan sumber | BELUM DIUJI |
+| QA-M04S9O-06 | Menolak duplikasi/hilangnya ID pertanyaan dan perubahan jumlah pertanyaan | BELUM DIUJI |
+| QA-M04S9O-07 | Menolak snapshot/revisi sumber yang berbeda, flag stale memberi peringatan | BELUM DIUJI |
+| QA-M04S9O-08 | Status PRIVATE tidak otomatis mengesahkan bukti atau kesiapan integrasi | BELUM DIUJI |
+| QA-M04S9O-09 | Menolak forged official answer, bukti diverifikasi, keputusan, tugas atau QA/deploy | BELUM DIUJI |
+| QA-M04S9O-10 | Ringkasan dan filter fungsi/status catatan, termasuk empty state dan peringatan | BELUM DIUJI |
+| QA-M04S9O-11 | UI 320/375px, keyboard, screen reader, panjang teks, XSS; tanpa API, storage, fetch, upload atau pengiriman | BELUM DIUJI |
+| QA-M04S9O-12 | Dua belas skenario `tests/readiness.test.mjs` sudah ditulis, tidak dijalankan | BELUM DIUJI |
+| QA-M04S9O-13 | Penelaahan manusia terkait kualitas bukti, SOP/SPBE, kearsipan dan kewenangan verifikasi | BUTUH KEPUTUSAN |
+| QA-M04S9O-14 | QA regresi/staging/integrasi menunggu izin owner, tanpa menyentuh APEL historis | TERTUNDA UJI |
+
+[Spesifikasi M04-S9O](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9O_EVIDENCE_READINESS_MATRIX.md). CODE_ONLY masih berlaku.
+
 ## Antrean M04-S9N: register pertanyaan belum terjawab DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit owner | Status |

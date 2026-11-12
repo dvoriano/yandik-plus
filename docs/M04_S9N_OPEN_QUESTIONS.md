@@ -39,3 +39,6 @@ Antarmuka DEMO menyajikan jumlah pertanyaan per fungsi, filter fungsi dan dua ke
 - Validasi sumber dan ID, jumlah pertanyaan, keadaan kolom kosong, rujukan lintas fungsi, sumber stale, penolakan klaim resmi, serta UX HP/aksesibilitas/XSS dicatat pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md).
 - Langkah lanjutan yang dapat dirancang: matriks kesiapan bahan pembahasan yang membedakan *jenis bahan diminta*, *bahan DEMO yang ada*, dan *bukti resmi yang diverifikasi*, tanpa otomatis menutup pertanyaan.
 - M04-S10+ bantuan, anggaran, pengadaan, distribusi dan BAST tetap **RENCANA**. Tidak ada CL, CI, Node/browser tests, Actions, deployment, merge `main`, VPS, database produksi, website YANDIK+ aktif atau bot Indodax.
+
+## Matriks bahan pembahasan tahap berikut
+Permintaan bahan dan catatan DEMO pada register ini dijabarkan bersama sumber M04-S9M dalam [M04-S9O](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9O_EVIDENCE_READINESS_MATRIX.md). Seluruh bukti resmi belum diverifikasi; status kesiapan tidak dihitung. Tetap **KODE DITULIS, BELUM DIUJI**.

@@ -2,6 +2,13 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9O matriks persiapan bahan pembahasan DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/36e2d40e67a8b2a96a8ac6c95162e968c6a1f649) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/a5f956cc31356207978ef4b8a016dd5d0cd8c3ac) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-evidence-readiness-matrix).
+- Membedakan permintaan 18 bahan dari M04-S9M, 3 catatan teks contoh dan 0 bukti resmi diverifikasi. Rujukan seluruh pertanyaan M04-S9N dipertahankan; tidak ada hasil kelulusan/kesiapan integrasi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9O_EVIDENCE_READINESS_MATRIX.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan M04-S9N disinkronkan.
+- Repository masih PUBLIC menurut metadata 12 November; pengingat ubah PRIVATE 14 November aktif, setting belum diubah.
+- CODE_ONLY: tidak menjalankan CL, CI, Node/browser tes, Actions, merge, main, deploy, VPS, database produksi, website YANDIK+ aktif atau bot Indodax.
+
 ## 2026-11-12 | M04-S9N register pertanyaan belum terjawab DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/997c329930940658e754070fac3b51ff89979b56) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/85fbf1384e50462ccd7658b2449daa90a0018b6f) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-open-question-register).
 - Memecah seluruh pertanyaan dari 18 butir/6 fungsi M04-S9M menjadi register per pertanyaan: ID unik DEMO, asal fungsi/butir/revisi, bukti diminta, catatan kekurangan contoh dan dependensi.

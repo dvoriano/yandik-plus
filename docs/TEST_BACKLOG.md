@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9N: register pertanyaan belum terjawab DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9N-01 | Rantai impor fixture M04-S9M hingga S9N tetap sintetis CODE_ONLY | BELUM DIUJI |
+| QA-M04S9N-02 | Keenam fungsi, 18 butir sumber, seluruh pertanyaan terangkut tanpa duplikasi atau hilang | BELUM DIUJI |
+| QA-M04S9N-03 | ID per pertanyaan stabil dan terhubung dengan urutan teks, fase dan revisi sumber | BELUM DIUJI |
+| QA-M04S9N-04 | Seluruh jawaban tetap belum ada, tanpa penugasan resmi, keputusan, verifikasi, izin QA/deploy | BELUM DIUJI |
+| QA-M04S9N-05 | Filter dua keadaan catatan kekurangan DEMO tidak menyamakan kolom kosong dengan bukti lengkap | BELUM DIUJI |
+| QA-M04S9N-06 | Kebutuhan bukti dan rujukan pendahulu lintas fungsi cocok dengan M04-S9M | BELUM DIUJI |
+| QA-M04S9N-07 | Snapshot stale memberi peringatan, perubahan visibility PRIVATE tidak mengesahkan isi | BELUM DIUJI |
+| QA-M04S9N-08 | Tolak sumber dengan rapat/undangan/keputusan/verifikasi palsu dan total pertanyaan tidak cocok | BELUM DIUJI |
+| QA-M04S9N-09 | Tolak ID ganda, pertanyaan kosong, rujukan asing atau relasi lintas fungsi berubah | BELUM DIUJI |
+| QA-M04S9N-10 | Rekap sesuai filter fungsi/kekurangan, hasil kosong, peringatan bukan jawaban resmi | BELUM DIUJI |
+| QA-M04S9N-11 | UI HP 320/375px, tabel scroll, keyboard, screen reader, teks panjang, XSS, tanpa API/storage/fetch | BELUM DIUJI |
+| QA-M04S9N-12 | 12 skenario tests/questions.test.mjs ditulis tetapi tidak dieksekusi | BELUM DIUJI |
+| QA-M04S9N-13 | Telaah kewenangan penelaah, tata naskah, SOP/SPBE, klasifikasi dokumen, arsip | BUTUH KEPUTUSAN |
+| QA-M04S9N-14 | Regresi, QA keamanan dan staging/rollback hanya setelah izin eksplisit owner | TERTUNDA UJI |
+
+[Spesifikasi M04-S9N](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9N_OPEN_QUESTIONS.md). CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9M: paket bahan telaah manusia DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan sesudah izin eksplisit pemilik | Status |

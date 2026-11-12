@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9N register pertanyaan belum terjawab DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/997c329930940658e754070fac3b51ff89979b56) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/85fbf1384e50462ccd7658b2449daa90a0018b6f) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-open-question-register).
+- Memecah seluruh pertanyaan dari 18 butir/6 fungsi M04-S9M menjadi register per pertanyaan: ID unik DEMO, asal fungsi/butir/revisi, bukti diminta, catatan kekurangan contoh dan dependensi.
+- Semua jawaban masih belum ada secara resmi; tidak ada pengiriman, persetujuan, keputusan, penugasan, izin QA/deploy atau verifikasi. Kolom kosong bukan klaim lengkap.
+- [Spesifikasi M04-S9N](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9N_OPEN_QUESTIONS.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan M04-S9M diperbarui.
+- Repository PUBLIC per pemeriksaan 12 November; pengingat PRIVATE 14 November aktif namun setting belum diubah.
+- Tidak ada CL/CI, Node/Chromium, Actions, test runner, merge, main, VPS, database, website YANDIK+ aktif atau bot Indodax.
+
 ## 2026-11-12 | M04-S9M paket bahan serah-terima untuk telaah manusia DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/d433a03010daa9b6fe43dcbb23b3f125db2b4f91) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/d01d915c031a09ef85bbc41edd668bef39e1de4d) tersimpan pada [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-human-review-handoff).
 - Menggabungkan 18 butir dan 6 fungsi dari M04-S9L dengan seluruh pertanyaan terbuka dan jenis bukti diminta dari M04-S9I. Tiga usulan dan tiga catatan kekurangan fiktif tetap jelas sebagai DEMO.

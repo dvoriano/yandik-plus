@@ -46,3 +46,6 @@ Jika pihak yang berwenang memutuskan pembahasan riil, mereka perlu memilih penel
 - Langkah berikut jika diminta: spesifikasi **register pertanyaan yang masih belum memiliki jawaban DEMO** dengan rujukan fungsi dan bahan yang diperlukan, tanpa mengubah status persetujuan.
 - Semua M04-S10+ keputusan bantuan, anggaran, pengadaan, penyaluran dan BAST tetap RENCANA.
 - Tidak ada CL/CI, Node atau browser test, Actions, deployment, PR merge, perubahan main, VPS, database produksi, YANDIK+ aktif ataupun bot Indodax.
+
+## Register pertanyaan terbuka tahap berikut
+Seluruh pertanyaan dalam paket ini dipetakan secara individual menjadi [register M04-S9N](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9N_OPEN_QUESTIONS.md). Register tersebut hanya DEMO, tidak mencatat jawaban atau penugasan resmi, dan tetap **BELUM DIUJI**.

@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9N | REGISTER PERTANYAAN BELUM TERJAWAB DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9N](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-open-question-register) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/997c329930940658e754070fac3b51ff89979b56) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/85fbf1384e50462ccd7658b2449daa90a0018b6f). Setiap pertanyaan dari M04-S9M memperoleh ID DEMO sendiri, tautan ke 18 butir/6 fungsi, kebutuhan bukti dan ketergantungan.
+- Semua jawaban resmi tetap kosong; tidak ada penelaah ditetapkan, rapat, penugasan, keputusan, izin QA/deploy atau bukti terverifikasi. Ketiadaan catatan kekurangan bukti bukan hasil kelulusan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9N_OPEN_QUESTIONS.md) serta QA-M04S9N ditambahkan pada TEST_BACKLOG. **12 skenario tes tertulis tetapi BELUM DIJALANKAN**.
+- Repo PUBLIC pada metadata 12 Nov 2026, pengingat ubah PRIVATE Sabtu 14 Nov aktif tetapi belum dilaksanakan. PR #9 DRAFT; CODE_ONLY tanpa CL/CI/tes/deploy/merge atau perubahan produksi.
+
 ## PEMBARUAN M04-S9M | PAKET BAHAN TELAAH MANUSIA DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9M](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-human-review-handoff) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/d433a03010daa9b6fe43dcbb23b3f125db2b4f91) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/d01d915c031a09ef85bbc41edd668bef39e1de4d). Menggabungkan rekap M04-S9L dan seluruh pertanyaan M04-S9I menjadi paket untuk 6 fungsi dan 18 butir.
 - Semua bukti masih diminta, pertanyaan terbuka, penelaah hanya usulan, catatan 3+3 fiktif dari fixture; tidak ada handoff dikirim, rapat, keputusan, izin QA/deploy atau pengesahan.

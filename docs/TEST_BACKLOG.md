@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9L: rekap lintas fungsi dan kekurangan bukti (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah owner memberi izin eksplisit | Status |
+|---|---|---|
+| QA-M04S9L-01 | Impor berantai M04-S9I→S9J→S9K→S9L hanya memakai fixture sintetis | BELUM DIUJI |
+| QA-M04S9L-02 | Enam fungsi, 18 ID unik, semua rujukan sumber/fungsi/revisi cocok | BELUM DIUJI |
+| QA-M04S9L-03 | Tiga contoh usulan dan tiga kekurangan DEMO, kosong tetap 'belum diisi' bukan 'cukup' | BELUM DIUJI |
+| QA-M04S9L-04 | Kategori proposal+gap, hanya proposal, hanya gap, dua-duanya kosong akurat | BELUM DIUJI |
+| QA-M04S9L-05 | Penghitungan per fungsi dan jumlah keseluruhan konsisten | BELUM DIUJI |
+| QA-M04S9L-06 | Rujukan pendahulu lintas fungsi mengacu ke ID dikenal dan fungsi berbeda | BELUM DIUJI |
+| QA-M04S9L-07 | Sumber stale memperingatkan, repo PRIVATE tidak berarti verifikasi resmi | BELUM DIUJI |
+| QA-M04S9L-08 | Tolak ID/fungsi salah, dependensi asing, status usulan/totals palsu dan klaim official decision/assignment/verification | BELUM DIUJI |
+| QA-M04S9L-09 | Semua tugas, keputusan, bukti terverifikasi, izin tes/deploy tetap nol/false | BELUM DIUJI |
+| QA-M04S9L-10 | Filter per fungsi/kelas, empty state dan teks rekap tidak menyesatkan | BELUM DIUJI |
+| QA-M04S9L-11 | UX HP 320/375px, tabel scroll, keyboard, screen reader, teks panjang, XSS dan tanpa API/storage/fetch | BELUM DIUJI |
+| QA-M04S9L-12 | 12 skenario Node pada tests/recap.test.mjs sudah tertulis, BELUM DIJALANKAN | BELUM DIUJI |
+| QA-M04S9L-13 | Telaah penanggung jawab proses tentang SOP/SPBE, kearsipan, klasifikasi bukti dan makna rekap | BUTUH KEPUTUSAN |
+| QA-M04S9L-14 | Regresi, review izin testing dan staging/rollback hanya setelah keputusan owner eksplisit | TERTUNDA UJI |
+
+[Dokumen M04-S9L](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9L_CROSS_FUNCTION_RECAP.md). Mode CODE_ONLY tidak berubah.
+
 ## Antrean M04-S9K: register usulan tindak lanjut DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda setelah owner memberikan izin | Status |

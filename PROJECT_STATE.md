@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9L | REKAP LINTAS FUNGSI DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9L](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-cross-function-recap) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/68b056363aa302898baf75fd604c6fe9d5618023) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/dfb9ee472b4916bf15b0c0d206869164640acfd1). Rekap 18 butir M04-S9K, 6 fungsi, catatan usulan/kekurangan bukti DEMO serta dependensi lintas fungsi.
+- Fixture hanya memiliki 3 usulan dan 3 catatan kekurangan bukti fiktif; 15 butir lain tidak mempunyai catatan contoh, **bukan berarti tidak ada masalah nyata**. Semua tugas, keputusan, verifikasi dan izin tes/deploy masih nol.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9L_CROSS_FUNCTION_RECAP.md) dan QA-M04S9L ditambahkan ke TEST_BACKLOG. **12 skenario tes ditulis tetapi BELUM DIJALANKAN**.
+- Repo PUBLIC pada metadata 12 Nov 2026, pengingat ubah PRIVATE Sabtu 14 Nov aktif namun setting belum diubah. PR #9 DRAFT; tidak ada CL/CI/tes/merge/deploy/produksi.
+
 ## PEMBARUAN M04-S9K | REGISTER USULAN TINDAK LANJUT DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9K](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups) pada [commit model](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e). Register menelusuri 18 butir dari M04-S9J dengan asal fungsi, ID, revisi, bukti, pendahulu dan usulan.
 - Tiga contoh usulan sintetis tersedia hanya untuk GOV-01, SEC-01, DAT-01; 15 sisanya tidak memiliki usulan contoh. Tidak ada tugas, pengampu resmi, tenggat, verifikasi bukti, keputusan atau izin uji/deploy.

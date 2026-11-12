@@ -37,3 +37,6 @@ Hubungan antara catatan dan register adalah **kontrak data lokal**, bukan jejak 
 - Tahap berikut dapat berupa rancangan rekap lintas fungsi atas usulan dan kekosongan bahan untuk penelaahan manusia, tetap tidak memberi penugasan, keputusan ataupun kewenangan baru.
 - M04-S10+ keputusan bantuan, anggaran, pengadaan, distribusi dan BAST tetap **RENCANA**.
 - Tidak ada CL, CI, Node/browser tes, workflow, deployment, merge `main`, VPS, database riil, website YANDIK+ aktif ataupun bot Indodax.
+
+## Rekap lintas fungsi setelah M04-S9K
+Agregasi enam fungsi dengan catatan usulan, kekurangan bukti tertulis dan pendahulu antar-fungsi terdapat pada [M04-S9L](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9L_CROSS_FUNCTION_RECAP.md). Semua status tetap DEMO dan BELUM DIUJI. Kolom kosong tidak boleh ditafsir sebagai hasil verifikasi atau masalah selesai.

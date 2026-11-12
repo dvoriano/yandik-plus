@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9L rekap usulan lintas fungsi dan kekurangan bukti DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/68b056363aa302898baf75fd604c6fe9d5618023) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/dfb9ee472b4916bf15b0c0d206869164640acfd1) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-cross-function-recap).
+- Merekap 18 butir M04-S9K ke 6 fungsi, 3 usulan dan 3 catatan kekurangan fiktif, serta hubungan pendahulu antar-fungsi. Kolom kosong tidak disimpulkan selesai.
+- Tidak ada tugas resmi, keputusan, verifikasi, persetujuan SOP/SPBE, alokasi bantuan, izin QA/deploy atau perubahan data produksi.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9L_CROSS_FUNCTION_RECAP.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan rujukan M04-S9K diperbarui.
+- GitHub repo masih PUBLIC per metadata 12 Nov 2026; pengingat ubah PRIVATE Sabtu 14 Nov aktif, setting belum diubah.
+- Tanpa CL, CI, Node/Chromium, Actions, PR merge, main, VPS, DB produksi, website YANDIK+ aktif atau bot Indodax.
+
 ## 2026-11-12 | M04-S9K register usulan tindak lanjut DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups).
 - Menyusun 18 register butir sumber M04-S9J. Hanya 3 usulan contoh sintetis sengaja diisi (GOV-01, SEC-01, DAT-01), 15 lainnya tanpa usulan contoh dan tidak dinyatakan selesai.

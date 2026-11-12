@@ -1,3 +1,7 @@
+## 2026-11-12 | M04-S9L rekap lintas fungsi dan kekurangan bukti DEMO
+- [Model + 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/68b056363aa302898baf75fd604c6fe9d5618023) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/dfb9ee472b4916bf15b0c0d206869164640acfd1) menambah [7 berkas M04-S9L](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-cross-function-recap). Semua **KODE DITULIS, BELUM DIUJI**.
+- Merekap 18 butir/6 fungsi: 3 usulan dan 3 catatan kekurangan fiktif, hubungan dependensi lintas fungsi. Kolom yang belum diisi bukan bukti suatu masalah tuntas.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9L_CROSS_FUNCTION_RECAP.md), PROJECT_STATE, ROADMAP, WORKLOG, TEST_BACKLOG serta M04-S9K disinkronkan. Repo tetap PUBLIC per 12 Nov; pengingat PRIVATE 14 Nov aktif, belum dilaksanakan.
 ## 2026-11-12 | M04-S9K register usulan tindak lanjut DEMO (BELUM DIUJI)
 - [Model + 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/06f820acf7b9d30d6207486b126884c020628487) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/c988033abf186eeb5b73b2de59168960d69bef2e) menambah [7 berkas M04-S9K](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-proposed-followups). Semua **KODE DITULIS, BELUM DIUJI**.
 - Register 18 butir berasal dari M04-S9J, dengan tiga teks usulan fiktif dan 15 tanpa usulan; tidak membentuk penugasan, keputusan, atau izin tes/deploy.

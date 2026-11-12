@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>YANDIK+ M04-S9U | Konsistensi Kebutuhan Bukti QA</title>
+<link rel="stylesheet" href="./style.css"></head><body><main class="shell">
+<header>
+<p class="eyebrow">YANDIK+ · M04-S9U · DRAF GITHUB</p>
+<h1>Konsistensi Kebutuhan Bukti QA</h1>
+<p class="warn"><strong>KODE DITULIS, BELUM DIUJI.</strong> Seluruh isi adalah data DEMO.</p>
+<p>Memetakan 14 permintaan bahan ke enam gerbang QA dan empat temuan
+audit. Keterkaitan struktur di dalam rancangan <strong>bukan bukti
+bahwa dokumen telah diterima atau diperiksa.</strong></p>
+</header>
+<section>
+<h2>Ikhtisar</h2>
+<p id="overview" role="status" aria-live="polite"></p>
+<p id="snapshot" class="subtle"></p>
+</section>
+<section>
+<h2>Gerbang dan temuan</h2>
+<p>Setiap baris masih memerlukan bukti aktual dan pemeriksaan yang sah.</p>
+<h3>Gerbang G0–G5</h3><ul id="gates" class="tiles"></ul>
+<h3>Temuan STATIC-01–04</h3><ul id="findings" class="tiles"></ul>
+</section>
+<section>
+<h2>Daftar konsistensi permintaan bahan</h2>
+<label for="kind">Pilih kategori
+<select id="kind">
+<option value="all">Semua kebutuhan</option>
+<option value="gerbang">Gerbang QA</option>
+<option value="temuan">Temuan audit</option>
+</select></label>
+<p id="shown" role="status" aria-live="polite"></p>
+<ol id="items" class="tiles"></ol>
+</section>
+<section>
+<h2>Peringatan pemanfaatan</h2><ul id="warnings"></ul>
+</section>
+<section>
+<h2>Rekap teks baca-saja</h2>
+<p>Teks untuk meninjau rancangan, bukan berita acara, hasil uji
+PASS, persetujuan anggaran atau dokumen pengesahan.</p>
+<label for="summary">Rekap DEMO sesuai kategori
+<textarea id="summary" readonly rows="18" spellcheck="false"></textarea></label>
+<p id="error" role="alert" class="warn"></p>
+</section>
+<footer>Tanpa login, API, database, fetch, penyimpanan, unggah,
+tes, CI, notifikasi, penugasan, persetujuan, atau deployment.</footer>
+<script type="module" src="./main.mjs"></script>
+</main></body></html>

@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9Q | PAKET PEMBAHASAN PER FASE P0–P3 DEMO | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9Q](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-phase-review-packets) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/60c354f712fd99bba6f6d073fb50676edca3b1c1) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/92393229d324537d7b4694d2ba1e8556077c7df3). Membentuk empat paket P0–P3 dari 18 butir M04-S9P dan pertanyaan terbuka M04-S9M dengan urutan sumber tetap terlacak.
+- Seluruh bahan dan jawaban DEMO belum diverifikasi; tiga catatan kekurangan fiktif tidak menjadi temuan audit. Semua pengiriman, rapat, tugas, keputusan dan izin QA/deploy tetap nol. Pengelompokan fase bukan urutan kerja.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9Q_PHASE_REVIEW_PACKETS.md) dan QA-M04S9Q tercatat dalam TEST_BACKLOG. **12 skenario tes tertulis tetapi BELUM DIJALANKAN**.
+- Repo masih PUBLIC berdasarkan metadata 12 Nov 2026; pengingat ubah PRIVATE Sabtu 14 Nov aktif, perubahan belum dilakukan. PR #9 DRAFT dan CODE_ONLY tanpa CL/CI/tes/deploy/merge atau produksi.
+
 ## PEMBARUAN M04-S9P | INDEKS CATATAN KESENJANGAN DAN URUTAN DISKUSI DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9P](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-material-gap-sequence) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/67092bea986d221f8e2dcc59086c47cf65126cf9) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/cb3bb070c4cad7025a2fb76f910f135262547748). Menghubungkan 18 butir M04-S9O ke pendahulu M04-S9M untuk menampilkan urutan membaca bahan secara topologis dan empat kelompok P0-P3.
 - Tiga butir mempunyai teks catatan kekurangan fiktif; 15 kosong bukan pernyataan cukup. Nol bukti resmi terverifikasi, nol tugas, nol keputusan atau izin QA/deploy. Urutan bukan prioritas, jadwal, atau perintah.

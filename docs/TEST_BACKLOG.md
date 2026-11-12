@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9Q: paket ringkasan pembahasan fase DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin owner eksplisit | Status |
+|---|---|---|
+| QA-M04S9Q-01 | Impor berantai fixture M04-S9P dan M04-S9M tanpa produksi/berkas asli | BELUM DIUJI |
+| QA-M04S9Q-02 | Tepat 4 paket P0–P3, 18 butir unik, enam fungsi dan semua pertanyaan asal | BELUM DIUJI |
+| QA-M04S9Q-03 | Urutan baca global M04-S9P tetap dipertahankan di tiap paket tanpa dianggap urutan eksekusi | BELUM DIUJI |
+| QA-M04S9Q-04 | Semua permintaan bahan, referensi butir/revisi, pendahulu, judul, fase dan fungsi sesuai M04-S9M | BELUM DIUJI |
+| QA-M04S9Q-05 | Pertanyaan ID/teks tidak diubah, semua status jawabannya kosong dan tidak disahkan | BELUM DIUJI |
+| QA-M04S9Q-06 | Tiga contoh catatan kekurangan tetap fiktif; 15 kosong bukan hasil verifikasi atau tuntas | BELUM DIUJI |
+| QA-M04S9Q-07 | Tolak perubahan snapshot/revisi/ID/phaseWaves, duplikat urutan dan referensi tak dikenal | BELUM DIUJI |
+| QA-M04S9Q-08 | Tolak predecessor dengan urutan/kedalaman salah, perubahan lintas fungsi atau fase mundur | BELUM DIUJI |
+| QA-M04S9Q-09 | Tolak klaim palsu bukti resmi, paket dikirim, rapat terjadi, tugas/keputusan/QA/deploy | BELUM DIUJI |
+| QA-M04S9Q-10 | Snapshot stale memperingatkan, perubahan private tidak menandai review resmi | BELUM DIUJI |
+| QA-M04S9Q-11 | Filter per fase/fungsi, empty state, rekap teks dan disclaimer batas kewenangan | BELUM DIUJI |
+| QA-M04S9Q-12 | Dua belas skenario tests/packets.test.mjs ditulis tetapi BELUM DIJALANKAN | BELUM DIUJI |
+| QA-M04S9Q-13 | UI 320–375px, keyboard/screen reader, teks panjang, XSS dan tanpa fetch/API/storage/submit | BELUM DIUJI |
+| QA-M04S9Q-14 | Telaah fungsi resmi/keabsahan berkas, SOP/SPBE, tata naskah dan kearsipan | BUTUH KEPUTUSAN |
+| QA-M04S9Q-15 | Regresi kode/fungsi dan staging/deploy hanya setelah owner memberi izin secara eksplisit | TERTUNDA UJI |
+
+[Spesifikasi M04-S9Q](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9Q_PHASE_REVIEW_PACKETS.md). Mode CODE_ONLY tetap aktif.
+
 ## Antrean M04-S9P: indeks kesenjangan bahan dan urutan diskusi DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda sampai izin owner eksplisit | Status |

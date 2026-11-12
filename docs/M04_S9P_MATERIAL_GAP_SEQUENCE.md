@@ -45,3 +45,6 @@ UI read-only menampilkan jumlah butir dan relasi pendahulu, ringkasan P0–P3, f
 - Tahap berikut yang dapat dirancang: **M04-S9Q**, paket ringkasan pembahasan berurutan per fase untuk telaah manusia, termasuk pertanyaan terbuka dan sumber pembuktian, tetap tanpa pengiriman atau persetujuan otomatis.
 - M04-S10+ bantuan, anggaran, pengadaan, distribusi dan BAST tetap RENCANA.
 - PR #9 tetap DRAFT; jangan menggabungkan ke `main`, menjalankan CL/CI, Node/browser tests, Actions, VPS, database produksi, website YANDIK+ aktif maupun bot Indodax.
+
+## Paket pembahasan per fase tahap berikut
+Urutan baca sumber, pertanyaan dan permintaan bukti dirangkum menurut P0–P3 dalam [M04-S9Q](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9Q_PHASE_REVIEW_PACKETS.md). Paket masih **BELUM DIKIRIM / KODE BELUM DIUJI**, bukan pengesahan kegiatan, keputusan atau undangan resmi.

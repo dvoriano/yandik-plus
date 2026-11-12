@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9Q paket ringkasan pembahasan per fase P0–P3 DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/60c354f712fd99bba6f6d073fb50676edca3b1c1) serta [UI/README dan penyempurnaan skenario urutan per fase](https://github.com/dvoriano/yandik-plus/commit/92393229d324537d7b4694d2ba1e8556077c7df3) disimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-phase-review-packets).
+- Empat paket P0–P3 menggabungkan 18 butir dan urutan baca M04-S9P dengan pertanyaan/bahan M04-S9M. Nomor urutan global sumber tetap dirujuk tanpa mengubahnya menjadi jadwal resmi.
+- Tiga teks catatan kekurangan fiktif bukan temuan riil; semua pertanyaan belum dijawab dan semua bukti belum diverifikasi. Tidak ada rapat, pengiriman, keputusan, tugas, izin QA/deploy.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9Q_PHASE_REVIEW_PACKETS.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan referensi M04-S9P diperbarui.
+- Repository masih PUBLIC per metadata 12 November; pengingat PRIVATE 14 November aktif tetapi pengaturan tidak diubah.
+- CODE_ONLY: tidak ada CL/CI, Node/browser tes, GitHub Actions, merge, main, deployment, VPS, DB/website YANDIK+ produksi atau bot Indodax.
+
 ## 2026-11-12 | M04-S9P indeks catatan kesenjangan dan urutan telaah DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model dan 12 skenario tes tertulis](https://github.com/dvoriano/yandik-plus/commit/67092bea986d221f8e2dcc59086c47cf65126cf9) serta [UI/README dan penyempurnaan skenario siklus](https://github.com/dvoriano/yandik-plus/commit/cb3bb070c4cad7025a2fb76f910f135262547748) tersimpan sebagai [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-material-gap-sequence).
 - Urutan diskusi dari 18 butir pada 6 fungsi dan P0–P3 mengutamakan hubungan pendahulu; ini bukan ranking, prioritas kedinasan, daftar tugas atau instruksi kerja.

@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9J: catatan pembahasan contoh per fungsi (BELUM DIUJI)
+
+| ID | Pemeriksaan tertunda setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9J-01 | Rantai impor dari M04-S9I hingga S9J hanya fixture sintetis, tidak tersambung produksi | BELUM DIUJI |
+| QA-M04S9J-02 | Enam fungsi dan 18 butir tepat satu lembar masing-masing tanpa hilang/duplikat | BELUM DIUJI |
+| QA-M04S9J-03 | Tiga kolom hanya berisi teks fiktif; nilai kosong, trim, panjang maksimal 500 dan kontrol karakter | BELUM DIUJI |
+| QA-M04S9J-04 | Revisi demo bertambah tepat bila nilai berubah, histori tidak menimpa catatan lama, input tidak memutasi sumber | BELUM DIUJI |
+| QA-M04S9J-05 | Perubahan tidak menambah revisi saat isinya sama, dan pengosongan kolom berfungsi | BELUM DIUJI |
+| QA-M04S9J-06 | Menolak butir/fungsi tidak cocok, extra keys dan sumber yang berubah/stale tanpa konsistensi referensi | BELUM DIUJI |
+| QA-M04S9J-07 | Menolak book non-DEMO, fake approval, fake meeting/decision, fake verified evidence dan unauthorized deploy | BELUM DIUJI |
+| QA-M04S9J-08 | Tidak ada API, fetch, localStorage, DB, email, notifikasi, upload atau persistensi antar-reload | BELUM DIUJI |
+| QA-M04S9J-09 | Reset ke buku DEMO kosong, limit 200 edit, dan kewajaran jejak revisi lokal | BELUM DIUJI |
+| QA-M04S9J-10 | Rekap per fungsi/semua fungsi, teks panjang, empty state, label eksplisit bukan berita acara resmi | BELUM DIUJI |
+| QA-M04S9J-11 | Responsif 320/375px, keyboard, fokus, pembaca layar, live region dan keamanan teks/XSS | BELUM DIUJI |
+| QA-M04S9J-12 | Dua belas skenario pada tests/confirmation.test.mjs ditulis, TIDAK DIJALANKAN | BELUM DIUJI |
+| QA-M04S9J-13 | Pemilik proses menilai batas penggunaan hasil pembahasan terhadap SOP, SPBE, arsip dan kewenangan | BUTUH KEPUTUSAN |
+| QA-M04S9J-14 | Regresi, QA keamanan dan staging sesudah izin owner, tanpa mengubah perhitungan APEL historis | TERTUNDA UJI |
+
+[Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9J_DISCUSSION_CONFIRMATION.md). CODE_ONLY tetap melarang pengujian dan deployment.
+
 ## Antrean M04-S9I: agenda telaah per fungsi (SEMUA BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit owner | Status |

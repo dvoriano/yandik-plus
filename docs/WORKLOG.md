@@ -2,6 +2,14 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-12 | M04-S9J lembar catatan pembahasan DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model dan 12 tes tertulis](https://github.com/dvoriano/yandik-plus/commit/dda23595beba7936a716490e9c0ccfbeb2fe7cc6) serta [UI/README dan koreksi konsistensi sumber statis](https://github.com/dvoriano/yandik-plus/commit/82db145f0266517fdb310f7f51a3ea3d6f23cda7) tersimpan dalam [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-discussion-confirmation).
+- Enam fungsi dan 18 butir M04-S9I mempunyai tiga kolom catatan DEMO: masukan, kekurangan bukti, usulan tindak lanjut. Pembaruan hanya dalam memori tab, dilengkapi histori revisi contoh.
+- Tidak ada tanggal atau nama pejabat, pertemuan resmi, notulen, persetujuan, penetapan tugas, izin QA atau deployment.
+- [Spesifikasi M04-S9J](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9J_DISCUSSION_CONFIRMATION.md), PROJECT_STATE, ROADMAP, TEST_BACKLOG, CHANGELOG_ROADMAP dan rujukan M04-S9I diperbarui.
+- GitHub repo PUBLIC menurut metadata 12 Nov; pengingat PRIVATE Sabtu 14 November aktif, setting belum diubah.
+- Tidak ada CL, CI, Node/Chromium, deploy, merge, main, VPS, DB/website YANDIK+ produksi atau bot Indodax.
+
 ## 2026-11-12 | M04-S9I agenda pembahasan menurut fungsi pengampu
 **KODE DITULIS, BELUM DIUJI.** [Model dan 11 tes tertulis](https://github.com/dvoriano/yandik-plus/commit/dc7675ce7130813c770fa1e732f5a0364a86bdaa) serta [UI/README dan koreksi validasi statis](https://github.com/dvoriano/yandik-plus/commit/da76b445ad2ca4f03655a8d9983bebc2fe9d6e48) tersimpan pada [7 berkas draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-function-review-agendas).
 - Mengelompokkan 18 hambatan M04-S9H menjadi 6 paket pembahasan dan pertanyaan khusus, dengan pengampu/penelaah fungsi **usulan** serta daftar bahan yang perlu disiapkan.

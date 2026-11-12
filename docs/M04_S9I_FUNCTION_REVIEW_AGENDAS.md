@@ -44,3 +44,6 @@ Sebelas skenario tes yang **belum dijalankan** telah ditulis pada [tests/agendas
 Lihat [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md) untuk QA fungsional, keamanan, UX dan integrasi yang masih menunggu izin owner.
 Langkah berikut yang mungkin: menyiapkan lembar pertanyaan untuk manusia dan template hasil pembahasan yang **tidak mengesahkan apa pun secara otomatis**. Semua persetujuan resmi tetap pada pihak/sistem berwenang.
 M04-S10+ keputusan bantuan, pengadaan, anggaran, distribusi dan BAST masih RENCANA. Branch `main`, VPS, YANDIK+ aktif, database dan bot Indodax tidak disentuh.
+
+## Lembar catatan hasil pembahasan DEMO (tahap berikut)
+Rancangan tiga kolom masukan, kekurangan bukti dan usulan tindak lanjut per butir tersedia pada [M04-S9J](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9J_DISCUSSION_CONFIRMATION.md). Ini hanya draf di memori halaman, bukan notulen atau konfirmasi resmi, dan **BELUM DIUJI**.

@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S9J | LEMBAR CATATAN PEMBAHASAN CONTOH PER FUNGSI | 12 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [7 berkas draft M04-S9J](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-discussion-confirmation) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/dda23595beba7936a716490e9c0ccfbeb2fe7cc6) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/82db145f0266517fdb310f7f51a3ea3d6f23cda7). Enam fungsi serta 18 butir M04-S9I kini memiliki rancangan lembar contoh masukan, kekurangan bukti dan usulan tindak lanjut.
+- Catatan dibuat hanya di memori tab dengan fungsi pembaruan DEMO dan histori revisi, tanpa persistensi, API, pengiriman, keputusan atau validasi resmi. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9J_DISCUSSION_CONFIRMATION.md) dan QA-M04S9J dicatat di TEST_BACKLOG. **12 skenario tes ditulis, BELUM DIJALANKAN**.
+- Repo metadata 12 November 2026 masih PUBLIC; pengingat perubahan PRIVATE Sabtu 14 Nov aktif, perubahan belum dilakukan. Dilarang memasukkan data asli/rahasia.
+- MODE CODE_ONLY tetap berlaku. PR #9 tetap DRAFT, tidak ada CL/CI/tes/deploy/merge/main/VPS/DB produksi/website aktif/bot Indodax.
+
 ## PEMBARUAN M04-S9I | AGENDA TELAAH PER FUNGSI PENGAMPU DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [7 berkas M04-S9I](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-function-review-agendas) melalui [commit model](https://github.com/dvoriano/yandik-plus/commit/dc7675ce7130813c770fa1e732f5a0364a86bdaa) dan [commit UI](https://github.com/dvoriano/yandik-plus/commit/da76b445ad2ca4f03655a8d9983bebc2fe9d6e48). Mengelompokkan 18 butir M04-S9H menjadi enam agenda fungsi dengan kebutuhan bukti dan pertanyaan konfirmasi.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9I_FUNCTION_REVIEW_AGENDAS.md) serta QA-M04S9I sudah ditambahkan. **11 skenario Node ditulis tetapi tidak dijalankan**. Tidak ada undangan rapat, pejabat resmi, notulen/berita acara, penugasan, keputusan atau izin uji.

@@ -110,7 +110,7 @@ export function viewWorkspace(w,actor,period,facilityId=null){
  const handover=x.handover.records.filter(matches),monitor=x.monitoring.lines.filter(matches);
  const needRows=(v.state?.supportNeeds??[]).filter(n=>actor.role==="puskeswan"||n.status!=="draf");
  return clone({synthetic:true,period,aggregate,details:{facility:v.m,
-  profile:v.state?allSections(v.state).map(s=>({id:s.id,label:s.label,value:s.value,status:s.status})):null,
+  profile:v.state?allSections(actor.role==="puskeswan"?v.state:{...v.state,requests:v.state.requests.filter(r=>r.status!=="draf")}).map(s=>({id:s.id,label:s.label,value:s.value,status:s.status})):null,
   sdm:readSdmSnapshot(v.m.id),apel:v.a,
   needs:needRows.map(n=>({id:n.id,item:n.item,quantity:n.quantity,unit:n.unit,status:n.status})),
   excluded:x.bridge.excluded.filter(l=>l.canonical_id===v.m.id&&needRows.some(n=>n.id===l.local_need_id)),

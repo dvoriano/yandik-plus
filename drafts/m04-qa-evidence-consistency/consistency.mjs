@@ -51,7 +51,7 @@ function sourceGuard(register,preflight){
     throw Error("M04-S9S harus preflight sintetis tanpa izin atau bukti resmi.");
   if(register.source.visibility_snapshot!==
       preflight.source.repository_visibility_snapshot||
-    register.source.snapshot_date!==preflight.source.observed_on||
+    register.source.snapshot_date!==preflight.source.observed_date||
     !text(register.source.snapshot_date))
     throw Error("Snapshot M04-S9T dan M04-S9S tidak cocok.");
 }

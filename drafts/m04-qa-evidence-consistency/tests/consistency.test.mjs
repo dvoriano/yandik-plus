@@ -70,6 +70,9 @@ test("reject forged finding resolution or approved preflight",()=>{
   assert.throws(()=>buildQaEvidenceConsistency(REGISTER_DEMO,p));
 });
 test("source snapshot mismatches are rejected",()=>{
+  const valid=create();
+  assert.equal(valid.source.source_snapshot_date,PREFLIGHT_DEMO.source.observed_date);
+  assert.equal(valid.source.source_snapshot_date,REGISTER_DEMO.source.snapshot_date);
   const r={...REGISTER_DEMO,
     source:{...REGISTER_DEMO.source,snapshot_date:"2026-11-01"}};
   assert.throws(()=>buildQaEvidenceConsistency(r,PREFLIGHT_DEMO));

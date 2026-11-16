@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-16 | M04-I1 workspace lintas modul DEMO
+**KODE DITULIS, BELUM DIUJI.** [Adapter M03 dan orkestrasi S10–S15](https://github.com/dvoriano/yandik-plus/commit/199d993a4edc04668f91376eb84fbffb0e3cdf37), [UI/14 skenario](https://github.com/dvoriano/yandik-plus/commit/092ce9e94ed11bc1bf7962b1f1f41b6a7c104e8d) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md). Identitas/crosswalk baru eksplisit, versi dan isi sumber terikat; profil, SDM/APEL M02 dan jejak dukungan dalam satu state. Tidak ada autentikasi/DB/live adapter; fixture sumber berbeda belum direkonsiliasi. Nol tes, CI, merge atau deployment.
+
 ## 2026-11-16 | M04-S13–S15 realisasi, serah terima dan monitoring dukungan
 **KODE DITULIS, BELUM DIUJI.** [Model dan fixture](https://github.com/dvoriano/yandik-plus/commit/1508aa33d7a8b42e889c49ff4d9cc06de56c8a29); [UI bersama/24 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/86fbec76da490918171f1597d0b9c7c4939a3ee6); [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md). S13 kirim/terima/selisih, S14 rujukan metadata BAST, S15 kondisi dan pemanfaatan terbaru. Semua simulasi, memori append-only, tidak ada dokumen sah atau integrasi riil. Nol tes, CI, merge, deployment.
 

@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I1: integrasi fungsi lintas modul DEMO (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin owner eksplisit | Status |
+|---|---|---|
+| QA-M04I1-01 | Master/crosswalk unik, scope cocok, ID lokal bernamespace | BELUM DIUJI |
+| QA-M04I1-02 | Fungsi M02/M03 menghasilkan sumber; validasi masalah, kebutuhan, metadata dan prioritas | BELUM DIUJI |
+| QA-M04I1-03 | Penolakan kebutuhan belum terverifikasi, satuan asing, sumber usang | BELUM DIUJI |
+| QA-M04I1-04 | Paket memakai kuantitas asal; perubahan versi/isi menghambat model | BELUM DIUJI |
+| QA-M04I1-05 | Tujuh tahap S10–S15 satu state, urutan, tidak duplikat atau klaim resmi | BELUM DIUJI |
+| QA-M04I1-06 | APEL nol vs tidak tersedia; SDM/profil kosong; agregat cakupan | BELUM DIUJI |
+| QA-M04I1-07 | Proyeksi fasilitas/wilayah, pimpinan agregat, peran asing dan scope salah | BELUM DIUJI |
+| QA-M04I1-08 | Jejak dukungan per fasilitas/satuan, tanpa bocor baris fasilitas lain | BELUM DIUJI |
+| QA-M04I1-09 | UI periode/peran, langkah, reset, mobile, keyboard, error, XSS, tidak ada akses produksi | BELUM DIUJI |
+| QA-M04I1-10 | 14 deklarasi Node tertulis, belum dijalankan | BELUM DIUJI |
+| QA-M04I1-11 | Rekonsiliasi snapshot/fixture, ID sumber nyata, adapter Flask/APEL, API/RBAC/DB server | RENCANA |
+| QA-M04I1-12 | Koreksi objek berantai, concurrency, audit dan dasar kelembagaan | RENCANA / BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-I1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md). CODE_ONLY tetap.
+
 ## Antrean M04-S13–S15: siklus dukungan (BELUM DIUJI)
 
 | ID | Pemeriksaan hanya setelah izin eksplisit | Status |

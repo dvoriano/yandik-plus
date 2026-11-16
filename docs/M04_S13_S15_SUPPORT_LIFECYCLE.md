@@ -36,3 +36,7 @@ Kondisi pengamatan: digunakan + belum digunakan + rusak setelah penerimaan harus
 
 ## Keputusan lanjutan
 Cakupan rancangan fungsional Support Puskeswan kini mencapai monitoring. Jangan menambah prototipe berulang sebagai pengganti integrasi. Tahap lanjutan yang disarankan: susun kontrak integrasi M03/M04, aturan koreksi dan akses wilayah, data/audit server serta QA dengan izin eksplisit owner. Rancangan fungsional tidak menandakan modul siap dipakai, bantuan sah atau proyek YANDIK+ telah selesai.
+
+
+## Lanjutan M04-I1 (16 November 2026)
+[Workspace lintas modul DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md) memanggil model S10–S15 dari kebutuhan yang dihasilkan fungsi M03, dengan crosswalk baru dan state bersama. **BELUM DIUJI**. Fixture lama tidak dipetakan sebagai data fasilitas yang identik. Server, rekonsiliasi dan otorisasi masih tertunda.

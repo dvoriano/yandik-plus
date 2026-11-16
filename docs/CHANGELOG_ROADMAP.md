@@ -1,3 +1,7 @@
+## 2026-11-16 | M04-I1 workspace lintas modul DEMO
+- [Adapter/model](https://github.com/dvoriano/yandik-plus/commit/199d993a4edc04668f91376eb84fbffb0e3cdf37), [UI/14 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/092ce9e94ed11bc1bf7962b1f1f41b6a7c104e8d), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md).
+- Crosswalk eksplisit, M03 ke M04-S10–S15 dalam state bersama, SDM/APEL baca-saja snapshot M02. KODE DITULIS, BELUM DIUJI. Bukan integrasi produksi/RBAC server.
+
 ## 2026-11-16 | M04-S13–S15 siklus dukungan
 - [Model](https://github.com/dvoriano/yandik-plus/commit/1508aa33d7a8b42e889c49ff4d9cc06de56c8a29), [UI/24 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/86fbec76da490918171f1597d0b9c7c4939a3ee6), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md); realisasi, terima, rujukan serah terima dan monitoring DEMO.
 - KODE DITULIS, BELUM DIUJI. Tidak ada tindakan resmi, otorisasi, dokumen, data riil atau deployment.

@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-I1 | WORKSPACE LINTAS MODUL DEMO | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [adapter dan workspace](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-integrated-workspace) memakai fungsi model Profil/M03 lalu meneruskan kebutuhan terverifikasi DEMO ke S10–S15; crosswalk baru eksplisit dan pengikatan sumber paket.
+- APEL/SDM dibaca dari snapshot M02, bukan data produksi atau gabungan otomatis fixture foundation. UI cakupan fasilitas/wilayah/agregat dan tujuh kontrol skenario bersama. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md); 14 skenario tertulis, 0 dijalankan.
+- Belum modul operasional, rekonsiliasi, API/DB/RBAC server, koreksi dan audit. CODE_ONLY, PR #9 Draft, produksi tidak disentuh. Kelanjutan usulan I2: kontrak penyimpanan, akses server, transaksi/versi dan audit.
+
 ## PEMBARUAN M04-S13–S15 | REALISASI, SERAH TERIMA, MONITORING | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model S13–S15 dan UI bersama](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-lifecycle) terhubung via fixture S12: catatan kirim/terima parsial, kondisi baik/rusak/selisih, register rujukan BAST DEMO, monitoring terbaru serta riwayat per baris.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md); 24 skenario baru tertulis, 0 dijalankan. Cakupan rancangan Support mencapai monitoring, **belum terintegrasi atau operasional**. S9V 192 tetap snapshot; S10–S15 62 tambahan.

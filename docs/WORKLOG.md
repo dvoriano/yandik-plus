@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-16 | M04-S12 rencana distribusi dukungan
+**KODE DITULIS, BELUM DIUJI.** [Model/14 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/dacf317018b6df176b783ffe221a10fa4d4043e9) dan [UI DEMO](https://github.com/dvoriano/yandik-plus/commit/a57ffa58d6abbe8e37c5545d824d8f67479009cc); paket dan telaah fixture, jadwal indikatif per barang, tujuan dan satuan dari sumber, jumlah kumulatif dan sisa. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md). Tidak ada penerima resmi, stok/pengadaan, pengiriman, penerimaan, BAST, tes, CI, merge atau deployment.
+
 ## 2026-11-16 | M04-S11 telaah rencana paket dukungan
 **KODE DITULIS, BELUM DIUJI.** [Model/12 skenario](https://github.com/dvoriano/yandik-plus/commit/0290f9af6b1b23269432cd17d91ef668db14974d) dan [UI DEMO](https://github.com/dvoriano/yandik-plus/commit/6d0dd54ddce5e9009701bedb9d8c71324f4ee84a) menggunakan paket S10, referensi keputusan/anggaran fiktif, alur pengajuan, pengembalian/revisi dan catat pembahasan. Snapshot dan histori dalam memori, bukan audit server. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md). Tidak ada verifikasi formal, dana, keputusan resmi, pengadaan, distribusi, BAST, pengujian, CI, merge atau deployment.
 

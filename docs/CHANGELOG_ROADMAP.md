@@ -1,3 +1,7 @@
+## 2026-11-16 | M04-S12 rencana distribusi dukungan
+- [Model dan 14 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/dacf317018b6df176b783ffe221a10fa4d4043e9), [UI DEMO](https://github.com/dvoriano/yandik-plus/commit/a57ffa58d6abbe8e37c5545d824d8f67479009cc), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md).
+- Jadwal draft, tujuan dan satuan dari sumber, batas jumlah dan deteksi sumber berubah; tidak ada izin, stok, pengiriman, penerimaan atau BAST. KODE DITULIS, BELUM DIUJI.
+
 ## 2026-11-16 | M04-S11 telaah paket dukungan
 - [Model dan 12 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/0290f9af6b1b23269432cd17d91ef668db14974d), [UI DEMO](https://github.com/dvoriano/yandik-plus/commit/6d0dd54ddce5e9009701bedb9d8c71324f4ee84a), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md).
 - Metadata keputusan/anggaran fiktif, draf/telaah/kembalikan/revisi/catat pembahasan; bukan verifikasi resmi atau konfirmasi dana. KODE DITULIS, BELUM DIUJI, 0 tes dijalankan.

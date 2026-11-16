@@ -186,6 +186,27 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S12: rencana distribusi dukungan (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit | Status |
+|---|---|---|
+| QA-M04S12-01 | Paket fixture S10/telaah S11 cocok; jadwal kosong dan jumlah awal | BELUM DIUJI |
+| QA-M04S12-02 | Tujuan dan satuan diwarisi dari baris sumber | BELUM DIUJI |
+| QA-M04S12-03 | Jadwal parsial dan kumulatif tepat batas; tolak kelebihan | BELUM DIUJI |
+| QA-M04S12-04 | Edit mengganti baris dan hapus mengurangi kuantitas terjadwal | BELUM DIUJI |
+| QA-M04S12-05 | Sumber belum ditelaah, dikembalikan, berubah atau dihapus ditolak | BELUM DIUJI |
+| QA-M04S12-06 | Snapshot paket/telaah berubah, versi, barang dan metadata | BELUM DIUJI |
+| QA-M04S12-07 | ID ganda, tanggal invalid, metode asing, jumlah nol/negatif/pecahan ditolak | BELUM DIUJI |
+| QA-M04S12-08 | Penolakan tujuan bebas, otorisasi dan field aktual palsu | BELUM DIUJI |
+| QA-M04S12-09 | Ringkasan satuan dan sisa tidak dianggap stok/penerimaan | BELUM DIUJI |
+| QA-M04S12-10 | Tidak mutasi fixture; generator deterministik | BELUM DIUJI |
+| QA-M04S12-11 | UI tambah/ubah/hapus/reset, batas jumlah, keyboard, HP, aksesibilitas dan XSS | BELUM DIUJI |
+| QA-M04S12-12 | Adapter, rekonsiliasi usang, kontrol akses, audit server | RENCANA |
+| QA-M04S12-13 | Otorisasi/ketersediaan barang, SOP dan referensi dokumen eksternal sah | BUTUH KEPUTUSAN |
+| QA-M04S12-14 | 14 skenario Node baru tertulis; tidak dijalankan | BELUM DIUJI |
+
+[Spesifikasi M04-S12](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md). CODE_ONLY tetap.
+
 ## Antrean M04-S11: telaah paket dukungan (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit | Status |

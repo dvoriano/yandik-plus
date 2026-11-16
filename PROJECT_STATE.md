@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S12 | RENCANA DISTRIBUSI DUKUNGAN | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [model dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-distribution-plan), menautkan paket S10 dan telaah S11, tanggal/cara, tujuan turunan dari baris paket dan pembatas jumlah kumulatif.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md); 14 skenario tertulis, 0 dijalankan; draf hanya dalam memori. Belum adapter UI antar tahap, rekonsiliasi usang, otorisasi aktual, stok, pengiriman, penerimaan maupun BAST.
+- CODE_ONLY; repo PUBLIC, PR #9 Draft; tidak ada merge atau deployment.
+
 ## PEMBARUAN M04-S11 | TELAAH RENCANA PAKET DUKUNGAN | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-review) menggunakan paket sumber S10, rujukan keputusan/anggaran fiktif, riwayat telaah, pengembalian dan revisi. Perubahan snapshot menghalangi kelanjutan.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md) dan 12 skenario baru tertulis, 0 dijalankan. S9V tetap snapshot 192 skenario, S10/S11 masing-masing 12 skenario di backlog terpisah.

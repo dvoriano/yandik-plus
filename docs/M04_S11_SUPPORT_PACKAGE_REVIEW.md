@@ -28,3 +28,6 @@ Peran hanya label simulasi, bukan identitas atau autentikasi. Status akhir tidak
 Usulan M04-S12: rancangan pencatatan rencana distribusi dengan jumlah per baris dan prasyarat referensi eksternal yang nyata, tetap data fiktif. Jangan menjadikan status tercatat untuk pembahasan di S11 sebagai izin penyaluran. Distribusi aktual, BAST, pengadaan, anggaran dan keputusan resmi tetap menunggu QA, SOP dan otorisasi.
 
 Repo PUBLIC per metadata 16 November 2026, PR #9 Draft. Tidak ada data riil, merge main, deploy, atau perubahan produksi.
+
+## Lanjutan M04-S12 (16 November 2026)
+[Draft rencana distribusi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md) ditulis, **BELUM DIUJI**, memakai status telaah S11 sebagai syarat simulasi saja. Metadata dan jadwal bukan izin penyaluran atau verifikasi anggaran.

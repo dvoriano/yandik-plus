@@ -50,7 +50,7 @@ function transaction(db,fn){
 // One workspace per isolated DEMO database. All mutations are synchronous.
 export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date().toISOString()}){
  if(typeof lookupPrincipal!=="function"||typeof readSource!=="function")throw Error("TRUSTED_ADAPTER_REQUIRED");
- db.exec("PRAGMA foreign_keys=ON; PRAGMA busy_timeout=3000;");
+ db.exec("PRAGMA foreign_keys=ON; PRAGMA recursive_triggers=ON; PRAGMA busy_timeout=3000;");
  db.exec(SCHEMA_SQL);
  const select=()=>db.prepare("SELECT revision,payload FROM workspace_current WHERE id=1").get();
  const read=()=>{
@@ -109,6 +109,7 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    const next=clone(payload);
    let outcome="tercatat_demo",correctionId=null;
    if(cmd.action==="advance"){
+    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi"].includes(c.status)))throw Error("CORRECTION_PENDING");
     next.workspace=advanceDemo(w,facility.id,cmd.data.stage);
    }else if(cmd.action==="request_correction"){
     correctionId=cmd.data.correction_id;
@@ -118,6 +119,7 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
     next.corrections.push({id:correctionId,facility_id:facility.id,requester:actor.id,
      reason:cmd.data.reason,base_source_revision:sourceRevision(next.source_versions[facility.id]),
      status:"menunggu_telaah",reviewer:null,review_reason:null,outcome:null});
+    outcome="menunggu_telaah";
    }else{
     correctionId=cmd.data.correction_id;
     const c=next.corrections.find(c=>c.id===correctionId&&c.facility_id===facility.id);
@@ -125,7 +127,7 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
     if(cmd.action==="review_correction"){
      if(c.requester===actor.id||c.status!=="menunggu_telaah")throw Error("CORRECTION_REVIEW_DENIED");
      c.status=cmd.data.decision==="catat_untuk_sinkron"?"tercatat_untuk_sinkron":"dikembalikan";
-     c.reviewer=actor.id;c.review_reason=cmd.data.reason;
+     c.reviewer=actor.id;c.review_reason=cmd.data.reason;outcome=c.status;
     }else{
      if(c.status!=="tercatat_untuk_sinkron"||c.reviewer===actor.id)throw Error("SOURCE_SYNC_NOT_REVIEWED");
      const current=sourceRevision(next.source_versions[facility.id]);

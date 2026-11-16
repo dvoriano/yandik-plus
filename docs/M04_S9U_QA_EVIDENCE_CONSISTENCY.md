@@ -27,3 +27,6 @@ Rangkaian sebelumnya memiliki 172 skenario tertulis. M04-S9U menambah 12 skenari
 [Backlog QA](TEST_BACKLOG.md) menyimpan pemeriksaan yang belum dilakukan. Tahap rancangan berikutnya dapat menyusun paket persiapan sesi QA M04-S9V, tetapi bukan izin menjalankan tes.
 
 Repository masih PUBLIC menurut metadata GitHub 12 November 2026. Jangan unggah data rahasia atau berkas kedinasan. PR #9 tetap Draft; `main`, YANDIK+ produksi, VPS, database, dan bot Indodax tidak diubah.
+
+## Tindak lanjut M04-S9V (16 November 2026)
+Pembacaan kode menemukan mismatch tanggal snapshot: S9U semula membaca observed_on, sementara S9S menyediakan observed_date. [Kode perbaikan dan skenario regresi diperkuat](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9), **BELUM DIUJI**. Kasus regresi masuk [paket sesi QA M04-S9V](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md); tidak ada eksekusi atau penutupan temuan.

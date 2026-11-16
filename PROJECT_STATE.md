@@ -1,10 +1,15 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 12 November 2026, WIB  
-**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 12 November 2026; jangan masukkan data riil/rahasia**)  
+**Terakhir diperbarui:** 16 November 2026, WIB  
+**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 16 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN M04-S9V | PAKET PERSIAPAN SESI QA | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [kontrak tanggal snapshot S9U diperbaiki](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9) dari observed_on menjadi observed_date dan skenario regresi diperkuat tanpa menjalankan tes.
+- [Paket sesi QA](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-session-plan) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md) memuat 17 suite, kriteria masuk/keluar/berhenti G0–G5, 14 kebutuhan bukti dan 4 temuan audit awal tetap terbuka. Pembacaan sumber menemukan 184 skenario sebelumnya, ditambah 8 menjadi **192 tertulis, 0 dijalankan pada S9V**.
+- Repo masih PUBLIC per metadata 16 November; PR #9 Draft, CODE_ONLY, tidak ada pengujian, merge atau produksi. Rekomendasi: akhiri penambahan prototipe QA berulang dan tunggu G0 untuk eksekusi; pekerjaan fungsional independen tetap dapat dirancang.
 
 ## PEMBARUAN M04-S9U | KONSISTENSI STRUKTUR BUKTI QA DEMO | 12 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model, UI dan 12 skenario QA baru](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-evidence-consistency) memetakan 14 kebutuhan bukti ke enam gerbang G0–G5 dan empat temuan STATIC-01–04.

@@ -186,6 +186,23 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S9V: paket sesi QA berjenjang (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S9V-01 | Regresi snapshot valid S9S observed_date → S9T snapshot_date → S9U; beda tanggal ditolak | BELUM DIUJI |
+| QA-M04S9V-02 | Rantai fixture S9S–S9V dan 14 kebutuhan bukti | BELUM DIUJI |
+| QA-M04S9V-03 | 17 suite, 192 deklarasi tertulis, path tepat dan tidak duplikat | BELUM DIUJI |
+| QA-M04S9V-04 | Pembagian G1=12, G2=56, G3=124, setiap suite tepat sekali | BELUM DIUJI |
+| QA-M04S9V-05 | Kriteria masuk, keluar, berhenti G0–G4; G5 terpisah | BELUM DIUJI |
+| QA-M04S9V-06 | Tidak ada izin, commit eksekusi, bukti, hasil lulus, penutupan temuan atau izin deploy palsu | BELUM DIUJI |
+| QA-M04S9V-07 | Format hasil per kasus, catat expected/observed, referensi cacat dan retest | BELUM DIUJI |
+| QA-M04S9V-08 | Pemeriksaan manual browser/HP/keyboard/XSS tanpa data riil dan efek samping di luar scope | TERTUNDA IZIN |
+| QA-M04S9V-09 | G0: izin owner eksplisit pada commit dan batas pengujian | BUTUH IZIN OWNER |
+| QA-M04S9V-10 | G5: tata kelola, SOP/SPBE dan klasifikasi; keputusan owner tentang repo PUBLIC dan histori paparan | BUTUH KEPUTUSAN |
+
+[Rencana sesi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md). Delapan skenario baru hanya ditulis dan tidak dijalankan. 192 bukan jumlah tes lulus. 
+
 ## Antrean M04-S9U: konsistensi kebutuhan bukti (BELUM DIUJI)
 
 | ID | Pemeriksaan tertunda setelah izin eksplisit owner | Status |

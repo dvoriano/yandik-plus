@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-16 | M04-S9V paket persiapan sesi QA berjenjang
+**KODE DITULIS, BELUM DIUJI.** [Mismatch atribut tanggal snapshot S9U diperbaiki](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9). Sebanyak 16 file tes dibaca sebagai teks (184 deklarasi); [paket sesi dan 8 skenario baru](https://github.com/dvoriano/yandik-plus/commit/9e6ac5f9a7a79f33351c18a3b984c3fa8a6705d5) memberi 17 suite dan 192 skenario tertulis. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md) merinci gerbang, aturan berhenti, pencatatan hasil kelak dan scope G0. Tidak ada tes, CI, keputusan, penutupan temuan atau deployment. Repo PUBLIC per metadata 16 Nov, PR #9 Draft; main dan produksi tidak disentuh.
+
 ## 2026-11-12 | M04-S9U konsistensi struktur kebutuhan bukti QA DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model/fixture/12 skenario](https://github.com/dvoriano/yandik-plus/commit/f55c61a50c0859ce062cae3192048607ebfe56a7) dan [UI/README](https://github.com/dvoriano/yandik-plus/commit/b5c3e461c170322a8cd30ea6a101fc440a05d451) tersimpan.
 - Keterkaitan 14 permintaan pada enam gerbang dan empat temuan ditulis sebagai kontrak DEMO. Kecocokan ID bukan dokumen resmi yang diterima. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9U_QA_EVIDENCE_CONSISTENCY.md).

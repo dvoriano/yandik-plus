@@ -1,3 +1,8 @@
+## 2026-11-16 | M04-S9V paket persiapan sesi QA
+- [Perbaikan mismatch tanggal snapshot S9U](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9) dan penguatan regresi, BELUM DIUJI.
+- [Paket sesi QA](https://github.com/dvoriano/yandik-plus/commit/9e6ac5f9a7a79f33351c18a3b984c3fa8a6705d5) menyatukan daftar 17 suite/192 skenario tertulis, G0–G5 dan 14 kebutuhan bukti; 0 tes dijalankan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md).
+- CODE_ONLY, PR #9 Draft, repo PUBLIC per metadata 16 November, tanpa perubahan main/produksi.
+
 ## 2026-11-12 | M04-S9U konsistensi struktur kebutuhan bukti QA DEMO
 - [Model dan 12 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/commit/f55c61a50c0859ce062cae3192048607ebfe56a7) serta [UI/README](https://github.com/dvoriano/yandik-plus/commit/b5c3e461c170322a8cd30ea6a101fc440a05d451). KODE DITULIS, BELUM DIUJI.
 - Enam gerbang dan empat temuan ditautkan pada 14 kebutuhan bukti DEMO; nol bukti diterima, diverifikasi, tes dijalankan pada S9U atau temuan ditutup.

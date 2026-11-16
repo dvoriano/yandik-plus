@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I2: repository data terpadu (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04I2-01 | Baseline Node/node:sqlite, skema STRICT, JSON, foreign keys, koneksi ulang | BELUM DIUJI |
+| QA-M04I2-02 | Revisi, snapshot, event dan idempotensi dalam transaksi; rollback jika event gagal | BELUM DIUJI |
+| QA-M04I2-03 | Replay identik, reuse ID berbeda/aktor berbeda, versi stale dan retry | BELUM DIUJI |
+| QA-M04I2-04 | Scope fasilitas/wilayah, lookup aktif, pimpinan agregat, deny role/field palsu | BELUM DIUJI |
+| QA-M04I2-05 | Koreksi satu terbuka, pemisahan reviewer, return, freeze alur | BELUM DIUJI |
+| QA-M04I2-06 | Sinkron provider tepercaya, versi dan scope, preservasi histori, binding stale | BELUM DIUJI |
+| QA-M04I2-07 | Konflik tercatat, snapshot sumber lama tetap, freeze; resolusi konflik belum ada | BELUM DIUJI |
+| QA-M04I2-08 | Trigger append-only, histori scope/limit, audit internal; ancaman SQL admin | BELUM DIUJI |
+| QA-M04I2-09 | 16 deklarasi tes tertulis; coba ulang seluruh rantai I1 pada lingkungan isolasi | BELUM DIUJI |
+| QA-M04I2-10 | Restart proses/file, concurrency lintas koneksi, crash, backup/migrasi, retensi | RENCANA |
+| QA-M04I2-11 | API/sesi/RBAC server, batas input, sanitasi error, keamanan dan SOP | RENCANA |
+| QA-M04I2-12 | Rekonsiliasi berantai dan APEL/foundation, partisi data, sumber asli | RENCANA |
+
+[Spesifikasi M04-I2](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md). CODE_ONLY tetap.
+
 ## Antrean M04-I1: integrasi fungsi lintas modul DEMO (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin owner eksplisit | Status |

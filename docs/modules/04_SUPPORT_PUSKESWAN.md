@@ -209,3 +209,7 @@ Peringkat pelayanan tinggi tidak otomatis mendominasi bantuan; fasilitas terpenc
 
 ## Tautan pengembangan lintas modul M04-I1 (16 November 2026)
 [Workspace DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md) menggunakan identitas fiktif dan fungsi M02/M03, snapshot baca-saja SDM/APEL dan model S10–S15. **KODE DITULIS, BELUM DIUJI.** Tidak mengubah status modul produksi, tidak menyatukan sumber asli, tidak mengimplementasikan APEL 2.0 atau RBAC/API/DB server. Kontrak data dan akses server menjadi pekerjaan lanjutan.
+
+
+## Pengembangan repository M04-I2 (16 November 2026)
+[Kontrak SQLite dan akses/koreksi DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md) ditulis dan BELUM DIUJI. Ini rancangan server-side khusus fixture I1, bukan login atau hak akses resmi, adapter Flask atau database produksi. Revisi, snapshot, audit dan idempotensi dirancang satu transaksi; konflik sumber diblokir. Rekonsiliasi dan penyelarasan kebijakan Core masih tertunda.

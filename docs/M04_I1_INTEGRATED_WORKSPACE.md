@@ -32,3 +32,7 @@ APEL dan SDM menggunakan snapshot JS M02 sebagai sumber **khusus DEMO ini**. Hal
 
 ## Rencana lanjutan
 M04-I2: rancangan kontrak repository data, otorisasi di sisi server, transaksi atomik/versi dan audit perubahan; tentukan rekonsiliasi data sumber serta koreksi objek berantai. Jangan mengklaim integrasi operasional atau menjalankan QA tanpa izin eksplisit owner. M05 (APEL 2.0) tetap mengikuti roadmap, tidak diimplementasikan oleh I1.
+
+
+## Lanjutan M04-I2 (16 November 2026)
+[Repository data dan kebijakan akses/koreksi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md) ditulis, BELUM DIUJI. Koneksi SQLite serta provider/identitas harus diinjeksi host tepercaya; tidak ada koneksi atau server yang dijalankan. Resolusi koreksi berantai dan integrasi nyata tetap tertunda.

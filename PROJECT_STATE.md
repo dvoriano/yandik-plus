@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-I2 | FONDASI DATA TERPADU | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [repository SQLite DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-data-foundation) untuk state I1, revisi/snapshot, audit dan idempotensi dalam transaksi, scope/role server berdasarkan lookup identity tepercaya.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md); koreksi terpisah penelaah, sinkron dari provider sintetis, konflik binding diblokir dan tercatat. 16 skenario baru tertulis, 0 dijalankan.
+- Belum login/API/Flask, database nyata, resolusi rekonsiliasi berantai atau QA. CODE_ONLY, PR #9 Draft, main dan produksi tidak disentuh. Usulan I3: rekonsiliasi/revisi berantai tanpa menghapus histori.
+
 ## PEMBARUAN M04-I1 | WORKSPACE LINTAS MODUL DEMO | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [adapter dan workspace](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-integrated-workspace) memakai fungsi model Profil/M03 lalu meneruskan kebutuhan terverifikasi DEMO ke S10–S15; crosswalk baru eksplisit dan pengikatan sumber paket.
 - APEL/SDM dibaca dari snapshot M02, bukan data produksi atau gabungan otomatis fixture foundation. UI cakupan fasilitas/wilayah/agregat dan tujuh kontrol skenario bersama. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md); 14 skenario tertulis, 0 dijalankan.

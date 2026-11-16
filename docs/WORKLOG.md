@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-16 | M04-I2 fondasi data terpadu
+**KODE DITULIS, BELUM DIUJI.** [Repository SQLite dan kebijakan scope/koreksi](https://github.com/dvoriano/yandik-plus/commit/a1a5654e0fe9d6a22b3f8b3937e4191c5813ff5e); [penguatan dan 16 skenario](https://github.com/dvoriano/yandik-plus/commit/18931448ba306a66a485e99ed0d24ce177581f65); [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md). Transaksi snapshot/audit/idempotensi, lookup identitas tepercaya, koreksi dan sinkron sumber DEMO, konflik binding diblokir. Belum pembuktian runtime, database, autentikasi/API/Flask atau resolusi koreksi berantai; nol tes, CI, merge, deployment.
+
 ## 2026-11-16 | M04-I1 workspace lintas modul DEMO
 **KODE DITULIS, BELUM DIUJI.** [Adapter M03 dan orkestrasi S10–S15](https://github.com/dvoriano/yandik-plus/commit/199d993a4edc04668f91376eb84fbffb0e3cdf37), [UI/14 skenario](https://github.com/dvoriano/yandik-plus/commit/092ce9e94ed11bc1bf7962b1f1f41b6a7c104e8d) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md). Identitas/crosswalk baru eksplisit, versi dan isi sumber terikat; profil, SDM/APEL M02 dan jejak dukungan dalam satu state. Tidak ada autentikasi/DB/live adapter; fixture sumber berbeda belum direkonsiliasi. Nol tes, CI, merge atau deployment.
 

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Perencanaan Dukungan Puskeswan | YANDIK+ DEMO</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><p class="eyebrow">YANDIK+ · M04-S10 · DEMO</p><h1>Rencana dukungan Puskeswan</h1><p>Susun paket dari kebutuhan yang tercatat. Jumlah rencana bukan alokasi bantuan.</p><p class="notice">KODE DITULIS, BELUM DIUJI. Seluruh data fiktif; perubahan hanya di memori selama halaman terbuka.</p></header>
+<section aria-labelledby="overview-title"><h2 id="overview-title">Ringkasan perencanaan</h2><div id="metrics" class="metrics"></div><div id="units" class="units"></div></section>
+<section aria-labelledby="need-title"><h2 id="need-title">Daftar kebutuhan</h2><p>Jumlah yang direncanakan dan sisa dihitung per kebutuhan. Satuan berbeda tidak dijumlahkan.</p><div id="needs" class="cards"></div></section>
+<section aria-labelledby="package-title"><h2 id="package-title">Paket dukungan (draf)</h2><div class="toolbar"><label for="draft-select">Paket aktif</label><select id="draft-select"></select><button id="new" type="button">Paket baru</button></div>
+<form id="meta-form"><label for="title">Nama paket</label><input id="title" required minlength="3" maxlength="100"><label for="purpose">Alasan rencana</label><textarea id="purpose" required minlength="10" maxlength="300" rows="3"></textarea><button type="submit">Simpan nama dan alasan draf</button></form>
+<form id="line-form"><h3>Isi paket</h3><label for="need-select">Kebutuhan DEMO terverifikasi</label><select id="need-select"></select><label for="quantity">Jumlah dalam paket aktif</label><input id="quantity" type="number" min="1" max="100000" step="1" required><p id="remaining-hint"></p><button type="submit">Simpan jumlah</button></form><p id="feedback" role="status" aria-live="polite"></p>
+<div id="lines" class="cards"></div><button type="button" id="delete" class="secondary">Hapus draf aktif</button></section>
+<section aria-labelledby="boundary-title"><h2 id="boundary-title">Batas perencanaan</h2><ul id="warnings"></ul></section>
+</main><script type="module" src="./main.mjs"></script></body></html>

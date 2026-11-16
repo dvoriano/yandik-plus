@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-16 | M04-S10 draf perencanaan paket dukungan Puskeswan
+**KODE DITULIS, BELUM DIUJI.** [Model/fixture/12 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/c52feb5222196d8a77d99c2a01767dbd75781af8) dan [formulir DEMO](https://github.com/dvoriano/yandik-plus/commit/a3e212b1f87f0093f7d49bd114bd61c9d7c0a608) tersimpan. Menggunakan kembali kebutuhan fiktif M04-S1, merancang jumlah lintas paket dan sisa, pembatas status dan versi sumber, serta ringkasan per satuan. Tidak ada approval, dana, stok, distribusi, BAST, adapter produksi maupun penyimpanan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md); QA S10 terpisah dari inventaris S9V. CODE_ONLY, tidak ada tes, CI, merge atau deploy.
+
 ## 2026-11-16 | M04-S9V paket persiapan sesi QA berjenjang
 **KODE DITULIS, BELUM DIUJI.** [Mismatch atribut tanggal snapshot S9U diperbaiki](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9). Sebanyak 16 file tes dibaca sebagai teks (184 deklarasi); [paket sesi dan 8 skenario baru](https://github.com/dvoriano/yandik-plus/commit/9e6ac5f9a7a79f33351c18a3b984c3fa8a6705d5) memberi 17 suite dan 192 skenario tertulis. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md) merinci gerbang, aturan berhenti, pencatatan hasil kelak dan scope G0. Tidak ada tes, CI, keputusan, penutupan temuan atau deployment. Repo PUBLIC per metadata 16 Nov, PR #9 Draft; main dan produksi tidak disentuh.
 

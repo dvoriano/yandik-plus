@@ -52,6 +52,11 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Draft M04-S10 | 16 November 2026 | BELUM DIUJI
+- [x] [Model dan form paket dukungan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-planning) memakai fixture M04-S1, pembatas jumlah, versi sumber, tambah/edit/hapus paket/baris dalam memori, ringkasan per satuan.
+- [x] [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md); 12 skenario tertulis, 0 dijalankan.
+- [ ] Belum integrasi, verifikasi keputusan atau anggaran, pengadaan, penyaluran, BAST dan data riil.
+
 ## Draft M04-S9 | 11 November 2026 | BELUM DIUJI
 - [x] [Register kekurangan dan perbaikan kelembagaan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) dari M04-S8 DEMO: isu, dampak, penanggung jawab, rencana, tenggat, progres, telaah dan histori.
 - [x] Sumber usang memerlukan kajian ulang; menutup catatan **bukan** menyatakan SOP sah atau siap integrasi.

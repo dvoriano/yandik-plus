@@ -1,3 +1,7 @@
+## 2026-11-16 | M04-S10 rancangan paket dukungan Puskeswan
+- [Model dan 12 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/c52feb5222196d8a77d99c2a01767dbd75781af8), [formulir DEMO](https://github.com/dvoriano/yandik-plus/commit/a3e212b1f87f0093f7d49bd114bd61c9d7c0a608), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md).
+- Draf jumlah, sisa, pembatas antar-paket dan versi sumber; tanpa penetapan penerima, harga, alokasi, pengadaan, distribusi atau BAST. KODE DITULIS, BELUM DIUJI; 0 tes dijalankan, PR #9 Draft.
+
 ## 2026-11-16 | M04-S9V paket persiapan sesi QA
 - [Perbaikan mismatch tanggal snapshot S9U](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9) dan penguatan regresi, BELUM DIUJI.
 - [Paket sesi QA](https://github.com/dvoriano/yandik-plus/commit/9e6ac5f9a7a79f33351c18a3b984c3fa8a6705d5) menyatukan daftar 17 suite/192 skenario tertulis, G0–G5 dan 14 kebutuhan bukti; 0 tes dijalankan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md).

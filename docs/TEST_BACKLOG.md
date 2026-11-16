@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S10: rancangan paket dukungan (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit owner | Status |
+|---|---|---|
+| QA-M04S10-01 | Fixture M04-S1 cocok dengan kontrak sumber, ID dan status | BELUM DIUJI |
+| QA-M04S10-02 | Tiga sumber, dua terverifikasi DEMO, satu tidak eligible | BELUM DIUJI |
+| QA-M04S10-03 | Rencana parsial, sisa per kebutuhan dan satuan tidak tercampur | BELUM DIUJI |
+| QA-M04S10-04 | Akumulasi lintas paket tidak melebihi kebutuhan; edit tidak dihitung dua kali | BELUM DIUJI |
+| QA-M04S10-05 | Hapus paket/baris hanya mengubah draf; input asli tetap | BELUM DIUJI |
+| QA-M04S10-06 | Tolak ID asing/ganda, quantity invalid, field harga/approval, sumber non-demo | BELUM DIUJI |
+| QA-M04S10-07 | Penolakan versi sumber berubah; rancang rekonsiliasi/revisi sebelum integrasi | BELUM DIUJI |
+| QA-M04S10-08 | Form HP, keyboard, input jumlah, kesalahan, pilihan paket, state kosong dan XSS | BELUM DIUJI |
+| QA-M04S10-09 | Tidak ada jaringan, storage, transaksi, sumber nyata atau keputusan/penyaluran otomatis | BELUM DIUJI |
+| QA-M04S10-10 | Adapter M03, autentikasi/akses wilayah, audit dan transaksi serentak server | RENCANA / BELUM DIUJI |
+| QA-M04S10-11 | Dasar program, SOP, keputusan alokasi dan pengadaan sah | BUTUH KEPUTUSAN |
+| QA-M04S10-12 | 12 skenario baru hanya tertulis; lingkup S10 terpisah dari 192 skenario S9V | BELUM DIUJI |
+
+[Spesifikasi M04-S10](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md). CODE_ONLY tetap berlaku.
+
 ## Antrean M04-S9V: paket sesi QA berjenjang (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit owner | Status |

@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S10 | RANCANGAN PAKET DUKUNGAN PUSKESWAN | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [model dan formulir DEMO paket](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-planning), menggunakan kembali fixture M04-S1, tanpa integrasi ke M03, APEL atau produksi. Tambah/edit/hapus paket/baris dalam memori, jumlah kumulatif dan sisa per kebutuhan/satuan, tolak versi berubah dan kelebihan jumlah.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md) dan 12 skenario Node baru tertulis; 0 dijalankan. Inventaris 192 skenario S9V tetap dalam lingkup sebelumnya; S10 memiliki antrean terpisah.
+- Proses bantuan resmi, anggaran, pengadaan, distribusi, BAST belum dibangun/disahkan. Repo PUBLIC 16 Nov; PR #9 Draft; CODE_ONLY, main dan produksi tidak disentuh.
+
 ## PEMBARUAN M04-S9V | PAKET PERSIAPAN SESI QA | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [kontrak tanggal snapshot S9U diperbaiki](https://github.com/dvoriano/yandik-plus/commit/0e8d0f422bc9295d047944880b6174e19ef056c9) dari observed_on menjadi observed_date dan skenario regresi diperkuat tanpa menjalankan tes.
 - [Paket sesi QA](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-qa-session-plan) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S9V_QA_SESSION_PLAN.md) memuat 17 suite, kriteria masuk/keluar/berhenti G0–G5, 14 kebutuhan bukti dan 4 temuan audit awal tetap terbuka. Pembacaan sumber menemukan 184 skenario sebelumnya, ditambah 8 menjadi **192 tertulis, 0 dijalankan pada S9V**.

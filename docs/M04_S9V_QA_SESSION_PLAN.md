@@ -43,3 +43,6 @@ Pada 16 November 2026 metadata GitHub masih menunjukkan repository **PUBLIC**. S
 PR #9 tetap Draft. Tidak ada Node/browser test, CL/CI, GitHub Actions, merge main atau deployment.
 
 **Rekomendasi:** hentikan penambahan prototipe QA yang berulang; gunakan paket ini sebagai batas persiapan M04-S9. QA teknis menunggu keputusan G0. Pekerjaan modul fungsional lain yang memang independen dapat dirancang secara CODE_ONLY berdasarkan roadmap, tanpa menyatakan integrasi atau hasil uji berhasil.
+
+## Peralihan fokus M04-S10 (16 November 2026)
+Owner meminta melanjutkan rancangan fungsi utama melalui [M04-S10](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md). Draf paket independen, 12 skenario baru tercatat terpisah pada TEST_BACKLOG. Paket QA S9V tetap snapshot 17 suite/192 skenario sebelumnya, bukan izin pengujian atau approval integrasi.

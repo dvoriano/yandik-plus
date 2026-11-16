@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6/S7/S8/S9 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala, matriks dan katalog RACI; **keputusan dan proses riil M04-S10+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6/S7/S8/S9 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala, matriks dan katalog RACI; **M04-S10 SEDANG (draf perencanaan kuantitas, BELUM DIUJI); keputusan dan proses riil M04-S10+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,6 +40,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
+
+## Progres M04-S10: rancangan paket dukungan (BELUM DIUJI)
+- [x] [Model dan UI draf](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-planning) untuk kebutuhan fiktif M04-S1, nama/alasan paket, jumlah barang, sisa dan batas kumulatif; data hanya di memori halaman.
+- [x] [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md) dan 12 skenario QA tertulis, belum dijalankan.
+- [ ] Adapter M03, QA, kontrol akses/server dan keputusan nyata belum tersedia; tidak ada anggaran, pengadaan, penyaluran atau BAST.
 
 ## Progres M04-S9: register tindak lanjut kelembagaan (BELUM DIUJI)
 - [x] [Kode M04-S9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-institutional-followup) menyimpan temuan dari checklist M04-S8, usulan katalog dan topik pembahasan DEMO, beserta kekurangan, dampak, rencana koreksi, penanggung jawab, tenggat, progres dan telaah.

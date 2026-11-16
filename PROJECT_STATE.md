@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S13–S15 | REALISASI, SERAH TERIMA, MONITORING | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [model S13–S15 dan UI bersama](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-lifecycle) terhubung via fixture S12: catatan kirim/terima parsial, kondisi baik/rusak/selisih, register rujukan BAST DEMO, monitoring terbaru serta riwayat per baris.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md); 24 skenario baru tertulis, 0 dijalankan. Cakupan rancangan Support mencapai monitoring, **belum terintegrasi atau operasional**. S9V 192 tetap snapshot; S10–S15 62 tambahan.
+- CODE_ONLY, repo PUBLIC, PR #9 Draft; tidak ada transaksi, keputusan, dokumen sah, data riil, CI, merge atau deployment. Kelanjutan: integrasi sumber, koreksi, kontrol akses/server dan QA (sesuai izin).
+
 ## PEMBARUAN M04-S12 | RENCANA DISTRIBUSI DUKUNGAN | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-distribution-plan), menautkan paket S10 dan telaah S11, tanggal/cara, tujuan turunan dari baris paket dan pembatas jumlah kumulatif.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md); 14 skenario tertulis, 0 dijalankan; draf hanya dalam memori. Belum adapter UI antar tahap, rekonsiliasi usang, otorisasi aktual, stok, pengiriman, penerimaan maupun BAST.

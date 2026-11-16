@@ -186,6 +186,26 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S13–S15: siklus dukungan (BELUM DIUJI)
+
+| ID | Pemeriksaan hanya setelah izin eksplisit | Status |
+|---|---|---|
+| QA-M04S13-01 | Rantai S10–S12, jadwal, ID, tujuan, satuan, sumber berubah | BELUM DIUJI |
+| QA-M04S13-02 | Kirim parsial/kumulatif tidak melebihi jadwal; ID ganda ditolak | BELUM DIUJI |
+| QA-M04S13-03 | Terima baik/rusak, total fisik, menunggu penerimaan, belum kirim | BELUM DIUJI |
+| QA-M04S13-04 | Tanggal terima, jumlah invalid, field resmi palsu dan perubahan binding | BELUM DIUJI |
+| QA-M04S14-01 | Penerimaan tersedia, satu fasilitas, ID/nomor unik, tanggal dan snapshot | BELUM DIUJI |
+| QA-M04S14-02 | Tidak menduplikasi penerimaan, kondisi dipertahankan, status formal false | BELUM DIUJI |
+| QA-M04S15-01 | Monitoring hanya barang baik, jumlah kondisi sesuai sumber, rusak terpisah | BELUM DIUJI |
+| QA-M04S15-02 | Latest per baris, tanggal tidak ganda, input tidak berurutan, belum diamati | BELUM DIUJI |
+| QA-M04S15-03 | Ringkasan per satuan, histori, tidak mutasi sumber, otorisasi palsu ditolak | BELUM DIUJI |
+| QA-M04S13S15-01 | UI seluruh form, dropdown dinamis, reset, keyboard, HP, XSS, tidak ada I/O | BELUM DIUJI |
+| QA-M04S13S15-02 | 24 skenario tertulis (8 per tahap), belum dieksekusi | BELUM DIUJI |
+| QA-M04S13S15-03 | Adapter, koreksi, rekonsiliasi, audit server, akses wilayah dan penyimpanan | RENCANA |
+| QA-M04S13S15-04 | Dasar resmi, stok, penyaluran, legalitas BAST dan monitoring kelembagaan | BUTUH KEPUTUSAN |
+
+[Spesifikasi S13–S15](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md). CODE_ONLY tetap.
+
 ## Antrean M04-S12: rencana distribusi dukungan (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit | Status |

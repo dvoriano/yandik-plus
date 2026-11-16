@@ -25,3 +25,6 @@ Menghubungkan paket rencana S10 dan telaah metadata S11 dengan jadwal indikatif 
 Usulan S13: model simulasi pencatatan realisasi dan penerimaan per jadwal/baris, termasuk penerimaan parsial, selisih dan metadata rujukan serah terima/BAST. Prasyarat otorisasi aktual dipisahkan. Tidak menerbitkan BAST sah, tidak menganggap rencana S12 sebagai izin distribusi dan tidak mengubah data nyata.
 
 Repository PUBLIC per metadata 16 November 2026; PR #9 Draft. CODE_ONLY berlaku.
+
+## Lanjutan M04-S13–S15 (16 November 2026)
+[Catatan realisasi/penerimaan, register rujukan serah terima/BAST, monitoring](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md) ditulis sebagai tiga model dan satu UI DEMO, **BELUM DIUJI**. Jadwal tetap bukan izin distribusi. Proses aktual tetap RENCANA.

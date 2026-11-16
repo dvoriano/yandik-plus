@@ -1,7 +1,7 @@
 # MOD-04 | Support Puskeswan: Kebutuhan, Bantuan dan Evaluasi
 
 **Milestone:** M03 dan M04  
-**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6/S7/S8/S9 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala, matriks dan katalog RACI; **M04-S10/S11/S12 SEDANG (draf perencanaan kuantitas, telaah metadata dan jadwal distribusi, BELUM DIUJI); keputusan dan proses riil M04-S10+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
+**Status implementasi GitHub:** **M03 SEDANG (prototype)** untuk draf/ajukan/verifikasi kebutuhan berbasis masalah; **M04-S1/S2/S3/S4/S5/S6/S7/S8/S9 SEDANG (kode draft) / BELUM DIUJI** untuk administrasi, register, tindak lanjut, dashboard, kendala, matriks dan katalog RACI; **M04-S10–S15 SEDANG (draf perencanaan sampai monitoring, BELUM DIUJI); keputusan dan proses riil M04-S10+ tetap RENCANA**. Belum backend/anggaran/bantuan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -40,6 +40,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Profil (kondisi alat/obat/SDM), APEL (beban pelayanan), workflow bersama, dashboard pimpinan dan GIS.
+
+## Progres M04-S13–S15: realisasi, serah terima dan monitoring (BELUM DIUJI)
+- [x] [Model S13–S15 dan UI gabungan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-lifecycle) mencatat kirim/terima, kondisi/selisih, metadata rujukan dan monitoring; menggunakan fixture S12.
+- [x] [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md); 24 skenario tertulis, tidak dijalankan.
+- [ ] Integrasi M03/APEL, revisi/koreksi, database/audit/RBAC, bukti nyata, proses resmi dan pengujian tetap tertunda.
 
 ## Progres M04-S12: rencana distribusi (BELUM DIUJI)
 - [x] [Model dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-distribution-plan) menghubungkan paket S10 dan telaah S11 ke draf jadwal, tujuan turunan, pembatas jumlah dan sisa.

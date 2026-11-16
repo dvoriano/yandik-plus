@@ -52,6 +52,11 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 4. Admin: support package, approvals, delivery and BAST log.
 5. Leadership: aggregate needs, pending actions and realization.
 
+## Draft M04-S13–S15 | 16 November 2026 | BELUM DIUJI
+- [x] [Model dan UI siklus dukungan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-lifecycle): realisasi/terima, register metadata, pengamatan pemanfaatan dari fixture S12.
+- [x] [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S13_S15_SUPPORT_LIFECYCLE.md); 24 skenario tertulis, belum dijalankan.
+- [ ] Belum koreksi, QA, integrasi sumber, server, dokumen sah atau tindakan resmi.
+
 ## Draft M04-S12 | 16 November 2026 | BELUM DIUJI
 - [x] [Rencana distribusi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-distribution-plan) dari paket/telaah fixture S10/S11, jadwal indikatif, jumlah dan tujuan.
 - [x] [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S12_SUPPORT_DISTRIBUTION_PLAN.md); 14 skenario tertulis, tidak dijalankan.

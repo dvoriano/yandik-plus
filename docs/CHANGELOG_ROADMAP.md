@@ -1,3 +1,7 @@
+## 2026-11-16 | M04-S11 telaah paket dukungan
+- [Model dan 12 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/0290f9af6b1b23269432cd17d91ef668db14974d), [UI DEMO](https://github.com/dvoriano/yandik-plus/commit/6d0dd54ddce5e9009701bedb9d8c71324f4ee84a), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md).
+- Metadata keputusan/anggaran fiktif, draf/telaah/kembalikan/revisi/catat pembahasan; bukan verifikasi resmi atau konfirmasi dana. KODE DITULIS, BELUM DIUJI, 0 tes dijalankan.
+
 ## 2026-11-16 | M04-S10 rancangan paket dukungan Puskeswan
 - [Model dan 12 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/c52feb5222196d8a77d99c2a01767dbd75781af8), [formulir DEMO](https://github.com/dvoriano/yandik-plus/commit/a3e212b1f87f0093f7d49bd114bd61c9d7c0a608), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md).
 - Draf jumlah, sisa, pembatas antar-paket dan versi sumber; tanpa penetapan penerima, harga, alokasi, pengadaan, distribusi atau BAST. KODE DITULIS, BELUM DIUJI; 0 tes dijalankan, PR #9 Draft.

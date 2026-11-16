@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-S11 | TELAAH RENCANA PAKET DUKUNGAN | 16 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [model dan UI DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-review) menggunakan paket sumber S10, rujukan keputusan/anggaran fiktif, riwayat telaah, pengembalian dan revisi. Perubahan snapshot menghalangi kelanjutan.
+- [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md) dan 12 skenario baru tertulis, 0 dijalankan. S9V tetap snapshot 192 skenario, S10/S11 masing-masing 12 skenario di backlog terpisah.
+- Tidak ada persetujuan, konfirmasi dana, izin distribusi atau BAST. UI hanya fixture, bukan adapter S2/S10 riil. Repo PUBLIC, PR #9 Draft, CODE_ONLY.
+
 ## PEMBARUAN M04-S10 | RANCANGAN PAKET DUKUNGAN PUSKESWAN | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model dan formulir DEMO paket](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-support-package-planning), menggunakan kembali fixture M04-S1, tanpa integrasi ke M03, APEL atau produksi. Tambah/edit/hapus paket/baris dalam memori, jumlah kumulatif dan sisa per kebutuhan/satuan, tolak versi berubah dan kelebihan jumlah.
 - [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S10_SUPPORT_PACKAGE_PLANNING.md) dan 12 skenario Node baru tertulis; 0 dijalankan. Inventaris 192 skenario S9V tetap dalam lingkup sebelumnya; S10 memiliki antrean terpisah.

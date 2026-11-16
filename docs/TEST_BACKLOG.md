@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-S11: telaah paket dukungan (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit | Status |
+|---|---|---|
+| QA-M04S11-01 | Snapshot paket S10 sah, kosong/asing ditolak | BELUM DIUJI |
+| QA-M04S11-02 | Metadata keputusan/anggaran lengkap, tanggal valid, kode fiktif berbeda | BELUM DIUJI |
+| QA-M04S11-03 | Metadata kosong dapat dikembalikan, tidak dapat dicatat untuk pembahasan | BELUM DIUJI |
+| QA-M04S11-04 | Draf → ajukan → kembalikan → revisi → ajukan ulang → catat | BELUM DIUJI |
+| QA-M04S11-05 | Pemisahan pelaku, acknowledgement dan larangan approve | BELUM DIUJI |
+| QA-M04S11-06 | Validasi status dan riwayat, tidak mutasi fixture | BELUM DIUJI |
+| QA-M04S11-07 | Perubahan versi, barang, kuantitas, judul atau hapus paket menandai stale | BELUM DIUJI |
+| QA-M04S11-08 | Field financial/approval palsu ditolak; otorisasi selalu false | BELUM DIUJI |
+| QA-M04S11-09 | Form, submitter, error, revisi, reset, keyboard, HP, XSS dan tidak ada I/O | BELUM DIUJI |
+| QA-M04S11-10 | Adapter S2/S10, kontrol akses wilayah dan audit server | RENCANA |
+| QA-M04S11-11 | Keaslian dokumen, kewenangan, DPA dan SOP | BUTUH KEPUTUSAN |
+| QA-M04S11-12 | 12 skenario Node baru hanya tertulis, terpisah dari snapshot S9V | BELUM DIUJI |
+
+[Spesifikasi M04-S11](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md). CODE_ONLY tetap.
+
 ## Antrean M04-S10: rancangan paket dukungan (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit owner | Status |

@@ -37,3 +37,6 @@ Angka tersebut adalah ekspektasi pembacaan fixture dan kode, **belum dibuktikan 
 12 skenario Node baru **hanya ditulis**. Inventaris paket QA S9V (192 skenario/17 suite) tetap merupakan snapshot lingkup S9F–S9V; suite S10 ditambahkan ke TEST_BACKLOG secara terpisah. Tidak ada tes, CI, browser atau deployment. Repo PUBLIC per 16 November 2026, PR #9 Draft; seluruh fixture fiktif.
 
 **Tahap S11 yang diusulkan:** telaah kesiapan rencana paket dan rujukan keputusan/anggaran yang sah tanpa menyimpulkan approval, kemudian rancangan pencatatan distribusi dan serah terima hanya setelah syarat kewenangan dan integrasi terpenuhi. Proses riil M04-S10+ tetap RENCANA.
+
+## Lanjutan M04-S11 (16 November 2026)
+[Draft telaah paket dan metadata](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S11_SUPPORT_PACKAGE_REVIEW.md) ditulis menggunakan fixture S10; **BELUM DIUJI**. Referensi fiktif bukan validasi keputusan/anggaran sah atau izin penyaluran.

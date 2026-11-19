@@ -186,6 +186,45 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-0: APEL 2026–2030 multi-tahun (BELUM DIUJI)
+
+| ID | QA yang hanya ditulis untuk dijalankan setelah izin G0 | Status |
+|---|---|---|
+| QA-M05-0-01 | Registry memuat tahun 2026, 2027, 2028, 2029, 2030 tepat sekali | BELUM DIUJI |
+| QA-M05-0-02 | Draft versi aturan berbeda setiap tahun | BELUM DIUJI |
+| QA-M05-0-03 | Baseline 2026 butuh parity; tahun 2027–2030 masih butuh keputusan | BELUM DIUJI |
+| QA-M05-0-04 | Tidak ada deadline, publikasi atau scoring otomatis diwariskan ke tahun berikut | BELUM DIUJI |
+| QA-M05-0-05 | Tahun tak dikonfigurasi termasuk 2031 tidak memakai default 2030 | BELUM DIUJI |
+| QA-M05-0-06 | Usulan aturan tidak menjadi approval/publikasi/izin ubah histori | BELUM DIUJI |
+| QA-M05-0-07 | Nomor versi proposal tidak boleh dari tahun lain | BELUM DIUJI |
+| QA-M05-0-08 | Tanggal/narasi usulan tidak sah ditolak | BELUM DIUJI |
+| QA-M05-0-09 | Semua YYYY-MM valid untuk lima tahun dapat dinormalisasi | BELUM DIUJI |
+| QA-M05-0-10 | Bulan invalid dan tahun di luar cakupan ditolak | BELUM DIUJI |
+| QA-M05-0-11 | Puskeswan yang sama dapat melaporkan bulan sama pada tahun berbeda | BELUM DIUJI |
+| QA-M05-0-12 | Duplikasi satu fasilitas/bulan ditolak tanpa overwrite | BELUM DIUJI |
+| QA-M05-0-13 | Bulan kosong tetap BELUM_DILAPORKAN, bukan nol | BELUM DIUJI |
+| QA-M05-0-14 | Laporan nol eksplisit berbeda dari bulan kosong | BELUM DIUJI |
+| QA-M05-0-15 | Klaim laporan nol konflik dengan kegiatan ditolak | BELUM DIUJI |
+| QA-M05-0-16 | Investigasi per kombinasi kejadian dan lokasi | BELUM DIUJI |
+| QA-M05-0-17 | Pasangan kejadian/lokasi duplikat ditolak | BELUM DIUJI |
+| QA-M05-0-18 | Ante+post pada satu hewan kurban dihitung sekali | BELUM DIUJI |
+| QA-M05-0-19 | ID hewan kurban ganda ditolak | BELUM DIUJI |
+| QA-M05-0-20 | Rekap belum lengkap tidak dianggap capaian setahun penuh | BELUM DIUJI |
+| QA-M05-0-21 | Counter negatif, field asing, referensi bukti non-DEMO ditolak | BELUM DIUJI |
+| QA-M05-0-22 | Nol tanpa deklarasi nol eksplisit ditolak | BELUM DIUJI |
+| QA-M05-0-23 | Payload ledger yang diubah diam-diam ditolak | BELUM DIUJI |
+| QA-M05-0-24 | Ringkasan terdiri dari lima baris tahun terpisah | BELUM DIUJI |
+| QA-M05-0-25 | Seluruh baris memakai versi kebijakan draf berbeda | BELUM DIUJI |
+| QA-M05-0-26 | Tidak ada ranking atau komparasi scoring resmi otomatis | BELUM DIUJI |
+| QA-M05-0-27 | Fixture hanya memuat ID Puskeswan fiktif | BELUM DIUJI |
+| QA-M05-0-28 | Laporan nol terhitung sebagai bulan melapor tetapi total nol | BELUM DIUJI |
+| QA-M05-0-29 | Pemeriksaan satu kurban + satu investigasi berjumlah dua kejadian DEMO | BELUM DIUJI |
+| QA-M05-0-30 | Bandingkan kategori dan angka dengan formulir Flask dan Juknis 2026 sebenarnya | RENCANA / BUTUH SUMBER |
+| QA-M05-0-31 | Telaah aturan, tenggat, kategori, dukungan dan penilaian per tahun 2027–2030 | BUTUH KEPUTUSAN |
+| QA-M05-0-32 | Autentikasi backend, revisi, bukti riil, akses lintas fasilitas, UI HP, ekspor | RENCANA / BELUM DIUJI |
+
+**29 skenario Node tertulis, 0 dijalankan.** Tambahan QA-M05-0-30–32 adalah pekerjaan masa depan, bukan tes yang tersedia. [Spesifikasi M05-0](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_0_APEL_MULTIYEAR_2026_2030.md), [kode/fixture/tes](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear). Tanpa CL/CI/tes/pengujian Flask sampai izin owner.
+
 ## Antrean M04-I6D: kompatibilitas Flask/APEL dan gerbang integrasi (BELUM DIUJI)
 
 | ID | Pemeriksaan jika owner mengizinkan G0 | Status |

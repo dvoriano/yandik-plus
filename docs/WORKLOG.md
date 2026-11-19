@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M05-3 kontrak aturan evaluasi APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Rulebook per tahun, preview fakta DEMO dan register 12 review gates](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules), [29 QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules/tests) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_3_ANNUAL_RULES_2026_2030.md). 2026 referensi butuh verifikasi, 2027 konsep usulan, 2028–2030 belum ditetapkan. Memisahkan data pelayanan/pelaporan/ketepatan waktu/dukungan/wilayah; sumber belum cocok/terverifikasi, tidak menghitung skor atau membuat klasemen. Repo PUBLIC, PR #9 Draft, tanpa tes/CL/CI, merge, database, Flask atau deployment. Usulan berikutnya M05-4 rapor/tren transparan multi-tahun.
+
 ## 2026-11-19 | M05-2 checklist APEL 2026–2030 dan kalender usulan
 **KODE DITULIS, BELUM DIUJI.** [Kalender, checklist, komparasi simulasi, fixture](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance), [28 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance/tests) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_2_CHECKLIST_COMPLIANCE_2026_2030.md). Memisahkan belum melapor/draf/terkirim/koreksi/revisi, waktu dan batas per tahun tidak diwariskan otomatis, tidak ada penetapan patuh/terlambat resmi. Tidak ada tes, CL/CI, autentikasi asli, DB/Flask, notifikasi, merge atau deploy. Repo PUBLIC, PR #9 Draft. Usulan berikutnya M05-3 aturan evaluasi berversi.
 

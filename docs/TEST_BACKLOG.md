@@ -186,6 +186,37 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I6D: kompatibilitas Flask/APEL dan gerbang integrasi (BELUM DIUJI)
+
+| ID | Pemeriksaan jika owner mengizinkan G0 | Status |
+|---|---|---|
+| QA-M04I6D-01 | Lima pintu terdokumentasi tetap kandidat, belum terbukti benar-benar terdaftar di Flask | BELUM DIUJI |
+| QA-M04I6D-02 | Catatan review tidak menjadi izin deploy atau bukti autentikasi | BELUM DIUJI |
+| QA-M04I6D-03 | ID rute benar tetapi path dipalsukan ditolak | BELUM DIUJI |
+| QA-M04I6D-04 | Rute tak dikenal dan catatan duplikat ditolak | BELUM DIUJI |
+| QA-M04I6D-05 | Klaim VERIFIED dari input catatan tidak diterima | BELUM DIUJI |
+| QA-M04I6D-06 | Field tambahan seperti role klien ditolak | BELUM DIUJI |
+| QA-M04I6D-07 | Pemeriksaan tidak memodifikasi daftar route asal | BELUM DIUJI |
+| QA-M04I6D-08 | Dua belas gerbang I6C + 12 I6D selalu pending | BELUM DIUJI |
+| QA-M04I6D-09 | Rencana tidak memberi izin integrasi, tulis atau deploy | BELUM DIUJI |
+| QA-M04I6D-10 | Aturan APEL 2026, larangan input ganda dan fallback tercakup | BELUM DIUJI |
+| QA-M04I6D-11 | Klaim `auth_verified` palsu ditolak | BELUM DIUJI |
+| QA-M04I6D-12 | Schema rute/otorisasi palsu ditolak | BELUM DIUJI |
+| QA-M04I6D-13 | Setiap gerbang memiliki asal I6C atau I6D dan bukti masih null | BELUM DIUJI |
+| QA-M04I6D-14 | Catatan route tetap tidak mengurangi jumlah gerbang pending | BELUM DIUJI |
+| QA-M04I6D-15 | Handoff kosong mempertahankan semua gerbang tidak tertutup | BELUM DIUJI |
+| QA-M04I6D-16 | Catatan DEMO tidak dapat menyetujui atau mengubah Flask | BELUM DIUJI |
+| QA-M04I6D-17 | Gate dan peran pemilik yang tidak dikenal ditolak | BELUM DIUJI |
+| QA-M04I6D-18 | ID duplikat/format tidak sah ditolak | BELUM DIUJI |
+| QA-M04I6D-19 | URL atau fragmen kredensial di free-text ditolak | BELUM DIUJI |
+| QA-M04I6D-20 | Status APPROVED dan field izin tambahan ditolak | BELUM DIUJI |
+| QA-M04I6D-21 | Plan yang mengklaim izin deploy ditolak | BELUM DIUJI |
+| QA-M04I6D-22 | Audit source route Flask sebenarnya: method, decorators, response, CSRF, session | RENCANA / BUTUH IZIN |
+| QA-M04I6D-23 | Fixture anonimisasi APEL 2026: 1 laporan/bulan, investigasi, kurban, nol dan tenggat | RENCANA / BELUM DIUJI |
+| QA-M04I6D-24 | Parity dashboard/Data Saya/checklist/SDM, boundary wilayah, backup/restore dan SPBE | RENCANA / BUTUH KEPUTUSAN |
+
+[Spesifikasi I6D](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6D_FLASK_APEL_INTEGRATION_GATES.md). **21 skenario Node tertulis, 0 dijalankan**. Tidak ada inspeksi server Flask nyata, tes, CI, migrasi atau perubahan database produksi.
+
 ## Antrean M04-I6C: snapshot, recovery, retensi dan runbook (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 | Status |

@@ -61,6 +61,8 @@ export function normalizeDemoReport(raw){
  if(raw.declared_no_activity&&(simple!==0||events.size!==0||animals.size!==0))
   fail("APEL_ZERO_ACTIVITY_CONFLICT");
  const total=simple+events.size+animals.size;
+ if(!raw.declared_no_activity&&total===0)
+  fail("APEL_ZERO_MUST_BE_DECLARED");
  return {
   schema:APEL_LEDGER_SCHEMA,synthetic:true,facility_id:raw.facility_id,
   period,year,month,
@@ -91,6 +93,14 @@ function assertLedger(ledger){
      r.year!==parsePeriod(r.period).year||r.official_verified!==false||
      r.status!=="RECORDED_DEMO_NOT_VERIFIED")
    fail("APEL_LEDGER_RECORD_INVALID");
+  const normalized=normalizeDemoReport({
+   facility_id:r.facility_id,period:r.period,
+   declared_no_activity:r.declared_no_activity,
+   counts:r.counts,investigations:r.investigations,
+   kurban_animals:r.kurban_animals,evidence_refs:r.evidence_refs
+  });
+  if(JSON.stringify(normalized)!==JSON.stringify(r))
+   fail("APEL_LEDGER_RECORD_TAMPERED");
   const key=r.facility_id+"|"+r.period;
   if(seen.has(key))fail("APEL_DUPLICATE_FACILITY_MONTH");
   seen.add(key);

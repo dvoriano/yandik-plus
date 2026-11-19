@@ -186,6 +186,44 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-2: checklist dan tenggat APEL 2026–2030 (BELUM DIUJI)
+
+| ID | Pemeriksaan saat izin owner G0 diberikan | Status |
+|---|---|---|
+| QA-M05-2-01 | Registry lima tahun menerima usulan kalender, semua tanpa approval/publikasi | BELUM DIUJI |
+| QA-M05-2-02 | Tanggal tenggat dan publikasi usulan memakai bulan setelah periode | BELUM DIUJI |
+| QA-M05-2-03 | Desember 2030 menghasilkan tanggal usulan Januari 2031 | BELUM DIUJI |
+| QA-M05-2-04 | Pengecualian bulanan hanya mengubah bulan terkait | BELUM DIUJI |
+| QA-M05-2-05 | Pengecualian Januari tidak mengubah nilai default tahun | BELUM DIUJI |
+| QA-M05-2-06 | Pengecualian duplikat dan lintas tahun ditolak | BELUM DIUJI |
+| QA-M05-2-07 | Hari di luar 1–28 atau tahun 2031 ditolak | BELUM DIUJI |
+| QA-M05-2-08 | Klaim kalender approved/deadline_enforced ditolak | BELUM DIUJI |
+| QA-M05-2-09 | Perubahan tanggal kalender setelah dibuat terdeteksi | BELUM DIUJI |
+| QA-M05-2-10 | Checklist 12 bulan membedakan lima status workflow | BELUM DIUJI |
+| QA-M05-2-11 | Ringkasan jumlah missing, draft, pending, correction dan revisi | BELUM DIUJI |
+| QA-M05-2-12 | Riwayat pernah submit tetap terlihat setelah dikembalikan | BELUM DIUJI |
+| QA-M05-2-13 | Laporan nol eksplisit berbeda dari bulan kosong | BELUM DIUJI |
+| QA-M05-2-14 | Tanggal usulan tidak berubah menjadi bukti patuh/tepat waktu | BELUM DIUJI |
+| QA-M05-2-15 | Tanpa kalender tidak boleh menyimpulkan tenggat | BELUM DIUJI |
+| QA-M05-2-16 | Kalender tahun lain ditolak pada checklist tahun berjalan | BELUM DIUJI |
+| QA-M05-2-17 | Pembacaan laporan fasilitas lain ditolak sesuai scope | BELUM DIUJI |
+| QA-M05-2-18 | Pimpinan tidak memperoleh rincian melalui pembaca workflow | BELUM DIUJI |
+| QA-M05-2-19 | Status tahun 2027/2030 tidak tertukar dengan 2026 | BELUM DIUJI |
+| QA-M05-2-20 | Ringkasan lima tahun menyimpan policy dan jadwal masing-masing | BELUM DIUJI |
+| QA-M05-2-21 | Usulan jadwal duplikat satu tahun ditolak | BELUM DIUJI |
+| QA-M05-2-22 | Tanpa sampel timestamp, status tepat waktu tetap tidak diketahui | BELUM DIUJI |
+| QA-M05-2-23 | Sampel tanggal jatuh tempo hanya menghasilkan perbandingan SIMULASI | BELUM DIUJI |
+| QA-M05-2-24 | Sampel setelah tenggat usulan bukan putusan terlambat resmi | BELUM DIUJI |
+| QA-M05-2-25 | Tidak dapat menautkan sampel ke draf yang belum dikirim | BELUM DIUJI |
+| QA-M05-2-26 | Sample request ID palsu atau bulan duplikat ditolak | BELUM DIUJI |
+| QA-M05-2-27 | Tanggal tidak valid dan tahun salah ditolak | BELUM DIUJI |
+| QA-M05-2-28 | Kalender/tabel privileged atau lintas tahun ditolak | BELUM DIUJI |
+| QA-M05-2-29 | Membandingkan kalender terhadap Juknis/keputusan resmi per tahun, termasuk kebijakan perpanjangan | BUTUH KEPUTUSAN |
+| QA-M05-2-30 | Integrasi timestamp server Asia/Jakarta, sumber penerimaan asli, kontrol akses, transaksi dan snapshot atomik | RENCANA / BUTUH IZIN |
+| QA-M05-2-31 | Uji aksesibilitas HP, akses lintas fasilitas, regresi checklist riil dan pemberitahuan tanpa mengirim data sensitif | RENCANA / BELUM DIUJI |
+
+**28 skenario Node ditulis, 0 dijalankan.** Item 29–31 merupakan pekerjaan berikutnya yang belum diimplementasikan. Seluruh tenggat 2026–2030 masih usulan nonresmi, tanpa sumber waktu pengiriman terverifikasi. [Kode M05-2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_2_CHECKLIST_COMPLIANCE_2026_2030.md).
+
 ## Antrean M05-1: siklus draf, submit dan koreksi 2026–2030 (BELUM DIUJI)
 
 | ID | Skenario Node tertulis (jangan dijalankan sampai G0) | Status |

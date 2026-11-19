@@ -1,3 +1,7 @@
+## 2026-11-19 | M05-2 checklist status laporan dan kalender usulan APEL 2026–2030
+- [Kode DEMO kalender/checklist/timing](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance), [28 QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance/tests) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_2_CHECKLIST_COMPLIANCE_2026_2030.md).
+- KODE DITULIS, BELUM DIUJI. Lima status laporan dari M05-1; tenggat per tahun dengan pengecualian, tanpa pewarisan otomatis. M05-1 tidak memiliki cap waktu server; perbandingan tanggal hanya SIMULASI. Bukan verifikasi patuh, skor, pengesahan, atau publikasi. Tidak ada CI/CL/tes/merge/produksi. Repo PUBLIC, PR #9 Draft. Berikutnya M05-3.
+
 ## 2026-11-19 | M05-1 kontrak workflow APEL 2026–2030
 - [Workflow DEMO dan fixture](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-workflow), [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-workflow/tests/workflow.test.mjs), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_1_APEL_REPORT_WORKFLOW_2026_2030.md).
 - KODE DITULIS, BELUM DIUJI. Satu laporan induk per Puskeswan/bulan, revisi draf/submit/koreksi, snapshot histori DEMO, pembatasan role/wilayah melalui callback server yang belum nyata. M05-2 RENCANA; no official approval, database, tes/CL/CI, main/merge/deploy. Repo PUBLIC; PR #9 Draft.

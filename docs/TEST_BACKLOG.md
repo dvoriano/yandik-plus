@@ -186,6 +186,46 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-3: aturan evaluasi 2026–2030 (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 dari owner | Status |
+|---|---|---|
+| QA-M05-3-01 | Registry konsep kategori memuat tepat 2026–2030 | BELUM DIUJI |
+| QA-M05-3-02 | Konsep 2026 diperlakukan referensi historis yang menunggu parity | BELUM DIUJI |
+| QA-M05-3-03 | Konsep 2027 hanya usulan pelayanan, dukungan dan wilayah | BELUM DIUJI |
+| QA-M05-3-04 | Kategori 2028–2030 tidak otomatis mewarisi 2026/2027 | BELUM DIUJI |
+| QA-M05-3-05 | Versi kebijakan draf berbeda per tahun | BELUM DIUJI |
+| QA-M05-3-06 | Tahun 2031 ditolak tanpa konfigurasi baru | BELUM DIUJI |
+| QA-M05-3-07 | Proposal tidak dapat menyalakan peringkat, skor, apresiasi atau publikasi | BELUM DIUJI |
+| QA-M05-3-08 | Kategori ganda dan ID proposal tak sah ditolak | BELUM DIUJI |
+| QA-M05-3-09 | Klaim approved dan proposal lintas tahun ditolak | BELUM DIUJI |
+| QA-M05-3-10 | Catatan publik tidak dapat memuat URL internal atau kredensial | BELUM DIUJI |
+| QA-M05-3-11 | Pratinjau hanya jumlah kejadian DEMO dan bulan terkirim, tanpa skor | BELUM DIUJI |
+| QA-M05-3-12 | Ketepatan waktu tanpa cap waktu tepercaya tetap null | BELUM DIUJI |
+| QA-M05-3-13 | Realisasi dukungan dan agregasi wilayah tanpa sumber tetap null | BELUM DIUJI |
+| QA-M05-3-14 | Setiap tahun dapat memakai proposal terpisah tanpa perbandingan skor | BELUM DIUJI |
+| QA-M05-3-15 | Bulan submit DEMO bukan bukti laporan patuh/verifikasi resmi | BELUM DIUJI |
+| QA-M05-3-16 | Jumlah periode ledger dan pengiriman workflow tidak dianggap sudah cocok | BELUM DIUJI |
+| QA-M05-3-17 | Ledger kosong hanya menghasilkan tahun parsial DEMO, bukan capaian resmi nol | BELUM DIUJI |
+| QA-M05-3-18 | Rule/checklist beda tahun ditolak | BELUM DIUJI |
+| QA-M05-3-19 | Manipulasi jumlah bulan kirim pada checklist ditolak | BELUM DIUJI |
+| QA-M05-3-20 | Status official_timeliness_verified palsu ditolak | BELUM DIUJI |
+| QA-M05-3-21 | Ledger dengan izin operasional palsu ditolak | BELUM DIUJI |
+| QA-M05-3-22 | 12 gerbang metodologi tetap BELUM_DIBUKTIKAN | BELUM DIUJI |
+| QA-M05-3-23 | Catatan review tidak dapat menjadi pengesahan atau publikasi | BELUM DIUJI |
+| QA-M05-3-24 | Preview dengan klaim skor resmi ditolak | BELUM DIUJI |
+| QA-M05-3-25 | Review menolak proposal aturan/hasil lintas tahun atau beda ID | BELUM DIUJI |
+| QA-M05-3-26 | Gate dan peran pemilik yang tidak dikenal ditolak | BELUM DIUJI |
+| QA-M05-3-27 | ID catatan review ganda ditolak | BELUM DIUJI |
+| QA-M05-3-28 | Teks catatan sensitif berupa URL/token ditolak | BELUM DIUJI |
+| QA-M05-3-29 | Review 2030 tetap tanpa skor atau pengesahan | BELUM DIUJI |
+| QA-M05-3-30 | Verifikasi rumus historis 2026 dari Juknis dan kode Flask aktual serta reproduksi hasil | RENCANA / BUTUH SUMBER |
+| QA-M05-3-31 | Penetapan kebijakan terpisah 2027–2030: kategori, bobot, aturan seri, normalisasi dan penanganan sanggah | BUTUH KEPUTUSAN |
+| QA-M05-3-32 | Verifikasi data layanan, bukti, timestamp WIB, dukungan, atribusi wilayah, proteksi audit historis dan fairness | RENCANA / BELUM DIUJI |
+| QA-M05-3-33 | Uji regresi sumber data dan penjaminan dashboard/publikasi tanpa penambahan skor atau hak akses tak sah | RENCANA / BELUM DIUJI |
+
+**29 skenario Node ditulis, 0 dijalankan.** Item 30–33 adalah tindak lanjut yang belum diimplementasikan/diuji. Tidak ada formula penilaian atau kategori 2028–2030 yang disahkan dalam M05-3. [Kode](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_3_ANNUAL_RULES_2026_2030.md).
+
 ## Antrean M05-2: checklist dan tenggat APEL 2026–2030 (BELUM DIUJI)
 
 | ID | Pemeriksaan saat izin owner G0 diberikan | Status |

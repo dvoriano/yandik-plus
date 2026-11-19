@@ -186,6 +186,35 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-1: siklus draf, submit dan koreksi 2026–2030 (BELUM DIUJI)
+
+| ID | Skenario Node tertulis (jangan dijalankan sampai G0) | Status |
+|---|---|---|
+| QA-M05-1-01 | Draf parsial menyimpan angka null tanpa scoring/publikasi | BELUM DIUJI |
+| QA-M05-1-02 | Draf belum lengkap tidak bisa disubmit | BELUM DIUJI |
+| QA-M05-1-03 | Buat → simpan → kirim menghasilkan tiga revisi berurutan | BELUM DIUJI |
+| QA-M05-1-04 | Puskeswan/bulan identik tidak bisa memiliki dua laporan induk | BELUM DIUJI |
+| QA-M05-1-05 | Revisi usang tidak bisa disimpan/dikirim | BELUM DIUJI |
+| QA-M05-1-06 | Request ID sama tidak membuat event duplikat | BELUM DIUJI |
+| QA-M05-1-07 | Periode sama pada tahun berbeda memiliki laporan terpisah | BELUM DIUJI |
+| QA-M05-1-08 | Fasilitas berbeda pada periode sama tidak tercampur | BELUM DIUJI |
+| QA-M05-1-09 | Pelapor Puskeswan tidak bisa mengedit Puskeswan lain pada wilayah sama | BELUM DIUJI |
+| QA-M05-1-10 | Pelapor tidak bisa mengedit fasilitas di luar wilayah | BELUM DIUJI |
+| QA-M05-1-11 | Kab/kota, verifikator, pimpinan tidak bisa menyamar jadi pelapor | BELUM DIUJI |
+| QA-M05-1-12 | Penelaah tidak menimpa salinan laporan yang sudah disubmit | BELUM DIUJI |
+| QA-M05-1-13 | Pengembalian koreksi menuntut peran/wilayah yang sah | BELUM DIUJI |
+| QA-M05-1-14 | Alasan koreksi dengan URL/kredensial ditolak | BELUM DIUJI |
+| QA-M05-1-15 | Revisi setelah koreksi mempertahankan snapshot versi awal | BELUM DIUJI |
+| QA-M05-1-16 | Revisi tanpa pengembalian untuk koreksi ditolak | BELUM DIUJI |
+| QA-M05-1-17 | Tidak tersedia transisi approve/publish otomatis | BELUM DIUJI |
+| QA-M05-1-18 | Actor/role dari perintah klien atau adapter absen ditolak | BELUM DIUJI |
+| QA-M05-1-19 | Pembacaan menggunakan scope dan salinan, bukan referensi yang memutasi state | BELUM DIUJI |
+| QA-M05-1-20 | Backend Flask session, CSRF, transaksi DB, unique index, idempotency, audit immutable | RENCANA / BUTUH IZIN |
+| QA-M05-1-21 | Uji aturan jurnal historis, penolakan bukti palsu, revisi simultan dan akses lintas tahun | RENCANA / BELUM DIUJI |
+| QA-M05-1-22 | Juknis 2026 parity; kebijakan submit/revisi dan tenggat tahunan 2027–2030 | BUTUH KEPUTUSAN |
+
+**19 skenario test Node tertulis, 0 dijalankan**; 3 item tambahan adalah rencana QA/proses yang belum dibuat. [Spesifikasi M05-1](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_1_APEL_REPORT_WORKFLOW_2026_2030.md). Event hanya in-memory, tidak tahan perubahan dan belum mewakili audit sah.
+
 ## Antrean M05-0: APEL 2026–2030 multi-tahun (BELUM DIUJI)
 
 | ID | QA yang hanya ditulis untuk dijalankan setelah izin G0 | Status |

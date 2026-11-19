@@ -432,7 +432,7 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 | ID | Prioritas | Modul/keluaran | Dependensi | Dokumen |
 |---|---|---|---|---|
 | M04-S10+ (proses riil) | P0 | Support: keputusan berwenang, alokasi, paket, distribusi dan BAST; draf kuantitas S10 sudah ditulis, belum diuji | M04-S9/QA serta prosedur/otorisasi yang disahkan | [Support](modules/04_SUPPORT_PUSKESWAN.md) |
-| M05 | P1 | APEL 2.0: rapor, tren, koreksi, peraturan 2027 | M01/M02 | [APEL](modules/02_APEL_PUSKESWAN.md) |
+| M05 | P1 | APEL 2.0 multi-tahun **2026–2030**: pelaporan, rapor, tren, koreksi dan aturan per tahun | M01/M02 serta review M05-0 | [APEL](modules/02_APEL_PUSKESWAN.md) |
 | M06 | P1 | Pengawasan Obat Hewan | M01 | [Obat](modules/05_PENGAWASAN_OBAT_HEWAN.md) |
 | M07 | P1 | Klinik/Praktik Dokter Hewan | M01 | [Klinik](modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md) |
 | M08 | P1 | Dashboard Pimpinan lintas modul | Modul sumber | [Dashboard](modules/11_DASHBOARD_PIMPINAN.md) |

@@ -81,4 +81,4 @@ Catatan DEMO dapat dibuat lewat `prepareReviewHandoff`, namun ID dan catatannya 
 
 ## 8. Lanjutan
 
-**M05-0 (usulan):** susun kontrak baseline/regresi APEL 2026 berbasis data DEMO, terutama satu laporan per bulan/Puskeswan, pembuktian layanan, pengecekan bulan kosong, dan versi perhitungan, sebelum mengembangkan UI APEL 2.0. Ini tidak membuka izin integrasi atau deploy; M04-I6A–I6D tetap berstatus kode draft BELUM DIUJI.
+**M05-0 sudah ditulis sebagai kontrak APEL multi-tahun 2026–2030 (BELUM DIUJI):** [spesifikasi M05-0](M05_0_APEL_MULTIYEAR_2026_2030.md) dan [kode DEMO](../drafts/m05-apel-multiyear/). Baseline 2026 memerlukan regresi terhadap sumber Flask/Juknis; kebijakan 2027–2030 menunggu keputusan masing-masing tahun. Seluruhnya masih nonresmi dan tidak mengizinkan integrasi. Ini tidak membuka izin integrasi atau deploy; M04-I6A–I6D tetap berstatus kode draft BELUM DIUJI.

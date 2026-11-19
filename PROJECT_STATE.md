@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-I6B | IDENTITAS BACKEND & INVENTARIS BACA-SAJA | 19 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [adapter I6B](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-backend-readonly) untuk kontrak identitas sesi server, pembatasan akses peran/wilayah, serta inventaris I5 melalui `SELECT` saja.
+- Global inventaris terbatas admin provinsi DEMO; ringkasan satu fasilitas memeriksa ID/wilayah/status dan tidak memuat `payload`. Pimpinan tidak melihat detail. Seluruh hasil `may_write=false`; asal data dan keutuhan snapshot belum diverifikasi.
+- [15 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-backend-readonly/tests/gateway.test.mjs), **0 dijalankan**; [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6B_BACKEND_READONLY_IDENTITY.md). Callback server dan snapshot benar-benar tepercaya **belum terpasang**.
+- Tahap selanjutnya M04-I6C: rancangan snapshot atomik, recovery, retensi. Repo PUBLIC, PR #9 Draft, CODE_ONLY. Tidak ada CL/CI/test, merge, main, VPS atau deploy.
+
 ## PEMBARUAN M04-I6A | PREFLIGHT MIGRASI SATU ARAH DEMO | 19 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [preflight I4→I5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-migration-preflight) membentuk manifest SHA-256 dan metadata per Puskeswan fiktif. Validasi memakai proyeksi M04-I5; target harus benar-benar kosong. Manifest yang berubah ditolak. Seluruh keluaran `may_write=false`.
 - [13 skenario QA baru](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/tests/preflight.test.mjs) **tertulis, 0 dijalankan**. [Spesifikasi I6A](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6A_MIGRATION_PREFLIGHT.md) memuat batas asal data, identitas server, migrasi atomik, recovery dan retensi yang masih memerlukan desain, bukti, pengujian dan keputusan owner.

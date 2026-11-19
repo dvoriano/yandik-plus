@@ -37,8 +37,7 @@ function draftPayload(raw,id,period) {
  const counts=Object.fromEntries(COUNTS.map(k=>[k,raw.counts[k]??0]));
  const activity=COUNTS.reduce((n,k)=>n+counts[k],0)+
    raw.investigations.length+raw.kurban_animals.length;
- const declared=raw.declared_no_activity===true||
-   (activity===0&&raw.declared_no_activity!==false);
+ const declared=raw.declared_no_activity===true||activity===0; // probe only; submit still rejects false+zero
  normalizeDemoReport({...raw,counts,declared_no_activity:declared});
  return clone(raw);
 }

@@ -6,6 +6,7 @@
 import {SCHEMA_SQL} from "./schema.mjs";
 import {principal,scope,requireAction,ACTIONS} from "./policy.mjs";
 import {candidateSync,sourceRevision} from "./source.mjs";
+import {buildReconciliationBranch} from "../m04-reconciliation/impact.mjs";
 import {models,advanceDemo,viewWorkspace,ACTIONS as STAGES} from "../m04-integrated-workspace/workspace.mjs";
 const clone=v=>JSON.parse(JSON.stringify(v));
 const REQ=/^DEMO-REQ-[A-Z0-9_-]{1,48}$/;
@@ -35,6 +36,12 @@ function normalize(raw){
   fields(data,["correction_id","decision","reason"]);
   if(!["catat_untuk_sinkron","kembalikan"].includes(data.decision))throw Error("INVALID_DECISION");
   normalized={correction_id:checkId(data.correction_id,COR),decision:data.decision,reason:note(data.reason)};
+ }else if(raw.action==="review_reconciliation"){
+  fields(data,["correction_id","disposition","reason"]);
+  if(!["catat_cabang_draf","kembalikan_untuk_perbaikan"].includes(data.disposition))
+   throw Error("INVALID_DISPOSITION");
+  normalized={correction_id:checkId(data.correction_id,COR),disposition:data.disposition,
+   reason:note(data.reason)};
  }else{
   fields(data,["correction_id"]);
   normalized={correction_id:checkId(data.correction_id,COR)};
@@ -69,7 +76,7 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    models(seed);
    const workspace=clone(seed),source_versions=Object.fromEntries(workspace.master.map(m=>
     [m.id,workspace.states.some(s=>s.facility.id===m.id)?1:0]));
-   const payload=JSON.stringify({workspace,source_versions,corrections:[]});
+   const payload=JSON.stringify({workspace,source_versions,corrections:[],reconciliations:[]});
    const t=timestamp();
    db.prepare("INSERT INTO workspace_current(id,revision,payload) VALUES(1,0,?)").run(payload);
    db.prepare("INSERT INTO workspace_versions(revision,payload,recorded_at) VALUES(0,?,?)").run(payload,t);
@@ -89,6 +96,19 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
     review_reason:c.review_reason??null,outcome:c.outcome??null}));
   return {...result,revision:current.revision,corrections};
  }
+ function reconciliation(actorId,facilityId,correctionId){
+  const actor=principal(actorId,lookupPrincipal),{payload}=read();
+  const facility=payload.workspace.master.find(m=>m.id===facilityId);
+  if(!scope(actor,facility)||actor.role==="pimpinan")throw Error("ACCESS_DENIED");
+  const c=payload.corrections.find(c=>c.id===correctionId&&c.facility_id===facilityId);
+  if(!c)throw Error("CORRECTION_NOT_FOUND");
+  const entry=(payload.reconciliations??[]).find(x=>x.correction_id===c.id);
+  if(!entry)return {correction_id:c.id,status:c.status,impact:null,review:null,
+   active_workspace_unchanged:true};
+  return {correction_id:c.id,status:c.status,impact:clone(entry.impact),
+   review:entry.review?clone(entry.review):null,
+   branch_available:entry.branch!==null,active_workspace_unchanged:true};
+ }
  function history(actorId,facilityId){
   const actor=principal(actorId,lookupPrincipal),{payload}=read();
   if(!scope(actor,payload.workspace.master.find(m=>m.id===facilityId)))throw Error("ACCESS_DENIED");
@@ -107,14 +127,15 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    }
    if(cmd.expected_revision!==revision)throw Error("REVISION_CONFLICT");
    const next=clone(payload);
+   next.reconciliations??=[];
    let outcome="tercatat_demo",correctionId=null;
    if(cmd.action==="advance"){
-    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi"].includes(c.status)))throw Error("CORRECTION_PENDING");
+    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi","cabang_draf_menunggu_telaah","cabang_draf_tercatat"].includes(c.status)))throw Error("CORRECTION_PENDING");
     next.workspace=advanceDemo(w,facility.id,cmd.data.stage);
    }else if(cmd.action==="request_correction"){
     correctionId=cmd.data.correction_id;
     if(next.corrections.some(c=>c.id===correctionId))throw Error("CORRECTION_ID_CONFLICT");
-    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi"].includes(c.status)))
+    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi","cabang_draf_menunggu_telaah","cabang_draf_tercatat"].includes(c.status)))
      throw Error("CORRECTION_ALREADY_OPEN");
     next.corrections.push({id:correctionId,facility_id:facility.id,requester:actor.id,
      reason:cmd.data.reason,base_source_revision:sourceRevision(next.source_versions[facility.id]),
@@ -128,14 +149,39 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
      if(c.requester===actor.id||c.status!=="menunggu_telaah")throw Error("CORRECTION_REVIEW_DENIED");
      c.status=cmd.data.decision==="catat_untuk_sinkron"?"tercatat_untuk_sinkron":"dikembalikan";
      c.reviewer=actor.id;c.review_reason=cmd.data.reason;outcome=c.status;
-    }else{
+    }else if(cmd.action==="sync_source"){
      if(c.status!=="tercatat_untuk_sinkron"||c.reviewer===actor.id)throw Error("SOURCE_SYNC_NOT_REVIEWED");
      const current=sourceRevision(next.source_versions[facility.id]);
      if(current!==c.base_source_revision)throw Error("SOURCE_REVISION_CONFLICT");
-     // Trusted synchronous provider: no network or client-supplied source payload.
      const result=candidateSync(w,facility,current,readSource(facility.id,current));
      next.workspace=result.workspace;next.source_versions[facility.id]=result.revision;
      c.status=result.outcome;c.outcome=result.outcome;outcome=result.outcome;
+    }else if(cmd.action==="prepare_reconciliation"){
+     if(c.status!=="terblokir_rekonsiliasi"||c.reviewer===actor.id)
+      throw Error("RECONCILIATION_NOT_BLOCKED");
+     if(next.reconciliations.some(x=>x.correction_id===c.id))throw Error("RECONCILIATION_ALREADY_PREPARED");
+     const current=sourceRevision(next.source_versions[facility.id]);
+     if(current!==c.base_source_revision)throw Error("SOURCE_REVISION_CONFLICT");
+     const result=buildReconciliationBranch(w,facility,current,readSource(facility.id,current));
+     if(!result.impact.source_changed||result.impact.changed_need_ids.length===0)
+      throw Error("RECONCILIATION_NO_SOURCE_DIFFERENCE");
+     next.reconciliations.push({correction_id:c.id,facility_id:facility.id,
+      preparer:actor.id,source_revision:result.impact.candidate_source_revision,
+      base_workspace_revision:revision,impact:result.impact,
+      branch:result.branch,reason:result.reason,review:null});
+     c.status="cabang_draf_menunggu_telaah";c.outcome=c.status;outcome=c.status;
+    }else if(cmd.action==="review_reconciliation"){
+     const entry=next.reconciliations.find(x=>x.correction_id===c.id&&x.facility_id===facility.id);
+     if(!entry||c.status!=="cabang_draf_menunggu_telaah"||
+       c.requester===actor.id||entry.preparer===actor.id)
+      throw Error("RECONCILIATION_REVIEW_DENIED");
+     if(cmd.data.disposition==="catat_cabang_draf"&&!entry.branch)
+      throw Error("RECONCILIATION_BRANCH_UNAVAILABLE");
+     entry.review={reviewer:actor.id,disposition:cmd.data.disposition,
+      reason:cmd.data.reason};
+     c.status=cmd.data.disposition==="catat_cabang_draf"?
+      "cabang_draf_tercatat":"dikembalikan";
+     c.outcome=c.status;outcome=c.status;
     }
    }
    models(next.workspace);
@@ -151,5 +197,5 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    return response;
   });
  }
- return Object.freeze({initialize,view,history,execute});
+ return Object.freeze({initialize,view,reconciliation,history,execute});
 }

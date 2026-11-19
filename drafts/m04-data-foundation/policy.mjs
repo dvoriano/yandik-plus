@@ -3,7 +3,7 @@
  * This file does not implement authentication or establish formal authority.
  */
 export const ROLES=Object.freeze(["puskeswan","kab_kota","provinsi_verifikator","provinsi_admin","pimpinan"]);
-export const ACTIONS=Object.freeze(["advance","request_correction","review_correction","sync_source"]);
+export const ACTIONS=Object.freeze(["advance","request_correction","review_correction","sync_source","prepare_reconciliation","review_reconciliation"]);
 const idPattern=/^DEMO-USER-[A-Z0-9_-]{1,40}$/;
 export function principal(id,lookup){
  if(typeof id!=="string"||!idPattern.test(id))throw Error("ACCESS_DENIED");
@@ -25,7 +25,9 @@ export function requireAction(actor,facility,action){
   advance:["provinsi_admin"],
   request_correction:["puskeswan","kab_kota","provinsi_admin"],
   review_correction:["kab_kota","provinsi_verifikator"],
-  sync_source:["provinsi_admin"]
+  sync_source:["provinsi_admin"],
+  prepare_reconciliation:["provinsi_admin"],
+  review_reconciliation:["kab_kota","provinsi_verifikator"]
  };
  if(!Object.hasOwn(allowed,action)||!allowed[action].includes(actor.role))throw Error("ACCESS_DENIED");
 }

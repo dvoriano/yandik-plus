@@ -59,7 +59,7 @@ export function planOneWayMigration(i4Snapshot,sourceRevision,targetInventory) {
  const base = {schema:MIGRATION_SCHEMA,synthetic:true,
   direction:"I4_TO_I5",mode:"PLAN_ONLY_NO_WRITE",target_empty:true,
   source_workspace_revision:sourceRevision,
-  source_sha256:hash({sourceRevision,i4Snapshot}),
+  source_sha256:hash({sourceRevision,i4Snapshot:JSON.parse(JSON.stringify(i4Snapshot))}),
   entries,official_authorization:false};
  return {...base,manifest_sha256:hash(base)};
 }

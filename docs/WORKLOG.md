@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M05-1 lifecycle laporan APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Workflow in-memory dan fixture](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-workflow), [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-workflow/tests/workflow.test.mjs) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_1_APEL_REPORT_WORKFLOW_2026_2030.md). Satu laporan per unit/bulan dengan revisi berurutan, simpan parsial, validasi submit, pengembalian, snapshot peristiwa dan pembatasan peran/wilayah via callback DEMO. Tidak ada audit persistent, autentikasi asli, persetujuan/publikasi, CL/CI/test, merge atau deploy. Repo PUBLIC, PR #9 Draft. Lanjut M05-2 checklist/tenggat multi-tahun.
+
 ## 2026-11-19 | M05-0 fondasi APEL 2026–2030
 **KODE DITULIS, BELUM DIUJI.** Sesuai arahan owner, cakupan M05 berubah dari fokus baseline 2026/rencana 2027 menjadi fondasi **2026–2030**. [Model registry aturan, validasi laporan, ledger dan ringkasan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear); [29 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear/tests), **0 dijalankan**; [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_0_APEL_MULTIYEAR_2026_2030.md). Tahun 2027–2030 tidak otomatis mewarisi 2026 atau memperoleh persetujuan; 2026 belum dicocokkan ke Flask/Juknis produksi. Tidak ada tes, CL/CI, merge, VPS/website atau DB. PR #9 tetap Draft. Berikutnya usulan M05-1 draf-submisi-revisi.
 

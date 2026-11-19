@@ -50,7 +50,9 @@ export function planAnnualDeadline({year,proposal_id,deadline_day,
  });
  return Object.freeze({
   schema:M05_2_SCHEDULE_SCHEMA,synthetic:true,mode:"PROPOSAL_ONLY",
-  year,proposal_id,policy_draft_version:policy.draft_rule_version,
+  year,proposal_id,default_deadline_day:deadline_day,
+  default_publication_day:publication_day,
+  policy_draft_version:policy.draft_rule_version,
   months,approved:false,official_rules_verified:false,
   deadline_enforced:false,publication_allowed:false,
   may_notify:false,may_score:false,may_publish:false,
@@ -71,12 +73,14 @@ export function requireSchedule(schedule,year){
    typeof schedule.proposal_id!=="string"||
    !ID.test(schedule.proposal_id)||
    !schedule.proposal_id.startsWith("DEMO-M05-SCHEDULE-"+year+"-")||
+   !oneTo28(schedule.default_deadline_day)||
+   !oneTo28(schedule.default_publication_day)||
    !Array.isArray(schedule.months)||schedule.months.length!==12)
    fail("M05_SCHEDULE_INVALID");
  const original=planAnnualDeadline({
   year,proposal_id:schedule.proposal_id,
-  deadline_day:Number(schedule.months[0]?.deadline_date?.slice(-2)),
-  publication_day:Number(schedule.months[0]?.publication_date?.slice(-2)),
+  deadline_day:schedule.default_deadline_day,
+  publication_day:schedule.default_publication_day,
   exceptions:schedule.months.filter(x=>x.source==="YEAR_EXCEPTION_DEMO").map(x=>({
    period:x.period,deadline_day:Number(x.deadline_date.slice(-2)),
    publication_day:Number(x.publication_date.slice(-2)),

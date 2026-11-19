@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I6A: preflight migrasi satu arah (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit G0 | Status |
+|---|---|---|
+| QA-M04I6A-01 | Manifest untuk seluruh fasilitas DEMO tanpa bocor isi snapshot | BELUM DIUJI |
+| QA-M04I6A-02 | Digest stabil dan entri deterministik pada input sama | BELUM DIUJI |
+| QA-M04I6A-03 | Pencocokan ulang tetap `may_write=false` dan bukan bukti asal data | BELUM DIUJI |
+| QA-M04I6A-04 | Digest atau field manifest palsu ditolak | BELUM DIUJI |
+| QA-M04I6A-05 | Perubahan sumber dengan nomor revisi sama menolak manifest usang | BELUM DIUJI |
+| QA-M04I6A-06 | Perubahan nomor revisi sumber menolak manifest lama | BELUM DIUJI |
+| QA-M04I6A-07 | Target dengan baris current, versions, events atau commands ditolak | BELUM DIUJI |
+| QA-M04I6A-08 | Daftar fasilitas target tidak kosong ditolak | BELUM DIUJI |
+| QA-M04I6A-09 | Inventaris target palsu, tambahan field dan mode non-DEMO ditolak | BELUM DIUJI |
+| QA-M04I6A-10 | Revisi tidak sah dan sumber I4 tidak memenuhi kontrak ditolak | BELUM DIUJI |
+| QA-M04I6A-11 | Ketidaksesuaian register arsip dan retired ID ditolak | BELUM DIUJI |
+| QA-M04I6A-12 | Input sumber/target tidak termutasi selama preflight | BELUM DIUJI |
+| QA-M04I6A-13 | Manifest tidak dapat mengangkat `official_authorization` menjadi benar | BELUM DIUJI |
+| QA-M04I6A-14 | Provenance sumber, inventaris transaksi, peran/akses server, integrasi Flask/APEL | RENCANA / BUTUH KEPUTUSAN |
+| QA-M04I6A-15 | Backup/restore, retensi, race kondisi sumber-target, atomic cutover multi-fasilitas | RENCANA / BELUM DIUJI |
+
+[Spesifikasi M04-I6A](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6A_MIGRATION_PREFLIGHT.md). **13 skenario tertulis, 0 dijalankan;** tidak ada migrasi nyata atau izin G0.
+
 ## Antrean M04-I5: ID generasi dan partisi per fasilitas (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit G0 | Status |

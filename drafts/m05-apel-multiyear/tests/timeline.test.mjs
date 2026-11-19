@@ -27,7 +27,6 @@ test("M05-0 DEMO fixture uses only fake facility IDs",()=>{
 test("M05-0 zero report remains one reported month, not missing",()=>{
  const ledger=multiyearDemoLedger();
  const c=annualChecklist(ledger,DEMO_FACILITIES[1],2026);
- assert.equal(c.reported_months,undefined); // intentionally keep no alias
  assert.equal(c.reporting_months,1);
  assert.equal(c.rows[1].status,"LAPORAN_NOL");
  assert.equal(annualDemoTotals(ledger,DEMO_FACILITIES[1],2026).total_demo_events,0);

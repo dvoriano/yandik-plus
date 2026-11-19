@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-I6D | GERBANG INTEGRASI FLASK/APEL DEMO | 19 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [rancangan integrasi Flask/APEL](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates) melanjutkan I6A–I6C. Lima rute terdokumentasi untuk form, dashboard, Data Saya, checklist dan SDM belum dicocokkan dengan source Flask aktual. Kontrak menetapkan 24 gerbang (12 dari I6C, 12 aplikasi), semuanya `BELUM_DIBUKTIKAN`.
+- [21 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates/tests), **0 dijalankan**; [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6D_FLASK_APEL_INTEGRATION_GATES.md). Catatan handoff DEMO tidak dapat menyetujui/menutup gerbang.
+- Pendekatan **PARALLEL_DRAFT_NO_REWRITE**: tidak ada akses Flask/VPS, perubahan rute/DB/website, migrasi ataupun perubahan juknis/rumus APEL. Semua hasil `may_integrate=false`, `may_deploy=false`, `official_authorization=false`.
+- **Berikutnya usulan M05-0**: baseline pengujian regresi APEL 2026 berbasis fixture sintetis. Repo PUBLIC, PR #9 Draft, CODE_ONLY. Tidak ada CL/CI/tes, merge atau deploy.
+
 ## PEMBARUAN M04-I6C | SNAPSHOT, RECOVERY DAN RETENSI DEMO | 19 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [M04-I6C](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery) melanjutkan I6A/I6B. Dua pembacaan manifest I4→I5 diperiksa ulang namun tidak menjamin snapshot atomik, jurnal in-memory berantai untuk rencana recovery, daftar failure fail-closed, register retensi tanpa penentuan masa simpan dan runbook 12 prasyarat.
 - [30 skenario QA ditulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery/tests), **0 dijalankan**: snapshot 8, recovery 11, retensi 6, runbook 5. [Spesifikasi lengkap](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6C_SNAPSHOT_RECOVERY_RETENTION.md).

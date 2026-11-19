@@ -1,3 +1,7 @@
+## 2026-11-19 | M05-1 kontrak workflow APEL 2026–2030
+- [Workflow DEMO dan fixture](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-workflow), [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-workflow/tests/workflow.test.mjs), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_1_APEL_REPORT_WORKFLOW_2026_2030.md).
+- KODE DITULIS, BELUM DIUJI. Satu laporan induk per Puskeswan/bulan, revisi draf/submit/koreksi, snapshot histori DEMO, pembatasan role/wilayah melalui callback server yang belum nyata. M05-2 RENCANA; no official approval, database, tes/CL/CI, main/merge/deploy. Repo PUBLIC; PR #9 Draft.
+
 ## 2026-11-19 | Perluasan cakupan M05 dan implementasi kode M05-0 APEL 2026–2030
 - **Keputusan owner:** jangan mematok APEL hanya 2026, tetapi merancang pelaporan/evaluasi untuk **2026–2030**. Model menuntut versi kebijakan berbeda per tahun, tidak menganggap 2027–2030 sudah diatur.
 - [M05-0 kode DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear) dan [29 QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear/tests), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_0_APEL_MULTIYEAR_2026_2030.md). KODE DITULIS, BELUM DIUJI, 0 tes, tidak ada scoring/eksekusi/transaksi/merge/deploy.

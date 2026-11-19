@@ -6,10 +6,10 @@
 Menyiapkan pemeriksaan **sebelum** pemindahan data dari proyeksi M04-I4 ke struktur per Puskeswan M04-I5. Semua menggunakan sumber fiktif dan belum ada database sumber maupun target yang dijalankan.
 
 ## Kontrak rancangan
-1. **Sumber:** snapshot I4 yang memenuhi kontrak \`partitionI4Snapshot\` dan nomor revisi workspace yang disebut eksplisit. Validasi turunan tetap menggunakan M04-I5.
+1. **Sumber:** snapshot I4 yang memenuhi kontrak `partitionI4Snapshot` dan nomor revisi workspace yang disebut eksplisit. Validasi turunan tetap menggunakan M04-I5.
 2. **Tujuan:** inventaris target I5 **kosong seluruhnya**, termasuk tabel current, versions, events dan commands. Jika satu baris ada, preflight berhenti. Tidak mengizinkan upsert, replace, merge parsial atau skip fasilitas.
 3. **Rencana:** satu manifest berisi ID Puskeswan DEMO, revisi awal 0 per fasilitas, hitungan arsip dan retired ID, hash per partisi, hash sumber serta hash manifest. Tidak berisi isi data operasional.
-4. **Pemeriksaan ulang:** manifest dihitung ulang terhadap sumber/inventaris acuan. Perbedaan menyebabkan penolakan; hasil cocok tetap \`may_write=false\`, \`official_authorization=false\`, \`source_verified=false\`.
+4. **Pemeriksaan ulang:** manifest dihitung ulang terhadap sumber/inventaris acuan. Perbedaan menyebabkan penolakan; hasil cocok tetap `may_write=false`, `official_authorization=false`, `source_verified=false`.
 5. **Batas:** SHA-256 pada manifest hanya menyamakan isi antar-pembacaan lokal. Tidak membuktikan provenance, keaslian, integritas database di luar pembacaan, atau otorisasi. Perubahan target setelah inventory dibaca belum diamankan oleh transaksi.
 
 ## Gerbang sebelum migrasi nyata
@@ -25,7 +25,7 @@ Menyiapkan pemeriksaan **sebelum** pemindahan data dari proyeksi M04-I4 ke struk
 **Jangan menyebut G0–G5 di atas telah dilewati.** Bahkan manifest DEMO yang cocok bukan izin migrasi.
 
 ## Batas identitas dan keamanan server
-Rancangan berikutnya harus memakai identitas yang diterbitkan/divalidasi oleh server, bukan \`role\`, \`actor_id\`, \`facility_id\` atau daftar wilayah yang dikirim browser sebagai kebenaran. Akses petugas dibatasi satuan kerja/wilayah, penelaah terpisah, pimpinan hanya agregat yang diizinkan. Verifikasi sumber dan inventaris wajib dilakukan server dalam lingkup transaksi dengan audit tahan perubahan. Model M04-I5 yang menggunakan callback sintetis **belum memenuhi** prasyarat ini.
+Rancangan berikutnya harus memakai identitas yang diterbitkan/divalidasi oleh server, bukan `role`, `actor_id`, `facility_id` atau daftar wilayah yang dikirim browser sebagai kebenaran. Akses petugas dibatasi satuan kerja/wilayah, penelaah terpisah, pimpinan hanya agregat yang diizinkan. Verifikasi sumber dan inventaris wajib dilakukan server dalam lingkup transaksi dengan audit tahan perubahan. Model M04-I5 yang menggunakan callback sintetis **belum memenuhi** prasyarat ini.
 
 ## Pemulihan dan retensi, belum diimplementasikan
 Sebelum mutasi nyata, perlukan backup terverifikasi, bukti restore, inventaris seluruh sumber dan arsip, journal cutover, prosedur rollback sebelum aktivasi, kebijakan retensi menurut pengampu data, serta pembatasan ekspor historis. Migrasi lintas fasilitas bersifat all-or-nothing dalam rancangan; SQLite satu penulis secara fisik. Tidak ada logika kompensasi data nyata atau cron recovery pada fase ini.

@@ -49,9 +49,9 @@ function seed(full=false){
  if(full)for(const action of ACTIONS.slice(1))w=advanceDemo(w,A.id,action);
  return w;
 }
-function setup(t,full=false){
+function setup(t,full=false,initial=null){
  const db=new DatabaseSync(":memory:");t.after(()=>db.close());
- const w=seed(full),source={revision:2,state:changedState(w.states[0])};
+ const w=initial??seed(full),source={revision:2,state:changedState(w.states[0])};
  const repo=openRepository(db,{lookupPrincipal:id=>accounts[id],
   readSource:()=>source,clock:()=>"2026-11-19T06:00:00.000Z"});
  repo.initialize(w);
@@ -98,7 +98,7 @@ test("I4 a returned activation review does not change active data",t=>{
  assert.throws(()=>repo.execute(USERS.ADMIN,activate(6)),/ACTIVATION_NOT_READY/);
 });
 test("I4 successful DEMO promotion archives old package and source revisions",t=>{
- const {repo,db}=setup(t);stage(repo);
+ const {repo,db,w}=setup(t);stage(repo);
  repo.execute(USERS.KAB,reviewActivation(5));
  const promoted=repo.execute(USERS.ADMIN,activate(6));
  assert.equal(promoted.outcome,"diaktifkan_demo_terarsip");
@@ -108,7 +108,7 @@ test("I4 successful DEMO promotion archives old package and source revisions",t=
  assert.equal(state.archived_workflows.length,1);
  assert.equal(state.archived_workflows[0].replaced_objects.packages.length,1);
  assert.equal(state.archived_workflows[0].official_record,false);
- assert.equal(state.archived_workflows[0].old_source.problems[0].version,1);
+ assert.equal(state.archived_workflows[0].old_source.problems[0].version,w.states[0].problems[0].version);
  assert.equal(db.prepare("SELECT count(*) n FROM workspace_versions").get().n,8);
 });
 test("I4 command replay does not archive twice or increase revision",t=>{
@@ -127,7 +127,7 @@ test("I4 cannot activate twice with another request key",t=>{
  assert.throws(()=>repo.execute(USERS.ADMIN,command("C9",7,"activate_branch_demo",{
   correction_id:COR,acknowledge_demo:true})),/ACTIVATION_NOT_READY/);
 });
-test("I4 archived ID cannot be reissued by deterministic I1 workflow",t=>{
+test("I4 activated facility stays frozen until a new ID strategy is designed",t=>{
  const {repo}=setup(t);stage(repo);
  repo.execute(USERS.KAB,reviewActivation(5));
  repo.execute(USERS.ADMIN,activate(6));
@@ -149,12 +149,16 @@ test("I4 altered same-version candidate payload is detected",t=>{
  assert.throws(()=>repo.execute(USERS.ADMIN,activate(6)),/CANDIDATE_CHANGED_REPREPARE/);
 });
 test("I4 state changes in another facility require re-preparation",t=>{
- const {repo}=setup(t);stage(repo);
+ const w=seed(false);
+ const changed={...w,states:w.states.map(s=>s.facility.id===B.id?demoState(B,true):s)};
+ const {repo}=setup(t,false,changed);stage(repo);
  repo.execute(USERS.KAB,reviewActivation(5));
- // Baseline comparison is global and fail-closed, not a per-facility merge.
- const snapshot=repo.view(USERS.ADMIN,"2026-10",A.id);
- assert.equal(snapshot.revision,6);
- assert.equal(status(repo).guard.eligible,true);
+ // A different facility may advance; I4 conservatively requires the entire
+ // active workspace to equal the recorded baseline before a DEMO promotion.
+ repo.execute(USERS.ADMIN,command("B1",6,"advance",{stage:"paket"},B.id));
+ assert.throws(()=>repo.execute(USERS.ADMIN,command("C7",7,"activate_branch_demo",{
+  correction_id:COR,acknowledge_demo:true})),/ACTIVE_WORKSPACE_CHANGED/);
+ assert.equal(repo.view(USERS.ADMIN,"2026-10",A.id).details.packages.length,1);
 });
 test("I4 client cannot inject branch payload or bypass acknowledgment",t=>{
  const {repo}=setup(t);stage(repo);

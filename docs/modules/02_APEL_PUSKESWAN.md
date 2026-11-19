@@ -1,7 +1,7 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 dan M05-1 KODE DITULIS, BELUM DIUJI** untuk pelaporan multi-tahun 2026–2030 serta siklus draf/kirim/koreksi DEMO. M05-2+ tetap RENCANA; belum menyentuh Flask/website.  
+**Status implementasi GitHub:** **M05-0, M05-1, dan M05-2 KODE DITULIS, BELUM DIUJI** untuk pelaporan, siklus draf/kirim/koreksi, serta checklist status dan kalender tenggat *usulan* 2026–2030. M05-3+ RENCANA; belum menyentuh Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.1 / 19 November 2026 (cakupan 2026–2030).
 
@@ -44,7 +44,8 @@ Satu profil dan SDM, dashboard pimpinan, dukungan berbasis kebutuhan. Integrasi 
 - [x] MOD-02-01A: **Tulis** kontrak data/QA DEMO multi-tahun 2026–2030 (M05-0, BELUM DIUJI)
 - [ ] MOD-02-01B: Jalankan dan cocokkan regresi aturan penghitungan 2026 terhadap juknis dan kode asli (izin G0 diperlukan)
 - [x] MOD-02-02A: **Tulis** kontrak simpan draf, kirim, kembalikan, revisi dan riwayat (M05-1 DEMO, BELUM DIUJI)
-- [ ] MOD-02-02B: Penentuan tepat waktu/terlambat dan validasi hasil riil sesuai kebijakan tahunan (M05-2 RENCANA)
+- [x] MOD-02-02B1: **Tulis** checklist status bulanan, kalender usulan per tahun, pengecualian per bulan dan simulasi pembandingan tanggal (M05-2, BELUM DIUJI)
+- [ ] MOD-02-02B2: Pembuktian tenggat dan jam WIB resmi, timestamp penerimaan server, status tepat waktu/terlambat yang sah dan regresi nyata (belum dilakukan)
 - [ ] MOD-02-03: Versikan dan telaah rumus penilaian **2027, 2028, 2029, 2030** secara independen tanpa menimpa histori/rumus 2026
 - [ ] MOD-02-04: Buat rapor & peringatan anomali terjelaskan
 - [ ] MOD-02-05: Buat generator laporan triwulan/semester/tahunan
@@ -58,6 +59,8 @@ Juknis: nol bila tidak ada kegiatan; investigasi berdasarkan lokasi/kejadian; pe
 **Rancangan baseline M05-0 (19 November 2026):** [APEL Multi-Tahun 2026–2030](../M05_0_APEL_MULTIYEAR_2026_2030.md), [kode DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear), 29 skenario ditulis, 0 dijalankan. 2026 referensi butuh parity; 2027–2030 belum ada keputusan kebijakan.
 
 **Rancangan lifecycle M05-1 (19 November 2026):** [Siklus Draf, Submit dan Koreksi APEL 2026–2030](../M05_1_APEL_REPORT_WORKFLOW_2026_2030.md), [kode DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-workflow). Ada 19 skenario tertulis, 0 dijalankan. Perintah memakai revisi dan identitas sesi backend dalam kontrak, tetapi belum ada autentikasi/DB/approval resmi; status terkirim tidak otomatis berarti laporan terverifikasi.
+
+**Rancangan checklist M05-2 (19 November 2026):** [Checklist Kepatuhan 2026–2030](../M05_2_CHECKLIST_COMPLIANCE_2026_2030.md), [kode DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance). **28 skenario tertulis, 0 dijalankan.** Draf ≠ terkirim ≠ diverifikasi; tanggal tenggat hanya usulan per tahun, ketepatan waktu belum dapat ditentukan secara resmi.
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).

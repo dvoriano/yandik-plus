@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-2 | CHECKLIST KEPATUHAN APEL 2026–2030 | 19 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [M05-2 checklist, kalender usulan tahunan dan komparasi tanggal DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance). Lima status: belum lapor, draf, terkirim menunggu telaah, dikembalikan untuk koreksi, draf revisi. Rekap satu fasilitas/bulan dan lima tahun 2026–2030 tetap terpisah per tahun.
+- Kalender tanpa tenggat default; setiap tahun memakai proposal sendiri, dengan pengecualian per bulan. Tanggal pelayanan Desember 2030 dapat memiliki usulan tenggat Januari 2031. **Belum ada timestamp server yang terpercaya sehingga ketepatan waktu resmi tidak dapat ditentukan;** perbandingan tanggal hanya SIMULASI. Tidak ada skor, notifikasi, pengesahan, publikasi atau klaim kepatuhan.
+- [28 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-compliance/tests), **0 dijalankan**; [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_2_CHECKLIST_COMPLIANCE_2026_2030.md). Callback sesi M05-1 belum membuktikan autentikasi nyata; pembacaan bulanan belum atomik.
+- **Berikutnya M05-3 (RENCANA):** kontrak rule-set pelaporan/apresiasi per tahun 2026–2030 tanpa menetapkan bobot resmi sendiri. CODE_ONLY, PUBLIC, PR #9 Draft, no CI/CL/test, merge, VPS/website/DB/deploy.
+
 ## PEMBARUAN M05-1 | DRAF, SUBMIT & KOREKSI APEL 2026–2030 | 19 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [workflow DEMO M05-1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-workflow) menggunakan data dan registry M05-0. Tahap: buat/simpan draf, kirim, kembalikan untuk perbaikan, revisi, kirim ulang. Satu laporan induk per Puskeswan/bulan; versi bertambah dan snapshot pengiriman lama tidak ditimpa.
 - Aktor DEMO dibaca lewat callback sesi server dari M04-I6B, pembatasan wilayah/fasilitas, nomor `expected_revision`, ID permintaan sekali pakai, bukti DEMO metadata saja. Draf boleh belum lengkap; `submit` memerlukan validasi M05-0 penuh. Tidak ada status approve/verify/publish, skor, deadline atau checklist resmi.

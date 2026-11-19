@@ -186,6 +186,30 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I6B: identitas backend & inventaris read-only (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 | Status |
+|---|---|---|
+| QA-M04I6B-01 | Admin DEMO memperoleh inventaris kosong yang sesuai kontrak I6A | BELUM DIUJI |
+| QA-M04I6B-02 | Daftar ID fasilitas dan total empat tabel tanpa data payload/arsip | BELUM DIUJI |
+| QA-M04I6B-03 | Semua statement modul berupa SELECT, tanpa mutasi/PRAGMA | BELUM DIUJI |
+| QA-M04I6B-04 | Tidak ada sesi: tolak sebelum membuka provider DB | BELUM DIUJI |
+| QA-M04I6B-05 | Akun tidak aktif/peran tidak dikenal: tolak | BELUM DIUJI |
+| QA-M04I6B-06 | Global inventory ditolak bagi petugas, kab/kota, verifikator dan pimpinan | BELUM DIUJI |
+| QA-M04I6B-07 | Puskeswan hanya dapat ringkasan revisi fasilitas sendiri | BELUM DIUJI |
+| QA-M04I6B-08 | Puskeswan tak bisa membaca fasilitas lain meski satu wilayah | BELUM DIUJI |
+| QA-M04I6B-09 | Kab/kota hanya fasilitas dalam cakupan wilayah | BELUM DIUJI |
+| QA-M04I6B-10 | Pimpinan ditolak untuk detail fasilitas | BELUM DIUJI |
+| QA-M04I6B-11 | Selector fasilitas berbentuk objek/role palsu ditolak | BELUM DIUJI |
+| QA-M04I6B-12 | Perubahan sesi backend terbaca ulang pada pemanggilan berikut | BELUM DIUJI |
+| QA-M04I6B-13 | Hitungan tabel tak konsisten dan ID ganda ditolak | BELUM DIUJI |
+| QA-M04I6B-14 | Hitungan negatif atau payload/skema tidak sah ditolak | BELUM DIUJI |
+| QA-M04I6B-15 | Adapter tidak tersedia dan callback tidak menghasilkan snapshot ditolak | BELUM DIUJI |
+| QA-M04I6B-16 | Integrasi sesi Flask yang benar-benar terverifikasi, CSRF/revocation, read-only DB & audit | RENCANA / BUTUH KEPUTUSAN |
+| QA-M04I6B-17 | Snapshot transaksi konsisten, perubahan sumber/target simultan, kontrol akses DB nyata | RENCANA / BELUM DIUJI |
+
+[Spesifikasi M04-I6B](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6B_BACKEND_READONLY_IDENTITY.md). **15 deklarasi skenario tertulis, 0 dijalankan**. Jangan menandai lolos dan jangan menyatakan gateway siap produksi.
+
 ## Antrean M04-I6A: preflight migrasi satu arah (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit G0 | Status |

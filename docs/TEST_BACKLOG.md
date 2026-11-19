@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I3: rekonsiliasi lintas modul (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit G0 | Status |
+|---|---|---|
+| QA-M04I3-01 | Kandidat sumber valid melalui I2; versi mundur, isi versi sama, histori dan wilayah tidak sah ditolak | BELUM DIUJI |
+| QA-M04I3-02 | Manifest beda kebutuhan dan relasi M03 → S10–S15 lengkap, tanpa pencocokan nama | BELUM DIUJI |
+| QA-M04I3-03 | Paket lintas fasilitas menghasilkan alasan blokir, tanpa cabang yang memutus data fasilitas lain | BELUM DIUJI |
+| QA-M04I3-04 | Cabang prospektif valid sementara workspace aktif dan histori lama identik | BELUM DIUJI |
+| QA-M04I3-05 | `prepare_reconciliation` hanya setelah konflik dan dengan provider tepercaya | BELUM DIUJI |
+| QA-M04I3-06 | Peran/territory: admin pembuat cabang, penelaah berbeda; pimpinan agregat tanpa akses detail | BELUM DIUJI |
+| QA-M04I3-07 | Query dampak scoped tidak membocorkan snapshot/payload cabang atau source packet | BELUM DIUJI |
+| QA-M04I3-08 | Idempotensi command, ID ganda, stale revision dan perubahan body | BELUM DIUJI |
+| QA-M04I3-09 | `cabang_draf_tercatat` tetap memblokir aksi lanjut dan tidak mengubah versi sumber aktif | BELUM DIUJI |
+| QA-M04I3-10 | Return branch dan pembahasan paket lintas fasilitas tidak menjadi aktivasi otomatis | BELUM DIUJI |
+| QA-M04I3-11 | Trigger gagal event/rollback menjaga transaksi tanpa cabang setengah tersimpan | BELUM DIUJI |
+| QA-M04I3-12 | Penanganan mixed packet, perubahan data profile-only, source_removed dan impact records | BELUM DIUJI |
+| QA-M04I3-13 | 15 skenario Node tertulis; runtime/sintaks/SQLite/DOM belum dijalankan | BELUM DIUJI |
+| QA-M04I3-14 | Aktivasi branch dan koreksi berantai, dokumen resmi/BAST, retensi dan pemulihan histori | RENCANA / BUTUH KEPUTUSAN |
+| QA-M04I3-15 | Integrasi produksi/Flask, API auth/RBAC, kekonsistenan sumber APEL dan master Puskeswan | RENCANA |
+
+[Spesifikasi M04-I3](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md). Status tetap CODE_ONLY.
+
 ## Antrean M04-I2: repository data terpadu (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit owner | Status |

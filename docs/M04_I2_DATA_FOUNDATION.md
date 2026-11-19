@@ -44,3 +44,7 @@ Belum ada resolusi konflik berantai, pembatalan koreksi terblokir, rekonsiliasi 
 M04-I3: penanganan rekonsiliasi sumber yang terblokir melalui revisi/cabang histori dan penelusuran dampak paket sampai monitoring; rancang penyelesaian yang tidak menghapus catatan historis. Kemudian adapter HTTP/sesi server dan migrasi hanya setelah kontrak dan scope disepakati. QA tetap menunggu izin eksplisit G0. M05 tetap mengikuti roadmap.
 
 Repository public; seluruh contoh wajib fiktif. PR #9 Draft dan CODE_ONLY tetap.
+
+
+## Lanjutan M04-I3 (19 November 2026)
+[Rekonsiliasi sumber dan cabang histori DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md) menambahkan peta dampak, pencatatan cabang terisolasi dan penelaahan oleh aktor berbeda dalam transaksi I2. Tidak mengganti `workspace_current.workspace`, tidak mengaktifkan cabang dan belum diuji. Pencatatan cabang menggunakan payload `reconciliations` dalam JSON, bukan migrasi tabel nyata. Paket lintas fasilitas tetap butuh kajian manual.

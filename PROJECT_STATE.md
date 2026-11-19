@@ -1,10 +1,15 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 16 November 2026, WIB  
-**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 16 November 2026; jangan masukkan data riil/rahasia**)  
+**Terakhir diperbarui:** 19 November 2026, WIB  
+**Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 19 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN M04-I3 | REKONSILIASI DAN CABANG HISTORI DEMO | 19 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [peta dampak/cabang prospektif](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-reconciliation) menelusuri perubahan M03 ke paket, telaah, jadwal, kirim, terima, rujukan dan monitoring; paket lintas fasilitas memblokir cabang otomatis.
+- [Kontrak kandidat](https://github.com/dvoriano/yandik-plus/commit/661c7bacbf37f97ba8ecdfc87a172698b1655f43), [repository I2 dengan pencatatan/penelaahan terpisah](https://github.com/dvoriano/yandik-plus/commit/348ce95630cd8af4e47a0c40bff0008f97d0e1b1) dan [15 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/f5c719e621fae23a8a844583f43488b11082a6cb); [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md). 0 tes dijalankan.
+- Data aktif dan snapshot lama tidak diganti; cabang draf tetap dibekukan, belum ada aktivasi, keputusan resmi atau koreksi operasional. Repo PUBLIC 19 Nov, PR #9 Draft, CODE_ONLY, `main` dan produksi tidak disentuh.
 
 ## PEMBARUAN M04-I2 | FONDASI DATA TERPADU | 16 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [repository SQLite DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-data-foundation) untuk state I1, revisi/snapshot, audit dan idempotensi dalam transaksi, scope/role server berdasarkan lookup identity tepercaya.

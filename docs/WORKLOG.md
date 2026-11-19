@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M04-I3 rekonsiliasi dan cabang histori DEMO
+**KODE DITULIS, BELUM DIUJI.** [Model peta dampak/cabang](https://github.com/dvoriano/yandik-plus/commit/661c7bacbf37f97ba8ecdfc87a172698b1655f43), [integrasi transaksi dan penelaahan repository](https://github.com/dvoriano/yandik-plus/commit/348ce95630cd8af4e47a0c40bff0008f97d0e1b1), [15 skenario Node tertulis](https://github.com/dvoriano/yandik-plus/commit/f5c719e621fae23a8a844583f43488b11082a6cb); [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md). Perubahan dari M03 ditelusuri hingga S15, data aktif/versi historis tetap disimpan dan hanya cabang prospektif yang menyisihkan rantai terdampak. Cabang lintas fasilitas diblokir; semua status tetap nonresmi dan tidak diaktifkan. 0 tes, CI, merge, VPS, deployment.
+
 ## 2026-11-16 | M04-I2 fondasi data terpadu
 **KODE DITULIS, BELUM DIUJI.** [Repository SQLite dan kebijakan scope/koreksi](https://github.com/dvoriano/yandik-plus/commit/a1a5654e0fe9d6a22b3f8b3937e4191c5813ff5e); [penguatan dan 16 skenario](https://github.com/dvoriano/yandik-plus/commit/18931448ba306a66a485e99ed0d24ce177581f65); [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md). Transaksi snapshot/audit/idempotensi, lookup identitas tepercaya, koreksi dan sinkron sumber DEMO, konflik binding diblokir. Belum pembuktian runtime, database, autentikasi/API/Flask atau resolusi koreksi berantai; nol tes, CI, merge, deployment.
 

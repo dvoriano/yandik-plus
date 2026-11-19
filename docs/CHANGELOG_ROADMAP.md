@@ -1,3 +1,7 @@
+## 2026-11-19 | M04-I3 rekonsiliasi dan cabang histori DEMO
+- [Model peta dampak dan kandidat sumber](https://github.com/dvoriano/yandik-plus/commit/661c7bacbf37f97ba8ecdfc87a172698b1655f43), [integrasi repository/penelaahan](https://github.com/dvoriano/yandik-plus/commit/348ce95630cd8af4e47a0c40bff0008f97d0e1b1), [15 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/f5c719e621fae23a8a844583f43488b11082a6cb) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md).
+- Data aktif serta histori tidak diubah oleh cabang prospektif; paket lintas fasilitas diblokir dan status pembahasan tetap bukan aktivasi. **KODE DITULIS, BELUM DIUJI**; PR #9 Draft, 0 pengujian.
+
 ## 2026-11-16 | M04-I2 fondasi data terpadu
 - [Skema/repository dan scope](https://github.com/dvoriano/yandik-plus/commit/a1a5654e0fe9d6a22b3f8b3937e4191c5813ff5e), [16 skenario/guard koreksi](https://github.com/dvoriano/yandik-plus/commit/18931448ba306a66a485e99ed0d24ce177581f65), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md).
 - SQLite DEMO, revisi dan histori, transaksi, idempotensi, koreksi/sinkron tepercaya dengan blokir konflik. KODE DITULIS, BELUM DIUJI; belum server atau data nyata.

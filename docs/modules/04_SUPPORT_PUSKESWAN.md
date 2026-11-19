@@ -213,3 +213,7 @@ Peringkat pelayanan tinggi tidak otomatis mendominasi bantuan; fasilitas terpenc
 
 ## Pengembangan repository M04-I2 (16 November 2026)
 [Kontrak SQLite dan akses/koreksi DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I2_DATA_FOUNDATION.md) ditulis dan BELUM DIUJI. Ini rancangan server-side khusus fixture I1, bukan login atau hak akses resmi, adapter Flask atau database produksi. Revisi, snapshot, audit dan idempotensi dirancang satu transaksi; konflik sumber diblokir. Rekonsiliasi dan penyelarasan kebijakan Core masih tertunda.
+
+
+## Lanjutan M04-I3 (19 November 2026)
+[Peta dampak dan cabang rekonsiliasi DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md) ditulis untuk melindungi hubungan kebutuhan, paket sampai monitoring ketika sumber berubah. Ada penyusunan/penelaahan terpisah, tetapi **belum ada aktivasi cabang, otorisasi resmi, atau pengujian**. Histori dan workspace aktif tetap dipertahankan; integrasi, pengamanan server dan proses kelembagaan masih tertunda.

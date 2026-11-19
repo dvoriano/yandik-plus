@@ -156,3 +156,7 @@ Connect existing APEL service reports and Puskeswan profiles to a defensible, tr
 
 ## First offline milestone (M03)
 Develop schema + CRUD on anonymous fixtures; tests for actor scope, duplicate requests, evidence references and explainable priority. **No connection to production.**
+
+
+## Lanjutan M04-I3 (19 November 2026)
+[Peta dampak dan cabang rekonsiliasi DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md) ditulis untuk melindungi hubungan kebutuhan, paket sampai monitoring ketika sumber berubah. Ada penyusunan/penelaahan terpisah, tetapi **belum ada aktivasi cabang, otorisasi resmi, atau pengujian**. Histori dan workspace aktif tetap dipertahankan; integrasi, pengamanan server dan proses kelembagaan masih tertunda.

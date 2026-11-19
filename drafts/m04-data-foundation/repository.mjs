@@ -7,6 +7,8 @@ import {SCHEMA_SQL} from "./schema.mjs";
 import {principal,scope,requireAction,ACTIONS} from "./policy.mjs";
 import {candidateSync,sourceRevision} from "./source.mjs";
 import {buildReconciliationBranch} from "../m04-reconciliation/impact.mjs";
+import {activationGate,previewDemoPromotion} from "../m04-reconciliation-activation/activation.mjs";
+import {draftFollowupRegister} from "../m04-reconciliation-activation/compensation.mjs";
 import {models,advanceDemo,viewWorkspace,ACTIONS as STAGES} from "../m04-integrated-workspace/workspace.mjs";
 const clone=v=>JSON.parse(JSON.stringify(v));
 const REQ=/^DEMO-REQ-[A-Z0-9_-]{1,48}$/;
@@ -36,12 +38,21 @@ function normalize(raw){
   fields(data,["correction_id","decision","reason"]);
   if(!["catat_untuk_sinkron","kembalikan"].includes(data.decision))throw Error("INVALID_DECISION");
   normalized={correction_id:checkId(data.correction_id,COR),decision:data.decision,reason:note(data.reason)};
- }else if(raw.action==="review_reconciliation"){
+ }else if(raw.action==="review_reconciliation"||raw.action==="review_activation"){
   fields(data,["correction_id","disposition","reason"]);
-  if(!["catat_cabang_draf","kembalikan_untuk_perbaikan"].includes(data.disposition))
-   throw Error("INVALID_DISPOSITION");
+  const choices=raw.action==="review_activation"
+   ?["catat_kesiapan_demo","kembalikan_untuk_perbaikan"]
+   :["catat_cabang_draf","kembalikan_untuk_perbaikan"];
+  if(!choices.includes(data.disposition))throw Error("INVALID_DISPOSITION");
   normalized={correction_id:checkId(data.correction_id,COR),disposition:data.disposition,
    reason:note(data.reason)};
+ }else if(raw.action==="activate_branch_demo"){
+  fields(data,["correction_id","acknowledge_demo"]);
+  if(data.acknowledge_demo!==true)throw Error("DEMO_ACKNOWLEDGMENT_REQUIRED");
+  normalized={correction_id:checkId(data.correction_id,COR),acknowledge_demo:true};
+ }else if(raw.action==="record_followup_register"){
+  fields(data,["correction_id","reason"]);
+  normalized={correction_id:checkId(data.correction_id,COR),reason:note(data.reason)};
  }else{
   fields(data,["correction_id"]);
   normalized={correction_id:checkId(data.correction_id,COR)};
@@ -76,7 +87,7 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    models(seed);
    const workspace=clone(seed),source_versions=Object.fromEntries(workspace.master.map(m=>
     [m.id,workspace.states.some(s=>s.facility.id===m.id)?1:0]));
-   const payload=JSON.stringify({workspace,source_versions,corrections:[],reconciliations:[]});
+   const payload=JSON.stringify({workspace,source_versions,corrections:[],reconciliations:[],archived_workflows:[],retired_workflow_ids:[]});
    const t=timestamp();
    db.prepare("INSERT INTO workspace_current(id,revision,payload) VALUES(1,0,?)").run(payload);
    db.prepare("INSERT INTO workspace_versions(revision,payload,recorded_at) VALUES(0,?,?)").run(payload,t);
@@ -109,6 +120,22 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    review:entry.review?clone(entry.review):null,
    branch_available:entry.branch!==null,active_workspace_unchanged:true};
  }
+ /** Scoped redacted I4 status; never returns archived objects or candidate workspace. */
+ function activation(actorId,facilityId,correctionId){
+  const actor=principal(actorId,lookupPrincipal),{payload}=read();
+  const facility=payload.workspace.master.find(m=>m.id===facilityId);
+  if(!scope(actor,facility)||actor.role==="pimpinan")throw Error("ACCESS_DENIED");
+  const c=payload.corrections.find(c=>c.id===correctionId&&c.facility_id===facilityId);
+  if(!c)throw Error("CORRECTION_NOT_FOUND");
+  const entry=(payload.reconciliations??[]).find(e=>e.correction_id===c.id);
+  if(!entry)return {correction_id:c.id,status:c.status,activation_review:null,
+   archive_recorded:false,followup_rows:0};
+  const archive=(payload.archived_workflows??[]).find(a=>a.correction_id===c.id);
+  return {correction_id:c.id,status:c.status,
+   activation_review:entry.activation_review?clone(entry.activation_review):null,
+   archive_recorded:Boolean(archive),followup_rows:entry.compensation?.planned_followups.length??0,
+   guard:activationGate(entry,c),official_approval:false};
+ }
  function history(actorId,facilityId){
   const actor=principal(actorId,lookupPrincipal),{payload}=read();
   if(!scope(actor,payload.workspace.master.find(m=>m.id===facilityId)))throw Error("ACCESS_DENIED");
@@ -128,14 +155,26 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    if(cmd.expected_revision!==revision)throw Error("REVISION_CONFLICT");
    const next=clone(payload);
    next.reconciliations??=[];
+   next.archived_workflows??=[];
+   next.retired_workflow_ids??=[];
    let outcome="tercatat_demo",correctionId=null;
    if(cmd.action==="advance"){
-    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi","cabang_draf_menunggu_telaah","cabang_draf_tercatat"].includes(c.status)))throw Error("CORRECTION_PENDING");
-    next.workspace=advanceDemo(w,facility.id,cmd.data.stage);
+    if(next.corrections.some(c=>c.facility_id===facility.id&&
+     ["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi",
+      "cabang_draf_menunggu_telaah","cabang_draf_tercatat","siap_aktivasi_demo",
+      "tindak_lanjut_manual_tercatat","diaktifkan_demo_terarsip"].includes(c.status)))
+      throw Error("CORRECTION_PENDING");
+    const proposed=advanceDemo(w,facility.id,cmd.data.stage);
+    for(const kind of ["packages","reviews","schedules","shipments","receipts","handovers","observations"]){
+     const previous=new Set(w[kind].map(x=>x.id));
+     if(proposed[kind].some(x=>!previous.has(x.id)&&next.retired_workflow_ids.includes(x.id)))
+      throw Error("RETIRED_WORKFLOW_ID_REUSE");
+    }
+    next.workspace=proposed;
    }else if(cmd.action==="request_correction"){
     correctionId=cmd.data.correction_id;
     if(next.corrections.some(c=>c.id===correctionId))throw Error("CORRECTION_ID_CONFLICT");
-    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi","cabang_draf_menunggu_telaah","cabang_draf_tercatat"].includes(c.status)))
+    if(next.corrections.some(c=>c.facility_id===facility.id&&["menunggu_telaah","tercatat_untuk_sinkron","terblokir_rekonsiliasi","cabang_draf_menunggu_telaah","cabang_draf_tercatat","siap_aktivasi_demo","tindak_lanjut_manual_tercatat"].includes(c.status)))
      throw Error("CORRECTION_ALREADY_OPEN");
     next.corrections.push({id:correctionId,facility_id:facility.id,requester:actor.id,
      reason:cmd.data.reason,base_source_revision:sourceRevision(next.source_versions[facility.id]),
@@ -168,7 +207,8 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
      next.reconciliations.push({correction_id:c.id,facility_id:facility.id,
       preparer:actor.id,source_revision:result.impact.candidate_source_revision,
       base_workspace_revision:revision,impact:result.impact,
-      branch:result.branch,reason:result.reason,review:null});
+      branch:result.branch,reason:result.reason,review:null,
+      base_workspace:clone(w),activation_review:null,compensation:null});
      c.status="cabang_draf_menunggu_telaah";c.outcome=c.status;outcome=c.status;
     }else if(cmd.action==="review_reconciliation"){
      const entry=next.reconciliations.find(x=>x.correction_id===c.id&&x.facility_id===facility.id);
@@ -182,6 +222,46 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
      c.status=cmd.data.disposition==="catat_cabang_draf"?
       "cabang_draf_tercatat":"dikembalikan";
      c.outcome=c.status;outcome=c.status;
+    }else if(cmd.action==="review_activation"){
+     const entry=next.reconciliations.find(x=>x.correction_id===c.id&&x.facility_id===facility.id);
+     if(!entry||c.status!=="cabang_draf_tercatat"||
+       [c.requester,entry.preparer,entry.review?.reviewer].includes(actor.id))
+      throw Error("ACTIVATION_REVIEW_DENIED");
+     const gate=activationGate(entry,c);
+     if(!gate.eligible)throw Error("ACTIVATION_BLOCKED:"+gate.reasons.join(","));
+     entry.activation_review={reviewer:actor.id,disposition:cmd.data.disposition,
+      reason:cmd.data.reason};
+     c.status=cmd.data.disposition==="catat_kesiapan_demo"?
+      "siap_aktivasi_demo":"dikembalikan";
+     c.outcome=c.status;outcome=c.status;
+    }else if(cmd.action==="activate_branch_demo"){
+     const entry=next.reconciliations.find(x=>x.correction_id===c.id&&x.facility_id===facility.id);
+     if(!entry||c.status!=="siap_aktivasi_demo"||
+       entry.activation_review?.disposition!=="catat_kesiapan_demo"||
+       [c.requester,entry.review?.reviewer,entry.activation_review?.reviewer].includes(actor.id))
+      throw Error("ACTIVATION_NOT_READY");
+     const previousSource=sourceRevision(next.source_versions[facility.id]);
+     const promoted=previewDemoPromotion(w,entry,c,previousSource,readSource(facility.id,previousSource));
+     if(next.archived_workflows.some(a=>a.correction_id===c.id))throw Error("ALREADY_ARCHIVED");
+     const retired=[...promoted.archive.retired_ids.packages,
+      ...promoted.archive.retired_ids.reviews,...promoted.archive.retired_ids.schedules];
+     if(retired.some(id=>next.retired_workflow_ids.includes(id)))
+      throw Error("RETIRED_ID_ALREADY_REGISTERED");
+     next.archived_workflows.push({...promoted.archive,recorded_by:actor.id});
+     next.retired_workflow_ids.push(...retired);
+     next.workspace=promoted.workspace;
+     next.source_versions[facility.id]=promoted.source_revision;
+     entry.branch=null; // preserved in preceding immutable revision snapshot
+     c.status="diaktifkan_demo_terarsip";c.outcome=c.status;outcome=c.status;
+    }else if(cmd.action==="record_followup_register"){
+     const entry=next.reconciliations.find(x=>x.correction_id===c.id&&x.facility_id===facility.id);
+     if(!entry||c.status!=="cabang_draf_tercatat"||
+        entry.compensation!==null||entry.base_workspace===undefined||
+        JSON.stringify(entry.base_workspace)!==JSON.stringify(w))
+      throw Error("FOLLOWUP_NOT_READY");
+     const ledger=draftFollowupRegister(w,entry,c);
+     entry.compensation={...ledger,recorded_by:actor.id,review_reason:cmd.data.reason};
+     c.status="tindak_lanjut_manual_tercatat";c.outcome=c.status;outcome=c.status;
     }
    }
    models(next.workspace);
@@ -197,5 +277,5 @@ export function openRepository(db,{lookupPrincipal,readSource,clock=()=>new Date
    return response;
   });
  }
- return Object.freeze({initialize,view,reconciliation,history,execute});
+ return Object.freeze({initialize,view,reconciliation,activation,history,execute});
 }

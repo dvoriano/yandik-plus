@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M04-I6A | PREFLIGHT MIGRASI SATU ARAH DEMO | 19 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [preflight I4→I5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-migration-preflight) membentuk manifest SHA-256 dan metadata per Puskeswan fiktif. Validasi memakai proyeksi M04-I5; target harus benar-benar kosong. Manifest yang berubah ditolak. Seluruh keluaran `may_write=false`.
+- [13 skenario QA baru](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/tests/preflight.test.mjs) **tertulis, 0 dijalankan**. [Spesifikasi I6A](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6A_MIGRATION_PREFLIGHT.md) memuat batas asal data, identitas server, migrasi atomik, recovery dan retensi yang masih memerlukan desain, bukti, pengujian dan keputusan owner.
+- **I6A bukan migrasi:** tidak ada database, SQL, ekspor payload, autentikasi server atau layanan produksi yang dipanggil. Tahap lanjut usulan **M04-I6B**: desain kontrak identitas backend/inventaris terpercaya secara baca-saja.
+- Repo PUBLIC; PR #9 tetap Draft. CODE_ONLY: tidak ada CL/CI/tes, merge atau deploy; `main`, VPS, website dan bot Indodax tidak disentuh.
+
 ## PEMBARUAN M04-I5 | ID GENERASI & REVISI PER PUSKESWAN | 19 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [model generasi baru dan partisi data](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-generation-partition) memakai sumber I4 sintetis, menolak paket lintas fasilitas/rujukan yatim, memberi ID baru `DEMO-PKG-001-G0002` serta turunan S10–S15.
 - [Skema per fasilitas](https://github.com/dvoriano/yandik-plus/commit/1fddf3a8481833514e4e86c50045f2393a54757d) dan [repository dengan revisi logis terpisah](https://github.com/dvoriano/yandik-plus/commit/05d51c9388c87330991b67a2440a29d884b620e5), audit/idempotensi `(facility_id,revision/request_id)`, koreksi berjenjang dan sumber terpercaya. [25 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/b9e3b506cbb0bb766de37520359da68459db90f0), 0 dijalankan. [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md).

@@ -20,9 +20,11 @@ function historyPreserved(oldRows,newRows){
    throw Error("SOURCE_HISTORY_REWRITTEN");
  }
 }
-export function candidateSync(workspace,facility,previousRevision,packet){
- if(!packet||Object.keys(packet).length!==2||!Object.hasOwn(packet,"revision")||!Object.hasOwn(packet,"state"))
-  throw Error("SOURCE_PACKET_INVALID");
+/** Validate provenance before any prospective source replacement. Pure, DEMO only. */
+export function inspectSourceCandidate(workspace,facility,previousRevision,packet){
+ if(!packet||typeof packet!=="object"||Array.isArray(packet)||
+   Object.keys(packet).length!==2||!Object.hasOwn(packet,"revision")||
+   !Object.hasOwn(packet,"state"))throw Error("SOURCE_PACKET_INVALID");
  const revision=sourceRevision(packet.revision);
  if(revision<=previousRevision)throw Error("SOURCE_VERSION_NOT_NEWER");
  const state=clone(packet.state);
@@ -31,16 +33,17 @@ export function candidateSync(workspace,facility,previousRevision,packet){
  validateDemo(state);
  const before=workspace.states.find(s=>s.facility.id===facility.id);
  if(before)for(const k of ["requests","problems","supportNeeds","priorityAssessments"])
-  historyPreserved(before[k],state[k]);
- // The trusted source provider is responsible for authentication, source
- // envelope revisions, completeness and validation of editable profile fields.
+   historyPreserved(before[k],state[k]);
  const states=before?workspace.states.map(s=>s.facility.id===facility.id?state:s):[...workspace.states,state];
  const next={...workspace,states};
  const bridge=bridgeSources(next.master,next.states);
- // Changes affecting *any* existing package binding are quarantined. Never
- // rewrite downstream snapshots or silently remove old records.
- try{assertPackageSources(bridge,next.packages,next.bindings);}
+ return {workspace:next,bridge,revision};
+}
+export function candidateSync(workspace,facility,previousRevision,packet){
+ const candidate=inspectSourceCandidate(workspace,facility,previousRevision,packet);
+ // A blocked candidate must never replace the active branch.
+ try{assertPackageSources(candidate.bridge,candidate.workspace.packages,candidate.workspace.bindings);}
  catch{return {outcome:"terblokir_rekonsiliasi",workspace,revision:previousRevision};}
- models(next);
- return {outcome:"tersinkron_demo",workspace:next,revision};
+ models(candidate.workspace);
+ return {outcome:"tersinkron_demo",workspace:candidate.workspace,revision:candidate.revision};
 }

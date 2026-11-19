@@ -186,6 +186,28 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I5: ID generasi dan partisi per fasilitas (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit G0 | Status |
+|---|---|---|
+| QA-M04I5-01 | Proyeksi I4 memuat satu sumber/fasilitas, jejak arsip dan nomor sumber cocok | BELUM DIUJI |
+| QA-M04I5-02 | Tolak paket campuran fasilitas, serah terima lintas fasilitas, relasi yatim dan ID ganda | BELUM DIUJI |
+| QA-M04I5-03 | ID `DEMO-*-G0002` unik, konsisten di S10–S15 dan bukan ID terarsip | BELUM DIUJI |
+| QA-M04I5-04 | Tidak membuka generasi tanpa arsip I4 atau kebutuhan M03 yang diverifikasi ulang | BELUM DIUJI |
+| QA-M04I5-05 | Transisi tujuh tahap berurutan; replay akhir, restart paksa dan ID lama ditolak | BELUM DIUJI |
+| QA-M04I5-06 | Sumber lama terarsip tidak berubah, referensi BAST hanya fiktif, keputusan resmi false | BELUM DIUJI |
+| QA-M04I5-07 | Revisi `(facility_id,revision)` A/B independen logis, CAS stale writer per fasilitas | BELUM DIUJI |
+| QA-M04I5-08 | Idempotensi `(facility_id,request_id)`, replay identik dan konflik payload ditolak | BELUM DIUJI |
+| QA-M04I5-09 | Koreksi M03: ajukan, penelaah berbeda, sinkron metadata tepercaya serta data versi baru | BELUM DIUJI |
+| QA-M04I5-10 | Perubahan sumber setelah generasi aktif diblokir tanpa menimpa paket dan histori | BELUM DIUJI |
+| QA-M04I5-11 | Role/region, pimpinan agregat, akses historis per fasilitas dan larangan data sumber dari klien | BELUM DIUJI |
+| QA-M04I5-12 | Rollback gagal audit/command, append-only trigger, sumber duplikat dan korupsi snapshot | BELUM DIUJI |
+| QA-M04I5-13 | 25 skenario Node tertulis; belum dijalankan termasuk regresi I1–I4 | BELUM DIUJI |
+| QA-M04I5-14 | SQLite multi-koneksi/file, performa locks, database backup/restore, migrasi online dan retensi | RENCANA |
+| QA-M04I5-15 | Autentikasi/otorisasi Flask, API, SOP, keabsahan dokumen, generasi ketiga dan koreksi resmi | RENCANA / BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-I5](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md). CODE_ONLY tetap.
+
 ## Antrean M04-I4: gerbang aktivasi DEMO & tindak lanjut (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit G0 | Status |

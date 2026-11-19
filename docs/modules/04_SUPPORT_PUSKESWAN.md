@@ -221,3 +221,7 @@ Peringkat pelayanan tinggi tidak otomatis mendominasi bantuan; fasilitas terpenc
 
 ## Lanjutan M04-I4 (19 November 2026)
 [Rancangan gerbang aktivasi dan tindak lanjut](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I4_ACTIVATION_AND_FOLLOWUP.md) sudah ditulis sebagai kode DEMO yang **belum diuji**. Cabang tanpa riwayat pengiriman dapat diproses untuk aktivasi simulasi dengan pemeriksaan ulang dan penelaah tambahan, lalu objek lama disimpan dalam arsip; jejak kirim/terima/BAST/monitoring memblokir aktivasi dan hanya menghasilkan daftar tindak lanjut manual. Tidak ada keputusan pejabat, stok, dokumen kedinasan, database produksi atau integrasi Flask yang diubah.
+
+
+## Lanjutan M04-I5 (19 November 2026)
+[Rancangan ID generasi dan repository logis per Puskeswan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md) telah ditulis, **BELUM DIUJI**. Pemisahan snapshot I4 menggunakan rujukan fasilitas dan arsip yang eksplisit, menolak paket lintas wilayah dan ID lama; SQLite DEMO masih berbagi penulis fisik. Hak akses asli, migrasi, koreksi resmi, dokumen, serta data produksi belum ditangani.

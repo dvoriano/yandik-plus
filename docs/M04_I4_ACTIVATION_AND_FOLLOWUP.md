@@ -44,3 +44,7 @@ Seluruh skenario **BELUM DIJALANKAN**. Belum ada pembuktian keamanan, integritas
 Yang dibangun pada tahap ini adalah **rancangan aktivasi DEMO terjaga dan pencatatan tindak lanjut**, bukan pembetulan operasional data yang sudah disalurkan. Konflik yang memiliki realisasi fisik tetap membutuhkan prosedur koreksi resmi, referensi dokumen, penanggung jawab, dan pemisahan tindakan. Versi sumber yang berubah pada fasilitas lain juga memerlukan persiapan ulang karena snapshot workspace masih global. Belum ada model partisi per fasilitas, ID baru pasca-arsip, atau API.
 
 **Usulan M04-I5:** revisi sumber berjenjang dan pembentukan ID generasi baru, workflow koreksi dengan bukti dokumen asli, partisi transaksi per fasilitas, retensi/arsip dan adaptor aplikasi setelah review kelembagaan. Jalankan QA secara bertahap hanya jika owner memberi izin eksplisit G0. M05 APEL 2.0 tetap mengikuti roadmap.
+
+
+## Lanjutan M04-I5 (19 November 2026)
+[ID generasi `-G0002` dan proyeksi data per Puskeswan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md) telah ditulis sebagai repository SQLite **DEMO, BELUM DIUJI**. I5 tidak memodifikasi mekanisme I4, tetapi menerima snapshot sintetis I4 yang lengkap untuk proyeksi berkas/fasilitas. Semua riwayat arsip dan ID lama tetap dipertahankan; pengesahan dokumen, migrasi produksi, dan penerapan akses server belum tersedia.

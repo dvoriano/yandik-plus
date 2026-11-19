@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M04-I6A preflight migrasi satu arah
+**KODE DITULIS, BELUM DIUJI.** [Model preflight](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/preflight.mjs) dan [13 skenario tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/tests/preflight.test.mjs) menyusun rencana I4→I5 DEMO; target harus kosong, hash sumber/partisi/manifest, pencocokan ulang dan penolakan perubahan. [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6A_MIGRATION_PREFLIGHT.md). Ini bukan bukti migrasi atau otorisasi server: source/target belum diautentikasi, tidak ada write, tes, CL/CI, deploy atau merge. Repo PUBLIC, PR #9 Draft. Kelanjutan: M04-I6B kontrak identitas/inventaris read-only.
+
 ## 2026-11-19 | M04-I5 generasi ID dan partisi data per Puskeswan
 **KODE DITULIS, BELUM DIUJI.** [ID generasi/adapter partisi](https://github.com/dvoriano/yandik-plus/commit/686a1bacee541c33f96c0df206105d4cda83484b), [skema SQLite](https://github.com/dvoriano/yandik-plus/commit/1fddf3a8481833514e4e86c50045f2393a54757d), [repository per fasilitas dan alur revisi](https://github.com/dvoriano/yandik-plus/commit/05d51c9388c87330991b67a2440a29d884b620e5), [fixture serta 25 skenario tertulis](https://github.com/dvoriano/yandik-plus/commit/b9e3b506cbb0bb766de37520359da68459db90f0), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md). ID baru menjaga paket terarsip tidak dipakai ulang, revisi dan idempotensi terpisah secara logis, sumber M03 harus terverifikasi ulang setelah I4. Belum API, keamanan/migrasi produksi, tes, CI, merge atau deployment.
 

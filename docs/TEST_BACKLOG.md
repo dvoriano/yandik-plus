@@ -186,6 +186,25 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I4: gerbang aktivasi DEMO & tindak lanjut (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin eksplisit G0 | Status |
+|---|---|---|
+| QA-M04I4-01 | Gerbang penolakan paket lintas fasilitas, cabang belum ditelaah atau baseline tidak ada | BELUM DIUJI |
+| QA-M04I4-02 | Semua catatan S13–S15 (kirim, terima, rujukan BAST, monitoring) menghalangi aktivasi DEMO | BELUM DIUJI |
+| QA-M04I4-03 | Dua tahap review berbeda; reviewer I4 bukan pemohon, pembuat cabang maupun reviewer I3 | BELUM DIUJI |
+| QA-M04I4-04 | Pemeriksaan ulang sumber/cakupan/versi dan isi calon branch sebelum transaksi aktivasi | BELUM DIUJI |
+| QA-M04I4-05 | Snapshot workspace aktif berubah, termasuk fasilitas lain, harus ditolak dan disiapkan ulang | BELUM DIUJI |
+| QA-M04I4-06 | Arsip sidecar menyimpan sumber, paket, telaah dan jadwal lama; tabel versi tetap append-only | BELUM DIUJI |
+| QA-M04I4-07 | ID dipensiunkan tidak boleh digunakan ulang; alur pasca-aktivasi tetap freeze | BELUM DIUJI |
+| QA-M04I4-08 | Register tindak lanjut untuk jejak realisasi tidak menyentuh stok, pembayaran, BAST maupun status resmi | BELUM DIUJI |
+| QA-M04I4-09 | Idempotensi, replay, ID permintaan bentrok, stale revision, aktivasi ganda dan rollback audit gagal | BELUM DIUJI |
+| QA-M04I4-10 | Peran, wilayah, kondisi pengguna nonaktif, projection hanya metadata, tanpa kebocoran candidate/arsip | BELUM DIUJI |
+| QA-M04I4-11 | 20 skenario Node ditulis, tidak dijalankan; ketergantungan I1–I3 juga perlu verifikasi regresi | BELUM DIUJI |
+| QA-M04I4-12 | Koreksi formal dengan dokumen sah, ID baru, pecah transaksi per fasilitas, migrasi/backup/restore dan otorisasi server | RENCANA / BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-I4](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I4_ACTIVATION_AND_FOLLOWUP.md). CODE_ONLY tetap.
+
 ## Antrean M04-I3: rekonsiliasi lintas modul (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin eksplisit G0 | Status |

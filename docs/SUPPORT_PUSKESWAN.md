@@ -160,3 +160,7 @@ Develop schema + CRUD on anonymous fixtures; tests for actor scope, duplicate re
 
 ## Lanjutan M04-I3 (19 November 2026)
 [Peta dampak dan cabang rekonsiliasi DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I3_RECONCILIATION.md) ditulis untuk melindungi hubungan kebutuhan, paket sampai monitoring ketika sumber berubah. Ada penyusunan/penelaahan terpisah, tetapi **belum ada aktivasi cabang, otorisasi resmi, atau pengujian**. Histori dan workspace aktif tetap dipertahankan; integrasi, pengamanan server dan proses kelembagaan masih tertunda.
+
+
+## Lanjutan M04-I4 (19 November 2026)
+[Rancangan gerbang aktivasi dan tindak lanjut](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I4_ACTIVATION_AND_FOLLOWUP.md) sudah ditulis sebagai kode DEMO yang **belum diuji**. Cabang tanpa riwayat pengiriman dapat diproses untuk aktivasi simulasi dengan pemeriksaan ulang dan penelaah tambahan, lalu objek lama disimpan dalam arsip; jejak kirim/terima/BAST/monitoring memblokir aktivasi dan hanya menghasilkan daftar tindak lanjut manual. Tidak ada keputusan pejabat, stok, dokumen kedinasan, database produksi atau integrasi Flask yang diubah.

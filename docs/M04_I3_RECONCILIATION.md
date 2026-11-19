@@ -46,3 +46,7 @@ Skenario QA **tidak dijalankan**. Validitas runtime, transaksi bersamaan, kegaga
 **Langkah lanjutan yang diusulkan M04-I4:** desain proses aktivasi yang aman dengan persetujuan manusia sesuai kewenangan, konsistensi historis dan ledger kompensasi untuk objek turunannya, serta batas eksplisit terhadap catatan yang telah menjadi dokumen resmi. Jangan otomatis mempromosikan cabang DEMO. M05 (APEL 2.0) tetap mengikuti roadmap.
 
 Repository GitHub masih PUBLIC pada pemeriksaan 19 November 2026; PR #9 tetap Draft. Tidak ada tes, CI, merge `main`, deployment, VPS, database produksi maupun akses data asli.
+
+
+## Lanjutan M04-I4 (19 November 2026)
+[Gerbang aktivasi simulasi dan register tindak lanjut](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I4_ACTIVATION_AND_FOLLOWUP.md) telah ditulis, **BELUM DIUJI**. Cabang I3 kini menyimpan baseline untuk pemeriksaan ulang; cabang dengan jejak kirim/terima/BAST/monitoring tidak dapat diaktifkan otomatis. Untuk cabang tanpa jejak fisik, aktivasi hanya di workspace sintetis setelah penelaah tambahan dan validasi sumber; objek lama diarsipkan. Keputusan/dokumen resmi tetap di luar sistem DEMO.

@@ -1,3 +1,7 @@
+## 2026-11-19 | M04-I6D kompatibilitas Flask/APEL dan gerbang integrasi
+- [Rute dokumenter, 24 gerbang, handoff DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates), [21 QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates/tests) dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6D_FLASK_APEL_INTEGRATION_GATES.md).
+- KODE DITULIS, BELUM DIUJI. Pendekatan PARALLEL_DRAFT_NO_REWRITE, tidak ada akses sumber Flask terbaru. Status route dan semua gerbang BELUM_DIBUKTIKAN, no-write/no-deploy, tidak ada CI/tes/merge/produksi. Repo PUBLIC; PR #9 Draft. Berikutnya usulan M05-0 baseline regresi APEL 2026.
+
 ## 2026-11-19 | M04-I6C perlindungan snapshot, recovery dan retensi DEMO
 - [Snapshot, recovery, retensi, runbook](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery), [30 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery/tests), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6C_SNAPSHOT_RECOVERY_RETENTION.md).
 - KODE DITULIS, BELUM DIUJI. Dua observasi bukan atomisitas; jurnal berantai in-memory bukan audit sah; retensi tanpa ketentuan hari/izin hapus. Runbook 12 gerbang semuanya BELUM_DIBUKTIKAN. Semua hasil no-write/no-cutover; tidak ada tes, CI, merge atau produksi. Repo PUBLIC; PR #9 DRAFT.

@@ -85,3 +85,14 @@ test("M05-0 invalid counters, shapes and evidence refs are rejected",()=>{
   evidence_refs:["https://somewhere.invalid/photo"]
  })),/APEL_EVIDENCE_INVALID/);
 });
+
+test("M05-0 zero activity must be declared explicitly",()=>{
+ assert.throws(()=>normalizeDemoReport(demoInput(A,"2028-02",{
+  counts:{pengobatan:0,vaksinasi:0,penyuluhan:0,layanan_lain:0}
+ })),/APEL_ZERO_MUST_BE_DECLARED/);
+});
+test("M05-0 tampered in-memory DEMO ledger rows are refused",()=>{
+ const l=recordDemoReport(emptyDemoLedger(),demoInput(A,"2029-03"));
+ const edited=structuredClone(l);edited.records[0].total_demo_events=999;
+ assert.throws(()=>annualChecklist(edited,A,2029),/APEL_LEDGER_RECORD_TAMPERED/);
+});

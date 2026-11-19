@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M04-I6D gerbang integrasi Flask/APEL
+**KODE DITULIS, BELUM DIUJI.** [Model kompatibilitas route, 24 gerbang dan handoff DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates), [21 skenario tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates/tests) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6D_FLASK_APEL_INTEGRATION_GATES.md). Tidak ada pengujian atau inventaris aktual Flask, integrasi, migrasi, pengesahan proses, deployment, CI/CL atau merge. PR #9 tetap Draft, repo PUBLIC, situs produksi tidak berubah. Lanjut usulan M05-0 baseline APEL 2026.
+
 ## 2026-11-19 | M04-I6C snapshot, recovery, dan retensi DEMO
 **KODE DITULIS, BELUM DIUJI.** [Model snapshot, recovery, retensi, dan runbook](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery); [30 skenario test tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery/tests), 0 dijalankan; [dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6C_SNAPSHOT_RECOVERY_RETENTION.md). Dua pembacaan tidak membuktikan atomicity, hash jurnal bukan bukti audit sah, backup/restore belum ada, dan retensi belum ditetapkan. Semua hasil `may_write=false` / `may_cutover=false`. CODE_ONLY: tidak ada CL/CI/tes, merge, VPS atau deploy. Repo PUBLIC, PR #9 tetap Draft. Usulan berikutnya M04-I6D gerbang integrasi Flask/APEL.
 

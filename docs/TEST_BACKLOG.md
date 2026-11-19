@@ -186,6 +186,46 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M04-I6C: snapshot, recovery, retensi dan runbook (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 | Status |
+|---|---|---|
+| QA-M04I6C-01 | Dua observasi DEMO konsisten tetapi tidak menyatakan atomisitas/izin cutover | BELUM DIUJI |
+| QA-M04I6C-02 | Jumlah observasi harus tepat dua | BELUM DIUJI |
+| QA-M04I6C-03 | Perubahan revisi sumber pada pembacaan kedua ditolak | BELUM DIUJI |
+| QA-M04I6C-04 | Perubahan isi sumber walau nomor revisi sama ditolak | BELUM DIUJI |
+| QA-M04I6C-05 | Target yang terisi di pembacaan kedua ditolak | BELUM DIUJI |
+| QA-M04I6C-06 | Klaim manifest privileged/hash palsu ditolak | BELUM DIUJI |
+| QA-M04I6C-07 | Struktur observasi/revisi tidak sah ditolak | BELUM DIUJI |
+| QA-M04I6C-08 | Perencanaan tidak mengubah manifest/snapshot/inventaris input | BELUM DIUJI |
+| QA-M04I6C-09 | Jurnal awal `may_write=false` dan `may_restore=false` | BELUM DIUJI |
+| QA-M04I6C-10 | Lima tahap jurnal tersusun berurutan dengan chain checksum | BELUM DIUJI |
+| QA-M04I6C-11 | Persetujuan palsu pada input atau jurnal ditolak | BELUM DIUJI |
+| QA-M04I6C-12 | Revisi jurnal dan urutan tahap salah ditolak | BELUM DIUJI |
+| QA-M04I6C-13 | Penelaah DEMO harus berbeda dari penyusun | BELUM DIUJI |
+| QA-M04I6C-14 | Perubahan teks isi event historis terdeteksi | BELUM DIUJI |
+| QA-M04I6C-15 | Perubahan hash, tip atau kehilangan event terdeteksi | BELUM DIUJI |
+| QA-M04I6C-16 | Jurnal beku tidak dapat lanjut/aktivasi otomatis | BELUM DIUJI |
+| QA-M04I6C-17 | ID event duplikat dan stale revision ditolak | BELUM DIUJI |
+| QA-M04I6C-18 | Kegagalan source/target/backup/restore/jurnal/otorisasi menghentikan proses | BELUM DIUJI |
+| QA-M04I6C-19 | Jenis insiden dan aktor/event/note tidak sah ditolak | BELUM DIUJI |
+| QA-M04I6C-20 | Retensi mencakup kelas global dan per fasilitas tanpa payload | BELUM DIUJI |
+| QA-M04I6C-21 | Retensi tidak memberi izin hapus/ekspor/purge termasuk saat hold DEMO | BELUM DIUJI |
+| QA-M04I6C-22 | Hold hanya metadata dan tidak menentukan masa simpan | BELUM DIUJI |
+| QA-M04I6C-23 | Hold fasilitas asing/duplikat ditolak | BELUM DIUJI |
+| QA-M04I6C-24 | Scope retensi tidak sah dan status privileged ditolak | BELUM DIUJI |
+| QA-M04I6C-25 | Perencanaan retensi tidak memutasi input atau mengeluarkan data arsip | BELUM DIUJI |
+| QA-M04I6C-26 | Runbook memuat 12 gerbang masih BELUM_DIBUKTIKAN | BELUM DIUJI |
+| QA-M04I6C-27 | Runbook tidak pernah mengizinkan eksekusi/cutover/deletion | BELUM DIUJI |
+| QA-M04I6C-28 | Kesiapan atomik atau izin write palsu ditolak | BELUM DIUJI |
+| QA-M04I6C-29 | Klaim kebijakan retensi disetujui tanpa bukti ditolak | BELUM DIUJI |
+| QA-M04I6C-30 | Fingerprint jurnal berbeda dari manifest snapshot ditolak | BELUM DIUJI |
+| QA-M04I6C-31 | Bukti snapshot transaksi DB asli, freeze/lock writer dan recheck atomic | RENCANA / BUTUH BUKTI |
+| QA-M04I6C-32 | Backup off-host, restore drill, pemulihan gagal listrik, transaksi lintas fasilitas | RENCANA / BELUM DIUJI |
+| QA-M04I6C-33 | Retensi resmi, legal hold, arsip dinas, keamanan SPBE, hak akses dan pencabutan sesi | BUTUH KEPUTUSAN |
+
+[Spesifikasi M04-I6C](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6C_SNAPSHOT_RECOVERY_RETENTION.md). **30 skenario Node tertulis, 0 dijalankan**; tidak ada backup, recovery, migrasi atau perubahan DB nyata.
+
 ## Antrean M04-I6B: identitas backend & inventaris read-only (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 | Status |

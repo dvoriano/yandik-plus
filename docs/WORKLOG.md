@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M05-0 fondasi APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** Sesuai arahan owner, cakupan M05 berubah dari fokus baseline 2026/rencana 2027 menjadi fondasi **2026–2030**. [Model registry aturan, validasi laporan, ledger dan ringkasan](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear); [29 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-multiyear/tests), **0 dijalankan**; [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_0_APEL_MULTIYEAR_2026_2030.md). Tahun 2027–2030 tidak otomatis mewarisi 2026 atau memperoleh persetujuan; 2026 belum dicocokkan ke Flask/Juknis produksi. Tidak ada tes, CL/CI, merge, VPS/website atau DB. PR #9 tetap Draft. Berikutnya usulan M05-1 draf-submisi-revisi.
+
 ## 2026-11-19 | M04-I6D gerbang integrasi Flask/APEL
 **KODE DITULIS, BELUM DIUJI.** [Model kompatibilitas route, 24 gerbang dan handoff DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates), [21 skenario tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-flask-integration-gates/tests) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6D_FLASK_APEL_INTEGRATION_GATES.md). Tidak ada pengujian atau inventaris aktual Flask, integrasi, migrasi, pengesahan proses, deployment, CI/CL atau merge. PR #9 tetap Draft, repo PUBLIC, situs produksi tidak berubah. Lanjut usulan M05-0 baseline APEL 2026.
 

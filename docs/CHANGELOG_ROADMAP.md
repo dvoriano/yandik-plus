@@ -1,3 +1,7 @@
+## 2026-11-19 | M04-I6C perlindungan snapshot, recovery dan retensi DEMO
+- [Snapshot, recovery, retensi, runbook](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery), [30 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-snapshot-recovery/tests), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6C_SNAPSHOT_RECOVERY_RETENTION.md).
+- KODE DITULIS, BELUM DIUJI. Dua observasi bukan atomisitas; jurnal berantai in-memory bukan audit sah; retensi tanpa ketentuan hari/izin hapus. Runbook 12 gerbang semuanya BELUM_DIBUKTIKAN. Semua hasil no-write/no-cutover; tidak ada tes, CI, merge atau produksi. Repo PUBLIC; PR #9 DRAFT.
+
 ## 2026-11-19 | M04-I6B identitas backend & inventaris baca-saja DEMO
 - [Resolver role/wilayah dan gateway SQL SELECT](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m04-backend-readonly), [15 skenario tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-backend-readonly/tests/gateway.test.mjs), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6B_BACKEND_READONLY_IDENTITY.md).
 - **KODE DITULIS, BELUM DIUJI.** Identitas hanya boleh diperoleh dari host server tepercaya (belum terintegrasi). Inventaris target I5 baca-saja dan ringkasan fasilitas dibatasi role/wilayah; `may_write=false`. Tanpa backend/DB/QA/CI/merge/produksi; M04-I6C masih RENCANA, PR #9 DRAFT, repo PUBLIC.

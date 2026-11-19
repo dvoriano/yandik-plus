@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-19 | M04-I6B identitas server dan inventaris baca-saja
+**KODE DITULIS, BELUM DIUJI:** [identity](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-backend-readonly/identity.mjs), [inventory](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-backend-readonly/inventory.mjs), [15 skenario belum dijalankan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-backend-readonly/tests/gateway.test.mjs), dan [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6B_BACKEND_READONLY_IDENTITY.md). Pembatasan role/wilayah dan SELECT-only hanya kontrak DEMO yang bergantung pada sesi/snapshot host tepercaya, tanpa backend asli. Tidak ada CL/CI/tes, merge, VPS atau deployment. PR #9 Draft; repo PUBLIC. Lanjut I6C RENCANA.
+
 ## 2026-11-19 | M04-I6A preflight migrasi satu arah
 **KODE DITULIS, BELUM DIUJI.** [Model preflight](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/preflight.mjs) dan [13 skenario tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m04-migration-preflight/tests/preflight.test.mjs) menyusun rencana I4→I5 DEMO; target harus kosong, hash sumber/partisi/manifest, pencocokan ulang dan penolakan perubahan. [Dokumen](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I6A_MIGRATION_PREFLIGHT.md). Ini bukan bukti migrasi atau otorisasi server: source/target belum diautentikasi, tidak ada write, tes, CL/CI, deploy atau merge. Repo PUBLIC, PR #9 Draft. Kelanjutan: M04-I6B kontrak identitas/inventaris read-only.
 

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-20 | M05-4 rapor dan tren APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Model report tahunan, multi-year trend dan dashboard view-model]( https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard), [22 skenario QA tertulis]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs) (0 dijalankan), [spesifikasi]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). Hanya deskriptif DEMO, missing berbeda dari nol, total dibatasi satuan dan tahun, tren tidak menghitung growth karena comparability belum terbukti. Tanpa skor/ranking/publikasi atau integrasi live. CODE_ONLY, PR #9 Draft, tanpa tes/CL/CI/merge/VPS/DB/Flask/deploy.
+
 ## 2026-11-19 | M05-3 kontrak aturan evaluasi APEL 2026–2030
 **KODE DITULIS, BELUM DIUJI.** [Rulebook per tahun, preview fakta DEMO dan register 12 review gates](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules), [29 QA tertulis](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules/tests) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_3_ANNUAL_RULES_2026_2030.md). 2026 referensi butuh verifikasi, 2027 konsep usulan, 2028–2030 belum ditetapkan. Memisahkan data pelayanan/pelaporan/ketepatan waktu/dukungan/wilayah; sumber belum cocok/terverifikasi, tidak menghitung skor atau membuat klasemen. Repo PUBLIC, PR #9 Draft, tanpa tes/CL/CI, merge, database, Flask atau deployment. Usulan berikutnya M05-4 rapor/tren transparan multi-tahun.
 

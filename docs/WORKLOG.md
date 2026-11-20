@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-20 | M05-6 data dictionary dan schema mapping APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md). Katalog 36 field bisnis semantik pada 8 domain; seluruh nama tabel/kolom aktual belum dipetakan. Kandidat schema DEMO tetap unverified. **20 QA tertulis, 0 dijalankan.** Tidak ada introspeksi DB, query, koneksi, atau perubahan produksi. CODE_ONLY; PR #9 Draft.
+
 ## 2026-11-20 | M05-5 kontrak sumber dan rekonsiliasi APEL 2026–2030
 **KODE DITULIS, BELUM DIUJI.** [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md). Kontrak DEMO empat sumber memeriksa envelope snapshot, keunikan fasilitas dan periode, pasangan ledger/workflow, fasilitas tanpa registry serta versi policy per tahun. Digest/timestamp tidak dianggap bukti integritas/atomisitas. **20 QA tertulis, 0 dijalankan.** Tidak ada connector, SQL, akses Flask/DB/VPS, auto-repair atau publikasi. CODE_ONLY, PR #9 Draft.
 

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-20 | M05-5 kontrak sumber dan rekonsiliasi APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md). Kontrak DEMO empat sumber memeriksa envelope snapshot, keunikan fasilitas dan periode, pasangan ledger/workflow, fasilitas tanpa registry serta versi policy per tahun. Digest/timestamp tidak dianggap bukti integritas/atomisitas. **20 QA tertulis, 0 dijalankan.** Tidak ada connector, SQL, akses Flask/DB/VPS, auto-repair atau publikasi. CODE_ONLY, PR #9 Draft.
+
 ## 2026-11-20 | M05-4 rapor dan tren APEL 2026–2030
 **KODE DITULIS, BELUM DIUJI.** [Model report tahunan, multi-year trend dan dashboard view-model](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard), [22 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs) (0 dijalankan), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). Hanya deskriptif DEMO, missing berbeda dari nol, total dibatasi satuan dan tahun, tren tidak menghitung growth karena comparability belum terbukti. Tanpa skor/ranking/publikasi atau integrasi live. CODE_ONLY, PR #9 Draft, tanpa tes/CL/CI/merge/VPS/DB/Flask/deploy.
 

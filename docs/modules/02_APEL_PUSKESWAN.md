@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-4 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-5+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-5 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-6+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.2 / 20 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.3 / 20 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-5
+
+[Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md). Kontrak rekonsiliasi empat sumber DEMO, tanpa konektor live. Structural match bukan validasi sumber resmi; digest dan atomisitas snapshot belum diverifikasi. **20 QA tertulis, 0 dijalankan.** [Spesifikasi](../M05_5_SOURCE_RECONCILIATION_2026_2030.md).
 
 ## Implementasi M05-4
 

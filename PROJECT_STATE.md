@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-5 | KONTRAK SUMBER & REKONSILIASI APEL 2026–2030 | 20 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md). Kontrak DEMO empat keluarga sumber: registry fasilitas, ledger pelayanan, workflow submit, rule-set tahunan. Memeriksa duplikasi, fasilitas/periode yatim, pasangan sumber yang hilang dan versi policy.
+- **20 skenario QA tertulis, 0 dijalankan.** Envelope hanya DEMO_UNVERIFIED; digest tidak dihitung/diverifikasi, timestamp bukan bukti snapshot atomik. structural_match hanya kecocokan struktur fixture, bukan validasi data resmi.
+- Tidak ada konektor, SQL, akses Flask/DB/VPS, auto-repair, write/delete, skor, ranking atau publikasi. **M05-6 (RENCANA):** mapping data dictionary aktual setelah owner menyetujui sumber dan akses uji. CODE_ONLY; PR #9 Draft; repo PUBLIC.
+
 ## PEMBARUAN M05-4 | RAPOR & TREN APEL 2026–2030 | 20 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [report tahunan, seri tren, dashboard view-model DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard). Rekap per tahun memisahkan nilai tersedia/tidak tersedia, satuan dan sumber; tren hanya seri per tahun, **tanpa growth/perbandingan lintas tahun**.
 - [22 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs), 0 dijalankan. Tidak ada UI/endpoint live, skor, ranking, award atau publikasi. Data M05-0/M05-2 belum direkonsiliasi; timestamp, dukungan dan agregasi kab/kota tetap unavailable.

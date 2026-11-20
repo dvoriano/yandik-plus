@@ -1,3 +1,7 @@
+## 2026-11-20 | M05-6 data dictionary dan schema mapping APEL 2026–2030
+- [Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md).
+- KODE DITULIS, BELUM DIUJI. 36 field semantik/8 domain; schema aktual belum tersedia, semua mapping belum terverifikasi. 20 QA tertulis, 0 dijalankan. Tidak ada akses DB/VPS/Flask atau integrasi. M05-7 RENCANA.
+
 ## 2026-11-20 | M05-5 kontrak sumber dan rekonsiliasi APEL 2026–2030
 - [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md).
 - KODE DITULIS, BELUM DIUJI. Pemeriksaan struktur empat sumber DEMO; digest tidak diverifikasi, timestamp tidak membuktikan snapshot atomik. 20 QA tertulis, 0 dijalankan. Tidak ada integrasi, write/delete, auto-repair, skor atau publikasi. M05-6 RENCANA.

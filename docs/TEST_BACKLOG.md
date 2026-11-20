@@ -186,6 +186,35 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-5: kontrak sumber dan rekonsiliasi APEL 2026–2030 (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 dari owner | Status |
+|---|---|---|
+| QA-M05-5-01 | Empat keluarga sumber wajib tersedia dan tidak ada sumber ekstra | BELUM DIUJI |
+| QA-M05-5-02 | Envelope DEMO dengan schema/snapshot/digest format valid | BELUM DIUJI |
+| QA-M05-5-03 | Sumber yang mengaku official/verified ditolak | BELUM DIUJI |
+| QA-M05-5-04 | Envelope writable atau bukan read-only ditolak | BELUM DIUJI |
+| QA-M05-5-05 | Registry fasilitas unik | BELUM DIUJI |
+| QA-M05-5-06 | Periode ledger/workflow dan tahun berada pada 2026–2030 | BELUM DIUJI |
+| QA-M05-5-07 | Duplikasi fasilitas-periode dalam sumber ditolak | BELUM DIUJI |
+| QA-M05-5-08 | Versi policy harus cocok dengan tahun | BELUM DIUJI |
+| QA-M05-5-09 | Ledger tanpa workflow dilaporkan | BELUM DIUJI |
+| QA-M05-5-10 | Workflow tanpa ledger dilaporkan | BELUM DIUJI |
+| QA-M05-5-11 | Fasilitas tanpa registry dilaporkan | BELUM DIUJI |
+| QA-M05-5-12 | Tahun tanpa bukti policy dilaporkan | BELUM DIUJI |
+| QA-M05-5-13 | Filter tahun tidak mengubah sumber input | BELUM DIUJI |
+| QA-M05-5-14 | Filter tahun duplikat/tidak didukung ditolak | BELUM DIUJI |
+| QA-M05-5-15 | Structural match tidak menyatakan validasi resmi | BELUM DIUJI |
+| QA-M05-5-16 | Digest tidak dianggap terverifikasi tanpa verifier | BELUM DIUJI |
+| QA-M05-5-17 | Timestamp tidak dianggap bukti snapshot atomik | BELUM DIUJI |
+| QA-M05-5-18 | Hasil tidak dapat menulis, memperbaiki atau menghapus | BELUM DIUJI |
+| QA-M05-5-19 | Hasil tidak dapat scoring, ranking, award atau publikasi | BELUM DIUJI |
+| QA-M05-5-20 | Sumber kosong/bermasalah tetap eksplisit dan fail-closed | BELUM DIUJI |
+| QA-M05-5-21 | Mapping data dictionary aktual setelah izin dan bukti owner | RENCANA / BUTUH KEPUTUSAN |
+| QA-M05-5-22 | Snapshot atomik, digest tepercaya, rekonsiliasi sampling dan audit di staging | RENCANA / BELUM DIUJI |
+
+**20 skenario tertulis, 0 dijalankan.** Item 21–22 adalah tindak lanjut, belum diimplementasikan/diuji. [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md).
+
 ## Antrean M05-4: rapor dan tren APEL 2026–2030 (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 dari owner | Status |

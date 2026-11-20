@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-4 | RAPOR & TREN APEL 2026–2030 | 20 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [report tahunan, seri tren, dashboard view-model DEMO]( https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard). Rekap per tahun memisahkan nilai tersedia/tidak tersedia, satuan dan sumber; tren hanya seri per tahun, **tanpa growth/perbandingan lintas tahun**.
+- [22 skenario QA tertulis]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs), 0 dijalankan. Tidak ada UI/endpoint live, skor, ranking, award atau publikasi. Data M05-0/M05-2 belum direkonsiliasi; timestamp, dukungan dan agregasi kab/kota tetap unavailable.
+- [Spesifikasi M05-4]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-plus/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). M05-5 RENCANA: kontrak sumber resmi dan rekonsiliasi read-only setelah izin. CODE_ONLY; PR #9 Draft; tidak ada CL/CI/test/merge/VPS/DB/Flask/deploy.
+
 ## PEMBARUAN M05-3 | RULE-SET DAN APRESIASI APEL 2026–2030 | 19 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [katalog aturan tahunan, pratinjau indikator DEMO, register gerbang metodologi](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-rules). Cakupan 2026–2030: konsep kategori 2026 = referensi historis yang wajib dicocokkan dengan Juknis, 2027 = usulan, **2028–2030 belum memiliki kategori/rule-set disahkan**.
 - Tidak menebak bobot, rumus, bonus, tie-breaker, predikat atau peringkat. M05-0 (volume DEMO) dan M05-2 (bulan pernah submit DEMO) **belum direkonsiliasi**, ketepatan waktu/dukungan/kabupaten tidak memiliki bukti sehingga `null`, bukan nol. Semua keluaran no-scoring/no-ranking/no-award/no-publication. **12 gerbang metodologi BELUM_DIBUKTIKAN**.

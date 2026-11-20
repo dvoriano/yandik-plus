@@ -186,6 +186,37 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-4: rapor dan tren APEL 2026–2030 (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 dari owner | Status |
+|---|---|---|
+| QA-M05-4-01 | Rekap hanya mengambil fasilitas-tahun yang dipilih | BELUM DIUJI |
+| QA-M05-4-02 | Fasilitas ganda pada tahun sama ditolak | BELUM DIUJI |
+| QA-M05-4-03 | Tahun lain tidak ikut masuk ke rekap tahunan | BELUM DIUJI |
+| QA-M05-4-04 | Metrik volume layanan dan bulan submit tetap terpisah | BELUM DIUJI |
+| QA-M05-4-05 | Nilai metrik yang tidak ada pada proposal tetap unavailable | BELUM DIUJI |
+| QA-M05-4-06 | Nilai nol teramati dibedakan dari nilai null | BELUM DIUJI |
+| QA-M05-4-07 | Timestamp/dukungan/wilayah yang tidak tersedia tidak diisi nol | BELUM DIUJI |
+| QA-M05-4-08 | Satuan berbeda tidak boleh dijumlahkan | BELUM DIUJI |
+| QA-M05-4-09 | Overflow agregasi gagal tertutup | BELUM DIUJI |
+| QA-M05-4-10 | Preview dengan klaim official/scoring ditolak | BELUM DIUJI |
+| QA-M05-4-11 | Duplikasi metrik dalam satu preview ditolak | BELUM DIUJI |
+| QA-M05-4-12 | Rekap kosong tidak menghasilkan capaian nol | BELUM DIUJI |
+| QA-M05-4-13 | Tren multi-tahun diurutkan menurut tahun | BELUM DIUJI |
+| QA-M05-4-14 | Tahun yang tidak memiliki data tercatat sebagai missing year | BELUM DIUJI |
+| QA-M05-4-15 | Pertumbuhan YoY dan persentase tetap null | BELUM DIUJI |
+| QA-M05-4-16 | Status comparability lintas tahun tetap false | BELUM DIUJI |
+| QA-M05-4-17 | Tahun duplikat/tidak didukung ditolak | BELUM DIUJI |
+| QA-M05-4-18 | Metrik tren yang tidak dikenal ditolak | BELUM DIUJI |
+| QA-M05-4-19 | Dashboard menyediakan pilihan 2026–2030 | BELUM DIUJI |
+| QA-M05-4-20 | Dashboard menampilkan peringatan sumber dan kelengkapan | BELUM DIUJI |
+| QA-M05-4-21 | Tahun pilihan di luar konfigurasi ditolak | BELUM DIUJI |
+| QA-M05-4-22 | Input tidak sesuai kontrak dan jumlah berlebih ditolak | BELUM DIUJI |
+| QA-M05-4-23 | Integrasi dengan sumber resmi hanya setelah rekonsiliasi dan izin | RENCANA / BUTUH KEPUTUSAN |
+| QA-M05-4-24 | Review tampilan internal/publik, akses, privasi dan performa | RENCANA / BELUM DIUJI |
+
+**22 skenario tertulis, 0 dijalankan.** Item 23–24 adalah pekerjaan lanjutan, belum diimplementasikan/diuji. [Kode M05-4](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md).
+
 ## Antrean M05-3: aturan evaluasi 2026–2030 (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 dari owner | Status |

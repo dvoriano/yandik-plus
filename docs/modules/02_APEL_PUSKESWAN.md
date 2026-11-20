@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0, M05-1, M05-2, dan M05-3 KODE DITULIS, BELUM DIUJI** untuk pelaporan, siklus draf/koreksi, checklist, kalender usulan serta kontrak evaluasi berversi 2026–2030. **M05-4+ RENCANA**. Belum ada hitung skor/predikat resmi atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-4 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-5+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.1 / 19 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.2 / 20 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-4
+
+[Kode M05-4]( https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard) · [22 skenario QA tertulis]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs) (0 dijalankan) · [Spesifikasi]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). Model hanya mengolah preview DEMO; rekap tahun tidak mencampur metrik/satuan, tren tidak menghitung pertumbuhan atau menyatakan tahun comparable. [Rincian](../M05_4_REPORT_TREN_APEL_2026_2030.md). **22 QA tertulis, 0 dijalankan.**
 
 ## 1. Kondisi awal
 Pengisian pelayanan bulanan, dashboard, Data Saya, checklist kepatuhan, profil, rekap dan penghargaan sudah menjadi bagian website. Detail aturan berdasarkan juknis APEL harus dipertahankan.

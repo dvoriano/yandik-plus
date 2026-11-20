@@ -7,7 +7,7 @@
 
 ## Implementasi M05-4
 
-[Kode M05-4]( https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard) · [22 skenario QA tertulis]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs) (0 dijalankan) · [Spesifikasi]( https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). Model hanya mengolah preview DEMO; rekap tahun tidak mencampur metrik/satuan, tren tidak menghitung pertumbuhan atau menyatakan tahun comparable. [Rincian](../M05_4_REPORT_TREN_APEL_2026_2030.md). **22 QA tertulis, 0 dijalankan.**
+[Kode M05-4](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard) · [22 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md). Model hanya mengolah preview DEMO; rekap tahun tidak mencampur metrik/satuan, tren tidak menghitung pertumbuhan atau menyatakan tahun comparable. [Rincian](../M05_4_REPORT_TREN_APEL_2026_2030.md). **22 QA tertulis, 0 dijalankan.**
 
 ## 1. Kondisi awal
 Pengisian pelayanan bulanan, dashboard, Data Saya, checklist kepatuhan, profil, rekap dan penghargaan sudah menjadi bagian website. Detail aturan berdasarkan juknis APEL harus dipertahankan.

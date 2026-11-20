@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-5 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-6+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-6 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-7+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.3 / 20 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.4 / 20 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-6
+
+[Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md). Katalog 36 field semantik pada 8 domain. Nama tabel/kolom aktual belum tersedia dan tetap null; kandidat DEMO tidak pernah dianggap terverifikasi. **20 QA tertulis, 0 dijalankan.** [Spesifikasi](../M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md).
 
 ## Implementasi M05-5
 

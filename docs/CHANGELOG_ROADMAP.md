@@ -1,3 +1,7 @@
+## 2026-11-20 | M05-5 kontrak sumber dan rekonsiliasi APEL 2026–2030
+- [Kode M05-5](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-reconciliation) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-reconciliation/tests/reconciliation.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_5_SOURCE_RECONCILIATION_2026_2030.md).
+- KODE DITULIS, BELUM DIUJI. Pemeriksaan struktur empat sumber DEMO; digest tidak diverifikasi, timestamp tidak membuktikan snapshot atomik. 20 QA tertulis, 0 dijalankan. Tidak ada integrasi, write/delete, auto-repair, skor atau publikasi. M05-6 RENCANA.
+
 ## 2026-11-20 | M05-4 rapor dan tren APEL 2026–2030
 - [Model report/tren/dashboard DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard), [22 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard/tests/dashboard.test.mjs), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_4_REPORT_TREN_APEL_2026_2030.md).
 - KODE DITULIS, BELUM DIUJI; tidak ada eksekusi test/CL/CI. Nilai kosong tidak diubah menjadi nol; rekap satuan/tahun; tren tidak menyimpulkan growth lintas tahun. Tidak ada skor, ranking, penghargaan, UI live atau publikasi. M05-5 RENCANA; CODE_ONLY dan PR Draft.

@@ -186,6 +186,35 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-6: data dictionary dan schema mapping APEL 2026–2030 (BELUM DIUJI)
+
+| ID | Pemeriksaan setelah izin G0 dari owner | Status |
+|---|---|---|
+| QA-M05-6-01 | Seluruh field kanonik unik dan terdefinisi | BELUM DIUJI |
+| QA-M05-6-02 | Delapan domain tetap terpisah | BELUM DIUJI |
+| QA-M05-6-03 | Semua actual table/column/type dimulai null | BELUM DIUJI |
+| QA-M05-6-04 | Tidak ada klaim schema aktual atau owner terverifikasi | BELUM DIUJI |
+| QA-M05-6-05 | Tahun terbatas 2026–2030 dan tidak duplikat | BELUM DIUJI |
+| QA-M05-6-06 | Kandidat mapping wajib berlabel DEMO | BELUM DIUJI |
+| QA-M05-6-07 | Nama tabel/kolom kandidat non-DEMO ditolak | BELUM DIUJI |
+| QA-M05-6-08 | Field kanonik yang tidak dikenal ditolak | BELUM DIUJI |
+| QA-M05-6-09 | Kandidat field ganda ditolak | BELUM DIUJI |
+| QA-M05-6-10 | Kandidat tanpa evidence reference ditolak | BELUM DIUJI |
+| QA-M05-6-11 | Kandidat tidak pernah menjadi verified | BELUM DIUJI |
+| QA-M05-6-12 | Identitas fasilitas terpisah dari histori wilayah | BELUM DIUJI |
+| QA-M05-6-13 | Ledger memiliki grain fasilitas-periode-revisi | BELUM DIUJI |
+| QA-M05-6-14 | Event/location identity dan unit layanan ditentukan | BELUM DIUJI |
+| QA-M05-6-15 | Workflow menyimpan status, revisi dan request identity | BELUM DIUJI |
+| QA-M05-6-16 | Timestamp submit menyertakan semantik zona waktu | BELUM DIUJI |
+| QA-M05-6-17 | Policy version dan approval state per tahun terpisah | BELUM DIUJI |
+| QA-M05-6-18 | Rencana dan realisasi dukungan memiliki unit/periode/bukti | BELUM DIUJI |
+| QA-M05-6-19 | Template tidak dapat konek/query/write/repair/publish | BELUM DIUJI |
+| QA-M05-6-20 | Mapping aktual memerlukan bukti owner dan data dictionary resmi | BELUM DIUJI |
+| QA-M05-6-21 | Review cardinality, temporal join dan konflik | RENCANA / BUTUH BUKTI |
+| QA-M05-6-22 | Sampling dan total kontrol bersama owner | RENCANA / BELUM DIUJI |
+
+**20 skenario tertulis, 0 dijalankan.** [Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md).
+
 ## Antrean M05-5: kontrak sumber dan rekonsiliasi APEL 2026–2030 (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 dari owner | Status |

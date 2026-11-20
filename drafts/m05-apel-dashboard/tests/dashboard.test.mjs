@@ -124,6 +124,6 @@ test("M05-4 aggregation overflow fails closed",()=>{
  const p=structuredClone(base);
  p.rows.find(x=>x.metric_key==="SERVICE_VOLUME").observed_demo_value=Number.MAX_SAFE_INTEGER;
  const q=structuredClone(p);q.facility_id="DEMO-PSW-OTHER";
- const r=buildAnnualDescriptiveReport({previews:[p,q],year:2026});
- assert.equal(r.metrics.find(x=>x.metric_key==="SERVICE_VOLUME").total_observed_demo_value,null);
+ assert.throws(()=>buildAnnualDescriptiveReport({previews:[p,q],year:2026}),
+  /M05_REPORT_AGGREGATE_OVERFLOW/);
 });

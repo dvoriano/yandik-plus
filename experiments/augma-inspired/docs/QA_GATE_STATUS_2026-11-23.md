@@ -1,43 +1,36 @@
 # Quality gates, YANDIK+ Innovation Lab
 
-Reviewed on 23 November 2026. **Not an operational-release approval.** This document distinguishes tests **defined**, tests **run**, and tests **passed**.
+Verified on **23 November 2026 (11:45 WIB)**. **Isolated lab only; this is not an operational-release approval.**
 
-## The next decision
+## Verified CI run
 
-**Remain in isolated lab.** Do not merge or deploy until the complete checks have been executed in a reproducible checkout and reviewed. External geospatial sources still require licensing and GIS verification.
+[GitHub Actions #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) completed with **success** on source commit `2d098d0f25e47d4e76cd2e9e03dc78e2d8ebcf1a`.
 
-## Evidence and current state
-
-| Gate | Implemented | Executed with current evidence | Acceptance |
+| Gate | Verified result | Evidence | Limitation |
 |---|---|---|---|
-| Shapely geometry checks, synthetic fixtures | Yes, 6 Python test functions | **6 passed locally** | Technical fixture QA only |
-| BNPB importer mock behavior | Yes, 9 Python test functions | **Not verified in complete checkout** | Must run and pass |
-| Branch/file/production-domain isolation policy | Yes, 6 Python test functions | **Not verified in complete checkout** | Must run and pass |
-| Node unit tests | Scripts present, include simulation | Partial independent in-memory logic checks only | Must run in Node |
-| Browser desktop/mobile viewport | Playwright specs present | **No confirmed run** | Must pass real Chromium |
-| Browser failure evidence | HTML report, traces, performance output configured | No workflow report retrieved | Review failed steps and artifacts |
-| Real ADM2 dataset 19 regions | Reader and auditor available, manual opt-in | **No 19 official polygons verified** | Metadata, license, geometry, topology, attribution |
-| Physical STB | Read-only profiler available | **Not run on STB** | Manual device and performance evidence |
+| Branch, secret, production-domain guard | **PASS** | [Isolation job](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/job/137491389939) | This is a CI check, not a GitHub branch-protection rule |
+| Shapely geometry, synthetic fixtures | **6/6 PASS** | [Offline GIS job](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/job/137491418087) | No real ADM2 boundary certified |
+| BNPB acquisition mock, no live download | **9/9 PASS** | Same offline GIS job | Remote endpoint availability and data licence unverified |
+| Isolation-policy unit cases | **6/6 PASS** | Same offline GIS job | Defined negative/positive cases only |
+| Node JavaScript unit tests | **31/31 PASS** | [Browser job](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/job/137491418134) | In-memory synthetic logic |
+| Real Chromium Playwright desktop/mobile viewport | **13/13 PASS** | Same browser job | Mobile viewport emulation, not a physical phone |
+| Browser sample loads | **4/4 HTTP 200**, no recorded JS errors/external requests | Same browser job, perf output | No established hardware performance targets |
+| ADM2 19 regions, actual boundary geometry | **PENDING** | None | Licence, provenance, date, topology and GIS comparison |
+| Actual STB/old laptop device | **PENDING** | None | Hardware model, compatibility, capacity and local browser test |
+| Human accessibility/UX and bad-connection test | **PENDING** | None | Requires independent user and device review |
 
-A successful Shapely fixture test is not proof that BNPB polygons are valid. A viewport simulation is not physical mobile/Android TV verification.
+**Failure and correction:** the previous [run #45113502933](https://github.com/dvoriano/yandik-plus/actions/runs/45113502933) failed before executing browser tests because `ubuntu-latest` selected Ubuntu 26.04, unsupported by Playwright 1.56.1 Chromium. The browser job alone was pinned to `ubuntu-24.04` in commit `2d098d0`. The subsequent run passed all three jobs.
 
-## GitHub Actions setup
+[Download/view browser evidence artifact in GitHub](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/artifacts/14790279846). GitHub artifact retention is configured to 7 days; preserve only reviewed non-sensitive evidence if longer-lived records are required.
 
-Workflow: `.github/workflows/yandik-innovation-lab-ci.yml`, allowed **only** on branch `lab/augma-inspired-experiments`.
+## Scope and isolation
 
-It implements three jobs:
+- Branch: `lab/augma-inspired-experiments`; tests use `127.0.0.1:8767` and synthetic/no operational data.
+- CI workflow grants `contents: read`, disables persisted checkout credentials, and contains no deployment steps.
+- Workflow branch guard runs before GIS and browser jobs. It allows lab files and a single lab-only workflow path.
+- None of these checks justifies integration, production deployment, claims about official Puskeswan service counts, or the legal validity of province/regency boundary datasets.
 
-1. **isolation-policy**: compare against `origin/main`, fail on changed non-lab paths except the single workflow; detect symlinks, secret filenames and selected production domains in runnable sources.
-2. **geometry-and-acquisition**: Shapely, 21 total Python test definitions (6 geometry + 9 importer + 6 isolation), and a negative check that the BNPB downloader does not connect without opt-in.
-3. **browser-smoke**: `node --check` on all lab JS modules, JavaScript unit tests, desktop/mobile viewport Playwright tests, and local browser performance sampling.
-
-The last two jobs depend on successful isolation-policy. The workflow is read-only with `permissions: contents: read`, checkout credentials not persisted, and there are no deployment steps.
-
-**Important:** the available GitHub connector does not expose a trustworthy list of `push`-triggered workflow runs. An empty commit status result is **not** a green test result. Check the Actions page for this branch, run IDs, logs and artifacts before marking any CI box complete.
-
-## How to reproduce without production access
-
-From a clone of the lab branch:
+## Reproduce safely on an authorized development machine
 
 ```sh
 git checkout lab/augma-inspired-experiments
@@ -46,31 +39,29 @@ python3 experiments/augma-inspired/tools/check_lab_isolation.py --base-ref origi
 cd experiments/augma-inspired
 python3 -m unittest discover -s tools/tests -v
 cd prototypes
+npm install --no-save '@playwright/test@1.56.1'
+npx playwright install chromium
 npm run test:unit
 python3 -m http.server 8767 --bind 127.0.0.1
 ```
 
-In a second terminal from `prototypes/`:
+In another terminal from `prototypes/`:
 
 ```sh
-npm install --no-save @playwright/test@1.56.1
-npx playwright install chromium
 npm run test:browser
 npm run test:browser:perf
 ```
 
-Only the local static prototype server is contacted during Playwright tests. Never connect this QA workflow to APEL production, VPS services, private records or real Puskeswan user accounts.
+This is a local lab. Never point its tests at the YANDIK+ production website, operational databases, or private records.
 
-## Active blockers
+## Remaining release gates
 
-- [ ] Capture an actual GitHub Actions push run with three job outcomes and retained logs.
-- [ ] Correct test failures, if any, then rerun the same commit.
-- [ ] Record browser screenshot/accessibility/manual device observations after genuine execution.
-- [ ] Obtain and verify permitted ADM2 data in a separate offline GIS review.
-- [ ] Audit STB physically only after owner authorization and local compatibility checks.
+- [x] Confirm three GitHub Actions jobs on run #45113635452: success.
+- [x] Record actual Node and Chromium test execution and results on the same commit.
+- [ ] Confirm metadata/permission and review real ADM2 19-region polygons separately from the repo.
+- [ ] Perform GIS topology review, particularly Mentawai islands and administrative boundary differences.
+- [ ] Profile an authorized real STB/laptop and assess actual load, RAM and device/browser compatibility.
+- [ ] Conduct manual keyboard, touch, accessibility and low-bandwidth usability checks.
+- [ ] Obtain explicit organizational approval before any actual data integration, merge, or deployment.
 
-## References
-
-- [Source branch](https://github.com/dvoriano/yandik-plus/tree/lab/augma-inspired-experiments)
-- [Branch-only Actions workflow](https://github.com/dvoriano/yandik-plus/blob/lab/augma-inspired-experiments/.github/workflows/yandik-innovation-lab-ci.yml)
-- [Existing geometry validation evidence](../VALIDATION_EVIDENCE_2026-11-23.md)
+Earlier historical notes in `VALIDATION_EVIDENCE_2026-11-23.md` reflect the state at their timestamps; this verified CI run supersedes earlier **test-not-run** statements, but not outstanding data/device governance limits.

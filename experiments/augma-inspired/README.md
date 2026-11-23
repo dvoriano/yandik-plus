@@ -49,7 +49,7 @@ python3 tools/audit_adm2.py /path/to/sumbar-adm2.geojson \
 
 Enam tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026, termasuk penolakan selisih area outline di atas 10% pada fixture buatan. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
 
-Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). Workflow CI terbatas pada branch lab sudah dilengkapi pemeriksaan isolasi source dan laporan Playwright, tetapi **hasil run belum terverifikasi**. Tidak ada auto-deploy atau pengujian produksi. Jangan mengklaim browser lulus tanpa hasilnya.
+Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). [GitHub Actions run #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) **berhasil** pada commit `2d098d0`: **21 tes Python, 31 tes unit JavaScript, dan 13 tes Chromium** lulus. Ini bukti prototipe berbasis data sintetis, **bukan** sertifikasi peta resmi, pengujian perangkat fisik, atau izin deployment. Tidak ada auto-deploy maupun pengujian produksi.
 
 ## Kriteria pemisahan
 
@@ -73,4 +73,4 @@ Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TE
 - [Status QA dan gerbang rilis](docs/QA_GATE_STATUS_2026-11-23.md)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
-**Status:** fondasi eksperimen, dashboard simulasi 19 unit x 12 bulan, auditor geometri, pengambil kandidat BNPB yang memeriksa kestabilan ID, dan workflow tes branch lab tersedia. Hasil CI/browser masih harus dilihat; verifikasi ADM2 sungguhan dan uji STB fisik tetap terbuka. Tidak ada perubahan ke produksi.
+**Status:** fondasi eksperimen dan simulasi 19 unit × 12 bulan tersedia. **CI Python, JavaScript, dan Chromium lulus** pada run #45113635452. Data ADM2 resmi/izin pakai, validasi GIS, pengujian STB fisik, dan keputusan integrasi **masih terbuka**. Tidak ada perubahan ke produksi.

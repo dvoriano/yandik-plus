@@ -1,5 +1,21 @@
 # Validation evidence: 23 November 2026
 
+## Verified GitHub Actions outcome (latest update: 23 Nov 2026, 11:45 WIB)
+
+This section supersedes earlier historical "not run" and "CI unverified" statements **only** for the specified tests.
+
+- [Run 45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) for commit `2d098d0f25e47d4e76cd2e9e03dc78e2d8ebcf1a`: **completed / success**.
+- Isolation source policy job: **passed**.
+- Offline GIS/BNPB/mock/isolation Python suite: **21/21 passed** (6 synthetic geometry + 9 BNPB mock + 6 isolation).
+- JavaScript unit tests on GitHub Node 22 runner: **31/31 passed**.
+- Actual Chromium Playwright tests: **13/13 passed** against a local synthetic lab HTTP server, including desktop and mobile viewport. This is not a physical phone test.
+- Four browser performance samples: all returned HTTP 200 with no logged JavaScript errors or external requests. These measurements are not STB performance estimates.
+- Prior failure [45113502933](https://github.com/dvoriano/yandik-plus/actions/runs/45113502933) was caused by Ubuntu 26.04 / Playwright 1.56.1 Chromium installation incompatibility. Fixed by pinning browser job runner to Ubuntu 24.04.
+- [Browser report artifact 14790279846](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/artifacts/14790279846) has configured 7-day retention.
+
+**Still unverified:** real 19 kabupaten/kota ADM2 geometries and rights, actual BNPB downloads, independent GIS review, physical STB suitability, manual accessibility, SPBE/release authorization. No production changes.
+
+
 ## Scope
 Only the isolated branch `lab/augma-inspired-experiments`. Production services, website APEL, database, main/develop branches, and any STB remain untouched.
 

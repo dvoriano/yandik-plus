@@ -1,6 +1,6 @@
 # Browser and hardware testing: reproducible, not automatic
 
-The suite can be run **manually** or by the branch-scoped GitHub Actions workflow on `lab/augma-inspired-experiments`. Workflow availability is not evidence that the tests passed. No production deployment is configured.
+The suite can be run **manually** or by the branch-scoped GitHub Actions workflow on `lab/augma-inspired-experiments`. [Actual run #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) verified **13/13 Chromium browser tests passing** and **31/31 JavaScript unit tests passing** on `ubuntu-24.04` at commit `2d098d0` (23 November 2026). No production deployment is configured.
 
 ## Local desktop browser
 
@@ -52,4 +52,4 @@ Results live outside GitHub until explicitly reviewed for private data. Do not u
 - [Geometry audit](../VALIDATION_EVIDENCE_2026-11-23.md)
 - [ADM2 source candidates](../docs/GEO_DATA_SOURCES.md)
 
-CI now preserves HTML reports and failure traces (retention 7 days), but none of these may be considered passed until an actual run ID, job result, and artifacts are inspected. The isolated source-domain policy runs before browser/GIS jobs. See [QA gate status](../docs/QA_GATE_STATUS_2026-11-23.md).
+CI preserves browser HTML reports and failed traces (retention 7 days). The [verified run #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) produced [browser evidence artifact 14790279846](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/artifacts/14790279846). The source isolation job succeeded before GIS/browser tests. Real mobile and STB hardware, local accessibility, and official GIS boundaries remain unverified. See [QA gate status](../docs/QA_GATE_STATUS_2026-11-23.md).

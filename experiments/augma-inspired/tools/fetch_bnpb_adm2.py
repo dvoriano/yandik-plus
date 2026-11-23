@@ -89,6 +89,8 @@ def validate_service(metadata):
 
 
 def validate_upstream_feature(feature, expected):
+    if not isinstance(feature, dict):
+        raise ValueError("Fitur sumber bukan objek GeoJSON")
     props = feature.get("properties")
     if not isinstance(props, dict):
         raise ValueError("Atribut fitur hilang")

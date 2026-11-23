@@ -186,6 +186,51 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-7: data lineage, relasi temporal dan konflik APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 skenario tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md). **Tidak ada satu pun skenario dijalankan (0/38).**
+- Pengujian tertunda sampai instruksi eksplisit. Setelah itu tetap diperlukan telaah dictionary, grain kejadian, histori wilayah, aturan revisi, timezone, versi policy dan otorisasi pengelola data.
+
+| ID | Pemeriksaan yang direncanakan | Status |
+|---|---|---|
+| QA-M05-7-01 | M05-7 contract covers exactly 2026-2030 | BELUM DIUJI |
+| QA-M05-7-02 | M05-7 defines seven source groups | BELUM DIUJI |
+| QA-M05-7-03 | M05-7 lineage relations are explicit | BELUM DIUJI |
+| QA-M05-7-04 | M05-7 canonical fields refer to M05-6 dictionary | BELUM DIUJI |
+| QA-M05-7-05 | M05-7 contractual connection/write/reporting are blocked | BELUM DIUJI |
+| QA-M05-7-06 | M05-7 complete DEMO has candidate references but no verification | BELUM DIUJI |
+| QA-M05-7-07 | M05-7 observed zero is distinguished | BELUM DIUJI |
+| QA-M05-7-08 | M05-7 unobserved is not silently converted to zero | BELUM DIUJI |
+| QA-M05-7-09 | M05-7 observed positive quantity is separately classified | BELUM DIUJI |
+| QA-M05-7-10 | M05-7 all DEMO provenance and authorizations remain unverified | BELUM DIUJI |
+| QA-M05-7-11 | M05-7 refuses extra/unrecognized source group | BELUM DIUJI |
+| QA-M05-7-12 | M05-7 refuses missing required source column | BELUM DIUJI |
+| QA-M05-7-13 | M05-7 refuses non-DEMO facility identity | BELUM DIUJI |
+| QA-M05-7-14 | M05-7 refuses unsupported 2031 service month | BELUM DIUJI |
+| QA-M05-7-15 | M05-7 rejects invalid quantity state value pair | BELUM DIUJI |
+| QA-M05-7-16 | M05-7 rejects impossible calendar date | BELUM DIUJI |
+| QA-M05-7-17 | M05-7 rejects reversed region validity | BELUM DIUJI |
+| QA-M05-7-18 | M05-7 revision mismatch blocks workflow selection | BELUM DIUJI |
+| QA-M05-7-19 | M05-7 missing workflow is reported | BELUM DIUJI |
+| QA-M05-7-20 | M05-7 multiple same-revision workflow candidates are flagged | BELUM DIUJI |
+| QA-M05-7-21 | M05-7 region split within report month is ambiguous | BELUM DIUJI |
+| QA-M05-7-22 | M05-7 single partial-month region is not attributed | BELUM DIUJI |
+| QA-M05-7-23 | M05-7 missing valid region is not replaced by current region | BELUM DIUJI |
+| QA-M05-7-24 | M05-7 policy version mismatch is not repaired | BELUM DIUJI |
+| QA-M05-7-25 | M05-7 incomplete policy period is rejected for month lineage | BELUM DIUJI |
+| QA-M05-7-26 | M05-7 duplicate policy candidates need human review | BELUM DIUJI |
+| QA-M05-7-27 | M05-7 orphan facility cannot be joined by name | BELUM DIUJI |
+| QA-M05-7-28 | M05-7 duplicate facility keys remain ambiguous | BELUM DIUJI |
+| QA-M05-7-29 | M05-7 repeated event/location grain is flagged, not deduplicated | BELUM DIUJI |
+| QA-M05-7-30 | M05-7 declared no activity cannot silently imply unknown is zero | BELUM DIUJI |
+| QA-M05-7-31 | M05-7 missing support plan is reported without assigning quantity | BELUM DIUJI |
+| QA-M05-7-32 | M05-7 realization unit conflict is reported | BELUM DIUJI |
+| QA-M05-7-33 | M05-7 missing support evidence is reported | BELUM DIUJI |
+| QA-M05-7-34 | M05-7 multiple realizations are preserved as separate evidence rows | BELUM DIUJI |
+| QA-M05-7-35 | M05-7 duplicate source ID must not be silently overwritten | BELUM DIUJI |
+| QA-M05-7-36 | M05-7 Dec 2030 validity may reach Jan 2031 boundary | BELUM DIUJI |
+| QA-M05-7-37 | M05-7 no automatic repair, score or publish even with conflicts | BELUM DIUJI |
+| QA-M05-7-38 | M05-7 distinct service events in one revision are legitimate candidates | BELUM DIUJI |
+
 ## Antrean M05-6: data dictionary dan schema mapping APEL 2026–2030 (BELUM DIUJI)
 
 | ID | Pemeriksaan setelah izin G0 dari owner | Status |

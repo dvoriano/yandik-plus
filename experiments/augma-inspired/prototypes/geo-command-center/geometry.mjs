@@ -22,12 +22,15 @@ export function boundsOfGeoJSON(featureCollection) {
     collectPairs(feature.geometry.coordinates, points);
   }
   if (points.length < 3) throw new Error("Koordinat geometri tidak memadai");
-  return {
-    minLon: Math.min(...points.map(p => p[0])),
-    maxLon: Math.max(...points.map(p => p[0])),
-    minLat: Math.min(...points.map(p => p[1])),
-    maxLat: Math.max(...points.map(p => p[1]))
-  };
+  // No Math.min(...largeArray): argument spreading can exceed JS engine limits.
+  let minLon = Infinity, maxLon = -Infinity, minLat = Infinity, maxLat = -Infinity;
+  for (const [lon, lat] of points) {
+    if (lon < minLon) minLon = lon;
+    if (lon > maxLon) maxLon = lon;
+    if (lat < minLat) minLat = lat;
+    if (lat > maxLat) maxLat = lat;
+  }
+  return { minLon, maxLon, minLat, maxLat };
 }
 
 export function createProjection(geojson, view = VIEW) {

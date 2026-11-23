@@ -36,6 +36,17 @@ Dari folder `prototypes/`:
 npm run test:unit
 ```
 
+Audit geospasial offline (opsional Shapely 2+) dari folder `experiments/augma-inspired/`:
+
+```sh
+python3 -m unittest discover -s tools/tests -v
+# Untuk dataset ADM2 berizin yang diunduh secara terpisah:
+python3 tools/audit_adm2.py /path/to/sumbar-adm2.geojson \
+  --registry prototypes/geo-command-center/regions.mjs
+```
+
+Lima tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
+
 Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [panduan browser](prototypes/BROWSER_TESTING.md). Tidak ada CI, auto-deploy, atau pengujian produksi. Jangan menyatakan browser telah diuji sebelum ada hasilnya.
 
 ## Kriteria pemisahan
@@ -55,5 +66,6 @@ Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [pa
 - [Kandidat geometri ADM2 dan persyaratan validasi](docs/GEO_DATA_SOURCES.md)
 - [Lisensi, privasi, isolasi](docs/SAFETY_AND_LICENSE.md)
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
+- [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
 
-**Status:** fondasi eksperimen sudah dibuat, pengujian browser nyata dan verifikasi GIS ADM2 masih terbuka. Tidak ada perubahan ke produksi.
+**Status:** fondasi eksperimen dan alat validasi teknis tersedia; pengujian browser nyata, validasi GIS ADM2 yang berizin, serta pengujian STB masih terbuka. Tidak ada perubahan ke produksi.

@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-12: kesiapan rilis & rollback APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-12](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-release-readiness) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-release-readiness/tests/release.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_12_RELEASE_READINESS_ROLLBACK_2026_2030.md). **50 ditulis, 0 dijalankan**.
+- Perlu izin eksplisit owner untuk perubahan mode CODE_ONLY sebelum melakukan tes; dokumen izin pemilik sistem/produksi, hasil staging/paritas Juknis, backup & restore yang terverifikasi, audit keamanan, baseline kesehatan, prosedur insiden, serta penelaahan independen tetap belum ada. Draf NO_GO bukan keputusan pejabat.
+
+| ID | Skenario QA tertunda | Status |
+|---|---|---|
+| QA-M05-12-01 | M05-12 defines 18 separate pre-release control requirements | BELUM DIUJI |
+| QA-M05-12-02 | M05-12 control IDs are unique | BELUM DIUJI |
+| QA-M05-12-03 | M05-12 release decision requires separate project and system authority | BELUM DIUJI |
+| QA-M05-12-04 | M05-12 requires independently verified staging parity | BELUM DIUJI |
+| QA-M05-12-05 | M05-12 requires independently approved year-specific policy | BELUM DIUJI |
+| QA-M05-12-06 | M05-12 requires production backup verification | BELUM DIUJI |
+| QA-M05-12-07 | M05-12 requires rollback and recovery approval | BELUM DIUJI |
+| QA-M05-12-08 | M05-12 requires independent on-call assignment outside repo | BELUM DIUJI |
+| QA-M05-12-09 | M05-12 security and historical data integrity are explicit | BELUM DIUJI |
+| QA-M05-12-10 | M05-12 publication is a separate authorization | BELUM DIUJI |
+| QA-M05-12-11 | M05-12 release checklist contains 18 blocked controls | BELUM DIUJI |
+| QA-M05-12-12 | M05-12 release checklist exposes five no-go gates | BELUM DIUJI |
+| QA-M05-12-13 | M05-12 empty checklist cannot assert a production change | BELUM DIUJI |
+| QA-M05-12-14 | M05-12 upstream staging is not authorized or executed | BELUM DIUJI |
+| QA-M05-12-15 | M05-12 2026 uses its own demo policy draft | BELUM DIUJI |
+| QA-M05-12-16 | M05-12 2030 uses a distinct annual draft policy | BELUM DIUJI |
+| QA-M05-12-17 | M05-12 covers only configured years 2026 through 2030 | BELUM DIUJI |
+| QA-M05-12-18 | M05-12 rejects unsupported 2031 policy | BELUM DIUJI |
+| QA-M05-12-19 | M05-12 rejects string year | BELUM DIUJI |
+| QA-M05-12-20 | M05-12 rejects non-demo snapshot ID | BELUM DIUJI |
+| QA-M05-12-21 | M05-12 rejects demo ID without snapshot namespace | BELUM DIUJI |
+| QA-M05-12-22 | M05-12 read-only inspection never grants any action | BELUM DIUJI |
+| QA-M05-12-23 | M05-12 official readiness cannot be spoofed by changing a gate | BELUM DIUJI |
+| QA-M05-12-24 | M05-12 official signoff cannot be spoofed | BELUM DIUJI |
+| QA-M05-12-25 | M05-12 production access flag cannot be enabled | BELUM DIUJI |
+| QA-M05-12-26 | M05-12 defines 11 stop and rollback conditions | BELUM DIUJI |
+| QA-M05-12-27 | M05-12 stop condition IDs are unique | BELUM DIUJI |
+| QA-M05-12-28 | M05-12 stop conditions include loss of counts and privacy | BELUM DIUJI |
+| QA-M05-12-29 | M05-12 stop conditions distinguish missing from zero | BELUM DIUJI |
+| QA-M05-12-30 | M05-12 stop conditions cover historical region drift | BELUM DIUJI |
+| QA-M05-12-31 | M05-12 rollback lists ten operator-led conceptual steps | BELUM DIUJI |
+| QA-M05-12-32 | M05-12 rollback never claims a restore occurred | BELUM DIUJI |
+| QA-M05-12-33 | M05-12 rollback never stores a real restore point | BELUM DIUJI |
+| QA-M05-12-34 | M05-12 rollback never runs operations from its step list | BELUM DIUJI |
+| QA-M05-12-35 | M05-12 rollback thresholds remain undecided | BELUM DIUJI |
+| QA-M05-12-36 | M05-12 rollback rejects fake backup verification | BELUM DIUJI |
+| QA-M05-12-37 | M05-12 rollback rejects fake executed restore step | BELUM DIUJI |
+| QA-M05-12-38 | M05-12 rollback rejects changed snapshot in its source | BELUM DIUJI |
+| QA-M05-12-39 | M05-12 rollback forbids all release and change actions | BELUM DIUJI |
+| QA-M05-12-40 | M05-12 review action vocabulary excludes approval | BELUM DIUJI |
+| QA-M05-12-41 | M05-12 review notes are allowed only for declared controls | BELUM DIUJI |
+| QA-M05-12-42 | M05-12 review rejects real identity and arbitrary contents | BELUM DIUJI |
+| QA-M05-12-43 | M05-12 review rejects duplicated DEMO note ID | BELUM DIUJI |
+| QA-M05-12-44 | M05-12 review rejects forged signed permission | BELUM DIUJI |
+| QA-M05-12-45 | M05-12 review note remains non-authoritative | BELUM DIUJI |
+| QA-M05-12-46 | M05-12 release handoff defines eight empty official artifacts | BELUM DIUJI |
+| QA-M05-12-47 | M05-12 release handoff maintains NO_GO with notes | BELUM DIUJI |
+| QA-M05-12-48 | M05-12 handoff rejects forged official reviewer approval | BELUM DIUJI |
+| QA-M05-12-49 | M05-12 handoff rejects rollback from mismatched snapshot | BELUM DIUJI |
+| QA-M05-12-50 | M05-12 handoff cannot publish, release, restore or deploy | BELUM DIUJI |
+
 ## Antrean M05-11: izin uji staging dan paket bukti regresi APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-11](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-staging-protocol) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-staging-protocol/tests/protocol.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_11_STAGING_AUTHORIZATION_REGRESSION_2026_2030.md). **50 ditulis, 0 dijalankan**.
 - Semua bukti, izin owner proyek untuk mengubah CODE_ONLY, izin owner sistem/sumber untuk akses, staging yang terisolasi, Juknis dan referensi resmi, kontrol keamanan, laporan selisih dan penelaahan independen masih harus diperiksa ketika pengguna/instansi mengizinkan proses yang sesuai. Catatan DEMO tidak dapat mengesahkan salah satunya.

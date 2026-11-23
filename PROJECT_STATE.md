@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-14 | DASHBOARD APEL PUSKESWAN DEMO 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [UI dan model DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard-ui) · [Halaman HTML](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/index.html) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/tests/dashboard.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_14_DASHBOARD_APEL_DEMO_2026_2030.md).
+- Dashboard responsif HTML/CSS/JS, filter tahun/wilayah/Puskeswan fiktif, 4 kartu ringkasan, grafik pelayanan 12 bulan, matriks 12 bulan, pesan data parsial dan empty state. Memakai kontrak M05-0, **tidak menambahkan skor, peringkat, waktu resmi atau otomatisasi apresiasi**. Null bulan belum melapor dipisahkan dari laporan nol.
+- Tiga Puskeswan DEMO, dua wilayah fiktif, 2026/2027 memiliki sebagian laporan dan 2028–2030 kosong. **Bukan data APEL nyata.** Tampilan belum di-render, diuji browser atau dipublikasikan.
+- CODE_ONLY, repo PUBLIC, PR #9 tetap Draft, main/produksi tidak disentuh. Arah **M05-15 RENCANA:** kontrak Profil Puskeswan dan SDM sebagai modul yang tersambung ke dashboard DEMO.
+
 ## PEMBARUAN M05-13 | OBSERVABILITAS DAN AUDIT TRAIL SINTETIS APEL 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [kode M05-13](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-observability) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-observability/tests/observability.test.mjs), **0 dijalankan** · [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_13_APEL_OBSERVABILITY_AUDIT_2026_2030.md).
 - 12 sinyal konseptual observabilitas, ledger metadata per-snapshot sintetis tanpa catatan personal, papan status NOT_MEASURED, proposal triage, dan handoff non-operasional. Tidak ada log audit resmi, monitoring live, alarm terkirim, penetapan pegawai, penutupan insiden, akses data atau izin rilis.

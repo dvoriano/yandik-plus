@@ -43,6 +43,16 @@ The offline ADM2 provenance reviewer now refuses private/loopback/local source U
 
 Check the actual new Actions run ID and logs before changing these statuses from PENDING to PASS. The physical STB, true licensed 19-region ADM2 geometry, and human accessibility review remain outside CI scope. See [accessibility and network resilience protocol](ACCESSIBILITY_NETWORK_RESILIENCE.md).
 
+## Local regression and keyboard-focus correction (23 November 2026)
+
+- An actual execution of the latest 32-test Python snapshot **initially failed** on a manifest URL containing a literal backslash followed by `n`. The previously implemented control-character check did not reject it. The validator now refuses all backslashes and whitespace in provenance URLs. The regression test also covers a real newline.
+- After correction, **32/32 Python unit tests passed** and **6/6 synthetic dashboard Node tests passed** in the local runtime (Python 3.13.5, Shapely 2.1.2, Node 22.16.0).
+- The two changed Python blob hashes were checked and match their GitHub files. Browser source scripts also passed a syntax-only check.
+- Geo Command Center and Puskeswan Simulation were adjusted to **restore keyboard focus after a selected row or SVG pin is re-rendered**. The Playwright suite now explicitly asserts post-selection focus. These new browser checks are **NOT YET CONFIRMED** by a GitHub-hosted run at the latest commit.
+- No real geospatial or Puskeswan record was used for these tests.
+
+The supporting machine-readable evidence is in [QA local regression (32 Python, 6 Node)](QA_REGRESSION_2026-11-23_32PY_6NODE.json). The last independently verified GitHub Actions run remains [#45114481799](https://github.com/dvoriano/yandik-plus/actions/runs/45114481799) on an earlier commit.
+
 ## Scope and isolation
 
 - Branch: `lab/augma-inspired-experiments`; tests use `127.0.0.1:8767` and synthetic/no operational data.

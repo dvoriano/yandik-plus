@@ -12,7 +12,21 @@ permissions:
   contents: read
 
 jobs:
+  isolation-policy:
+    if: github.ref == 'refs/heads/lab/augma-inspired-experiments'
+    name: Branch, secret, and production-domain guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Fail closed on non-lab changes
+        run: python3 experiments/augma-inspired/tools/check_lab_isolation.py --base-ref origin/main
+
   geometry-and-acquisition:
+    needs: isolation-policy
     if: github.ref == 'refs/heads/lab/augma-inspired-experiments'
     name: Offline GIS and BNPB mock tests
     runs-on: ubuntu-latest
@@ -44,6 +58,7 @@ jobs:
           test ! -e /tmp/yandik-lab-not-authorized
 
   browser-smoke:
+    needs: isolation-policy
     if: github.ref == 'refs/heads/lab/augma-inspired-experiments'
     name: Desktop and mobile viewport browser smoke tests
     runs-on: ubuntu-latest
@@ -60,6 +75,13 @@ jobs:
         run: |
           npm install --no-save '@playwright/test@1.56.1'
           npx playwright install --with-deps chromium
+      - name: Syntax-check all lab JavaScript modules
+        working-directory: experiments/augma-inspired/prototypes
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f \( -name '*.mjs' -o -name '*.js' \) -not -path '*/node_modules/*' -print0 |
+            xargs -0 -r -n 1 node --check
       - name: Run JS unit tests
         working-directory: experiments/augma-inspired/prototypes
         run: npm run test:unit
@@ -81,5 +103,17 @@ jobs:
           npm run test:browser
           npm run test:browser:perf > /tmp/yandik-lab-browser-performance.json
           cat /tmp/yandik-lab-browser-performance.json
+      - name: Preserve failing browser traces and performance sample
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yandik-lab-browser-evidence
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            experiments/augma-inspired/prototypes/test-results/
+            experiments/augma-inspired/prototypes/playwright-report/
+            /tmp/yandik-lab-browser-performance.json
+            /tmp/yandik-lab-http.log
 
 # This workflow has no deploy, push, write permission, trading API, STB or production connectivity.

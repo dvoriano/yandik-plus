@@ -140,6 +140,8 @@ export function buildLineageContract(){
    catalogued:dictionaryKeys.has(field_key),actual_mapping_verified:false})),
   region_valid_to:"EXCLUSIVE_DATE_BOUNDARY",month_attribution:"FULL_MONTH_ONLY",
   revisions:"EXACT_MATCH_NO_LATEST_WINS",identity:"STABLE_ID_ONLY_NO_NAME_JOIN",
+  policy_draft_versions:SUPPORTED_YEARS.map(year=>({year,
+   draft_version:annualPolicy(year).draft_rule_version,approved:false})),
   source_grain_verified:false,mapping_verified:false,
   source_owner_verified:false,official_authorization:false,
   may_connect:false,may_query:false,may_write:false,may_repair:false,
@@ -170,12 +172,11 @@ export function inspectDemoLineage({sources}={}){
  for(const r of sources.regions)ensureFacility(r.facility_id,"regions:"+r.mapping_id);
  for(const r of sources.workflows)ensureFacility(r.facility_id,"workflows:"+r.record_id);
  for(const r of sources.support_plans)ensureFacility(r.facility_id,"support_plans:"+r.plan_id);
- const servicePeriods=new Map(),seenEvents=new Set();
+ const seenEvents=new Set();
  const chains=sources.services.map(s=>{
   const ref="services:"+s.record_id;
   const stableFacility=ensureFacility(s.facility_id,ref);
   const key=s.facility_id+"|"+s.period+"|"+s.revision_id;
-  servicePeriods.set(key,(servicePeriods.get(key)||0)+1);
   if(s.event_id!==null){
    const eventKey=key+"|"+s.activity_type+"|"+s.event_id+"|"+(s.location_id||"NO_LOCATION");
    if(seenEvents.has(eventKey))manualIssue(issues,"DUPLICATE_EVENT_GRAIN",ref,[eventKey]);
@@ -219,9 +220,14 @@ export function inspectDemoLineage({sources}={}){
     region_mapping:region,workflow_record:workflow,policy_record:policy},
    lineage_state:"DEMO_CANDIDATE_UNVERIFIED",verified:false,usable_for_reporting:false};
  });
- for(const [k,n] of servicePeriods)
-  if(n>1)manualIssue(issues,"MULTIPLE_SERVICE_ROWS_PER_REVISION",
-   "services:"+k,["SOURCE_GRAIN_REVIEW_REQUIRED"]);
+ // Several distinct service events may legitimately share one report revision.
+ // Do not enforce one event row per revision until the actual source grain is verified.
+ for(const w of sources.workflows){
+  if(!sources.services.some(s=>s.facility_id===w.facility_id&&
+   s.period===w.period&&s.revision_id===w.revision_id))
+   manualIssue(issues,"WORKFLOW_WITHOUT_SERVICE_REVISION",
+    "workflows:"+w.record_id,[w.facility_id,w.period,w.revision_id]);
+ }
  const support_lineage=sources.support_realizations.map(r=>{
   const ref="support_realizations:"+r.realization_id;
   const plans=sources.support_plans.filter(p=>p.plan_id===r.plan_id);

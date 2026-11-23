@@ -270,3 +270,21 @@ test("M05-9 proposal for missing dictionary evidence remains pending",()=>{
  assert.equal(t.officially_resolved,false);
  assert.equal(t.proposal_revision,1);
 });
+
+test("M05-9 rejects inconsistent evidence candidate counts",()=>{
+ const p=basePacket();
+ p.counts.evidence_candidates=1;
+ assert.throws(()=>buildDemoFollowupRegister({readiness:p,snapshot_id:snapshot}),
+  /M05_9_READINESS_PACKET_INVALID/);
+});
+test("M05-9 rejects forged blocked-requirement gate list",()=>{
+ const p=basePacket();
+ p.gates[0].blocking_requirement_ids=[];
+ assert.throws(()=>buildDemoFollowupRegister({readiness:p,snapshot_id:snapshot}),
+  /M05_9_READINESS_PACKET_INVALID/);
+});
+test("M05-9 rejects modified historical proposal revision",()=>{
+ const r=append(makeRegister(),[note()]);
+ r.proposals[0].proposal_revision=999;
+ assert.throws(()=>append(r,[]),/M05_9_HISTORY_REVISION_INVALID/);
+});

@@ -1,14 +1,8 @@
-# Evidence Assistant Lab (modul terpisah)
+# Evidence Assistant Lab
 
-**Tujuan:** membantu menjawab pertanyaan dengan *evidence* yang terlihat, tidak mengarang angka dan membedakan status **tidak tersedia** dari **nol**.
+**Modul terpisah dari peta dan dari produksi.** UI default adalah asisten berbasis aturan, bukan LLM. Memberikan jawaban dari registry 19 kabupaten/kota, sumber referensi, dan penolakan untuk informasi yang tidak tersedia.
 
-## Kondisi saat ini
-
-**Modul UI dan mesin jawaban berbasis aturan sudah dibuat. Ini belum LLM atau AI agent sungguhan.** Modul tidak mengakses website, database, atau sumber pribadi; hanya membaca berkas registry yang ada di lab (dibagi read-only dengan prototipe peta). Tidak mengeksekusi aksi apa pun.
-
-Halaman dan logika berada di direktori ini; tidak ditanam ke halaman map. Dependensi data registry lokal ada di `../geo-command-center/regions.mjs`. Bila nanti dibutuhkan isolasi deployment penuh, pindahkan registry ke package bersama dan beri versi yang diverifikasi.
-
-## Jalan lokal
+## Jalankan halaman
 
 ```sh
 cd experiments/augma-inspired/prototypes
@@ -17,25 +11,23 @@ python3 -m http.server 8767 --bind 127.0.0.1
 
 Buka `http://127.0.0.1:8767/data-assistant/`.
 
-> Karena impor registry melintasi direktori proyek, server harus dijalankan dari `prototypes/`, bukan dari `data-assistant/`.
+- Tidak memanggil API AI dari browser atau sumber luar.
+- Tidak ada data pelayanan, penyakit, SDM, pelaporan, atau kredensial produksi.
+- Angka yang tak tersedia tidak diubah menjadi 0.
+- Jawaban dengan fakta menyertakan ID sumber; status `answered`, `unavailable`, `refused`, atau `help`.
 
-Tes dengan Node.js 20+: `node --test data-assistant/tests/assistant.test.mjs`.
+## Adapter model lokal (eksperimen terpisah dari UI)
 
-## Fitur saat ini
+[Local AI adapter](LOCAL_AI_ADAPTER.md) menyediakan kontrak hasil model terstruktur untuk Ollama lewat CLI Node.js. **Default OFF**. Hanya diaktifkan dengan `--enable-local-ollama` dan endpoint selalu `127.0.0.1` pada komputer uji. Hanya pertanyaan yang sudah dapat dijawab berbasis sumber boleh ditransmisikan. Output model **hanya draf untuk ditinjau manusia**, tidak pernah otomatis dianggap akurat.
 
-- Jawaban cakupan 12 kabupaten / 7 kota dengan sumber.
-- Daftar kabupaten/kota, kode dan lokasi indikatif bila ada pada registry.
-- Tolak angka layanan, pelaporan, penyakit, fasilitas yang belum diberikan.
-- Permintaan kredensial atau akses produksi ditolak.
-- Semua jawaban memiliki status (`answered`, `unavailable`, `refused`, `help`) dan sumber.
-- `prepareEvidencePackage()` menyediakan kontrak untuk kemungkinan integrasi LLM *kelak*, tetapi **tidak memanggil provider apa pun**.
+## Pengujian
 
-## Gerbang agar menjadi asisten AI nyata
+```sh
+node --test tests/assistant.test.mjs tests/local-adapter.test.mjs
+```
 
-1. Tentukan pertanyaan tugas yang benar-benar diperlukan petugas dan data apa yang boleh dibaca.
-2. Buat adapter lokal/terisolasi dengan autentikasi, rate limit, validasi dan audit.
-3. Gunakan retrieval dokumen yang disetujui dan kutipan/sumber nyata; evaluasi halusinasi, salah sumber, privasi, dan penolakan.
-4. Uji dengan data anonim yang disetujui, **bukan** langsung ke API produksi.
-5. Baru ajukan review keamanan, legal, dan tata kelola sebelum integrasi.
+Pengujian browser manual: `../BROWSER_TESTING.md`.
 
-Ini fitur eksperimen, bukan pemberi keputusan administratif.
+## Sebelum memakai data sungguhan
+
+Dibutuhkan izin data, definisi indikator, API baca-saja sesuai peran, audit, verifikasi dokumen, pembatasan model, pengujian halusinasi dan tata kelola yang disetujui. Tidak ada integrasi ke YANDIK+ sampai proses itu selesai.

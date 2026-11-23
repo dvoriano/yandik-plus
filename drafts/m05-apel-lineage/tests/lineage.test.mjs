@@ -1,4 +1,4 @@
-/** M05-7 | 32 QA scenarios WRITTEN, ZERO EXECUTED | CODE_ONLY. */
+/** M05-7 | 38 QA scenarios WRITTEN, ZERO EXECUTED | CODE_ONLY. */
 import test from "node:test";
 import assert from "node:assert/strict";
 import {annualPolicy} from "../../m05-apel-multiyear/policy.mjs";
@@ -195,4 +195,12 @@ test("M05-7 no automatic repair, score or publish even with conflicts",()=>{
  for(const k of ["may_connect","may_query","may_write","may_repair",
   "may_score","may_publish","official_authorization"])assert.equal(r[k],false);
  assert.ok(r.issues.every(x=>x.auto_resolved===false));
+});
+
+test("M05-7 distinct service events in one revision are legitimate candidates",()=>{
+ const s=sample();s.services.push({...s.services[0],record_id:"DEMO-SVC-2",
+  event_id:"DEMO-EVT-2",declared_no_activity:false,quantity:2});
+ const r=review(s);
+ assert.equal(r.candidate_chains.length,2);
+ assert.equal(r.issues.length,0);
 });

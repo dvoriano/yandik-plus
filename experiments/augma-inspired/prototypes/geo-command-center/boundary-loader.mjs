@@ -14,8 +14,16 @@ const RAW_TYPES = ["type", "level", "regionType", "jenis"];
 function determineRegion(feature) {
   const properties = feature?.properties ?? {};
   const key = CODES.map(p => properties[p]).find(v => typeof v === "string" && /^13\.(?:0[1-9]|1[0-2]|7[1-7])$/.test(v));
-  if (key) return officialByCode.get(key) ?? null;
   const rawName = NAMES.map(p => properties[p]).find(v => typeof v === "string" && v.length > 0);
+  if (key) {
+    const found = officialByCode.get(key);
+    if (!found) return null;
+    if (!rawName) return found;
+    const candidate = cleanup(rawName);
+    if (candidate === cleanup(found.name) ||
+        candidate === cleanup(found.name.replace(/^(kabupaten|kota) /i, ""))) return found;
+    return null; // fail closed on mismatched name/code
+  }
   if (!rawName) return null;
   const name = cleanup(rawName);
   const matches = REGIONS.filter(region =>

@@ -1,3 +1,6 @@
+## 2026-11-23 | M00-G8 kontrak format audit lintas bahasa, bukan migrasi
+- [Kode bridge JS + Python](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-cross-language-audit), [18 QA JS](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-cross-language-audit/tests/bridge.test.mjs) + [19 QA Python](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-cross-language-audit/tests/test_bridge.py), **0 dijalankan**. Hash kanonik terpisah hanya paritas format, bukan pemeriksaan integritas asli, persetujuan sumber atau migrasi. [Spesifikasi](M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md), [checklist source Flask](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md). CODE_ONLY [skip ci].
+
 ## 2026-11-23 | M00-G7 penulis audit SQLite in-memory DEMO
 - [Kode transaksi DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-sqlite-demo-writer), [25 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-sqlite-demo-writer/tests/test_writer.py), **0 dijalankan**. Writer BEGIN IMMEDIATE, rollback dan idempotency hanya untuk :memory:, tanpa bukti tes ataupun DB produksi. [Spesifikasi](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md).
 

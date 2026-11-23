@@ -10,6 +10,24 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G8 | Paritas format audit JavaScript ↔ Python (37 QA tertulis, 0 dijalankan)
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M00G8-01 | Identitas schema, domain kanonik, urutan tetap JSON-array, ASCII-only dan integer revisi | BELUM DIUJI |
+| QA-M00G8-02 | Fixture G5/G7 dengan isi semantik sama menghasilkan digest bridge format setara | BELUM DIUJI |
+| QA-M00G8-03 | Hash historis G5/G7 yang berbeda **tidak** diperlakukan sebagai hash kanonik dan **tidak** dinyatakan terverifikasi | BELUM DIUJI |
+| QA-M00G8-04 | Perubahan action/reason/basis membatalkan kesesuaian format | BELUM DIUJI |
+| QA-M00G8-05 | Role tambahan, metadata personal, ID bukan DEMO dan field tidak dikenal ditolak | BELUM DIUJI |
+| QA-M00G8-06 | Klaim official authorization atau is_official=1 ditolak | BELUM DIUJI |
+| QA-M00G8-07 | Log G5 multi-link dan urutan/revisi melompat ditolak agar tidak salah menyamakan urutan global/per-link | BELUM DIUJI |
+| QA-M00G8-08 | Respons bridge tidak menampilkan ID reviewer dan melarang write/sync/approve/deploy | BELUM DIUJI |
+| QA-M00G8-09 | Node ↔ Python menghasilkan SHA-256 kanonik sama pada fixture dan beberapa event berurutan | BELUM DIUJI |
+| QA-M00G8-10 | Integritas hash asli, integritas DB, autentikasi server, izin sumber, transport dan perizinan migrasi | TERTUNDA UJI |
+| QA-M00G8-11 | Audit source Flask sanitisasi berizin dan review kontrak multi-modul | BUTUH KEPUTUSAN |
+
+**18 deklarasi QA JavaScript + 19 Python**, **0 dijalankan**. Termasuk skrip lintas runtime dalam kode, tetapi tidak dieksekusi. Format sama **bukan** autentikasi jurnal atau persetujuan integrasi.
+
 ## Antrean M00-G6 & M00-G7 | Flask draft dan audit SQLite (50 QA tertulis, 0 dijalankan)
 
 ### M00-G6 | Factory Flask read-only DEMO

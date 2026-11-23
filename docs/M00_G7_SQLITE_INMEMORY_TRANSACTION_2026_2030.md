@@ -31,3 +31,6 @@
 Tahap setelah izin testing: verifikasi penolakan file DB, skenario transaksi gagal dan rollback, perintah ganda, kondisi dua penulis, revokasi sesi, integrasi audit persisten yang benar, backup/restore, serta review keamanan dan hukum. Jangan menerapkan skema ini ke database produksi.
 
 **Status:** CODE_WRITTEN_NOT_TESTED, MEMORY_ONLY_DEMO, NO_EXECUTION, PRODUCTION_NO_GO.
+
+## Lanjutan M00-G8
+[Kontrak format audit JS/Python DEMO](M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) dibuat untuk proyeksi baca-saja, bukan pembuktian hash lama atau penggantian writer G7. **37 QA tertulis, 0 dijalankan**.

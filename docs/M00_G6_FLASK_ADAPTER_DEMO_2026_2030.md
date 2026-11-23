@@ -21,3 +21,6 @@
 **Penting:** host yang tidak tepercaya masih dapat mengembalikan sesi palsu. Format ID yang valid bukan bukti autentikasi. Mengaktifkan flag DEMO bukan izin mengakses sumber resmi. Jangan mendaftarkan route ke produksi tanpa audit sumber dan persetujuan pemilik proses.
 
 **Status:** CODE_WRITTEN_NOT_TESTED, FLASK_NOT_INTEGRATED, API_PRODUCTION_NO_GO.
+
+## Gerbang penerimaan source Flask
+[Checklist source sanitisasi/izin dan review keamanan](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md) disiapkan. Belum ada source Flask terotorisasi di repo atau pengujian adaptor terhadap aplikasi nyata.

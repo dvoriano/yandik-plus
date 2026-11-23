@@ -81,6 +81,10 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 ### B-019 | In-memory atomic audit writer (M00-G7)
 - Draft SQLite in-memory writer under drafts/m00-sqlite-demo-writer/, 25 QA written, 0 executed; conditional revisions, idempotency, rollback and chain read model are not tested. Real database integration, JS/Python contract parity, storage hardening and operational audit remain pending.
 
+### B-020 | Canonical demo audit bridge, cross-language data contract (M00-G8)
+- **Partial draft:** drafts/m00-cross-language-audit/ with JavaScript/Python format normalization and synthetic vectors; 37 QA written (18 JS, 19 Python), 0 executed. No legacy hash migration, no source/actor integrity guarantees, and G5 global sequence differs from G7 per-link revision.
+- **Flask source gate:** docs/M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md; source baseline remains unavailable as a verified, sanitized, authorized copy. Review permissions, secrets, PII, legal source scope and per-route authorization first.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

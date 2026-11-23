@@ -22,6 +22,10 @@
 - [M00-G7](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md) menolak DB file dan hanya dapat bekerja di memori bila nanti dijalankan. Trigger dan SHA-256 sendiri tidak menjamin catatan tahan manipulasi; transaksi/konkurensi belum diuji.
 - Tidak ada sumber Flask asli atau data berizin pada repo; keseluruhan kode tetap CODE_ONLY dan BELUM DIUJI.
 
+## Addendum P0 | Interoperabilitas audit dan source Flask
+- [M00-G8](M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) menghasilkan hash baru untuk **normalisasi format**; hash asli tidak divalidasi, tidak boleh dipakai sebagai persetujuan audit/migrasi atau bukti sumber sah.
+- [Gerbang penerimaan Flask](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md) mensyaratkan sumber yang diizinkan/disanitasi, tanpa data/secret nyata, pengecekan role-per-request, dan pengujian dengan izin sebelum rilis.
+
 ## Known security debt in source snapshot
 - Review authentication and territorial authorization across users/roles/permissions APIs.
 - User list responses need an allowlist; no password hash fields.

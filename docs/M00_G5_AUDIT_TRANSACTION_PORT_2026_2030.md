@@ -33,3 +33,6 @@ SHA-256 yang dihitung ulang dari data yang dikuasai pelaku tidak membuktikan kea
 
 ## Lanjutan rancangan M00-G7
 [Penulis audit SQLite hanya memori DEMO](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md) telah ditulis, **25 QA tertulis, 0 dijalankan**. Skema Python berbeda dari model M00-G5 JS; masih perlu keselarasan kontrak dan validasi, tidak ada SQL/DB yang dijalankan.
+
+## Lanjutan M00-G8
+[Bridge baca-saja JavaScript ↔ Python](M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) menyamakan **format proyeksi DEMO** pada jurnal single-link, **37 QA tertulis, 0 dijalankan**. Rantai hash lama M00-G5 tidak dinyatakan kompatibel dengan M00-G7 dan tidak dimigrasi.

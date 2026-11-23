@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** SEDANG (prototype lama punya tes historis; M00-G1–G7 kode baru belum diuji; belum terintegrasi Flask).  
+**Status implementasi GitHub:** SEDANG (prototype lama punya tes historis; M00-G1–G8 kode baru belum diuji; belum terintegrasi Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -77,6 +77,11 @@ Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber 
 - [x] [Adaptor Flask GET-only](../M00_G6_FLASK_ADAPTER_DEMO_2026_2030.md) disusun dengan factory Blueprint nonaktif default, **25 QA tertulis, 0 dijalankan**. Belum dipasang ke server dan tidak mengautentikasi produksi.
 - [x] [Penulis audit SQLite memory-only](../M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md) disusun dengan transaction/rollback/idempotency, **25 QA tertulis, 0 dijalankan**. Belum ada eksekusi SQL, DB nyata, koneksi M00-G5 atau bukti integrasi.
 - [ ] Audit source Flask yang diizinkan, per-session server, review hak akses, QA, proteksi storage dan rollback tetap dibutuhkan.
+
+## Tambahan M00-G8 | Paritas format audit dan gerbang Flask
+- [x] [Bridge format audit JS/Python](../M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) ditulis, **37 QA tertulis, 0 dijalankan**. Hash kanonik tidak memvalidasi hash asli atau migrasi.
+- [x] [Checklist penerimaan source Flask legacy](../M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md) disusun, bukan bukti izin, audit source atau integrasi.
+- [ ] Pemeriksaan hak akses, source integrity, Flask session dan prosedur migrasi nyata belum dilakukan.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

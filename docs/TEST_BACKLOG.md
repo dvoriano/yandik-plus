@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-13: observabilitas dan audit trail DEMO APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-13](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-observability) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-observability/tests/observability.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_13_APEL_OBSERVABILITY_AUDIT_2026_2030.md). **50 ditulis, 0 dijalankan**.
+- Tidak ada klaim log tepercaya, waktu server asli, sumber live, ambang peringatan, notifikasi, insiden resmi maupun persetujuan. Semua kontrak metadata perlu diperiksa serta sumber/tata kelola ditetapkan sebelum integrasi.
+
+| ID | Skenario QA tertunda | Status |
+|---|---|---|
+| QA-M05-13-01 | M05-13 catalogs exactly twelve questions | BELUM DIUJI |
+| QA-M05-13-02 | M05-13 signal IDs are unique | BELUM DIUJI |
+| QA-M05-13-03 | M05-13 links each signal to a source evidence requirement | BELUM DIUJI |
+| QA-M05-13-04 | M05-13 maps each signal to a rollback condition for human review | BELUM DIUJI |
+| QA-M05-13-05 | M05-13 report revision consistency is represented | BELUM DIUJI |
+| QA-M05-13-06 | M05-13 missing versus explicit zero is represented | BELUM DIUJI |
+| QA-M05-13-07 | M05-13 historical district attribution is represented | BELUM DIUJI |
+| QA-M05-13-08 | M05-13 2026 investigation and kurban service grain are represented | BELUM DIUJI |
+| QA-M05-13-09 | M05-13 signals cannot claim approved alert thresholds | BELUM DIUJI |
+| QA-M05-13-10 | M05-13 catalog is not live monitoring | BELUM DIUJI |
+| QA-M05-13-11 | M05-13 severity vocabulary cannot assert production emergency | BELUM DIUJI |
+| QA-M05-13-12 | M05-13 observations only use enumerated synthetic codes | BELUM DIUJI |
+| QA-M05-13-13 | M05-13 empty ledger has no incident claims | BELUM DIUJI |
+| QA-M05-13-14 | M05-13 empty ledger lacks trusted clock and persistence | BELUM DIUJI |
+| QA-M05-13-15 | M05-13 ledger derives the year policy draft | BELUM DIUJI |
+| QA-M05-13-16 | M05-13 refuses unsupported year | BELUM DIUJI |
+| QA-M05-13-17 | M05-13 refuses non-DEMO snapshot | BELUM DIUJI |
+| QA-M05-13-18 | M05-13 refuses wrong DEMO snapshot namespace | BELUM DIUJI |
+| QA-M05-13-19 | M05-13 one event appends to a new ledger without source access | BELUM DIUJI |
+| QA-M05-13-20 | M05-13 event key uses snapshot-local sequence | BELUM DIUJI |
+| QA-M05-13-21 | M05-13 observation source never gains official verification | BELUM DIUJI |
+| QA-M05-13-22 | M05-13 observation cannot store a raw payload | BELUM DIUJI |
+| QA-M05-13-23 | M05-13 observation cannot accept free-form personal name | BELUM DIUJI |
+| QA-M05-13-24 | M05-13 observation refuses an unregistered code | BELUM DIUJI |
+| QA-M05-13-25 | M05-13 event ID cannot identify a real production record | BELUM DIUJI |
+| QA-M05-13-26 | M05-13 facility ID must remain synthetic | BELUM DIUJI |
+| QA-M05-13-27 | M05-13 event period must match reporting year | BELUM DIUJI |
+| QA-M05-13-28 | M05-13 duplicate event IDs within one batch are rejected | BELUM DIUJI |
+| QA-M05-13-29 | M05-13 duplicate event IDs across batches are rejected | BELUM DIUJI |
+| QA-M05-13-30 | M05-13 unbounded batch size is rejected | BELUM DIUJI |
+| QA-M05-13-31 | M05-13 invalid ledger metadata is rejected | BELUM DIUJI |
+| QA-M05-13-32 | M05-13 tampered event sequence is rejected | BELUM DIUJI |
+| QA-M05-13-33 | M05-13 tampered severity counts are rejected | BELUM DIUJI |
+| QA-M05-13-34 | M05-13 ledger cannot grant test, write, publish or merge | BELUM DIUJI |
+| QA-M05-13-35 | M05-13 empty board states health has not been measured | BELUM DIUJI |
+| QA-M05-13-36 | M05-13 no observation is not proof of healthy service | BELUM DIUJI |
+| QA-M05-13-37 | M05-13 board observations do not claim verified live signals | BELUM DIUJI |
+| QA-M05-13-38 | M05-13 board keeps all signals even without events | BELUM DIUJI |
+| QA-M05-13-39 | M05-13 board records zero official notifications | BELUM DIUJI |
+| QA-M05-13-40 | M05-13 triage cannot contain a notification action | BELUM DIUJI |
+| QA-M05-13-41 | M05-13 valid synthetic note remains open and unverified | BELUM DIUJI |
+| QA-M05-13-42 | M05-13 valid note cannot assign a real person | BELUM DIUJI |
+| QA-M05-13-43 | M05-13 note requires a matching existing synthetic observation | BELUM DIUJI |
+| QA-M05-13-44 | M05-13 note cannot carry private free-text narrative | BELUM DIUJI |
+| QA-M05-13-45 | M05-13 review note cannot spoof a human signoff | BELUM DIUJI |
+| QA-M05-13-46 | M05-13 duplicate note ID is rejected | BELUM DIUJI |
+| QA-M05-13-47 | M05-13 snapshot mismatch in triage is rejected | BELUM DIUJI |
+| QA-M05-13-48 | M05-13 handoff rejects forged board health state | BELUM DIUJI |
+| QA-M05-13-49 | M05-13 handoff rejects forged incident resolution | BELUM DIUJI |
+| QA-M05-13-50 | M05-13 handoff cannot dispatch or publish anything | BELUM DIUJI |
+
 ## Antrean M05-12: kesiapan rilis & rollback APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-12](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-release-readiness) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-release-readiness/tests/release.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_12_RELEASE_READINESS_ROLLBACK_2026_2030.md). **50 ditulis, 0 dijalankan**.
 - Perlu izin eksplisit owner untuk perubahan mode CODE_ONLY sebelum melakukan tes; dokumen izin pemilik sistem/produksi, hasil staging/paritas Juknis, backup & restore yang terverifikasi, audit keamanan, baseline kesehatan, prosedur insiden, serta penelaahan independen tetap belum ada. Draf NO_GO bukan keputusan pejabat.

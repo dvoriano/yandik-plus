@@ -70,8 +70,8 @@ def evaluate(path, registry_path, outline_path=None):
             name = next((props[x] for x in NAME_FIELDS if isinstance(props.get(x), str) and props[x]), None)
             if name and norm(name) != norm(expected[code]) and norm(name) != norm(expected[code].split(" ",1)[-1]):
                 output["errors"].append(f"{code}: nama tidak cocok ({name} != {expected[code]})")
-            geom = feature.get("geometry") or {}
-            if geom.get("type") not in ("Polygon", "MultiPolygon"):
+            geom = feature.get("geometry") if isinstance(feature, dict) else None
+            if not isinstance(geom, dict) or geom.get("type") not in ("Polygon", "MultiPolygon"):
                 output["errors"].append(f"{code}: bukan Polygon/MultiPolygon")
                 continue
             try:

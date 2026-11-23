@@ -37,6 +37,12 @@ class GeoAuditTest(unittest.TestCase):
         self.features[-1]['properties']['code'] = self.features[0]['properties']['code']
         self.assertEqual(self.audit()['status'],'FAIL')
 
+    def test_malformed_geometry_type_fails_without_traceback(self):
+        self.features[0]["geometry"] = ["invalid", "not a GeoJSON object"]
+        report = self.audit()
+        self.assertEqual(report["status"], "FAIL")
+        self.assertTrue(any("bukan Polygon" in e for e in report["errors"]))
+
     def test_bowtie_fails(self):
         geom = self.features[0]['geometry']
         geom['coordinates'] = [[[98.5,-3],[98.6,-2.9],[98.6,-3],[98.5,-2.9],[98.5,-3]]]

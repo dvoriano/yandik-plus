@@ -49,7 +49,7 @@ python3 tools/audit_adm2.py /path/to/sumbar-adm2.geojson \
 
 Enam tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026, termasuk penolakan selisih area outline di atas 10% pada fixture buatan. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
 
-Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). Workflow CI terbatas pada branch lab telah disiapkan, tetapi **hasil run belum terverifikasi**. Tidak ada auto-deploy atau pengujian produksi. Jangan mengklaim browser lulus tanpa hasilnya.
+Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). Workflow CI terbatas pada branch lab sudah dilengkapi pemeriksaan isolasi source dan laporan Playwright, tetapi **hasil run belum terverifikasi**. Tidak ada auto-deploy atau pengujian produksi. Jangan mengklaim browser lulus tanpa hasilnya.
 
 ## Kriteria pemisahan
 
@@ -70,6 +70,7 @@ Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TE
 - [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
+- [Status QA dan gerbang rilis](docs/QA_GATE_STATUS_2026-11-23.md)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
 **Status:** fondasi eksperimen, dashboard simulasi 19 unit x 12 bulan, auditor geometri, pengambil kandidat BNPB yang memeriksa kestabilan ID, dan workflow tes branch lab tersedia. Hasil CI/browser masih harus dilihat; verifikasi ADM2 sungguhan dan uji STB fisik tetap terbuka. Tidak ada perubahan ke produksi.

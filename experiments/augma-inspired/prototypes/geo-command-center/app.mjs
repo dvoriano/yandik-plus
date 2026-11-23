@@ -1,5 +1,6 @@
 import { REGIONS, summarize, filterRegions, regionByCode, validateRegistry } from "./regions.mjs";
 import { createProjection, geometryPaths, VIEW } from "./geometry.mjs";
+import { validateBoundaryCollection } from "./boundary-loader.mjs";
 
 const $ = id => document.getElementById(id);
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -14,6 +15,7 @@ let kind = "all";
 let selected = "13.71";
 let projection = null;
 let scale = 1;
+let adm2 = null; // Only imported into this browser session, never uploaded.
 
 function makeSvg(tag, props) {
   const n = document.createElementNS(SVG_NS, tag);
@@ -29,6 +31,7 @@ function choose(code) {
   selected = code;
   renderList();
   renderPins();
+  renderAdm2();
   renderDetails();
 }
 
@@ -134,12 +137,84 @@ async function initializeMap() {
       }
     }
     $("map-status").textContent = "Geometri provinsi lokal terbaca. Pilih titik wilayah.";
+    renderAdm2();
     refresh();
   } catch (error) {
     $("map-status").textContent = "Peta gagal dimuat: " + String(error.message) +
       ". Daftar wilayah tetap dapat dibaca.";
   }
 }
+
+function renderAdm2() {
+  const layer = $("map-adm2");
+  layer.replaceChildren();
+  if (!adm2 || !projection) return;
+  for (const feature of adm2.features) {
+    const code = feature.properties.code;
+    const region = regionByCode(code);
+    for (const pathString of geometryPaths(feature.geometry, projection.project)) {
+      const path = makeSvg("path", {
+        d: pathString, "fill-rule": "evenodd",
+        class: "adm2-area" + (selected === code ? " selected" : ""),
+        role: "button", tabindex: "0",
+        "aria-label": "Tinjau batas demo " + region.name,
+        "aria-pressed": String(selected === code)
+      });
+      const title = makeSvg("title", {});
+      title.textContent = region.name + " · geometri yang diimpor, belum diverifikasi resmi";
+      path.append(title);
+      path.addEventListener("click", () => choose(code));
+      path.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          choose(code);
+        }
+      });
+      layer.append(path);
+    }
+  }
+}
+
+function setBoundaryStatus(message, error = false) {
+  $("boundary-status").textContent = message;
+  $("boundary-status").dataset.state = error ? "error" : "ready";
+}
+
+async function importBoundaryFile(file) {
+  if (!file) return;
+  if (!$("license-confirmation").checked) {
+    setBoundaryStatus("Konfirmasi dulu bahwa Anda berhak menggunakan dataset tersebut.", true);
+    $("boundary-file").value = "";
+    return;
+  }
+  try {
+    if (file.size > 8_000_000) throw Error("File melebihi batas 8 MB");
+    const data = JSON.parse(await file.text());
+    const verifiedStructure = validateBoundaryCollection(data);
+    adm2 = verifiedStructure;
+    setBoundaryStatus(
+      "19/19 poligon lolos validasi TEKNIS (" +
+      verifiedStructure.metadata.pointCount.toLocaleString("id-ID") +
+      " titik). Akurasi geografi dan hak pakai belum diverifikasi otomatis."
+    );
+    renderAdm2();
+  } catch (error) {
+    adm2 = null;
+    setBoundaryStatus("Impor ditolak: " + String(error.message), true);
+    renderAdm2();
+  }
+  $("boundary-file").value = "";
+}
+
+$("boundary-file").addEventListener("change", event => {
+  void importBoundaryFile(event.target.files?.[0]);
+});
+$("clear-boundary").addEventListener("click", () => {
+  adm2 = null;
+  $("boundary-file").value = "";
+  setBoundaryStatus("Belum ada data batas kabupaten/kota yang diimpor.");
+  renderAdm2();
+});
 
 $("search").addEventListener("input", refresh);
 for (const button of document.querySelectorAll("[data-kind]")) {

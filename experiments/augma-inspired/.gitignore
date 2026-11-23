@@ -1,5 +1,6 @@
 # Ignore local test artifacts and downloaded datasets in the isolated lab
 **/node_modules/
+/qa-evidence/
 **/playwright-report/
 **/test-results/
 **/.pytest_cache/

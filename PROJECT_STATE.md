@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-10 | MATRIKS UJI PARITAS & KRITERIA PENERIMAAN APEL 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-10](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-parity) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-parity/tests/parity.test.mjs) (**0 dijalankan**) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_10_PARITY_ACCEPTANCE_MATRIX_2026_2030.md).
+- Menulis 23 definisi kasus, 19 lintas tahun + 3 khusus 2026 + 1 khusus 2027–2030; menghasilkan 102 item rancangan per tahun (2026: 22; 2027–2030: masing-masing 20). Perbandingan source/Juknis dan comparator/toleransi belum dapat ditetapkan tanpa bukti resmi.
+- Katalog referensi DEMO, 9 langkah penerimaan dan 6 gate M05-8 tetap **BLOCKED**; tidak ada PASS, pengesahan policy, score, ranking, award atau publikasi. M05-11 RENCANA: desain otorisasi uji staging, tanpa eksekusi.
+- CODE_ONLY, repo PUBLIC, PR #9 Draft; tidak ada test/CL/CI/browser, merge/deploy, akses API/Flask/DB/VPS atau data nyata.
+
 ## PEMBARUAN M05-9 | REGISTER TINDAK LANJUT REKONSILIASI MANUAL APEL 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-followup) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-followup/tests/followup.test.mjs) (**0 dijalankan**) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md). M05-8 (14 persyaratan dan 6 gerbang BLOCKED) disusun menjadi tugas konsep manual, ditambah tugas per konflik M05-7.
 - Identitas tugas terkait snapshot DEMO, reviewer berupa ID fiktif, peran konseptual, bukti yang harus diklarifikasi, catatan usulan append-only dan penjagaan revisi; tidak ada close, perbaikan sumber, atau signoff resmi. Handoff hanya view-model bukan distribusi tugas.

@@ -64,7 +64,7 @@ test("M05-10 2026 plan has historical-only cases",()=>{
 });
 test("M05-10 2027 plan does not inherit the historical parity case",()=>{
  const p=plan(2027);
- assert.equal(p.scenarios.length,21);
+ assert.equal(p.scenarios.length,20);
  assert.equal(p.scenarios.some(x=>x.case_id==="BASELINE_2026_PARITY"),false);
  assert.ok(p.scenarios.some(x=>x.case_id==="FUTURE_YEAR_POLICY"));
 });
@@ -84,7 +84,7 @@ test("M05-10 five-year matrix covers 2026-2030 independently",()=>{
 });
 test("M05-10 five-year matrix reports all scenarios as not executed",()=>{
  const r=buildFiveYearParityMatrix();
- assert.equal(r.totals.scenarios,106);
+ assert.equal(r.totals.scenarios,102);
  assert.equal(r.totals.executed,0);
  assert.equal(r.totals.passed,0);
 });

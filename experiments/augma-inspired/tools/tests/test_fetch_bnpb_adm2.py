@@ -19,12 +19,15 @@ def make_geometry(x, y):
 
 
 class FakeArcGis:
-    def __init__(self, expected, *, missing=False, bad_name=False, duplicate=False):
+    def __init__(self, expected, *, missing=False, bad_name=False, duplicate=False, bad_fid=False, snapshot_changed=False):
         self.expected = expected
         self.calls = []
         self.missing = missing
         self.bad_name = bad_name
         self.duplicate = duplicate
+        self.bad_fid = bad_fid
+        self.snapshot_changed = snapshot_changed
+        self.id_queries = 0
         self.codes = sorted(expected)
         self.ids = list(range(1, 20))
 
@@ -33,13 +36,17 @@ class FakeArcGis:
         if endpoint == SOURCE:
             doc = {
                 "geometryType": "esriGeometryPolygon", "capabilities": "Query",
+                "objectIdField": "fid",
                 "supportedQueryFormats": "JSON, geoJSON, PBF",
                 "extent": {"spatialReference": {"wkid": 4326}},
                 "fields": [{"name": field} for field in ("fid", "namobj", "kdpkab", "wadmkk")]
             }
             return doc, 300
         if params.get("returnIdsOnly") == "true":
+            self.id_queries += 1
             ids = self.ids[:-1] if self.missing else self.ids
+            if self.snapshot_changed and self.id_queries == 2:
+                ids = list(range(2, 21))
             return {"objectIds": ids}, 200
         batch = [int(i) for i in params["objectIds"].split(",")]
         features = []
@@ -55,7 +62,7 @@ class FakeArcGis:
                 name = "Nama lain yang tidak cocok"
             features.append({
                 "type": "Feature",
-                "properties": {"fid": number, "kdpkab": code, "wadmkk": name},
+                "properties": {"fid": 999 if self.bad_fid and number == 1 else number, "kdpkab": code, "wadmkk": name},
                 "geometry": make_geometry(x, y)
             })
         return {"type": "FeatureCollection", "features": features}, 1000
@@ -69,11 +76,12 @@ class BnpbSourceTests(unittest.TestCase):
         self.assertEqual(len(collection["features"]), 19)
         self.assertEqual(object_ids, list(range(1, 20)))
         self.assertGreater(received, 0)
-        self.assertEqual(len(fake.calls), 9)  # metadata + IDs + 7 bounded batches
+        self.assertEqual(len(fake.calls), 10)  # metadata + IDs + 7 bounded batches + final IDs
         self.assertTrue(all(url in (SOURCE, SOURCE + "/query") for url, _ in fake.calls))
         self.assertTrue(all(
-            c[1].get("f") == "geojson" for c in fake.calls[2:]
+            c[1].get("f") == "geojson" for c in fake.calls[2:-1]
         ))
+        self.assertEqual(fake.id_queries, 2)
         self.assertEqual(
             {f["properties"]["code"] for f in collection["features"]}, set(registry)
         )
@@ -91,6 +99,16 @@ class BnpbSourceTests(unittest.TestCase):
         registry = load_registry(REGISTRY)
         with self.assertRaisesRegex(ValueError, "tidak cocok"):
             acquire(FakeArcGis(registry, bad_name=True), registry)
+
+    def test_rejects_wrong_objectid_even_if_names_match(self):
+        registry = load_registry(REGISTRY)
+        with self.assertRaisesRegex(ValueError, "ObjectId respons tidak cocok"):
+            acquire(FakeArcGis(registry, bad_fid=True), registry)
+
+    def test_rejects_snapshot_change_during_batches(self):
+        registry = load_registry(REGISTRY)
+        with self.assertRaisesRegex(ValueError, "berubah selama proses"):
+            acquire(FakeArcGis(registry, snapshot_changed=True), registry)
 
     def test_rejects_bad_metadata(self):
         with self.assertRaisesRegex(ValueError, "Layer bukan"):

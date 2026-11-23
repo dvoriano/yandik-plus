@@ -1,51 +1,60 @@
 # YANDIK+ Innovation Lab: Augma-Inspired Experiments
 
-> **TERISOLASI | Riset / prototipe | Bukan fitur produksi**
+> **BRANCH TERPISAH / TIDAK DIPAKAI PRODUKSI** · Lab riset 2026–2030
 
-Eksperimen teknologi visual, peta situasional, dan AI assistant untuk mendukung arah pengembangan YANDIK+ hingga 2030. Terinspirasi oleh pendekatan interaksi Augma Imaginarium, **bukan** salinan kode, desain, atau produk Augma.
+Ruang eksperimen interaksi visual dan asisten data untuk mendukung kemungkinan pengembangan YANDIK+. Terinspirasi oleh **konsep umum** teknologi Augma Imaginarium, tetapi **tidak mengimpor atau menyalin kode/aset Augma**.
 
-## Batas pengembangan
+## Pilihan prototipe
 
-- Lokasi: hanya branch `lab/augma-inspired-experiments`, di folder `experiments/augma-inspired/`.
-- **Tidak mengubah** branch `main`, `develop`, kode APEL, VPS Sumopod, layanan produksi, atau database.
-- Tidak membuat pull request/merge/deploy otomatis.
-- Gunakan **data sintetis/demonstrasi**; tidak ada data pribadi, kredensial, atau API produksi.
-- Integrasi dengan YANDIK+ hanya setelah peninjauan manfaat, akses data, keamanan, lisensi, dan keputusan eksplisit.
-- Semua komponen prototipe di folder ini ditulis sendiri. Tidak mengunduh atau menyalin source code Augma.
+| Prototipe | Apa yang sudah berfungsi | Status |
+|---|---|---|
+| [Command Center Demo](prototypes/command-center/) | Dashboard enam wilayah dan tanya-data berbasis aturan dengan **semua angka fiktif** | Versi awal |
+| [Geo Command Center](prototypes/geo-command-center/) | **Outline geografi provinsi** dari GeoJSON lokal, 19 wilayah, penanda posisi indikatif, pencarian dan zoom; tanpa angka pelayanan | PoC mandiri |
+| [Evidence Assistant](prototypes/data-assistant/) | UI tanya-data **berbasis aturan**, jawaban mencantumkan bukti sumber dan menolak angka yang tak tersedia | Fondasi asisten, **belum LLM** |
 
-## Isi lab
-
-| Dokumen/eksperimen | Status |
-|---|---|
-| [Radar pemanfaatan teknologi](docs/TECHNOLOGY_RADAR.md) | Riset awal |
-| [Roadmap 2026–2030](docs/ROADMAP_2026_2030.md) | Rencana eksperimen |
-| [Ketentuan keamanan dan lisensi](docs/SAFETY_AND_LICENSE.md) | Guardrail |
-| [Command Center Demo](prototypes/command-center/README.md) | Prototipe mandiri, **data fiktif** |
-
-## Prioritas
-
-1. **Command Center Puskeswan:** ringkasan visual dan lokasi skematis, dengan sumber data demonstrasi.
-2. **Tanya Data:** antarmuka pertanyaan sederhana; awalnya berbasis aturan, **belum AI**.
-3. **Eksperimen 3D/gestur:** setelah ada kasus penggunaan dan uji kompatibilitas perangkat.
-4. **AI agent lokal:** setelah kebijakan akses, audit, dan kualitas data terdefinisi.
-
-## Menjalankan prototipe
-
-Dari root repo:
+## Jalankan ketiga prototipe di komputer uji
 
 ```sh
-cd experiments/augma-inspired/prototypes/command-center
-python3 -m http.server 8765 --bind 127.0.0.1
+cd experiments/augma-inspired/prototypes
+python3 -m http.server 8767 --bind 127.0.0.1
 ```
 
-Buka `http://127.0.0.1:8765/`. Tidak perlu token atau internet. Prototipe menggunakan browser untuk render, sehingga beban visual tidak harus dijalankan server STB.
+Lalu buka:
 
-Menjalankan tes logika (Node.js 20+): `node --test tests/core.test.mjs`.
+- `http://127.0.0.1:8767/geo-command-center/`
+- `http://127.0.0.1:8767/data-assistant/`
+- `http://127.0.0.1:8767/command-center/`
 
-## Referensi dan atribusi
+Semua file diproses lokal di browser. Tidak memakai token, database, atau koneksi ke server YANDIK+.
 
-- [Augma Repo](https://repo.augmaimaginarium.com/) (akses katalog; unduh/read source mensyaratkan registrasi).
-- [Portofolio Augma Imaginarium](https://www.augmaimaginarium.com/projects/).
-- Per 23 November 2026, katalog Augma menampilkan Holo-Explorer (Three.js, lisensi tertera CC BY-NC 4.0). **Lisensi dan isi tiap file harus dicek sebelum menyalin apa pun.** Di lab ini tidak ada kode Augma yang digunakan ulang.
+Tes logika (Node.js 20+), dari folder `prototypes/`:
 
-Status prototipe ≠ persetujuan penerapan pada sistem resmi.
+```sh
+node --test command-center/tests/core.test.mjs geo-command-center/tests/core.test.mjs data-assistant/tests/assistant.test.mjs
+```
+
+## Batas yang tidak boleh dilanggar
+
+- Semua commit hanya di branch `lab/augma-inspired-experiments`, folder `experiments/augma-inspired/`.
+- Tidak ada perubahan `main`, `develop`, situs `yandikvo.my.id`, VPS, database maupun konfigurasi sistem.
+- Tidak ada pull request, merge, deploy, API produksi, atau kredensial.
+- Geo Command Center menggunakan peta geografis nyata tetapi **hanya outline provinsi**, belum poligon batas kab/kota. Koordinat marker hanyalah perkiraan sekitar pusat pemerintahan.
+- Tidak ada data pelayanan/pelaporan nyata. **Null = belum tersedia, bukan 0**. Angka dalam prototipe pertama seluruhnya sintetis.
+- Evidence Assistant **belum memakai AI generatif/LLM**. Komponen provider kelak harus diuji dan diizinkan terpisah.
+- Prototipe bukan pengganti prosedur dan keputusan resmi.
+
+## Dokumen riset
+
+- [Radar teknologi](docs/TECHNOLOGY_RADAR.md)
+- [Roadmap eksperimen 2026–2030](docs/ROADMAP_2026_2030.md)
+- [Keamanan, izin, dan lisensi](docs/SAFETY_AND_LICENSE.md)
+- [Dokumentasi Geo Command Center](prototypes/geo-command-center/README.md)
+- [Dokumentasi Evidence Assistant](prototypes/data-assistant/README.md)
+
+## Referensi
+
+- [Augma Imaginarium repository](https://repo.augmaimaginarium.com/) sebagai inspirasi antarmuka, **bukan sumber kode lab**.
+- [UU 17/2022 tentang Sumatera Barat](https://jdih.bpkp.go.id/dokumen/data_dokumen/Salinan%20UU%20Nomor%2017%20Tahun%202022.pdf): cakupan 12 kabupaten dan 7 kota.
+- [mashadinoor/Indonesia-Geojson-2026](https://github.com/mashadinoor/Indonesia-Geojson-2026): sumber outline geometri yang dipakai dengan atribusi dan lisensi upstream dicantumkan. Geometrinya bukan acuan penetapan batas hukum.
+
+Tidak ada fitur lab yang dapat diintegrasikan ke sistem resmi tanpa review manfaat, lisensi, keamanan, sumber data, izin, dan keputusan penerapan.

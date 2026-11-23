@@ -10,6 +10,29 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M05-15: Profil Puskeswan + SDM DEMO terhubung APEL (29 QA tertulis, 0 dijalankan)
+
+| ID | Yang nanti harus diperiksa | Status |
+|---|---|---|
+| QA-M0515-01 | Schema dan label fixture sintetis 3 fasilitas, tahun valid 2026–2030 | BELUM DIUJI |
+| QA-M0515-02 | Snapshot profil satu ID fasilitas-tahun; duplikat ditolak | BELUM DIUJI |
+| QA-M0515-03 | Penempatan tenaga beririsan ditolak; mutasi pada batas interval tidak dobel | BELUM DIUJI |
+| QA-M0515-04 | ID fasilitas, staf, wilayah dan sumber non-DEMO ditolak | BELUM DIUJI |
+| QA-M0515-05 | Cakupan SDM parsial/tidak ada tetap null, bukan nol | BELUM DIUJI |
+| QA-M0515-06 | Snapshot cakupan lengkap dengan tenaga 0 boleh tampil nol DEMO | BELUM DIUJI |
+| QA-M0515-07 | Snapshot 2026 tidak diwariskan diam-diam ke 2028–2030 | BELUM DIUJI |
+| QA-M0515-08 | Filter tahun, wilayah, fasilitas dan kombinasi bertentangan ditolak | BELUM DIUJI |
+| QA-M0515-09 | Join M05-14 ↔ M05-15 tepat ID, wilayah dan label; beda registry ditolak | BELUM DIUJI |
+| QA-M0515-10 | Penggabungan tidak mengubah ledger atau agregasi pelayanan M05-0 | BELUM DIUJI |
+| QA-M0515-11 | Semua flag publish, write, connect, score, rank, deploy tetap false | BELUM DIUJI |
+| QA-M0515-12 | Tidak ada data pribadi, endpoint, kontak atau keputusan kepegawaian | BELUM DIUJI |
+| QA-M0515-13 | Uji regresi M05-0..M05-14 dan uji statis/sintaks setelah izin | TERTUNDA UJI |
+| QA-M0515-14 | Pemilik sumber, histori wilayah, akses staf, versi dan retensi data resmi | BUTUH KEPUTUSAN |
+| QA-M0515-15 | Pengujian API otorisasi lintas kabupaten/kota, mutasi dan audit server | TERTUNDA UJI |
+| QA-M0515-16 | UX petugas/verifikator, layar kecil, keyboard dan aksesibilitas | TERTUNDA UJI |
+
+**Sumber:** [M05-15](M05_15_PROFIL_SDM_LINK_2026_2030.md), [kode](../drafts/m05-profile-sdm/), [29 unit tests tertulis](../drafts/m05-profile-sdm/tests/profile_sdm.test.mjs). Tidak ada tes yang dieksekusi; daftar tabel adalah *kelompok risiko*, bukan jumlah test otomatis.
+
 ## Antrean M03-S4: laboratorium fairness
 
 | ID | Yang nanti perlu diperiksa | Status |

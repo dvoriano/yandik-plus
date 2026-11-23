@@ -1,3 +1,7 @@
+## 2026-11-23 | M05-15 Profil Puskeswan ↔ SDM ↔ APEL, kontrak DEMO
+- [Draft M05-15](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-profile-sdm) + [29 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-profile-sdm/tests/profile_sdm.test.mjs), **0 dijalankan**, [spesifikasi](M05_15_PROFIL_SDM_LINK_2026_2030.md).
+- Data per fasilitas-tahun dan interval penempatan fiktif, filter sama dengan M05-14, validasi ID, tanpa data pribadi; null tidak sama dengan nol. Keputusan/otorisasi/staging/rilis tetap **NO_GO**. Perbaikan status dokumentasi ada pada [audit 15 modul](STATUS_AUDIT_2026-11-23.md). Selanjutnya M05-16, M05-17. PR #9 tetap Draft. **CODE_ONLY [skip ci]**.
+
 ## 2026-11-23 | M05-14 dashboard visual APEL Puskeswan DEMO 2026–2030
 - [Kode & UI M05-14](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard-ui) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/tests/dashboard.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_14_DASHBOARD_APEL_DEMO_2026_2030.md).
 - **KODE DITULIS, BELUM DIUJI:** halaman HTML/CSS/JS responsif, read-model M05-0, dataset sintetis, filter tahun/wilayah/fasilitas, matriks & tren bulanan serta penanda ketidaklengkapan. Bukan peringkat resmi, bukan laporan nyata, bukan UI yang sudah diuji atau di-host. PR #9 Draft. **M05-15 RENCANA**: kontrak Profil Puskeswan/SDM.

@@ -41,6 +41,15 @@ class LabIsolationTests(unittest.TestCase):
             errors = validate_sources(Path(temp))
             self.assertTrue(any("domain produksi" in error for error in errors))
 
+    def test_rejects_dotenv_and_pem_files_even_without_script_extension(self):
+        with tempfile.TemporaryDirectory() as temp:
+            lab = Path(temp) / "experiments/augma-inspired"
+            lab.mkdir(parents=True)
+            (lab / ".env.production").write_text("DEMO=1", encoding="utf-8")
+            (lab / "private-key.pem").write_text("not a real key", encoding="utf-8")
+            errors = validate_sources(Path(temp))
+            self.assertEqual(sum("Nama file rahasia" in e for e in errors), 2)
+
     def test_ignores_normal_license_markdown_and_accepts_local_source(self):
         with tempfile.TemporaryDirectory() as temp:
             lab = Path(temp) / "experiments/augma-inspired"

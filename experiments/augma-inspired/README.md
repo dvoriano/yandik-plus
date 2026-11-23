@@ -10,6 +10,7 @@ Ruang uji mandiri untuk mengeksplorasi peta situasional, data geospasial, dan as
 |---|---|
 | [Command Center awal](prototypes/command-center/) | Dashboard enam wilayah dengan **angka fiktif** dan tanya-data berbasis aturan |
 | [Geo Command Center](prototypes/geo-command-center/) | Outline geografis provinsi; 19 kode kabupaten/kota + marker perkiraan; impor **opsional** GeoJSON ADM2 yang dicek struktur dan ditampilkan sebagai poligon sesi browser |
+| [Simulasi Pelaporan Puskeswan](prototypes/puskeswan-simulation/) | Dashboard 19 unit **imajiner** × 12 bulan (228 catatan sintetis): filter, KPI, tren, daftar tindak lanjut, CSV fiktif, tanpa data APEL |
 | [Evidence Assistant](prototypes/data-assistant/) | Tanya-data berbasis aturan dengan sumber, status `unavailable`, dan penolakan permintaan terlarang |
 | [Adapter AI lokal](prototypes/data-assistant/LOCAL_AI_ADAPTER.md) | CLI eksperimen untuk Ollama **OFF secara default**, `--enable-local-ollama` harus dipilih manual; hasil model selalu draf untuk pemeriksaan manusia |
 
@@ -25,6 +26,7 @@ python3 -m http.server 8767 --bind 127.0.0.1
 - Geo map: `http://127.0.0.1:8767/geo-command-center/`
 - Evidence Assistant: `http://127.0.0.1:8767/data-assistant/`
 - Dashboard awal: `http://127.0.0.1:8767/command-center/`
+- **Simulasi Pelaporan:** `http://127.0.0.1:8767/puskeswan-simulation/`
 
 Semua UI default berjalan di browser tanpa database atau token, termasuk outline provinsi. Peta kab/kota baru muncul **setelah** pengguna mengimpor sendiri 19 Polygon/MultiPolygon dari sumber yang sah; data sumbernya belum disertakan.
 
@@ -45,9 +47,9 @@ python3 tools/audit_adm2.py /path/to/sumbar-adm2.geojson \
   --registry prototypes/geo-command-center/regions.mjs
 ```
 
-Lima tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
+Enam tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026, termasuk penolakan selisih area outline di atas 10% pada fixture buatan. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
 
-Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [panduan browser](prototypes/BROWSER_TESTING.md). Tidak ada CI, auto-deploy, atau pengujian produksi. Jangan menyatakan browser telah diuji sebelum ada hasilnya.
+Pengujian browser memerlukan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). Workflow CI terbatas pada branch lab telah disiapkan, tetapi **hasil run belum terverifikasi**. Tidak ada auto-deploy atau pengujian produksi. Jangan mengklaim browser lulus tanpa hasilnya.
 
 ## Kriteria pemisahan
 
@@ -70,4 +72,4 @@ Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [pa
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
-**Status:** fondasi eksperimen, auditor geometri, pengambil kandidat BNPB yang memeriksa kestabilan ID, dan workflow tes branch lab tersedia. Hasil CI/browser masih harus dilihat; verifikasi ADM2 sungguhan dan uji STB fisik tetap terbuka. Tidak ada perubahan ke produksi.
+**Status:** fondasi eksperimen, dashboard simulasi 19 unit x 12 bulan, auditor geometri, pengambil kandidat BNPB yang memeriksa kestabilan ID, dan workflow tes branch lab tersedia. Hasil CI/browser masih harus dilihat; verifikasi ADM2 sungguhan dan uji STB fisik tetap terbuka. Tidak ada perubahan ke produksi.

@@ -12,7 +12,7 @@ from pathlib import Path
 
 BRANCH = "refs/heads/lab/augma-inspired-experiments"
 DATA_SCOPE = "SYNTHETIC_AND_OFFLINE_ONLY"
-MIN_COUNTS = {"python": 42, "node": 31, "playwright": 19}
+MIN_COUNTS = {"python": 54, "node": 31, "playwright": 19}
 SHA = re.compile(r"[0-9a-fA-F]{40}")
 
 

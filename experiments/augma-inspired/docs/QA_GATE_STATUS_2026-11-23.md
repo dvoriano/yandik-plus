@@ -12,7 +12,7 @@ Reviewed on 23 November 2026. **Not an operational-release approval.** This docu
 |---|---|---|---|
 | Shapely geometry checks, synthetic fixtures | Yes, 6 Python test functions | **6 passed locally** | Technical fixture QA only |
 | BNPB importer mock behavior | Yes, 9 Python test functions | **Not verified in complete checkout** | Must run and pass |
-| Branch/file/production-domain isolation policy | Yes, 5 Python test functions | **Not verified in complete checkout** | Must run and pass |
+| Branch/file/production-domain isolation policy | Yes, 6 Python test functions | **Not verified in complete checkout** | Must run and pass |
 | Node unit tests | Scripts present, include simulation | Partial independent in-memory logic checks only | Must run in Node |
 | Browser desktop/mobile viewport | Playwright specs present | **No confirmed run** | Must pass real Chromium |
 | Browser failure evidence | HTML report, traces, performance output configured | No workflow report retrieved | Review failed steps and artifacts |
@@ -28,7 +28,7 @@ Workflow: `.github/workflows/yandik-innovation-lab-ci.yml`, allowed **only** on 
 It implements three jobs:
 
 1. **isolation-policy**: compare against `origin/main`, fail on changed non-lab paths except the single workflow; detect symlinks, secret filenames and selected production domains in runnable sources.
-2. **geometry-and-acquisition**: Shapely, 20 total Python test definitions (6 geometry + 9 importer + 5 isolation), and a negative check that the BNPB downloader does not connect without opt-in.
+2. **geometry-and-acquisition**: Shapely, 21 total Python test definitions (6 geometry + 9 importer + 6 isolation), and a negative check that the BNPB downloader does not connect without opt-in.
 3. **browser-smoke**: `node --check` on all lab JS modules, JavaScript unit tests, desktop/mobile viewport Playwright tests, and local browser performance sampling.
 
 The last two jobs depend on successful isolation-policy. The workflow is read-only with `permissions: contents: read`, checkout credentials not persisted, and there are no deployment steps.

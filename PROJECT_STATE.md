@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-12 | CHECKLIST KESIAPAN RILIS & ROLLBACK APEL 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-12](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-release-readiness) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-release-readiness/tests/release.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_12_RELEASE_READINESS_ROLLBACK_2026_2030.md).
+- 18 kontrol sebelum perubahan produksi, 5 gate NO_GO, 11 pemicu penghentian konseptual dan 10 langkah rollback manusia. Paket serah-terima berisi 8 jenis bukti kosong; review DEMO tidak memberi kewenangan.
+- M05-11 tetap BLOCKED, tanpa staging/test, backup diverifikasi, izin rilis/rollback, source DB atau akses produksi. Tidak ada CI/CL/test, merge/deploy, penilaian/publikasi. PR #9 Draft.
+- **M05-13 RENCANA:** rancangan observabilitas dan audit trail pasca-perubahan, tetap DEMO-only.
+
 ## PEMBARUAN M05-11 | PROTOKOL OTORISASI PENGUJIAN STAGING & BUKTI REGRESI APEL 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-11](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-staging-protocol) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-staging-protocol/tests/protocol.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_11_STAGING_AUTHORIZATION_REGRESSION_2026_2030.md).
 - 14 kontrol persiapan staging, dua izin yang harus berbeda (owner proyek untuk keluar dari CODE_ONLY dan owner sumber/sistem untuk akses), review metadata DEMO, 12 jenis paket bukti kosong dan item regresi M05-10 yang tetap NOT_RUN. Enam gate M05-8 tetap BLOCKED; tidak ada hasil tes atau signoff.

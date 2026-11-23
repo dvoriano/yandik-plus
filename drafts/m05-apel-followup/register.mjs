@@ -59,18 +59,26 @@ export function verifyBlockedDemoPacket(packet){
   packet?.readiness!=="BLOCKED_NO_OFFICIAL_EVIDENCE_OR_AUTHORIZATION"||
   !noAuthority(packet)||!Array.isArray(packet.requirements)||
   !matches(packet.requirements.map(x=>x.requirement_id),requiredIds)||
-  packet.requirements.some(x=>x.verified!==false||
+  packet.requirements.some((x,i)=>x.verified!==false||
    x.blocking!==true||x.official_attestation!=="NOT_PROVIDED"||
-   !Number.isSafeInteger(x.candidate_count)||x.candidate_count<0)||
+   x.owner_role!==REQUIREMENTS[i].owner_role||
+   !Number.isSafeInteger(x.candidate_count)||x.candidate_count<0||
+   !Number.isSafeInteger(x.review_note_count)||x.review_note_count<0||
+   !["NOT_PROVIDED","DEMO_CANDIDATE_UNVERIFIED"].includes(x.evidence_status)||
+   (x.evidence_status==="NOT_PROVIDED")!==(x.candidate_count===0))||
   !Array.isArray(packet.gates)||
   !matches(packet.gates.map(x=>x.gate_id),gatesIds)||
   packet.gates.some((g,i)=>g.decision!=="BLOCKED"||
    g.integration_permitted!==false||g.official_signoff!==false||
    g.reviewer_signoff!==false||
-   !matches(g.requirement_ids,GATE_CATALOG[i].requirement_ids))||
+   !matches(g.requirement_ids,GATE_CATALOG[i].requirement_ids)||
+   !matches(g.blocking_requirement_ids,GATE_CATALOG[i].requirement_ids))||
   packet.counts?.officially_verified_requirements!==0||
   packet.counts?.blocked_gates!==GATE_CATALOG.length||
   packet.counts?.requirements!==REQUIREMENTS.length||
+  packet.counts?.evidence_candidates!==packet.requirements.reduce(
+   (sum,r)=>sum+r.candidate_count,0)||
+  packet.counts?.unresolved_lineage_issues!==packet.issue_review?.issues?.length||
   !Array.isArray(packet.issue_review?.issues)||
   !Number.isSafeInteger(packet.issue_review.unresolved_count)||
   packet.issue_review.unresolved_count!==packet.issue_review.issues.length||

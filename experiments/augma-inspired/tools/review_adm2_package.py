@@ -3,6 +3,7 @@
 import argparse
 import datetime as dt
 import hashlib
+import ipaddress
 import json
 import re
 import sys
@@ -16,11 +17,23 @@ MAX_MANIFEST = 65536
 
 
 def public_source(url):
-    if not isinstance(url, str) or len(url) > 2048:
+    if not isinstance(url, str) or len(url) > 2048 or any(ord(ch) < 32 for ch in url):
         return False
     try:
         parsed = urlsplit(url)
-        return (parsed.scheme == "https" and bool(parsed.hostname)
+        host = (parsed.hostname or "").lower().rstrip(".")
+        if not host or "." not in host:
+            return False
+        if host.endswith((".local", ".localhost", ".internal", ".test", ".invalid", ".onion")):
+            return False
+        try:
+            address = ipaddress.ip_address(host)
+        except ValueError:
+            pass
+        else:
+            if not address.is_global:
+                return False
+        return (parsed.scheme == "https"
                 and not parsed.username and not parsed.password
                 and not parsed.query and not parsed.fragment
                 and parsed.port in (None, 443))
@@ -35,6 +48,11 @@ def review(geometry_path, manifest_path, registry_path, outline_path=None):
               "errors": [], "warnings": []}
     try:
         geometry_path, manifest_path = Path(geometry_path), Path(manifest_path)
+        inputs = [geometry_path, manifest_path, Path(registry_path)]
+        if outline_path is not None:
+            inputs.append(Path(outline_path))
+        if any(path.is_symlink() for path in inputs):
+            raise ValueError("Symlink input tidak diizinkan untuk review offline")
         if geometry_path.stat().st_size > MAX_GEOMETRY:
             raise ValueError("GeoJSON >25 MB")
         if manifest_path.stat().st_size > MAX_MANIFEST:

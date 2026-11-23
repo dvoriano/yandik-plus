@@ -80,7 +80,7 @@ class Adm2PackageReviewTests(unittest.TestCase):
             "https://192.168.1.2/export", "https://10.0.0.4/data",
             "https://[::1]/map", "https://device.local/map",
             "https://worker.internal/map", "https://server/map",
-            "https://example.com/secret\\nheader"
+            "https://example.com/secret\\nheader", "https://example.com/secret\nheader"
         ):
             with self.subTest(source=source):
                 self.write(source=source)

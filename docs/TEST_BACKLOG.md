@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-14: Dashboard visual APEL DEMO 2026–2030 (BELUM DIUJI)
+- [Kode M05-14](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard-ui) · [Halaman HTML](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/index.html) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/tests/dashboard.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_14_DASHBOARD_APEL_DEMO_2026_2030.md). **50 ditulis, 0 dijalankan**.
+- Pemeriksaan manual UI yang belum dilakukan: (1) syntax/import ES module dan penyajian dari server statis lokal yang baru boleh digunakan saat izin, (2) filter tahun/wilayah/fasilitas dan reset, (3) empty state 2028–2030, (4) pemisahan laporan nol dan belum melapor secara visual, (5) grafis tidak mengaburkan cakupan parsial, (6) aksesibilitas keyboard, label dan simbol, (7) responsif desktop/ponsel dan scroll tabel, (8) tidak ada fetch/analytics/koneksi jaringan, (9) security review, (10) konsistensi M05-0/Juknis sebelum integrasi. **Tidak ada tes browser atau screenshot yang telah dilakukan**.
+ 
+| ID | Skenario QA terjadwal | Status |
+|---|---|---|
+| QA-M05-14-01 | M05-14 exposes twelve Indonesian month labels | BELUM DIUJI |
+| QA-M05-14-02 | M05-14 distinguishes three monthly reporting states | BELUM DIUJI |
+| QA-M05-14-03 | M05-14 fixtures contain only fictional facility identities | BELUM DIUJI |
+| QA-M05-14-04 | M05-14 fixture source explicitly states no real facility data | BELUM DIUJI |
+| QA-M05-14-05 | M05-14 fixture returns a fresh ledger for each build | BELUM DIUJI |
+| QA-M05-14-06 | M05-14 dashboard uses the dedicated untested schema | BELUM DIUJI |
+| QA-M05-14-07 | M05-14 dashboard remains DEMO only | BELUM DIUJI |
+| QA-M05-14-08 | M05-14 dashboard offers years 2026 through 2030 | BELUM DIUJI |
+| QA-M05-14-09 | M05-14 dashboard returns twelve calendar months | BELUM DIUJI |
+| QA-M05-14-10 | M05-14 dashboard has only three DEMO facilities in the fixture | BELUM DIUJI |
+| QA-M05-14-11 | M05-14 facility rows are alphabetical by DEMO ID | BELUM DIUJI |
+| QA-M05-14-12 | M05-14 2026 includes sixteen submitted facility-months | BELUM DIUJI |
+| QA-M05-14-13 | M05-14 2026 includes twenty unreported facility-months | BELUM DIUJI |
+| QA-M05-14-14 | M05-14 2026 contains three explicit zero reports | BELUM DIUJI |
+| QA-M05-14-15 | M05-14 2026 recorded services are derived from DEMO event counts | BELUM DIUJI |
+| QA-M05-14-16 | M05-14 Feb 2026 includes explicit zero and positive reports | BELUM DIUJI |
+| QA-M05-14-17 | M05-14 June 2026 includes a location-event investigation once | BELUM DIUJI |
+| QA-M05-14-18 | M05-14 August 2026 counts an ante and post animal only once | BELUM DIUJI |
+| QA-M05-14-19 | M05-14 reported zero has numeric value zero | BELUM DIUJI |
+| QA-M05-14-20 | M05-14 unreported month has null value, not zero | BELUM DIUJI |
+| QA-M05-14-21 | M05-14 March 2026 respects reported zero versus missing | BELUM DIUJI |
+| QA-M05-14-22 | M05-14 filters region without ranking facilities | BELUM DIUJI |
+| QA-M05-14-23 | M05-14 filters single facility within its DEMO region | BELUM DIUJI |
+| QA-M05-14-24 | M05-14 a region selector keeps only its facilities | BELUM DIUJI |
+| QA-M05-14-25 | M05-14 invalid region is rejected | BELUM DIUJI |
+| QA-M05-14-26 | M05-14 invalid facility is rejected | BELUM DIUJI |
+| QA-M05-14-27 | M05-14 cross-region facility selection is rejected | BELUM DIUJI |
+| QA-M05-14-28 | M05-14 invalid year is rejected rather than converted | BELUM DIUJI |
+| QA-M05-14-29 | M05-14 year 2031 cannot inherit the 2030 rule | BELUM DIUJI |
+| QA-M05-14-30 | M05-14 2027 demo year has six reported months | BELUM DIUJI |
+| QA-M05-14-31 | M05-14 2027 has its own policy version | BELUM DIUJI |
+| QA-M05-14-32 | M05-14 2027 recorded services remain independent of 2026 | BELUM DIUJI |
+| QA-M05-14-33 | M05-14 2028 has no submitted DEMO months | BELUM DIUJI |
+| QA-M05-14-34 | M05-14 2028 no reports means null aggregate, never zero | BELUM DIUJI |
+| QA-M05-14-35 | M05-14 2029 without reports also has null aggregate | BELUM DIUJI |
+| QA-M05-14-36 | M05-14 2030 without reports is not an official finding | BELUM DIUJI |
+| QA-M05-14-37 | M05-14 complete explicit zero is distinguishable from no reports | BELUM DIUJI |
+| QA-M05-14-38 | M05-14 invalid real facility identifiers are rejected | BELUM DIUJI |
+| QA-M05-14-39 | M05-14 facility labels cannot include HTML | BELUM DIUJI |
+| QA-M05-14-40 | M05-14 region labels cannot include HTML | BELUM DIUJI |
+| QA-M05-14-41 | M05-14 conflicting region names are rejected | BELUM DIUJI |
+| QA-M05-14-42 | M05-14 duplicate facility identity is rejected | BELUM DIUJI |
+| QA-M05-14-43 | M05-14 a source record for an unknown facility is rejected | BELUM DIUJI |
+| QA-M05-14-44 | M05-14 malformed ledger is rejected | BELUM DIUJI |
+| QA-M05-14-45 | M05-14 a tampered ledger report must fail M05-0 validation | BELUM DIUJI |
+| QA-M05-14-46 | M05-14 no selected facilities does not imply zero recorded services | BELUM DIUJI |
+| QA-M05-14-47 | M05-14 timeliness and official rank always remain unavailable | BELUM DIUJI |
+| QA-M05-14-48 | M05-14 all source reconciliation and historical comparisons remain unverified | BELUM DIUJI |
+| QA-M05-14-49 | M05-14 all permissions to write score rank award or publish are denied | BELUM DIUJI |
+| QA-M05-14-50 | M05-14 no month may claim authoritative verification | BELUM DIUJI |
+
 ## Antrean M05-13: observabilitas dan audit trail DEMO APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-13](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-observability) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-observability/tests/observability.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_13_APEL_OBSERVABILITY_AUDIT_2026_2030.md). **50 ditulis, 0 dijalankan**.
 - Tidak ada klaim log tepercaya, waktu server asli, sumber live, ambang peringatan, notifikasi, insiden resmi maupun persetujuan. Semua kontrak metadata perlu diperiksa serta sumber/tata kelola ditetapkan sebelum integrasi.

@@ -67,7 +67,7 @@ export function answer(question) {
   if (/puskeswan|pelayanan|jumlah layanan|berapa layanan|vaksin|laporan|pelaporan|sudah melapor|belum melapor|kasus|penyakit|kematian|stok/.test(q)) {
     const scope = region ? " untuk " + region.name : "";
     return reply("Data pelayanan, pelaporan, atau fasilitas Puskeswan" + scope +
-      " **belum tersedia** pada eksperimen ini. Status belum tersedia berbeda dengan 0. Saya tidak akan membuat angka perkiraan.",
+      " belum tersedia pada eksperimen ini. Status belum tersedia berbeda dengan 0. Saya tidak akan membuat angka perkiraan.",
       [SOURCES.data, SOURCES.guard], "unavailable");
   }
   if (region) {
@@ -75,11 +75,11 @@ export function answer(question) {
       region.seat + ", bukan koordinat GPS pusat layanan atau batas hukum resmi.",
       [SOURCES.region, SOURCES.map], "answered");
   }
-  if (/apa (saja )?(nama )?(daftar )?kabupaten|sebutkan kabupaten|kabupaten apa saja/.test(q)) {
+  if (/^(?:apa (?:saja )?(?:nama )?(?:daftar )?kabupaten|sebutkan kabupaten|kabupaten apa saja)/.test(q)) {
     const names = REGIONS.filter(r => r.type === "kabupaten").map(r => r.name);
     return reply("Dua belas kabupaten: " + names.join("; ") + ".", [SOURCES.law, SOURCES.region]);
   }
-  if (/apa (saja )?(nama )?(daftar )?kota|sebutkan kota|kota apa saja/.test(q)) {
+  if (/^(?:apa (?:saja )?(?:nama )?(?:daftar )?kota|sebutkan kota|kota apa saja)/.test(q)) {
     const names = REGIONS.filter(r => r.type === "kota").map(r => r.name);
     return reply("Tujuh kota: " + names.join("; ") + ".", [SOURCES.law, SOURCES.region]);
   }

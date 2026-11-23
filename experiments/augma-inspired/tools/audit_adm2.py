@@ -13,6 +13,7 @@ import sys
 from itertools import combinations
 from pathlib import Path
 from shapely.geometry import shape
+from shapely.errors import GEOSException
 from shapely.ops import unary_union
 from shapely.validation import explain_validity
 
@@ -112,11 +113,22 @@ def evaluate(path, registry_path, outline_path=None):
                 omitted = outline.difference(union).area
                 output["outline_comparison"] = {"outside_ratio":round(outside / max(union.area, 1e-12), 6),
                                                "missing_ratio":round(omitted / max(outline.area,1e-12), 6)}
-                if outside > 0 or omitted > 0:
-                    output["warnings"].append("Terdapat selisih dengan outline; cek coastline, pulau, versi, dan sumber GIS sebelum digunakan")
+                # Conservative LAB fail-closed gate; NOT an official boundary tolerance.
+                # Source versions and island coverage may differ; review in GIS.
+                outside_ratio = outside / max(union.area, 1e-12)
+                omitted_ratio = omitted / max(outline.area, 1e-12)
+                if outside_ratio > 0.10 or omitted_ratio > 0.10:
+                    output["errors"].append(
+                        "Selisih geometri ADM2 terhadap outline provinsi lebih dari 10%; "
+                        "dataset perlu verifikasi GIS independen"
+                    )
+                elif outside > 0 or omitted > 0:
+                    output["warnings"].append(
+                        "Terdapat selisih dengan outline; cek coastline, pulau, versi, dan sumber GIS sebelum digunakan"
+                    )
         # Never claim licensing / jurisdictional approval based only on structure/geometry.
         output["status"] = "PASS_TECHNICAL_NOT_CERTIFIED" if not output["errors"] else "FAIL"
-    except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
+    except (ValueError, TypeError, KeyError, json.JSONDecodeError, GEOSException) as exc:
         output["errors"].append(str(exc))
     return output
 

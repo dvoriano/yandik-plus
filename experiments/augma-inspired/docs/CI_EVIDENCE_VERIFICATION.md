@@ -8,7 +8,7 @@ GitHub Actions hanya berjalan pada branch `lab/augma-inspired-experiments`, deng
 
 | Artefak Actions | Berkas penting | Batas pemeriksaan |
 |---|---|---|
-| `yandik-lab-offline-python-evidence` | `manifest.json`, `python-tests.log` | Minimal **54** tes Python selesai dan OK |
+| `yandik-lab-offline-python-evidence` | `manifest.json`, `python-tests.log` | Minimal **66** tes Python selesai dan OK |
 | `yandik-lab-browser-evidence` | `manifest.json`, `node-tests.log`, `playwright-tests.log`, `browser-performance.json`, jejak browser jika ada | Minimal 31 tes Node dan 19 tes Playwright lulus |
 
 Manifest menyimpan `branch_ref`, `commit_sha`, `run_id`, `run_attempt`, `job_kind`, `job_result`, serta penanda `NOT_FOR_PRODUCTION`. Artefak disimpan **7 hari**. Berkas log berasal dari test runner dan tidak memerlukan akun APEL, kredensial, atau akses data operasional.
@@ -42,6 +42,10 @@ Setelah menambah 12 tes metadata sumber BIG, minimal tes Python adalah **54**, b
 ## Koreksi ambang pengujian
 
 **Riwayat ambang sebelumnya:** minimum **42 tes Python** (bukan 32), **31 tes Node**, dan **19 tes Playwright**. Pemeriksa dan 10 tes unitnya telah dijalankan bersama suite Python (42/42 lulus secara lokal). Fixture yang hanya menampilkan 41 tes Python harus ditolak. Semua verifikasi artefak GitHub asli tetap membutuhkan berkas dan run ID yang sesuai dari workflow pada commit terbaru.
+
+## Ambang terbaru setelah gerbang inventaris BIG
+
+Terdapat tambahan **12 tes offline inventaris BIG** terhadap data atribut sintetis, sehingga **66 tes Python telah didefinisikan**. Pengujiannya sendiri **12/12 lulus lokal**, sementara suite 54 Python sebelumnya lulus pada tahapan terdahulu. Gabungan **66 tes belum dieksekusi ulang secara utuh** dan belum ada bukti run CI terbaru yang dapat diperiksa. Ambang pemeriksa bukti sekarang **66 Python / 31 Node / 19 Playwright**, dan fixture 65 tes Python harus ditolak. [Protokol inventaris](BIG_2026_ATTRIBUTE_INVENTORY.md).
 
 ## Apa yang tidak terbukti dari artefak?
 

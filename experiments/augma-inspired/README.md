@@ -73,6 +73,7 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
 - [Status QA dan gerbang rilis](docs/QA_GATE_STATUS_2026-11-23.md)
+- [Verifikasi bukti CI pada SHA dan run ID tertentu](docs/CI_EVIDENCE_VERIFICATION.md)
 - [Regresi lokal 32 Python + 6 Node dan perbaikan fokus keyboard](docs/QA_REGRESSION_2026-11-23_32PY_6NODE.json)
 - [Tes keyboard, aksesibilitas dan ketahanan jaringan](docs/ACCESSIBILITY_NETWORK_RESILIENCE.md)
 - [Bukti 23 tes Python dan 6 tes Node lokal](docs/LOCAL_TEST_EVIDENCE_2026-11-23.json)

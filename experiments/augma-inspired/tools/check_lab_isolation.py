@@ -51,10 +51,14 @@ def validate_sources(repo_root):
         if file.is_symlink():
             violations.append(f"Symlink tidak diizinkan dalam lab: {file.relative_to(repo_root)}")
             continue
-        if not file.is_file() or file.suffix not in CHECK_EXTENSIONS:
+        if not file.is_file():
             continue
+        # Inspect names before extension filtering: .env and .pem may have no
+        # normal source extension and must still fail closed.
         if file.name in RESTRICTED_FILENAMES or file.name.startswith(".env") or file.suffix in (".pem", ".key"):
             violations.append(f"Nama file rahasia terlarang: {file.relative_to(repo_root)}")
+            continue
+        if file.suffix not in CHECK_EXTENSIONS:
             continue
         if file.suffix in ALLOWLIST_EXTERNAL_IN_DOCS:
             continue

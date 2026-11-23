@@ -1,10 +1,15 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 19 November 2026, WIB  
+**Terakhir diperbarui:** 23 November 2026, WIB  
 **Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 19 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN M05-7 | DATA LINEAGE, TEMPORAL JOIN & CONFLICT REVIEW 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md).
+- Kontrak relasi identitas fasilitas, wilayah historis, event/ledger pelayanan, workflow fasilitas-bulan-revisi, policy per tahun, rencana dan realisasi dukungan. Perubahan wilayah di tengah bulan, revisi tidak cocok, duplikasi kejadian dan ketidakcocokan satuan/bukti dicatat untuk telaah manusia, **tidak diperbaiki otomatis**.
+- Seluruh jalur calon tetap **DEMO, unverified, tidak bisa digunakan untuk pelaporan resmi**. Tidak ada schema aktual, akses DB/Flask/VPS, CL/CI/tes, score, ranking, publikasi atau deployment. PR #9 tetap Draft. **M05-8 RENCANA:** paket bukti dan gerbang persetujuan sumber/mapping sebelum izin uji terpisah.
 
 ## PEMBARUAN M05-6 | DATA DICTIONARY & SCHEMA MAPPING APEL 2026–2030 | 20 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md). Katalog 36 field semantik pada 8 domain: identitas fasilitas, histori wilayah, ledger, detail kejadian, workflow, policy, rencana dukungan, realisasi dukungan.

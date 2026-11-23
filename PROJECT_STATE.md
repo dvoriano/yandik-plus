@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-13 | OBSERVABILITAS DAN AUDIT TRAIL SINTETIS APEL 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [kode M05-13](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-observability) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-observability/tests/observability.test.mjs), **0 dijalankan** · [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_13_APEL_OBSERVABILITY_AUDIT_2026_2030.md).
+- 12 sinyal konseptual observabilitas, ledger metadata per-snapshot sintetis tanpa catatan personal, papan status NOT_MEASURED, proposal triage, dan handoff non-operasional. Tidak ada log audit resmi, monitoring live, alarm terkirim, penetapan pegawai, penutupan insiden, akses data atau izin rilis.
+- Semua M05-8/M05-12 gate tetap BLOCKED/NO_GO; CODE_ONLY, repo PUBLIC, PR #9 Draft, tidak ada test/CL/CI, merge, deploy, VPS, DB, web produksi atau data nyata.
+- **Arah berikutnya:** bangun rancangan dashboard APEL berbasis DEMO dan alur Profil Puskeswan → SDM → Pelaporan/Koreksi → Pembinaan/Tindak Lanjut; tanpa menyentuh produksi.
+
 ## PEMBARUAN M05-12 | CHECKLIST KESIAPAN RILIS & ROLLBACK APEL 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-12](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-release-readiness) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-release-readiness/tests/release.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_12_RELEASE_READINESS_ROLLBACK_2026_2030.md).
 - 18 kontrol sebelum perubahan produksi, 5 gate NO_GO, 11 pemicu penghentian konseptual dan 10 langkah rollback manusia. Paket serah-terima berisi 8 jenis bukti kosong; review DEMO tidak memberi kewenangan.

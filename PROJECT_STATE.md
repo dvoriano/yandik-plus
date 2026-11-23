@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-11 | PROTOKOL OTORISASI PENGUJIAN STAGING & BUKTI REGRESI APEL 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-11](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-staging-protocol) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-staging-protocol/tests/protocol.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_11_STAGING_AUTHORIZATION_REGRESSION_2026_2030.md).
+- 14 kontrol persiapan staging, dua izin yang harus berbeda (owner proyek untuk keluar dari CODE_ONLY dan owner sumber/sistem untuk akses), review metadata DEMO, 12 jenis paket bukti kosong dan item regresi M05-10 yang tetap NOT_RUN. Enam gate M05-8 tetap BLOCKED; tidak ada hasil tes atau signoff.
+- Tidak ada kode pengujian yang dieksekusi, koneksi sistem, kredensial, API/Flask/DB/VPS, perubahan produksi, skor/ranking/publikasi, CI/CL, merge atau deploy. PR #9 tetap Draft; **M05-12 RENCANA:** checklist kesiapan rilis/rollback non-operasional.
+
 ## PEMBARUAN M05-10 | MATRIKS UJI PARITAS & KRITERIA PENERIMAAN APEL 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-10](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-parity) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-parity/tests/parity.test.mjs) (**0 dijalankan**) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_10_PARITY_ACCEPTANCE_MATRIX_2026_2030.md).
 - Menulis 23 definisi kasus, 19 lintas tahun + 3 khusus 2026 + 1 khusus 2027–2030; menghasilkan 102 item rancangan per tahun (2026: 22; 2027–2030: masing-masing 20). Perbandingan source/Juknis dan comparator/toleransi belum dapat ditetapkan tanpa bukti resmi.

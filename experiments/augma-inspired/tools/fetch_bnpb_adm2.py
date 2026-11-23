@@ -31,7 +31,19 @@ def normalize(value):
     return " ".join(re.sub(r"[^\w\s]", " ", str(value).casefold()).split())
 
 
-def query_json(endpoint, params, *, opener=urllib.request.urlopen):
+class HostOnlyRedirect(urllib.request.HTTPRedirectHandler):
+    """Reject cross-host redirects before any request to the redirect target."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        parsed = urllib.parse.urlparse(newurl)
+        if parsed.scheme != "https" or parsed.hostname != ALLOWED_HOST:
+            raise ValueError("Redirect ke luar host diizinkan ditolak")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_PINNED_OPENER = urllib.request.build_opener(HostOnlyRedirect()).open
+
+
+def query_json(endpoint, params, *, opener=_PINNED_OPENER):
     """Call only the pinned public endpoint, with bounded JSON responses."""
     if endpoint not in (SOURCE, SOURCE + "/query"):
         raise ValueError("Endpoint tidak termasuk allowlist")
@@ -86,7 +98,8 @@ def validate_upstream_feature(feature, expected):
     valid_names = {normalize(canonical), normalize(canonical.split(" ", 1)[-1])}
     if normalize(name) not in valid_names:
         raise ValueError("Nama/kode sumber tidak cocok: " + code + " (" + name[:90] + ")")
-    if feature.get("geometry", {}).get("type") not in ("Polygon", "MultiPolygon"):
+    geometry = feature.get("geometry")
+    if not isinstance(geometry, dict) or geometry.get("type") not in ("Polygon", "MultiPolygon"):
         raise ValueError("Bentuk geometri tidak didukung: " + code)
     return code, name
 

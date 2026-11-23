@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-10: matriks paritas & kriteria penerimaan APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-10](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-parity) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-parity/tests/parity.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_10_PARITY_ACCEPTANCE_MATRIX_2026_2030.md). **50 skenario QA ditulis, 0 dijalankan.** 102 item rencana tahun bukan bukti 102 pengujian.
+- Pengujian baru dapat dimulai setelah pemilik proyek mencabut CODE_ONLY secara eksplisit; diperlukan data dictionary resmi, baseline Juknis 2026, aturan independen tahun 2027–2030, referensi source, izin staging, security, persetujuan reviewer, serta protokol pembanding yang disahkan. Draf belum dapat memperoleh verdict PASS.
+
+| ID | Skenario QA yang ditunda | Status |
+|---|---|---|
+| QA-M05-10-01 | M05-10 case catalog has 23 definitions | BELUM DIUJI |
+| QA-M05-10-02 | M05-10 case keys are unique | BELUM DIUJI |
+| QA-M05-10-03 | M05-10 criteria catalog has 23 distinct named acceptance concepts | BELUM DIUJI |
+| QA-M05-10-04 | M05-10 all cases require an M05-8 evidence type | BELUM DIUJI |
+| QA-M05-10-05 | M05-10 zero and missing are a standalone case | BELUM DIUJI |
+| QA-M05-10-06 | M05-10 2026 investigation/location is explicit | BELUM DIUJI |
+| QA-M05-10-07 | M05-10 2026 kurban animal unit is explicit | BELUM DIUJI |
+| QA-M05-10-08 | M05-10 2027-2030 unknown policy is an explicit issue | BELUM DIUJI |
+| QA-M05-10-09 | M05-10 2026 plan has historical-only cases | BELUM DIUJI |
+| QA-M05-10-10 | M05-10 2027 plan does not inherit the historical parity case | BELUM DIUJI |
+| QA-M05-10-11 | M05-10 each planned year has its own version | BELUM DIUJI |
+| QA-M05-10-12 | M05-10 policy versions match the existing DEMO source registry | BELUM DIUJI |
+| QA-M05-10-13 | M05-10 five-year matrix covers 2026-2030 independently | BELUM DIUJI |
+| QA-M05-10-14 | M05-10 five-year matrix reports all scenarios as not executed | BELUM DIUJI |
+| QA-M05-10-15 | M05-10 refuses 2031 without borrowing 2030 rules | BELUM DIUJI |
+| QA-M05-10-16 | M05-10 refuses invalid year values | BELUM DIUJI |
+| QA-M05-10-17 | M05-10 no annual acceptance verdict is pre-granted | BELUM DIUJI |
+| QA-M05-10-18 | M05-10 official expected values are never prefilled | BELUM DIUJI |
+| QA-M05-10-19 | M05-10 planned comparators and tolerances remain undecided | BELUM DIUJI |
+| QA-M05-10-20 | M05-10 no annual plan grants permission | BELUM DIUJI |
+| QA-M05-10-21 | M05-10 no five-year view grants permission | BELUM DIUJI |
+| QA-M05-10-22 | M05-10 demo reference metadata kinds are enumerated | BELUM DIUJI |
+| QA-M05-10-23 | M05-10 empty reference review is blocked | BELUM DIUJI |
+| QA-M05-10-24 | M05-10 one DEMO reference remains unverified | BELUM DIUJI |
+| QA-M05-10-25 | M05-10 two kinds may be candidates for the same case | BELUM DIUJI |
+| QA-M05-10-26 | M05-10 duplicate DEMO reference candidate is rejected | BELUM DIUJI |
+| QA-M05-10-27 | M05-10 non-DEMO reference identifier is rejected | BELUM DIUJI |
+| QA-M05-10-28 | M05-10 real-looking owner identifier is rejected | BELUM DIUJI |
+| QA-M05-10-29 | M05-10 non-snapshot identifier is rejected | BELUM DIUJI |
+| QA-M05-10-30 | M05-10 reference cannot claim approval | BELUM DIUJI |
+| QA-M05-10-31 | M05-10 reference cannot carry raw source contents | BELUM DIUJI |
+| QA-M05-10-32 | M05-10 candidate for unplanned year is rejected | BELUM DIUJI |
+| QA-M05-10-33 | M05-10 unknown reference type is rejected | BELUM DIUJI |
+| QA-M05-10-34 | M05-10 rejects modified approved annual plan | BELUM DIUJI |
+| QA-M05-10-35 | M05-10 rejects modified comparator | BELUM DIUJI |
+| QA-M05-10-36 | M05-10 rejects added unrecognized case row | BELUM DIUJI |
+| QA-M05-10-37 | M05-10 rejects non-array reference input | BELUM DIUJI |
+| QA-M05-10-38 | M05-10 one reference cannot trigger acceptance | BELUM DIUJI |
+| QA-M05-10-39 | M05-10 acceptance lists nine independent prerequisites | BELUM DIUJI |
+| QA-M05-10-40 | M05-10 acceptance preserves six blocked M05-8 gates | BELUM DIUJI |
+| QA-M05-10-41 | M05-10 candidate references do not open any acceptance gate | BELUM DIUJI |
+| QA-M05-10-42 | M05-10 no acceptance packet grants test, write, or publication | BELUM DIUJI |
+| QA-M05-10-43 | M05-10 cannot claim reviewed source is accepted | BELUM DIUJI |
+| QA-M05-10-44 | M05-10 refuses forged comparison count | BELUM DIUJI |
+| QA-M05-10-45 | M05-10 refuses altered DEMO candidate metadata in reviewed report | BELUM DIUJI |
+| QA-M05-10-46 | M05-10 absent review is rejected rather than marked complete | BELUM DIUJI |
+| QA-M05-10-47 | M05-10 2026 historical rules are not pronounced verified | BELUM DIUJI |
+| QA-M05-10-48 | M05-10 2028 policy stays decision pending | BELUM DIUJI |
+| QA-M05-10-49 | M05-10 2030 requires independent policy decision | BELUM DIUJI |
+| QA-M05-10-50 | M05-10 scores, rank, awards, and publication remain disabled | BELUM DIUJI |
+
 ## Antrean M05-9: register tindak lanjut rekonsiliasi manual APEL 2026–2030 (BELUM DIUJI)
 - [Kode DEMO M05-9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-followup) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-followup/tests/followup.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md). **50 skenario ditulis, 0 dijalankan.**
 - Uji baru dapat dilakukan setelah izin eksplisit pemilik proyek untuk keluar dari CODE_ONLY. Persetujuan pengujian bukan izin produksi; perlu bukti terpisah data dictionary, Juknis, validitas snapshot, hak akses dan keputusan owner.

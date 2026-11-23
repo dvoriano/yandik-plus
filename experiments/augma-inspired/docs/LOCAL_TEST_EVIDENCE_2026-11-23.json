@@ -1,0 +1,60 @@
+{
+  "schema": "yandik.innovation-lab.local-test-evidence.v1",
+  "date": "2026-11-23",
+  "scope": "LAB BRANCH ONLY; rebuilt a small local test snapshot from exact GitHub blobs",
+  "environment": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "shapely": "2.1.2",
+    "chromium": "144.0.7559.96"
+  },
+  "results": {
+    "python": {
+      "status": "PASS",
+      "tests": 23,
+      "breakdown": {
+        "shapely_synthetic": 7,
+        "bnpb_mock": 10,
+        "isolation_policy": 6
+      },
+      "command": "python3 -m unittest discover -s tools/tests -v"
+    },
+    "node": {
+      "status": "PASS",
+      "tests": 6,
+      "suite": "puskeswan-simulation/tests/core.test.mjs",
+      "command": "node --test puskeswan-simulation/tests/core.test.mjs"
+    },
+    "browser_local": {
+      "status": "BLOCKED",
+      "reason": "Chromium page.goto(http://127.0.0.1:8767/) returned net::ERR_BLOCKED_BY_ADMINISTRATOR; page.set_content worked",
+      "full_app_browser_smoke": "NOT_RUN_LOCAL"
+    },
+    "previously_verified_ci": {
+      "run_id": 45113635452,
+      "source_commit": "2d098d0f25e47d4e76cd2e9e03dc78e2d8ebcf1a",
+      "python_passed": 21,
+      "node_passed": 31,
+      "playwright_passed": 13,
+      "all_three_jobs": "success",
+      "includes_latest_fixes": false
+    }
+  },
+  "github_source_blobs": {
+    "tools/audit_adm2.py": "8f8a1ea9d63b34d754e01f61cc24356bb109bac0",
+    "tools/tests/test_audit_adm2.py": "b003a5bf5599a75ac1e48a5eed33afca6d273356",
+    "tools/fetch_bnpb_adm2.py": "bf94f996a46952075302c774a0d542190bd3e7f3",
+    "tools/tests/test_fetch_bnpb_adm2.py": "0c8a22f80b0ce191f59a1c8d170fda6bf5c056d6",
+    "tools/check_lab_isolation.py": "6be5735a57ad3631909a6e675a1aefb50798b77c",
+    "tools/tests/test_check_lab_isolation.py": "c9106996a785960cecf5ab5294a6ca5b44a71000",
+    "prototypes/puskeswan-simulation/data.mjs": "7fc3752d003d543f428d17532771f79e3cc01a4c",
+    "prototypes/puskeswan-simulation/tests/core.test.mjs": "cc394944e835b3f298e83917068981c7bebfaf20"
+  },
+  "caveats": [
+    "Source files matched the Git blob SHA; no full git checkout was possible in the local runner.",
+    "Local JavaScript tests used a reconstructed registry with the same 19 name/code identities and type/seat values; no actual records.",
+    "No real BNPB network request; only fake read-only requester exercised.",
+    "Passing geometry fixtures does not validate official ADM2 geometry or licensing.",
+    "Previously successful GitHub Actions run predates two subsequent malformed-GeoJSON guards; current commit's CI still requires confirmation."
+  ]
+}

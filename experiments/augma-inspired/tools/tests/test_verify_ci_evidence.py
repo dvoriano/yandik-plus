@@ -93,6 +93,14 @@ class CiEvidenceVerificationTests(unittest.TestCase):
         with self.assertRaisesRegex(VerificationError, "baseline"):
             verify(self.manifest, SHA, node_log=self.node_log, browser_log=self.browser_log)
 
+    def test_requires_exact_run_id_when_supplied(self):
+        with self.assertRaisesRegex(VerificationError, "tidak cocok run"):
+            verify(self.manifest, SHA, python_log=self.python_log,
+                   expected_run_id="45112345000")
+        result = verify(self.manifest, SHA, python_log=self.python_log,
+                        expected_run_id="45112345678")
+        self.assertEqual(result["run_id"], "45112345678")
+
     def test_invalid_run_id_fails(self):
         self.write_manifest("geometry-and-acquisition", run_id="not-a-run")
         with self.assertRaisesRegex(VerificationError, "run_id"):

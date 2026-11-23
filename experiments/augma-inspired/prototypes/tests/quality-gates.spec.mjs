@@ -7,7 +7,7 @@ test.describe("Lab responsive, offline, and browser errors", () => {
     { label: "mobile", width: 390, height: 844 },
     { label: "desktop", width: 1366, height: 768 }
   ]) {
-    for (const path of ["/geo-command-center/", "/data-assistant/"]) {
+    for (const path of ["/geo-command-center/", "/data-assistant/", "/puskeswan-simulation/"]) {
       test(label + " " + path + ": no JS errors and no external requests", async ({ browser }) => {
         const context = await browser.newContext({ viewport: { width, height } });
         const page = await context.newPage();
@@ -29,11 +29,14 @@ test.describe("Lab responsive, offline, and browser errors", () => {
           if (path.startsWith("/geo")) {
             await expect(page.locator("#map-boundary path")).not.toHaveCount(0);
             await expect(page.locator("#region-list .region-row")).toHaveCount(19);
-          } else {
+          } else if (path.startsWith("/data-assistant")) {
             await expect(page.locator("#ask-form")).toBeVisible();
             await page.locator("#question").fill("Berapa kabupaten dan kota di Sumatera Barat?");
             await page.locator("#ask-form button").click();
             await expect(page.locator(".message.assistant").last()).toContainText("12 kabupaten dan 7 kota");
+          } else {
+            await expect(page.locator("#region-list button.region-row")).toHaveCount(19);
+            await expect(page.locator(".alert")).toContainText("DATA FIKTIF");
           }
           const layout = await page.evaluate(() => ({
             viewportWidth: innerWidth,

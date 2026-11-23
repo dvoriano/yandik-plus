@@ -9,7 +9,7 @@ from sys import path as sys_path
 HERE = Path(__file__).resolve().parents[1]
 sys_path.insert(0, str(HERE))
 from audit_adm2 import load_registry
-from fetch_bnpb_adm2 import (SOURCE, REGISTRY, acquire, query_json, validate_service)
+from fetch_bnpb_adm2 import (SOURCE, REGISTRY, acquire, query_json, validate_service, validate_upstream_feature)
 
 
 def make_geometry(x, y):
@@ -109,6 +109,10 @@ class BnpbSourceTests(unittest.TestCase):
         registry = load_registry(REGISTRY)
         with self.assertRaisesRegex(ValueError, "berubah selama proses"):
             acquire(FakeArcGis(registry, snapshot_changed=True), registry)
+
+    def test_rejects_non_object_feature_without_unhandled_exception(self):
+        with self.assertRaisesRegex(ValueError, "bukan objek GeoJSON"):
+            validate_upstream_feature(None, {})
 
     def test_rejects_bad_metadata(self):
         with self.assertRaisesRegex(ValueError, "Layer bukan"):

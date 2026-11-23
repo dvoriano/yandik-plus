@@ -1,4 +1,4 @@
-// Manually invoked quality gates. Run ONLY against local http.server lab.
+// Branch-lab quality gates. Run ONLY against local http.server lab.
 // These are not proof of GIS accuracy and do not connect to YANDIK+ production.
 import { test, expect } from "@playwright/test";
 

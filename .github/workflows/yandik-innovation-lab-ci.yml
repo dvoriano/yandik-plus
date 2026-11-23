@@ -1,0 +1,85 @@
+name: YANDIK+ Innovation Lab | Isolated Validation
+on:
+  push:
+    branches:
+      - lab/augma-inspired-experiments
+    paths:
+      - 'experiments/augma-inspired/**'
+      - '.github/workflows/yandik-innovation-lab-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  geometry-and-acquisition:
+    if: github.ref == 'refs/heads/lab/augma-inspired-experiments'
+    name: Offline GIS and BNPB mock tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Shapely (test dependency only)
+        run: python -m pip install --disable-pip-version-check 'shapely==2.1.2'
+      - name: Syntax and offline mock tests
+        working-directory: experiments/augma-inspired
+        run: |
+          python -m py_compile tools/audit_adm2.py tools/fetch_bnpb_adm2.py
+          python -m unittest discover -s tools/tests -v
+      - name: Verify downloader stays off by default
+        working-directory: experiments/augma-inspired
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          python tools/fetch_bnpb_adm2.py --output-dir /tmp/yandik-lab-not-authorized > /tmp/yandik-lab-no-fetch.out 2>&1
+          result=$?
+          set -e
+          test "$result" -eq 2
+          test ! -e /tmp/yandik-lab-not-authorized
+
+  browser-smoke:
+    if: github.ref == 'refs/heads/lab/augma-inspired-experiments'
+    name: Desktop and mobile viewport browser smoke tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies (lab only)
+        working-directory: experiments/augma-inspired/prototypes
+        run: |
+          npm install --no-save '@playwright/test@1.56.1'
+          npx playwright install --with-deps chromium
+      - name: Run JS unit tests
+        working-directory: experiments/augma-inspired/prototypes
+        run: npm run test:unit
+      - name: Serve on loopback and run browser tests
+        working-directory: experiments/augma-inspired/prototypes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8767 --bind 127.0.0.1 >/tmp/yandik-lab-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8767/geo-command-center/index.html >/dev/null; then
+              break
+            fi
+            sleep 0.5
+          done
+          curl --fail --silent http://127.0.0.1:8767/geo-command-center/index.html >/dev/null
+          npm run test:browser
+          npm run test:browser:perf > /tmp/yandik-lab-browser-performance.json
+          cat /tmp/yandik-lab-browser-performance.json
+
+# This workflow has no deploy, push, write permission, trading API, STB or production connectivity.

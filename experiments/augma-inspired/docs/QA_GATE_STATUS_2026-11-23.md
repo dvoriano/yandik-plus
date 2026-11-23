@@ -2,6 +2,14 @@
 
 Verified on **23 November 2026 (11:45 WIB)**. **Isolated lab only; this is not an operational-release approval.**
 
+## Status terkini: preflight BIG dan 54 tes Python lokal
+
+**23 November 2026:** pemeriksa offline metadata BIG (poligon, geoJSON, EPSG:4326, lima atribut identitas, ObjectID, error dan file input) ditambahkan. Ada **12 tes baru** dengan fixture sintetis. Setelah digabung dengan suite lama, **54 dari 54 tes Python lulus pada snapshot lokal**. Empat file baru/diubah dibandingkan dengan hash GitHub dan identik.
+
+Ambang pemeriksa artefak CI juga dinaikkan menjadi **54 Python**, sementara Node 31 dan Playwright 19. Belum ada verifikasi run GitHub Actions pada commit terbaru. Jadi status **CI 54/31/19 = PENDING**, bukan PASS. Konflik tanggal edisi data BIG dan izin redistribusi masih perlu klarifikasi, geometri nyata belum dinilai. [Pemeriksaan metadata BIG](BIG_2026_METADATA_PREFLIGHT.md).
+
+Laporan CI di bawah ini adalah bukti historis pada SHA yang disebutkan, bukan bukti untuk seluruh perubahan branch saat ini.
+
 ## Verified CI run
 
 [GitHub Actions #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) completed with **success** on source commit `2d098d0f25e47d4e76cd2e9e03dc78e2d8ebcf1a`.

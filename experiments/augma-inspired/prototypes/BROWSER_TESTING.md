@@ -1,6 +1,6 @@
 # Browser and hardware testing: reproducible, not automatic
 
-The test suite is **manual**. There is no production deployment and no GitHub Actions trigger. The presence of tests does not mean they passed in an actual browser.
+The suite can be run **manually** or by the branch-scoped GitHub Actions workflow on `lab/augma-inspired-experiments`. Workflow availability is not evidence that the tests passed. No production deployment is configured.
 
 ## Local desktop browser
 
@@ -21,7 +21,7 @@ npm run test:browser
 node tools/browser-performance.mjs > /tmp/yandik-lab-perf.json
 ```
 
-Checks include: rendering of the local province outline, 19 registry regions, search and filter, local upload of **synthetic** 19 polygons, rejection of invalid inputs, grounded answer citations, browser JavaScript errors, external asset requests, and mobile/desktop viewport overflow. CPU/device benchmarks are **not** inferred from page load times.
+Checks include: rendering of the local province outline, 19 registry regions, search and filter, local upload of **synthetic** 19 polygons, rejection of invalid inputs, grounded answer citations, synthetic Puskeswan dashboard KPI/status/month/CSV, browser JavaScript errors, external asset requests, and mobile/desktop viewport overflow. CPU/device benchmarks are **not** inferred from page load times.
 
 ## Android STB / reused laptop
 

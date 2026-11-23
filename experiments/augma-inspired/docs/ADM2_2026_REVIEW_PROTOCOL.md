@@ -55,3 +55,7 @@ Skrip dan tes memakai data sintetis tanpa akses ke APEL, Puskeswan, VPS, atau la
 ## Additional input safety checks
 
 The offline reviewer now rejects local/private or loopback source URLs in the manifest, including nonpublic IPs, `.local`/`.internal` hostnames, unqualified hostnames, and embedded control characters. Symlinked input paths are rejected before opening files. These checks help prevent confusing a private endpoint or a redirected file with an authorized public dataset; they do **not** prove licensing or source authenticity. Two regression tests were added. A full CI run for these changes remains pending at this documentation update.
+
+## Pemeriksaan metadata BIG sebelum berkas geometri
+
+Pemeriksaan tambahan telah disiapkan dalam [BIG 2026 metadata preflight](BIG_2026_METADATA_PREFLIGHT.md). Kode `tools/check_big_adm2_metadata.py` hanya membaca file JSON layer secara lokal dan tidak melakukan panggilan jaringan. **12/12 tes offline BIG lulus dan seluruh suite Python 54/54 lulus lokal**. Kode tersebut belum memverifikasi data BIG yang diunduh langsung; izin, edisi yang kontradiktif pada portal, dan 19 poligon aktual tetap memerlukan review khusus.

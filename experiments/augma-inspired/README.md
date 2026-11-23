@@ -47,7 +47,7 @@ python3 tools/audit_adm2.py /path/to/sumbar-adm2.geojson \
   --registry prototypes/geo-command-center/regions.mjs
 ```
 
-Enam tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026, termasuk penolakan selisih area outline di atas 10% pada fixture buatan. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
+Tujuh tes audit geometri sintetis telah lulus pada sesi pengujian 23 November 2026, termasuk penolakan selisih area outline di atas 10% pada fixture buatan. Hasil ini **bukan** sertifikasi batas kabupaten/kota.
 
 Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_TESTING.md). [GitHub Actions run #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) **berhasil** pada commit `2d098d0`: **21 tes Python, 31 tes unit JavaScript, dan 13 tes Chromium** lulus. Ini bukti prototipe berbasis data sintetis, **bukan** sertifikasi peta resmi, pengujian perangkat fisik, atau izin deployment. Tidak ada auto-deploy maupun pengujian produksi.
 
@@ -67,6 +67,7 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Roadmap 2026–2030](docs/ROADMAP_2026_2030.md)
 - [Kandidat geometri ADM2 dan persyaratan validasi](docs/GEO_DATA_SOURCES.md)
 - [Protokol review paket GeoJSON BIG 2026 dan checksum](docs/ADM2_2026_REVIEW_PROTOCOL.md)
+- [BIG 2026: pemeriksaan metadata layer dan kontradiksi edisi](docs/BIG_2026_METADATA_PREFLIGHT.md)
 - [Checklist kesiapan STB/laptop uji (read-only)](docs/STB_READONLY_ACCEPTANCE.md)
 - [Lisensi, privasi, isolasi](docs/SAFETY_AND_LICENSE.md)
 - [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
@@ -79,4 +80,4 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Bukti 23 tes Python dan 6 tes Node lokal](docs/LOCAL_TEST_EVIDENCE_2026-11-23.json)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
-**Status:** fondasi eksperimen dan simulasi 19 unit × 12 bulan tersedia. **CI Python, JavaScript, dan Chromium lulus** pada run #45113635452. Data ADM2 resmi/izin pakai, validasi GIS, pengujian STB fisik, dan keputusan integrasi **masih terbuka**. Tidak ada perubahan ke produksi.
+**Status terbaru (23 November 2026): 54/54 tes Python lulus lokal pada snapshot lab, termasuk 12 tes preflight metadata BIG; hasil CI commit terbaru belum diverifikasi.** Fondasi eksperimen dan simulasi 19 unit × 12 bulan tersedia. **CI Python, JavaScript, dan Chromium lulus** pada run #45113635452. Data ADM2 resmi/izin pakai, validasi GIS, pengujian STB fisik, dan keputusan integrasi **masih terbuka**. Tidak ada perubahan ke produksi.

@@ -39,6 +39,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Record immutable branch/run identity (lab only)
+        env:
+          LAB_JOB_KIND: geometry-and-acquisition
         shell: bash
         run: |
           set -euo pipefail
@@ -56,6 +58,7 @@ jobs:
               "runner_os": os.environ.get("RUNNER_OS"),
               "runner_arch": os.environ.get("RUNNER_ARCH"),
               "workflow": os.environ.get("GITHUB_WORKFLOW"),
+              "job_kind": os.environ.get("LAB_JOB_KIND"),
               "data_scope": "SYNTHETIC_AND_OFFLINE_ONLY",
               "approval": "NOT_FOR_PRODUCTION",
           }
@@ -84,6 +87,22 @@ jobs:
           set -e
           test "$result" -eq 2
           test ! -e /tmp/yandik-lab-not-authorized
+      - name: Finalize log contract with job result
+        if: always()
+        env:
+          LAB_JOB_RESULT: ${{ job.status }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          target = Path("experiments/augma-inspired/qa-evidence/manifest.json")
+          if target.is_file():
+              info = json.loads(target.read_text(encoding="utf-8"))
+              info["job_result"] = os.environ.get("LAB_JOB_RESULT", "unknown")
+              target.write_text(json.dumps(info, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          PY
       - name: Preserve source-only GIS test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -108,6 +127,8 @@ jobs:
         with:
           node-version: '22'
       - name: Record immutable branch/run identity (lab only)
+        env:
+          LAB_JOB_KIND: browser-smoke
         shell: bash
         run: |
           set -euo pipefail
@@ -125,6 +146,7 @@ jobs:
               "runner_os": os.environ.get("RUNNER_OS"),
               "runner_arch": os.environ.get("RUNNER_ARCH"),
               "workflow": os.environ.get("GITHUB_WORKFLOW"),
+              "job_kind": os.environ.get("LAB_JOB_KIND"),
               "data_scope": "SYNTHETIC_AND_OFFLINE_ONLY",
               "approval": "NOT_FOR_PRODUCTION",
           }
@@ -169,6 +191,22 @@ jobs:
           npm run test:browser 2>&1 | tee ../qa-evidence/playwright-tests.log
           npm run test:browser:perf > ../qa-evidence/browser-performance.json
           cat ../qa-evidence/browser-performance.json
+      - name: Finalize log contract with job result
+        if: always()
+        env:
+          LAB_JOB_RESULT: ${{ job.status }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          target = Path("experiments/augma-inspired/qa-evidence/manifest.json")
+          if target.is_file():
+              info = json.loads(target.read_text(encoding="utf-8"))
+              info["job_result"] = os.environ.get("LAB_JOB_RESULT", "unknown")
+              target.write_text(json.dumps(info, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          PY
       - name: Preserve failing browser traces and performance sample
         if: always()
         uses: actions/upload-artifact@v4

@@ -37,6 +37,7 @@ Preserve 2026 reports. Define 2027 criteria, fairness, annual report card and an
 
 ### B-007 | Veterinary medicine oversight (M06)
 Registry, legal status, inspector checklists, inspections, findings, remedial deadlines, document templates.
+- **Partial code draft (M06-S1):** register/checklist read-only DEMO written under `drafts/m06-medicine-oversight/`; 24 QA written, none executed. Formal facility categories, inspection standards, evidence, workflow and verification remain pending.
 
 ### B-008 | Clinics and veterinarian practices (M07)
 Practice registry, verification, supervision standards, document expiry, follow-up. Respect formal permitting authority.

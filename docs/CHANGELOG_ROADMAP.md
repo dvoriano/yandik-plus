@@ -1,3 +1,8 @@
+## 2026-11-23 | M00-G1 dan M06-S1, kontrak pengawasan DEMO
+- [M00-G1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-oversight-access): akses detail terbatas role+wilayah melalui kontrak callback backend, [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-oversight-access/tests/scoped_read.test.mjs), 0 dijalankan. Belum implementasi identitas server.
+- [M06-S1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m06-medicine-oversight): register/checklist sarana obat hewan fiktif, hanya untuk telaah internal; [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m06-medicine-oversight/tests/medicine.test.mjs), 0 dijalankan. Tanpa validasi izin, inspeksi legal atau sanksi.
+- [Kontrak M00-G1](M00_G1_SCOPED_OVERSIGHT_READ.md), [Spesifikasi M06-S1](M06_S1_REGISTER_OBAT_HEWAN_DEMO_2026_2030.md), [status 15 modul](STATUS_AUDIT_2026-11-23.md). **CODE_ONLY [skip ci]**, PR #9 tetap Draft.
+
 ## 2026-11-23 | M05-17 Pembinaan dan Tindak Lanjut DEMO
 - [Kode M05-17](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-followup-review) · [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-followup-review/tests/followup.test.mjs), **0 dijalankan**. Usulan review-only, sumber M05-16, bukan keputusan/penugasan atau penetapan kewajiban. [Dokumen](M05_17_PEMBINAAN_TINDAK_LANJUT_2026_2030.md).
 

@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** SEDANG (prototype role/territory + workflow offline diuji; belum terintegrasi Flask).  
+**Status implementasi GitHub:** SEDANG (role/workflow prototype lama diuji; M00-G1 kode baru belum diuji; belum Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -55,6 +55,10 @@ Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber 
 - [x] Workflow in-memory dengan audit append-only, koreksi, alasan, dan batas wilayah.
 - [x] 12 tes tambahan pada [CI GitHub: SUCCESS](https://github.com/dvoriano/yandik-plus/actions/runs/42838727867).
 - [ ] Adaptasi ke endpoint, database dan pengesahan matriks kewenangan sebenarnya.
+
+## Tambahan M00-G1 | Gerbang baca-saja modul pengawasan DEMO
+- [x] [Kode baca-saja berwilayah](../M00_G1_SCOPED_OVERSIGHT_READ.md) dan 19 QA tertulis, **0 dijalankan**.
+- [ ] Autentikasi server, izin per-API, identitas penanggung jawab, logout dan audit harus dibuktikan. Tidak ada izin operasional atau publikasi.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

@@ -1,7 +1,7 @@
 # MOD-05 | Pengawasan Obat Hewan dan Sarana Distribusi
 
 **Milestone:** M06  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG sebagai draf M06-S1; KODE DITULIS, BELUM DIUJI. Bukan sistem pengawasan operasional.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -38,6 +38,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Core workflow, master wilayah, GIS, dashboard pengawasan; basis inventaris obat Puskeswan tidak otomatis dianggap fasilitas distribusi yang sama.
+
+## Progres M06-S1 | Register dan checklist observasi DEMO
+- [x] [Register sarana dan model observasi fiktif](../M06_S1_REGISTER_OBAT_HEWAN_DEMO_2026_2030.md): 3 sarana/2 kunjungan contoh, sumber dan legalitas tidak terverifikasi.
+- [x] [24 skenario QA tertulis](../../drafts/m06-medicine-oversight/tests/medicine.test.mjs), **0 dijalankan**.
+- [ ] Klasifikasi sarana dan standar inspeksi resmi, foto bukti, hak akses riil, pembinaan sampai penutupan, dan pengujian belum tersedia.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-05-01: Validasi jenis sarana dan kewenangan pengawasan

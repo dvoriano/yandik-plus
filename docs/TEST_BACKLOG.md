@@ -10,6 +10,38 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G1 & M06-S1 | Kode pengawasan DEMO (43 QA tertulis, 0 dijalankan)
+
+### M00-G1 | Batas akses modul dan wilayah
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M00G1-01 | Role provinsi dapat membaca DEMO, tanpa kemampuan menulis/menyetujui/menerbitkan | BELUM DIUJI |
+| QA-M00G1-02 | Koordinator kab/kota hanya wilayah yang sama; beda wilayah ditolak | BELUM DIUJI |
+| QA-M00G1-03 | Puskeswan, pimpinan, pengguna tanpa sesi dan sesi nonaktif ditolak untuk detail | BELUM DIUJI |
+| QA-M00G1-04 | Hanya modul DEMO terdaftar, region valid dan rincian yang diizinkan | BELUM DIUJI |
+| QA-M00G1-05 | Daftar dengan item luar wilayah, non-DEMO dan volume berlebihan ditolak | BELUM DIUJI |
+| QA-M00G1-06 | Adapter callback tidak boleh bersumber dari browser, query atau body | BUTUH KEPUTUSAN |
+| QA-M00G1-07 | Uji identitas backend asli, CSRF, scope tiap API, audit autentikasi dan data leakage | TERTUNDA UJI |
+
+### M06-S1 | Pengawasan sarana obat hewan
+
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M06S1-01 | 3 sarana fiktif dengan wilayah; 2 inspeksi DEMO dan tidak ada data personal | BELUM DIUJI |
+| QA-M06S1-02 | ID/sumber/jenis sarana duplikat dan tidak valid ditolak | BELUM DIUJI |
+| QA-M06S1-03 | Kunjungan dari site tak dikenal, tahun di luar 2026–2030 atau duplikat per bulan ditolak | BELUM DIUJI |
+| QA-M06S1-04 | 4 domain checklist harus lengkap dan tidak duplikat | BELUM DIUJI |
+| QA-M06S1-05 | Referensi bukti tidak boleh menjadi URL/file atau dokumen nyata | BELUM DIUJI |
+| QA-M06S1-06 | Wilayah terisolasi, pimpinan/petugas Puskeswan tidak membaca detail | BELUM DIUJI |
+| QA-M06S1-07 | Tidak ada kunjungan DEMO = null, bukan klaim tidak pernah diperiksa | BELUM DIUJI |
+| QA-M06S1-08 | Observasi perlu klarifikasi tetap review-only; tidak ada skor/izin/sanksi | BELUM DIUJI |
+| QA-M06S1-09 | Pencatatan dan output harus immutable terhadap sumber, tanpa aksi jaringan | BELUM DIUJI |
+| QA-M06S1-10 | Validasi SOP/kewenangan sarana dan standar checklist yang berlaku | BUTUH KEPUTUSAN |
+| QA-M06S1-11 | Tes akses/inspeksi HP, data resmi, bukti, API dan audit penugasan | TERTUNDA UJI |
+
+**Katalog unit:** [M00-G1](M00_G1_SCOPED_OVERSIGHT_READ.md) berisi 19 QA tertulis, [M06-S1](M06_S1_REGISTER_OBAT_HEWAN_DEMO_2026_2030.md) berisi 24 QA tertulis. Tabel ini mengelompokkan risiko, bukan total jumlah test runner yang dieksekusi.
+
 ## Antrean M05-16 & M05-17 | QA CODE_ONLY (48 skenario tertulis, 0 dijalankan)
 
 ### M05-16 | Pelaporan/koreksi baca-saja

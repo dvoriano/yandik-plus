@@ -12,12 +12,12 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 
 | Modul | Bukti yang ditemukan di repository | Kesimpulan jujur |
 |---|---|---|
-| MOD-00 Core | Fondasi kontrak, role dan workflow sintetis; source Flask aktif belum diimpor | **SEDANG**, bukan siap rilis |
+| MOD-00 Core | Fondasi role/workflow sintetis dan M00-G1 akses baca wilayah DEMO; source Flask belum diimpor | **SEDANG**, M00-G1 belum diuji, bukan siap rilis |
 | MOD-01 Profil | Prototype form dan masalah, master data awal; M05-15 penghubung DEMO ditulis | **SEDANG**, sumber dan API asli belum |
 | MOD-02 APEL | M05-0..M05-15 kontrak, checklist, aturan, dashboard DEMO, dan rancangan QA | **SEDANG**, belum menjadi implementasi APEL baru |
 | MOD-03 SDM | Model penempatan awal; M05-15 snapshot dan agregasi fiktif | **RANCANGAN/PROTOTIPE**, belum sistem personel operasional |
 | MOD-04 Support | M03 prototype teruji historis; M04 draft proses administrasi, bukti dan distribusi | **SEDANG**, approval dan siklus resmi belum |
-| MOD-05 Pengawasan obat hewan | Spesifikasi/kerangka awal, issue modul | **RENCANA**, belum lengkap/teruji |
+| MOD-05 Pengawasan obat hewan | M06-S1 register dan observasi fiktif telah ditulis | **KODE DEMO DITULIS, BELUM DIUJI**; modul operasional belum selesai |
 | MOD-06 Klinik/praktik dokter hewan | Spesifikasi/kerangka awal | **RENCANA**, proses kewenangan belum |
 | MOD-07 PHMS/zoonosis/surveilans | Katalog kebutuhan dan usulan integrasi | **RENCANA**, belum terintegrasi |
 | MOD-08 Sertifikat veteriner/lalu lintas | Spesifikasi proses dan batas kewenangan | **RENCANA**, penerbitan resmi belum |
@@ -50,7 +50,11 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Update:** kode M05-16 dan M05-17 ditulis setelah M05-15, tetapi status penyelesaian seluruh 15 modul **tetap BELUM SELESAI**. QA baru belum dijalankan dan akses data nyata tidak tersedia.
 
+**Pembaruan M00-G1/M06-S1:** gerbang akses per wilayah dan register pengawasan obat hewan DEMO sudah ditulis dengan 43 skenario QA, **0 dijalankan**. Ini tidak mengesahkan akses nyata atau persyaratan inspeksi; MOD-05 tetap belum selesai.
+
 ## Progres yang baru dicatat
+- [x] M00-G1: kode gerbang akses per wilayah DEMO ditulis, **19 QA tertulis, belum diuji**.
+- [x] M06-S1: kode register/checklist sarana obat hewan fiktif ditulis, **24 QA tertulis, belum diuji**.
 - [x] M05-14 kode dashboard DEMO ditulis, **belum diuji**.
 - [x] M05-15 kode baca-saja Profil dan SDM DEMO beserta join identitas APEL ditulis; **29 QA tertulis, 0 dijalankan**.
 - [x] M05-16: **kode baca-saja ditulis, belum diuji**, [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_16_PELAPORAN_KOREKSI_2026_2030.md) (0 dijalankan); bukan sistem laporan resmi.

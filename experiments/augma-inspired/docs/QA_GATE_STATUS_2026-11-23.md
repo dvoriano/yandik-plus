@@ -35,6 +35,14 @@ Local Chromium was able to render `page.set_content`, but HTTP loopback navigati
 
 Inspect the machine-readable [local test evidence and Git blob checksums](LOCAL_TEST_EVIDENCE_2026-11-23.json).
 
+## Newly added gates awaiting a subsequent CI run
+
+**Latest branch-only changes:** six additional Playwright browser tests for keyboard navigation, SVG marker activation, missing map outline, and delayed map loading. These tests were authored and syntax-reviewed but are **not yet covered by the previously verified run #45114481799**, which passed 30 Python, 31 Node, and 13 Chromium tests.
+
+The offline ADM2 provenance reviewer now refuses private/loopback/local source URLs and symlinked input files, with **two additional Python regression tests**. Targeted local checks passed for 14 URL cases and a symlink check, but the complete updated Python suite has **not been reverified via CI**. Once successful, the expected suite counts are **32 Python, 31 Node, and 19 Playwright tests**.
+
+Check the actual new Actions run ID and logs before changing these statuses from PENDING to PASS. The physical STB, true licensed 19-region ADM2 geometry, and human accessibility review remain outside CI scope. See [accessibility and network resilience protocol](ACCESSIBILITY_NETWORK_RESILIENCE.md).
+
 ## Scope and isolation
 
 - Branch: `lab/augma-inspired-experiments`; tests use `127.0.0.1:8767` and synthetic/no operational data.

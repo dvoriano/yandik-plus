@@ -74,7 +74,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m py_compile tools/audit_adm2.py tools/fetch_bnpb_adm2.py tools/review_adm2_package.py tools/check_lab_isolation.py tools/check_big_adm2_metadata.py tools/verify_ci_evidence.py
+          python -m py_compile tools/audit_adm2.py tools/fetch_bnpb_adm2.py tools/review_adm2_package.py tools/check_lab_isolation.py tools/check_big_adm2_metadata.py tools/check_big_adm2_inventory.py tools/verify_ci_evidence.py
           python -m unittest discover -s tools/tests -v 2>&1 | tee qa-evidence/python-tests.log
       - name: Verify downloader stays off by default
         working-directory: experiments/augma-inspired

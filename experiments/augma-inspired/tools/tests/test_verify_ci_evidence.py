@@ -9,7 +9,7 @@ sys_path.insert(0, str(Path(__file__).resolve().parents[1]))
 from verify_ci_evidence import VerificationError, verify
 
 SHA = "a" * 40
-PY_OK = "test_ok (...) ... ok\n" + "-" * 70 + "\nRan 54 tests in 0.014s\n\nOK\n"
+PY_OK = "test_ok (...) ... ok\n" + "-" * 70 + "\nRan 66 tests in 0.014s\n\nOK\n"
 NODE_OK = "# tests 31\n# suites 4\n# pass 31\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n"
 BROWSER_OK = "Running 19 tests using 1 worker\n  19 passed (9.8s)\n"
 
@@ -45,7 +45,7 @@ class CiEvidenceVerificationTests(unittest.TestCase):
 
     def test_python_logs_on_exact_commit_pass(self):
         result = verify(self.manifest, SHA, python_log=self.python_log)
-        self.assertEqual(result["counts"]["python_passed"], 54)
+        self.assertEqual(result["counts"]["python_passed"], 66)
         self.assertFalse(result["production_approval"])
 
     def test_node_and_browser_logs_pass_together(self):
@@ -70,7 +70,7 @@ class CiEvidenceVerificationTests(unittest.TestCase):
 
     def test_python_fewer_tests_or_failed_status_fails(self):
         for log in (
-            PY_OK.replace("Ran 54", "Ran 53"),
+            PY_OK.replace("Ran 66", "Ran 65"),
             PY_OK.replace("\nOK\n", "\nFAILED (failures=1)\n")
         ):
             with self.subTest(log=log[-60:]):

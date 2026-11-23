@@ -32,3 +32,9 @@ The existing `prototypes/geo-command-center/boundary-loader.mjs` validates 19 fe
 `tools/audit_adm2.py` optionally reads the same GeoJSON from a local disk with Shapely 2 and returns a machine-readable JSON technical audit. Its success status is `PASS_TECHNICAL_NOT_CERTIFIED`, never "official".
 
 See [validation evidence](../VALIDATION_EVIDENCE_2026-11-23.md). No external source content is auto-downloaded or silently copied into the repo.
+
+## Additional fail-closed geometry gate (23 November 2026)
+
+The offline Shapely auditor now rejects a dataset when more than **10%** of the union of ADM2 area lies outside the bundled province outline, or more than **10%** of the outline is not covered by ADM2 area. This is an intentionally conservative **lab rejection threshold**, **not** an official GIS accuracy standard. Any smaller discrepancy is still reported as a warning and requires visual and documentary investigation, particularly coastlines and Mentawai islands.
+
+All 6 offline geometry tests on synthetic fixtures passed in the development runtime; **no real ADM2 dataset is thereby certified**. Original sources and third-party licences remain unverified for redistribution.

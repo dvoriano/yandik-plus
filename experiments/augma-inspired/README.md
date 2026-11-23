@@ -66,6 +66,8 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Radar teknologi](docs/TECHNOLOGY_RADAR.md)
 - [Roadmap 2026–2030](docs/ROADMAP_2026_2030.md)
 - [Kandidat geometri ADM2 dan persyaratan validasi](docs/GEO_DATA_SOURCES.md)
+- [Protokol review paket GeoJSON BIG 2026 dan checksum](docs/ADM2_2026_REVIEW_PROTOCOL.md)
+- [Checklist kesiapan STB/laptop uji (read-only)](docs/STB_READONLY_ACCEPTANCE.md)
 - [Lisensi, privasi, isolasi](docs/SAFETY_AND_LICENSE.md)
 - [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)

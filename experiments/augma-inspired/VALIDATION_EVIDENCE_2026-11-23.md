@@ -104,3 +104,9 @@ It reads kernel, board model, CPU, memory, disk, and tool availability. It does 
 - The Shapely auditor now hard-rejects a significant (greater than 10%) area gap between candidate ADM2 polygons and the bundled province outline. This is a **technical lab threshold**, not a certified administrative tolerance. Executed the local Python suite: **6 tests passed** including a synthetic large-gap case.
 - Added Playwright smoke tests for the simulation dashboard and CSV, and included the dashboard in responsive isolation gates. **The browser runs remain unverified** because the repo could not be checked out in the local browser environment.
 - Branch-lab CI is configured, but no pass/fail result has been verified through the available Actions result interface. STB performance and licenced real polygon QA remain pending.
+
+## Additional branch safety and CI evidence gate
+
+The CI workflow now has a mandatory fail-closed isolation job, ahead of geometry and browser tests. It compares paths against `origin/main`, allows only `experiments/augma-inspired/` plus one branch-only workflow file, and scans runnable sources for restricted production domains and credential filenames. Five negative/positive Python test cases were added; **their execution in CI is not yet verified**. Browser HTML reports/traces are configured for failures. Source-level inspection of 22 non-test changed code files found no restricted production API references outside the policy definitions themselves. Existing six local synthetic Shapely tests passed again.
+
+[Quality gate status and next acceptance steps](docs/QA_GATE_STATUS_2026-11-23.md).

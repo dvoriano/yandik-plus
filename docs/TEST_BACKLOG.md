@@ -186,6 +186,62 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-8: evidence review dan gerbang sumber APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md). **49 skenario ditulis, 0 dijalankan.**
+- Butuh keputusan owner untuk mulai pengujian; hasil fiktif tidak boleh naik ke status sah. Butuh verifikasi independen dan persetujuan formal untuk data dictionary, pemilik sumber, grain, Juknis, versi policy, bukti dukungan, izin staging serta publikasi.
+
+| ID | Skenario tertunda | Status |
+|---|---|---|
+| QA-M05-8-01 | M05-8 catalog has fourteen distinct mandatory requirements | BELUM DIUJI |
+| QA-M05-8-02 | M05-8 catalog cites eight semantic domains | BELUM DIUJI |
+| QA-M05-8-03 | M05-8 catalog cites seven DEMO source families | BELUM DIUJI |
+| QA-M05-8-04 | M05-8 catalog covers years 2026 to 2030 | BELUM DIUJI |
+| QA-M05-8-05 | M05-8 contract never grants access, scoring, or publication | BELUM DIUJI |
+| QA-M05-8-06 | M05-8 empty register represents fourteen missing requirements | BELUM DIUJI |
+| QA-M05-8-07 | M05-8 valid DEMO candidate stays unverified | BELUM DIUJI |
+| QA-M05-8-08 | M05-8 multiple pieces of DEMO evidence may belong to one requirement | BELUM DIUJI |
+| QA-M05-8-09 | M05-8 non-DEMO evidence identity is rejected | BELUM DIUJI |
+| QA-M05-8-10 | M05-8 non-DEMO reference is rejected | BELUM DIUJI |
+| QA-M05-8-11 | M05-8 non-DEMO supplier identity is rejected | BELUM DIUJI |
+| QA-M05-8-12 | M05-8 evidence type must match requirement | BELUM DIUJI |
+| QA-M05-8-13 | M05-8 evidence family must match requirement | BELUM DIUJI |
+| QA-M05-8-14 | M05-8 unknown requirement is rejected | BELUM DIUJI |
+| QA-M05-8-15 | M05-8 duplicate evidence identity is rejected | BELUM DIUJI |
+| QA-M05-8-16 | M05-8 noninteger revision is rejected | BELUM DIUJI |
+| QA-M05-8-17 | M05-8 invented verified claim cannot enter register | BELUM DIUJI |
+| QA-M05-8-18 | M05-8 evidence metadata rejects raw document contents | BELUM DIUJI |
+| QA-M05-8-19 | M05-8 excessive candidate count is rejected | BELUM DIUJI |
+| QA-M05-8-20 | M05-8 reviews reject missing register | BELUM DIUJI |
+| QA-M05-8-21 | M05-8 empty review register does not claim signoff | BELUM DIUJI |
+| QA-M05-8-22 | M05-8 DEMO review note remains non-authoritative | BELUM DIUJI |
+| QA-M05-8-23 | M05-8 review rejects unknown evidence reference | BELUM DIUJI |
+| QA-M05-8-24 | M05-8 review rejects mismatched requirement link | BELUM DIUJI |
+| QA-M05-8-25 | M05-8 review duplicate ID is rejected | BELUM DIUJI |
+| QA-M05-8-26 | M05-8 review non-DEMO reviewer ID is rejected | BELUM DIUJI |
+| QA-M05-8-27 | M05-8 unknown review reason is rejected | BELUM DIUJI |
+| QA-M05-8-28 | M05-8 review cannot assert official approval | BELUM DIUJI |
+| QA-M05-8-29 | M05-8 review rejects free-text or unexpected metadata | BELUM DIUJI |
+| QA-M05-8-30 | M05-8 baseline packet has all official gates blocked | BELUM DIUJI |
+| QA-M05-8-31 | M05-8 every requirement belongs to an explicit approval gate | BELUM DIUJI |
+| QA-M05-8-32 | M05-8 no lineage report is explicitly unavailable | BELUM DIUJI |
+| QA-M05-8-33 | M05-8 DEMO lineage conflict stays unresolved | BELUM DIUJI |
+| QA-M05-8-34 | M05-8 lineage with no issues cannot imply official readiness | BELUM DIUJI |
+| QA-M05-8-35 | M05-8 note on lineage conflict does not resolve it | BELUM DIUJI |
+| QA-M05-8-36 | M05-8 issue review rejects nonexisting issue index | BELUM DIUJI |
+| QA-M05-8-37 | M05-8 issue review rejects notes without lineage source | BELUM DIUJI |
+| QA-M05-8-38 | M05-8 duplicate issue note identity is rejected | BELUM DIUJI |
+| QA-M05-8-39 | M05-8 issue note rejects non-DEMO reviewer | BELUM DIUJI |
+| QA-M05-8-40 | M05-8 issue review cannot automatically approve a conflict | BELUM DIUJI |
+| QA-M05-8-41 | M05-8 bad lineage synthetic marker is rejected | BELUM DIUJI |
+| QA-M05-8-42 | M05-8 lineage unauthorized permission cannot pass | BELUM DIUJI |
+| QA-M05-8-43 | M05-8 upstream auto-resolved conflict is rejected | BELUM DIUJI |
+| QA-M05-8-44 | M05-8 real-looking lineage source reference is rejected | BELUM DIUJI |
+| QA-M05-8-45 | M05-8 mismatched register and review snapshots are rejected | BELUM DIUJI |
+| QA-M05-8-46 | M05-8 all requirements with DEMO metadata are still blocked | BELUM DIUJI |
+| QA-M05-8-47 | M05-8 packet rejects modified official register state | BELUM DIUJI |
+| QA-M05-8-48 | M05-8 packet rejects spoofed human review signoff | BELUM DIUJI |
+| QA-M05-8-49 | M05-8 packet forbids tests, merge, deployment and all actions | BELUM DIUJI |
+
 ## Antrean M05-7: data lineage, relasi temporal dan konflik APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 skenario tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md). **Tidak ada satu pun skenario dijalankan (0/38).**
 - Pengujian tertunda sampai instruksi eksplisit. Setelah itu tetap diperlukan telaah dictionary, grain kejadian, histori wilayah, aturan revisi, timezone, versi policy dan otorisasi pengelola data.

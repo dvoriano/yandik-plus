@@ -1,7 +1,7 @@
 # MOD-06 | Pengawasan Klinik dan Praktik Dokter Hewan
 
 **Milestone:** M07  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG sebagai draf M07-S1; KODE DITULIS, BELUM DIUJI; belum modul operasional.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -37,6 +37,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Master wilayah, SDM (relasi terbatas), workflow pengawasan bersama dengan obat hewan, dashboard, GIS.
+
+## Progres M07-S1 | Register dan checklist observasi DEMO
+- [x] [Rancangan kode register Klinik/Praktik](../M07_S1_KLINIK_PRAKTIK_DEMO_2026_2030.md) disimpan, data sintetis, pembatasan wilayah berdasarkan kontrak M00-G1.
+- [x] [22 QA tertulis](../../drafts/m07-practice-oversight/tests/practice.test.mjs), **0 dijalankan**.
+- [ ] Pemetaan izin/SIP, checklist resmi, dokumen bukti, otorisasi server, UX HP dan alur inspeksi/pembinaan sebenarnya belum ada.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-06-01: Susun definisi jenis klinik/praktik dan otoritas tiap proses

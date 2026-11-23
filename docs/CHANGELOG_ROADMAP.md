@@ -1,3 +1,9 @@
+## 2026-11-23 | M14-S1 register Sertifikat Veteriner/Lalu Lintas DEMO
+- [Kode register](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m14-certificate-register), [25 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m14-certificate-register/tests/register.test.mjs), **0 dijalankan**; tidak menghasilkan sertifikat, nomor resmi, tanda tangan atau QR. [Spesifikasi](M14_S1_REGISTER_SERTIFIKAT_LALU_LINTAS_DEMO_2026_2030.md). **CODE_ONLY [skip ci].**
+
+## 2026-11-23 | M07-S1 pengawasan Klinik/Praktik Dokter Hewan DEMO
+- [Kode register/checklist](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m07-practice-oversight), [22 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m07-practice-oversight/tests/practice.test.mjs), **0 dijalankan**; tidak memutuskan izin, pemeriksaan sah, atau sanksi. [Spesifikasi](M07_S1_KLINIK_PRAKTIK_DEMO_2026_2030.md). **CODE_ONLY [skip ci].**
+
 ## 2026-11-23 | M00-G1 dan M06-S1, kontrak pengawasan DEMO
 - [M00-G1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-oversight-access): akses detail terbatas role+wilayah melalui kontrak callback backend, [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-oversight-access/tests/scoped_read.test.mjs), 0 dijalankan. Belum implementasi identitas server.
 - [M06-S1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m06-medicine-oversight): register/checklist sarana obat hewan fiktif, hanya untuk telaah internal; [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m06-medicine-oversight/tests/medicine.test.mjs), 0 dijalankan. Tanpa validasi izin, inspeksi legal atau sanksi.

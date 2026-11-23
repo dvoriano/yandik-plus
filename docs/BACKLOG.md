@@ -41,12 +41,17 @@ Registry, legal status, inspector checklists, inspections, findings, remedial de
 
 ### B-008 | Clinics and veterinarian practices (M07)
 Practice registry, verification, supervision standards, document expiry, follow-up. Respect formal permitting authority.
+- **Partial draft M07-S1:** internal DEMO register and checklist in `drafts/m07-practice-oversight/`, 22 QA written and none executed. No license verification, practice identities, real inspection, or formal follow-up.
 
 ### B-009 | Leadership analytics (M08)
 One dashboard with metric dictionary, period, verification and provenance.
 
 ### B-010 | Notifications, offline, GIS, knowledge base (M09-M11)
 Only after core data and permissions are tested. No paid AI dependency in core workflows.
+
+### B-012 | Veterinary certificates and animal/product movement (M14)
+- **Partial draft M14-S1:** DEMO internal request register in `drafts/m14-certificate-register/`, 25 QA written and none executed; not an issuer, public verification, signature, or official registry.
+- Define legal types, human authority, data minimization, requirements and external issuance references separately before integration.
 
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.

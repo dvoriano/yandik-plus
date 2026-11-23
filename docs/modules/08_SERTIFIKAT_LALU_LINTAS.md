@@ -1,7 +1,7 @@
 # MOD-08 | Sertifikat Veteriner dan Lalu Lintas Hewan/Produk
 
 **Milestone:** M14  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG sebagai draf M14-S1; KODE DITULIS, BELUM DIUJI; belum modul penerbitan resmi.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -39,6 +39,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Master wilayah, workflow dokumen, dashboard, pengawasan, pustaka aturan; integrasi ke sistem resmi hanya bila tersedia izin dan API yang sah.
+
+## Progres M14-S1 | Register permohonan internal DEMO
+- [x] [Kode register permohonan fiktif](../M14_S1_REGISTER_SERTIFIKAT_LALU_LINTAS_DEMO_2026_2030.md) untuk kebutuhan perancangan, tidak menerbitkan atau memverifikasi sertifikat.
+- [x] [25 QA tertulis](../../drafts/m14-certificate-register/tests/register.test.mjs), **0 dijalankan**.
+- [ ] Persyaratan resmi, otoritas, akses pemohon, referensi hasil penerbitan sah, audit, arsip dan integrasi sumber eksternal belum tersedia.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-08-01: Validasi alur bisnis dan pejabat penandatangan menurut jenis sertifikat

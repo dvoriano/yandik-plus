@@ -10,6 +10,42 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M07-S1 & M14-S1 | KODE DEMO (47 QA tertulis, 0 dijalankan)
+
+### M07-S1 | Pengawasan Klinik & Praktik Dokter Hewan
+
+| ID | Verifikasi yang masih diperlukan | Status |
+|---|---|---|
+| QA-M07S1-01 | Skema, 3 fasilitas fiktif, 2 catatan observasi, tanpa nama dokter/alamat/nomor izin asli | BELUM DIUJI |
+| QA-M07S1-02 | Jenis klinik/praktik, wilayah dan sumber DEMO valid; duplikasi ID dan input tambahan ditolak | BELUM DIUJI |
+| QA-M07S1-03 | Scope regional: pengguna kab/kota tidak melihat fasilitas wilayah lain | BELUM DIUJI |
+| QA-M07S1-04 | Provinsi baca-saja; Puskeswan/pimpinan ditolak dari rincian pengawasan | BELUM DIUJI |
+| QA-M07S1-05 | Catatan kunjungan tidak boleh mengacu fasilitas tidak dikenal atau periode setelah 2030 | BELUM DIUJI |
+| QA-M07S1-06 | Checklist 5 kategori lengkap dan unik, status DEMO sah, bukti hanya jumlah rujukan | BELUM DIUJI |
+| QA-M07S1-07 | Kunjungan tidak tersedia = `null`, bukan klaim tidak pernah diperiksa | BELUM DIUJI |
+| QA-M07S1-08 | Paket tindak lanjut hanya untuk telaah; tidak memiliki nomor surat, PIC/tenggat atau sanksi | BELUM DIUJI |
+| QA-M07S1-09 | Kode tidak dapat mengesahkan SIP/izin praktik, verifikasi legalitas atau publikasi | BELUM DIUJI |
+| QA-M07S1-10 | Definisi jenis sarana, kewenangan pemeriksa, checklist dan SOP yang berlaku | BUTUH KEPUTUSAN |
+| QA-M07S1-11 | Integrasi API/DB otentik, bukti privat, UX HP dan audit peran negatif | TERTUNDA UJI |
+
+### M14-S1 | Register Permohonan Sertifikat & Lalu Lintas
+
+| ID | Verifikasi yang masih diperlukan | Status |
+|---|---|---|
+| QA-M14S1-01 | 3 permohonan berlabel DEMO dan komoditas asal/tujuan rekaan | BELUM DIUJI |
+| QA-M14S1-02 | Tipe komoditas, versi persyaratan, sumber, periode valid 2026–2030 dan ID unik | BELUM DIUJI |
+| QA-M14S1-03 | Filter akses memakai wilayah asal; tujuan tidak menambah hak baca | BELUM DIUJI |
+| QA-M14S1-04 | Puskeswan, pimpinan dan kab/kota lain ditolak dari rincian | BELUM DIUJI |
+| QA-M14S1-05 | Data nama pemohon, nomor surat nyata, tanggal terbit dan sumber asli ditolak | BELUM DIUJI |
+| QA-M14S1-06 | Persyaratan fiktif 4 kategori lengkap, status `PRESENT_UNVERIFIED_DEMO` bukan sah | BELUM DIUJI |
+| QA-M14S1-07 | Referensi, nomor sertifikat dan `issued_at` tetap `null` | BELUM DIUJI |
+| QA-M14S1-08 | Tidak ada e-signature, QR, penerbitan, verifikasi publik atau pengiriman resmi | BELUM DIUJI |
+| QA-M14S1-09 | Semua flag `may_issue`, `may_sign`, `may_approve`, `may_publish`, `may_write` = `false` | BELUM DIUJI |
+| QA-M14S1-10 | Matriks kewenangan hukum, jenis sertifikat, instansi penerbit, lampiran, retensi/arsip | BUTUH KEPUTUSAN |
+| QA-M14S1-11 | Otorisasi API sebenarnya, bukti data pribadi, koneksi penerbit resmi dan audit | TERTUNDA UJI |
+
+**22 skenario M07-S1 dan 25 skenario M14-S1 telah ditulis**, tetapi **0 dieksekusi**. Daftar di atas mengelompokkan risiko, bukan menyatakan 22/25 pengujian telah lulus.
+
 ## Antrean M00-G1 & M06-S1 | Kode pengawasan DEMO (43 QA tertulis, 0 dijalankan)
 
 ### M00-G1 | Batas akses modul dan wilayah

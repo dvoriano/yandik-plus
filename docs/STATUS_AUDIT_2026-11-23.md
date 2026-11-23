@@ -18,9 +18,9 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 | MOD-03 SDM | Model penempatan awal; M05-15 snapshot dan agregasi fiktif | **RANCANGAN/PROTOTIPE**, belum sistem personel operasional |
 | MOD-04 Support | M03 prototype teruji historis; M04 draft proses administrasi, bukti dan distribusi | **SEDANG**, approval dan siklus resmi belum |
 | MOD-05 Pengawasan obat hewan | M06-S1 register dan observasi fiktif telah ditulis | **KODE DEMO DITULIS, BELUM DIUJI**; modul operasional belum selesai |
-| MOD-06 Klinik/praktik dokter hewan | Spesifikasi/kerangka awal | **RENCANA**, proses kewenangan belum |
+| MOD-06 Klinik/praktik dokter hewan | M07-S1 register dan checklist DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; seluruh proses kewenangan dan integrasi belum |
 | MOD-07 PHMS/zoonosis/surveilans | Katalog kebutuhan dan usulan integrasi | **RENCANA**, belum terintegrasi |
-| MOD-08 Sertifikat veteriner/lalu lintas | Spesifikasi proses dan batas kewenangan | **RENCANA**, penerbitan resmi belum |
+| MOD-08 Sertifikat veteriner/lalu lintas | M14-S1 register permohonan internal DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; penerbitan resmi tidak tersedia |
 | MOD-09 Pembinaan/Bimtek | Spesifikasi, rencana keterkaitan SDM | **RENCANA**, workflow belum |
 | MOD-10 Administrasi dokumen | Spesifikasi, draft lintas M04 terpisah | **RENCANA**, integrasi arsip belum |
 | MOD-11 Dashboard pimpinan | Dashboard APEL sintetik M05-14 | **PROTOTIPE**, lintas 15 modul belum |
@@ -52,7 +52,11 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Pembaruan M00-G1/M06-S1:** gerbang akses per wilayah dan register pengawasan obat hewan DEMO sudah ditulis dengan 43 skenario QA, **0 dijalankan**. Ini tidak mengesahkan akses nyata atau persyaratan inspeksi; MOD-05 tetap belum selesai.
 
+**Pembaruan M07-S1/M14-S1:** rancangan register Klinik/Praktik dan Sertifikat/Lalu Lintas DEMO telah ditulis dengan 47 skenario QA, **0 dijalankan**. Tidak ada pengesahan izin, dokumen/sertifikat resmi, data pemohon riil, atau penerbitan otomatis; kedua modul secara keseluruhan belum selesai.
+
 ## Progres yang baru dicatat
+- [x] M07-S1: kode klinik/praktik DEMO ditulis, **22 QA tertulis, belum diuji**.
+- [x] M14-S1: kode register sertifikat/lalu lintas DEMO ditulis, **25 QA tertulis, belum diuji**.
 - [x] M00-G1: kode gerbang akses per wilayah DEMO ditulis, **19 QA tertulis, belum diuji**.
 - [x] M06-S1: kode register/checklist sarana obat hewan fiktif ditulis, **24 QA tertulis, belum diuji**.
 - [x] M05-14 kode dashboard DEMO ditulis, **belum diuji**.

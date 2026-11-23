@@ -10,7 +10,8 @@ import {backendPrincipal} from "../m04-backend-readonly/identity.mjs";
 
 export const M00_G1_SCHEMA="M00-G1-SCOPED-READ-UNTESTED-1";
 export const M00_G1_MODULES=Object.freeze([
- "MEDICINE_OVERSIGHT","PRACTICE_OVERSIGHT","CERTIFICATE_REGISTER"
+ "MEDICINE_OVERSIGHT","PRACTICE_OVERSIGHT","CERTIFICATE_REGISTER",
+ "SURVEILLANCE"
 ]);
 const fail=(code="ACCESS_DENIED")=>{throw Error(code);};
 const validRegion=x=>typeof x==="string"&&

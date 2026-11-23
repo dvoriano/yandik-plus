@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-7 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-8+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-8 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-9+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.5 / 23 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.6 / 23 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-8
+
+[Register bukti, review metadata dan 6 gerbang DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs) (**0 dijalankan**) · [Spesifikasi M05-8](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md). Katalog 14 kebutuhan bukti, reviewer konseptual, review issue M05-7 tanpa auto-close, dan semua kesiapan integrasi tetap BLOCKED. **Tidak ada sumber/otoritas terverifikasi, akses DB, pengesahan aturan atau hasil produksi.**
 
 ## Implementasi M05-7
 

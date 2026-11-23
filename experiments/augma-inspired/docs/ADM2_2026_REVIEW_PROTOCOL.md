@@ -51,3 +51,7 @@ Manifest yang memakai URL dengan query atau kredensial ditolak agar tidak sengaj
 - [ ] Mendapat persetujuan tata kelola untuk pemanfaatan di luar lab.
 
 Skrip dan tes memakai data sintetis tanpa akses ke APEL, Puskeswan, VPS, atau layanan produksi.
+
+## Additional input safety checks
+
+The offline reviewer now rejects local/private or loopback source URLs in the manifest, including nonpublic IPs, `.local`/`.internal` hostnames, unqualified hostnames, and embedded control characters. Symlinked input paths are rejected before opening files. These checks help prevent confusing a private endpoint or a redirected file with an authorized public dataset; they do **not** prove licensing or source authenticity. Two regression tests were added. A full CI run for these changes remains pending at this documentation update.

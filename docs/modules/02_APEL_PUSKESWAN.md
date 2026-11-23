@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-12 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-13+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-13 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **Dashboard APEL dan integrasi antar-modul berikutnya RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 2.0 / 23 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 2.1 / 23 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-13
+
+[Katalog observabilitas, ledger sintetis dan handoff DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-observability) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-observability/tests/observability.test.mjs) (**0 dijalankan**) · [Spesifikasi M05-13](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_13_APEL_OBSERVABILITY_AUDIT_2026_2030.md). Dua belas sinyal dikaitkan ke sumber bukti dan kategori penghentian M05-12. Papan status tetap **NOT_MEASURED**, tanpa pengamatan live, riwayat log resmi, identitas nyata, alarm, ataupun penutupan insiden. Tahap desain berikutnya menitikberatkan dashboard APEL yang mudah digunakan dan alur Profil Puskeswan → SDM → Pelaporan → Pembinaan dengan fixture DEMO.
 
 ## Implementasi M05-12
 

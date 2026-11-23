@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>YANDIK+ | Geo Command Center Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div class="identity">
+        <div class="logo">Y+</div>
+        <div><span class="kicker">YANDIK+ / EXPERIMENT 02</span><h1>Geo Command Center</h1></div>
+      </div>
+      <nav aria-label="Navigasi eksperimen">
+        <span class="pill">OFFLINE • READ-ONLY</span>
+        <a href="../data-assistant/index.html">Evidence Assistant</a>
+      </nav>
+    </header>
+
+    <div class="warning" role="note">
+      <strong>LAB / BUKAN PETA OPERASIONAL.</strong>
+      Batas provinsi dari dataset geografi pihak ketiga, bukan batas hukum.
+      Titik pusat wilayah hanya perkiraan; data Puskeswan dan pelayanan belum tersedia.
+    </div>
+
+    <section class="hero">
+      <span class="kicker">PETA GEOGRAFIS SUMATERA BARAT</span>
+      <h2>Dari data wilayah menuju pengambilan keputusan yang lebih jelas.</h2>
+      <p>Eksplorasi garis provinsi nyata dan 19 kabupaten/kota. Semua fungsi berjalan mandiri, tanpa database maupun akses website produksi.</p>
+    </section>
+
+    <section class="summary" aria-label="Ringkasan cakupan">
+      <div><span>Wilayah</span><strong id="count-all">19</strong><small>Cakupan administrasi</small></div>
+      <div><span>Kabupaten</span><strong id="count-regency">12</strong><small>Nama wilayah</small></div>
+      <div><span>Kota</span><strong id="count-city">7</strong><small>Nama wilayah</small></div>
+      <div><span>Data Pelayanan</span><strong class="missing">N/A</strong><small>Belum dihubungkan</small></div>
+    </section>
+
+    <main class="content">
+      <section class="panel map-pane" aria-labelledby="map-title">
+        <div class="sectionhead">
+          <div><span class="kicker">GEOGRAPHIC VIEW</span><h3 id="map-title">Garis wilayah Sumatera Barat</h3></div>
+          <div class="zoom-controls" aria-label="Kontrol pembesaran peta">
+            <button type="button" id="zoom-out" aria-label="Perkecil peta">−</button>
+            <button type="button" id="zoom-reset">Reset</button>
+            <button type="button" id="zoom-in" aria-label="Perbesar peta">+</button>
+          </div>
+        </div>
+        <div class="map-frame">
+          <svg id="map-svg" viewBox="0 0 800 650" role="group" aria-label="Peta geografi outline Sumatera Barat, titik kota dan pusat kabupaten indikatif" xmlns="http://www.w3.org/2000/svg">
+            <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#27415a"/></pattern></defs>
+            <rect width="800" height="650" fill="url(#grid)"></rect>
+            <g id="map-boundary"></g><g id="map-pins"></g>
+          </svg>
+          <div class="map-status" id="map-status" role="status">Memuat GeoJSON lokal…</div>
+          <div class="map-legend">Peta administrasi referensi • titik perkiraan, bukan koordinat Puskeswan</div>
+        </div>
+        <div class="attribution">Geometri: <a href="https://github.com/mashadinoor/Indonesia-Geojson-2026" target="_blank" rel="noopener noreferrer">Indonesia-Geojson-2026</a> (MIT, sumber upstream mengacu BIG). Prototipe, bukan untuk penetapan batas.</div>
+      </section>
+
+      <aside class="panel sidepane" aria-labelledby="region-title">
+        <div class="sectionhead"><div><span class="kicker">19 KABUPATEN/KOTA</span><h3 id="region-title">Pilih wilayah</h3></div></div>
+        <div class="filters">
+          <label for="search">Cari wilayah atau pusat pemerintahan</label>
+          <input id="search" type="search" placeholder="Mis. Padang, Agam, Tuapejat..." autocomplete="off">
+          <div class="filter-group" role="group" aria-label="Filter jenis wilayah">
+            <button type="button" data-kind="all" aria-pressed="true">Semua</button>
+            <button type="button" data-kind="kabupaten" aria-pressed="false">Kabupaten</button>
+            <button type="button" data-kind="kota" aria-pressed="false">Kota</button>
+          </div>
+        </div>
+        <div id="region-list" class="region-list" aria-label="Daftar wilayah"></div>
+        <div class="detail" id="detail" aria-live="polite">
+          <span class="kicker">DETAIL REFERENSI</span>
+          <h4 id="selected-name">—</h4>
+          <p id="selected-seat">Pilih wilayah di peta atau daftar.</p>
+          <dl>
+            <div><dt>Kode wilayah</dt><dd id="selected-code">—</dd></div>
+            <div><dt>Data Puskeswan</dt><dd>Belum tersedia</dd></div>
+            <div><dt>Pelaporan</dt><dd>Belum tersedia</dd></div>
+            <div><dt>Pelayanan</dt><dd>Belum tersedia</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </main>
+    <footer><span>YANDIK+ • Innovation Lab 2026–2030</span><span>Tanpa login • Tanpa API • Tidak terhubung ke APEL</span></footer>
+  </div>
+</body>
+</html>

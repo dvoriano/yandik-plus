@@ -54,7 +54,7 @@ Catatan review DEMO tidak dapat menggantikan bukti tersebut.
 - [Riwayat usulan dengan revision guard](../drafts/m05-apel-followup/proposals.mjs)
 - [View-model untuk bahan pembahasan](../drafts/m05-apel-followup/handoff.mjs)
 - [README](../drafts/m05-apel-followup/README.md)
-- [47 skenario QA tertulis](../drafts/m05-apel-followup/tests/followup.test.mjs), **0 dijalankan**
+- [50 skenario QA tertulis](../drafts/m05-apel-followup/tests/followup.test.mjs), **0 dijalankan**
 - [Backlog QA](TEST_BACKLOG.md), [PR #9](https://github.com/dvoriano/yandik-plus/pull/9)
 
 **M05-10 (RENCANA):** matriks skenario uji paritas sumber dan kriteria penerimaan tahunan 2026–2030, dengan batas CODE_ONLY tetap berlaku. Tidak ada integrasi nyata sampai otorisasi dan data dictionary resmi tersedia.

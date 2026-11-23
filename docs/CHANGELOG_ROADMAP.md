@@ -1,3 +1,9 @@
+## 2026-11-23 | M05-17 Pembinaan dan Tindak Lanjut DEMO
+- [Kode M05-17](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-followup-review) · [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-followup-review/tests/followup.test.mjs), **0 dijalankan**. Usulan review-only, sumber M05-16, bukan keputusan/penugasan atau penetapan kewajiban. [Dokumen](M05_17_PEMBINAAN_TINDAK_LANJUT_2026_2030.md).
+
+## 2026-11-23 | M05-16 Pelaporan dan Koreksi dengan Konteks Profil + SDM
+- [Kode M05-16](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-report-correction) · [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-report-correction/tests/correction.test.mjs), **0 dijalankan**. Proyeksi workflow M05-1 + M05-15, baca-saja; beda sumber M05-14/M05-0 tetap tidak direkonsiliasi. [Dokumen](M05_16_PELAPORAN_KOREKSI_2026_2030.md). **CODE_ONLY [skip ci].**
+
 ## 2026-11-23 | M05-15 Profil Puskeswan ↔ SDM ↔ APEL, kontrak DEMO
 - [Draft M05-15](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-profile-sdm) + [29 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-profile-sdm/tests/profile_sdm.test.mjs), **0 dijalankan**, [spesifikasi](M05_15_PROFIL_SDM_LINK_2026_2030.md).
 - Data per fasilitas-tahun dan interval penempatan fiktif, filter sama dengan M05-14, validasi ID, tanpa data pribadi; null tidak sama dengan nol. Keputusan/otorisasi/staging/rilis tetap **NO_GO**. Perbaikan status dokumentasi ada pada [audit 15 modul](STATUS_AUDIT_2026-11-23.md). Selanjutnya M05-16, M05-17. PR #9 tetap Draft. **CODE_ONLY [skip ci]**.

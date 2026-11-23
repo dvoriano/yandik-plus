@@ -48,11 +48,13 @@ Pembinaan terintegrasi, administrasi paperless, notifikasi, pengetahuan/AI berbu
 ### P3: penyempurnaan sampai 2030
 Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan bertahap. Tanggal target tidak sama dengan janji rilis.
 
+**Update:** kode M05-16 dan M05-17 ditulis setelah M05-15, tetapi status penyelesaian seluruh 15 modul **tetap BELUM SELESAI**. QA baru belum dijalankan dan akses data nyata tidak tersedia.
+
 ## Progres yang baru dicatat
 - [x] M05-14 kode dashboard DEMO ditulis, **belum diuji**.
 - [x] M05-15 kode baca-saja Profil dan SDM DEMO beserta join identitas APEL ditulis; **29 QA tertulis, 0 dijalankan**.
-- [ ] M05-16 Pelaporan/Koreksi terhubung konteks Profil dan SDM.
-- [ ] M05-17 Pembinaan/Tindak Lanjut DEMO.
+- [x] M05-16: **kode baca-saja ditulis, belum diuji**, [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_16_PELAPORAN_KOREKSI_2026_2030.md) (0 dijalankan); bukan sistem laporan resmi.
+- [x] M05-17: **kode usulan tindak lanjut ditulis, belum diuji**, [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_17_PEMBINAAN_TINDAK_LANJUT_2026_2030.md) (0 dijalankan); tidak ada penugasan/approval nyata.
 - [ ] Seluruh validasi, integrasi resmi, migrasi sumber, pengujian baru, dan persetujuan pengoperasian.
 
 **Kendali:** mode CODE_ONLY, commit bertanda \`[skip ci]\`, semua file pengembangan baru di \`drafts/\`, PR #9 tetap Draft. Tidak mengubah \`main\`, database, situs, atau layanan produksi. Tidak boleh menandai fitur operasional selesai sampai kriteria penerimaan dan bukti pengujian terpenuhi.

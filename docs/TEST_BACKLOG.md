@@ -10,6 +10,38 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M05-16 & M05-17 | QA CODE_ONLY (48 skenario tertulis, 0 dijalankan)
+
+### M05-16 | Pelaporan/koreksi baca-saja
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M0516-01 | Read-only \`readDemoWorkflow\`, filter wilayah/fasilitas dan pembatasan sesi/fasilitas DEMO | BELUM DIUJI |
+| QA-M0516-02 | Revisi berurutan, transisi draf → submit → correction → revise → resubmit | BELUM DIUJI |
+| QA-M0516-03 | Riwayat lama tidak ditimpa, request ID tidak bocor pada output | BELUM DIUJI |
+| QA-M0516-04 | Identitas petugas, alasan koreksi teks bebas, dan payload laporan tidak muncul | BELUM DIUJI |
+| QA-M0516-05 | Belum mulai ≠ 0, menunggu telaah ≠ terverifikasi, draf ≠ terkirim | BELUM DIUJI |
+| QA-M0516-06 | Tahun 2026–2030, filter keliru, perubahan wilayah, status tidak sah ditolak | BELUM DIUJI |
+| QA-M0516-07 | Ledger M05-0 dan workflow M05-1 terpisah; tidak ada klaim sinkron atau total resmi | BELUM DIUJI |
+| QA-M0516-08 | Semua kemampuan publikasi/write/score/deploy tetap false | BELUM DIUJI |
+| QA-M0516-09 | Regresi akses peran dan histori sumber M05-1/M05-15/M05-14 | TERTUNDA UJI |
+| QA-M0516-10 | Persetujuan sumber, Juknis, kebijakan tahun, DB, timestamp server, QA UI | BUTUH KEPUTUSAN |
+
+### M05-17 | Usulan perhatian pembinaan
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M0517-01 | Input hanya konteks M05-16 sintetis tidak terotorisasi dan belum diverifikasi | BELUM DIUJI |
+| QA-M0517-02 | Usulan menurut status laporan (draf, kirim, koreksi) | BELUM DIUJI |
+| QA-M0517-03 | Profil draf/kosong dan SDM parsial tidak menjadi vonis mutu/kepegawaian | BELUM DIUJI |
+| QA-M0517-04 | Tidak ada \`assigned_to\`, tenggat, dokumen, penutupan otomatis | BELUM DIUJI |
+| QA-M0517-05 | Jumlah usulan hanya indikatif; tidak dibaca sebagai kasus resmi/penilaian/urutan prioritas | BELUM DIUJI |
+| QA-M0517-06 | Anti-duplikasi fasilitas-bulan, penolakan input manipulatif dan tahun di luar cakupan | BELUM DIUJI |
+| QA-M0517-07 | Tidak ada PII, teks laporan mentah, aktivitas jaringan atau mutasi data | BELUM DIUJI |
+| QA-M0517-08 | Semua kemampuan notifikasi, penugasan, ranking, alokasi, approval dan deployment false | BELUM DIUJI |
+| QA-M0517-09 | Browser HP/keyboard/aksesibilitas dan regresi modul sumber jika UI dibuat | TERTUNDA UJI |
+| QA-M0517-10 | Proses pembinaan asli, kewenangan, tata naskah, perlindungan data dan arsip | BUTUH KEPUTUSAN |
+
+**24 skenario M05-16 + 24 skenario M05-17 tertulis** pada \`drafts/\`. Tabel di atas mengelompokkan risiko, tidak menggantikan pengujian dan tidak membuktikan kedua modul berhasil. Tidak boleh menjalankan CL/CI/test sampai ada izin.
+
 ## Antrean M05-15: Profil Puskeswan + SDM DEMO terhubung APEL (29 QA tertulis, 0 dijalankan)
 
 | ID | Yang nanti harus diperiksa | Status |

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-23 | M05-7 data lineage, relasi temporal dan review konflik APEL 2026–2030
+**KODE DITULIS, BELUM DIUJI.** [Kode M05-7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs) (**0 dijalankan**) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md). Contract DEMO tujuh sumber, identitas fasilitas dan relasi historis, report-to-workflow pada revisi yang sama, policy tahunan, perbedaan realisasi dan rencana, serta pengelompokan isu untuk telaah manual. Data dictionary M05-6 tetap belum dipetakan secara aktual. Tidak ada tes/CL/CI, query, integrasi, perbaikan, penilaian, publikasi atau perubahan produksi. CODE_ONLY; PR #9 Draft. M05-8 direncanakan sebagai register bukti dan gerbang review.
+
 ## 2026-11-20 | M05-6 data dictionary dan schema mapping APEL 2026–2030
 **KODE DITULIS, BELUM DIUJI.** [Katalog M05-6](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-mapping) · [20 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-mapping/tests/mapping.test.mjs) (0 dijalankan) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_6_DATA_DICTIONARY_MAPPING_2026_2030.md). Katalog 36 field bisnis semantik pada 8 domain; seluruh nama tabel/kolom aktual belum dipetakan. Kandidat schema DEMO tetap unverified. **20 QA tertulis, 0 dijalankan.** Tidak ada introspeksi DB, query, koneksi, atau perubahan produksi. CODE_ONLY; PR #9 Draft.
 

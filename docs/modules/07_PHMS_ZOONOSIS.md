@@ -1,7 +1,7 @@
 # MOD-07 | PHMS, Zoonosis dan Surveilans
 
 **Milestone:** M13  
-**Status implementasi GitHub:** RENCANA (spesifikasi terdokumentasi; kode baru belum dinyatakan selesai).  
+**Status implementasi GitHub:** SEDANG sebagai rancangan M13-S1; KODE DITULIS, BELUM DIUJI; tidak ada modul operasional.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -38,6 +38,11 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 APEL (rekap layanan terkait), master wilayah, GIS, dashboard, dukungan darurat, iSIKHNAS sebagai sistem rujukan.
+
+## Progres M13-S1 | Register kejadian DEMO
+- [x] [Kode register kejadian sintetis](../M13_S1_PHMS_ZOONOSIS_SURVEILANS_DEMO_2026_2030.md) memisahkan dugaan, investigasi, sampel/lab, dan tindak lanjut tanpa konfirmasi penyakit.
+- [x] [28 QA tertulis](../../drafts/m13-surveillance/tests/surveillance.test.mjs), **0 dijalankan**.
+- [ ] Definisi kasus, SOP surveilans, izin sumber iSIKHNAS, integrasi APEL, hasil lab autentik, akses data sensitif, serta uji keamanan masih terbuka.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-07-01: Susun daftar use-case penyakit prioritas dan kamus istilah

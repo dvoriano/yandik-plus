@@ -1,3 +1,9 @@
+## 2026-11-23 | M13-S1 PHMS/Zoonosis/Surveilans DEMO
+- [Kode M13-S1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-surveillance) dan [28 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-surveillance/tests/surveillance.test.mjs), **0 dijalankan**; kejadian rekaan, bukan konfirmasi penyakit, notifikasi, atau impor iSIKHNAS. [Spesifikasi](M13_S1_PHMS_ZOONOSIS_SURVEILANS_DEMO_2026_2030.md).
+
+## 2026-11-23 | M00-G2 provenance sumber dan batas akses API DEMO
+- [Kode M00-G2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-source-api-gate) dan [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-source-api-gate/tests/source_access.test.mjs), **0 dijalankan**. SURVEILLANCE ditambah pada kontrak M00-G1. Tidak ada autentikasi, sumber resmi, API atau izin impor yang telah ditetapkan. [Spesifikasi](M00_G2_SOURCE_API_BOUNDARY_2026_2030.md). CODE_ONLY [skip ci].
+
 ## 2026-11-23 | M14-S1 register Sertifikat Veteriner/Lalu Lintas DEMO
 - [Kode register](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m14-certificate-register), [25 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m14-certificate-register/tests/register.test.mjs), **0 dijalankan**; tidak menghasilkan sertifikat, nomor resmi, tanda tangan atau QR. [Spesifikasi](M14_S1_REGISTER_SERTIFIKAT_LALU_LINTAS_DEMO_2026_2030.md). **CODE_ONLY [skip ci].**
 

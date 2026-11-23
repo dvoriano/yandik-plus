@@ -10,6 +10,39 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G2 & M13-S1 | KODE DEMO (52 QA tertulis, 0 dijalankan)
+
+### M00-G2 | Provenance sumber dan batas akses
+| ID | Pemeriksaan yang harus dilakukan | Status |
+|---|---|---|
+| QA-M00G2-01 | Format source_id/snapshot_id DEMO dan referensi eksplisit ke domain/region | BELUM DIUJI |
+| QA-M00G2-02 | Versi positif, periode 2026–2030 dan batas ukuran/kolom manifest | BELUM DIUJI |
+| QA-M00G2-03 | Sumber non-DEMO, URL, field ekstra, sumber terverifikasi palsu ditolak | BELUM DIUJI |
+| QA-M00G2-04 | Ketidaksesuaian wilayah dan domain gagal tertutup | BELUM DIUJI |
+| QA-M00G2-05 | Sesi kab-kota lintas wilayah, pimpinan, Puskeswan, akun nonaktif ditolak | BELUM DIUJI |
+| QA-M00G2-06 | Status freshness, izin integrasi, identitas prod dan API nyata tetap false | BELUM DIUJI |
+| QA-M00G2-07 | Regresi daftar modul M00-G1 dengan SURVEILLANCE | BELUM DIUJI |
+| QA-M00G2-08 | Backend Flask, trust callback, CSRF, RBAC/ABAC, file audit, metadata database | TERTUNDA UJI |
+| QA-M00G2-09 | Hak akses sumber resmi dan tata kelola data, termasuk iSIKHNAS | BUTUH KEPUTUSAN |
+
+### M13-S1 | Kejadian kesehatan hewan/surveilans
+| ID | Pemeriksaan yang harus dilakukan | Status |
+|---|---|---|
+| QA-M13S1-01 | Tiga kejadian fiktif, lokasi ID DEMO, tanpa koordinat atau PII | BELUM DIUJI |
+| QA-M13S1-02 | Dugaan/observasi tidak menjadi kasus resmi terkonfirmasi | BELUM DIUJI |
+| QA-M13S1-03 | Catatan hasil lab tidak menjadi hasil lab autentik atau bukti diagnosis | BELUM DIUJI |
+| QA-M13S1-04 | ID event unik, status valid, hubungan snapshot sumber konsisten | BELUM DIUJI |
+| QA-M13S1-05 | Tahun/periode event tidak dapat melewati capture_month sumber | BELUM DIUJI |
+| QA-M13S1-06 | Event non-DEMO atau kasus/hasil lab resmi palsu ditolak | BELUM DIUJI |
+| QA-M13S1-07 | Puskeswan/pimpinan/kab-kota asing tidak melihat detail | BELUM DIUJI |
+| QA-M13S1-08 | Temuan lapangan/bukti count tidak memunculkan notifikasi/respons otomatis | BELUM DIUJI |
+| QA-M13S1-09 | iSIKHNAS dan APEL tidak disimpulkan tersinkron atau sudah dideduplikasi | BELUM DIUJI |
+| QA-M13S1-10 | Flag write/confirm/approve/notify/publish/deploy seluruhnya false | BELUM DIUJI |
+| QA-M13S1-11 | Definisi kasus menurut hukum, SOP surveilans, perlindungan lokasi, akses lab | BUTUH KEPUTUSAN |
+| QA-M13S1-12 | Uji keamanan API nyata, rekonsiliasi iSIKHNAS/APEL dan UI petugas | TERTUNDA UJI |
+
+**24 skenario M00-G2 dan 28 skenario M13-S1 tertulis, 0 dieksekusi.** Tabel merupakan kelompok risiko, bukan bukti QA lulus.
+
 ## Antrean M07-S1 & M14-S1 | KODE DEMO (47 QA tertulis, 0 dijalankan)
 
 ### M07-S1 | Pengawasan Klinik & Praktik Dokter Hewan

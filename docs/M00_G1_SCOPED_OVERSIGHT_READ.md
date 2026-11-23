@@ -5,7 +5,8 @@
 ## Bukti kode
 - [Gerbang read-only per modul dan wilayah](../drafts/m00-oversight-access/scoped_read.mjs) dibangun di atas prototype \`M04-I6B\` yang memerlukan callback \`resolveServerSession()\` dari backend tepercaya.
 - [19 skenario QA tertulis](../drafts/m00-oversight-access/tests/scoped_read.test.mjs), **0 dijalankan**.
-- Kategori kontrak awal \`MEDICINE_OVERSIGHT\`, \`PRACTICE_OVERSIGHT\`, \`CERTIFICATE_REGISTER\`. Menyediakan kontrol contoh, bukan koneksi ketiga modul ke layanan sebenarnya.
+- Kategori kontrak DEMO: MEDICINE_OVERSIGHT, PRACTICE_OVERSIGHT, CERTIFICATE_REGISTER, dan **SURVEILLANCE** (ditambahkan M00-G2). Semua hanya kontrol contoh; tidak ada koneksi layanan sebenarnya.
+- Untuk data surveilans, metadata sumber diwajibkan melalui [M00-G2](M00_G2_SOURCE_API_BOUNDARY_2026_2030.md).
 
 ## Batas akses untuk rancangan, bukan kebijakan yang sudah disahkan
 

@@ -53,6 +53,11 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 - **Partial draft M14-S1:** DEMO internal request register in `drafts/m14-certificate-register/`, 25 QA written and none executed; not an issuer, public verification, signature, or official registry.
 - Define legal types, human authority, data minimization, requirements and external issuance references separately before integration.
 
+### B-013 | PHMS, zoonosis, surveillance and source governance (M13 + M00-G2)
+- **Partial draft:** source/API contract in drafts/m00-source-api-gate/ with 24 QA written and 0 executed. No official external data or authentication.
+- **Partial draft:** synthetic event register in drafts/m13-surveillance/ with 28 QA written and 0 executed. Suspected, investigation, lab notes and review remain distinct and unverified.
+- Still required: official case definitions, data owner permissions, location privacy, institutional workflow, iSIKHNAS/APEL reconciliation, valid API trust boundary and tests.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

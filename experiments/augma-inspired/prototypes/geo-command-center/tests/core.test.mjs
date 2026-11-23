@@ -35,3 +35,22 @@ test("polygon dan multipolygon dapat diproyeksikan", () => {
   assert.ok(Number.isFinite(x) && Number.isFinite(y));
   assert.throws(() => boundsOfGeoJSON({ type: "FeatureCollection", features: [] }));
 });
+
+
+test("batas geometri tetap aman untuk 150 ribu titik (tanpa spread array)", () => {
+  const ring = [];
+  for (let i = 0; i < 150_000; i++) {
+    const x = 99 + (i % 1000) / 1000;
+    const y = -2 + Math.floor(i / 1000) / 1000;
+    ring.push([x, y]);
+  }
+  ring.push(ring[0]);
+  const large = { type: "FeatureCollection", features: [
+    { type: "Feature", geometry: { type: "Polygon", coordinates: [ring] } }
+  ] };
+  const b = boundsOfGeoJSON(large);
+  assert.equal(b.minLon, 99);
+  assert.equal(b.maxLon, 99.999);
+  assert.equal(b.minLat, -2);
+  assert.equal(b.maxLat, -1.851);
+});

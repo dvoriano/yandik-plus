@@ -23,6 +23,18 @@ Verified on **23 November 2026 (11:45 WIB)**. **Isolated lab only; this is not a
 
 [Download/view browser evidence artifact in GitHub](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/artifacts/14790279846). GitHub artifact retention is configured to 7 days; preserve only reviewed non-sensitive evidence if longer-lived records are required.
 
+## Follow-up local regression after the verified CI commit
+
+**23/23 Python tests and 6/6 Node simulation unit tests passed locally** on 23 November 2026, after two fail-closed GeoJSON hardening patches. Python split: **7 Shapely synthetic**, **10 BNPB mock**, **6 isolation**. Runtime: Python 3.13.5, Shapely 2.1.2, Node v22.16.0.
+
+**Provenance:** eight Python/JavaScript source files and their test files were checked against their exact Git blob SHA on the linked GitHub branch. For Node, the imported 19-name registry was reconstructed with matching region identity/type/seat values. The local environment was not a full repository checkout; this is independent local regression evidence, not a substitute for complete CI.
+
+The two new rejection cases cover malformed geometry represented by a list (previously could raise `AttributeError`) and malformed upstream BNPB feature objects. Both fail closed with structured error handling. The extra tests are **not included** in the earlier successful GitHub Actions run #45113635452 on commit `2d098d0`. A subsequent CI run of the latest branch tip must be reviewed before treating the latest source as CI-validated.
+
+Local Chromium was able to render `page.set_content`, but HTTP loopback navigation was blocked by `ERR_BLOCKED_BY_ADMINISTRATOR`. This does **not** invalidate the earlier successful GitHub-hosted Playwright run, but prevents independent local browser replication in this runtime. No real BNPB query and no physical STB test occurred.
+
+Inspect the machine-readable [local test evidence and Git blob checksums](LOCAL_TEST_EVIDENCE_2026-11-23.json).
+
 ## Scope and isolation
 
 - Branch: `lab/augma-inspired-experiments`; tests use `127.0.0.1:8767` and synthetic/no operational data.

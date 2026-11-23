@@ -26,7 +26,7 @@ Proses melakukan:
 
 1. Meminta metadata layanan dan menolak layer atau atribut yang berubah.
 2. Meminta daftar ID, lalu membaca geometri dalam batch kecil melalui HTTPS host BNPB saja.
-3. Menolak data yang tidak tepat 19 fitur/identitas unik atau jika nama dan kode wilayah tidak cocok.
+3. Menolak data yang tidak tepat 19 fitur/identitas unik, nama-kode tidak cocok, atau `fid` respons tidak sesuai ID yang diminta; memeriksa ulang seluruh objectId setelah pengambilan untuk mendeteksi perubahan selama pagination.
 4. Menjalankan auditor Shapely terhadap geometri dan outline pembanding jika tersedia.
 5. **Hanya setelah pemeriksaan teknis lulus**, menulis `sumbar-adm2-bnpb-candidate.geojson` dan `manifest.json` di folder uji yang ditentukan.
 
@@ -44,7 +44,7 @@ Jika jumlah objek, kode, bentuk, atau geometri tidak cocok, proses **gagal tertu
 python3 -m unittest discover -s tools/tests -v
 ```
 
-Termasuk tes auditor Shapely dan tes pengambil BNPB dengan sumber sintetis/mock. Tidak mengakses endpoint sebenarnya selama tes. Tes yang ditambahkan tidak otomatis berjalan di GitHub Actions.
+Termasuk lima tes auditor Shapely dan sembilan skenario pengambil BNPB dengan sumber sintetis/mock. Workflow branch lab juga disiapkan; hasil run tidak boleh dianggap lulus sebelum ada bukti. Tidak mengakses endpoint sebenarnya selama tes. Tes yang ditambahkan tidak otomatis berjalan di GitHub Actions.
 
 ## Catatan penerapan
 

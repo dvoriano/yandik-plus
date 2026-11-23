@@ -1,38 +1,41 @@
-# Geo Command Center: Peta Provinsi Sumatera Barat
+# Geo Command Center Lab
 
-Prototipe **geografis nyata** yang terpisah dari Command Center skematis versi awal. Menggambar *outline* provinsi dari GeoJSON dan 19 titik indikatif pusat pemerintahan kabupaten/kota. Tidak menggunakan layanan peta berbayar, tile eksternal, atau koneksi produksi.
+**Prototipe:** garis geografis provinsi Sumatera Barat + 19 wilayah (12 kabupaten, 7 kota), marker mendekati pusat pemerintahan dan **pratinjau poligon ADM2 yang diimpor secara lokal**. Bukan peta operasional.
 
-## Cakupan dan batas
-
-- Peta garis provinsi merupakan geometri geografis pihak ketiga yang dikonversi secara lokal ke SVG (bukan denah ilustratif).
-- Data registry memuat **12 kabupaten dan 7 kota** berdasarkan UU 17/2022. Kode 13.xx untuk navigasi UI.
-- **Titik marker mendekati lokasi pusat pemerintahan**, bukan titik GPS kantor/puskeswan dan bukan centroid resmi. Cocok untuk proof of concept, perlu validasi GIS sebelum dipakai untuk keputusan geografis.
-- Ini **belum** peta poligon 19 kabupaten/kota: outline provinsi saja + 19 marker. Batas resmi ADM2 dan lokasi sebenarnya memerlukan sumber GIS yang tervalidasi terpisah.
-- Pelaporan, fasilitas, dan pelayanan = **null / tidak tersedia** di seluruh 19 wilayah. Jangan dimaknai 0.
-- Tidak ada data personal, layanan produksi, token, atau API. Semua berjalan lokal dan read-only.
-
-## Jalan lokal
+## Jalankan
 
 ```sh
-cd experiments/augma-inspired/prototypes/geo-command-center
-python3 -m http.server 8766 --bind 127.0.0.1
+cd experiments/augma-inspired/prototypes
+python3 -m http.server 8767 --bind 127.0.0.1
 ```
 
-Buka `http://127.0.0.1:8766/`. Tersedia pencarian, penyaringan kabupaten/kota, pemilihan marker, detail wilayah, dan zoom.
+Buka `http://127.0.0.1:8767/geo-command-center/`.
 
-Tes struktur dengan Node.js 20+: `node --test tests/core.test.mjs`.
+## Fitur
 
-## Atribusi geometri
+- Outline Provinsi Sumatera Barat dari GeoJSON **yang sudah dibundel**, digambar SVG tanpa tile/API eksternal.
+- 19 entri referensi berdasarkan cakupan administratif, pencarian, filter kabupaten/kota, pilih marker, zoom dan reset.
+- **ADM2 opsional:** pengguna dapat mengimpor file GeoJSON (maksimum 8 MB) dari disk. Validator mengharuskan **tepat 19 Polygon/MultiPolygon** dengan identitas wilayah cocok, tidak duplikat, ring tertutup dan koordinat masuk rentang Sumbar. Poligon ditampilkan di atas outline dan dapat dipilih.
+- Saat file ditolak, peta dan daftar utama tidak hilang. Berkas **tidak diunggah dan tidak dipertahankan** saat browser ditutup.
+- Data pelayanan Puskeswan dan pelaporan tetap `null` / belum tersedia. Tidak ada data asli.
 
-`data/sumbar-outline.geojson` diperoleh dari:
-- [mashadinoor/Indonesia-Geojson-2026](https://github.com/mashadinoor/Indonesia-Geojson-2026), path `Provinsi/Sumatera_Barat.json`, commit `c95911f3f23af6e01c3bf706c80e36a9f3958588`.
-- Fork dari `ardian28/GeoJson-Indonesia-38-Provinsi`; repo menyebut sumber geometri BIG, tetapi **kami belum memverifikasi provenance/akurasi legal aslinya secara independen**.
-- Repositori upstream mencantumkan lisensi MIT, hak cipta 2024 Ardian Saputra Hasibuan. Naskah lisensi disalin di [LICENSE-DATA.txt](data/LICENSE-DATA.txt).
+**Penting:** 19 fitur adalah *syarat minimum struktur*, bukan bukti akurasi batas wilayah. Peta tidak melakukan uji self-intersection, gap, overlap, kesesuaian batas laut, perubahan pemerintahan, atau lisensi secara otomatis. Jika data nama ambigu (misalnya hanya `Solok` tanpa jenis/kode), impor ditolak.
 
-Penggunaan **hanya untuk demonstrasi peta**, tidak untuk batas hukum. Tidak ada aset, kode, maupun model 3D Augma yang digunakan.
+## Data dan atribusi
 
-## Pengembangan berikutnya
+- Outline provinsi: [mashadinoor/Indonesia-Geojson-2026](https://github.com/mashadinoor/Indonesia-Geojson-2026), `Provinsi/Sumatera_Barat.json`, commit `c95911f3f23af6e01c3bf706c80e36a9f3958588`; lisensi yang diklaim repo MIT, hak cipta awal Ardian Saputra Hasibuan (lihat [data/LICENSE-DATA.txt](data/LICENSE-DATA.txt)).
+- Referensi cakupan 19 wilayah: [UU 17 Tahun 2022](https://peraturan.bpk.go.id/Details/217800/uu-no-17-tahun-2022).
+- Sumber ADM2 yang sedang ditelaah: [GEO_DATA_SOURCES.md](../../docs/GEO_DATA_SOURCES.md). **Belum ada dataset poligon kab/kota permanen yang dimasukkan dalam repo.**
+- Marker adalah posisi perkiraan sekitar ibu kota kabupaten/kota. Bukan centroid, titik Puskeswan atau acuan hukum.
 
-- Geometri ADM2 19 kab/kota dari layanan resmi, versi & atribut diverifikasi; jangan menjadikan marker sebagai poligon.
-- Mapping ID wilayah ke data Puskeswan setelah ada spesifikasi sumber read-only dan kontrol akses.
-- Audit akurasi, batas kepulauan Mentawai, penanganan data kosong, responsivitas, dan performa pada HP.
+## Tes
+
+```sh
+node --test tests/core.test.mjs tests/boundary-loader.test.mjs
+```
+
+Tes browser manual di `../BROWSER_TESTING.md`. Perlu QGIS dan sumber resmi sebelum data ADM2 digunakan untuk keputusan geospasial.
+
+## Isolasi
+
+Tidak mengakses `yandikvo.my.id`, API perusahaan, akun, token, bot trading, atau server produksi. Mengimpor data di browser tidak memodifikasi GitHub atau database.

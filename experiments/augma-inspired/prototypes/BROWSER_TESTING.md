@@ -51,3 +51,5 @@ Results live outside GitHub until explicitly reviewed for private data. Do not u
 
 - [Geometry audit](../VALIDATION_EVIDENCE_2026-11-23.md)
 - [ADM2 source candidates](../docs/GEO_DATA_SOURCES.md)
+
+CI now preserves HTML reports and failure traces (retention 7 days), but none of these may be considered passed until an actual run ID, job result, and artifacts are inspected. The isolated source-domain policy runs before browser/GIS jobs. See [QA gate status](../docs/QA_GATE_STATUS_2026-11-23.md).

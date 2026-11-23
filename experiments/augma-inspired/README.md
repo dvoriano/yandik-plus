@@ -65,7 +65,8 @@ Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [pa
 - [Roadmap 2026–2030](docs/ROADMAP_2026_2030.md)
 - [Kandidat geometri ADM2 dan persyaratan validasi](docs/GEO_DATA_SOURCES.md)
 - [Lisensi, privasi, isolasi](docs/SAFETY_AND_LICENSE.md)
+- [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
 
-**Status:** fondasi eksperimen dan alat validasi teknis tersedia; pengujian browser nyata, validasi GIS ADM2 yang berizin, serta pengujian STB masih terbuka. Tidak ada perubahan ke produksi.
+**Status:** fondasi eksperimen, auditor geometri, dan pengambil data kandidat BNPB (harus diaktifkan manual) tersedia. Tes browser pada kode repo, pengambilan/verifikasi ADM2 dari layanan sebenarnya, dan pengujian STB tetap terbuka. Tidak ada perubahan ke produksi.

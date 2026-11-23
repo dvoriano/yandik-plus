@@ -75,6 +75,12 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 - **Partial draft M00-G5:** in-memory paired review/audit chain and unexecuted SQLite schema in drafts/m00-audit-port/; 24 QA written, 0 executed.
 - Requires authenticated server, atomic transaction, optimistic locking, tamper-resistant external anchoring/operational audit, backup/restore, idempotency and negative tests before real use.
 
+### B-018 | Flask read-only adapter behind default-deny (M00-G6)
+- Draft Flask blueprint factory under drafts/m00-flask-adapter/, 25 QA written, 0 executed; no registered endpoints, real auth or official source access. Validate source Flask baseline, secure session resolution, route permissions and data classification before integration.
+
+### B-019 | In-memory atomic audit writer (M00-G7)
+- Draft SQLite in-memory writer under drafts/m00-sqlite-demo-writer/, 25 QA written, 0 executed; conditional revisions, idempotency, rollback and chain read model are not tested. Real database integration, JS/Python contract parity, storage hardening and operational audit remain pending.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

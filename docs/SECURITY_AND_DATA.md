@@ -17,6 +17,11 @@
 - [M00-G5](M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md) hanya rantai hash in-memory dan rancangan skema append-only SQLite; belum membangun DB aman. Hash tanpa autentikasi eksternal bukan anti-tamper.
 - Untuk produksi, hak sesi API server, CSRF, audit akses sensitif, least privilege, backup, role DB dan data owner authorization harus disetujui serta diuji.
 
+## Addendum P0 | Flask dan SQLite DEMO (23 November 2026)
+- [M00-G6](M00_G6_FLASK_ADAPTER_DEMO_2026_2030.md) adalah factory Blueprint nonaktif default, bukan perlindungan autentikasi server. Jangan registrasikan pada app produksi tanpa audit/izin.
+- [M00-G7](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md) menolak DB file dan hanya dapat bekerja di memori bila nanti dijalankan. Trigger dan SHA-256 sendiri tidak menjamin catatan tahan manipulasi; transaksi/konkurensi belum diuji.
+- Tidak ada sumber Flask asli atau data berizin pada repo; keseluruhan kode tetap CODE_ONLY dan BELUM DIUJI.
+
 ## Known security debt in source snapshot
 - Review authentication and territorial authorization across users/roles/permissions APIs.
 - User list responses need an allowlist; no password hash fields.

@@ -30,3 +30,6 @@ SHA-256 yang dihitung ulang dari data yang dikuasai pelaku tidak membuktikan kea
 **Gerbang berikut:** import source yang sudah disanitasi/diizinkan, rancangan transaksi server yang di-review, authenticated Flask context, RBAC/ABAC, storage/backup, idempotency, negative tests serta persetujuan pengampu proses.
 
 **Status:** CODE_WRITTEN_NOT_TESTED; DATABASE_NOT_CREATED; SQL_NOT_EXECUTED; AUDIT_NOT_DURABLE; PRODUCTION_NO_GO.
+
+## Lanjutan rancangan M00-G7
+[Penulis audit SQLite hanya memori DEMO](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md) telah ditulis, **25 QA tertulis, 0 dijalankan**. Skema Python berbeda dari model M00-G5 JS; masih perlu keselarasan kontrak dan validasi, tidak ada SQL/DB yang dijalankan.

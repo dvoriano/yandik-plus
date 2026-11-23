@@ -12,7 +12,7 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 
 | Modul | Bukti yang ditemukan di repository | Kesimpulan jujur |
 |---|---|---|
-| MOD-00 Core | Fondasi role/workflow DEMO, M00-G1/G2/G3, M00-G4 persyaratan sumber dan M00-G5 audit port/SQL yang belum diterapkan; Flask belum diimpor | **SEDANG**, G1–G5 belum diuji, bukan siap rilis |
+| MOD-00 Core | Fondasi role/workflow DEMO, M00-G1–G5, M00-G6 factory Flask belum didaftarkan, M00-G7 SQLite memory-only belum dijalankan | **SEDANG**, G1–G7 belum diuji, bukan siap rilis |
 | MOD-01 Profil | Prototype form dan masalah, master data awal; M05-15 penghubung DEMO ditulis | **SEDANG**, sumber dan API asli belum |
 | MOD-02 APEL | M05-0..M05-17 model DEMO; M13-S2 kandidat crosswalk investigasi ke surveilans | **SEDANG**, tidak ada rekonsiliasi resmi dan belum menjadi APEL baru |
 | MOD-03 SDM | Model penempatan awal; M05-15 snapshot dan agregasi fiktif | **RANCANGAN/PROTOTIPE**, belum sistem personel operasional |
@@ -62,7 +62,11 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Pembaruan M00-G4/M00-G5:** 46 QA tertulis, **0 dijalankan**. Daftar persyaratan sumber bukan izin data; skema audit SQL belum dieksekusi dan belum ada autentikasi/DB terpasang. Keseluruhan YANDIK+ belum selesai.
 
+**Pembaruan M00-G6/G7:** Flask Blueprint DEMO disabled default dan penulis audit SQLite :memory: telah ditulis, 50 QA tertulis, **0 dijalankan**. Tidak ada bukti autentikasi, integrasi Flask produksi, izin sumber atau keberhasilan transaksi. Modul seluruhnya masih belum selesai.
+
 ## Progres yang baru dicatat
+- [x] M00-G6: factory Flask DEMO tidak terdaftar ditulis, **25 QA tertulis, 0 dijalankan**.
+- [x] M00-G7: writer SQLite :memory: DEMO ditulis, **25 QA tertulis, 0 dijalankan**.
 - [x] M00-G4: register persyaratan sumber DEMO ditulis, **22 QA tertulis, belum diuji**.
 - [x] M00-G5: audit journal in-memory dan SQL draft ditulis, **24 QA tertulis, belum diuji**.
 - [x] M13-S3: catatan telaah kandidat crosswalk in-memory ditulis, **28 QA tertulis, 0 dijalankan**.

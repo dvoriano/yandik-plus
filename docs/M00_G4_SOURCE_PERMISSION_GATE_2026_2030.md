@@ -26,3 +26,6 @@ Model **hanya** mengenal NOT_REVIEWED_DEMO dan DRAFTED_UNVERIFIED_DEMO. Status A
 - Daftar ini **bukan pengesahan kelembagaan**. Pengampu proses dan pemilik data harus menetapkan kebijakan/izin sesuai ketentuan sebelum koneksi.
 
 **Status:** CODE_WRITTEN_NOT_TESTED, SOURCE_PERMISSION_NOT_GRANTED, PRODUCTION_NO_GO.
+
+## Lanjutan kontrak M00-G6
+[Factory adaptor Flask baca-saja DEMO](M00_G6_FLASK_ADAPTER_DEMO_2026_2030.md) ditulis, **25 QA tertulis, 0 dijalankan**. Route masih belum didaftarkan; tidak menandai bahwa sumber sudah mendapat izin.

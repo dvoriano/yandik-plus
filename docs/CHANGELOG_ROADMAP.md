@@ -1,3 +1,9 @@
+## 2026-11-23 | M00-G7 penulis audit SQLite in-memory DEMO
+- [Kode transaksi DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-sqlite-demo-writer), [25 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-sqlite-demo-writer/tests/test_writer.py), **0 dijalankan**. Writer BEGIN IMMEDIATE, rollback dan idempotency hanya untuk :memory:, tanpa bukti tes ataupun DB produksi. [Spesifikasi](M00_G7_SQLITE_INMEMORY_TRANSACTION_2026_2030.md).
+
+## 2026-11-23 | M00-G6 adaptor Flask read-only DEMO
+- [Kode factory Blueprint](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-flask-adapter), [25 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-flask-adapter/tests/test_adapter.py), **0 dijalankan**. Tidak dipasang pada server, disabled default, hanya fixture. [Spesifikasi](M00_G6_FLASK_ADAPTER_DEMO_2026_2030.md). CODE_ONLY [skip ci].
+
 ## 2026-11-23 | M00-G5 rancangan audit transaksi dan SQLite DEMO
 - [Model dan SQL draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-audit-port), [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-audit-port/tests/audit_port.test.mjs), **0 dijalankan**. Audit pasangan review M13-S3, digest berantai dan blueprint SQLite tanpa eksekusi/migrasi DB. Bukan audit tahan manipulasi. [Spesifikasi](M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md).
 

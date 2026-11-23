@@ -10,6 +10,37 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G6 & M00-G7 | Flask draft dan audit SQLite (50 QA tertulis, 0 dijalankan)
+
+### M00-G6 | Factory Flask read-only DEMO
+| Kelompok | Verifikasi yang tertunda | Status |
+|---|---|---|
+| QA-M00G6-01 | Source manifest dan event benar-benar fiktif, status dugaan tidak terkonfirmasi | BELUM DIUJI |
+| QA-M00G6-02 | Peran/ID klien tidak dapat diambil dari query/body/headers | BELUM DIUJI |
+| QA-M00G6-03 | Sesi nonaktif/role tidak sah/kab-kota luar wilayah gagal tertutup | BELUM DIUJI |
+| QA-M00G6-04 | Event setelah periode capture, duplikat, ID non-DEMO dan field PII ditolak | BELUM DIUJI |
+| QA-M00G6-05 | Output hanya allowlist, tidak memuat lokasi atau identitas actor | BELUM DIUJI |
+| QA-M00G6-06 | Blueprint tidak terdaftar; flag default false menghasilkan 404 | BELUM DIUJI |
+| QA-M00G6-07 | GET list/detail, POST ditolak, query tambahan ditolak, no-store | BELUM DIUJI |
+| QA-M00G6-08 | Flask versi legacy, session trust, auth request, rate-limit, proxy config | TERTUNDA UJI |
+| QA-M00G6-09 | Persetujuan sumber, klasifikasi data, izin operasional | BUTUH KEPUTUSAN |
+
+### M00-G7 | Penulis SQLite in-memory DEMO
+| Kelompok | Verifikasi yang tertunda | Status |
+|---|---|---|
+| QA-M00G7-01 | Penolakan koneksi file atau attached DB dan foreign keys OFF | BELUM DIUJI |
+| QA-M00G7-02 | Pembuatan skema :memory: tanpa file DB | BELUM DIUJI |
+| QA-M00G7-03 | BEGIN IMMEDIATE, cek revisi/head, tulis stream dan audit serta COMMIT | BELUM DIUJI |
+| QA-M00G7-04 | Konflik menimbulkan rollback lengkap tanpa catatan ganda | BELUM DIUJI |
+| QA-M00G7-05 | Idempotency request yang sama dan konflik konten berbeda | BELUM DIUJI |
+| QA-M00G7-06 | Penolakan role tidak sah, non-DEMO ID dan status official palsu | BELUM DIUJI |
+| QA-M00G7-07 | Chain digest dapat diperiksa dan pembacaan ringkas tanpa ID reviewer | BELUM DIUJI |
+| QA-M00G7-08 | Trigger UPDATE/DELETE audit/command menolak mutasi | BELUM DIUJI |
+| QA-M00G7-09 | Dua penulis, crash, pemulihan, migrasi skema dan transaksi DB sungguhan | TERTUNDA UJI |
+| QA-M00G7-10 | Perizinan/keaslian sumber, akun server, retensi dan audit eksternal | BUTUH KEPUTUSAN |
+
+**25 deklarasi QA G6 + 25 deklarasi QA G7. Tidak ada pengujian yang dijalankan.** Tabel ini daftar risiko, bukan hasil PASS.
+
 ## Antrean M00-G4 & M00-G5 | Kode P0 (46 QA tertulis, 0 dijalankan)
 
 ### M00-G4 | Kesiapan izin sumber dan identitas server

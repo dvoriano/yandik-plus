@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-6 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-7+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-7 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-8+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.4 / 20 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.5 / 23 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-7
+
+[Kontrak data lineage DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs) (**0 dijalankan**) · [Spesifikasi M05-7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md). Penelusuran calon asal data untuk fasilitas, versi workflow, wilayah historis, policy dan dukungan; konflik ditandai tanpa koreksi otomatis. **Belum ada mapping schema aktual, query, integrasi Flask, atau dasar scoring/publikasi resmi.**
 
 ## Implementasi M05-6
 

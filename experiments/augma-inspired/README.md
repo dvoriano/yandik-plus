@@ -68,6 +68,7 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Kandidat geometri ADM2 dan persyaratan validasi](docs/GEO_DATA_SOURCES.md)
 - [Protokol review paket GeoJSON BIG 2026 dan checksum](docs/ADM2_2026_REVIEW_PROTOCOL.md)
 - [BIG 2026: pemeriksaan metadata layer dan kontradiksi edisi](docs/BIG_2026_METADATA_PREFLIGHT.md)
+- [BIG 2026: inventaris 19 wilayah tanpa mengunduh geometri](docs/BIG_2026_ATTRIBUTE_INVENTORY.md)
 - [Checklist kesiapan STB/laptop uji (read-only)](docs/STB_READONLY_ACCEPTANCE.md)
 - [Lisensi, privasi, isolasi](docs/SAFETY_AND_LICENSE.md)
 - [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
@@ -80,4 +81,4 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Bukti 23 tes Python dan 6 tes Node lokal](docs/LOCAL_TEST_EVIDENCE_2026-11-23.json)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
-**Status terbaru (23 November 2026): 54/54 tes Python lulus lokal pada snapshot lab, termasuk 12 tes preflight metadata BIG; hasil CI commit terbaru belum diverifikasi.** Fondasi eksperimen dan simulasi 19 unit × 12 bulan tersedia. **CI Python, JavaScript, dan Chromium lulus** pada run #45113635452. Data ADM2 resmi/izin pakai, validasi GIS, pengujian STB fisik, dan keputusan integrasi **masih terbuka**. Tidak ada perubahan ke produksi.
+**Status terbaru (23 November 2026): 54 tes Python sebelumnya lulus lokal; 12 tes baru inventaris BIG juga lulus lokal. Gabungan 66 tes dan CI pada commit terbaru belum diverifikasi.** Fondasi eksperimen dan simulasi 19 unit × 12 bulan tersedia. **CI Python, JavaScript, dan Chromium lulus** pada run #45113635452. Data ADM2 resmi/izin pakai, validasi GIS, pengujian STB fisik, dan keputusan integrasi **masih terbuka**. Tidak ada perubahan ke produksi.

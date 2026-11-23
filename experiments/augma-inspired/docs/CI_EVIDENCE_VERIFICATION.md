@@ -8,7 +8,7 @@ GitHub Actions hanya berjalan pada branch `lab/augma-inspired-experiments`, deng
 
 | Artefak Actions | Berkas penting | Batas pemeriksaan |
 |---|---|---|
-| `yandik-lab-offline-python-evidence` | `manifest.json`, `python-tests.log` | Minimal 32 tes Python selesai dan OK |
+| `yandik-lab-offline-python-evidence` | `manifest.json`, `python-tests.log` | Minimal **54** tes Python selesai dan OK |
 | `yandik-lab-browser-evidence` | `manifest.json`, `node-tests.log`, `playwright-tests.log`, `browser-performance.json`, jejak browser jika ada | Minimal 31 tes Node dan 19 tes Playwright lulus |
 
 Manifest menyimpan `branch_ref`, `commit_sha`, `run_id`, `run_attempt`, `job_kind`, `job_result`, serta penanda `NOT_FOR_PRODUCTION`. Artefak disimpan **7 hari**. Berkas log berasal dari test runner dan tidak memerlukan akun APEL, kredensial, atau akses data operasional.
@@ -35,9 +35,13 @@ python3 tools/verify_ci_evidence.py \
 
 Kedua perintah harus mengembalikan `PASS_OFFLINE_CI_LOG_CONTRACT`, *run ID* sama, SHA sama, dan seluruh angka lulus. Bila berkas tidak ada, log tidak lengkap, status gagal, terlewat, atau ambang tes tidak tercapai, hasilnya harus dianggap **tidak lulus verifikasi**.
 
+## Ambang suite terbaru untuk BIG metadata (23 November 2026)
+
+Setelah menambah 12 tes metadata sumber BIG, minimal tes Python adalah **54**, bukan 42. Unit test pemeriksa bukti memakai fixture 54 dan kasus negatif 53. Hasil **54/54 lulus di Python lokal**; eksekusi run GitHub terbaru masih menunggu bukti log/artefak yang cocok dengan SHA. Metadata sumber BIG dan geometri resmi tetap belum diaudit lengkap. [Pemeriksaan metadata BIG](BIG_2026_METADATA_PREFLIGHT.md).
+
 ## Koreksi ambang pengujian
 
-**Validasi terbaru 23 November 2026:** minimum **42 tes Python** (bukan 32), **31 tes Node**, dan **19 tes Playwright**. Pemeriksa dan 10 tes unitnya telah dijalankan bersama suite Python (42/42 lulus secara lokal). Fixture yang hanya menampilkan 41 tes Python harus ditolak. Semua verifikasi artefak GitHub asli tetap membutuhkan berkas dan run ID yang sesuai dari workflow pada commit terbaru.
+**Riwayat ambang sebelumnya:** minimum **42 tes Python** (bukan 32), **31 tes Node**, dan **19 tes Playwright**. Pemeriksa dan 10 tes unitnya telah dijalankan bersama suite Python (42/42 lulus secara lokal). Fixture yang hanya menampilkan 41 tes Python harus ditolak. Semua verifikasi artefak GitHub asli tetap membutuhkan berkas dan run ID yang sesuai dari workflow pada commit terbaru.
 
 ## Apa yang tidak terbukti dari artefak?
 

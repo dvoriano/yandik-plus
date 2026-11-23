@@ -27,12 +27,21 @@ function getVisible() {
   return filterRegions(REGIONS, $("search").value, kind);
 }
 
-function choose(code) {
+function choose(code, keyboardOrigin = null) {
   selected = code;
   renderList();
   renderPins();
   renderAdm2();
   renderDetails();
+  // Rendering replaces DOM nodes. Preserve the keyboard focus location
+  // when activation originated from Enter or Space.
+  if (keyboardOrigin) {
+    const container = keyboardOrigin === "list" ? $("region-list")
+      : keyboardOrigin === "pin" ? $("map-pins") : $("map-adm2");
+    const current = [...container.querySelectorAll("[data-code]")]
+      .find(element => element.getAttribute("data-code") === code);
+    current?.focus();
+  }
 }
 
 function renderDetails() {
@@ -59,6 +68,7 @@ function renderList() {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "region-row";
+    button.dataset.code = r.code;
     button.setAttribute("aria-pressed", String(selected === r.code));
     const labels = document.createElement("span");
     const name = document.createElement("strong");
@@ -70,7 +80,7 @@ function renderList() {
     arrow.className = "arrow";
     arrow.textContent = "›";
     button.append(labels, arrow);
-    button.addEventListener("click", () => choose(r.code));
+    button.addEventListener("click", event => choose(r.code, event.detail === 0 ? "list" : null));
     target.append(button);
   }
 }
@@ -85,7 +95,7 @@ function renderPins() {
     const g = makeSvg("g", {
       class: "pin" + (selected === r.code ? " selected" : ""),
       transform: "translate(" + x.toFixed(2) + " " + y.toFixed(2) + ")",
-      role: "button", tabindex: 0,
+      role: "button", tabindex: 0, "data-code": r.code,
       "aria-label": r.name + ": pilih wilayah indikatif",
       "aria-pressed": String(selected === r.code)
     });
@@ -101,7 +111,7 @@ function renderPins() {
     }
     g.addEventListener("click", () => choose(r.code));
     g.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); choose(r.code); }
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); choose(r.code, "pin"); }
     });
     target.append(g);
   }
@@ -156,7 +166,7 @@ function renderAdm2() {
       const path = makeSvg("path", {
         d: pathString, "fill-rule": "evenodd",
         class: "adm2-area" + (selected === code ? " selected" : ""),
-        role: "button", tabindex: "0",
+        role: "button", tabindex: "0", "data-code": code,
         "aria-label": "Tinjau batas demo " + region.name,
         "aria-pressed": String(selected === code)
       });
@@ -167,7 +177,7 @@ function renderAdm2() {
       path.addEventListener("keydown", event => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          choose(code);
+          choose(code, "adm2");
         }
       });
       layer.append(path);

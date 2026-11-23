@@ -81,6 +81,8 @@ def validate_service(metadata):
     wkid = metadata.get("extent", {}).get("spatialReference", {}).get("wkid")
     if wkid != 4326:
         raise ValueError("Koordinat layer tidak menyatakan EPSG:4326")
+    if metadata.get("objectIdField") != "fid":
+        raise ValueError("Object ID layanan berubah")
     if "geojson" not in metadata.get("supportedQueryFormats", "").casefold():
         raise ValueError("Output GeoJSON tidak didukung")
     return True
@@ -123,6 +125,7 @@ def acquire(requester, expected):
     names = set()
     for start in range(0, len(ids), 3):
         batch = ids[start:start+3]
+        returned_object_ids = set()
         result, size = requester(SOURCE + "/query", {
             "objectIds": ",".join(map(str, batch)),
             "outFields": "fid,namobj,kdpkab,kdppum,wadmkk,wadmpr",
@@ -138,6 +141,13 @@ def acquire(requester, expected):
             raise ValueError("Jumlah geometri per batch tidak sesuai objectIds")
         for feature in subset:
             code, name = validate_upstream_feature(feature, expected)
+            props = feature["properties"]
+            returned_id = props.get("fid", feature.get("id"))
+            if type(returned_id) is not int or returned_id not in batch:
+                raise ValueError("ObjectId respons tidak cocok batch permintaan")
+            if returned_id in returned_object_ids:
+                raise ValueError("ObjectId respons duplikat dalam batch")
+            returned_object_ids.add(returned_id)
             if code in names:
                 raise ValueError("Duplikasi kode sumber: " + code)
             names.add(code)
@@ -150,8 +160,21 @@ def acquire(requester, expected):
                 },
                 "geometry": feature["geometry"]
             })
+        if returned_object_ids != set(batch):
+            raise ValueError("Cakupan ObjectId per batch tidak lengkap")
     if names != set(expected):
         raise ValueError("Cakupan 19 kode wilayah tidak lengkap")
+
+    # Detect data edits during pagination. Never silently combine mismatched snapshots.
+    final_ids_doc, final_size = requester(SOURCE + "/query", {
+        "where": "1=1", "returnIdsOnly": "true", "f": "json"
+    })
+    total_size += final_size
+    if total_size > MAX_TOTAL_BYTES:
+        raise ValueError("Jumlah data terlalu besar untuk lab")
+    final_ids = final_ids_doc.get("objectIds")
+    if not isinstance(final_ids, list) or len(final_ids) != 19 or set(final_ids) != set(ids):
+        raise ValueError("Daftar ObjectId sumber berubah selama proses pembacaan")
     features.sort(key=lambda item: item["properties"]["code"])
     return {"type": "FeatureCollection", "features": features}, ids, total_size
 

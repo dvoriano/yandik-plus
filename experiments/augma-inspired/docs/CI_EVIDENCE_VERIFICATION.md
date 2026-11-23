@@ -35,6 +35,10 @@ python3 tools/verify_ci_evidence.py \
 
 Kedua perintah harus mengembalikan `PASS_OFFLINE_CI_LOG_CONTRACT`, *run ID* sama, SHA sama, dan seluruh angka lulus. Bila berkas tidak ada, log tidak lengkap, status gagal, terlewat, atau ambang tes tidak tercapai, hasilnya harus dianggap **tidak lulus verifikasi**.
 
+## Koreksi ambang pengujian
+
+**Validasi terbaru 23 November 2026:** minimum **42 tes Python** (bukan 32), **31 tes Node**, dan **19 tes Playwright**. Pemeriksa dan 10 tes unitnya telah dijalankan bersama suite Python (42/42 lulus secara lokal). Fixture yang hanya menampilkan 41 tes Python harus ditolak. Semua verifikasi artefak GitHub asli tetap membutuhkan berkas dan run ID yang sesuai dari workflow pada commit terbaru.
+
 ## Apa yang tidak terbukti dari artefak?
 
 - Konsistensi log terhadap manifest **bukan** bukti kriptografis bahwa runner GitHub dapat dipercaya. Periksa juga halaman Actions asli.

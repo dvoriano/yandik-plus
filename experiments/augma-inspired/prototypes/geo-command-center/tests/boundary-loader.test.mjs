@@ -39,3 +39,9 @@ test("nama kabupaten/kota Solok ambigu tanpa prefiks atau kode", () => {
   ambiguous.features[1].properties = { name: "Solok" };
   assert.throws(() => validateBoundaryCollection(ambiguous), /ambigu/);
 });
+
+test("kode wilayah dan nama yang bertentangan ditolak", () => {
+  const conflict = sample();
+  conflict.features[0].properties.name = "Kota Padang";
+  assert.throws(() => validateBoundaryCollection(conflict), /tidak cocok|ambigu/);
+});

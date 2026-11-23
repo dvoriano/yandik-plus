@@ -1,3 +1,7 @@
+## 2026-11-23 | M05-9 register tindak lanjut rekonsiliasi manual APEL 2026–2030
+- [Kode M05-9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-followup) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-followup/tests/followup.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md).
+- **KODE DITULIS, BELUM DIUJI.** 14 tugas bukti serta konflik M05-7 berdasarkan snapshot DEMO, catatan usulan append-only, proteksi revisi dan view-model handoff non-operasional. Seluruh tugas tetap open/unverified; M05-8 gate tetap BLOCKED. Tidak ada akses source, tes/CL/CI, merge, deploy, scoring, approval, koreksi atau publikasi. M05-10 RENCANA.
+
 ## 2026-11-23 | M05-8 evidence register, telaah konflik dan gerbang kesiapan 2026–2030
 - [Kode M05-8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs), 0 dijalankan · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md).
 - **KODE DITULIS, BELUM DIUJI:** 14 persyaratan bukti, review DEMO non-otoritatif, issue notes tidak menutup konflik, 6 gerbang BLOCKED. Tanpa akses sumber resmi, database, CL/CI/tes, merge, deploy atau persetujuan. M05-9 RENCANA.

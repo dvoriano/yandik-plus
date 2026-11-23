@@ -1,3 +1,6 @@
+## 2026-11-23 | M13-S3 catatan review manusia DEMO untuk kandidat APEL/surveilans
+- [Model in-memory M13-S3](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-crosswalk-review), [28 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-crosswalk-review/tests/review.test.mjs), **0 dijalankan**. Kode alasan, pemisahan pengusul-reviewer, pemeriksaan konflik revisi dan perubahan sumber SHA-256 DEMO; bukan sistem persetujuan/rekonsiliasi resmi. [Dokumen](M13_S3_MANUAL_REVIEW_CROSSWALK_DEMO_2026_2030.md). **CODE_ONLY [skip ci].**
+
 ## 2026-11-23 | M13-S2 candidate crosswalk APEL/surveilans DEMO
 - [Draft M13-S2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-apel-crosswalk) · [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-apel-crosswalk/tests/crosswalk.test.mjs), **0 dijalankan**. Kesesuaian ID kejadian/lokasi/period/fasilitas hanya bahan review, bukan sinkronisasi, klaim kasus sama, atau agregasi layanan. [Spesifikasi](M13_S2_APEL_SURVEILLANCE_CROSSWALK_DEMO_2026_2030.md).
 

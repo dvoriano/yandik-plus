@@ -10,6 +10,27 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M13-S3 | Review manusia atas kandidat APEL ↔ surveilans (28 QA tertulis, 0 dijalankan)
+
+| ID | Kelompok verifikasi tertunda | Status |
+|---|---|---|
+| QA-M13S3-01 | Usulan kandidat hanya berasal dari M13-S2 yang tervalidasi DEMO | BELUM DIUJI |
+| QA-M13S3-02 | Pengusul dan penelaah berbeda; hanya verifikator provinsi DEMO boleh menulis catatan in-memory | BELUM DIUJI |
+| QA-M13S3-03 | Sesi penelaah palsu, kab/kota, pimpinan, tanpa sesi tidak diberi hak review | BELUM DIUJI |
+| QA-M13S3-04 | Alasan dan aksi hanya kode enumerasi; teks bebas/field tambahan ditolak | BELUM DIUJI |
+| QA-M13S3-05 | Nilai perlu bukti/kemungkinan terkait/kemungkinan berbeda tetap tanpa persetujuan resmi | BELUM DIUJI |
+| QA-M13S3-06 | Reopen tidak dapat dilakukan sebelum catatan awal | BELUM DIUJI |
+| QA-M13S3-07 | Konflik revision dan urutan catatan atau duplikasi ID ditolak | BELUM DIUJI |
+| QA-M13S3-08 | SHA-256 berubah bila versi manifest/sumber/record APEL berubah, catatan stale ditolak | BELUM DIUJI |
+| QA-M13S3-09 | Pembatasan volume log, pengusul tak dikenal dan ketidaksesuaian pasangan ditolak | BELUM DIUJI |
+| QA-M13S3-10 | Pembacaan board tidak membocorkan identitas aktor/PII; seluruh status official tetap null/false | BELUM DIUJI |
+| QA-M13S3-11 | In-memory append tidak memodifikasi ledger APEL, data kejadian, atau keluaran resmi | BELUM DIUJI |
+| QA-M13S3-12 | Otorisasi server asli, audit yang tidak dapat diedit dan bukti keaslian sumber | TERTUNDA UJI |
+| QA-M13S3-13 | Definisi hukum/proses yang menetapkan kewenangan penelaah dan keputusan atas catatan | BUTUH KEPUTUSAN |
+| QA-M13S3-14 | Uji end-to-end link/validasi bukti, manajemen konflik antarwilayah dan historis | TERTUNDA UJI |
+
+**28 deklarasi QA ditulis pada** [\`review.test.mjs\`](../drafts/m13-crosswalk-review/tests/review.test.mjs), **tidak satu pun dijalankan**. Tabel adalah pengelompokan risiko, bukan hasil PASS.
+
 ## Antrean M00-G3 dan M13-S2 | Kode DEMO (43 skenario QA tertulis, 0 dijalankan)
 
 ### M00-G3 | Kontrak gateway baca-saja

@@ -31,3 +31,6 @@ Pada APEL M05-0, satu investigasi dicatat berdasarkan **kejadian dan lokasi**. P
 5. Seluruh source dan keputusan tetap **NO_GO** sampai verifikasi organisasi.
 
 **Status:** CODE_WRITTEN_NOT_TESTED; cross-module reconciliation NOT PROVEN.
+
+## Lanjutan M13-S3
+[Catatan review manusia berbasis kode dan source fingerprint](M13_S3_MANUAL_REVIEW_CROSSWALK_DEMO_2026_2030.md) sudah ditulis, **28 QA tertulis, 0 dijalankan**. Pencocokan tetap usulan; tidak membuat bukti kesamaan kejadian maupun keputusan pengesahan.

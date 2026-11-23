@@ -19,7 +19,7 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 | MOD-04 Support | M03 prototype teruji historis; M04 draft proses administrasi, bukti dan distribusi | **SEDANG**, approval dan siklus resmi belum |
 | MOD-05 Pengawasan obat hewan | M06-S1 register dan observasi fiktif telah ditulis | **KODE DEMO DITULIS, BELUM DIUJI**; modul operasional belum selesai |
 | MOD-06 Klinik/praktik dokter hewan | M07-S1 register dan checklist DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; seluruh proses kewenangan dan integrasi belum |
-| MOD-07 PHMS/zoonosis/surveilans | M13-S1 dan M13-S2 candidate link APEL/surveilans ditulis | **KODE DITULIS, BELUM DIUJI**; link hanya usulan, tidak ada sinkronisasi resmi |
+| MOD-07 PHMS/zoonosis/surveilans | M13-S1/S2/S3 mencakup event DEMO, kandidat kaitan APEL dan catatan telaah in-memory | **KODE DITULIS, BELUM DIUJI**; tidak ada keputusan atau sinkronisasi resmi |
 | MOD-08 Sertifikat veteriner/lalu lintas | M14-S1 register permohonan internal DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; penerbitan resmi tidak tersedia |
 | MOD-09 Pembinaan/Bimtek | Spesifikasi, rencana keterkaitan SDM | **RENCANA**, workflow belum |
 | MOD-10 Administrasi dokumen | Spesifikasi, draft lintas M04 terpisah | **RENCANA**, integrasi arsip belum |
@@ -58,7 +58,10 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Pembaruan M00-G3/M13-S2:** gateway read-only simulasi dan candidate crosswalk APEL/surveilans telah ditulis dengan 43 QA baru, **0 dijalankan**. Tidak ada HTTP endpoint, otorisasi resmi, integrasi source atau penggabungan angka.
 
+**Pembaruan M13-S3:** kode catatan telaah kandidat DEMO dengan source-change fingerprint dibuat, 28 QA tertulis, **0 dijalankan**. Digest bukan autentikasi sumber dan catatan bukan keputusan. Modul keseluruhan belum selesai.
+
 ## Progres yang baru dicatat
+- [x] M13-S3: catatan telaah kandidat crosswalk in-memory ditulis, **28 QA tertulis, 0 dijalankan**.
 - [x] M00-G3: kode gateway API read-only DEMO ditulis, **19 QA tertulis, belum diuji**.
 - [x] M13-S2: kode kandidat kaitan investigasi APEL/surveilans DEMO ditulis, **24 QA tertulis, belum diuji**.
 - [x] M00-G2: kode provenance sumber dan batas akses API DEMO ditulis, **24 QA tertulis, 0 dijalankan**.

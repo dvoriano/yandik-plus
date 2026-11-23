@@ -63,6 +63,10 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 - **Partial draft M13-S2:** candidate event-location-period-facility links at drafts/m13-apel-crosswalk/, 24 QA written, 0 executed; not verified equivalence or actual reconciliation.
 - Still required: source approvals, real server session trust, Juknis case/investigation dictionary, server API permissions, manual review audit, privacy and regression tests.
 
+### B-015 | Human review notes for crosswalk candidates (M13-S3)
+- **Partial draft:** in-memory review log in drafts/m13-crosswalk-review/; 28 QA written, 0 executed. Rechecks M13-S2 candidate/source and detects stale DEMO inputs using non-authenticating SHA-256 fingerprint.
+- Before use: authenticated independent reviewers, authoritative source lineage, audited durable event store, official case terminology, permission to integrate, and negative/regression tests.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

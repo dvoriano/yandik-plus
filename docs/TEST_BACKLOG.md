@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-9: register tindak lanjut rekonsiliasi manual APEL 2026–2030 (BELUM DIUJI)
+- [Kode DEMO M05-9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-followup) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-followup/tests/followup.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md). **50 skenario ditulis, 0 dijalankan.**
+- Uji baru dapat dilakukan setelah izin eksplisit pemilik proyek untuk keluar dari CODE_ONLY. Persetujuan pengujian bukan izin produksi; perlu bukti terpisah data dictionary, Juknis, validitas snapshot, hak akses dan keputusan owner.
+
+| ID | Skenario QA yang ditunda | Status |
+|---|---|---|
+| QA-M05-9-01 | M05-9 accepts a blocked DEMO readiness input | BELUM DIUJI |
+| QA-M05-9-02 | M05-9 creates a fourteen-item requirement review queue | BELUM DIUJI |
+| QA-M05-9-03 | M05-9 issues remain separate from evidence requirements | BELUM DIUJI |
+| QA-M05-9-04 | M05-9 task kinds are explicit | BELUM DIUJI |
+| QA-M05-9-05 | M05-9 action codes do not include auto-close or auto-repair | BELUM DIUJI |
+| QA-M05-9-06 | M05-9 scopes every task to its snapshot | BELUM DIUJI |
+| QA-M05-9-07 | M05-9 issue index is anchored to snapshot and source reference | BELUM DIUJI |
+| QA-M05-9-08 | M05-9 never treats an index as global issue identity | BELUM DIUJI |
+| QA-M05-9-09 | M05-9 missing readiness packet is rejected | BELUM DIUJI |
+| QA-M05-9-10 | M05-9 rejects readiness not shaped as M05-8 packet | BELUM DIUJI |
+| QA-M05-9-11 | M05-9 rejects readiness with unauthorized production access | BELUM DIUJI |
+| QA-M05-9-12 | M05-9 rejects gate falsely marked ready | BELUM DIUJI |
+| QA-M05-9-13 | M05-9 rejects official attestation forged into requirement | BELUM DIUJI |
+| QA-M05-9-14 | M05-9 rejects a resolved upstream issue | BELUM DIUJI |
+| QA-M05-9-15 | M05-9 rejects non-DEMO snapshot | BELUM DIUJI |
+| QA-M05-9-16 | M05-9 rejects generic DEMO label lacking snapshot namespace | BELUM DIUJI |
+| QA-M05-9-17 | M05-9 unresolved region issue requires history evidence | BELUM DIUJI |
+| QA-M05-9-18 | M05-9 workflow issue requires workflow revision evidence | BELUM DIUJI |
+| QA-M05-9-19 | M05-9 unknown issue code falls back to provenance and grain | BELUM DIUJI |
+| QA-M05-9-20 | M05-9 all tasks start open, without deadlines or official signoff | BELUM DIUJI |
+| QA-M05-9-21 | M05-9 no branch of register can authorize writes, tests or scores | BELUM DIUJI |
+| QA-M05-9-22 | M05-9 preserves scope 2026-2030 | BELUM DIUJI |
+| QA-M05-9-23 | M05-9 accepts one proposal with correct expected revision | BELUM DIUJI |
+| QA-M05-9-24 | M05-9 proposal never changes issue resolution or source | BELUM DIUJI |
+| QA-M05-9-25 | M05-9 append does not mutate input register | BELUM DIUJI |
+| QA-M05-9-26 | M05-9 supports ordered sequential notes with explicit revisions | BELUM DIUJI |
+| QA-M05-9-27 | M05-9 supports append on previously reviewed register | BELUM DIUJI |
+| QA-M05-9-28 | M05-9 rejects stale revision rather than overwriting notes | BELUM DIUJI |
+| QA-M05-9-29 | M05-9 rejects duplicate proposal ID within new batch | BELUM DIUJI |
+| QA-M05-9-30 | M05-9 rejects reuse of previously recorded proposal ID | BELUM DIUJI |
+| QA-M05-9-31 | M05-9 cross-snapshot proposal is rejected | BELUM DIUJI |
+| QA-M05-9-32 | M05-9 unknown task is not silently created | BELUM DIUJI |
+| QA-M05-9-33 | M05-9 unrelated evidence requirement is rejected | BELUM DIUJI |
+| QA-M05-9-34 | M05-9 missing evidence reference is rejected | BELUM DIUJI |
+| QA-M05-9-35 | M05-9 fake reviewer identifier is rejected | BELUM DIUJI |
+| QA-M05-9-36 | M05-9 proposed auto-approval action is rejected | BELUM DIUJI |
+| QA-M05-9-37 | M05-9 proposed close-and-repair action is rejected | BELUM DIUJI |
+| QA-M05-9-38 | M05-9 forged official decision field is rejected | BELUM DIUJI |
+| QA-M05-9-39 | M05-9 arbitrary free text or raw evidence is rejected | BELUM DIUJI |
+| QA-M05-9-40 | M05-9 forged register authorization is rejected | BELUM DIUJI |
+| QA-M05-9-41 | M05-9 forged closed task is rejected | BELUM DIUJI |
+| QA-M05-9-42 | M05-9 empty proposal batch makes no source changes | BELUM DIUJI |
+| QA-M05-9-43 | M05-9 handoff renders requirement and issue groups without dispatch | BELUM DIUJI |
+| QA-M05-9-44 | M05-9 handoff records notes without treating them as resolved | BELUM DIUJI |
+| QA-M05-9-45 | M05-9 handoff cannot assign actual staff or publish | BELUM DIUJI |
+| QA-M05-9-46 | M05-9 handoff refuses spoofed register source | BELUM DIUJI |
+| QA-M05-9-47 | M05-9 proposal for missing dictionary evidence remains pending | BELUM DIUJI |
+| QA-M05-9-48 | M05-9 rejects inconsistent evidence candidate counts | BELUM DIUJI |
+| QA-M05-9-49 | M05-9 rejects forged blocked-requirement gate list | BELUM DIUJI |
+| QA-M05-9-50 | M05-9 rejects modified historical proposal revision | BELUM DIUJI |
+
 ## Antrean M05-8: evidence review dan gerbang sumber APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md). **49 skenario ditulis, 0 dijalankan.**
 - Butuh keputusan owner untuk mulai pengujian; hasil fiktif tidak boleh naik ke status sah. Butuh verifikasi independen dan persetujuan formal untuk data dictionary, pemilik sumber, grain, Juknis, versi policy, bukti dukungan, izin staging serta publikasi.

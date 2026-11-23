@@ -26,6 +26,9 @@
 - [M00-G8](M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) menghasilkan hash baru untuk **normalisasi format**; hash asli tidak divalidasi, tidak boleh dipakai sebagai persetujuan audit/migrasi atau bukti sumber sah.
 - [Gerbang penerimaan Flask](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md) mensyaratkan sumber yang diizinkan/disanitasi, tanpa data/secret nyata, pengecekan role-per-request, dan pengujian dengan izin sebelum rilis.
 
+## Addendum P0 | Batas metadata source Flask
+- [M00-G9](M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md) hanya memeriksa metadata fiktif dan pola nama file; bukan pemeriksa isi source maupun scanner secrets. Bahkan path yang lolos **tidak** membuktikan bahwa tidak ada rahasia. Jangan mengirim source, token atau PII aktual ke repo publik. Hasil `ready_for_import:false` tetap wajib.
+
 ## Known security debt in source snapshot
 - Review authentication and territorial authorization across users/roles/permissions APIs.
 - User list responses need an allowlist; no password hash fields.

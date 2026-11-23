@@ -23,3 +23,6 @@
 6. Jangan merge ke \`main\`, jalankan workflow, test runner, migrasi DB atau ubah produksi sampai owner mencabut mode CODE_ONLY secara eksplisit.
 
 **Status saat dicatat:** source Flask legacy belum ada sebagai salinan sanitisasi berizin dalam repo pengembangan. Tidak ada audit source riil atau izin integrasi yang dibuktikan. Teruskan P0 tanpa menghubungi VPS produksi atau membuka data pribadi.
+
+## Lanjutan M00-G9 | Pratinjau deklarasi metadata
+[Preflight metadata file/rute DEMO](M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md) telah ditulis dengan **41 QA tertulis, 0 dijalankan**. Ia tidak membuka source maupun memindai rahasia; hasil tidak pernah mengizinkan impor. Checklist penerimaan di atas tetap harus dipenuhi dengan bukti independen saat sumber berizin tersedia.

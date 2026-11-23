@@ -12,7 +12,7 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 
 | Modul | Bukti yang ditemukan di repository | Kesimpulan jujur |
 |---|---|---|
-| MOD-00 Core | Fondasi role/workflow DEMO, M00-G1–G5, M00-G6 Flask belum terpasang, G7 SQLite memory-only dan G8 bridge lintas bahasa format-saja | **SEDANG**, G1–G8 belum diuji, belum integrasi sumber sah atau siap rilis |
+| MOD-00 Core | Fondasi role/workflow DEMO; M00-G1–G8; M00-G9 preflight deklarasi Flask yang tidak memindai file/source nyata | **SEDANG**, G1–G9 belum diuji, belum ada source legacy berizin atau integrasi siap rilis |
 | MOD-01 Profil | Prototype form dan masalah, master data awal; M05-15 penghubung DEMO ditulis | **SEDANG**, sumber dan API asli belum |
 | MOD-02 APEL | M05-0..M05-17 model DEMO; M13-S2 kandidat crosswalk investigasi ke surveilans | **SEDANG**, tidak ada rekonsiliasi resmi dan belum menjadi APEL baru |
 | MOD-03 SDM | Model penempatan awal; M05-15 snapshot dan agregasi fiktif | **RANCANGAN/PROTOTIPE**, belum sistem personel operasional |
@@ -66,7 +66,10 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Pembaruan M00-G8:** jembatan proyeksi hash kanonik lintas JavaScript/Python dan checklist penerimaan source Flask berizin ditulis; 37 QA tertulis, **0 dijalankan**. Audit asal tidak dibuktikan dan tidak ada migrasi ataupun integrasi ke Flask legacy. Keseluruhan YANDIK+ belum selesai.
 
+**Pembaruan M00-G9:** kode pratinjau metadata source Flask DEMO dan 41 QA tertulis, **0 dijalankan**. Tidak ada pemindaian isi source, izin pemilik data, autentikasi real, atau indikasi integrasi Flask yang siap pakai. Keseluruhan YANDIK+ belum selesai.
+
 ## Progres yang baru dicatat
+- [x] M00-G9: preflight metadata source Flask DEMO ditulis, **41 QA tertulis, 0 dijalankan**.
 - [x] M00-G8: jembatan JS/Python format audit sintetik ditulis, **37 QA tertulis, 0 dijalankan**.
 - [x] M00-G6: factory Flask DEMO tidak terdaftar ditulis, **25 QA tertulis, 0 dijalankan**.
 - [x] M00-G7: writer SQLite :memory: DEMO ditulis, **25 QA tertulis, 0 dijalankan**.

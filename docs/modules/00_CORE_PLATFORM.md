@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** SEDANG (prototype lama punya tes historis; M00-G1–G8 kode baru belum diuji; belum terintegrasi Flask).  
+**Status implementasi GitHub:** SEDANG (prototype lama punya tes historis; M00-G1–G9 kode baru belum diuji; belum terintegrasi Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -82,6 +82,10 @@ Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber 
 - [x] [Bridge format audit JS/Python](../M00_G8_CROSS_LANGUAGE_AUDIT_BRIDGE_2026_2030.md) ditulis, **37 QA tertulis, 0 dijalankan**. Hash kanonik tidak memvalidasi hash asli atau migrasi.
 - [x] [Checklist penerimaan source Flask legacy](../M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md) disusun, bukan bukti izin, audit source atau integrasi.
 - [ ] Pemeriksaan hak akses, source integrity, Flask session dan prosedur migrasi nyata belum dilakukan.
+
+## Tambahan M00-G9 | Deklarasi source Flask pra-integrasi
+- [x] [Kode preflight metadata](../M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md) ditulis, **41 QA tertulis, 0 dijalankan**. Ini tidak memindai file, memeriksa secrets sesungguhnya atau memberi izin sumber.
+- [ ] Penerimaan source Flask sanitisasi/berizin, pemeriksaan kode nyata dan verifikasi role/route seluruhnya belum dilakukan.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

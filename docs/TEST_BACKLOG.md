@@ -10,6 +10,25 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G9 | Metadata Intake Flask DEMO (41 QA tertulis, 0 dijalankan)
+
+| ID | Kelompok verifikasi tertunda | Status |
+|---|---|---|
+| QA-M00G9-01 | Schema DEMO, volume, klaim origin/izin/scan source yang tidak resmi ditolak | BELUM DIUJI |
+| QA-M00G9-02 | Deklarasi file Python, dependensi, entrypoint, size dan checksum klaim sesuai bentuk | BELUM DIUJI |
+| QA-M00G9-03 | Traversal, path absolut/Windows, non-ASCII, dotfile, ekstensi biner dan symlink ditolak | BELUM DIUJI |
+| QA-M00G9-04 | Pola nama secrets/backup/private dan field ekstra ditolak, tanpa klaim pemindaian isi | BELUM DIUJI |
+| QA-M00G9-05 | Nama file duplikat, jumlah berlebih, hash rusak, ukuran boolean/terlalu besar ditolak | BELUM DIUJI |
+| QA-M00G9-06 | Rute `/demo` unik per method/path/ID, modul terdaftar, status akses hanya unverified | BELUM DIUJI |
+| QA-M00G9-07 | Tipe method/status tidak sah, ID/klaim authorization palsu, route non-DEMO ditolak | BELUM DIUJI |
+| QA-M00G9-08 | Entry/dependency tidak dideklarasikan dilaporkan sebagai blocker, bukan status approved | BELUM DIUJI |
+| QA-M00G9-09 | Respons tidak memaparkan nama file dan tidak menyediakan data pribadi | BELUM DIUJI |
+| QA-M00G9-10 | Semua may_connect/execute/write/publish/deploy/ready flags false | BELUM DIUJI |
+| QA-M00G9-11 | Pengujian kode terhadap manifest tidak melakukan I/O atau memindai file aktual | TERTUNDA UJI |
+| QA-M00G9-12 | Keabsahan izin source, validitas hash isi, klasifikasi data, audit Flask nyata dan persetujuan keamanan | BUTUH KEPUTUSAN |
+
+**41 deklarasi QA tertulis di** [`test_preflight.py`](../drafts/m00-flask-intake-preflight/tests/test_preflight.py), **tidak dijalankan**. QA pengujian sesungguhnya tetap menunggu izin owner. Semua klaim metadata sumber tetap **belum terverifikasi**.
+
 ## Antrean M00-G8 | Paritas format audit JavaScript ↔ Python (37 QA tertulis, 0 dijalankan)
 
 | ID | Pemeriksaan tertunda | Status |

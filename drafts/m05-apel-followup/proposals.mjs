@@ -59,6 +59,28 @@ function validateRegister(register){
    (t.reference?.requirement_id!==t.task_id.slice("DEMO-TASK-REQ-".length)))||
   register.proposals.some(p=>!register.tasks.some(t=>t.task_id===p.task_id)))
   fail("M05_9_REGISTER_LINKS_INVALID");
+ const revisionByTask=new Map(register.tasks.map(t=>[t.task_id,0]));
+ for(const p of register.proposals){
+  if(!exact(p,[...keys,"proposal_revision","official_decision",
+   "issue_resolved","source_modified"])||
+   !isDemoId(p.reviewer_id)||!isDemoId(p.snapshot_id)||
+   !M05_9_ACTIONS.includes(p.action_code)||
+   !M05_9_REASONS.includes(p.reason_code)||
+   !Number.isSafeInteger(p.expected_revision)||
+   p.expected_revision<0||
+   !Number.isSafeInteger(p.proposal_revision)||
+   !reqs.has(p.evidence_requirement_id))
+   fail("M05_9_HISTORY_INVALID");
+  const task=register.tasks.find(t=>t.task_id===p.task_id);
+  const current=revisionByTask.get(p.task_id);
+  if(p.expected_revision!==current||p.proposal_revision!==current+1||
+   !task.required_evidence_ids.includes(p.evidence_requirement_id))
+   fail("M05_9_HISTORY_REVISION_INVALID");
+  revisionByTask.set(p.task_id,current+1);
+ }
+ if(register.tasks.some(t=>
+   t.proposal_revision!==revisionByTask.get(t.task_id)))
+  fail("M05_9_HISTORY_REVISION_INVALID");
  return true;
 }
 export function proposeDemoFollowups({register,proposals=[]}={}){

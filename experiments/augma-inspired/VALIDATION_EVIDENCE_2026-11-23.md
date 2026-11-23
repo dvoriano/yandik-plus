@@ -87,3 +87,11 @@ It reads kernel, board model, CPU, memory, disk, and tool availability. It does 
 - Chromium 144 dapat diinisialisasi dan merender `page.set_content` pada lingkungan terbatas; tetapi navigasi Playwright `page.goto(http://127.0.0.1/...)` diblokir dengan `ERR_BLOCKED_BY_ADMINISTRATOR`. Ini **bukan** bukti bahwa halaman aplikasi berhasil berjalan, sehingga tes browser tetap pending.
 - Akses DNS/HTTPS dari runtime lokal menuju GitHub tidak tersedia. Sumber project diperiksa dan ditulis melalui konektor GitHub; **tidak ada pengambilan langsung ke layanan BNPB** maupun pemasangan pada STB.
 - `.gitignore` lab mencegah file data kandidat, modul lokal, dan hasil tes tidak sengaja ikut commit. Tidak ada penggabungan dengan `main` atau perubahan produksi.
+
+## Pembaruan pemeriksaan dan CI khusus branch lab
+
+- Pemanggil BNPB diperketat untuk mengecek setiap `fid` sesuai `objectIds` batch yang diminta, menolak `fid` duplikat dan memverifikasi ulang daftar 19 objectId setelah semua batch selesai. Perubahan snapshot menyebabkan proses gagal tertutup.
+- Skenario mock pengambil BNPB kini **9 buah**. Ini adalah jumlah skenario yang tertulis, **bukan** bukti kesembilannya lulus eksekusi.
+- Workflow `.github/workflows/yandik-innovation-lab-ci.yml` dibuat **hanya pada branch lab**. Trigger push terbatas ke `lab/augma-inspired-experiments`; izin repository `contents: read`, tanpa secrets, push, PR otomatis maupun deployment. Menjalankan Python GIS/mocks dan Playwright desktop/mobile viewport di runner terisolasi.
+- Saat laporan ini ditulis, pembacaan workflow run khusus commit belum memberikan hasil yang dapat diverifikasi. Status browser CI tetap **belum terkonfirmasi**. Pengujian 5 auditor geometri sintetis telah dieksekusi ulang dan lulus di lingkungan lokal.
+- File `.github/workflows` adalah pengecualian lokasi dari aturan semua file dalam folder lab, **tetapi tidak disalin ke branch main atau develop**. Branch produksi dan VPS tidak disentuh.

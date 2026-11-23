@@ -53,6 +53,19 @@ Check the actual new Actions run ID and logs before changing these statuses from
 
 The supporting machine-readable evidence is in [QA local regression (32 Python, 6 Node)](QA_REGRESSION_2026-11-23_32PY_6NODE.json). The last independently verified GitHub Actions run remains [#45114481799](https://github.com/dvoriano/yandik-plus/actions/runs/45114481799) on an earlier commit.
 
+## CI proof package and offline verifier (new work)
+
+The lab-only GitHub Actions workflow now preserves source-specific artifacts for **both** Python and browser jobs. Every artifact includes a manifest of the exact GitHub SHA, run ID, run attempt, job kind and final outcome, plus the raw test-runner logs. These records are created in temporary CI workspace only and do not write to the repository or production.
+
+- `yandik-lab-offline-python-evidence`: manifest, raw `python-tests.log`.
+- `yandik-lab-browser-evidence`: manifest, raw Node and Playwright logs, browser performance sample, and Playwright reports/traces if produced.
+- `tools/verify_ci_evidence.py` validates the SHA and run ID supplied by the reviewer, branch, non-production scope, job success, test counts, no failed/skipped tests, and rejects missing/symlinked log files.
+- **10 new negative/positive test cases** for that verifier were added. The total Python suite now has **42 defined test cases** (previously 32). A future successful CI run must demonstrate at least 42 Python tests, 31 Node tests, and 19 Playwright tests on one exact commit.
+
+**Execution is still PENDING for the new evidence workflow and the six new keyboard/network Playwright tests.** The last confirmed hosted run is [#45114481799](https://github.com/dvoriano/yandik-plus/actions/runs/45114481799), an older commit. In the current tool access, newer push-triggered workflow run IDs are not listed. Do not report the new gates as passed until their logs have been independently checked.
+
+[Step-by-step offline artifact verification](CI_EVIDENCE_VERIFICATION.md). The verifier checks internal log consistency only, not third-party geographic licences, physical device reliability or GitHub-runner authenticity.
+
 ## Scope and isolation
 
 - Branch: `lab/augma-inspired-experiments`; tests use `127.0.0.1:8767` and synthetic/no operational data.

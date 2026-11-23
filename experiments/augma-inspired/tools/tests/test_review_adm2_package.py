@@ -74,6 +74,26 @@ class Adm2PackageReviewTests(unittest.TestCase):
                 self.write(source=source)
                 self.assertEqual(self.run_review()["status"], "REJECTED")
 
+    def test_private_or_local_provenance_url_fails(self):
+        for source in (
+            "https://localhost/private", "https://127.0.0.1/map",
+            "https://192.168.1.2/export", "https://10.0.0.4/data",
+            "https://[::1]/map", "https://device.local/map",
+            "https://worker.internal/map", "https://server/map",
+            "https://example.com/secret\\nheader"
+        ):
+            with self.subTest(source=source):
+                self.write(source=source)
+                self.assertEqual(self.run_review()["status"], "REJECTED")
+
+    def test_symlinked_geojson_input_fails_closed(self):
+        actual = self.root / "real.geojson"
+        self.geo.rename(actual)
+        self.geo.symlink_to(actual)
+        result = self.run_review()
+        self.assertEqual(result["status"], "REJECTED")
+        self.assertTrue(any("Symlink" in error for error in result["errors"]))
+
     def test_future_time_fails(self):
         self.write(retrieved_utc=(dt.datetime.now(dt.timezone.utc) +
                                   dt.timedelta(days=1)).isoformat())

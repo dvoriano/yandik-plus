@@ -4,22 +4,22 @@ The test suite is **manual**. There is no production deployment and no GitHub Ac
 
 ## Local desktop browser
 
-From \`experiments/augma-inspired/prototypes/\`:
+From `experiments/augma-inspired/prototypes/`:
 
 Terminal 1:
 
-\`\`\`sh
+```sh
 python3 -m http.server 8767 --bind 127.0.0.1
-\`\`\`
+```
 
 Terminal 2:
 
-\`\`\`sh
+```sh
 npm install --no-save @playwright/test
 npx playwright install chromium
 npm run test:browser
 node tools/browser-performance.mjs > /tmp/yandik-lab-perf.json
-\`\`\`
+```
 
 Checks include: rendering of the local province outline, 19 registry regions, search and filter, local upload of **synthetic** 19 polygons, rejection of invalid inputs, grounded answer citations, browser JavaScript errors, external asset requests, and mobile/desktop viewport overflow. CPU/device benchmarks are **not** inferred from page load times.
 
@@ -29,9 +29,9 @@ The same environment may not exist on Android TV. Never flash firmware, root, or
 
 If device runs a compatible Linux shell, read-only profile:
 
-\`\`\`sh
+```sh
 bash tools/device-profile-readonly.sh
-\`\`\`
+```
 
 Record device model, RAM, free disk, CPU architecture, OS, and whether a Chromium-compatible browser is actually available. If browser unavailable, do not call it a browser test. Run localhost server / browser only after compatibility and permission review.
 
@@ -42,7 +42,7 @@ For every execution capture:
 - device/OS/browser + versions and RAM
 - Playwright terminal output and failed tests
 - human-observed keyboard, touch, and layout behaviour
-- JSON benchmark output from \`tools/browser-performance.mjs\` if it ran
+- JSON benchmark output from `tools/browser-performance.mjs` if it ran
 - console errors and external request violations
 
 Results live outside GitHub until explicitly reviewed for private data. Do not upload passwords, configuration secrets, user profiles, or production files.

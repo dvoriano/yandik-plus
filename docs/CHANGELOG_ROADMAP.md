@@ -1,3 +1,9 @@
+## 2026-11-23 | M00-G5 rancangan audit transaksi dan SQLite DEMO
+- [Model dan SQL draft](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-audit-port), [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-audit-port/tests/audit_port.test.mjs), **0 dijalankan**. Audit pasangan review M13-S3, digest berantai dan blueprint SQLite tanpa eksekusi/migrasi DB. Bukan audit tahan manipulasi. [Spesifikasi](M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md).
+
+## 2026-11-23 | M00-G4 persyaratan izin sumber dan sesi backend DEMO
+- [Model kesiapan sumber](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-source-readiness), [22 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-source-readiness/tests/readiness.test.mjs), **0 dijalankan**; tidak ada status izin resmi atau API produksi. [Spesifikasi](M00_G4_SOURCE_PERMISSION_GATE_2026_2030.md). CODE_ONLY [skip ci].
+
 ## 2026-11-23 | M13-S3 catatan review manusia DEMO untuk kandidat APEL/surveilans
 - [Model in-memory M13-S3](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-crosswalk-review), [28 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-crosswalk-review/tests/review.test.mjs), **0 dijalankan**. Kode alasan, pemisahan pengusul-reviewer, pemeriksaan konflik revisi dan perubahan sumber SHA-256 DEMO; bukan sistem persetujuan/rekonsiliasi resmi. [Dokumen](M13_S3_MANUAL_REVIEW_CROSSWALK_DEMO_2026_2030.md). **CODE_ONLY [skip ci].**
 

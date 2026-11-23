@@ -31,3 +31,6 @@ Keluaran board hanya menampilkan status ringkas; **bukan bukti seorang petugas r
 5. Uji ulang 28 QA, tes regresi M13-S2 dan hak akses negatif setelah pemilik proyek memberi izin. Hingga saat itu tetap **NO_GO**.
 
 **Status:** \`CODE_WRITTEN_NOT_TESTED\`. MOD-07 dan APEL terpadu belum selesai.
+
+## Kaitan dengan M00-G5
+[Model audit pasangan review dan rancangan transaksi SQLite](M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md) sudah ditulis dengan **24 QA tertulis, 0 dijalankan**. Belum ada audit persisten, eksekusi SQL, autentikasi server atau pemberian izin.

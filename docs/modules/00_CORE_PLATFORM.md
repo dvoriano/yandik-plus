@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** SEDANG (role/workflow prototype lama diuji; M00-G1/G2/G3 kode baru belum diuji; belum Flask).  
+**Status implementasi GitHub:** SEDANG (prototype lama punya tes historis; M00-G1/G2/G3/G4/G5 kode baru belum diuji; belum Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -67,6 +67,11 @@ Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber 
 ## Tambahan M00-G3 | Proyeksi endpoint API baca-saja DEMO
 - [x] [Kode kontrak gateway](../M00_G3_READ_API_BOUNDARY_2026_2030.md) dan 19 QA tertulis, **0 dijalankan**; request GET dan respons minimum, bukan endpoint HTTP.
 - [ ] Sesi backend nyata, identitas setiap API, CSRF, log akses dan hak per field tetap belum dibuktikan.
+
+## Tambahan M00-G4/G5 | Kesiapan sumber resmi dan audit transaksi DEMO
+- [x] [Daftar persyaratan izin sumber](../M00_G4_SOURCE_PERMISSION_GATE_2026_2030.md) ditulis, **22 QA tertulis, 0 dijalankan**; tidak memberi otorisasi data resmi.
+- [x] [Skema transaksi audit dan log DEMO](../M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md) ditulis, **24 QA tertulis, 0 dijalankan**; skema SQL belum dieksekusi dan bukan penyimpanan aman siap pakai.
+- [ ] Identitas Flask yang sah, per-API authorization, sumber berizin, transaksi atomik dan backup/restore harus dibuktikan.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

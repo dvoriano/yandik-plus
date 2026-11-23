@@ -12,6 +12,11 @@
 - Tests using fake users, Puskeswan and kabupaten/kota.
 - App startup that fails clearly if secret is missing, never public default secrets.
 
+## Addendum P0 | Gerbang sumber & audit (23 November 2026)
+- [M00-G4](M00_G4_SOURCE_PERMISSION_GATE_2026_2030.md) hanya register kebutuhan izin data DEMO, bukan izin resmi atau konektor iSIKHNAS.
+- [M00-G5](M00_G5_AUDIT_TRANSACTION_PORT_2026_2030.md) hanya rantai hash in-memory dan rancangan skema append-only SQLite; belum membangun DB aman. Hash tanpa autentikasi eksternal bukan anti-tamper.
+- Untuk produksi, hak sesi API server, CSRF, audit akses sensitif, least privilege, backup, role DB dan data owner authorization harus disetujui serta diuji.
+
 ## Known security debt in source snapshot
 - Review authentication and territorial authorization across users/roles/permissions APIs.
 - User list responses need an allowlist; no password hash fields.

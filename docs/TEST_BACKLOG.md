@@ -10,6 +10,36 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G4 & M00-G5 | Kode P0 (46 QA tertulis, 0 dijalankan)
+
+### M00-G4 | Kesiapan izin sumber dan identitas server
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M00G4-01 | 7 tema otorisasi sumber, tujuan, klasifikasi, transport, retensi, sesi dan insiden hanya fixture DEMO | BELUM DIUJI |
+| QA-M00G4-02 | DRAFTED_UNVERIFIED_DEMO tidak boleh berubah menjadi izin nyata | BELUM DIUJI |
+| QA-M00G4-03 | Status APPROVED, sumber URL, nomor izin, nama pemilik/PII tidak diterima | BELUM DIUJI |
+| QA-M00G4-04 | Duplikasi/missing checklist, field ekstra dan region/source/domain mismatch ditolak | BELUM DIUJI |
+| QA-M00G4-05 | Role kab/kota, Puskeswan, pimpinan, tanpa sesi ditolak untuk dossier | BELUM DIUJI |
+| QA-M00G4-06 | Sesi backend, CSRF, revokasi, scope per objek, field allowlist tetap belum diwujudkan | BELUM DIUJI |
+| QA-M00G4-07 | Tata kelola sumber resmi dan penetapan izin oleh pemilik data | BUTUH KEPUTUSAN |
+| QA-M00G4-08 | Bukti autentikasi backend Flask, negative authorization, privilege escalation | TERTUNDA UJI |
+
+### M00-G5 | Rancangan audit transaksi
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M00G5-01 | Review M13-S3 dan audit event berpasangan, urut, tanpa mengubah input asal | BELUM DIUJI |
+| QA-M00G5-02 | Revision optimistis review/audit tidak boleh konflik atau berpisah panjangnya | BELUM DIUJI |
+| QA-M00G5-03 | Perubahan alasan, actor, source digest, previous digest, event digest ditolak | BELUM DIUJI |
+| QA-M00G5-04 | Ketika source berubah, catatan stale tidak bisa dipakai tanpa tinjauan ulang | BELUM DIUJI |
+| QA-M00G5-05 | Output audit ringkas tidak membuka nama/ID actor | BELUM DIUJI |
+| QA-M00G5-06 | Tidak ada izin menulis DB, mengesahkan, menerbitkan, mempublikasikan atau deploy | BELUM DIUJI |
+| QA-M00G5-07 | SQL belum dijalankan: review skema, foreign key, trigger, index dan race conditions | TERTUNDA UJI |
+| QA-M00G5-08 | Transaction BEGIN IMMEDIATE, optimistic row check, atomic review+event insert, rollback bila gagal | TERTUNDA UJI |
+| QA-M00G5-09 | Keamanan storage/backup, role DB, audit admin, retensi dan bencana | BUTUH KEPUTUSAN |
+| QA-M00G5-10 | Digest berantai tanpa signature/MAC tidak dianggap anti-tamper atau sumber autentik | BELUM DIUJI |
+
+**22 QA G4 dan 24 QA G5 telah ditulis sebagai kode, 0 dieksekusi.** Tabel pengelompokan risiko, bukan bukti keberhasilan.
+
 ## Antrean M13-S3 | Review manusia atas kandidat APEL ↔ surveilans (28 QA tertulis, 0 dijalankan)
 
 | ID | Kelompok verifikasi tertunda | Status |

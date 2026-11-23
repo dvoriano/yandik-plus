@@ -67,6 +67,14 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 - **Partial draft:** in-memory review log in drafts/m13-crosswalk-review/; 28 QA written, 0 executed. Rechecks M13-S2 candidate/source and detects stale DEMO inputs using non-authenticating SHA-256 fingerprint.
 - Before use: authenticated independent reviewers, authoritative source lineage, audited durable event store, official case terminology, permission to integrate, and negative/regression tests.
 
+### B-016 | Source permission readiness and authenticated Flask integration (M00-G4)
+- **Partial draft M00-G4:** synthetic source-permission checklist and host identity requirements in drafts/m00-source-readiness/; 22 QA written, 0 executed. No official permission, endpoints or real data transfers.
+- Before implementation: data-owner authorization, written scope, personal/sensitive classifications, sessions/CSRF, source contract and approvals.
+
+### B-017 | Durable review audit and transaction port (M00-G5)
+- **Partial draft M00-G5:** in-memory paired review/audit chain and unexecuted SQLite schema in drafts/m00-audit-port/; 24 QA written, 0 executed.
+- Requires authenticated server, atomic transaction, optimistic locking, tamper-resistant external anchoring/operational audit, backup/restore, idempotency and negative tests before real use.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

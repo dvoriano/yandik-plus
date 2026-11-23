@@ -1,0 +1,69 @@
+{
+  "schema": "yandik.innovation-lab.qa-regression.v1",
+  "date": "2026-11-23",
+  "scope": "Isolated lab branch only; local snapshot from matching GitHub source blobs; not production",
+  "status": "LOCAL_TESTS_PASSED__LATEST_CI_PENDING",
+  "executed": {
+    "python": {
+      "total": 32,
+      "passed": 32,
+      "failed": 0,
+      "command": "python3 -m unittest discover -s tools/tests -v",
+      "by_group": {
+        "synthetic_geometry": 7,
+        "BNPB_offline_mock": 10,
+        "branch_isolation": 6,
+        "ADM2_provenance": 9
+      }
+    },
+    "node": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "command": "node --test prototypes/puskeswan-simulation/tests/core.test.mjs"
+    },
+    "js_parse": {
+      "count": 3,
+      "passed": 3,
+      "files": [
+        "prototypes/geo-command-center/app.mjs",
+        "prototypes/puskeswan-simulation/app.mjs",
+        "prototypes/tests/accessibility-resilience.spec.mjs"
+      ],
+      "caveat": "Source parsed without importing dependencies; not a browser execution"
+    },
+    "browser": {
+      "new_playwright_cases_defined": 6,
+      "new_playwright_cases_executed": 0,
+      "reason": "Local Chromium blocks loopback navigation; newer GitHub Actions run not accessible via available connected workflow-run discovery"
+    }
+  },
+  "correction": {
+    "initially_failed_case": "test_private_or_local_provenance_url_fails",
+    "root_cause": "Literal backslash-n in source URL passed control-character-only validation",
+    "correction": "Reject backslashes and whitespace in manifest URL",
+    "after_fix": "32/32 PASS; test includes both literal backslash-n and actual newline",
+    "no_network_or_operational_data_used": true
+  },
+  "github_blob_sha": {
+    "tools/review_adm2_package.py": "c98a2184dbf9a271261ecefefe78d694978dee2f",
+    "tools/tests/test_review_adm2_package.py": "572daede639b7d3b84c5ddca09e496f8dbfb1d7a",
+    "prototypes/geo-command-center/app.mjs": "1a45c1b6ffcc8897262a800802e96a6afcc59891",
+    "prototypes/puskeswan-simulation/app.mjs": "7a79097a3d76bad25818c5092aabad0005a661d6",
+    "prototypes/tests/accessibility-resilience.spec.mjs": "2fad2604ba002acc76d84efdfb2e37c558d4f65a"
+  },
+  "last_confirmed_hosted_ci": {
+    "url": "https://github.com/dvoriano/yandik-plus/actions/runs/45114481799",
+    "python_passed": 30,
+    "node_passed": 31,
+    "playwright_passed": 13,
+    "note": "Not based on the latest lab commit. These numbers must not be carried forward as verified for new browser tests."
+  },
+  "restrictions": [
+    "No real GIS source download/permission review completed",
+    "No integration with APEL, live VPS, production site, or private systems",
+    "No physical STB/mobile hardware test",
+    "Keyboard focus repair has source checks but no confirmed post-patch Playwright run",
+    "The local Node snapshot uses reconstructed 19 region registry identity/type/seat instead of a full original git checkout"
+  ]
+}

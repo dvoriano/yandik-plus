@@ -38,3 +38,9 @@ See [validation evidence](../VALIDATION_EVIDENCE_2026-11-23.md). No external sou
 The offline Shapely auditor now rejects a dataset when more than **10%** of the union of ADM2 area lies outside the bundled province outline, or more than **10%** of the outline is not covered by ADM2 area. This is an intentionally conservative **lab rejection threshold**, **not** an official GIS accuracy standard. Any smaller discrepancy is still reported as a warning and requires visual and documentary investigation, particularly coastlines and Mentawai islands.
 
 All 6 offline geometry tests on synthetic fixtures passed in the development runtime; **no real ADM2 dataset is thereby certified**. Original sources and third-party licences remain unverified for redistribution.
+
+## Pemeriksaan metadata layanan BNPB (23 November 2026)
+
+Metadata publik pada [FeatureServer layer 5](https://gis.bnpb.go.id/server/rest/services/Hosted/DATA_KABKOT_SUMBAR1/FeatureServer/5?f=pjson) dapat dibaca dan mengonfirmasi `objectIdField=fid`, EPSG:4326, serta field `namobj`, `kdpkab`, `kdppum`, `wadmkk`, `wadmpr`. Deskripsi yang terbit pada layer menyebut data edisi 2022 dan memperingatkan kesalahan topologi pada beberapa segmen administratif. Ini **memvalidasi schema metadata**, bukan geometri 19 wilayah.
+
+Percobaan membaca `/query` untuk `returnIdsOnly`/`returnCountOnly` lewat akses riset saat ini belum berhasil. Karena itu `objectIds`, jumlah fitur aktual, kesesuaian kode wilayah, dan persetujuan penggunaan data **belum dapat dipastikan**. Pengambil data kandidat di `tools/fetch_bnpb_adm2.py` tetap menolak kondisi yang tidak lengkap. Tidak ada geometri pihak ketiga yang di-commit ke GitHub.

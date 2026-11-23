@@ -32,7 +32,7 @@ def valid_change_path(name):
         return True
     if not name.startswith(ALLOWED_ROOT):
         return False
-    if p.name in RESTRICTED_FILENAMES:
+    if p.name in RESTRICTED_FILENAMES or p.name.startswith(".env") or p.suffix in (".pem", ".key"):
         return False
     return True
 
@@ -53,13 +53,18 @@ def validate_sources(repo_root):
             continue
         if not file.is_file() or file.suffix not in CHECK_EXTENSIONS:
             continue
-        if file.name in RESTRICTED_FILENAMES:
+        if file.name in RESTRICTED_FILENAMES or file.name.startswith(".env") or file.suffix in (".pem", ".key"):
             violations.append(f"Nama file rahasia terlarang: {file.relative_to(repo_root)}")
             continue
         if file.suffix in ALLOWLIST_EXTERNAL_IN_DOCS:
             continue
         if file.stat().st_size > 1_500_000:
             violations.append(f"File source terlalu besar: {file.relative_to(repo_root)}")
+            continue
+        rel = file.relative_to(base).as_posix()
+        # Negative test fixtures intentionally contain forbidden domains;
+        # this policy file must define them by name as well.
+        if rel.startswith("tools/tests/") or rel == "tools/check_lab_isolation.py" or "/tests/" in rel:
             continue
         content = file.read_text(encoding="utf-8", errors="replace").casefold()
         for domain in RESTRICTED_DOMAINS:

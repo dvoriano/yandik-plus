@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>YANDIK+ | Evidence Assistant Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand">
+        <div class="symbol" aria-hidden="true">Y+</div>
+        <div><span class="kicker">YANDIK+ / EXPERIMENT 03</span><h1>Evidence Assistant</h1></div>
+      </div>
+      <nav aria-label="Navigasi eksperimen"><a href="../geo-command-center/index.html">Geo Command Center</a><span class="pill">MOCK · LOCAL</span></nav>
+    </header>
+    <div class="notice"><strong>MODUL EKSPERIMEN.</strong> Jawaban bersumber, saat ini berbasis aturan; belum memakai model AI atau database produksi. Jangan memasukkan informasi rahasia.</div>
+    <main>
+      <section class="main-pane">
+        <div class="intro">
+          <span class="kicker">READ-ONLY KNOWLEDGE WORKSPACE</span>
+          <h2>Tanya data. Lihat buktinya.</h2>
+          <p>Mengenali batas informasi adalah bagian dari kualitas sebuah asisten. Jawaban tanpa sumber tidak akan dipaksakan.</p>
+        </div>
+        <div class="examples" aria-label="Contoh pertanyaan">
+          <button type="button" data-prompt="Berapa kabupaten dan kota di Sumatera Barat?">Jumlah wilayah</button>
+          <button type="button" data-prompt="Sebutkan kabupaten di Sumatera Barat">Daftar kabupaten</button>
+          <button type="button" data-prompt="Berapa jumlah pelayanan Puskeswan di Agam?">Data pelayanan Agam</button>
+          <button type="button" data-prompt="Apa sumber peta yang digunakan?">Asal peta</button>
+        </div>
+        <div class="dialogue" id="conversation" aria-live="polite" aria-label="Percakapan demonstrasi">
+          <div class="welcome">
+            <div class="bot-avatar">+</div>
+            <div>
+              <strong>Halo dari YANDIK+ Lab.</strong>
+              <p>Saya hanya membaca registry wilayah demonstrasi. Silakan pilih pertanyaan contoh di atas untuk memeriksa jawaban dan rujukannya.</p>
+            </div>
+          </div>
+        </div>
+        <form id="ask-form" class="ask-form">
+          <label for="question" class="sr-only">Pertanyaan</label>
+          <textarea id="question" rows="2" maxlength="240" required placeholder="Contoh: Berapa kabupaten/kota di Sumatera Barat?"></textarea>
+          <button type="submit">Kirim pertanyaan</button>
+        </form>
+        <p class="footnote">Tidak mengirim pesan ke server, tidak menyimpan riwayat, dan tidak menjalankan perintah. Hanya fakta demonstrasi yang tersedia.</p>
+      </section>
+      <aside class="info-pane">
+        <div class="aside-section"><span class="kicker">ASSISTANT STATUS</span><h3>Data yang dapat dibaca</h3></div>
+        <dl>
+          <div><dt>Cakupan wilayah</dt><dd>19 kabupaten/kota</dd></div>
+          <div><dt>Registry referensi</dt><dd class="ok">Tersedia</dd></div>
+          <div><dt>Pelaporan Puskeswan</dt><dd class="notyet">Belum tersedia</dd></div>
+          <div><dt>Angka pelayanan</dt><dd class="notyet">Belum tersedia</dd></div>
+          <div><dt>Model LLM</dt><dd class="notyet">Tidak tersambung</dd></div>
+          <div><dt>API produksi</dt><dd class="notyet">Tidak ada akses</dd></div>
+        </dl>
+        <div class="sources-intro">
+          <span class="kicker">EVIDENCE PRINCIPLE</span>
+          <h3>Jawaban harus dapat ditelusuri</h3>
+          <p>Setiap jawaban menyebut referensi yang digunakan. Bila fakta tidak ada, statusnya <b>tidak tersedia</b>, bukan nol dan bukan perkiraan.</p>
+        </div>
+        <div class="mini-warning">Tidak terhubung ke APEL, YANDIK+ produksi, Indodax, maupun perangkat server.</div>
+      </aside>
+    </main>
+    <footer><span>YANDIK+ Innovation Lab • 2026–2030</span><span>Prototipe terisolasi • Bukan AI operasional</span></footer>
+  </div>
+</body>
+</html>

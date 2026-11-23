@@ -107,6 +107,6 @@ It reads kernel, board model, CPU, memory, disk, and tool availability. It does 
 
 ## Additional branch safety and CI evidence gate
 
-The CI workflow now has a mandatory fail-closed isolation job, ahead of geometry and browser tests. It compares paths against `origin/main`, allows only `experiments/augma-inspired/` plus one branch-only workflow file, and scans runnable sources for restricted production domains and credential filenames. Five negative/positive Python test cases were added; **their execution in CI is not yet verified**. Browser HTML reports/traces are configured for failures. Source-level inspection of 22 non-test changed code files found no restricted production API references outside the policy definitions themselves. Existing six local synthetic Shapely tests passed again.
+The CI workflow now has a mandatory fail-closed isolation job, ahead of geometry and browser tests. It compares paths against `origin/main`, allows only `experiments/augma-inspired/` plus one branch-only workflow file, and scans runnable sources for restricted production domains and credential filenames. Six negative/positive Python test cases were added; **their execution in CI is not yet verified**. Browser HTML reports/traces are configured for failures. Source-level inspection of 22 non-test changed code files found no restricted production API references outside the policy definitions themselves. Existing six local synthetic Shapely tests passed again.
 
 [Quality gate status and next acceptance steps](docs/QA_GATE_STATUS_2026-11-23.md).

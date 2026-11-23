@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-9 | REGISTER TINDAK LANJUT REKONSILIASI MANUAL APEL 2026–2030 | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-followup) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-followup/tests/followup.test.mjs) (**0 dijalankan**) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md). M05-8 (14 persyaratan dan 6 gerbang BLOCKED) disusun menjadi tugas konsep manual, ditambah tugas per konflik M05-7.
+- Identitas tugas terkait snapshot DEMO, reviewer berupa ID fiktif, peran konseptual, bukti yang harus diklarifikasi, catatan usulan append-only dan penjagaan revisi; tidak ada close, perbaikan sumber, atau signoff resmi. Handoff hanya view-model bukan distribusi tugas.
+- Masih CODE_ONLY dan repo PUBLIC. Tidak ada source/schema resmi, DB/API/Flask/VPS, CL/CI/tes, merge, scoring, peringkat atau publikasi. PR #9 Draft; **M05-10 RENCANA:** matriks desain QA parity terhadap Juknis dan kriteria penerimaan 2026–2030 sebelum izin uji terpisah.
+
 ## PEMBARUAN M05-8 | REGISTER BUKTI, REVIEW KONFLIK & GERBANG PERSETUJUAN | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md).
 - Katalog 14 persyaratan bukti metadata, catatan review DEMO (bukan verifikasi), telaah isu M05-7 tanpa auto-resolve, dan 6 gerbang kesiapan yang seluruhnya BLOCKED. Tidak ada bukti aktual, signoff/otorisasi owner, persetujuan staging/produksi atau publikasi. CODE_ONLY, repo PUBLIC, PR #9 Draft.

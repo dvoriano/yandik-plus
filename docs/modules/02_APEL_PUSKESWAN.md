@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-9 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-10+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-10 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-11+ RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 1.7 / 23 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 1.8 / 23 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-10
+
+[Matriks desain paritas & kriteria penerimaan DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-parity) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-parity/tests/parity.test.mjs) (**0 dijalankan**) · [Spesifikasi M05-10](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_10_PARITY_ACCEPTANCE_MATRIX_2026_2030.md). Sebanyak 23 kriteria membentuk 102 item rencana 2026–2030 (2026: 22; 2027–2030: masing-masing 20). Referensi, expected value, comparator dan hasil resmi tidak tersedia; sembilan prasyarat penerimaan dan enam gate masih **BLOCKED**. Tidak ada pengujian Juknis/Flask nyata, izin tes atau publikasi.
 
 ## Implementasi M05-9
 

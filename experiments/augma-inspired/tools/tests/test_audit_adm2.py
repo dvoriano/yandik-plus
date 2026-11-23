@@ -50,5 +50,17 @@ class GeoAuditTest(unittest.TestCase):
         self.features.pop()
         self.assertEqual(self.audit()['status'],'FAIL')
 
+    def test_large_gap_to_reference_outline_fails(self):
+        outline = self.dir / 'outline.geojson'
+        outline.write_text(json.dumps({'type':'FeatureCollection','features':[
+            {'type':'Feature','geometry':{'type':'Polygon','coordinates':[[
+              [98,-4],[103,-4],[103,2],[98,2],[98,-4]
+            ]]}}
+        ]}))
+        self.file.write_text(json.dumps({'type':'FeatureCollection','features':self.features}))
+        result = evaluate(self.file,self.reg,outline)
+        self.assertEqual(result['status'],'FAIL')
+        self.assertTrue(any('lebih dari 10%' in e for e in result['errors']))
+
 
 if __name__ == '__main__': unittest.main()

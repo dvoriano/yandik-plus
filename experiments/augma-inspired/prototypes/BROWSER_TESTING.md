@@ -53,3 +53,7 @@ Results live outside GitHub until explicitly reviewed for private data. Do not u
 - [ADM2 source candidates](../docs/GEO_DATA_SOURCES.md)
 
 CI preserves browser HTML reports and failed traces (retention 7 days). The [verified run #45113635452](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452) produced [browser evidence artifact 14790279846](https://github.com/dvoriano/yandik-plus/actions/runs/45113635452/artifacts/14790279846). The source isolation job succeeded before GIS/browser tests. Real mobile and STB hardware, local accessibility, and official GIS boundaries remain unverified. See [QA gate status](../docs/QA_GATE_STATUS_2026-11-23.md).
+
+## Extended keyboard and failure-mode checks
+
+An additional six read-only browser cases were added in `tests/accessibility-resilience.spec.mjs` covering list/SVG keyboard focus and activation, assistant form submission, the synthetic dashboard, a failed local map-GeoJSON fetch and a delayed local response. Run explicitly with `npx playwright test --config=playwright.config.mjs tests/accessibility-resilience.spec.mjs`, or include them in the standard `npm run test:browser`. They are **defined, not automatically certified**: wait for a complete CI run of the newer commit before claiming they passed. Manual screen-reader/touch and low-bandwidth tests remain pending.

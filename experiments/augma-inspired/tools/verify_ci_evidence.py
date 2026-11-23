@@ -29,7 +29,7 @@ def checked_read(path, limit=2_500_000):
     return path.read_text(encoding="utf-8")
 
 
-def parse_manifest(path, expected_sha, expected_kind):
+def parse_manifest(path, expected_sha, expected_kind, expected_run_id=None):
     if not isinstance(expected_sha, str) or not SHA.fullmatch(expected_sha):
         raise VerificationError("SHA commit pembanding harus 40 karakter heksadesimal")
     try:
@@ -56,6 +56,8 @@ def parse_manifest(path, expected_sha, expected_kind):
             raise VerificationError(f"Manifest {key} tidak sesuai")
     if not re.fullmatch(r"[1-9]\d*", str(manifest.get("run_id", ""))):
         raise VerificationError("GitHub run_id tidak valid")
+    if expected_run_id is not None and str(manifest["run_id"]) != str(expected_run_id):
+        raise VerificationError("GitHub run_id tidak cocok run yang diperiksa")
     if not re.fullmatch(r"[1-9]\d*", str(manifest.get("run_attempt", ""))):
         raise VerificationError("GitHub run_attempt tidak valid")
     return manifest
@@ -103,13 +105,13 @@ def check_browser_log(log):
     return {"playwright_passed": count}
 
 
-def verify(manifest_path, sha, *, python_log=None, node_log=None, browser_log=None):
+def verify(manifest_path, sha, *, python_log=None, node_log=None, browser_log=None, expected_run_id=None):
     kind = "geometry-and-acquisition" if python_log is not None else "browser-smoke"
     if kind == "geometry-and-acquisition" and (node_log is not None or browser_log is not None):
         raise VerificationError("Pisahkan bukti Python dan browser")
     if kind == "browser-smoke" and (node_log is None or browser_log is None):
         raise VerificationError("Wajib sertakan Node dan Playwright log")
-    manifest = parse_manifest(manifest_path, sha, kind)
+    manifest = parse_manifest(manifest_path, sha, kind, expected_run_id)
     counts = check_python_log(checked_read(python_log)) if python_log is not None else {
         **check_node_log(checked_read(node_log)),
         **check_browser_log(checked_read(browser_log))
@@ -130,6 +132,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--expected-sha", required=True)
+    parser.add_argument("--expected-run-id", help="Require this GitHub Actions run ID")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--python-log", type=Path)
     group.add_argument("--node-log", type=Path)
@@ -138,7 +141,7 @@ def main(argv=None):
     try:
         output = verify(args.manifest, args.expected_sha,
                         python_log=args.python_log, node_log=args.node_log,
-                        browser_log=args.playwright_log)
+                        browser_log=args.playwright_log, expected_run_id=args.expected_run_id)
         print(json.dumps(output, indent=2, sort_keys=True))
         return 0
     except (VerificationError, OSError, UnicodeError) as exc:

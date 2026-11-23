@@ -5,7 +5,7 @@
 M05-10 menyusun **pertanyaan pemeriksaan yang kelak harus dijawab**, bukan menjalankan pengujian ataupun membuktikan angka pelayanan. Ia meneruskan batas M05-0 sampai M05-9: perhitungan 2026 belum dicocokkan dengan Juknis/Flask asli, mapping skema belum terverifikasi, gerbang M05-8 masih BLOCKED, dan tindak lanjut M05-9 tidak mengubah sumber.
 
 **Struktur:**
-- `matrix.mjs`: 23 konsep pemeriksaan, dengan 20 berlaku setiap tahun, dua khusus untuk acuan 2026 (investigasi per kejadian/lokasi, kurban per hewan, ditambah satu kasus baseline 2026: total khusus 2026 = 22 karena ada **tiga** kasus 2026 saja? Lihat perhitungan katalog), satu khusus 2027–2030. Keluaran selalu `BLOCKED_NOT_TESTED` dan tanpa comparator/toleransi resmi.
+- `matrix.mjs`: 23 konsep pemeriksaan: 19 untuk setiap tahun, 3 khusus 2026 (investigasi per kejadian/lokasi, kurban per hewan, serta paritas terhadap baseline 2026), dan 1 khusus 2027–2030. Keluaran selalu `BLOCKED_NOT_TESTED` dan tanpa comparator/toleransi resmi.
 - `references.mjs`: katalog metadata referensi **DEMO-`** saja; tidak memuat file sumber, angka atau keputusan. Menginput kandidat bukan membuktikan referensi sah.
 - `acceptance.mjs`: sembilan langkah bukti/persetujuan dan enam gerbang readiness yang selalu BLOCKED. Tidak menghasilkan PASS, verifikasi, nilai, peringkat, atau izin publikasi.
 - `tests/parity.test.mjs`: **50 skenario QA ditulis, 0 dijalankan**.

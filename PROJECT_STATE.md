@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## PEMBARUAN M05-8 | REGISTER BUKTI, REVIEW KONFLIK & GERBANG PERSETUJUAN | 23 November 2026
+- **KODE DITULIS, BELUM DIUJI:** [Kode M05-8](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-evidence) · [49 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-evidence/tests/evidence.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_8_EVIDENCE_REVIEW_GATES_2026_2030.md).
+- Katalog 14 persyaratan bukti metadata, catatan review DEMO (bukan verifikasi), telaah isu M05-7 tanpa auto-resolve, dan 6 gerbang kesiapan yang seluruhnya BLOCKED. Tidak ada bukti aktual, signoff/otorisasi owner, persetujuan staging/produksi atau publikasi. CODE_ONLY, repo PUBLIC, PR #9 Draft.
+- Tidak ada API/SQL/DB/Flask/VPS, CL/CI/tes, merge/deploy, auto-repair, scoring, ranking atau data riil. **M05-9 RENCANA:** register keputusan tindak lanjut rekonsiliasi manual tanpa tindakan nyata sampai ada izin terpisah.
+
 ## PEMBARUAN M05-7 | DATA LINEAGE, TEMPORAL JOIN & CONFLICT REVIEW 2026–2030 | 23 November 2026
 - **KODE DITULIS, BELUM DIUJI:** [Kode M05-7](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-lineage) · [38 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-lineage/tests/lineage.test.mjs), **0 dijalankan** · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_7_LINEAGE_TEMPORAL_CONFLICT_2026_2030.md).
 - Kontrak relasi identitas fasilitas, wilayah historis, event/ledger pelayanan, workflow fasilitas-bulan-revisi, policy per tahun, rencana dan realisasi dukungan. Perubahan wilayah di tengah bulan, revisi tidak cocok, duplikasi kejadian dan ketidakcocokan satuan/bukti dicatat untuk telaah manusia, **tidak diperbaiki otomatis**.

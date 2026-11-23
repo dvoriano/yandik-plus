@@ -10,6 +10,6 @@ M05-9 menyiapkan pencatatan **usulan tindak lanjut**, bukan menjalankan perbaika
 
 Semua label dan identitas fixture berawalan `DEMO-`. **Tidak menerima** sumber dan nama nyata, isian dokumen bebas, kredensial, tanda tangan, atau perubahan status menjadi sah. Tenggat dan bukti signoff selalu `null` karena belum ada kewenangan penugasan aktual.
 
-**47 skenario QA tertulis, 0 dijalankan** pada `tests/followup.test.mjs`. Baca [spesifikasi M05-9](../../docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md) dan [TEST_BACKLOG](../../docs/TEST_BACKLOG.md).
+**50 skenario QA tertulis, 0 dijalankan** pada `tests/followup.test.mjs`. Baca [spesifikasi M05-9](../../docs/M05_9_MANUAL_RECONCILIATION_FOLLOWUP_2026_2030.md) dan [TEST_BACKLOG](../../docs/TEST_BACKLOG.md).
 
 **M05-10 (RENCANA):** matriks desain uji paritas dan kriteria penerimaan terhadap Juknis serta schema yang kelak disetujui. Tetap non-eksekusi sampai izin pengujian dan bukti resmi diperoleh.

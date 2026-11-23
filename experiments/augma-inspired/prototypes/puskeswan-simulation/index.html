@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>YANDIK+ | Simulasi Pelaporan Puskeswan</title>
+<link rel="stylesheet" href="./styles.css"><script type="module" src="./app.mjs"></script>
+</head><body><div class="shell">
+<header class="topbar">
+  <div class="brand"><span class="mark">Y+</span><div><small>INNOVATION LAB / EXPERIMENT 04</small><strong>APEL SIMULATION</strong></div></div>
+  <nav aria-label="Navigasi prototipe"><a href="../geo-command-center/">Peta wilayah</a><a href="../data-assistant/">Evidence Assistant</a><span class="pill">100% LOCAL</span></nav>
+</header>
+<div class="alert" role="note"><strong>DATA FIKTIF, BUKAN DATA RESMI.</strong>
+  19 unit pelaporan imajiner, satu per kabupaten/kota untuk demonstrasi. Bukan jumlah atau capaian Puskeswan sebenarnya.
+  Tidak terhubung ke APEL, VPS, akun, atau database produksi.
+</div>
+<main>
+<section class="intro">
+ <div><span class="eyebrow">LAYANAN KESEHATAN HEWAN / LAPORAN CONTOH</span>
+ <h1>Melihat pola, menemukan yang perlu ditindaklanjuti.</h1>
+ <p>Dashboard untuk menguji alur pemantauan pelaporan. Semua angka dihasilkan secara deterministik, termasuk laporan kosong dan pelayanan bernilai nol.</p></div>
+ <div class="controlbox"><label for="month">Bulan simulasi</label><select id="month"></select><small>Periode fiktif tahun 2026</small></div>
+</section>
+<section class="kpis" aria-label="Ringkasan simulasi">
+ <article><span>Unit fiktif dalam filter</span><strong id="k-units">—</strong><small>Unit demo, bukan Puskeswan aktual</small></article>
+ <article><span>Sudah melapor</span><strong id="k-reported">—</strong><small id="k-rate">Persentase simulasi</small></article>
+ <article class="attention"><span>Belum melapor</span><strong id="k-missing">—</strong><small>Data tidak tersedia ≠ nol</small></article>
+ <article><span>Tepat waktu</span><strong id="k-ontime">—</strong><small>Simulasi tenggat tanggal 9</small></article>
+ <article><span>Total pelayanan</span><strong id="k-services">—</strong><small>Hanya laporan tersedia, semuanya fiktif</small></article>
+</section>
+<div class="layout">
+ <section class="panel" aria-labelledby="coverage-title">
+  <div class="head"><div><span class="eyebrow">REPORTING MONITOR</span><h2 id="coverage-title">Daftar wilayah simulasi</h2></div>
+  <button type="button" class="export" id="export">Ekspor CSV fiktif</button></div>
+  <div class="filters">
+   <label><span>Cari wilayah</span><input id="search" type="search" placeholder="Padang, Agam, Mentawai…" autocomplete="off"></label>
+   <label><span>Jenis wilayah</span><select id="kind"><option value="all">Semua</option><option value="kabupaten">Kabupaten</option><option value="kota">Kota</option></select></label>
+   <label><span>Status laporan</span><select id="status"><option value="all">Semua</option><option value="on_time">Tepat waktu</option><option value="late">Terlambat</option><option value="missing">Belum lapor</option></select></label>
+  </div>
+  <p id="filter-note" class="subtle" aria-live="polite"></p>
+  <div id="region-list" class="regions" role="group" aria-label="Daftar wilayah dan status simulasi"></div>
+ </section>
+ <aside class="panel detail" aria-labelledby="detail-title">
+  <div class="head"><div><span class="eyebrow">REGION INSIGHT</span><h2 id="detail-title">Detail wilayah</h2></div><span class="tag">SIMULASI</span></div>
+  <h3 id="selected-name">Pilih wilayah</h3><p id="selected-seat" class="subtle"></p>
+  <div class="detail-stats"><div><span>Status</span><strong id="selected-status">—</strong></div>
+  <div><span>Tanggal laporan</span><strong id="selected-day">—</strong></div><div><span>Pelayanan</span><strong id="selected-services">—</strong></div></div>
+  <p id="detail-note" class="detail-note">Angka fiktif tidak menggambarkan pelayanan aktual.</p>
+  <div class="source">SUMBER: <b>DATA SINTETIS DETERMINISTIK</b><p>Perhitungan lokal. Tidak ada permintaan jaringan atau data produksi.</p></div>
+ </aside>
+</div>
+<div class="charts">
+ <section class="panel" aria-labelledby="trend-title"><div class="head"><div><span class="eyebrow">12 MONTH OVERVIEW</span><h2 id="trend-title">Konsistensi pelaporan</h2></div><span class="tag">SIMULASI</span></div>
+ <div class="chart-wrap"><svg id="trend-chart" viewBox="0 0 720 250" role="img" aria-label="Grafik batang jumlah unit contoh melapor setiap bulan"></svg></div>
+ <p class="subtle">Jumlah unit demo yang melapor tiap bulan, mengikuti filter pencarian dan jenis wilayah, bukan filter status.</p></section>
+ <section class="panel" aria-labelledby="follow-title"><div class="head"><div><span class="eyebrow">FOLLOW-UP PREVIEW</span><h2 id="follow-title">Tindak lanjut bulan terpilih</h2></div></div>
+ <div id="follow-up" class="followup" aria-live="polite"></div><p class="subtle">Contoh daftar kerja saja. Tidak mengirim pesan atau mengubah data.</p></section>
+</div>
+</main><footer><span>YANDIK+ Innovation Lab · 2026–2030</span><span>READ ONLY · SEMUA ANGKA FIKTIF</span></footer>
+</div></body></html>

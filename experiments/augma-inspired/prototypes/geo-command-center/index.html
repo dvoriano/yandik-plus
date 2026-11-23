@@ -55,11 +55,22 @@
           <svg id="map-svg" viewBox="0 0 800 650" role="group" aria-label="Peta geografi outline Sumatera Barat, titik kota dan pusat kabupaten indikatif" xmlns="http://www.w3.org/2000/svg">
             <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#27415a"/></pattern></defs>
             <rect width="800" height="650" fill="url(#grid)"></rect>
-            <g id="map-boundary"></g><g id="map-pins"></g>
+            <g id="map-boundary"></g><g id="map-adm2"></g><g id="map-pins"></g>
           </svg>
           <div class="map-status" id="map-status" role="status">Memuat GeoJSON lokal…</div>
           <div class="map-legend">Peta administrasi referensi • titik perkiraan, bukan koordinat Puskeswan</div>
         </div>
+        <section class="boundary-import" aria-labelledby="boundary-import-title">
+          <h4 id="boundary-import-title">Pratinjau batas 19 kabupaten/kota <span class="minor">opsional</span></h4>
+          <p>Impor berkas GeoJSON yang telah Anda peroleh secara sah. Hanya diproses di browser ini, tidak diunggah. Perangkat lunak memeriksa 19 cakupan kode dan geometri, <strong>bukan</strong> mengesahkan sumber atau batas hukum.</p>
+          <label class="confirm"><input id="license-confirmation" type="checkbox"> Saya telah memeriksa sumber, lisensi, dan izin penggunaan dataset.</label>
+          <div class="import-row">
+            <label for="boundary-file">Pilih GeoJSON 19 kabupaten/kota</label>
+            <input type="file" accept=".geojson,.json,application/json,application/geo+json" id="boundary-file">
+            <button type="button" id="clear-boundary">Hapus pratinjau</button>
+          </div>
+          <p id="boundary-status" role="status" aria-live="polite">Belum ada data batas kabupaten/kota yang diimpor.</p>
+        </section>
         <div class="attribution">Geometri: <a href="https://github.com/mashadinoor/Indonesia-Geojson-2026" target="_blank" rel="noopener noreferrer">Indonesia-Geojson-2026</a> (MIT, sumber upstream mengacu BIG). Prototipe, bukan untuk penetapan batas.</div>
       </section>
 

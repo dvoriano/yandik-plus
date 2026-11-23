@@ -53,6 +53,17 @@ Check the actual new Actions run ID and logs before changing these statuses from
 
 The supporting machine-readable evidence is in [QA local regression (32 Python, 6 Node)](QA_REGRESSION_2026-11-23_32PY_6NODE.json). The last independently verified GitHub Actions run remains [#45114481799](https://github.com/dvoriano/yandik-plus/actions/runs/45114481799) on an earlier commit.
 
+## Local verification update: all 42 Python tests passed
+
+The evidence contract was found to accept only 32 Python tests while the current suite contains 42. This mismatch was corrected in `tools/verify_ci_evidence.py`: the minimum required Python test count is now **42** and the negative regression fixture requires a rejection at **41**.
+
+On 23 November 2026, the isolated local snapshot completed `python3 -m unittest discover -s tools/tests -q` with **Ran 42 tests: OK** (Python 3.13.5). Exact `git hash-object` results for the two GitHub-matched verifier files:
+
+- `tools/verify_ci_evidence.py`: `179536cf09224567294c4df022c37609cc73a1fd`
+- `tools/tests/test_verify_ci_evidence.py`: `9bfaa8aaee2fc827be94b0cf8f15a211d7404a04`
+
+The 42 tests are **locally verified**, but the latest GitHub-hosted browser run and the CI results at the newest GitHub commit have **not** been verified. GitHub Actions `push` run enumeration is not supported by the available connector path, and the local runtime cannot resolve `api.github.com` directly. No official GIS, APEL, production, or device data was accessed.
+
 ## CI proof package and offline verifier (new work)
 
 The lab-only GitHub Actions workflow now preserves source-specific artifacts for **both** Python and browser jobs. Every artifact includes a manifest of the exact GitHub SHA, run ID, run attempt, job kind and final outcome, plus the raw test-runner logs. These records are created in temporary CI workspace only and do not write to the repository or production.

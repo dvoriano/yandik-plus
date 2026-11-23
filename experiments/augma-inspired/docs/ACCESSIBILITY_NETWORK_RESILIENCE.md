@@ -8,10 +8,10 @@ Source: `prototypes/tests/accessibility-resilience.spec.mjs`.
 
 | Test | What must remain true | Status |
 |---|---|---|
-| Keyboard region list | Focus and Enter select Mentawai; `aria-pressed=true` | Defined; await new CI run |
-| Keyboard SVG markers | Enter and Space change selected region | Defined; await new CI run |
+| Keyboard region list | Focus and Enter select Mentawai; `aria-pressed=true`, focus retained after redraw | Defined; await new CI run |
+| Keyboard SVG markers | Enter and Space change selected region; focus retained after redraw | Defined; await new CI run |
 | Assistant keyboard form | Textarea → Tab → Enter submits and displays a source | Defined; await new CI run |
-| Dashboard keyboard flow | Search by Tuapejat, focus a row, Enter opens details, synthetic warning remains | Defined; await new CI run |
+| Dashboard keyboard flow | Search by Tuapejat, focus a row, Enter opens details, focus retained; synthetic warning remains | Defined; await new CI run |
 | Missing local GeoJSON | `fetch` fails, explicit map error visible; 19-region list still usable; missing services display `N/A` | Defined; await new CI run |
 | Delayed local GeoJSON | Loading message is visible until 950 ms-delayed response completes, then outline appears | Defined; await new CI run |
 
@@ -43,3 +43,7 @@ npx playwright test --config=playwright.config.mjs tests/accessibility-resilienc
 ```
 
 No production endpoint, live APEL database, private records, server credentials, or real user accounts are needed. Confirm the source remains on the lab branch before any test execution.
+
+## Code correction after keyboard-flow review
+
+Selecting a region rebuilds DOM rows and SVG pins; without explicit focus restoration, keyboard users can lose their location in the page. Both Geo Command Center and the synthetic Puskeswan dashboard now restore focus to the **newly rendered** equivalent element only for keyboard activation. Browser test assertions were extended accordingly. The JavaScript source parses successfully, but **complete Playwright re-execution on the latest commit remains pending**. This does not replace testing by keyboard-only human users or a screen reader.

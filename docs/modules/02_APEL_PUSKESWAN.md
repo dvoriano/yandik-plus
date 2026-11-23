@@ -1,9 +1,13 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-13 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **Dashboard APEL dan integrasi antar-modul berikutnya RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-14 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-15 integrasi rancangan Profil Puskeswan & SDM berikutnya RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
-**Versi spesifikasi:** 2.1 / 23 November 2026 (cakupan 2026–2030).
+**Versi spesifikasi:** 2.2 / 23 November 2026 (cakupan 2026–2030).
+
+## Implementasi M05-14
+
+[Dashboard HTML/CSS/JS DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-dashboard-ui) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-dashboard-ui/tests/dashboard.test.mjs) (**0 dijalankan**) · [Spesifikasi M05-14](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_14_DASHBOARD_APEL_DEMO_2026_2030.md). Dashboard responsif dengan filter 2026–2030, wilayah dan unit fiktif; grafik 12 bulan, kartu ringkasan dan matriks laporan. Kontrak M05-0 membedakan nilai `null` bagi bulan belum melapor, `0` laporan nol, dan bilangan positif pelayanan DEMO. Semua angka belum diverifikasi, bukan skor, ranking, hasil kinerja atau publikasi resmi. **UI belum di-render, dites atau di-deploy.**
 
 ## Implementasi M05-13
 

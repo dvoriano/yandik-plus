@@ -10,6 +10,39 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Antrean M00-G3 dan M13-S2 | Kode DEMO (43 skenario QA tertulis, 0 dijalankan)
+
+### M00-G3 | Kontrak gateway baca-saja
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M00G3-01 | GET hanya LIST_EVENTS / REVIEW_EVENT, request memiliki tiga kunci tepat | BELUM DIUJI |
+| QA-M00G3-02 | POST, query role/region/source, operasi lain, host field ekstra ditolak | BELUM DIUJI |
+| QA-M00G3-03 | Resolver sesi, wilayah dan sumber berasal dari host; klaim host **belum** dibuktikan autentik | BELUM DIUJI |
+| QA-M00G3-04 | Recheck M00-G1/G2/M13-S1 pada tiap pembacaan | BELUM DIUJI |
+| QA-M00G3-05 | Role Puskeswan/pimpinan/kab-kota luar wilayah ditolak | BELUM DIUJI |
+| QA-M00G3-06 | Respons terbatas: tanpa lokasi rinci, source ID, nama aktor dan PII | BELUM DIUJI |
+| QA-M00G3-07 | ID tidak ada gagal tertutup, status penyakit tetap tidak resmi | BELUM DIUJI |
+| QA-M00G3-08 | Semua may_write/import/export/publish/notify/deploy false, tidak ada HTTP API | BELUM DIUJI |
+| QA-M00G3-09 | Audit keamanan backend Flask asli, CSRF, autentikasi sesi, tenant isolation dan test route | TERTUNDA UJI |
+| QA-M00G3-10 | Persetujuan organisasi untuk role/otorisasi dan sumber data | BUTUH KEPUTUSAN |
+
+### M13-S2 | Candidate crosswalk investigasi APEL / surveilans
+| ID | Pemeriksaan tertunda | Status |
+|---|---|---|
+| QA-M13S2-01 | Crosswalk eksplisit memeriksa event, lokasi, period, facility, region dan manifest | BELUM DIUJI |
+| QA-M13S2-02 | M13-S1 dan M05-14/M05-0 masing-masing memvalidasi source sendiri | BELUM DIUJI |
+| QA-M13S2-03 | Kunci tidak sesuai sumber, wilayah berbeda, duplikat, tahun beda ditolak | BELUM DIUJI |
+| QA-M13S2-04 | Link kandidat tidak dianggap kejadian sama atau kasus/layanan sah | BELUM DIUJI |
+| QA-M13S2-05 | Tanpa kandidat bukan nol kasus resmi, total resmi tetap null | BELUM DIUJI |
+| QA-M13S2-06 | Tidak mengubah ledger APEL, data surveilans, atau ketentuan satu investigasi/lokasi | BELUM DIUJI |
+| QA-M13S2-07 | Penolakan sumber non-DEMO, source_verified palsu, metadata tidak sah | BELUM DIUJI |
+| QA-M13S2-08 | Peran wilayah lain tidak dapat membaca tautan kejadian | BELUM DIUJI |
+| QA-M13S2-09 | Flag sync, write, score, confirm, notify, publish, deploy tetap false | BELUM DIUJI |
+| QA-M13S2-10 | Definisi kasus, lokasi, ID master dan izin integrasi iSIKHNAS/APEL | BUTUH KEPUTUSAN |
+| QA-M13S2-11 | Pengujian sumber riil, audit historis dan regresi dua modul (hanya dengan izin) | TERTUNDA UJI |
+
+**19 QA M00-G3 + 24 QA M13-S2 tertulis**, **0 dijalankan**. Tabel mengelompokkan risiko, bukan hasil lulus/teruji.
+
 ## Antrean M00-G2 & M13-S1 | KODE DEMO (52 QA tertulis, 0 dijalankan)
 
 ### M00-G2 | Provenance sumber dan batas akses

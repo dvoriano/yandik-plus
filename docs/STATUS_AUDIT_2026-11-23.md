@@ -12,14 +12,14 @@ Bukti historis pengujian hingga M03-S3 [176 tes lulus](https://github.com/dvoria
 
 | Modul | Bukti yang ditemukan di repository | Kesimpulan jujur |
 |---|---|---|
-| MOD-00 Core | Fondasi role/workflow sintetis, M00-G1 akses wilayah dan M00-G2 manifest sumber DEMO; source Flask belum diimpor | **SEDANG**, G1/G2 belum diuji, bukan siap rilis |
+| MOD-00 Core | Fondasi role/workflow DEMO, M00-G1/G2 dan M00-G3 gerbang baca-saja (bukan API Flask); source legacy belum diimpor | **SEDANG**, G1/G2/G3 belum diuji, bukan siap rilis |
 | MOD-01 Profil | Prototype form dan masalah, master data awal; M05-15 penghubung DEMO ditulis | **SEDANG**, sumber dan API asli belum |
-| MOD-02 APEL | M05-0..M05-15 kontrak, checklist, aturan, dashboard DEMO, dan rancangan QA | **SEDANG**, belum menjadi implementasi APEL baru |
+| MOD-02 APEL | M05-0..M05-17 model DEMO; M13-S2 kandidat crosswalk investigasi ke surveilans | **SEDANG**, tidak ada rekonsiliasi resmi dan belum menjadi APEL baru |
 | MOD-03 SDM | Model penempatan awal; M05-15 snapshot dan agregasi fiktif | **RANCANGAN/PROTOTIPE**, belum sistem personel operasional |
 | MOD-04 Support | M03 prototype teruji historis; M04 draft proses administrasi, bukti dan distribusi | **SEDANG**, approval dan siklus resmi belum |
 | MOD-05 Pengawasan obat hewan | M06-S1 register dan observasi fiktif telah ditulis | **KODE DEMO DITULIS, BELUM DIUJI**; modul operasional belum selesai |
 | MOD-06 Klinik/praktik dokter hewan | M07-S1 register dan checklist DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; seluruh proses kewenangan dan integrasi belum |
-| MOD-07 PHMS/zoonosis/surveilans | M13-S1 register kejadian fiktif dan proyeksi hasil telaah ditulis | **KODE DITULIS, BELUM DIUJI**; tidak ada integrasi/konfirmasi resmi |
+| MOD-07 PHMS/zoonosis/surveilans | M13-S1 dan M13-S2 candidate link APEL/surveilans ditulis | **KODE DITULIS, BELUM DIUJI**; link hanya usulan, tidak ada sinkronisasi resmi |
 | MOD-08 Sertifikat veteriner/lalu lintas | M14-S1 register permohonan internal DEMO sudah ditulis | **KODE DITULIS, BELUM DIUJI**; penerbitan resmi tidak tersedia |
 | MOD-09 Pembinaan/Bimtek | Spesifikasi, rencana keterkaitan SDM | **RENCANA**, workflow belum |
 | MOD-10 Administrasi dokumen | Spesifikasi, draft lintas M04 terpisah | **RENCANA**, integrasi arsip belum |
@@ -56,7 +56,11 @@ Pengukuran manfaat, pemeliharaan, kesiapan kebijakan, kepatuhan dan pengembangan
 
 **Pembaruan M00-G2/M13-S1:** kode manifest sumber dan batas API DEMO serta register surveilans sintetis telah ditulis dengan 52 QA tertulis, **0 dijalankan**. Tidak ada data iSIKHNAS, kasus resmi atau pengujian integrasi. Keseluruhan modul tetap belum selesai.
 
+**Pembaruan M00-G3/M13-S2:** gateway read-only simulasi dan candidate crosswalk APEL/surveilans telah ditulis dengan 43 QA baru, **0 dijalankan**. Tidak ada HTTP endpoint, otorisasi resmi, integrasi source atau penggabungan angka.
+
 ## Progres yang baru dicatat
+- [x] M00-G3: kode gateway API read-only DEMO ditulis, **19 QA tertulis, belum diuji**.
+- [x] M13-S2: kode kandidat kaitan investigasi APEL/surveilans DEMO ditulis, **24 QA tertulis, belum diuji**.
 - [x] M00-G2: kode provenance sumber dan batas akses API DEMO ditulis, **24 QA tertulis, 0 dijalankan**.
 - [x] M13-S1: kode register PHMS/zoonosis/surveilans fiktif ditulis, **28 QA tertulis, 0 dijalankan**.
 - [x] M07-S1: kode klinik/praktik DEMO ditulis, **22 QA tertulis, belum diuji**.

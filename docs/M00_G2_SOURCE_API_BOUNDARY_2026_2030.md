@@ -28,3 +28,6 @@
 5. 24 QA M00-G2, 19 QA M00-G1, serta uji negatif API dan tenancy sesudah owner mengizinkan pengujian.
 
 **Status:** CODE_WRITTEN_NOT_TESTED, SOURCE_NOT_VERIFIED, API_NOT_IMPLEMENTED, PRODUCTION_NO_GO.
+
+## Pengembangan lanjut M00-G3
+[Kontrak gateway GET baca-saja DEMO](M00_G3_READ_API_BOUNDARY_2026_2030.md) sudah ditulis, **19 QA tertulis, 0 dijalankan**. Ini hanya pemisahan permintaan dari source/sesi host contoh; tidak membuktikan API/auth sebenarnya.

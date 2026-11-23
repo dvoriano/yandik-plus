@@ -33,3 +33,6 @@
 5. Uji 28 QA + 24 QA M00-G2 setelah ada izin pemilik proyek.
 
 **Status:** M13-S1 CODE_WRITTEN_NOT_TESTED. Keseluruhan MOD-07 BELUM SELESAI.
+
+## Pengembangan lanjut M13-S2
+[Kandidat pencocokan investigasi APEL ↔ kejadian surveilans](M13_S2_APEL_SURVEILLANCE_CROSSWALK_DEMO_2026_2030.md) sudah ditulis, **24 QA tertulis, 0 dijalankan**. Tidak menyamakan dua sumber, tidak menyinkronkan data atau menghasilkan kasus terkonfirmasi.

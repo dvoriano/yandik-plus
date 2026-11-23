@@ -1,7 +1,7 @@
 # MOD-02 | APEL Puskeswan 2.0: Pelaporan dan Apresiasi
 
 **Milestone:** M05  
-**Status implementasi GitHub:** **M05-0 sampai M05-14 KODE DITULIS, BELUM DIUJI** untuk pelaporan, workflow, checklist, kontrak aturan tahunan serta model rapor/tren deskriptif 2026–2030. **M05-15 integrasi rancangan Profil Puskeswan & SDM berikutnya RENCANA**. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
+**Status implementasi GitHub:** **M05-0 sampai M05-17 KODE DITULIS, BELUM DIUJI** untuk pelaporan, koreksi, checklist, dashboard, Profil/SDM DEMO dan tindak lanjut. **M13-S2 crosswalk kandidat investigasi ↔ surveilans** juga sudah ditulis, belum diuji, bukan rekonsiliasi resmi. Belum ada skor/predikat resmi, UI live, atau perubahan Flask/website.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 2.2 / 23 November 2026 (cakupan 2026–2030).
 
@@ -83,6 +83,10 @@ Semua perubahan penting menyimpan pembuat, waktu, sumber, status verifikasi dan 
 
 ## 7. Integrasi dengan modul lain
 Satu profil dan SDM, dashboard pimpinan, dukungan berbasis kebutuhan. Integrasi iSIKHNAS bersifat impor/rekap sesuai izin, bukan mewajibkan input ganda.
+
+## Integrasi konseptual investigasi/surveilans M13-S2
+- [x] [Crosswalk kandidat DEMO](../M13_S2_APEL_SURVEILLANCE_CROSSWALK_DEMO_2026_2030.md) ditulis, **24 QA tertulis, 0 dijalankan**; pasangan kejadian-lokasi-bulan hanya bahan review dan tidak mengubah histori pelaporan.
+- [ ] Kesamaan kejadian nyata, definisi kasus, izin iSIKHNAS, paritas juknis dan sumber APEL masih memerlukan verifikasi. Tidak ada penggabungan jumlah atau pelaporan otomatis.
 
 ## 8. Checklist pengembangan
 - [x] MOD-02-01A: **Tulis** kontrak data/QA DEMO multi-tahun 2026–2030 (M05-0, BELUM DIUJI)

@@ -1,3 +1,9 @@
+## 2026-11-23 | M13-S2 candidate crosswalk APEL/surveilans DEMO
+- [Draft M13-S2](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-apel-crosswalk) · [24 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-apel-crosswalk/tests/crosswalk.test.mjs), **0 dijalankan**. Kesesuaian ID kejadian/lokasi/period/fasilitas hanya bahan review, bukan sinkronisasi, klaim kasus sama, atau agregasi layanan. [Spesifikasi](M13_S2_APEL_SURVEILLANCE_CROSSWALK_DEMO_2026_2030.md).
+
+## 2026-11-23 | M00-G3 kontrak gateway API baca-saja DEMO
+- [Draft M00-G3](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-read-api-gate) · [19 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-read-api-gate/tests/gateway.test.mjs), **0 dijalankan**. Pembatasan request GET & keluaran minim; *tidak* membangun HTTP server atau autentikasi resmi. [Spesifikasi](M00_G3_READ_API_BOUNDARY_2026_2030.md). CODE_ONLY [skip ci].
+
 ## 2026-11-23 | M13-S1 PHMS/Zoonosis/Surveilans DEMO
 - [Kode M13-S1](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m13-surveillance) dan [28 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m13-surveillance/tests/surveillance.test.mjs), **0 dijalankan**; kejadian rekaan, bukan konfirmasi penyakit, notifikasi, atau impor iSIKHNAS. [Spesifikasi](M13_S1_PHMS_ZOONOSIS_SURVEILANS_DEMO_2026_2030.md).
 

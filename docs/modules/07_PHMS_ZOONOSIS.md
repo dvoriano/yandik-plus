@@ -1,7 +1,7 @@
 # MOD-07 | PHMS, Zoonosis dan Surveilans
 
 **Milestone:** M13  
-**Status implementasi GitHub:** SEDANG sebagai rancangan M13-S1; KODE DITULIS, BELUM DIUJI; tidak ada modul operasional.  
+**Status implementasi GitHub:** SEDANG sebagai rancangan M13-S1/M13-S2; KODE DITULIS, BELUM DIUJI; tidak ada modul operasional.  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -43,6 +43,10 @@ APEL (rekap layanan terkait), master wilayah, GIS, dashboard, dukungan darurat, 
 - [x] [Kode register kejadian sintetis](../M13_S1_PHMS_ZOONOSIS_SURVEILANS_DEMO_2026_2030.md) memisahkan dugaan, investigasi, sampel/lab, dan tindak lanjut tanpa konfirmasi penyakit.
 - [x] [28 QA tertulis](../../drafts/m13-surveillance/tests/surveillance.test.mjs), **0 dijalankan**.
 - [ ] Definisi kasus, SOP surveilans, izin sumber iSIKHNAS, integrasi APEL, hasil lab autentik, akses data sensitif, serta uji keamanan masih terbuka.
+
+## Tambahan M13-S2 | Calon relasi catatan APEL dan surveilans
+- [x] [Kandidat crosswalk APEL](../M13_S2_APEL_SURVEILLANCE_CROSSWALK_DEMO_2026_2030.md) dibuat, **24 QA tertulis, 0 dijalankan**. Kesesuaian ID hanya bahan telaah, bukan kasus terkonfirmasi/rekonsiliasi resmi.
+- [ ] Perlu definisi penyakit, izin sumber, perlindungan data, review manual dan API nyata sebelum penggabungan apapun.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-07-01: Susun daftar use-case penyakit prioritas dan kamus istilah

@@ -58,6 +58,11 @@ Only after core data and permissions are tested. No paid AI dependency in core w
 - **Partial draft:** synthetic event register in drafts/m13-surveillance/ with 28 QA written and 0 executed. Suspected, investigation, lab notes and review remain distinct and unverified.
 - Still required: official case definitions, data owner permissions, location privacy, institutional workflow, iSIKHNAS/APEL reconciliation, valid API trust boundary and tests.
 
+### B-014 | Read API and APEL/surveillance candidate linkage (M00-G3 / M13-S2)
+- **Partial draft M00-G3:** read-only GET simulation at drafts/m00-read-api-gate/, 19 QA written, 0 executed; no live API authentication or HTTP endpoints.
+- **Partial draft M13-S2:** candidate event-location-period-facility links at drafts/m13-apel-crosswalk/, 24 QA written, 0 executed; not verified equivalence or actual reconciliation.
+- Still required: source approvals, real server session trust, Juknis case/investigation dictionary, server API permissions, manual review audit, privacy and regression tests.
+
 ### B-011 | Security and operational debt (cross-cutting, P0)
 Move static Flask key and fallback secret into env-only config in development; remove default passwords; introduce password KDF and migration plan; CSRF checks; protect uploads/downloads and prevent path traversal; proxy trust and log handling.
 

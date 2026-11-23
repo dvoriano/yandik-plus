@@ -1,7 +1,7 @@
 # MOD-00 | Core Platform, Hak Akses dan Komponen Bersama
 
 **Milestone:** M01  
-**Status implementasi GitHub:** SEDANG (role/workflow prototype lama diuji; M00-G1/G2 kode baru belum diuji; belum Flask).  
+**Status implementasi GitHub:** SEDANG (role/workflow prototype lama diuji; M00-G1/G2/G3 kode baru belum diuji; belum Flask).  
 **Acuan status tunggal:** [ROADMAP.md](../ROADMAP.md).  
 **Versi spesifikasi:** 1.0 / 10 November 2026.
 
@@ -63,6 +63,10 @@ Seluruh modul di bawah harus memakai ID, hak akses, audit, workflow, dan sumber 
 ## Tambahan M00-G2 | Batas sumber dan akses API DEMO
 - [x] [Kontrak manifest asal data](../M00_G2_SOURCE_API_BOUNDARY_2026_2030.md) dan 24 QA tertulis, **0 dijalankan**. SURVEILLANCE didaftarkan pada M00-G1.
 - [ ] Tidak ada autentikasi sesi, API server, bukti keaslian sumber, izin integrasi maupun sinkronisasi iSIKHNAS/APEL.
+
+## Tambahan M00-G3 | Proyeksi endpoint API baca-saja DEMO
+- [x] [Kode kontrak gateway](../M00_G3_READ_API_BOUNDARY_2026_2030.md) dan 19 QA tertulis, **0 dijalankan**; request GET dan respons minimum, bukan endpoint HTTP.
+- [ ] Sesi backend nyata, identitas setiap API, CSRF, log akses dan hak per field tetap belum dibuktikan.
 
 ## 8. Checklist pengembangan
 - [ ] MOD-00-01: Peta role dan aksi per jenis pengguna disepakati

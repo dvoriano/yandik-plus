@@ -30,7 +30,7 @@ function drawUnits(){
  }
  for(const unit of entries){
   const r=recordFor(unit.code,month),button=document.createElement("button");
-  button.type="button";button.className="region-row";
+  button.type="button";button.className="region-row";button.dataset.code=unit.code;
   button.setAttribute("aria-pressed",String(selected===unit.code));
   const left=document.createElement("span"),right=document.createElement("span");
   const name=document.createElement("strong");name.textContent=unit.name;
@@ -42,7 +42,15 @@ function drawUnits(){
   const val=document.createElement("small");
   val.textContent=r.services===null?"N/A":fmt.format(r.services)+" layanan";
   right.append(tag,val);button.append(left,right);
-  button.addEventListener("click",()=>{selected=unit.code;render()});
+  button.addEventListener("click",event=>{
+    const restoreFocus=event.detail===0;
+    selected=unit.code;render();
+    if(restoreFocus){
+      const replacement=[...$("region-list").querySelectorAll("button.region-row")]
+        .find(row=>row.dataset.code===unit.code);
+      replacement?.focus();
+    }
+  });
   target.append(button);
  }
 }

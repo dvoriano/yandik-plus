@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "test:unit": "node --test command-center/tests/*.test.mjs geo-command-center/tests/*.test.mjs data-assistant/tests/*.test.mjs",
+    "test:unit": "node --test command-center/tests/*.test.mjs geo-command-center/tests/*.test.mjs data-assistant/tests/*.test.mjs puskeswan-simulation/tests/*.test.mjs",
     "test:browser": "playwright test --config=playwright.config.mjs",
     "test:browser:perf": "node tools/browser-performance.mjs"
   },

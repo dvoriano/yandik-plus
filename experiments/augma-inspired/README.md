@@ -73,6 +73,7 @@ Pengujian browser menggunakan Playwright: [panduan browser](prototypes/BROWSER_T
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
 - [Status QA dan gerbang rilis](docs/QA_GATE_STATUS_2026-11-23.md)
+- [Tes keyboard, aksesibilitas dan ketahanan jaringan](docs/ACCESSIBILITY_NETWORK_RESILIENCE.md)
 - [Bukti 23 tes Python dan 6 tes Node lokal](docs/LOCAL_TEST_EVIDENCE_2026-11-23.json)
 - [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 

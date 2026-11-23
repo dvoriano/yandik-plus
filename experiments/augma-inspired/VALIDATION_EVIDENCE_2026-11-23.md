@@ -78,3 +78,12 @@ It reads kernel, board model, CPU, memory, disk, and tool availability. It does 
 - [ ] Run committed Playwright scripts against the exact checkout; record versions, screenshots, and measurements.
 - [ ] Run read-only profile and browser tests on actual STB or supported low-cost device.
 - [ ] Authorize any integration separately under YANDIK+ governance; no automatic merge/deploy.
+
+## Update lanjutan pada 23 November 2026
+
+- `tools/fetch_bnpb_adm2.py` ditambahkan sebagai **pengambil kandidat data publik BNPB** yang hanya bekerja ketika diberi `--fetch-public-bnpb`, dengan domain HTTPS tunggal, pembatasan ukuran, cocok kode/nama 19 wilayah, audit Shapely dan output sementara di luar repo.
+- `tools/tests/test_fetch_bnpb_adm2.py` berisi **7 tes mock** untuk endpoint yang diizinkan, 19 objectId, duplikat, mismatch kode/nama, metadata, penolakan endpoint lain, serta kondisi default tanpa jaringan. Tes mock ini **ditulis tetapi belum dieksekusi dalam checkout repo lengkap**; jangan dihitung sebagai lulus.
+- Auditor geometri `audit_adm2.py` yang tersedia lokal **dijalankan ulang**; **5/5 tes sintetis lulus** pada Python 3.13 dan Shapely 2.1.2.
+- Chromium 144 dapat diinisialisasi dan merender `page.set_content` pada lingkungan terbatas; tetapi navigasi Playwright `page.goto(http://127.0.0.1/...)` diblokir dengan `ERR_BLOCKED_BY_ADMINISTRATOR`. Ini **bukan** bukti bahwa halaman aplikasi berhasil berjalan, sehingga tes browser tetap pending.
+- Akses DNS/HTTPS dari runtime lokal menuju GitHub tidak tersedia. Sumber project diperiksa dan ditulis melalui konektor GitHub; **tidak ada pengambilan langsung ke layanan BNPB** maupun pemasangan pada STB.
+- `.gitignore` lab mencegah file data kandidat, modul lokal, dan hasil tes tidak sengaja ikut commit. Tidak ada penggabungan dengan `main` atau perubahan produksi.

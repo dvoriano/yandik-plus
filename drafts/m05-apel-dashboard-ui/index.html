@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+  <title>YANDIK+ | Dashboard APEL DEMO 2026–2030</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Informasi modul YANDIK+">
+      <div class="brand">
+        <span class="brand-symbol" aria-hidden="true">✳</span>
+        <div><strong>YANDIK<span>+</span></strong><small>Pelayanan Kesehatan Hewan</small></div>
+      </div>
+      <div class="side-caption">MODUL PELAYANAN</div>
+      <div class="side-selected" aria-current="page"><span class="side-dot" aria-hidden="true"></span> Dashboard APEL</div>
+      <div class="side-future"><span>Profil Puskeswan</span><small>Rencana</small></div>
+      <div class="side-future"><span>SDM Veteriner</span><small>Rencana</small></div>
+      <div class="side-future"><span>Pembinaan</span><small>Rencana</small></div>
+      <div class="side-info">
+        <span class="side-info-icon" aria-hidden="true">ⓘ</span>
+        <p><strong>Prototipe mandiri</strong> Tidak terhubung ke sistem APEL yang sedang digunakan.</p>
+      </div>
+      <div class="side-foot">2026–2030 · Desain DEMO</div>
+    </aside>
+    <main class="page" id="main-content">
+      <header class="topbar">
+        <div class="topbar-path">YANDIK+ <span aria-hidden="true">/</span> APEL Puskeswan <span aria-hidden="true">/</span> Dashboard</div>
+        <div class="mode-label"><span aria-hidden="true" class="mode-dot"></span> KODE DITULIS, BELUM DIUJI</div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-content">
+          <div class="eyebrow">APEL PUSKESWAN · 2026–2030</div>
+          <h1 id="page-title">Pelayanan terlihat.<br><span>Data tetap tertelusur.</span></h1>
+          <p>Pantau gambaran pelayanan dan pelaporan Puskeswan melalui contoh data sintetis. Tidak digunakan untuk evaluasi atau apresiasi resmi.</p>
+        </div>
+        <div class="hero-emblem" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span>+</span>
+        </div>
+      </section>
+
+      <section class="filters-panel" aria-labelledby="filter-heading">
+        <div class="filter-title">
+          <div><h2 id="filter-heading">Ruang lingkup data</h2><p>Filter hanya mengubah tampilan DEMO.</p></div>
+          <button type="button" class="reset-button" id="reset-filters">Atur ulang</button>
+        </div>
+        <div class="filter-grid">
+          <label for="year-filter">Tahun pelaporan
+            <select id="year-filter" name="year"><option value="2026">2026</option></select>
+          </label>
+          <label for="region-filter">Wilayah
+            <select id="region-filter" name="region"><option value="ALL">Semua wilayah DEMO</option></select>
+          </label>
+          <label for="facility-filter">Puskeswan
+            <select id="facility-filter" name="facility"><option value="ALL">Semua Puskeswan DEMO</option></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="overview" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div><div class="eyebrow muted">RINGKASAN TERCATAT</div><h2 id="summary-title">Sekilas APEL</h2></div>
+          <p id="coverage-note" class="context-note" aria-live="polite">Data DEMO, bukan publikasi resmi.</p>
+        </div>
+        <div id="kpi-cards" class="kpi-grid" aria-live="polite"></div>
+      </section>
+
+      <div class="two-col">
+        <section class="panel trend-panel" aria-labelledby="trend-title">
+          <div class="panel-heading">
+            <div><div class="eyebrow muted">GAMBARAN BULANAN</div><h2 id="trend-title">Pelayanan tercatat</h2></div>
+            <span class="subtle-pill">Bukan peringkat</span>
+          </div>
+          <p class="panel-description">Total observasi DEMO yang memiliki laporan pada masing-masing bulan. Data yang belum dilaporkan tidak dihitung sebagai nol.</p>
+          <div id="monthly-chart" class="chart-wrap"></div>
+        </section>
+        <section class="panel coverage-panel" aria-labelledby="coverage-title">
+          <div class="panel-heading"><div><div class="eyebrow muted">STATUS DATA</div><h2 id="coverage-title">Cakupan pelaporan</h2></div></div>
+          <p class="panel-description">Status menunjukkan ada atau tidaknya laporan DEMO, bukan ketepatan waktu atau kelulusan verifikasi.</p>
+          <div id="coverage-summary"></div>
+        </section>
+      </div>
+
+      <section class="panel matrix-panel" aria-labelledby="matrix-title">
+        <div class="panel-heading">
+          <div><div class="eyebrow muted">RIWAYAT BULANAN</div><h2 id="matrix-title">Matriks pelaporan Puskeswan</h2></div>
+          <span id="matrix-caption" class="subtle-pill">12 bulan</span>
+        </div>
+        <p class="panel-description">Setiap sel menunjukkan status bulan untuk satu Puskeswan DEMO. Nama diurutkan alfabetis, bukan berdasarkan capaian.</p>
+        <div class="legend" aria-label="Keterangan status">
+          <span><i class="legend-swatch has-data" aria-hidden="true"></i> Ada pelayanan</span>
+          <span><i class="legend-swatch is-zero" aria-hidden="true"></i> Laporan nol</span>
+          <span><i class="legend-swatch is-missing" aria-hidden="true"></i> Belum melapor</span>
+        </div>
+        <div id="matrix-table" class="table-scroll" aria-live="polite"></div>
+      </section>
+
+      <section class="notice" aria-labelledby="notice-title">
+        <div class="notice-mark" aria-hidden="true">i</div>
+        <div>
+          <h2 id="notice-title">Catatan metodologi</h2>
+          <p>Seluruh identitas, wilayah, nilai dan laporan pada halaman ini adalah contoh fiktif. Tidak ada data dari website produksi, verifikasi Juknis, ketepatan waktu, skor, predikat, ataupun publikasi APEL resmi. Tahun 2027–2030 memerlukan keputusan kebijakan masing-masing.</p>
+        </div>
+      </section>
+      <footer class="footer">YANDIK+ · Prototipe dashboard APEL M05-14 · CODE_ONLY · BELUM DIUJI</footer>
+    </main>
+  </div>
+</body>
+</html>

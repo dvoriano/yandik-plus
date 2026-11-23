@@ -17,7 +17,7 @@ MAX_MANIFEST = 65536
 
 
 def public_source(url):
-    if not isinstance(url, str) or len(url) > 2048 or any(ord(ch) < 32 for ch in url):
+    if not isinstance(url, str) or len(url) > 2048 or any(ch.isspace() or ch == "\\" for ch in url):
         return False
     try:
         parsed = urlsplit(url)

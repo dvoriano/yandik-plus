@@ -1,0 +1,33 @@
+{
+  "schema": "M00-G8-SYNTHETIC-VECTORS-UNTESTED-1",
+  "synthetic": true,
+  "g5_events": [
+    {
+      "audit_id": "DEMO-AUDIT-1",
+      "review_id": "DEMO-REVIEW-1",
+      "link_id": "DEMO-CROSSWALK-ONE",
+      "reviewer_id": "DEMO-USER-REVIEWER",
+      "action_code": "REQUEST_EVIDENCE_DEMO",
+      "reason_code": "SOURCE_COMPARISON_DEMO",
+      "basis_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "previous_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1,
+      "event_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "official_authorization": false
+    }
+  ],
+  "g7_rows": [
+    {
+      "event_id": "DEMO-AUDIT-ONE",
+      "link_id": "DEMO-CROSSWALK-ONE",
+      "reviewer_id": "DEMO-USER-REVIEWER",
+      "action_code": "REQUEST_EVIDENCE_DEMO",
+      "reason_code": "SOURCE_COMPARISON_DEMO",
+      "basis_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "previous_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+      "revision": 1,
+      "event_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "is_official": 0
+    }
+  ]
+}

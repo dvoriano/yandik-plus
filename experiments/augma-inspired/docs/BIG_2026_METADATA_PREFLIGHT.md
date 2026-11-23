@@ -24,3 +24,7 @@ Perintah manual, dari folder experiments/augma-inspired:
 File metadata harus diperoleh dengan izin dan disimpan di luar repository, tanpa credential. Hasil **METADATA_STRUCTURE_PASS_REVIEW_REQUIRED** hanya berarti struktur layer lolos. Pemeriksaan asal sumber, hak penggunaan, edisi, kode 19 wilayah, poligon, gap/overlap, dan Kepulauan Mentawai tetap memerlukan audit geospasial tersendiri.
 
 **Status:** PREFLIGHT_CODE_AND_SYNTHETIC_TEST_PASS; SOURCE_VERSION_AND_GEOMETRY_PENDING; PRODUCTION_INTEGRATION_NOT_AUTHORIZED.
+
+## Tahap setelah metadata: inventaris tanpa geometri
+
+Pemeriksaan metadata kini diikuti [inventaris atribut 19 wilayah](BIG_2026_ATTRIBUTE_INVENTORY.md). Dengan `returnGeometry=false`, identitas kode, provinsi, tipe dan duplikasi dapat diaudit sebelum poligon dikumpulkan. **12 tes unit baru lulus lokal**, tetapi query respons BIG asli belum berhasil diambil dan verifikasi lengkap tetap pending. Ambang CI Python menjadi **66**, bukan 54.

@@ -51,7 +51,7 @@ Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [pa
 
 ## Kriteria pemisahan
 
-- **Branch:** `lab/augma-inspired-experiments`; **hanya** folder `experiments/augma-inspired/`.
+- **Branch:** `lab/augma-inspired-experiments`. Source aplikasi, tes, data demo, dan dokumentasi berada pada `experiments/augma-inspired/`. Satu pengecualian terkontrol: workflow validasi di `.github/workflows/yandik-innovation-lab-ci.yml` **hanya pada branch lab**, bukan main/develop, dan tidak memiliki langkah deployment.
 - `main`, `develop`, situs APEL, VPS, database, konfigurasi layanan, bot V2 tidak disentuh.
 - Tidak ada pull request/merge/deploy otomatis.
 - Data layanan Puskeswan **belum tersedia**, bukan nol. Tidak boleh menyimpulkan capaian riil.
@@ -68,5 +68,6 @@ Pengujian browser memerlukan Playwright, **harus dijalankan secara manual**: [pa
 - [Pengambilan kandidat data BNPB secara manual dan baca-saja](tools/BNPB_ACQUISITION.md)
 - [Pengujian browser](prototypes/BROWSER_TESTING.md)
 - [Hasil validasi dan batasan](VALIDATION_EVIDENCE_2026-11-23.md)
+- [Workflow CI terisolasi](../../.github/workflows/yandik-innovation-lab-ci.yml)
 
-**Status:** fondasi eksperimen, auditor geometri, dan pengambil data kandidat BNPB (harus diaktifkan manual) tersedia. Tes browser pada kode repo, pengambilan/verifikasi ADM2 dari layanan sebenarnya, dan pengujian STB tetap terbuka. Tidak ada perubahan ke produksi.
+**Status:** fondasi eksperimen, auditor geometri, pengambil kandidat BNPB yang memeriksa kestabilan ID, dan workflow tes branch lab tersedia. Hasil CI/browser masih harus dilihat; verifikasi ADM2 sungguhan dan uji STB fisik tetap terbuka. Tidak ada perubahan ke produksi.

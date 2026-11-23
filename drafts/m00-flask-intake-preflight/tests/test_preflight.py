@@ -119,3 +119,18 @@ class PreflightQA(unittest.TestCase):
         self.assertNotIn("core/auth.py",str(self.scan()))
     def test_36_no_dynamic_routes_registered(self):
         self.assertFalse(self.scan()["flask_routes_registered"])
+    def test_37_denies_named_secret_file(self):
+        self.x["files"][0]["path"]="config/secret.py"
+        with self.assertRaises(gate.IntakeDenied):self.scan()
+    def test_38_denies_backup_named_document(self):
+        self.x["files"][0]["path"]="backup.txt"
+        with self.assertRaises(gate.IntakeDenied):self.scan()
+    def test_39_denies_wrong_type_route_method(self):
+        self.x["routes"][0]["method"]=["GET"]
+        with self.assertRaises(gate.IntakeDenied):self.scan()
+    def test_40_denies_wrong_type_auth_claim(self):
+        self.x["routes"][0]["auth_claim"]=["NOT_REVIEWED_DEMO"]
+        with self.assertRaises(gate.IntakeDenied):self.scan()
+    def test_41_denies_sensitive_filename_in_subdir(self):
+        self.x["files"][0]["path"]="core/private_key.py"
+        with self.assertRaises(gate.IntakeDenied):self.scan()

@@ -28,6 +28,12 @@ KINDS = {"CODE_PY", "DEPENDENCY_DECLARATION", "DOCUMENTATION"}
 FLAGS = {"NOT_REVIEWED_DEMO", "CLAIMED_UNVERIFIED_DEMO"}
 METHODS = {"GET", "POST", "PUT", "PATCH", "DELETE"}
 MAX_FILES, MAX_ROUTES, MAX_SIZE = 100, 50, 2_000_000
+SENSITIVE_NAME_MARKERS = {
+    "secret", "secrets", "token", "tokens", "password", "passwd",
+    "credential", "credentials", "private", "backup", "dump", "sqlite",
+    "database", "env", "ssh", "pii", "personal", "userdata", "access_key"
+}
+
 
 class IntakeDenied(ValueError):
     pass
@@ -47,6 +53,12 @@ def _validate_file(item):
     name = item["path"]
     if not _match(name, FILE_PATH) or len(name) > 150:
         _deny("FILE_PATH_DENIED")
+    # Filename-only heuristic. Never claim to have scanned actual file bytes.
+    components = name.rsplit(".", 1)[0].split("/")
+    for component in components:
+        tokens = component.split("_")
+        if any(token in SENSITIVE_NAME_MARKERS for token in tokens):
+            _deny("SENSITIVE_FILENAME_DENIED")
     if name in {"requirements.txt", "pyproject.toml"}:
         kind = "DEPENDENCY_DECLARATION"
     elif name.endswith(".py"):
@@ -72,10 +84,11 @@ def _validate_route(item):
     if not _exact(item, ROUTE_FIELDS):
         _deny("ROUTE_SHAPE_INVALID")
     if (not _match(item["route_id"], ROUTE_ID)
+        or type(item["method"]) is not str
         or item["method"] not in METHODS
         or not _match(item["path"], ROUTE_PATH)
         or not _match(item["owner_module"], MODULE)
-        or any(item[k] not in FLAGS
+        or any(type(item[k]) is not str or item[k] not in FLAGS
                for k in ("auth_claim", "territory_claim", "csrf_claim"))):
         _deny("ROUTE_INVALID")
     return (item["method"], item["path"])

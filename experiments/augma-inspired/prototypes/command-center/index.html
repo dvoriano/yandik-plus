@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>YANDIK+ | Situation Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brandmark" aria-hidden="true">Y+</div>
+        <div>
+          <p class="eyebrow">YANDIK+ INNOVATION LAB</p>
+          <h1>Situation <span>Lab</span></h1>
+        </div>
+      </div>
+      <div class="head-actions">
+        <span class="status"><span class="status-dot" aria-hidden="true"></span> Sandbox mandiri</span>
+        <span class="demo-tag">DATA FIKTIF</span>
+      </div>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>SIMULASI, BUKAN DATA RESMI.</strong>
+      Seluruh angka, status, dan posisi titik dibuat untuk uji antarmuka. Tidak terhubung ke APEL maupun sistem produksi.
+    </div>
+
+    <main class="page">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">PUSKESWAN · EXPERIMENT 01</p>
+          <h2>Gambaran pelayanan dalam satu pandangan.</h2>
+          <p>Eksperimen dashboard situasional untuk membantu petugas melihat pola pelaporan dan pelayanan secara cepat.</p>
+        </div>
+        <div class="intro-side"><strong>01 / 03</strong><span>Visual · Tanya-data · Eksplorasi</span></div>
+      </div>
+
+      <section class="stats" aria-label="Ringkasan data contoh">
+        <article class="stat"><span>Wilayah contoh</span><strong id="stat-regions">—</strong><small>Enam wilayah simulasi</small></article>
+        <article class="stat"><span>Unit Puskeswan contoh</span><strong id="stat-sites">—</strong><small>Angka fiktif</small></article>
+        <article class="stat"><span>Sudah melapor</span><strong id="stat-reported">—</strong><small id="stat-rate">—</small></article>
+        <article class="stat stat-attention"><span>Belum melapor</span><strong id="stat-pending">—</strong><small>Butuh perhatian · simulasi</small></article>
+        <article class="stat"><span>Volume pelayanan</span><strong id="stat-services">—</strong><small>Contoh total layanan</small></article>
+      </section>
+
+      <div class="dashboard">
+        <section class="panel map-panel" aria-labelledby="map-title">
+          <div class="panel-header">
+            <div><p class="eyebrow">VISUAL EXPLORER</p><h3 id="map-title">Peta situasional skematis</h3></div>
+            <span class="panel-hint">Titik tidak menunjukkan koordinat riil</span>
+          </div>
+          <div class="toolbar">
+            <label class="search">
+              <span class="sr-only">Cari wilayah contoh</span>
+              <input id="search" type="search" placeholder="Cari kabupaten atau kota..." autocomplete="off">
+            </label>
+            <label class="toggle"><input type="checkbox" id="only-pending"><span>Perlu tindak lanjut</span></label>
+          </div>
+
+          <div class="map-surface">
+            <svg viewBox="0 0 570 400" role="group" aria-label="Diagram skematis wilayah contoh, bukan peta geografis">
+              <defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#243851"/></pattern></defs>
+              <rect x="0" y="0" width="570" height="400" fill="url(#dots)"/>
+              <path d="M125 362 C154 306, 180 270, 222 220 S281 140, 273 86 M260 185 C311 164, 352 170, 424 222" fill="none" stroke="#1f4160" stroke-width="26" stroke-linecap="round" opacity=".3"/>
+              <path d="M125 362 C154 306, 180 270, 222 220 S281 140, 273 86 M260 185 C311 164, 352 170, 424 222" fill="none" stroke="#476b89" stroke-width="1.5" stroke-dasharray="7 8" opacity=".8"/>
+              <g id="pins"></g>
+            </svg>
+            <div class="map-note">SKEMA DEMO <span>•</span> Pilih titik untuk melihat detail</div>
+          </div>
+
+          <div class="split-footer">
+            <div><span class="legend-dot complete"></span> Pelaporan lengkap</div>
+            <div><span class="legend-dot pending"></span> Ada unit belum melapor</div>
+          </div>
+        </section>
+
+        <aside class="panel detail-panel" aria-labelledby="detail-title">
+          <div class="panel-header">
+            <div><p class="eyebrow">WILAYAH CONTOH</p><h3 id="detail-title">Detail interaktif</h3></div>
+            <span class="micro-tag">SIMULASI</span>
+          </div>
+          <div class="region-list" id="region-list" aria-label="Pilih wilayah simulasi"></div>
+          <div class="detail-card" id="detail-card" aria-live="polite">
+            <h4 id="region-name">—</h4>
+            <p id="region-description">Pilih wilayah untuk menampilkan data.</p>
+            <div class="progress-rail"><div id="region-progress"></div></div>
+            <div class="detail-grid">
+              <div><span>Unit melapor</span><strong id="region-reported">—</strong></div>
+              <div><span>Belum melapor</span><strong id="region-pending">—</strong></div>
+              <div><span>Layanan</span><strong id="region-services">—</strong></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="panel question-panel" aria-labelledby="assistant-title">
+        <div class="panel-header">
+          <div><p class="eyebrow">QUESTION INTERFACE · MOCK</p><h3 id="assistant-title">Tanya data simulasi</h3></div>
+          <span class="micro-tag">BUKAN AI</span>
+        </div>
+        <p class="helper">Pertanyaan dijawab dengan aturan sederhana. Tidak menggunakan model AI atau mengakses database.</p>
+        <div class="suggestions">
+          <button type="button" data-question="Wilayah mana belum melapor?">Siapa belum melapor?</button>
+          <button type="button" data-question="Berapa total pelayanan?">Total pelayanan</button>
+          <button type="button" data-question="Wilayah pelayanan terbanyak?">Pelayanan terbanyak</button>
+        </div>
+        <form id="question-form" class="question-form">
+          <label for="question" class="sr-only">Pertanyaan tentang data contoh</label>
+          <input id="question" name="question" placeholder="Tanyakan sesuatu tentang data simulasi..." maxlength="220" required>
+          <button type="submit">Tanyakan</button>
+        </form>
+        <output id="answer" class="answer" aria-live="polite">Coba pilih salah satu contoh pertanyaan untuk memulai.</output>
+      </section>
+    </main>
+
+    <footer>
+      <span>YANDIK+ • Innovation Lab</span>
+      <span>Independent prototype · No production connection · 2026</span>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,26 +1,34 @@
-# Kandidat sumber batas ADM2 Sumatera Barat
+# Source candidates: administrative boundaries in West Sumatra (ADM2)
 
-Kajian awal 23 November 2026. **Belum ada geometri 19 kabupaten/kota yang diintegrasikan permanen ke repo**. Layer import lokal hanya memeriksa struktur data dan tetap meminta pemeriksaan sumber, lisensi, dan akurasi GIS.
+Review date: 23 November 2026. **No legally validated 19-kabupaten/kota polygon dataset has been committed.** The browser import layer checks basic structure only; the Shapely audit adds geometry/topology checks, still without certifying legal boundaries or licences.
 
-| Kandidat | Keterangan | Kebijakan lab |
+| Source | Verified descriptive status | Use decision |
 |---|---|---|
-| [BIG RBI FeatureServer](https://geoservices.big.go.id/rbi/rest/services/Hosted/Wilayah_Administrasi_Kabupaten__Kota/FeatureServer/0) | Sumber otoritas geospasial; akses query sedang perlu verifikasi, endpoint yang dicek mengembalikan error | Prioritas verifikasi resmi sebelum penggunaan operasional |
-| [BNPB Sumbar 2022, FeatureServer layer 5](https://gis.bnpb.go.id/server/rest/services/Hosted/DATA_KABKOT_SUMBAR1/FeatureServer/5) | Feature layer 2022 khusus kabupaten/kota Sumbar, mendukung GeoJSON; perizinan dan versi perlu dinilai | Referensi untuk proses verifikasi, belum disalin |
-| [OSM KPU boundaries 2026](https://github.com/ahsa29/kpu-osm-boundaries-2026) | Snapshot OSM 9 Oktober 2026, versi data 2026-10-10b memanifestasikan 19 kabupaten/kota Sumbar; berlisensi ODbL | Cocok *evaluasi*, perlu cek pemetaan kode, kelengkapan, ketelitian, dan atribusi |
-| [geoBoundaries IDN ADM2](https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM2/) | Versi sumber 2020, build 2023; bersumber BPS/WFP/OCHA dan tertera CC BY 3.0 IGO | Sekunder, perlu cek silang perubahan batas/wilayah |
-| [GeoJSON awal provinsi](https://github.com/mashadinoor/Indonesia-Geojson-2026) | Sudah dipakai hanya untuk **outline Sumbar** di lab; lisensi MIT sebagaimana tercantum pada fork | Tidak untuk menentukan garis kabupaten/kota |
+| [BIG area boundary layer](https://kspservices.big.go.id/satupeta/rest/services/RBI/Administrasi_AR_KabKota_50K/MapServer/0) | National polygon layer, WGS84/4326, supports GeoJSON; fields include KDPKAB/WADMKK | Preferred official reference; resolve export rights, actual matching, and effective date first |
+| [BIG hosted administrative area](https://geoservices.big.go.id/rbi/rest/services/Hosted/Wilayah_Administrasi_Kabupaten__Kota/FeatureServer/0) | Detailed dataset description indicates sources from RBI, adjudication and Kemendagri; this endpoint intermittently returned server errors during review | Cross-check when service available |
+| [BNPB Sumbar polygon layer (2022)](https://gis.bnpb.go.id/server/rest/services/Hosted/DATA_KABKOT_SUMBAR1/FeatureServer/5) | The publisher describes its May-2021 revision and 2022 updates and notes topology errors in some source lines; supports geoJSON | Secondary reference with explicit topology caution |
+| [Kemendagri via data.go.id](https://data.go.id/dataset/dataset/peta-batas-administrasi-provinsi-dan-kabupaten-kota) | Dataset page dated 8 Oct 2026, but primary file links are flagged problematic | Do not treat listing alone as successful download |
+| [OSM administrative extraction](https://github.com/ahsa29/kpu-osm-boundaries-2026) | 2026-10-10b manifest lists 19 West Sumatra kab/kota; ODbL 1.0 and attribution obligations | Visual cross-check only after licensing and quality review |
+| [Gapmap boundary data](https://gapmap.aignited.id/en/data/) | Lists simplified \`kabupaten.geojson\` (~1.8 MB); attribution describes MIT from upstream cahyadsn | Research alternative; verify exact licence chain |
+| [Initial province outline](https://github.com/mashadinoor/Indonesia-Geojson-2026) | Included in the lab as a reference province outline with upstream MIT notice | Display aid, not a legal boundary |
 
-## Peringatan data salah cakupan
+## Important warning about false ADM2 data
 
-Beberapa file dari folder `Kabupaten/Sumatera_Barat/` pada dataset awal menampilkan *satu feature kelurahan* pada satu path kabupaten/kota, bukan poligon kabupaten/kota utuh. Karena itu **tidak diimpor sebagai ADM2**.
+Some apparent kab/kota files under \`Kabupaten/Sumatera_Barat/\` from the early provider contained a single *kelurahan* feature, not a kabupaten/kota polygon. Those are not acceptable for ADM2 mapping.
 
-## Prosedur penerimaan data ADM2
+## Accept only after six checks
 
-1. Dapatkan berkas dengan sumber, versi, tanggal, dan ketentuan lisensi tertulis.
-2. Periksa 19 pasangan kode wilayah (12 kabupaten dan 7 kota) terhadap daftar referensi yang berlaku.
-3. Validasi setiap Polygon/MultiPolygon: ring tertutup, koordinat WGS84 `[lon,lat]`, tidak ada duplikasi, dan tidak melampaui rentang Sumbar.
-4. Cek geometri spasial pada QGIS: self-intersections, gaps, overlaps, island coverage terutama Mentawai, serta kecocokan dengan outline provinsi.
-5. Cocokkan kode dan atribut kab/kota dengan sumber administrasi resmi; cek perubahan batas dan tanggal.
-6. Simpan laporan validasi dan atribusi. Baru kemudian dipertimbangkan untuk menjadi berkas peta lokal versi tertentu setelah izin.
+1. Record original source URL, hash, download date, release/version, terms, and permitted redistribution.
+2. Match 19 **unique** code+name identifiers, verify 12 kabupaten/7 kota and current effective administrative registry.
+3. Check Polygon/MultiPolygon, closed rings, nonempty shapes, bounds in West Sumatra, and self-intersections.
+4. Reject substantial overlaps across neighbouring ADM2 polygons; investigate topology gaps with GIS, especially Mentawai.
+5. Compare with an independently trusted reference; coastlines and islands may differ by edition. Area ratios are not legal evidence.
+6. Retain review sign-off before publishing or integrating into YANDIK+ production.
 
-Validator browser saat ini hanya menerapkan **langkah 2 dan sebagian langkah 3**. Ia **tidak** memeriksa validitas GIS topologi, akurasi sumber, atau hak pakai. Peta hasil impor hanyalah pratinjau pada sesi browser, tidak dikirim/diunggah.
+## Lab tools
+
+The existing \`prototypes/geo-command-center/boundary-loader.mjs\` validates 19 feature identities and simple rings in the **browser**, and does not upload anything.
+
+\`tools/audit_adm2.py\` optionally reads the same GeoJSON from a local disk with Shapely 2 and returns a machine-readable JSON technical audit. Its success status is \`PASS_TECHNICAL_NOT_CERTIFIED\`, never "official".
+
+See [validation evidence](../VALIDATION_EVIDENCE_2026-11-23.md). No external source content is auto-downloaded or silently copied into the repo.

@@ -1,0 +1,16 @@
+# Ignore local test artifacts and downloaded datasets in the isolated lab
+**/node_modules/
+**/playwright-report/
+**/test-results/
+**/.pytest_cache/
+**/__pycache__/
+**/*.pyc
+**/*.log
+**/.DS_Store
+**/sumbar-adm2-bnpb-candidate.geojson
+**/source-adm2.geojson
+**/yandik-sumbar-gis-review-*/
+**/manifest.json
+
+# Important: the tracked province outline GeoJSON remains part of the lab.
+# ADM2 sources under review must NOT be committed until licensing and GIS QA.

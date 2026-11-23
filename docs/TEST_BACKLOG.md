@@ -186,6 +186,63 @@ Dokumen: [M03-S4B metodologi](https://github.com/dvoriano/yandik-plus/blob/devel
 
 [Spesifikasi M04-S7](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_S7_UNIT_CATALOG_RACI.md). Mode kode saja tetap berlaku, tidak ada tes baru.
 
+## Antrean M05-11: izin uji staging dan paket bukti regresi APEL 2026–2030 (BELUM DIUJI)
+- [Kode M05-11](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-staging-protocol) · [50 skenario QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-staging-protocol/tests/protocol.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_11_STAGING_AUTHORIZATION_REGRESSION_2026_2030.md). **50 ditulis, 0 dijalankan**.
+- Semua bukti, izin owner proyek untuk mengubah CODE_ONLY, izin owner sistem/sumber untuk akses, staging yang terisolasi, Juknis dan referensi resmi, kontrol keamanan, laporan selisih dan penelaahan independen masih harus diperiksa ketika pengguna/instansi mengizinkan proses yang sesuai. Catatan DEMO tidak dapat mengesahkan salah satunya.
+
+| ID | Skenario QA tertunda | Status |
+|---|---|---|
+| QA-M05-11-01 | M05-11 has fourteen unique staging controls | BELUM DIUJI |
+| QA-M05-11-02 | M05-11 distinguishes project test permission from system access | BELUM DIUJI |
+| QA-M05-11-03 | M05-11 includes isolated staging and synthetic data boundaries | BELUM DIUJI |
+| QA-M05-11-04 | M05-11 documents secrets and RBAC without storing credentials | BELUM DIUJI |
+| QA-M05-11-05 | M05-11 requires backup, incident stop and rollback controls | BELUM DIUJI |
+| QA-M05-11-06 | M05-11 requires source mapping and 2026 Juknis baseline | BELUM DIUJI |
+| QA-M05-11-07 | M05-11 retains independent publication permission | BELUM DIUJI |
+| QA-M05-11-08 | M05-11 all controls start blocked | BELUM DIUJI |
+| QA-M05-11-09 | M05-11 all controls have null official evidence references | BELUM DIUJI |
+| QA-M05-11-10 | M05-11 2026 protocol retains 22 unexecuted parity cases | BELUM DIUJI |
+| QA-M05-11-11 | M05-11 2027 protocol retains 20 unexecuted parity cases | BELUM DIUJI |
+| QA-M05-11-12 | M05-11 2030 protocol keeps its own policy | BELUM DIUJI |
+| QA-M05-11-13 | M05-11 plans cover all five configured years | BELUM DIUJI |
+| QA-M05-11-14 | M05-11 rejects out-of-range year instead of inheriting policy | BELUM DIUJI |
+| QA-M05-11-15 | M05-11 rejects text year instead of parsing it | BELUM DIUJI |
+| QA-M05-11-16 | M05-11 rejects absent snapshot | BELUM DIUJI |
+| QA-M05-11-17 | M05-11 rejects non-DEMO snapshot | BELUM DIUJI |
+| QA-M05-11-18 | M05-11 rejects generic DEMO ID without snapshot namespace | BELUM DIUJI |
+| QA-M05-11-19 | M05-11 project test permission remains unverified | BELUM DIUJI |
+| QA-M05-11-20 | M05-11 separate system access permission remains unverified | BELUM DIUJI |
+| QA-M05-11-21 | M05-11 no staging environment is provisioned | BELUM DIUJI |
+| QA-M05-11-22 | M05-11 protocol never yields an execution authorization | BELUM DIUJI |
+| QA-M05-11-23 | M05-11 protocol cannot score, rank, award, publish or merge | BELUM DIUJI |
+| QA-M05-11-24 | M05-11 note kinds cannot grant authority | BELUM DIUJI |
+| QA-M05-11-25 | M05-11 empty review never implies permission | BELUM DIUJI |
+| QA-M05-11-26 | M05-11 valid DEMO note stays non-authoritative | BELUM DIUJI |
+| QA-M05-11-27 | M05-11 review notes are tied to a single control | BELUM DIUJI |
+| QA-M05-11-28 | M05-11 review rejects duplicate note IDs | BELUM DIUJI |
+| QA-M05-11-29 | M05-11 review rejects non-DEMO reviewer IDs | BELUM DIUJI |
+| QA-M05-11-30 | M05-11 review rejects mismatched snapshot | BELUM DIUJI |
+| QA-M05-11-31 | M05-11 review rejects unknown control ID | BELUM DIUJI |
+| QA-M05-11-32 | M05-11 review rejects fake approval note | BELUM DIUJI |
+| QA-M05-11-33 | M05-11 review rejects unexpected free-text evidence field | BELUM DIUJI |
+| QA-M05-11-34 | M05-11 review rejects protocol with forged test permission | BELUM DIUJI |
+| QA-M05-11-35 | M05-11 review rejects altered protocol parity cases | BELUM DIUJI |
+| QA-M05-11-36 | M05-11 review rejects altered official control signoff | BELUM DIUJI |
+| QA-M05-11-37 | M05-11 requires twelve categories of future regression evidence | BELUM DIUJI |
+| QA-M05-11-38 | M05-11 future evidence artifacts are all not provided | BELUM DIUJI |
+| QA-M05-11-39 | M05-11 packet records zero executions and zero verdicts | BELUM DIUJI |
+| QA-M05-11-40 | M05-11 packet retains six blocked upstream gates | BELUM DIUJI |
+| QA-M05-11-41 | M05-11 a review note never changes packet readiness | BELUM DIUJI |
+| QA-M05-11-42 | M05-11 a review note does not fill official artifact references | BELUM DIUJI |
+| QA-M05-11-43 | M05-11 packet refuses forged official review decision | BELUM DIUJI |
+| QA-M05-11-44 | M05-11 packet refuses forged permission from review | BELUM DIUJI |
+| QA-M05-11-45 | M05-11 packet refuses forged permission from protocol | BELUM DIUJI |
+| QA-M05-11-46 | M05-11 packet refuses altered note count | BELUM DIUJI |
+| QA-M05-11-47 | M05-11 packet refuses review from different snapshot | BELUM DIUJI |
+| QA-M05-11-48 | M05-11 packet refuses mutated protocol control count | BELUM DIUJI |
+| QA-M05-11-49 | M05-11 packet cannot run tests, connect, write or publish | BELUM DIUJI |
+| QA-M05-11-50 | M05-11 scenario results keep missing values distinct from a verified zero | BELUM DIUJI |
+
 ## Antrean M05-10: matriks paritas & kriteria penerimaan APEL 2026–2030 (BELUM DIUJI)
 - [Kode M05-10](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m05-apel-parity) · [50 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m05-apel-parity/tests/parity.test.mjs) · [Spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M05_10_PARITY_ACCEPTANCE_MATRIX_2026_2030.md). **50 skenario QA ditulis, 0 dijalankan.** 102 item rencana tahun bukan bukti 102 pengujian.
 - Pengujian baru dapat dimulai setelah pemilik proyek mencabut CODE_ONLY secara eksplisit; diperlukan data dictionary resmi, baseline Juknis 2026, aturan independen tahun 2027–2030, referensi source, izin staging, security, persetujuan reviewer, serta protokol pembanding yang disahkan. Draf belum dapat memperoleh verdict PASS.

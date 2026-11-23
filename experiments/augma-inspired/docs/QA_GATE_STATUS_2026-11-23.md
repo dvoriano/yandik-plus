@@ -2,6 +2,15 @@
 
 Verified on **23 November 2026 (11:45 WIB)**. **Isolated lab only; this is not an operational-release approval.**
 
+## Tahap baru: inventaris BIG tanpa geometri (23 November 2026)
+
+- `tools/check_big_adm2_inventory.py` kini memeriksa **19 kode kabupaten/kota** dalam respons atribut ArcGIS BIG secara **offline**, sebelum pengambilan geometri poligon.
+- `tools/tests/test_check_big_adm2_inventory.py` berisi **12 regresi baru**. **12/12 lulus lokal** dan kedua source GitHub cocok dengan hasil `git hash-object` sumber yang dieksekusi.
+- Suite Python sebelumnya 54/54 lulus lokal (tercatat pada tahap terdahulu); sekarang total **66 tes terdefinisi**, namun **suite gabungan 66 tes belum dieksekusi ulang**.
+- Verifier CI menetapkan minimum **66 Python / 31 Node / 19 Playwright**. Tidak ada konfirmasi CI commit terbaru.
+- URL query atribut BIG tidak bisa dibuka dari runtime saat ini. **Belum ada inventaris atribut BIG asli, geometri 19 poligon, atau bukti izin sumber yang lulus audit**.
+- [Protokol perolehan respons atribut dan cara menjalankan reviewer](BIG_2026_ATTRIBUTE_INVENTORY.md).
+
 ## Status terkini: preflight BIG dan 54 tes Python lokal
 
 **23 November 2026:** pemeriksa offline metadata BIG (poligon, geoJSON, EPSG:4326, lima atribut identitas, ObjectID, error dan file input) ditambahkan. Ada **12 tes baru** dengan fixture sintetis. Setelah digabung dengan suite lama, **54 dari 54 tes Python lulus pada snapshot lokal**. Empat file baru/diubah dibandingkan dengan hash GitHub dan identik.

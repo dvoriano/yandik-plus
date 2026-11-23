@@ -12,6 +12,7 @@ test("keyboard: daftar wilayah memilih melalui Enter tanpa mouse", async ({ page
   await page.keyboard.press("Enter");
   await expect(page.locator("#selected-name")).toHaveText("Kabupaten Kepulauan Mentawai");
   await expect(row).toHaveAttribute("aria-pressed", "true");
+  await expect(row).toBeFocused(); // focus survives re-render
 });
 
 test("keyboard: penanda SVG peta dapat dipilih melalui Enter dan Space", async ({ page }) => {
@@ -22,9 +23,11 @@ test("keyboard: penanda SVG peta dapat dipilih melalui Enter dan Space", async (
   await pins.first().focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("#selected-name")).toHaveText("Kabupaten Pesisir Selatan");
+  await expect(pins.first()).toBeFocused();
   await pins.nth(1).focus();
   await page.keyboard.press("Space");
   await expect(page.locator("#selected-name")).toHaveText("Kabupaten Solok");
+  await expect(pins.nth(1)).toBeFocused();
 });
 
 test("keyboard: formulir asisten mengembalikan jawaban dengan sumber", async ({ page }) => {
@@ -48,6 +51,7 @@ test("keyboard: dashboard fiktif bisa dicari dan dipilih tanpa mouse", async ({ 
   await page.keyboard.press("Enter");
   await expect(page.locator("#selected-name")).toHaveText("Kabupaten Kepulauan Mentawai");
   await expect(row).toHaveAttribute("aria-pressed", "true");
+  await expect(row).toBeFocused();
   await expect(page.locator(".alert")).toContainText("DATA FIKTIF");
 });
 

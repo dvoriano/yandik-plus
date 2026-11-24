@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {CATALOG} from "../inventory-catalog.mjs";
-import {createInventory,readInventory,saveItem,copyPrior,confirmGroup,transition,regionalInventory} from "../inventory-model.mjs";
+import {createInventory,readInventory,saveItem,copyPrior,confirmItem,confirmGroup,transition,regionalInventory} from "../inventory-model.mjs";
 const a={year:2026,facility_id:"DEMO-PSW-ALPHA",region_id:"DEMO-REGION-UTARA"},b={...a,year:2027};
 const good={status:"AVAILABLE",total:2,usable:2};
 test("unique catalogue IDs and source refs",()=>{assert.equal(new Set(CATALOG.map(x=>x.id)).size,CATALOG.length);assert.ok(CATALOG.every(x=>x.page>=18&&x.page<=24&&x.ref));});
@@ -19,3 +19,5 @@ test("submit requires all confirmed",()=>assert.throws(()=>transition(createInve
 test("submitted locks and correction preserves history",()=>{let c=createInventory();for(const x of CATALOG)c=saveItem(c,a,x.id,{status:"UNKNOWN"});c=transition(c,a,"submit");assert.throws(()=>saveItem(c,a,"A.4.b",good));c=transition(c,a,"return");c=saveItem(c,a,"A.4.b",good);assert.equal(readInventory(c,a).history.length,CATALOG.length+3);});
 test("unknown is not absent",()=>{const c=saveItem(createInventory(),a,"A.4.b",{status:"UNKNOWN"});assert.equal(readInventory(c,a).rows.find(x=>x.id==="A.4.b").observation.total,null);});
 test("regional includes not started without interpreting zero assets",()=>assert.ok(regionalInventory(createInventory(),2027).every(x=>x.status==="NOT_STARTED"&&x.confirmed===0)));
+
+test("individual confirmation preserves prior observation and source year",()=>{const original=saveItem(createInventory(),a,"A.4.b",good),copied=copyPrior(original,b),next=confirmItem(copied,b,"A.4.b");const row=readInventory(next,b).rows.find(x=>x.id==="A.4.b").observation;assert.equal(row.source_year,2026);assert.equal(row.confirmed,true);assert.equal(row.usable,2);assert.equal(readInventory(copied,b).confirmed,0);assert.throws(()=>confirmItem(next,b,"A.4.b"));});

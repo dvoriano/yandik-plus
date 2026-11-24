@@ -40,6 +40,10 @@ export function copyPrior(state,s){
  const rows=Object.fromEntries(Object.entries(previous.rows).map(([id,v])=>[id,{...clone(v),confirmed:false,source_year:source}]));
  return write(state,s,{...r,rows,copied_from:{year:source,status:previous.status,revision:previous.revision}},"COPY_PRIOR",{year:source,source_status:previous.status});
 }
+export function confirmItem(state,s,id){
+ const r=draft(state,s),row=r.rows[id];if(!index.has(id)||!row||row.confirmed)fail("NO_COPIED_ROW");
+ return write(state,s,{...r,rows:{...r.rows,[id]:{...row,confirmed:true}}},"CONFIRM_ITEM",{item_id:id});
+}
 export function confirmGroup(state,s,group){
  const r=draft(state,s);const ids=CATALOG.filter(i=>i.group===group&&r.rows[i.id]&&!r.rows[i.id].confirmed).map(i=>i.id);
  if(!ids.length)fail("NO_COPIED_ROWS");

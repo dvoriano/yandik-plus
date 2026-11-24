@@ -1,12 +1,18 @@
 /** Independent inventory panel using the canonical M05 demo master. No storage/network. */
 import {GROUPS,CATALOG_VERSION} from "./inventory-catalog.mjs";
-import {YEARS,createInventory,readInventory,saveItem,copyPrior,confirmGroup,transition,regionalInventory} from "./inventory-model.mjs";
+import {YEARS,createInventory,readInventory,saveItem,copyPrior,confirmItem,confirmGroup,transition,regionalInventory} from "./inventory-model.mjs";
 import {DEMO_FACILITIES} from "../m05-apel-dashboard-ui/fixtures.mjs";
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n;};
 const set=(node,options,value)=>{node.replaceChildren(...options.map(([id,label])=>new Option(label,id)));if(options.some(([id])=>String(id)===String(value)))node.value=String(value);};
 const button=(label,fn)=>{const n=el("button",label);n.type="button";n.addEventListener("click",fn);return n;};
 const labels={UNCONFIRMED:"Belum dikonfirmasi",REVIEW:"Perlu telaah",ABSENT:"Tidak tersedia",STOCK_ATTENTION:"Stok perlu perhatian",BELOW_MINIMUM:"Di bawah minimum (layak pakai)",UNUSABLE:"Tidak layak pakai",PARTIAL_USABLE:"Sebagian layak",MINIMUM_REPORTED:"Minimum tercatat terpenuhi",AVAILABLE_REPORTED:"Tersedia menurut isian"};
+const observations={AVAILABLE:"Tersedia",ABSENT:"Tidak tersedia",UNKNOWN:"Belum diketahui",CONTEXT_REVIEW:"Perlu telaah konteks"};
+const conditions={ADEQUATE_REPORTED:"Cukup menurut petugas",LIMITED_REPORTED:"Terbatas",UNUSABLE_REPORTED:"Tidak layak/kedaluwarsa",NOT_ASSESSED:"Belum dinilai"};
+function describe(row){
+ if(!row)return "Belum ada isian";
+ return observations[row.status]+(row.total!==null?" · "+row.usable+"/"+row.total+" layak/tersedia":"")+(row.condition?" · "+conditions[row.condition]:"")+(row.source_year!==null?" · sumber "+row.source_year:"");
+}
 const states={DRAFT:"Draf",CORRECTION:"Perbaikan",SUBMITTED:"Diajukan DEMO",RECORDED_DEMO:"Dicatat DEMO",NOT_STARTED:"Belum mulai"};
 function table(target,head,rows){const w=el("div",undefined,"table-wrap"),t=el("table"),h=el("thead"),tr=el("tr");for(const v of head){const x=el("th",v);x.scope="col";tr.append(x);}h.append(tr);t.append(h);const b=el("tbody");for(const row of rows){const line=el("tr");for(const v of row){const td=el("td");td.append(v instanceof Node?v:document.createTextNode(String(v??"—")));line.append(td);}b.append(line);}t.append(b);w.append(t);target.replaceChildren(w);}
 let state=createInventory(),selected=null;
@@ -17,7 +23,7 @@ function edit(item,editable){
  selected=item.id;
  const panel=$("inv-edit");panel.replaceChildren(el("h3",item.label),el("p",item.ref+" · halaman "+item.page));
  const row=item.observation;
- if(!editable){panel.append(el("p","Laporan terkunci. Buka perbaikan DEMO untuk mengubah."));return;}
+ if(!editable){panel.append(el("p",describe(item.observation)),el("p","Laporan terkunci. Buka perbaikan DEMO untuk mengubah."));return;}
  const form=el("form"),wrap=el("div",undefined,"filter-row");
  const make=(label,control)=>{const n=el("label",label);n.append(control);wrap.append(n);return control;};
  const status=make("Ketersediaan",el("select"));
@@ -42,14 +48,16 @@ function render(){
  const rows=v.rows.filter(x=>(g==="ALL"||x.group===g)&&(!q||(x.label+" "+x.ref).toLowerCase().includes(q))&&(filter==="ALL"||filter==="PENDING"&&x.assessment==="UNCONFIRMED"||filter==="ATTENTION"&&["ABSENT","BELOW_MINIMUM","UNUSABLE","PARTIAL_USABLE","STOCK_ATTENTION","REVIEW"].includes(x.assessment)));
  table($("inv-list"),["Butir & rujukan","Minimum eksplisit","Kondisi tercatat","Aksi"],rows.map(x=>[
  x.label+" ("+x.ref+" · hlm. "+x.page+")",x.minimum===null?"Tidak disebut":x.minimum+" "+x.unit,
- labels[x.assessment]+(x.observation?.total!==null&&x.observation?.total!==undefined?" · "+x.observation.usable+"/"+x.observation.total+" layak/tersedia":""),
- button(editable?"Perbarui":"Lihat",()=>edit(x,editable))
+ labels[x.assessment]+" · "+describe(x.observation),
+ (()=>{const box=el("div",undefined,"action-row");box.append(button(editable?"Perbarui":"Lihat",()=>edit(x,editable)));
+ if(editable&&x.observation&&!x.observation.confirmed)box.append(button("Konfirmasi tetap",()=>act(()=>confirmItem(state,s,x.id),"Salinan diperiksa dan dikonfirmasi.")));
+ return box;})()
  ]));
  $("inv-edit").replaceChildren();
  $("inv-actions").replaceChildren();
  if(editable){
   if(v.revision===0&&s.year>2026)$("inv-actions").append(button("Salin data tahun sebelumnya",()=>act(()=>copyPrior(state,s),"Salinan dibuat, semua butir wajib diperiksa ulang.")));
-  if(g!=="ALL"&&v.rows.some(x=>x.group===g&&x.observation&&!x.observation.confirmed))$("inv-actions").append(button("Konfirmasi salinan grup ini",()=>{if(confirm("Sudah memeriksa semua butir salinan pada grup ini dan tidak ada perubahan?"))act(()=>confirmGroup(state,s,g),"Salinan grup dikonfirmasi.");}));
+  if(g!=="ALL"&&!q&&filter==="ALL"&&v.rows.some(x=>x.group===g&&x.observation&&!x.observation.confirmed))$("inv-actions").append(button("Konfirmasi salinan grup ini",()=>{if(confirm("Sudah memeriksa semua butir salinan pada grup ini dan tidak ada perubahan?"))act(()=>confirmGroup(state,s,g),"Salinan grup dikonfirmasi.");}));
   const submit=button("Ajukan inventaris DEMO",()=>act(()=>transition(state,s,"submit"),"Diajukan dalam simulasi."));submit.disabled=v.confirmed!==v.total;$("inv-actions").append(submit);
  }else if(v.status==="SUBMITTED"){
   $("inv-actions").append(button("Minta perbaikan DEMO",()=>act(()=>transition(state,s,"return"),"Dibuka untuk perbaikan.")),button("Catat hasil telaah DEMO",()=>act(()=>transition(state,s,"record"),"Dicatat dalam simulasi; bukan verifikasi resmi.")));

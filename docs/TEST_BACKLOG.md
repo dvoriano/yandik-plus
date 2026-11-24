@@ -10,8 +10,8 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
-## MOD-01 | Inventaris tahunan (15 QA tertulis, 0 dijalankan)
-[QA](../drafts/yandik-portal/tests/inventory.test.mjs): katalog, minimum, null/0, validasi jumlah, stok kontekstual, carry-forward, scope, lock/koreksi dan rekap. 65 kasus unit portal kumulatif; 0 dijalankan. Browser dan telaah katalog tertunda sesuai [kontrak](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md).
+## MOD-01 | Inventaris tahunan (16 QA tertulis, 0 dijalankan)
+[QA](../drafts/yandik-portal/tests/inventory.test.mjs): katalog, minimum, null/0, validasi jumlah, stok kontekstual, carry-forward, scope, lock/koreksi dan rekap. 66 kasus unit portal kumulatif; 0 dijalankan. Browser dan telaah katalog tertunda sesuai [kontrak](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md).
 
 ## K1/K2 | Profil/SDM konsolidasi (19 QA unit tertulis, 0 dijalankan)
 - Editor kosong tidak menyalin fixture M02; isolasi fasilitas/tahun, draf/ajukan/koreksi/revisi/telaah, status snapshot sintetis, lima bagian, penolakan teks non-DEMO, akses wilayah dan telaah sebelum submit.

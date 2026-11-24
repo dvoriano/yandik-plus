@@ -11,7 +11,7 @@
 
 ## K1/K2: Inventaris tahunan sarana dan peralatan
 
-[MOD-01 inventaris tahunan](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md) ditulis berdasarkan Lampiran III Permentan 64/2007 (Pedoman 2020). 198 butir UI dengan referensi, 15 kelompok navigasi, salin tahun lalu dengan konfirmasi, draf/revisi, rekap gap. 15 QA baru, 0 dijalankan; belum sumber/otorisasi/persistensi server. Milestone resmi tetap.
+[MOD-01 inventaris tahunan](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md) ditulis berdasarkan Lampiran III Permentan 64/2007 (Pedoman 2020). 198 butir UI dengan referensi, 15 kelompok navigasi, salin tahun lalu dengan konfirmasi, draf/revisi, rekap gap. 16 QA baru, 0 dijalankan; belum sumber/otorisasi/persistensi server. Milestone resmi tetap.
 
 ## Lanjutan K1/K2: Profil dan SDM DEMO
 

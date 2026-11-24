@@ -3,7 +3,8 @@
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
 ## 2026-11-24 | Inventaris tahunan Puskeswan
-[Panel inventaris](../drafts/yandik-portal/review.html#inventaris), [kontrak](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). Transkripsi katalog Lampiran III A–J: 198 butir UI, 15 kelompok navigasi, minimum eksplisit saja; data tahunan salinan belum konfirmasi, progres dan telaah DEMO. 15 QA tertulis, 0 dijalankan; tidak ada data nyata, CI/CL, deploy atau perubahan produksi.
+Commit dasar `20f3882`; penyempurnaan berikut menampilkan nilai salinan, kondisi dan tahun sumber, konfirmasi individual, serta membatasi konfirmasi grup pada tampilan seluruh grup. Tidak diuji.
+[Panel inventaris](../drafts/yandik-portal/review.html#inventaris), [kontrak](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). Transkripsi katalog Lampiran III A–J: 198 butir UI, 15 kelompok navigasi, minimum eksplisit saja; data tahunan salinan belum konfirmasi, progres dan telaah DEMO. 16 QA tertulis, 0 dijalankan; tidak ada data nyata, CI/CL, deploy atau perubahan produksi.
 
 ## 2026-11-24 | Lanjutan K1/K2: editor Profil dan SDM
 Commit `52613e0`: editor lima bagian M02 pada identitas M05, revisi sebelum/sesudah, status simulasi, daftar aktif per bulan dan mutasi penempatan terbuka, catatan kompetensi fiktif. [Portal](../drafts/yandik-portal/review.html#profil-sdm) · [19 QA tertulis](../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Total 50 kasus unit portal. Tidak ada tanggal telaah nyata, perubahan ledger/workflow APEL, data resmi, CI/CL atau deployment. KODE DITULIS, BELUM DIUJI.

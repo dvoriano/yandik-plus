@@ -51,17 +51,17 @@ async function open(actor, viewport = { width: 1280, height: 900 }) {
   await page.goto(url);
   await page.getByLabel("Kode sesi DEMO").fill(codes.get(actor));
   await page.getByRole("button", { name: "Masuk ke DEMO" }).click();
-  await page.getByRole("navigation", { name: "Menu backend DEMO" }).locator("button").first().waitFor();
+  await page.locator('.backend-nav button[aria-pressed="true"]').waitFor({ state: "attached" });
   return { context, page };
 }
-const menu = (page, name) => page.getByRole("navigation", { name: "Menu backend DEMO" })
-  .getByRole("button", { name, exact: true });
 function panel(page) {
   return page.locator("#backend-root .review-panel");
 }
 async function visit(page, name) {
-  await menu(page, name).click();
-  await menu(page, name).and(page.locator('[aria-pressed="true"]')).waitFor();
+  await page.getByText("Menu lainnya", { exact: true }).click();
+  await page.getByRole("navigation", { name: "Menu ruang kerja" }).getByRole("button", { name, exact: true }).click();
+  await panel(page).getByRole("heading", { name, exact: true }).waitFor();
+  await page.waitForFunction(() => !document.querySelector(".workspace-panel").hasAttribute("aria-busy"));
   assert.doesNotMatch(await panel(page).innerText(), /Sumber belum tersedia atau akses dibatasi/);
 }
 
@@ -101,8 +101,7 @@ test("portal backend memuat semua menu sesuai peran dan tetap dalam viewport", {
     try {
       const errors = [];
       page.on("pageerror", error => errors.push(error.message));
-      const navigation = page.getByRole("navigation", { name: "Menu backend DEMO" });
-      const labels = await navigation.locator("button").allTextContents();
+      const labels = await page.locator(".backend-nav button").allTextContents();
       if (actor === "LEADER") assert.deepEqual(labels, ["Dashboard pimpinan", "Pustaka digital"]);
       for (const label of labels) {
         await visit(page, label);
@@ -121,6 +120,33 @@ test("portal backend memuat semua menu sesuai peran dan tetap dalam viewport", {
   assert.equal(union.size, 12);
 });
 
+test("halaman awal petugas menampilkan satu tindakan dan membuka pilihan sesuai kebutuhan", { timeout: 20_000 }, async () => {
+  const { context, page } = await open("ALPHA", { width: 390, height: 844 });
+  try {
+    const action = page.getByText("Mulai isi laporan", { exact: true });
+    await page.getByText("Puskeswan DEMO ALPHA · Januari 2026", { exact: true }).waitFor();
+    await page.getByText("Belum ada draf", { exact: true }).waitFor();
+    const bounds = await action.boundingBox();
+    assert.ok(bounds && bounds.y + bounds.height <= 844 && bounds.height >= 44);
+    assert.equal(await page.getByRole("navigation", { name: "Menu ruang kerja" }).count(), 0);
+    assert.equal(await page.getByRole("combobox").count(), 0);
+    assert.equal(await page.getByLabel("Pengobatan", { exact: true }).isVisible(), false);
+
+    await action.press("Enter");
+    await page.getByLabel("Pengobatan", { exact: true }).waitFor();
+    assert.equal(await page.getByRole("button", { name: "Tambah", exact: true }).count(), 0);
+    await page.getByText("Investigasi, kurban dan bukti", { exact: true }).click();
+    assert.equal(await page.getByRole("button", { name: "Tambah", exact: true }).count(), 3);
+    await page.getByText("Ubah periode", { exact: true }).click();
+    await page.getByRole("combobox", { name: "Bulan", exact: true }).selectOption("2");
+    await page.getByText("Puskeswan DEMO ALPHA · Februari 2026", { exact: true }).waitFor();
+    await action.waitFor();
+    assert.equal(await page.getByRole("combobox", { name: "Puskeswan" }).count(), 0);
+  } finally {
+    await context.close();
+  }
+});
+
 test("APEL menyimpan draf DEMO, validasi isian, reviewer terpisah, dan kirim ulang", { timeout: 30_000 }, async () => {
   const writer = await open("ALPHA", { width: 375, height: 850 });
   const reviewer = await open("REVIEW");
@@ -129,6 +155,7 @@ test("APEL menyimpan draf DEMO, validasi isian, reviewer terpisah, dan kirim ula
     const save = writer.page.getByRole("button", { name: "Simpan draf DEMO" });
     writer.page.on("dialog", dialog => dialog.accept());
     reviewer.page.on("dialog", dialog => dialog.accept());
+    await writer.page.getByText("Mulai isi laporan", { exact: true }).click();
     await field.fill("3");
     for (const label of ["Vaksinasi", "Penyuluhan", "Layanan lain"]) {
       await writer.page.getByLabel(label, { exact: true }).fill("0");
@@ -136,9 +163,15 @@ test("APEL menyimpan draf DEMO, validasi isian, reviewer terpisah, dan kirim ula
     await save.click();
     const submit = writer.page.getByRole("button", { name: "Kirim laporan DEMO", exact: true });
     await submit.waitFor();
+    const edit = writer.page.getByText("Ubah isian laporan", { exact: true });
+    await edit.click();
     await field.fill("4");
+    await submit.waitFor({ state: "hidden" });
+    await edit.click();
     await submit.click();
     await writer.page.getByText("Simpan isian yang berubah terlebih dahulu.", { exact: true }).waitFor();
+    await edit.click();
+    assert.equal(await field.inputValue(), "4");
     await save.click();
     await submit.click();
     await panel(writer.page).getByText("Terkirim untuk ditinjau", { exact: true }).waitFor();
@@ -146,6 +179,7 @@ test("APEL menyimpan draf DEMO, validasi isian, reviewer terpisah, dan kirim ula
     await reviewer.page.getByRole("button", { name: "Minta koreksi DEMO" }).click();
     await panel(reviewer.page).getByText("Perlu koreksi", { exact: true }).waitFor();
     await writer.page.reload();
+    await writer.page.getByText("Perbaiki laporan", { exact: true }).click();
     await field.fill("5");
     await save.click();
     await submit.click();

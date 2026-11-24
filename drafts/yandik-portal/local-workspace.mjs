@@ -34,8 +34,8 @@ function signIn(message = "") {
   const status = node("p", message);
   status.setAttribute("role", "status");
   form.append(label, submit, status);
-  panel.append(node("h2", "Masuk ke ruang kerja DEMO"),
-    node("p", "Gunakan kode untuk peran simulasi yang tercetak di terminal saat server dimulai."), form);
+  panel.append(node("h1", "Masuk ke YANDIK+"),
+    node("p", "Salin kode sesi dari jendela server DEMO."), form);
   root.replaceChildren(panel);
 
   form.addEventListener("submit", async event => {
@@ -57,10 +57,10 @@ async function openWorkspace({ allow_commands: allowCommands }) {
   const workspace = node("div");
   const logout = node("button", "Keluar dari DEMO");
   const tools = node("div");
-  tools.className = "action-row";
+  tools.className = "backend-session";
   logout.type = "button";
   tools.append(logout);
-  root.replaceChildren(tools, workspace);
+  root.replaceChildren(workspace, tools);
   let unmount;
   logout.addEventListener("click", async () => {
     logout.disabled = true;

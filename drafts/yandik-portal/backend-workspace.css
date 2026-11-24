@@ -24,3 +24,121 @@
   font: inherit;
 }
 #backend-root [hidden] { display: none; }
+
+.workspace-context {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.workspace-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.workspace-toolbar details,
+.report-editor {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.workspace-toolbar details[open] {
+  flex-basis: 100%;
+}
+
+.workspace-toolbar summary,
+.report-editor > summary,
+.report-extra > summary {
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 12px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  overflow-wrap: anywhere;
+}
+
+.workspace-toolbar .backend-scope {
+  margin-top: 8px;
+}
+
+#backend-root .backend-nav button,
+.backend-session button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+#backend-root .backend-nav button[aria-pressed=true] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.workspace-panel h1,
+#backend-root > .review-panel > h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+}
+
+.workspace-feedback:empty {
+  margin: 0;
+}
+
+.report-status {
+  margin: 4px 0 14px;
+  font-weight: 650;
+}
+
+.report-editor > div,
+.report-extra > div {
+  margin-top: 12px;
+}
+
+.report-editor .backend-report > p {
+  margin: 0;
+}
+
+.report-extra {
+  padding: 0;
+  border: 0;
+}
+
+#backend-root .workspace-primary,
+.report-editor.primary-disclosure > summary {
+  min-height: 44px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  font-weight: 650;
+}
+
+.report-editor.primary-disclosure[open] > summary {
+  border-color: var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.backend-session {
+  margin-top: 14px;
+}
+
+@media (max-width: 540px) {
+  #backend-root {
+    margin-block: 16px;
+  }
+
+  #backend-root .backend-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

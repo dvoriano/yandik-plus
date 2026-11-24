@@ -35,7 +35,7 @@ Titik macet integrasi adalah boot aplikasi. `backend-review.html` hanya menerima
 
 ## Hasil yang dijalankan
 
-Pengujian lokal memakai Python 3.12.14, Node 24.22.3, Flask 3.1.2 untuk adaptor historis, dan Playwright 1.56.1 dengan Chromium bundel. Tangkapan layar diambil dengan Chromium sistem 156. Build server utama tidak memerlukan Flask maupun Playwright.
+Pengujian lokal memakai Python 3.12.14, Node 24.22.3, Flask 3.1.2 untuk adaptor historis, dan Playwright 1.56.1 dengan Chromium bundel. Tangkapan layar ruang kerja petugas setelah penyederhanaan diambil dengan Chromium sistem 156. Build server utama tidak memerlukan Flask maupun Playwright.
 
 | Cakupan | Lulus | Gagal |
 |---|---:|---:|
@@ -43,13 +43,14 @@ Pengujian lokal memakai Python 3.12.14, Node 24.22.3, Flask 3.1.2 untuk adaptor 
 | Python foundation dan empat suite draf M00 | 175 | 0 |
 | JavaScript model dan kontrak pada branch integrasi | 1.675 | 0 |
 | Chromium prototipe Profil Puskeswan | 17 | 0 |
-| Chromium integrasi HTTP dan portal | 6 | 0 |
+| Chromium integrasi HTTP dan portal | 7 | 0 |
 | Lab terpisah · Python, Node, Chromium | 66 + 31 + 19 | 0 |
 
 Run awal JavaScript selesai dengan 1.482 lulus dan 50 entri gagal. Empat belas entri gagal berasal dari file yang tidak dapat dimuat karena impor ganda, sehingga total test runner meningkat setelah perbaikan. Validator fixture foundation dan audit performa lokal empat halaman lab juga berjalan. Pemeriksaan browser mencakup:
 
 - Masuk dengan kode sintetis, penolakan tanpa sesi atau untuk fasilitas di luar cakupan, validasi origin, dan keluar.
 - Dua belas menu backend di 320, 375, 768 dan 1280 piksel, termasuk dashboard, register, GIS, pustaka dan notifikasi. Pengujian menemukan overflow pada filter fasilitas dan memverifikasi perbaikannya. Fokus awal keyboard menuju tautan lompat konten.
+- Layar awal petugas di lebar 390 piksel menampilkan Puskeswan, periode dan status. Tombol mulai laporan terlihat tanpa menggulir dan dapat dibuka dengan Enter. Menu, filter, dan bagian investigasi, kurban serta bukti tampil setelah dibuka.
 - APEL menyimpan draf, menahan pengiriman saat perubahan belum disimpan, mengirim, menerima koreksi dari verifikator, dan mengirim ulang.
 - Inventaris yang dikonfirmasi menjadi dasar usulan Support Puskeswan. Rencana dan hasil pembinaan menjadi sumber draf paperless yang terikat revisi.
 - Navigasi dari backend ke portal fixture, menu ponsel, hash dan Back.

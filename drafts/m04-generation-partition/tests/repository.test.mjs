@@ -103,7 +103,7 @@ test("I5 source sync after generation starts blocks rather than rewriting packag
  repo.execute(ADMIN,cmd("G2",4,"advance_generation",{stage:"paket"}));
  const c=cmd("C4",5,"request_revision",{revision_request_id:"DEMO-I5-REV-002",
   reason:"Perubahan sumber setelah paket generasi baru."});
- repo.execute(ADMIN,c);
+ repo.execute(PET,c);
  repo.execute(VER,cmd("C5",6,"review_revision",{
   revision_request_id:"DEMO-I5-REV-002",decision:"catat_untuk_sinkron",
   reason:"Catatan verifikasi metadata revisi lanjutan."}));

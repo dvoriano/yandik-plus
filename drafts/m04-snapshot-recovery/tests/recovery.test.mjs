@@ -67,7 +67,7 @@ test("I6C detects changed previous hash, changed tip, or event missing",()=>{
 });
 test("I6C journal is frozen after design review, not activated",()=>{
  const j=finished();
- assert.throws(()=>appendRecoveryPlan(j,event(4)),/JOURNAL_FROZEN/);
+ assert.throws(()=>appendRecoveryPlan(j,{...event(4),expected_revision:j.revision}),/JOURNAL_FROZEN/);
  assert.equal(j.may_restore,false);
 });
 test("I6C prevents duplicate event IDs and replay from old revision",()=>{

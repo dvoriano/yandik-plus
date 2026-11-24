@@ -17,7 +17,7 @@ const ledger=(year=2026,snapshot_id=snap)=>emptyDemoAuditLedger({
 const event=(id="DEMO-EVT-ONE",extra={})=>({
  event_id:id,snapshot_id:snap,facility_id:"DEMO-PSW-ONE",
  period:"2026-07",signal_id:"MISSING_VS_ZERO",
- severity:"REVIEW",observation_code:"DEMO_MISSINGNESS_REVIEW",...extra});
+ severity:"REVIEW",observation_code:"DEMO_GRAIN_REVIEW",...extra});
 const withEvents=(...events)=>appendDemoObservations({
  ledger:ledger(),observations:events});
 const note=(id="DEMO-NOTE-1",extra={})=>({

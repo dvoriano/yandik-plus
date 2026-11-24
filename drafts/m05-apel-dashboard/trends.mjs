@@ -32,7 +32,7 @@ export function buildMultiYearTrend({previews,years=SUPPORTED_YEARS,
  return {schema:M05_4_TREND_SCHEMA,synthetic:true,
   mode:"MULTIYEAR_DESCRIPTIVE_SERIES",metric_key,annual,
   comparison_policy:"YEAR_BY_YEAR_ONLY_NO_INFERRED_COMPARABILITY",
-  missing_years:SUPPORTED_YEARS.filter(y=>!ordered.includes(y)),
+  missing_years:SUPPORTED_YEARS.filter(y=>!annual.some(row=>row.year===y&&row.facility_count>0)),
   cross_year_comparability_verified:false,
   growth_calculated:false,ranking_enabled:false,scoring_enabled:false,
   awards_enabled:false,may_publish:false,official_authorization:false};

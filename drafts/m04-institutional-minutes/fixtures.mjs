@@ -1,10 +1,10 @@
 /** M04-S9D | KODE DITULIS, BELUM DIUJI. Seluruh data fiktif. */
-import {buildExecutiveBrief,REGISTER_DEMO,DOCKET_DEMO,SOP_DEMO,
+import {buildExecutiveBrief,REGISTER_DEMO as BRIEFING_REGISTER,DOCKET_DEMO,SOP_DEMO,
   REPOSITORY_SNAPSHOT_DEMO} from "../m04-institutional-review/fixtures.mjs";
 import {buildInstitutionalReviewPacket} from "../m04-institutional-review/decision_matrix.mjs";
 import {createDiscussionRegister,addDiscussion} from "./register.mjs";
 export const AGENDA_DEMO=buildInstitutionalReviewPacket(
-  buildExecutiveBrief(REGISTER_DEMO,DOCKET_DEMO,SOP_DEMO),REPOSITORY_SNAPSHOT_DEMO);
+  buildExecutiveBrief(BRIEFING_REGISTER,DOCKET_DEMO,SOP_DEMO),REPOSITORY_SNAPSHOT_DEMO);
 export const SECRETARIAT_DEMO={role:"sekretariat_demo",id:"DEMO-SEKRETARIAT-001"};
 export const REVIEWER_DEMO={role:"penelaah_demo",id:"DEMO-PENELAAH-001"};
 export const EXAMPLE={

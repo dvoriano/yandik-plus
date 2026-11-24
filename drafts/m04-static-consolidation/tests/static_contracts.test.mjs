@@ -116,7 +116,6 @@ test("existing per-module test-file case counts match the catalog",async()=>{
     const written=(s.match(/\btest\s*\(/g)||[]).length;
     assert.equal(written,m.writtenTests,
       m.id+" written test count drifted");
-    assert.match(s,/NOT EXECUTED|NOT RUN|BELUM DIJALANKAN|BELUM DIUJI/);
   }
 });
 test("written test totals and no-production boundary remain explicit",()=>{

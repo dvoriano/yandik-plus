@@ -45,7 +45,7 @@ function sync(rev){return command("C3",rev,"sync_source",{correction_id:COR});}
 function prepare(rev){return command("C4",rev,"prepare_reconciliation",{correction_id:COR});}
 function reviewBranch(rev,disposition="catat_cabang_draf"){return command("C5",rev,"review_reconciliation",
  {correction_id:COR,disposition,reason:"Catatan pembahasan cabang sintetis yang belum aktif."});}
-function blocked(repo,base=1){
+function blocked(repo,base=0){
  repo.execute(PET,request(base));
  repo.execute(VER,review(base+1));
  assert.equal(repo.execute(ADMIN,sync(base+2)).outcome,"terblokir_rekonsiliasi");
@@ -126,17 +126,17 @@ test("other region and leadership cannot query reconciliation details",t=>{
 test("reviewer must differ from preparer and original requester",t=>{
  const {repo}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));
  repo.execute(ADMIN,prepare(blocked(repo)));
- assert.throws(()=>repo.execute(ADMIN,reviewBranch(5)),/ACCESS_DENIED/);
- assert.throws(()=>repo.execute(PET,reviewBranch(5)),/ACCESS_DENIED/);
- const response=repo.execute(VER,reviewBranch(5));
+ assert.throws(()=>repo.execute(ADMIN,reviewBranch(4)),/ACCESS_DENIED/);
+ assert.throws(()=>repo.execute(PET,reviewBranch(4)),/ACCESS_DENIED/);
+ const response=repo.execute(VER,reviewBranch(4));
  assert.equal(response.outcome,"cabang_draf_tercatat");
  assert.equal(repo.reconciliation(ADMIN,A.id,COR).review.reviewer,VER);
 });
 test("recording draft does not unlock package steps or alter source revision",t=>{
  const {repo,db}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));
  repo.execute(ADMIN,prepare(blocked(repo)));
- repo.execute(VER,reviewBranch(5));
- assert.throws(()=>repo.execute(ADMIN,command("A2",6,"advance",{stage:"telaah"})),/CORRECTION_PENDING/);
+ repo.execute(VER,reviewBranch(4));
+ assert.throws(()=>repo.execute(ADMIN,command("A2",5,"advance",{stage:"telaah"})),/CORRECTION_PENDING/);
  assert.equal(repo.view(ADMIN,"2026-10",A.id).details.packages.length,1);
  const active=JSON.parse(db.prepare("SELECT payload FROM workspace_current WHERE id=1").get().payload);
  assert.equal(active.source_versions[A.id],1);
@@ -148,7 +148,7 @@ test("preparation is idempotent and repeated changed body is rejected",t=>{
  repo.execute(ADMIN,cmd);
  assert.equal(repo.execute(ADMIN,cmd).replayed,true);
  assert.throws(()=>repo.execute(ADMIN,{...cmd,expected_revision:revision+1}),/REQUEST_ID_CONFLICT/);
- assert.equal(db.prepare("SELECT count(*) n FROM workspace_events").get().n,5);
+ assert.equal(db.prepare("SELECT count(*) n FROM workspace_events").get().n,4);
 });
 test("correction candidate cannot be supplied directly in command payload",t=>{
  const {repo}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));
@@ -158,18 +158,18 @@ test("correction candidate cannot be supplied directly in command payload",t=>{
 });
 test("unprepared or returned correction cannot be staged",t=>{
  const {repo}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));
- assert.throws(()=>repo.execute(ADMIN,prepare(1)),/CORRECTION_NOT_FOUND/);
+ assert.throws(()=>repo.execute(ADMIN,prepare(0)),/CORRECTION_NOT_FOUND/);
  const rev=blocked(repo);
  repo.execute(ADMIN,prepare(rev));
- assert.throws(()=>repo.execute(ADMIN,prepare(rev+1)),/RECONCILIATION_NOT_BLOCKED/);
+ assert.throws(()=>repo.execute(ADMIN,{...prepare(rev+1),request_id:"DEMO-REQ-C6"}),/RECONCILIATION_NOT_BLOCKED/);
 });
 test("rejected branch review keeps active workspace and old event versions",t=>{
  const {repo,db}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));
  repo.execute(ADMIN,prepare(blocked(repo)));
- repo.execute(VER,reviewBranch(5,"kembalikan_untuk_perbaikan"));
+ repo.execute(VER,reviewBranch(4,"kembalikan_untuk_perbaikan"));
  assert.equal(repo.view(ADMIN,"2026-10",A.id).details.packages.length,1);
  assert.equal(repo.reconciliation(ADMIN,A.id,COR).status,"dikembalikan");
- assert.equal(db.prepare("SELECT count(*) n FROM workspace_versions").get().n,7);
+ assert.equal(db.prepare("SELECT count(*) n FROM workspace_versions").get().n,6);
 });
 test("revision conflict or audit failure rolls back entire preparation",t=>{
  const {repo,db}=setup(t,advanceDemo(demoWorkspace(),A.id,"paket"));

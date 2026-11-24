@@ -19,13 +19,13 @@ export function buildIntegratedDemoView({
     profileFixture?.synthetic!==true||
     profileFixture.contains_personal_data!==false)
   fail("M05_15_NON_SYNTHETIC_SOURCE");
- const dash=buildDemoDashboard({
-  ledger:dashboardFixture.ledger,facilities:dashboardFixture.facilities,
-  year,region_id,facility_id
- });
  const profile=buildProfileSdmView({
   facilities:profileFixture.facilities,profiles:profileFixture.profiles,
   coverage:profileFixture.coverage,placements:profileFixture.placements,
+  year,region_id,facility_id
+ });
+ const dash=buildDemoDashboard({
+  ledger:dashboardFixture.ledger,facilities:dashboardFixture.facilities,
   year,region_id,facility_id
  });
  const left=new Set(dashboardFixture.facilities.map(f=>f.facility_id+

@@ -8,6 +8,22 @@ import {mountRegional} from "./regional-form-editor.mjs";
 import {mountCoaching,mountDocuments} from "./coachdoc-form-editor.mjs";
 import {createPortalBackend} from "../yandik-backend-contract/portal_backend_provider.mjs";
 import {menus,scope,FIELDS,shown,chooseApel,reportCommand,workflowCommand} from "./backend-workspace-model.mjs";
+const reportActions = {
+ submit: "Kirim laporan DEMO",
+ return_correction: "Minta koreksi DEMO",
+ record_review: "Catat telaah DEMO",
+};
+const reportStates = {
+ NOT_STARTED_DEMO: "Belum ada draf",
+ DRAFT: "Draf tersimpan",
+ SUBMITTED: "Terkirim untuk ditinjau",
+ CORRECTION: "Perlu koreksi",
+ RECORDED_DEMO: "Telaah tercatat",
+};
+const reportFields = {
+ pengobatan: "Pengobatan", vaksinasi: "Vaksinasi",
+ penyuluhan: "Penyuluhan", layanan_lain: "Layanan lain",
+};
 const node=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
 function table(parent,heads,rows){
  const wrap=node("div");wrap.className="table-wrap";const t=node("table"),h=node("thead"),tr=node("tr");
@@ -25,7 +41,7 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
  let generation=0,closed=false,busy=false,dirty=false,queue=null,selected=null,active=null,annualPending=null;
  const message=node("p","Memuat identitas DEMO...");message.setAttribute("role","status");
  const nav=node("nav");nav.className="backend-nav";nav.setAttribute("aria-label","Menu backend DEMO");
- const filters=node("div");filters.className="filter-row";const panel=node("section");panel.className="review-panel";panel.setAttribute("aria-live","polite");
+ const filters=node("div");filters.className="filter-row backend-scope";const panel=node("section");panel.className="review-panel";panel.setAttribute("aria-live","polite");
  root.replaceChildren(message,nav,filters,panel);
  function unavailable(text="Sumber belum tersedia atau akses dibatasi."){panel.replaceChildren(node("p",text));}
  const identity=await api.read("core");
@@ -43,10 +59,11 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
  async function read(resource,q){const r=await api.read(resource,q);if(!r.available)throw Error("SOURCE_UNAVAILABLE");return r.data;}
  async function profile(s){return read("profiles",{facility_id:s.facility_id,year:s.year});}
  function renderReport(r,target,fieldMode=false){
-  pairs(target,[["Periode",r.period],["Status workflow",r.state],["Revisi",r.revision],["Ledger pelayanan",null]]);
+  pairs(target,[["Periode",r.period],["Status laporan",reportStates[r.state]??r.state],["Revisi",r.revision],["Ledger pelayanan",null]]);
   const editable=allowCommands===true&&r.candidate_actions.includes("save_draft"),form=node("form");form.className="backend-report";
+  if(editable)form.append(node("p","Isi semua jumlah pelayanan. Masukkan 0 pada kategori yang tidak memiliki kegiatan."));
   const inputs={};
-  for(const k of FIELDS){const label=node("label",shown(k)),input=node("input");input.type="number";input.min="0";input.max="100000";input.step="1";input.required=true;input.value=r.payload?.counts[k]??"";input.disabled=!editable;inputs[k]=input;label.append(input);form.append(label);}
+  for(const k of FIELDS){const label=node("label",reportFields[k]),input=node("input");input.type="number";input.min="0";input.max="100000";input.step="1";input.required=true;input.value=r.payload?.counts[k]??"";input.disabled=!editable;inputs[k]=input;label.append(input);form.append(label);}
   const zero=node("input");zero.type="checkbox";zero.checked=r.payload?.declared_no_activity===true;zero.disabled=!editable;const zl=node("label"," Nyatakan tidak ada kegiatan");zl.prepend(zero);form.append(zl);
   const activities=structuredClone(r.payload??{investigations:[],kurban_animals:[],evidence_refs:[]});
   const list=node("div");form.append(list);
@@ -87,7 +104,7 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
   }));
   if(allowCommands===true&&!fieldMode){
    const ctx=annualContext(target);
-   for(const action of r.candidate_actions.filter(a=>a!=="save_draft"))actions.append(button(shown(action),()=>{
+   for(const action of r.candidate_actions.filter(a=>a!=="save_draft"))actions.append(button(reportActions[action]??shown(action),()=>{
     if(!ctx.clean()||queue)return;
     if(!confirm("Catat tindakan DEMO ini?"))return;
     try{ctx.send("apel",workflowCommand(r,action,id()));}catch(e){ctx.error(e.message);}

@@ -93,3 +93,6 @@ Jangan menampilkan nomor pribadi tenaga atau dokumen legalitas tidak-publik pada
 
 ## Tautan pengembangan lintas modul M04-I1 (16 November 2026)
 [Workspace DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md) menggunakan identitas fiktif dan fungsi M02/M03, snapshot baca-saja SDM/APEL dan model S10–S15. **KODE DITULIS, BELUM DIUJI.** Tidak mengubah status modul produksi, tidak menyatukan sumber asli, tidak mengimplementasikan APEL 2.0 atau RBAC/API/DB server. Kontrak data dan akses server menjadi pekerjaan lanjutan.
+
+## Lanjutan K1/K2 | Editor konsolidasi 24 November
+[Editor lima bagian](../../drafts/yandik-portal/review.html#profil-sdm) memakai alur M02 dan ID M05 per fasilitas/tahun, pilihan fiktif, histori sebelum/sesudah dan proyeksi status M05. Tidak menyalin isi prototipe lama; bukan seluruh Profiling atau verifikasi resmi. [19 QA lintas Profil/SDM](../../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Kode belum diuji; API, sumber nyata dan kelengkapan tetap belum.

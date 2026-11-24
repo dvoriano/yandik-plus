@@ -122,3 +122,6 @@ P0. Tidak melakukan auth terhadap website produksi; sumber risiko teridentifikas
 
 ## Lanjutan M04-I5 (19 November 2026)
 [Rancangan ID generasi dan repository logis per Puskeswan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md) telah ditulis, **BELUM DIUJI**. Pemisahan snapshot I4 menggunakan rujukan fasilitas dan arsip yang eksplisit, menolak paket lintas wilayah dan ID lama; SQLite DEMO masih berbagi penulis fisik. Hak akses asli, migrasi, koreksi resmi, dokumen, serta data produksi belum ditangani.
+
+## Lanjutan K1 | Identitas Profil/SDM 24 November
+[Editor konsolidasi](../../drafts/yandik-portal/review.html#profil-sdm) memakai ID master DEMO M05 dan validator sumber M05-15; hanya state memori, tanpa pemetaan M04 dan tanpa autentikasi server. 19 QA lintas Profil/SDM tertulis, 0 dijalankan. K4/K7 tetap tertunda.

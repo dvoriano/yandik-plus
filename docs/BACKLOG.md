@@ -9,6 +9,8 @@ This is a build plan, **not evidence that features are already implemented**.
 
 **Follow-on consolidation:** activity editor and scoped register detail written; followup queue and support stage table added. 31 cases designed/0 run. Profile/SDM edit, Bimtek/administration, GIS/PWA and server integration remain pending. See latest audit and Codex guide.
 
+**Personnel update:** shared M05 profile/SDM editor written (`52613e0`), five-section workflow, effective-month transfer and competency notes, 19 new QA/0 executed. Full source field mapping, verified records, server authorizations and crosswalk remain pending. Next K6 training/administration/pustaka; see current consolidation audit.
+
 ## Ready-to-spec / implement
 ### B-001 | Sanitized source baseline (M00)
 - Import exact code snapshot structure under dedicated branch.

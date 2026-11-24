@@ -59,3 +59,6 @@ Data SDM bukan akun login; seseorang dapat punya akun tanpa harus duplikat kepeg
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## Lanjutan K1/K2 | Editor konsolidasi 24 November
+[Daftar aktif dan mutasi DEMO](../../drafts/yandik-portal/review.html#profil-sdm) menggunakan interval penempatan M05-15, akhir eksklusif, histori sebelum/sesudah dan proyeksi Desember. Cakupan tidak dipromosikan dari parsial ke lengkap; catatan kompetensi bukan sertifikat. [19 QA lintas Profil/SDM](../../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Implementasi riil, impor, role/server, histori resmi dan bukti kompetensi belum. Status resmi mengikuti ROADMAP.

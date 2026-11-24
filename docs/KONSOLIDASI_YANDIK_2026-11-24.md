@@ -2,6 +2,14 @@
 
 **Audit inventaris GitHub dan peta pekerjaan, bukan pernyataan siap operasional.** Snapshot dasar branch [`develop/yandik-foundation`](https://github.com/dvoriano/yandik-plus/tree/2aa35dd4d52016474cf0c365cc4554601703078c) pada commit `2aa35dd4d52016474cf0c365cc4554601703078c`, recursive tree utuh: **612 blob/file, 769 entri tree (termasuk direktori), 78 folder langsung di drafts/, 37 file HTML, 3.471.961 byte total blob**. Ukuran tersebut bukan ukuran instalasi, database maupun file ZIP hasil kompresi. PR [#9](https://github.com/dvoriano/yandik-plus/pull/9) tetap Draft. Semua pekerjaan tetap sampai horizon 2030.
 
+## K1/K2 | Editor Profil dan SDM Veteriner DEMO | 24 November 2026
+
+Commit `52613e0`: [ruang kerja](../drafts/yandik-portal/review.html#profil-sdm) memakai lima bagian model M02 (legalitas, bangunan, peralatan, obat/BHP, wilayah kerja) pada ID M05 dan tahun 2026–2030. Isi fixture M02 lama tidak disalin. Editor menggunakan pilihan fiktif, alur simpan/ajukan/telaah/perbaikan/tolak dan jejak sebelum/sesudah; status snapshot M05 disimulasikan sesuai status lima bagian, bukan kelengkapan Profiling 2026. Tanggal telaah tetap tidak terverifikasi.
+
+SDM: daftar aktif per bulan, riwayat interval, mutasi penempatan terbuka dengan batas akhir eksklusif; validasi M05-15 diterapkan ke seluruh kandidat sumber. Rekap tahunan tetap as-of Desember; cakupan parsial/tidak tersedia tidak dipromosikan menjadi lengkap. Catatan kompetensi adalah topik pengembangan fiktif, bukan pelatihan yang terverifikasi atau sertifikat. Ledger APEL dan workflow laporan tidak diubah oleh editor. Sumber M04 tetap independen. Seluruh perubahan dalam memori; reset memulihkan fixture.
+
+[19 kasus QA personel](../drafts/yandik-portal/tests/personnel.test.mjs) ditulis, **0 dijalankan**; bersama 31 kasus konsolidasi terdahulu, total 50 kasus unit pada dua file portal. Tidak ada bukti pengujian browser baru. K1/K2 masih parsial: identitas/source resmi, form Profiling lengkap, inventaris, penyimpanan, penempatan/keaktifan resmi, impor dan sertifikat kompetensi belum. K4/K7 tertunda. Berikutnya K6 workflow pembinaan/Bimtek dan administrasi dokumen berbasis ID M05, tanpa mengubah aturan otorisasi.
+
 ## Lanjutan K2/K3/K5/K6 | Aktivitas dan telaah (24 November 2026)
 Commit `5219357` memperluas halaman konsolidasi: editor investigasi/kurban sesuai validator model DEMO (bukan kesesuaian resmi Juknis); detail checklist/telaah empat domain; antrean usulan dari workflow tercatat; daftar kebutuhan dan tahapan dukungan. 13 kasus QA tambahan, total 31 pada file konsolidasi, 0 dijalankan. Batas sebelumnya "tanpa input investigasi/kurban" dan "tanpa detail register" telah disusul. Tetap belum ada integrasi sumber nyata, pengaturan kelembagaan, penyimpanan resmi, atau penerbitan.
 

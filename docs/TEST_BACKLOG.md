@@ -10,6 +10,13 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## K1/K2 | Profil/SDM konsolidasi (19 QA unit tertulis, 0 dijalankan)
+- Editor kosong tidak menyalin fixture M02; isolasi fasilitas/tahun, draf/ajukan/koreksi/revisi/telaah, status snapshot sintetis, lima bagian, penolakan teks non-DEMO, akses wilayah dan telaah sebelum submit.
+- Ledger/workflow APEL tetap; mutasi pada batas bulan mempertahankan histori, mengubah rekap sumber/tujuan untuk tahun yang terdampak, tahun sebelum mutasi tetap; penolakan penempatan tertutup, tanggal awal sama, tujuan sama; cakupan parsial tetap tidak diketahui.
+- Kompetensi nonsertifikat, duplikasi, scope, konflik histori mutasi/kompetensi, reset.
+- [19 deklarasi QA](../drafts/yandik-portal/tests/personnel.test.mjs); bersama 31 kasus [konsolidasi](../drafts/yandik-portal/tests/consolidated.test.mjs), total 50 kasus unit dirancang, 0 dijalankan.
+- Browser setelah izin: editor lima bagian, perubahan filter, histori sebelum/sesudah, mutasi bulan efektif dan rekap Desember, catatan kompetensi, reset; perubahan profil/SDM ditahan jika isian laporan belum disimpan.
+
 ## Lanjutan K2/K3/K5/K6 | Aktivitas dan detail register (13 kasus tambahan, 0 dijalankan)
 - Investigasi unik per pasangan event/lokasi; satu hewan ante+post dihitung satu; duplikasi, status ante/post kosong, ID bukan DEMO ditolak; aktivitas tersimpan melalui koreksi dan ledger tidak berubah.
 - Antrean pembinaan hanya record workflow tahun/wilayah terpilih; tidak mengartikan ketiadaan record sebagai kepatuhan.

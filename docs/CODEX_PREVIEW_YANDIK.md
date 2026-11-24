@@ -33,3 +33,8 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 - Uji perubahan pilihan register ketika detail masih memuat; tidak boleh memperlihatkan detail wilayah lama.
 - Periksa tabel kebutuhan/tahap dukungan pada skenario yang belum layak, tanpa menyamakan ID M04 dengan M05.
 - Periksa input activity yang belum disimpan sebelum kirim, reset dan ganti cakupan. Catat temuan tanpa menyimpulkan parity resmi Juknis.
+
+### Lanjutan editor Profil/SDM
+- Buka `review.html#profil-sdm`. Cek lima bagian kosong pada awal editor (snapshot lama tetap ditampilkan pada ringkasan sampai perubahan simulasi dibuat), draf, pengajuan, perbaikan, telaah, isolasi fasilitas/tahun dan histori. Tidak ada tanggal persetujuan resmi.
+- Mutasi tenaga dengan penempatan terbuka pada bulan setelah tanggal mulai; bandingkan sumber/tujuan sebelum dan sesudah bulan tersebut dan rekap Desember. Cakupan parsial tetap —. Catat kompetensi untuk tenaga aktif, tolak duplikasi dan mutasi mundur yang bertentangan dengan catatan kompetensi.
+- Simpan draf laporan sebelum mengubah profil/SDM. Reset laporan/profil/SDM hanya mengembalikan fixture, bukan database. QA tambahan: `drafts/yandik-portal/tests/personnel.test.mjs` (19); total dua file unit portal 50 kasus, 0 dijalankan.

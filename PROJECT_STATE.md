@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## LANJUTAN K1/K2 | PROFIL DAN SDM | 24 NOVEMBER 2026
+- Commit `52613e0`: [editor Profil/SDM](drafts/yandik-portal/review.html#profil-sdm), [model](drafts/yandik-portal/personnel-model.mjs) dan [QA](drafts/yandik-portal/tests/personnel.test.mjs). Lima bagian M02 memakai ID M05 per fasilitas/tahun, pilihan data fiktif dan histori perubahan; tidak menyalin isi fixture lama. SDM aktif per bulan, histori interval, simulasi mutasi efektif, dan catatan kompetensi. Proyeksi M05 diperbarui dalam memori, bukan sumber resmi. Ledger dan workflow APEL tidak berubah.
+- **19 QA tambahan, 50 kasus unit kumulatif dua file portal, 0 dijalankan.** Kode baru belum diuji; tidak ada bukti browser baru. Form Profiling penuh, bukti resmi, impor SDM, sumber Flask/auth/DB dan crosswalk M04/M05 tetap belum. [Panduan Codex](docs/CODEX_PREVIEW_YANDIK.md).
+- Prioritas berikut: K6 pembinaan/Bimtek, administrasi dokumen dan pustaka menggunakan konteks yang telah ada, lalu GIS/notifikasi sesuai batas sumber. CODE_ONLY, tanpa CI/CL/deploy, main/produksi tidak disentuh.
+
 ## LANJUTAN K2/K3/K5/K6 | 24 NOVEMBER 2026
 - [Ruang kerja DEMO](drafts/yandik-portal/review.html) kini memiliki editor investigasi pasangan kejadian/lokasi, pemeriksaan kurban per hewan (ante/post satu hewan), detail telaah empat register, antrean pembinaan berdasarkan workflow tercatat per tahun/wilayah, dan tabel kebutuhan/tahapan M04. Semua memakai model yang sudah ada; **KODE DITULIS, BELUM DIUJI**.
 - Commit `5219357`: tambahan 13 kasus QA dirancang; total file QA konsolidasi 31 kasus (25 deklarasi dengan dua loop masing-masing 4 domain), **0 dijalankan**. Referensi bukti draf dipertahankan; tidak ada unggahan atau perubahan ledger M05-0. K3 identitas M04 masih terpisah.

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | Lanjutan K1/K2: editor Profil dan SDM
+Commit `52613e0`: editor lima bagian M02 pada identitas M05, revisi sebelum/sesudah, status simulasi, daftar aktif per bulan dan mutasi penempatan terbuka, catatan kompetensi fiktif. [Portal](../drafts/yandik-portal/review.html#profil-sdm) · [19 QA tertulis](../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Total 50 kasus unit portal. Tidak ada tanggal telaah nyata, perubahan ledger/workflow APEL, data resmi, CI/CL atau deployment. KODE DITULIS, BELUM DIUJI.
+
 ## 2026-11-24 | Lanjutan konsolidasi: aktivitas APEL dan detail telaah
 Commit `5219357`: [halaman kerja](../drafts/yandik-portal/review.html) menambah editor pasangan kejadian/lokasi dan ante/post per hewan dengan validator M05-0/M05-1; pemilihan ID fiktif, tanpa unggah bukti; daftar aktivitas draf serta referensi sebelumnya dipertahankan. Detail empat register memakai proyeksi model masing-masing. Antrean bahan pembinaan dibatasi record workflow tahun/wilayah, tabel kebutuhan/tahap M04 tetap skenario independen. **13 kasus QA tambahan, 31 kumulatif pada file konsolidasi, 0 dijalankan.** Kode baru belum diuji; tidak ada koneksi produksi, perubahan ledger atau kewenangan resmi. [Panduan Codex](CODEX_PREVIEW_YANDIK.md).
 

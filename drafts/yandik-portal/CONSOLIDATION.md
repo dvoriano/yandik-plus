@@ -8,3 +8,5 @@ Editor pasangan investigasi/kurban menggunakan pilihan ID fiktif, validator M05-
 
 ## Editor Profil/SDM K1/K2
 Editor lima bagian M02 menggunakan ID dan tahun M05, tanpa menyalin isi fixture lama; proyeksi status dan revisi sintetis, bukan kelengkapan Profiling 2026. Mutasi penempatan terbuka memakai batas akhir eksklusif; validator M05-15 memeriksa seluruh fixture hasil perubahan. Kompetensi adalah catatan topik DEMO, bukan sertifikat. Riwayat memuat keadaan sebelum/sesudah dalam memori. Reset mengembalikan laporan/profil/SDM ke fixture. K4 dan K7 tetap tertunda.
+
+19 QA personel tertulis pada `tests/personnel.test.mjs`; 50 kasus unit total dengan 31 sebelumnya, **0 dijalankan**. Lihat panduan Codex dan audit konsolidasi terbaru.

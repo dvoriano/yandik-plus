@@ -1,3 +1,6 @@
+## 2026-11-24 | Editor Profil dan SDM DEMO
+- `52613e0`: [editor](../drafts/yandik-portal/review.html#profil-sdm), identitas M05, lima bagian, histori, mutasi dan kompetensi. 19 QA baru, 50 unit kasus portal, 0 dijalankan. Tidak ada perubahan kewenangan atau status selesai.
+
 ## 2026-11-24 | Lanjutan aktivitas APEL dan detail telaah
 - Commit `5219357`: [portal](../drafts/yandik-portal/review.html), editor aktivitas, detail register, antrean pembinaan dan tabel kebutuhan/tahap. 13 QA tambahan, 31 kumulatif, 0 dijalankan; tidak ada perubahan keputusan operasional.
 

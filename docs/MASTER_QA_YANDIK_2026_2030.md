@@ -295,3 +295,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-B
 Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Tidak menghitung ulang baseline portal/historical. Lihat TEST_BACKLOG dan manifest; semua gate tetap tertunda.
+
+## Addendum K4-C1
+10 QA pure JS baru, 0 dijalankan. DOM host integration, parity dan full preview pending; backend 241 manifest terpisah.

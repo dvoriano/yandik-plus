@@ -158,6 +158,9 @@ class DemoStore:
             if payload is not None: payload=normalize(payload,r["facility_id"],p)
             result={"record_id":record_id,"facility_id":r["facility_id"],"period":p,"revision":rev,
                     "state":state if rev else "NOT_STARTED_DEMO","payload":payload,
+                    "candidate_actions":[action for action in ("save_draft","submit","return_correction","record_review")
+                        if plan_access(s,Record(r["id"],"apel",r["region_id"],r["facility_id"],r["owner_id"],state,rev),action,rev)["candidate"]
+                        and (action=="save_draft" or payload is not None)],
                     "synthetic":True,"official_authorization":False,"ledger_updated":False}
             self._db.execute("COMMIT");return result
         except BaseException:

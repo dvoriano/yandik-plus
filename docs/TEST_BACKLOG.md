@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C1 | Portal backend binding
+- 10 QA pure JS `drafts/yandik-portal/tests/backend-workspace-model.test.mjs`, 0 dijalankan. Tambahan manual: mount host authorization, no transport/no fallback, 12 menu/role, scope switch/stale async, unknown vs zero, input valid/zero, evidence refs, APEL draft/submit/review, lost ACK/conflict, dirty guard, accessibility and mobile, source M04 separation, backend revocation, full regression. Backend manifest 241 tetap; suite JS baru terpisah. Jangan jalankan browser/unit/DDL tanpa izin.
+
+
 ## K4-B | Konsolidasi backend
 - 12 QA baru `drafts/yandik-backend-contract/test_consolidation.py` (4 pure + 8 rehearsal), 0 dijalankan; [manifest](../drafts/yandik-backend-contract/qa_manifest.json) berisi 241 QA backend (92 pure, 149 rehearsal) berdasarkan deklarasi 22 core + 207 A1–A9 + 12 B. QA tambahan manual: seluruh 5 envelope writer atomicity, 180 period coverage, scope/error parity, 28 route integration, bridge no fallback, ACK retry, lifecycle, owner transfer, regional reopen role, source manifest parity, multi-user/concurrency, source stale, missing coverage, security. Portal baseline dan historical suite tetap terpisah. Izin unit/DDL/preview terpisah; D/E blocked.
 

@@ -133,5 +133,5 @@ export const GROUPS=Object.freeze([
   }
 ].map(g=>Object.freeze({...g,sections:Object.freeze(g.sections),modules:Object.freeze(g.modules)})));
 const aliases=Object.freeze({"koreksi":"layanan","pembinaan":"layanan","coach-list":"kegiatan","library-faq":"pustaka","library-issues":"pustaka"});
-export function resolveRoute(hash=""){const id=String(hash).replace(/^#/,"");const direct=GROUPS.find(g=>g.id===id);const group=direct??GROUPS.find(g=>g.id===aliases[id])??GROUPS[0];return {group,target:direct||aliases[id]?id:group.id};}
+export function resolveRoute(hash=""){const id=String(hash).replace(/^#/,"");const direct=GROUPS.find(g=>g.id===id);const alias=Object.hasOwn(aliases,id)?aliases[id]:null;const group=direct??GROUPS.find(g=>g.id===alias)??GROUPS[0];return {group,target:direct||alias?id:group.id};}
 export const sectionIds=()=>[...new Set(GROUPS.flatMap(g=>g.sections))];

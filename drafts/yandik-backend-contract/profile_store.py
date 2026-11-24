@@ -104,6 +104,10 @@ class ProfileStore(InventoryStore):
             previous={"revision":reviewed,"payload":old,"current":reviewed==rev,"official_authorization":False}
         return {"record_id":r["id"],"section":r["section"],"revision":rev,"state":state if rev else "NOT_STARTED","payload":payload,"last_recorded_demo":previous}
 
+    def _support_refs(self,s,facility_id,year):
+        # This hook returns only new rehearsal cases; never infer M04 crosswalk.
+        if not self._db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='contract_support_case'").fetchone():return None
+        return [dict(r) for r in self._db.execute("SELECT record_id,item_id FROM contract_support_case WHERE facility_id=? AND year=? ORDER BY item_id",(facility_id,year))]
     def _sdm_summary(self,s,facility_id,year):
         return {"status":"SOURCE_UNAVAILABLE","doctors":None,"paramedics":None}
 
@@ -135,6 +139,7 @@ class ProfileStore(InventoryStore):
             out={"facility":dict(f),"year":year,"schema_version":VERSION,"sections":sections,"coverage":coverage(sections),
                  "inventory":inventory,"apel":{"workflow_refs":workflow,"ledger_status":"SOURCE_UNAVAILABLE","observed_service_total":None},
                  "sdm":self._sdm_summary(s,facility_id,year),
+                 "support_refs":self._support_refs(s,facility_id,year),
                  "problems":{"status":"SEPARATE_REGISTER_PENDING"},"synthetic":True,"persistent":False,"official_authorization":False}
             c.execute("COMMIT");return out
         except BaseException:

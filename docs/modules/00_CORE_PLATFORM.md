@@ -146,3 +146,7 @@ P0. Tidak melakukan auth terhadap website produksi; sumber risiko teridentifikas
 ## 2026-11-24 | K4-B1–B6: konsolidasi backend, paket awal
 - [Hasil dan batas](../K4_B_CONSOLIDATION_2026_2030.md): audit sumber terfokus, slot APEL 180 (3×60, dua ID lama dipertahankan), validasi tahun/role, respons missing/scope seragam, shared envelope 5 writer, adapter 15 modul + inventory, host in-process nonaktif default, manifest 241 QA backend (92 pure + 149 rehearsal, 0 dijalankan). 12 QA baru (4+8). Belum audit runtime, binding portal, auth riil, source/ledger, owner transfer, migrasi, HTTP, security QA. B1–B6 paket kode awal ditulis, K4/K7 belum selesai/teruji. CODE_ONLY [skip ci]. Berikutnya K4-B review sisa gap dan handoff QA; tidak menjalankan tanpa izin.
 
+
+## 2026-11-24 | K4-C1: pengikatan portal backend DEMO
+- [Kontrak](../K4_C1_PORTAL_BACKEND_BINDING_2026_2030.md): entry backend-review terpisah dari fixture, mount DOM 12 menu via transport host eksplisit, scope dari core, proyeksi read 15 modul + inventory, form APEL typed termasuk investigasi/kurban/metadata dan retry ID tetap, role menu, support refs dari server, perbaikan alias hash. 10 QA JS tertulis, 0 dijalankan. Belum host-browser transport, preview, form tulis selain APEL, auth/HTTP/ledger/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C2 pergantian penanggung jawab dan form domain lain; gate QA tetap tertunda.
+

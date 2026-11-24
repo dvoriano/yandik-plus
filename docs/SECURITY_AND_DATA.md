@@ -45,3 +45,6 @@
 - Test assumptions and security changes on synthetic data only.
 - Maintain explicit review gates before any funded staging/production deployment.
 - Coordinate any expansion into official approvals, employee activity or e-SPJ with the relevant SPBE/organizational requirements.
+
+## K4 | Kontrak integrasi data
+[Kontrak backend/data](K4_KONTRAK_BACKEND_DATA_2026_2030.md) hanya rehearsal DDL dan evaluator calon akses; jangan mendaftarkan endpoint, menjalankan DDL atau mempercayai role client. Seluruh hasil may_execute=false; sumber/otorisasi nyata dan audit keamanan belum tersedia.

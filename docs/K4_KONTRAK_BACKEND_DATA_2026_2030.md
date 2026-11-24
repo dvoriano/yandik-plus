@@ -1,0 +1,43 @@
+# K4 | Kontrak integrasi backend dan data YANDIK+ 2026–2030
+
+**24 November 2026 | KODE DITULIS, BELUM DIUJI.** Dokumen ini melengkapi M01-S2, M00-G1–G9 dan M04-I2–I5; bukan pengganti schema produksi, migrasi otomatis, atau API Flask yang aktif. Database SQLite hanya kandidat rehearsal; engine produksi diputuskan sesudah audit source yang diizinkan. Tidak ada koneksi database atau HTTP.
+
+## Artefak
+- [Katalog 15 resource / usulan jalur API](../drafts/yandik-backend-contract/resources.json): grain, sumber, cakupan, batas write; seluruh path PROPOSED_NOT_BOUND.
+- [Rancangan DDL inti](../drafts/yandik-backend-contract/schema.sql): 15 tabel logis, constraint identitas/wilayah, grant, provenance, kandidat crosswalk, envelope revisi, periode APEL, inventaris, interval SDM, referensi dokumen/bukti, audit dan idempotensi. DDL tidak dieksekusi; belum skema typed domain lengkap.
+- [Kontrak Python](../drafts/yandik-backend-contract/contract.py): usulan evaluasi role/objek/revisi, reviewer berbeda, konversi tanggal penempatan dan kandidat crosswalk; selalu may_execute=false. Tidak ada login, penulis DB, handler HTTP, atau CRUD generik.
+- [22 QA unit](../drafts/yandik-backend-contract/test_contract.py) ditulis, 0 dijalankan; SQL/integrasi masih perlu QA tersendiri.
+
+## Pemetaan domain
+- **MOD-00 core**: Master organisasi/wilayah/fasilitas dan grant; grain identity; sumber masterdata.py; M00-G1–G9; cakupan server_identity.
+- **MOD-01 profiles**: Profil dan inventaris per fasilitas/tahun/versi katalog; grain facility_year; sumber M01-S2; personnel-model; inventory-model; cakupan facility.
+- **MOD-02 apel**: Laporan dan revisi per fasilitas/bulan; ledger terpisah; grain facility_month; sumber M05-0/1/14/16; cakupan facility.
+- **MOD-03 personnel**: Tenaga dan interval penempatan; grain staff_placement; sumber M01-S2; M05-15; personnel-model; cakupan facility.
+- **MOD-04 support**: Kebutuhan, paket, distribusi, serah terima, pemantauan; grain support_case; sumber M04-I1–I5; cakupan independent.
+- **MOD-05 medicine**: Sarana dan riwayat inspeksi obat; grain inspection; sumber M06-S1; G1; cakupan region.
+- **MOD-06 practice**: Sarana dan inspeksi praktik; grain inspection; sumber M07-S1; G1; cakupan region.
+- **MOD-07 surveillance**: Event dan investigasi; agregasi sensitif; grain event; sumber M13-S1–S3; G1–G8; cakupan region.
+- **MOD-08 certificates**: Permohonan internal dan rujukan dokumen resmi; grain request; sumber M14-S1; G1; cakupan region.
+- **MOD-09 coaching**: Kegiatan, peserta, hasil, tindak lanjut; grain activity; sumber coaching-model; cakupan facility.
+- **MOD-10 documents**: Naskah, versi sumber, metadata bukti; grain document_version; sumber paperless-model; cakupan facility.
+- **MOD-11 leadership**: Agregat berperiode dan cakupan sumber; grain metric_snapshot; sumber leadership-model; cakupan aggregate.
+- **MOD-12 gis**: Lokasi institusi dan agregat berpresisi terbatas; grain location_layer; sumber gis-model; cakupan aggregate.
+- **MOD-13 library**: Referensi, versi, sumber dan telaah; grain reference_version; sumber library-model; cakupan catalog.
+- **MOD-14 notifications**: Pengingat, preferensi dan antrean perintah; grain recipient_event; sumber notification-model; field-queue; cakupan recipient.
+Inventaris adalah bagian MOD-01; path profiles mencakup subresource yang masih perlu spesifikasi typed terpisah. Tidak menambah modul ke-16. Resource scope independent, aggregate, catalog, recipient, dan server_identity belum ditangani evaluator; default deny. Empat register pengawasan tetap baca-saja, tidak ada penerbitan resmi. Role pengawas khusus dan matriks kelembagaan perlu keputusan; tidak diberikan akses otomatis.
+
+## Relasi dan transaksi yang harus diterapkan nanti
+Wilayah → fasilitas → record domain → revisi → bukti dan audit. Identitas pengguna → grant wilayah/fasilitas. Source manifest → revisi dan kandidat crosswalk. Dokumen → revisi sumber yang persis. Penempatan menggunakan interval [mulai, akhir eksklusif); foundation M01-S2 memakai akhir inklusif, konversi +1 hari hanya untuk sumber yang terbukti inklusif dan simpan nilai asli. Rekonsiliasi M04/M05 dan ledger/workflow membutuhkan keputusan manusia; jangan join dengan nama atau ID tanpa namespace.
+
+- Route GET /api/v1/{resource} dan detail /{id} usulan, bukan route aplikasi. Mutasi kelak POST /commands: command_id, expected_revision, action, typed payload. Tidak boleh menerima actor_id/role/grant dari klien. Server mengambil session sah, grant aktif, objek dan wilayah dari master, lalu validasi domain, CSRF dan batas field. Agregat pimpinan tidak mengungkap detail.
+- Status usulan: 401 tanpa sesi, 403/404 untuk akses/objek tak berhak (hindari enumerasi), 409 konflik revisi atau command ID dengan payload lain, 422 domain invalid, 200/201 sukses hanya setelah commit. Response allowlist; tidak mengirim hash password atau raw source.
+- Perintah: autentikasi dan otorisasi ulang termasuk retry; mulai transaksi, cari command actor+ID dan bandingkan digest request; cek revisi, domain, source; update head bersyarat, tulis revisi, audit dan receipt satu transaksi. Replay identik tidak menggandakan event. Rollback seluruhnya saat gagal. Audit G5/G7 lama tidak dimigrasi atau diklaim kompatibel. Skema ini hanya envelope; writer, field validation, penyimpanan typed payload dan audit keamanan belum dibuat.
+- Missing ≠ 0. Butir inventaris bukan aset unik. Ledger dan workflow terpisah sampai rekonsiliasi. Tidak ada publikasi otomatis, persetujuan atau BAST sah.
+- Bukti hanya metadata sintetis; tidak ada path/file publik. Trigger bukan anti-tamper admin. Perlu backup/restore, retensi, revokasi, rate limit, keamanan upload dan pengujian konkurensi.
+- DDL tidak memastikan seluruh invariant: business key dan resource harus cocok dengan typed table, sumber/dokumen harus satu scope sah, tanggal kalender/penempatan harus divalidasi, head/revisi/audit harus atomik. Jangan menerapkan langsung ke DB apa pun.
+
+## Gate migrasi
+1. Penuhi [gerbang penerimaan source](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md). Inventaris route, model, schema, auth dan dependency asli belum ada.
+2. Mapping field dan grain, tipe/null, keunikan, namespace/ID, source version, klasifikasi dan pemilik; buat tabel mapping berizin di lingkungan terbatas. Jangan commit data/secret.
+3. Rehearsal disposable dengan data fiktif, negative access, rollback, duplikasi dan konkurensi, lalu bandingkan hitungan dan kualitas. Tidak ada migrasi historis yang telah dijalankan.
+4. Keputusan tertulis tentang engine/DDL, rencana backup dan rollback; izin testing dan rilis terpisah. K4/K7 tetap tertunda.

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4 | Kontrak backend/data | 24 November 2026
+- 22 unit Python `drafts/yandik-backend-contract/test_contract.py` tertulis, 0 dijalankan. Setelah izin, periksa evaluator default deny/scope/owner/reviewer/revisi, tanggal dan crosswalk; SQL rehearsal hanya disposable memory: FK, uniqueness fasilitas/periode, grant mismatch, overlap interval, revision/audit/receipt rollback, immutable history, typed envelope/identity invariants, source document scope, konkurensi dan retry. Belum ada writer/HTTP; pengujian integrasi auth/CSRF/route menunggu source sah. Tidak ada klaim PASS.
+
+
 ## Konsolidasi tahap 2 | 24 November 2026
 - 10 unit navigasi `drafts/yandik-portal/tests/navigation.test.mjs`, 0 dijalankan. Browser tertunda: hash langsung/Back/Forward, tiap menu, tautan internal, tab baru, panel tetap mounted, daftar kegiatan pada administrasi, pustaka sesi yang sama, mobile menu/keyboard/320px, perubahan cakupan batal/menerima, reset dan ID tidak dipakai ulang, status stale notification, sumber M04/ledger tetap terpisah. Uji kehilangan input dinamis saat filter/re-render; belum dijamin durable.
 

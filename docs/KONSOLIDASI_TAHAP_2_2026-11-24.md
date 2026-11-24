@@ -29,3 +29,7 @@
 1. Audit kontrak backend/data: daftar endpoint, role/aksi/wilayah per objek, skema master, migrasi, audit dan bukti; gunakan hanya kontrak DEMO atau source yang disanitasi/diizinkan. Belum adaptasi Flask produksi.
 2. Siapkan matriks QA Codex dari jalur kritis dan dependency; jangan menjalankan sampai owner memberi izin. Pertahankan bukti lama sebagai historis.
 3. Setelah izin dan hasil QA, putuskan perbaikan/merge/rilis secara terpisah. Jangan gabungkan M04 dan M05 tanpa crosswalk sah, jangan mengimpor data sensitif ke repo publik.
+
+## 2026-11-24 | K4: Kontrak integrasi backend/data DEMO
+- [Kontrak](K4_KONTRAK_BACKEND_DATA_2026_2030.md): katalog 15 resource, usulan jalur API, DDL 15 tabel inti, evaluator Python baca/aksi kandidat berwilayah dengan deny default dan konversi interval akhir inklusif → eksklusif. 22 QA unit ditulis, 0 dijalankan. Tidak ada HTTP, DB, migrasi, login, writer atau izin operasi; melengkapi kontrak M00-G1–G9/M01-S2/M04-I2–I5 tanpa menggantinya. Source Flask berizin, typed domain schema, role server, rekonsiliasi dan QA tetap tertunda. CODE_ONLY [skip ci]. Berikutnya matriks QA Codex dan urutan integrasi, tanpa menjalankan tes.
+

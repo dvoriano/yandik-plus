@@ -1,5 +1,6 @@
 /** CODE_ONLY: no browser or test executed for this change. */
 import {register,notify} from "./leadership-bridge.mjs";
+import {buildDemoDashboard} from "../m05-apel-dashboard-ui/model.mjs";
 import {buildIntegratedDemoView} from "../m05-profile-sdm/integration.mjs";
 import {readDomain,readDomainDetail,DOMAINS} from "./domain-views.mjs";
 import {mountActivityEditor} from "./activity-editor.mjs";
@@ -26,6 +27,8 @@ async function startCore(){
  const personnel=await import("./personnel-editor.mjs");
  let context=m.createDemoContext(),reportDirty=false;
  register("core",s=>buildIntegratedDemoView({...s,dashboardFixture:context.dashboardFixture,profileFixture:context.profileFixture}).rows);
+ register("monthly",s=>[s.year-1,s.year].filter(y=>m.YEARS.includes(y)).flatMap(year=>buildDemoDashboard({...context.dashboardFixture,year,region_id:s.region_id,facility_id:s.facility_id}).facility_rows));
+ register("correction",s=>context.workflow.records.filter(r=>r.year===s.year||r.year===s.year-1).filter(r=>(s.facility_id==="ALL"||r.facility_id===s.facility_id)&&context.facilities.some(f=>f.facility_id===r.facility_id&&(s.region_id==="ALL"||f.region_id===s.region_id))).map(r=>{const f=context.facilities.find(x=>x.facility_id===r.facility_id),v=m.readConsolidatedDemo(context,{year:r.year,month:Number(r.period.slice(5)),facility_id:r.facility_id,region_id:f.region_id});return {facility_id:r.facility_id,period:r.period,status:v.correction.report_state,revision:v.correction.revision};}));
  const editor=mountActivityEditor({investigations:$("investigations"),animals:$("kurban-animals"),addInvestigation:$("add-investigation"),addAnimal:$("add-animal")});
  const opts=(target,items,value)=>{target.replaceChildren(...items.map(([v,l])=>new Option(l,v)));if(items.some(([v])=>String(v)===String(value)))target.value=String(value);};
  opts($("year"),m.YEARS.map(y=>[y,y]),2026);

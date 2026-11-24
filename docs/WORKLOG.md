@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | MOD-14 / M09 Notifikasi dan mode lapangan DEMO
+- [Panel](../drafts/yandik-portal/review.html#notifikasi) dengan pengingat ledger APEL (tanggal 9 bulan berikut sebagai contoh kebijakan DEMO), inventaris tahunan tanpa tenggat resmi, koreksi workflow, pembinaan dan dokumen; filter cakupan, tanggal simulasi, dedupe, dibaca/preferensi sesi. Antrean lapangan terisolasi dengan jaringan tiruan, revisi optimistis, konflik, ACK hilang dan retry idempoten. 20 QA unit tertulis, 0 dijalankan. Tidak ada service worker/PWA, penyimpanan offline permanen, push/WA/Telegram, server, sinkronisasi nyata atau perubahan ledger. CODE_ONLY [skip ci]. Berikutnya audit konsolidasi 15 modul, navigasi dan gap integrasi sebelum izin QA; K4/K7 tetap tertunda.
+
 ## 2026-11-24 | MOD-12 / M10 GIS sintetis DEMO
 - [GIS](../drafts/yandik-portal/review.html#wilayah): kisi SVG fiktif 3 fasilitas master M05, 6 layer (fasilitas, pelayanan, pelaporan, dokter, perhatian inventaris, tindak lanjut pembinaan), filter tahun/wilayah, titik dan daftar detail baca-saja, legenda nol/kosong, proyeksi state sesi. Tidak ada koordinat GPS, batas administrasi nyata, jarak atau peta basemap. Register pengawasan termasuk surveilans hanya jumlah entri wilayah snapshot terpisah; M04 tidak dipetakan tanpa crosswalk. 18 QA unit tertulis, 0 dijalankan. Koordinat resmi, audit kualitas, role server dan aturan rilis publik belum ada. CODE_ONLY [skip ci]. Berikutnya MOD-14 notifikasi/mode lapangan DEMO.
 

@@ -51,3 +51,7 @@ Jangan menyimpan token atau dokumen sensitif sembarangan di cache browser; konte
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## 2026-11-24 | MOD-14 / M09 Notifikasi dan mode lapangan DEMO
+- [Panel](../../drafts/yandik-portal/review.html#notifikasi) dengan pengingat ledger APEL (tanggal 9 bulan berikut sebagai contoh kebijakan DEMO), inventaris tahunan tanpa tenggat resmi, koreksi workflow, pembinaan dan dokumen; filter cakupan, tanggal simulasi, dedupe, dibaca/preferensi sesi. Antrean lapangan terisolasi dengan jaringan tiruan, revisi optimistis, konflik, ACK hilang dan retry idempoten. 20 QA unit tertulis, 0 dijalankan. Tidak ada service worker/PWA, penyimpanan offline permanen, push/WA/Telegram, server, sinkronisasi nyata atau perubahan ledger. CODE_ONLY [skip ci]. Berikutnya audit konsolidasi 15 modul, navigasi dan gap integrasi sebelum izin QA; K4/K7 tetap tertunda.
+

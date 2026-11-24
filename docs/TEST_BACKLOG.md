@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-14 / M09 Notifikasi & mode lapangan | 24 November 2026
+- 20 unit tertulis `drafts/yandik-portal/tests/notifications.test.mjs`, 0 dijalankan. Browser tertunda: filter tanggal/wilayah/fasilitas, Januari lintas tahun, nol vs belum tercatat, sumber gagal, dedupe, dibaca/preferensi, koreksi versi, perubahan inventaris/pembinaan/dokumen, antrean offline tiruan, retry/ACK hilang/konflik, reset dan reload, 320px/keyboard. Tidak menguji offline browser/PWA atau server nyata.
+
+
 ## MOD-12 / M10 GIS sintetis | 24 November 2026
 - 18 unit tertulis `drafts/yandik-portal/tests/gis.test.mjs`, 0 dijalankan. Browser tertunda: navigasi, SVG 320/375px, enam layer, filter tahun/wilayah, klik/tombol keyboard, pilihan keluar cakupan, perubahan inventaris/SDM/pembinaan, nol vs kosong, kegagalan provider, register wilayah tanpa sumber, reset; tanpa jaringan/peta nyata/koordinat sensitif. Audit GIS resmi dan otorisasi terpisah.
 

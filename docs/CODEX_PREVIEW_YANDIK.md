@@ -53,3 +53,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### MOD-12 GIS sintetis (belum diuji)
 - `review.html#wilayah`; periksa enam layer, filter, titik dan tombol detail, perubahan state sesi, data nol/kosong, register independen. Kisi bukan GPS, basemap atau wilayah nyata. Tidak ada lokasi kasus atau M04 pada titik M05.
+
+### MOD-14 Notifikasi dan simulator lapangan (belum diuji)
+- `review.html#notifikasi` dan `#mode-lapangan`; periksa tanggal simulasi, scope, read/dedupe, perubahan state, antrean, konflik dan ACK hilang/retry. Tidak ada service worker, cache, penyimpanan offline, kanal pesan atau server nyata.

@@ -7,6 +7,8 @@ let state=initial();
 const paperless=mountPaperless({root:$("coach-paperless"),getCoaching:()=>state,getScope:()=>({year:+$("coach-cy").value,region_id:$("coach-cr").value,facility_id:$("coach-cf").value}),onChange:notify});
 register("coaching",s=>list(state,s));
 register("documents",s=>paperless.dashboard(s));
+register("documentTasks",s=>[s.year-1,s.year].filter(y=>YEARS.includes(y)).flatMap(year=>paperless.tasks({...s,year})));
+register("coachingTasks",s=>[s.year-1,s.year].filter(y=>YEARS.includes(y)).flatMap(year=>list(state,{...s,year})));
 const labels={PLANNED:"Rencana",RESULT_DRAFT:"Draf hasil",FOLLOWUP_OPEN:"Tindak lanjut terbuka",CLOSED_DEMO:"Ditutup DEMO"};
 function field(form,label,type,options){const l=el("label",label),x=el(options?"select":type==="textarea"?"textarea":"input");x.required=true;if(options)opts(x,options);else if(type==="textarea")x.maxLength=300;else{x.type=type;if(type==="number"){x.min=0;x.max=1000;x.step=1;}if(type==="date"){x.min="2026-01-01";x.max="2030-12-31";}}l.append(x);form.append(l);return x;}
 function button(text,fn){const b=el("button",text);b.type="button";b.addEventListener("click",fn);return b;}

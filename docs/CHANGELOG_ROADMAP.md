@@ -1,3 +1,6 @@
+## 2026-11-24 | Konsolidasi repo dan katalog portal
+- [Audit 15 modul dan prioritas K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md); [portal navigasi](../drafts/yandik-portal/) ditulis, belum diuji. Tidak ada penghapusan prototipe, perubahan kode beranda atau status selesai operasional. CODE_ONLY [skip ci].
+
 ## 2026-11-24 | Beranda Ruang Kerja Puskeswan DEMO
 - [Beranda](../drafts/yandik-workspace/) menyajikan ringkasan APEL, Profil/SDM dan bahan pembinaan melalui filter bersama. Halaman menyediakan akses ke Dashboard APEL serta simulasi Profil dan Dukungan. Data fiktif. Uji alur utama dijalankan di Chromium lokal sesuai izin pengguna. [Cakupan uji](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal).
 

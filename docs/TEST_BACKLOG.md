@@ -10,6 +10,10 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## K0 | Katalog Portal YANDIK+ (7 kelompok QA tertulis, 0 dijalankan)
+
+[Checklist QA portal](../drafts/yandik-portal/README.md#qa-tertunda): muat lokal, 15 ID/status unik, tautan halaman, anchor dan keyboard, responsivitas/kontras, tidak ada koneksi/penyimpanan eksternal, serta regresi halaman lama. Pemetaan path dicek statis terhadap tree snapshot; **bukan bukti browser PASS**. Pengujian beranda yang dilaporkan di bawah tetap terbatas pada versi sebelumnya dan bukan pengujian portal baru.
+
 ## Ruang Kerja Puskeswan | Uji demo lokal
 
 Izin pengguna pada 24 November 2026 mencakup membuka dan menguji alur utama [ruang kerja DEMO](../drafts/yandik-workspace/) di workspace lokal.

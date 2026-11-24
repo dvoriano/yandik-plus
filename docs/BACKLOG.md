@@ -2,6 +2,9 @@
 
 This is a build plan, **not evidence that features are already implemented**.
 
+## Consolidation queue (24 November 2026)
+- Use [K0–K7 inventory and gap matrix](KONSOLIDASI_YANDIK_2026-11-24.md) to sequence existing backlog entries B-001–B-021; retain their acceptance criteria. K0 portal written, not tested. K1 shared identity/source, K2 reporting/profile/SDM UI, K3 support workflow, K4 authorized Flask/backend remain core blockers. K5–K7 extend and validate; do not create parallel implementation solely to show progress.
+
 ## Ready-to-spec / implement
 ### B-001 | Sanitized source baseline (M00)
 - Import exact code snapshot structure under dedicated branch.

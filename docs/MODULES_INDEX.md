@@ -24,6 +24,10 @@ Semua modul memiliki **dokumen tersendiri**, bukan satu spesifikasi raksasa. Sta
 
 **Cara baca:** kolom kondisi mendeskripsikan hasil temuan snapshot parsial, **bukan** klaim modul selesai atau berjalan di produksi. Pengembangan nyata akan direkam per milestone/issue.
 
+## Navigasi prototipe dan pekerjaan yang belum selesai
+
+[Katalog Portal YANDIK+](../drafts/yandik-portal/) memetakan 15 modul ke halaman DEMO yang sudah tersedia atau menandai halaman yang belum ada. [Audit konsolidasi 24 November](KONSOLIDASI_YANDIK_2026-11-24.md) mencatat gap, urutan K0–K7, dan perbedaan antara kode MOD dengan milestone M. Ini bukan perubahan status resmi atau bukti semua modul sudah diintegrasikan.
+
 ## Dokumen lintas modul
 - [Masterplan](MASTERPLAN.md)
 - [Roadmap status](ROADMAP.md)

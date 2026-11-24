@@ -2,6 +2,11 @@
 
 **Prioritas pertama dalam chat baru:** baca [PROJECT_STATE.md](../PROJECT_STATE.md) pada branch `develop/yandik-foundation`, kemudian [ROADMAP.md](ROADMAP.md) dan [WORKLOG.md](WORKLOG.md).
 
+## Pintu masuk pengembangan terbaru
+
+- [Katalog Portal YANDIK+](../drafts/yandik-portal/) untuk menemukan tampilan DEMO yang sudah ada (belum diuji sebagai katalog baru).
+- [Audit konsolidasi dan urutan K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) untuk mengerjakan gap nyata tanpa membuat ulang prototipe. ROADMAP tetap sumber status milestone.
+
 ## Prinsip operasional
 - Semua perubahan disimpan melalui connector GitHub; **jangan minta** download, setup lokal, PowerShell, SSH, atau akses VPS untuk fase saat ini.
 - Website produksi **tidak diubah**, tidak otomatis di-deploy, tidak memakai data nyata.

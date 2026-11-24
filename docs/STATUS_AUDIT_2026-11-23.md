@@ -2,6 +2,8 @@
 
 **Bahan kerja teknis, bukan berita acara penyelesaian resmi.** Rujukan audit: [PROJECT_STATE](../PROJECT_STATE.md), [ROADMAP](ROADMAP.md), [katalog 15 modul](MODULES_INDEX.md), [TEST_BACKLOG](TEST_BACKLOG.md), tree \`develop/yandik-foundation\`, dan [PR #9 Draft](https://github.com/dvoriano/yandik-plus/pull/9).
 
+**Pembaruan 24 November:** [audit konsolidasi dan katalog 15 modul](KONSOLIDASI_YANDIK_2026-11-24.md) mencakup beranda Ruang Kerja yang baru dan bukti uji lokal terbatas yang tercatat sebelumnya. Audit 23 November di bawah dipertahankan sebagai catatan historis, bukan inventaris terbaru.
+
 ## Kesimpulan
 
 **BELUM SELESAI.** Repository \`main\` hanya berisi README dan .gitignore; pekerjaan inti ada di \`develop/yandik-foundation\`. APEL yang sudah digunakan adalah sistem tersendiri, bukan bukti 15 modul YANDIK+ terpadu sudah diselesaikan di repository ini.

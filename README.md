@@ -66,6 +66,8 @@ YANDIK+ juga **tidak dimaksudkan menggantikan** aplikasi dan proses resmi sepert
 
 ## Ruang kerja DEMO
 
+**Mulai di [Katalog Portal YANDIK+](drafts/yandik-portal/)** untuk menemukan halaman DEMO yang tersedia dan status 15 modul. Katalog ini belum diuji dan bukan website yang sudah dipublikasikan. [Audit inventaris & urutan konsolidasi (24 November 2026)](docs/KONSOLIDASI_YANDIK_2026-11-24.md) menjelaskan pekerjaan yang masih tertunda.
+
 [Prototipe Ruang Kerja Puskeswan](drafts/yandik-workspace/) menyediakan ringkasan APEL, cakupan Profil dan SDM Veteriner, bahan pembinaan, serta akses ke simulasi Profil dan Dukungan. Prototipe memakai data fiktif dan alur utamanya telah diperiksa di Chromium lokal.
 
 ## Dokumen proyek

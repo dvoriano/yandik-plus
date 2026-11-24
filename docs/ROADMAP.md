@@ -9,6 +9,10 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## Konsolidasi 15 modul (24 November 2026)
+
+[Audit dan paket K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) memetakan bukti repo serta gap dari snapshot `2aa35dd`. [Katalog portal DEMO](../drafts/yandik-portal/) **KODE DITULIS, BELUM DIUJI**: pintu ke halaman yang sudah ada, bukan backend atau klaim penyelesaian modul. Urutan usulan: K1 kontrak identitas/sumber, K2 alur APEL/profil/SDM, K3 dukungan; K4 source Flask berizin dan backend; K5–K7 perluasan/QA. Milestone resmi dan kriteria penerimaan di bawah tetap berlaku.
+
 ## Ruang Kerja Puskeswan DEMO (24 November 2026)
 
 [Prototipe beranda](../drafts/yandik-workspace/) menghubungkan tampilan APEL, profil dan SDM, serta bahan pembinaan dengan data fiktif. Alur utama telah diuji secara lokal di Chromium dengan izin pemilik. Milestone tetap mengikuti kriteria masing-masing. Login, database dan integrasi produksi masih dalam pengembangan. [Cakupan uji demo](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal).

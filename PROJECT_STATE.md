@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## KONSOLIDASI PENGEMBANGAN | 24 NOVEMBER 2026
+- [Audit inventaris 15 modul dan urutan konsolidasi K0–K7](docs/KONSOLIDASI_YANDIK_2026-11-24.md) berdasarkan snapshot `2aa35dd`: 612 file, 78 folder draf, 37 HTML, 3.471.961 byte sebelum kompresi; bukan satu aplikasi operasional.
+- [Katalog Portal YANDIK+](drafts/yandik-portal/) dibuat untuk mengarahkan ke beranda/prototipe yang sudah ada. 15 modul dengan status jujur dan tautan lokal. **KODE DITULIS, BELUM DIUJI**. Tidak mengganti kode Ruang Kerja atau bukti uji terdahulu.
+- Fokus berikut: K1 identitas/sumber bersama dan K2 UI koreksi/SDM, lalu K3 dukungan; K4 source berizin dan backend tetap blocker. Hindari menambah gerbang DEMO yang tidak menyelesaikan integrasi. K5–K7 mengikuti dependensi, tidak ada klaim selesai/otorisasi.
+- Mode CODE_ONLY tetap berlaku; tidak menjalankan tes/CI/CL/deploy atau mengubah main/produksi.
+
 ## PEMBARUAN RUANG KERJA PUSKESWAN DEMO | 24 NOVEMBER 2026
 - [Ruang Kerja Puskeswan](drafts/yandik-workspace/) menyatukan ringkasan APEL, cakupan profil/SDM, dan contoh bahan pembinaan. Filter tahun, wilayah, dan Puskeswan memakai data fiktif dari M05-14, M05-15, dan M05-17. Tautan mengarah ke dashboard APEL serta simulasi Profil dan Dukungan yang sudah ada.
 - Pemilik mengizinkan uji demo lokal untuk perubahan ini. Chromium lulus untuk beranda, filter dan reset, laporan nol dan data kosong, lebar 320/375 piksel, navigasi tiga modul dan satu langkah simulasi Dukungan. [Cakupan uji](docs/TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal). Pengujian menyeluruh modul dan backend belum dilakukan. CI/CL dan deploy tetap di luar cakupan.

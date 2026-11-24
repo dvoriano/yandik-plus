@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | Konsolidasi inventaris dan katalog navigasi YANDIK+
+[Audit K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) memakai snapshot `2aa35dd` (612 blob/file, 37 HTML, 78 folder draf). [Portal](../drafts/yandik-portal/) berisi katalog 15 modul dan tautan ke beranda serta halaman lama; jalur file dicek terhadap recursive tree, **belum diuji di browser**. Tidak mengubah kode beranda yang sebelumnya mendapat uji lokal terbatas. Status milestone tetap di ROADMAP. CODE_ONLY [skip ci], tidak ada tes baru, CI/CL, deploy atau data riil.
+
 ## 2026-11-24 | Ruang Kerja Puskeswan DEMO
 [Prototipe beranda](../drafts/yandik-workspace/) menampilkan ringkasan dan grafik APEL, status profil/SDM serta bahan pembinaan dengan filter tahun, wilayah dan Puskeswan. Dengan izin pemilik, [uji Chromium lokal](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal) meliputi filter/reset, data nol/kosong, layar sempit, navigasi ke tiga modul dan satu langkah simulasi Dukungan. Perubahan berada di branch pengembangan, dengan commit bertanda `[skip ci]`.
 

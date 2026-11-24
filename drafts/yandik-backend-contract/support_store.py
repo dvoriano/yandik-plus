@@ -1,0 +1,101 @@
+"""CODE_ONLY | New M05-master DEMO support cases, not mapping old M04.
+Shared memory store; no approval, funding, delivery, BAST issuance or real sync.
+"""
+import json
+from datetime import datetime,timezone
+from pathlib import Path
+from staff_store import StaffStore
+from apel_store import canonical,digest
+from apel_payload import require
+from inventory_payload import INDEX,assessment,VERSION as INV_VERSION
+from support_payload import VERSION,ITEMS,ATTENTION,OWNER_ACTIONS,PROVINCE_ACTIONS,intent,empty,change,project
+SOURCE="DEMO-SOURCE-SUPPORT-REHEARSAL"
+CORE={"propose":"save_draft","submit":"submit","county_review":"record_review","plan_package":"record_review","schedule":"record_review","dispatch":"record_review","receive":"record_review","handover":"record_review","monitor":"record_review","return_draft":"return_correction"}
+class SupportStore(StaffStore):
+    def __init__(self):
+        super().__init__()
+        c=self._db
+        try:
+            c.executescript((Path(__file__).resolve().parent/"support_payload.sql").read_text("utf-8"))
+            c.execute("BEGIN IMMEDIATE")
+            c.execute("INSERT INTO contract_source VALUES(?,?,?,?,?)",(SOURCE,"NEW-SUPPORT-REHEARSAL",VERSION,digest({"schema":VERSION,"items":ITEMS}),"UNVERIFIED_DEMO"))
+            for name,reg in (("ALPHA","UTARA"),("BETA","UTARA"),("GAMMA","SELATAN")):
+                for year in range(2026,2031):
+                    for item in ITEMS:
+                        rid=f"DEMO-REC-SUP-{name}-{year}-{item.replace('.','-').upper()}"
+                        f="DEMO-PSW-"+name
+                        c.execute("INSERT INTO contract_record VALUES(?,?,?,?,?,0,?)",(rid,"support",f,"DEMO-REGION-"+reg,f"{year}|{item}","DEMO-ACTOR-"+name))
+                        c.execute("INSERT INTO contract_support_case VALUES(?,?,?,?)",(rid,f,year,item))
+            c.execute("COMMIT")
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            self.close();raise
+    def _support_record(self,rid):
+        r=self._db.execute("SELECT r.*,p.year,p.item_id FROM contract_record r JOIN contract_support_case p ON p.record_id=r.id AND p.facility_id=r.facility_id WHERE r.id=? AND r.resource='support'",(rid,)).fetchone()
+        require(r is not None and r["business_key"]==f'{r["year"]}|{r["item_id"]}',"CASE_NOT_AVAILABLE")
+        return r
+    def _support_revision(self,r,rev):
+        if rev==0:return empty()
+        row=self._db.execute("SELECT r.source_id,r.payload_digest,p.schema_version,p.snapshot_json FROM contract_revision r JOIN contract_support_payload p USING(record_id,revision) WHERE r.record_id=? AND r.revision=?",(r["id"],rev)).fetchone()
+        require(row is not None and row["source_id"]==SOURCE and row["schema_version"]==VERSION,"SOURCE_INVALID")
+        snap=json.loads(row["snapshot_json"]);require(digest(snap)==row["payload_digest"],"SNAPSHOT_DIGEST_MISMATCH")
+        return snap
+    def _support_policy(self,s,r,action):
+        self._facility_access(s,r["facility_id"])
+        if action=="read":return
+        if action in OWNER_ACTIONS:require(s.role=="puskeswan" and s.actor_id==r["owner_id"],"OWNER_DENIED")
+        elif action=="county_review":require(s.role=="kab_kota" and s.actor_id!=r["owner_id"],"COUNTY_DENIED")
+        elif action in PROVINCE_ACTIONS:require(s.role=="provinsi_verifikator" and s.actor_id!=r["owner_id"],"PROVINCE_DENIED")
+        else:require(False,"ACTION_DENIED")
+    def _inventory_basis(self,s,r):
+        row=self._db.execute("SELECT record_id FROM contract_inventory_year WHERE facility_id=? AND year=? AND catalog_version=?",(r["facility_id"],r["year"],INV_VERSION)).fetchone()
+        require(row is not None,"INVENTORY_SOURCE_MISSING")
+        inv=self._inv_record(row[0]);rev=inv["current_revision"];state,snap=self._inv_revision(inv["id"],rev)
+        self._read_policy(s,inv,state,rev)
+        obs=snap["rows"].get(r["item_id"]);rating=assessment(INDEX[r["item_id"]],obs)
+        return {"record_id":inv["id"],"revision":rev,"catalog_version":INV_VERSION,"item_id":r["item_id"],"assessment":rating,"observation":obs}
+    def _receipt_support(self,r,rev,replay):
+        snap=self._support_revision(r,rev)
+        return {"record_id":r["id"],"revision":rev,"stage":snap["stage"],"replay_demo":replay,"synthetic":True,"persistent":False,"official_authorization":False,"may_allocate":False,"may_issue_bast":False}
+    def apply_support(self,command,resolve_demo_session):
+        self._guard();x=intent(command);c=self._db;c.execute("BEGIN IMMEDIATE")
+        try:
+            s=self._session(resolve_demo_session);r=self._support_record(x["record_id"]);rid=r["id"];rev=r["current_revision"];a=x["action"]
+            self._support_policy(s,r,a);snap=self._support_revision(r,rev)
+            for key in ("planned_on","sent_on","received_on"):
+                if key in (x["payload"] or {}):require(int(x["payload"][key][:4])==r["year"],"CASE_YEAR_MISMATCH")
+            for key in ("recorded_on","observed_on"):
+                if key in (x["payload"] or {}):require(int(x["payload"][key][:4])>=r["year"],"CASE_YEAR_MISMATCH")
+            fingerprint=digest({"resource":"support","schema":VERSION,"actor":s.actor_id,"command":x})
+            self._command_namespace_guard(s.actor_id,x["command_id"])
+            old=c.execute("SELECT * FROM contract_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone()
+            if old is not None:
+                require(old["record_id"]==rid and old["request_digest"]==fingerprint,"IDEMPOTENCY_CONFLICT")
+                out=self._receipt_support(r,old["result_revision"],True);c.execute("COMMIT");return out
+            require(x["expected_revision"]==rev,"REVISION_CONFLICT")
+            basis=self._inventory_basis(s,r)
+            if a=="propose":require(basis["assessment"] in ATTENTION,"CONFIRMED_GAP_REQUIRED")
+            if a in ("submit","county_review","plan_package","schedule","dispatch"):
+                require(snap["need"] is not None and snap["need"]["source"]==basis,"INVENTORY_SOURCE_CHANGED")
+            n=change(snap,x,basis if a=="propose" else None)
+            next_rev=rev+1;now=datetime.now(timezone.utc).isoformat();act=CORE[a]
+            state="DRAFT" if n["stage"]=="DRAFT" else "SUBMITTED" if n["stage"]=="SUBMITTED" else "RECORDED_DEMO"
+            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,next_rev,SOURCE,s.actor_id,act,state,now,digest(n)))
+            c.execute("INSERT INTO contract_support_payload VALUES(?,?,?,?,?,?)",(rid,next_rev,VERSION,a,canonical(n),canonical(x["payload"])))
+            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(next_rev),rid,next_rev,s.actor_id,act,now))
+            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(s.actor_id,x["command_id"],fingerprint,rid,next_rev))
+            require(c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(next_rev,rid,rev)).rowcount==1,"REVISION_CONFLICT")
+            out=self._receipt_support(r,next_rev,False);c.execute("COMMIT");return out
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            raise
+    def view_support(self,record_id,resolve_demo_session):
+        self._guard();c=self._db;c.execute("BEGIN")
+        try:
+            s=self._session(resolve_demo_session);r=self._support_record(record_id);self._support_policy(s,r,"read")
+            rev=r["current_revision"];snap=self._support_revision(r,rev);basis=self._inventory_basis(s,r)
+            out={"record_id":r["id"],"facility_id":r["facility_id"],"year":r["year"],"item_id":r["item_id"],"unit":INDEX[r["item_id"]]["unit"],"revision":rev,"snapshot":snap,"summary":project(snap),"current_inventory_basis":basis,"source_changed":snap["need"] is not None and snap["need"]["source"]!=basis,"legacy_m04_linked":False,"synthetic":True,"official_authorization":False}
+            c.execute("COMMIT");return out
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            raise

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A5 | Support typed writer
+- 20 QA `drafts/yandik-backend-contract/test_support_store.py` (6 pure + 14 rehearsal), 0 dijalankan. Tambahan QA source pin/stale sebelum dan setelah kirim, partial receipt per shipment, duplicate metadata, monitoring terbaru, unit terpisah, scope, revisi/replay/revokasi, collision lintas stream, rollback, regresi writer sebelumnya. Tidak membuktikan integrasi M04-I2/I6, pengadaan/BAST resmi, crosswalk atau keamanan server. Izin unit/DDL terpisah diperlukan.
+
+
 ## K4-A4 | SDM typed writer
 - 26 QA `drafts/yandik-backend-contract/test_staff_store.py` (8 pure, 18 rehearsal), 0 dijalankan. Tambahan: interval eksklusif, coverage parsial/kosong, histori, role, kompetensi konflik, replay/revokasi, collision lintas resource, rollback, profil dan regresi APEL/inventaris/profil. Izin unit dan DDL terpisah; belum parity JS/Python atau data sah.
 

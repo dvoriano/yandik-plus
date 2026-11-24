@@ -48,11 +48,11 @@ CREATE TABLE contract_crosswalk_candidate (
  status TEXT NOT NULL CHECK(status IN ('CANDIDATE_DEMO','REJECTED_DEMO')),
  UNIQUE(source_id,external_id,facility_id)
 );
--- Shared revision envelope for facility-bound working records only.
+-- Shared revision envelope for facility-bound working records only. Support is a NEW synthetic stream, not migrated M04.
 -- The typed domain rules remain in their existing models. No generic JSON CRUD.
 CREATE TABLE contract_record (
  id TEXT PRIMARY KEY CHECK(id GLOB 'DEMO-REC-*'),
- resource TEXT NOT NULL CHECK(resource IN ('profiles','inventory','apel','personnel','coaching','documents')),
+ resource TEXT NOT NULL CHECK(resource IN ('profiles','inventory','apel','personnel','coaching','documents','support')),
  facility_id TEXT NOT NULL,
  region_id TEXT NOT NULL,
  business_key TEXT NOT NULL,

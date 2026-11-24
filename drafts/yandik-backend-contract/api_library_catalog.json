@@ -1,0 +1,239 @@
+{
+  "source_commit": "9d98be87011aee1a19cf0e9def5f5e4fa9c44b74",
+  "source_path": "drafts/yandik-portal/library-catalog.mjs",
+  "official_verified": false,
+  "items": [
+    {
+      "id": "REF-01",
+      "title": "Permentan 64/Permentan/OT.140/9/2007",
+      "category": "Regulasi",
+      "origin": "Kementerian Pertanian (rujukan dalam pedoman)",
+      "edition": "2007",
+      "tags": [
+        "sarpras",
+        "peralatan",
+        "minimal",
+        "puskeswan",
+        "inventaris"
+      ],
+      "summary": "Pasal 13 dan Lampiran III dirujuk dalam spesifikasi inventaris. Naskah resmi dan keberlakuan terkini belum diverifikasi di pustaka.",
+      "status": "SOURCE_PENDING",
+      "source": null
+    },
+    {
+      "id": "REF-02",
+      "title": "Pedoman Pelayanan Pusat Kesehatan Hewan (Puskeswan)",
+      "category": "Pedoman teknis",
+      "origin": "Direktorat Kesehatan Hewan (rujukan owner)",
+      "edition": "Cetakan 2020",
+      "tags": [
+        "sarpras",
+        "standar",
+        "alat",
+        "pelayanan",
+        "profil"
+      ],
+      "summary": "Rujukan inventaris hlm. 18–24. Salinan PDF belum tersedia di katalog publik; bukan konfirmasi status regulasi.",
+      "status": "SOURCE_PENDING",
+      "source": null
+    },
+    {
+      "id": "REF-03",
+      "title": "Inventaris tahunan sarana dan peralatan Puskeswan",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "barang",
+        "alat",
+        "sarpras",
+        "stok",
+        "salin tahun lalu",
+        "jumlah"
+      ],
+      "summary": "Rancangan pengisian dan penelaahan inventaris tahunan; tidak menetapkan kelayakan resmi.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/M02_INVENTARIS_TAHUNAN_PUSKESWAN.md"
+    },
+    {
+      "id": "REF-04",
+      "title": "APEL Puskeswan: pelaporan dan apresiasi",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "lapor",
+        "pelayanan",
+        "bulan",
+        "koreksi",
+        "vaksin",
+        "kurban",
+        "investigasi"
+      ],
+      "summary": "Spesifikasi pengembangan pelaporan dan koreksi; bukan juknis yang disahkan.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/02_APEL_PUSKESWAN.md"
+    },
+    {
+      "id": "REF-05",
+      "title": "Pembinaan dan pengembangan SDM",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "bimtek",
+        "pelatihan",
+        "kompetensi",
+        "peserta",
+        "materi"
+      ],
+      "summary": "Rancangan kegiatan dan tindak lanjut. Materi pelatihan resmi belum diimpor.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/09_PEMBINAAN_BIMTEK.md"
+    },
+    {
+      "id": "REF-06",
+      "title": "Administrasi kegiatan paperless",
+      "category": "Template & administrasi",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "laporan",
+        "berita acara",
+        "surat",
+        "arsip",
+        "dokumen"
+      ],
+      "summary": "Spesifikasi draf dokumen; bukan pengganti persuratan resmi.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/10_ADMINISTRASI_DOKUMEN.md"
+    },
+    {
+      "id": "REF-07",
+      "title": "Pengawasan obat hewan",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "obat",
+        "distributor",
+        "sarana"
+      ],
+      "summary": "Rancangan register pengawasan.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/05_PENGAWASAN_OBAT_HEWAN.md"
+    },
+    {
+      "id": "REF-08",
+      "title": "Klinik dan praktik dokter hewan",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "praktik",
+        "klinik",
+        "izin",
+        "dokter"
+      ],
+      "summary": "Rancangan register klinik dan praktik; bukan izin resmi.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/06_KLINIK_PRAKTIK_DOKTER_HEWAN.md"
+    },
+    {
+      "id": "REF-09",
+      "title": "PHMS, zoonosis dan surveilans",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "penyakit",
+        "surveilans",
+        "zoonosis",
+        "investigasi"
+      ],
+      "summary": "Rancangan pencatatan dan telaah, bukan konfirmasi penyakit.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/07_PHMS_ZOONOSIS.md"
+    },
+    {
+      "id": "REF-10",
+      "title": "Sertifikat veteriner dan lalu lintas",
+      "category": "Panduan kerja",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "sertifikat",
+        "lalu lintas",
+        "hewan",
+        "produk"
+      ],
+      "summary": "Rancangan register, bukan penerbit sertifikat.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/modules/08_SERTIFIKAT_LALU_LINTAS.md"
+    },
+    {
+      "id": "REF-11",
+      "title": "Mesin alur kerja bersama",
+      "category": "SOP & proses",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "workflow",
+        "verifikasi",
+        "koreksi",
+        "persetujuan"
+      ],
+      "summary": "Standar desain workflow pengembangan; bukan SOP yang berlaku.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/WORKFLOW_ENGINE.md"
+    },
+    {
+      "id": "REF-12",
+      "title": "Standar UX paperless",
+      "category": "SOP & proses",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "ponsel",
+        "hp",
+        "formulir",
+        "paperless"
+      ],
+      "summary": "Pedoman desain internal.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/UX_PAPERLESS.md"
+    },
+    {
+      "id": "REF-13",
+      "title": "Batas keamanan dan data",
+      "category": "SOP & proses",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "privasi",
+        "akses",
+        "akun",
+        "keamanan",
+        "data"
+      ],
+      "summary": "Aturan pengembangan, bukan izin pengolahan data resmi.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/SECURITY_AND_DATA.md"
+    },
+    {
+      "id": "REF-14",
+      "title": "Masterplan YANDIK+",
+      "category": "SOP & proses",
+      "origin": "Rancangan YANDIK+",
+      "edition": "Snapshot pengembangan",
+      "tags": [
+        "roadmap",
+        "modul",
+        "rencana"
+      ],
+      "summary": "Arah pengembangan, bukan kebijakan yang disahkan.",
+      "status": "DRAFT_INTERNAL",
+      "source": "docs/MASTERPLAN.md"
+    }
+  ]
+}

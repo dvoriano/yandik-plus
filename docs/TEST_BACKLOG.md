@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A8 | API candidate / projections
+- 20 QA `drafts/yandik-backend-contract/test_api_dispatch.py` (5 pure, 15 memory rehearsal), 0 dijalankan. QA lanjutan: seluruh 28 jalur, command positif/negatif tiap writer, query/body spoofing, revoked grant, enum malformed, scope origin, aggregate suppression, coverage null, library parity, inbox lintas tahun, JS transport/ACK lost/retry/conflict, no storage, API error redaction, regresi sebelumnya. Izin unit/DDL terpisah, HTTP/auth/CSRF belum tersedia.
+
+
 ## K4-A7 | Coaching / paperless typed writer
 - 22 QA `drafts/yandik-backend-contract/test_coachdoc_store.py` (6 pure + 16 rehearsal), 0 dijalankan. Tambahan: scope, date/order, return result, source stale, revision FK, evidence metadata, archive/reopen/refresh, old revision retrieval, replay/revocation, rollback, cross-stream command collision, no official issuance, regression previous stores. Izin unit dan DDL terpisah; belum parity JS/Python dan integrasi UI.
 

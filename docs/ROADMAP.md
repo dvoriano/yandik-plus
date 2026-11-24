@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | K4-A8: kontrak API kandidat dan proyeksi DEMO
+- [Kontrak](K4_A8_API_PROJECTIONS_2026_2030.md): dispatcher in-process 20 GET + 8 POST allowlist, host resolver, write default-off, cakupan/format/error, agregat pimpinan, GIS Cartesian, 14 metadata pustaka, inbox pemilik, adapter antrean retry/conflict. 20 QA Python tertulis (5 pure + 15 rehearsal), 0 dijalankan. Belum HTTP/Flask, browser binding, auth/CSRF, data riil, ledger, penyimpanan antrean atau notifikasi nyata. CODE_ONLY [skip ci]. Berikutnya K4-A9 akun dan hak akses.
+
 ## 2026-11-24 | K4-A7: backend pembinaan dan administrasi DEMO
 - [Kontrak](K4_A7_COACHING_PAPERLESS_2026_2030.md): 30 slot kegiatan dan 120 slot draf kosong, typed rencana/hasil/telaah/tindak lanjut, 4 jenis draf, metadata bukti, FK revisi sumber, stale/refresh/reopen, histori dan scope, transaksi/replay/rollback. 22 QA tertulis (6 pure + 16 rehearsal), 0 dijalankan. Belum parity UI, SOP, dokumen resmi, upload, HTTP, login, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A8 integrasi API kandidat dan proyeksi read-only.
 

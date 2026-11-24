@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | K4-A8: kontrak API kandidat dan proyeksi DEMO
+- [Kontrak](K4_A8_API_PROJECTIONS_2026_2030.md): dispatcher in-process 20 GET + 8 POST allowlist, host resolver, write default-off, cakupan/format/error, agregat pimpinan, GIS Cartesian, 14 metadata pustaka, inbox pemilik, adapter antrean retry/conflict. 20 QA Python tertulis (5 pure + 15 rehearsal), 0 dijalankan. Belum HTTP/Flask, browser binding, auth/CSRF, data riil, ledger, penyimpanan antrean atau notifikasi nyata. CODE_ONLY [skip ci]. Berikutnya K4-A9 akun dan hak akses.
+
 ## 2026-11-24 | K4-A7: backend pembinaan dan administrasi DEMO
 - [Kontrak](K4_A7_COACHING_PAPERLESS_2026_2030.md): 30 slot kegiatan dan 120 slot draf kosong, typed rencana/hasil/telaah/tindak lanjut, 4 jenis draf, metadata bukti, FK revisi sumber, stale/refresh/reopen, histori dan scope, transaksi/replay/rollback. 22 QA tertulis (6 pure + 16 rehearsal), 0 dijalankan. Belum parity UI, SOP, dokumen resmi, upload, HTTP, login, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A8 integrasi API kandidat dan proyeksi read-only.
 

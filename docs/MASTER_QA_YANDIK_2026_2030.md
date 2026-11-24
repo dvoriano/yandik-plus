@@ -286,3 +286,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-A7
 22 kasus tambahan, 0 dijalankan. 16 rehearsal memerlukan izin DDL. Regresi penulis sebelumnya dan source binding perlu QA. Preview ditunda.
+
+## Addendum K4-A8
+20 kasus tambahan, 0 dijalankan. 15 rehearsal memerlukan izin DDL; adapter JS dan seluruh command/HTTP masih perlu QA. Preview ditunda.

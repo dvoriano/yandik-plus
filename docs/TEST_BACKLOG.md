@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A9 | Account / grant / session lifecycle
+- 24 QA `drafts/yandik-backend-contract/test_account_store.py` (6 pure, 18 memory rehearsal), 0 dijalankan. Tambahan: host resolver trust, instance binding, expiry/logout, revoke across all writers including replay, disabled/reenabled grants, scope derivation, protected admin, receipt/history/rollback, raw token redaction, session clock, old fixture API regression, negative authorization all 28 routes. Izin unit/DDL terpisah. HTTP session/CSRF, secure cookies, password KDF or SSO, rate limits and ownership transfer require design/review before production.
+
+
 ## K4-A8 | API candidate / projections
 - 20 QA `drafts/yandik-backend-contract/test_api_dispatch.py` (5 pure, 15 memory rehearsal), 0 dijalankan. QA lanjutan: seluruh 28 jalur, command positif/negatif tiap writer, query/body spoofing, revoked grant, enum malformed, scope origin, aggregate suppression, coverage null, library parity, inbox lintas tahun, JS transport/ACK lost/retry/conflict, no storage, API error redaction, regresi sebelumnya. Izin unit/DDL terpisah, HTTP/auth/CSRF belum tersedia.
 

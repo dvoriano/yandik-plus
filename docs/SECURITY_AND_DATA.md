@@ -48,3 +48,7 @@
 
 ## K4 | Kontrak integrasi data
 [Kontrak backend/data](K4_KONTRAK_BACKEND_DATA_2026_2030.md) hanya rehearsal DDL dan evaluator calon akses; jangan mendaftarkan endpoint, menjalankan DDL atau mempercayai role client. Seluruh hasil may_execute=false; sumber/otorisasi nyata dan audit keamanan belum tersedia.
+
+## 2026-11-24 | K4-A9: akun, grant dan siklus sesi DEMO
+- [Kontrak](K4_A9_ACCOUNT_SESSION_LIFECYCLE_2026_2030.md): AccountStore :memory:, admin/pimpinan fixture, akun dan grant satu aktif, scope master, token acak runtime (digest saja), kedaluwarsa 30 menit, logout/revokasi, admin command host-only, audit/replay/rollback. Dispatcher memakai resolver terikat instance pada AccountStore, raw callback ditolak. 24 QA tertulis (6 pure + 18 rehearsal), 0 dijalankan. 9/9 tahapan K4-A1–A9 kode awal tersedia, K4/K7 BELUM SELESAI/TERUJI. Belum auth/HTTP/CSRF, owner reassignment, DB riil atau persetujuan role. CODE_ONLY [skip ci]. Berikutnya K4-B konsolidasi statis kontrak, penutupan gap dan handoff QA tanpa eksekusi.
+

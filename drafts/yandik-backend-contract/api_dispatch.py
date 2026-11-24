@@ -7,6 +7,7 @@ import sqlite3
 from apel_payload import Denied,require,exact
 from apel_store import canonical
 from api_projections import ProjectionStore
+from account_store import AccountStore
 # Exact allowlist, no dynamic getattr on client-controlled values.
 READS={
 "/api/v1/core":((),lambda s,q,r:s.core(r)),
@@ -53,7 +54,7 @@ def error_status(code):
     return 422
 class DraftAPI:
     def __init__(self,store,resolve_demo_session,allow_demo_commands=False):
-        require(type(store) is ProjectionStore and callable(resolve_demo_session),"REHEARSAL_CONTEXT_REQUIRED")
+        require(type(store) in (ProjectionStore,AccountStore) and callable(resolve_demo_session),"REHEARSAL_CONTEXT_REQUIRED")
         self._store=store;self._resolve=resolve_demo_session;self._commands=allow_demo_commands is True
     def dispatch(self,method,path,query=None,body=None):
         try:

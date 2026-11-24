@@ -76,3 +76,7 @@ Wilayah → fasilitas → record domain → revisi → bukti dan audit. Identita
 ## 2026-11-24 | K4-A8: kontrak API kandidat dan proyeksi DEMO
 - [Kontrak](K4_A8_API_PROJECTIONS_2026_2030.md): dispatcher in-process 20 GET + 8 POST allowlist, host resolver, write default-off, cakupan/format/error, agregat pimpinan, GIS Cartesian, 14 metadata pustaka, inbox pemilik, adapter antrean retry/conflict. 20 QA Python tertulis (5 pure + 15 rehearsal), 0 dijalankan. Belum HTTP/Flask, browser binding, auth/CSRF, data riil, ledger, penyimpanan antrean atau notifikasi nyata. CODE_ONLY [skip ci]. Berikutnya K4-A9 akun dan hak akses.
 
+
+## 2026-11-24 | K4-A9: akun, grant dan siklus sesi DEMO
+- [Kontrak](K4_A9_ACCOUNT_SESSION_LIFECYCLE_2026_2030.md): AccountStore :memory:, admin/pimpinan fixture, akun dan grant satu aktif, scope master, token acak runtime (digest saja), kedaluwarsa 30 menit, logout/revokasi, admin command host-only, audit/replay/rollback. Dispatcher memakai resolver terikat instance pada AccountStore, raw callback ditolak. 24 QA tertulis (6 pure + 18 rehearsal), 0 dijalankan. 9/9 tahapan K4-A1–A9 kode awal tersedia, K4/K7 BELUM SELESAI/TERUJI. Belum auth/HTTP/CSRF, owner reassignment, DB riil atau persetujuan role. CODE_ONLY [skip ci]. Berikutnya K4-B konsolidasi statis kontrak, penutupan gap dan handoff QA tanpa eksekusi.
+

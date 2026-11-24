@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | Lanjutan konsolidasi: aktivitas APEL dan detail telaah
+Commit `5219357`: [halaman kerja](../drafts/yandik-portal/review.html) menambah editor pasangan kejadian/lokasi dan ante/post per hewan dengan validator M05-0/M05-1; pemilihan ID fiktif, tanpa unggah bukti; daftar aktivitas draf serta referensi sebelumnya dipertahankan. Detail empat register memakai proyeksi model masing-masing. Antrean bahan pembinaan dibatasi record workflow tahun/wilayah, tabel kebutuhan/tahap M04 tetap skenario independen. **13 kasus QA tambahan, 31 kumulatif pada file konsolidasi, 0 dijalankan.** Kode baru belum diuji; tidak ada koneksi produksi, perubahan ledger atau kewenangan resmi. [Panduan Codex](CODEX_PREVIEW_YANDIK.md).
+
 ## 2026-11-24 | Konsolidasi K1–K6: halaman kerja dan register DEMO
 [Halaman kerja](../drafts/yandik-portal/review.html) menggunakan kembali join M05, workflow koreksi dan bahan pembinaan; panel M04 tujuh tahap independen; empat register domain memakai model lama, dengan agregat M05 regional serta tautan pustaka. Komit `9a72422` dan `795e19e`. [18 QA dirancang](../drafts/yandik-portal/tests/consolidated.test.mjs), **0 dijalankan**. [Panduan preview Codex](CODEX_PREVIEW_YANDIK.md). Tidak ada crosswalk M04/M05, GIS lokasi, PWA/notifikasi, sumber resmi, login/server atau DB. Status K4/K7 tertunda. Kode baru belum diuji, [skip ci], tanpa deploy.
  

@@ -10,6 +10,13 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Lanjutan K2/K3/K5/K6 | Aktivitas dan detail register (13 kasus tambahan, 0 dijalankan)
+- Investigasi unik per pasangan event/lokasi; satu hewan ante+post dihitung satu; duplikasi, status ante/post kosong, ID bukan DEMO ditolak; aktivitas tersimpan melalui koreksi dan ledger tidak berubah.
+- Antrean pembinaan hanya record workflow tahun/wilayah terpilih; tidak mengartikan ketiadaan record sebagai kepatuhan.
+- Empat detail domain menggunakan validator baca-saja; ID di luar wilayah dan wilayah tanpa snapshot ditolak.
+- QA browser tertunda: tambah/hapus baris, pilihan ID fiktif, input kotor menghalangi kirim, perubahan scope/reset, rendering detail async dan pengosongan saat filter berubah; tabel tahap/kebutuhan M04 tetap terpisah.
+- [QA konsolidasi](../drafts/yandik-portal/tests/consolidated.test.mjs): 25 deklarasi dengan dua loop 4 domain, total **31 kasus dirancang, 0 dijalankan**. Angka 18 kasus pada entri sebelumnya adalah catatan historis.
+
 ## K1–K6 | Ruang kerja konsolidasi DEMO (18 kasus unit dirancang, 0 dijalankan)
 - K1: join identitas, filter silang wilayah, null/0, SDM parsial, cakupan regional kosong.
 - K2: transisi draf/kirim/koreksi/revisi/kirim ulang, validasi angka, transisi tidak sah, jejak, ledger tetap; draft counts terikat scope. QA browser tambahan: input belum disimpan menahan kirim, reset, navigasi.

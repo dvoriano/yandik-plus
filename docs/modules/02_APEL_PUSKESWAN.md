@@ -123,3 +123,6 @@ Juknis: nol bila tidak ada kegiatan; investigasi berdasarkan lokasi/kejadian; pe
 
 ## Tautan pengembangan lintas modul M04-I1 (16 November 2026)
 [Workspace DEMO](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I1_INTEGRATED_WORKSPACE.md) menggunakan identitas fiktif dan fungsi M02/M03, snapshot baca-saja SDM/APEL dan model S10–S15. **KODE DITULIS, BELUM DIUJI.** Tidak mengubah status modul produksi, tidak menyatukan sumber asli, tidak mengimplementasikan APEL 2.0 atau RBAC/API/DB server. Kontrak data dan akses server menjadi pekerjaan lanjutan.
+
+## Lanjutan konsolidasi DEMO | 24 November 2026
+[Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Editor pasangan kejadian/lokasi dan hewan ante/post memakai M05-0/M05-1. Belum uji parity Juknis, upload bukti atau integrasi ledger resmi. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).

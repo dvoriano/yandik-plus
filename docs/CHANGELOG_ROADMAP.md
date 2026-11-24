@@ -1,3 +1,6 @@
+## 2026-11-24 | Lanjutan aktivitas APEL dan detail telaah
+- Commit `5219357`: [portal](../drafts/yandik-portal/review.html), editor aktivitas, detail register, antrean pembinaan dan tabel kebutuhan/tahap. 13 QA tambahan, 31 kumulatif, 0 dijalankan; tidak ada perubahan keputusan operasional.
+
 ## 2026-11-24 | Konsolidasi K1–K6
 - [Ruang kerja DEMO](../drafts/yandik-portal/review.html) dan [panduan Codex](CODEX_PREVIEW_YANDIK.md) ditulis; [gap](KONSOLIDASI_YANDIK_2026-11-24.md). 18 QA, 0 dijalankan, K4/K7 tertunda; tidak ada source, backend atau integrasi resmi.
 

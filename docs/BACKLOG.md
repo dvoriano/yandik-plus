@@ -7,6 +7,8 @@ This is a build plan, **not evidence that features are already implemented**.
 
 **Update K1–K6:** [review workspace](../drafts/yandik-portal/review.html) written, 18 QA designed/0 run. Existing M05 join, correction workflow, independent M04 seven-stage scenario, four read registers, regional coverage and document links reused. Full input/categories, cross-source identity, domain details and PWA/GIS are pending; K4 source/auth/DB and K7 remain blocked. [Codex checklist](CODEX_PREVIEW_YANDIK.md).
 
+**Follow-on consolidation:** activity editor and scoped register detail written; followup queue and support stage table added. 31 cases designed/0 run. Profile/SDM edit, Bimtek/administration, GIS/PWA and server integration remain pending. See latest audit and Codex guide.
+
 ## Ready-to-spec / implement
 ### B-001 | Sanitized source baseline (M00)
 - Import exact code snapshot structure under dedicated branch.

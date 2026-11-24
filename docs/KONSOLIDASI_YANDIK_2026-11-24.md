@@ -2,6 +2,17 @@
 
 **Audit inventaris GitHub dan peta pekerjaan, bukan pernyataan siap operasional.** Snapshot dasar branch [`develop/yandik-foundation`](https://github.com/dvoriano/yandik-plus/tree/2aa35dd4d52016474cf0c365cc4554601703078c) pada commit `2aa35dd4d52016474cf0c365cc4554601703078c`, recursive tree utuh: **612 blob/file, 769 entri tree (termasuk direktori), 78 folder langsung di drafts/, 37 file HTML, 3.471.961 byte total blob**. Ukuran tersebut bukan ukuran instalasi, database maupun file ZIP hasil kompresi. PR [#9](https://github.com/dvoriano/yandik-plus/pull/9) tetap Draft. Semua pekerjaan tetap sampai horizon 2030.
 
+## Lanjutan K2/K3/K5/K6 | Aktivitas dan telaah (24 November 2026)
+Commit `5219357` memperluas halaman konsolidasi: editor investigasi/kurban sesuai validator model DEMO (bukan kesesuaian resmi Juknis); detail checklist/telaah empat domain; antrean usulan dari workflow tercatat; daftar kebutuhan dan tahapan dukungan. 13 kasus QA tambahan, total 31 pada file konsolidasi, 0 dijalankan. Batas sebelumnya "tanpa input investigasi/kurban" dan "tanpa detail register" telah disusul. Tetap belum ada integrasi sumber nyata, pengaturan kelembagaan, penyimpanan resmi, atau penerbitan.
+
+| Paket | Perkembangan | Yang masih perlu |
+|---|---|---|
+| K2 | Editor investigasi kejadian/lokasi dan kurban ante/post, validasi melalui model, draf memelihara aktivitas | Input/kelengkapan profil dan SDM, bukti sah, parity Juknis, uji |
+| K3 | Tabel kebutuhan dan catatan tahapan pada panel M04 | Identitas lintas sumber, bukti resmi dan kontrol server |
+| K5 | Detail telaah/checklist untuk 4 register, pilihan entri dalam wilayah | Edit/workflow inspeksi sesuai kewenangan, data resmi, uji |
+| K6 | Antrean pembinaan dari workflow tercatat; bukan daftar kewajiban pelaporan | Bimtek, arsip, GIS/peta, pustaka dan PWA/notifikasi |
+| K4/K7 | Tidak berubah | Source berizin, auth/DB dan pengujian/rilis |
+
 ## Pembaruan implementasi konsolidasi | 24 November 2026
 
 [Halaman kerja konsolidasi DEMO](../drafts/yandik-portal/review.html) ditulis dengan model lama, bukan salinan angka atau pengganti aplikasi. [Panduan preview Codex](CODEX_PREVIEW_YANDIK.md). Commit kode `9a72422` dan `795e19e`; **18 kasus QA unit dirancang (15 deklarasi test dengan satu loop 4 domain), 0 dijalankan**. Tidak ada bukti browser baru.

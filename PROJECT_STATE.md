@@ -6,6 +6,11 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## LANJUTAN K2/K3/K5/K6 | 24 NOVEMBER 2026
+- [Ruang kerja DEMO](drafts/yandik-portal/review.html) kini memiliki editor investigasi pasangan kejadian/lokasi, pemeriksaan kurban per hewan (ante/post satu hewan), detail telaah empat register, antrean pembinaan berdasarkan workflow tercatat per tahun/wilayah, dan tabel kebutuhan/tahapan M04. Semua memakai model yang sudah ada; **KODE DITULIS, BELUM DIUJI**.
+- Commit `5219357`: tambahan 13 kasus QA dirancang; total file QA konsolidasi 31 kasus (25 deklarasi dengan dua loop masing-masing 4 domain), **0 dijalankan**. Referensi bukti draf dipertahankan; tidak ada unggahan atau perubahan ledger M05-0. K3 identitas M04 masih terpisah.
+- Berikutnya: editor profil/SDM yang memelihara histori dan cakupan; pustaka, Bimtek, dokumen, GIS sintetis dan protokol offline sesuai kebutuhan (bukan klaim integrasi). K4 source/otorisasi server/DB dan K7 tes/rilis tetap tertunda. [Panduan Codex](docs/CODEX_PREVIEW_YANDIK.md) diperbarui. Tanpa CI/CL/deploy, perubahan main atau produksi.
+
 ## KONSOLIDASI K1–K6 | 24 NOVEMBER 2026
 - [Ruang kerja konsolidasi DEMO](drafts/yandik-portal/review.html) menggunakan model M05 dan M04 serta empat domain pengawasan yang telah tersedia; kode baru **BELUM DIUJI**. [Panduan preview Codex](docs/CODEX_PREVIEW_YANDIK.md).
 - K1 join ID APEL/profil/SDM dan satu cakupan filter; K2 simulasi draf/kirim/koreksi/revisi/kirim ulang untuk empat kategori layanan, jejak revisi dan bahan pembinaan; ledger tetap terpisah. K3 tujuh tahap M04 independen dengan selector terpisah. K5 empat register baca-saja berfilter wilayah. K6 agregat regional M05 dan tautan pustaka/SOP; belum peta GIS, notifikasi atau PWA.

@@ -55,3 +55,6 @@ Sertifikat pelatihan hanya disiapkan sesuai ketentuan kegiatan; jangan dibuat se
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## Lanjutan konsolidasi DEMO | 24 November 2026
+[Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Antrean bahan telaah berdasarkan workflow M05-17 tercatat per tahun/wilayah; belum penugasan, Bimtek atau notifikasi resmi. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).

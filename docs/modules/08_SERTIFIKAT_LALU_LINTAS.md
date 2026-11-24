@@ -60,3 +60,6 @@ Status ditetapkan saat pengembangan. Jangan mengklaim sertifikat dikeluarkan oto
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## Lanjutan konsolidasi DEMO | 24 November 2026
+[Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Detail butir telaah permohonan memakai M14-S1; bukan penerbit sertifikat. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).

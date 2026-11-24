@@ -6,6 +6,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 from pathlib import PurePosixPath
 from secrets import compare_digest, token_urlsafe
+import webbrowser
+from threading import Thread
 from time import monotonic
 
 from account_payload import TTL_SECONDS
@@ -226,14 +228,18 @@ def main():
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--actor", action="append", choices=ACTORS)
     parser.add_argument("--allow-demo-commands", action="store_true")
+    parser.add_argument("--open-browser", action="store_true", help="Buka demo di browser perangkat ini")
     args = parser.parse_args()
     if not 0 <= args.port <= 65535:
         parser.error("Port di luar rentang 0–65535")
     actors = args.actor or ["ALPHA", "KAB-UTARA", "REVIEW", "LEADER"]
     with DemoServer(args.port, actors=actors, allow_commands=args.allow_demo_commands) as server:
-        print(f"Buka http://{server.authority}/", flush=True)
+        url = f"http://{server.authority}/"
+        print(f"Buka {url}", flush=True)
         for actor, code in server.codes.items():
             print(f"Kode sesi DEMO {actor}: {code}", flush=True)
+        if args.open_browser:
+            Thread(target=webbrowser.open_new_tab, args=(url,), daemon=True).start()
         try:
             server.serve_forever()
         except KeyboardInterrupt:

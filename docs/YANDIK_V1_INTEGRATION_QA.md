@@ -4,6 +4,8 @@
 
 ## Menjalankan demo
 
+Di Windows, ekstrak seluruh ZIP branch integrasi, lalu klik dua kali `Mulai-YANDIK.cmd` di folder hasil ekstraksi. Jika Python 3.10+ tersedia, terminal menampilkan kode sesi DEMO dan browser bawaan membuka alamat loopback dengan port yang dipilih server. Salin kode `ALPHA` ke halaman masuk dan biarkan terminal terbuka selama demo berjalan. Jika browser tidak terbuka, gunakan alamat pada baris `Buka` di terminal.
+
 Dari root checkout branch integrasi, jalankan Python 3.10 atau lebih baru. Aplikasi menggunakan modul pustaka standar Python dan aset browser lokal.
 
 ```sh

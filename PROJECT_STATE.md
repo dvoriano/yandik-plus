@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## INVENTARIS TAHUNAN PUSKESWAN | 24 NOVEMBER 2026
+- [Inventaris tahunan](drafts/yandik-portal/review.html#inventaris): 198 butir UI, 15 kelompok navigasi, seluruh A–J Lampiran III Permentan 64/2007 berdasarkan Pedoman 2020 hlm.18–24; [kontrak dan batas](docs/M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). Katalog sumber belum ditelaah resmi. Salin tahun lalu, konfirmasi ulang, kondisi/kuantitas, pencarian, progres, rekap provinsi dan revisi DEMO. State memori, belum backend/akses kab/kota atau persistensi. 15 QA baru, 65 kasus unit portal kumulatif, 0 dijalankan. K4/K7 tertunda; prioritas tambahan ini masuk MOD-01, bukan modul ke-16.
+
 ## LANJUTAN K1/K2 | PROFIL DAN SDM | 24 NOVEMBER 2026
 - Commit `52613e0`: [editor Profil/SDM](drafts/yandik-portal/review.html#profil-sdm), [model](drafts/yandik-portal/personnel-model.mjs) dan [QA](drafts/yandik-portal/tests/personnel.test.mjs). Lima bagian M02 memakai ID M05 per fasilitas/tahun, pilihan data fiktif dan histori perubahan; tidak menyalin isi fixture lama. SDM aktif per bulan, histori interval, simulasi mutasi efektif, dan catatan kompetensi. Proyeksi M05 diperbarui dalam memori, bukan sumber resmi. Ledger dan workflow APEL tidak berubah.
 - **19 QA tambahan, 50 kasus unit kumulatif dua file portal, 0 dijalankan.** Kode baru belum diuji; tidak ada bukti browser baru. Form Profiling penuh, bukti resmi, impor SDM, sumber Flask/auth/DB dan crosswalk M04/M05 tetap belum. [Panduan Codex](docs/CODEX_PREVIEW_YANDIK.md).

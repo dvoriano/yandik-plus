@@ -9,6 +9,10 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## K1/K2: Inventaris tahunan sarana dan peralatan
+
+[MOD-01 inventaris tahunan](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md) ditulis berdasarkan Lampiran III Permentan 64/2007 (Pedoman 2020). 198 butir UI dengan referensi, 15 kelompok navigasi, salin tahun lalu dengan konfirmasi, draf/revisi, rekap gap. 15 QA baru, 0 dijalankan; belum sumber/otorisasi/persistensi server. Milestone resmi tetap.
+
 ## Lanjutan K1/K2: Profil dan SDM DEMO
 
 [Editor Profil/SDM](../drafts/yandik-portal/review.html#profil-sdm) ditulis pada `52613e0`: lima bagian M02, histori, penempatan efektif, mutasi dan kompetensi fiktif dengan ID M05. 19 QA tambahan, total 50 kasus unit portal, 0 dijalankan. [Audit gap](KONSOLIDASI_YANDIK_2026-11-24.md), [preview Codex](CODEX_PREVIEW_YANDIK.md). K1/K2 belum operasional; K4/K7 tertunda; milestone resmi tetap.

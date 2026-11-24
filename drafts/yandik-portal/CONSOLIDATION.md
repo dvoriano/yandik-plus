@@ -10,3 +10,6 @@ Editor pasangan investigasi/kurban menggunakan pilihan ID fiktif, validator M05-
 Editor lima bagian M02 menggunakan ID dan tahun M05, tanpa menyalin isi fixture lama; proyeksi status dan revisi sintetis, bukan kelengkapan Profiling 2026. Mutasi penempatan terbuka memakai batas akhir eksklusif; validator M05-15 memeriksa seluruh fixture hasil perubahan. Kompetensi adalah catatan topik DEMO, bukan sertifikat. Riwayat memuat keadaan sebelum/sesudah dalam memori. Reset mengembalikan laporan/profil/SDM ke fixture. K4 dan K7 tetap tertunda.
 
 19 QA personel tertulis pada `tests/personnel.test.mjs`; 50 kasus unit total dengan 31 sebelumnya, **0 dijalankan**. Lihat panduan Codex dan audit konsolidasi terbaru.
+
+## Inventaris tahunan Puskeswan | 24 November 2026
+[Kontrak inventaris](../../docs/M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 15 QA baru, total 65 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.

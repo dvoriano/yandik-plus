@@ -2,3 +2,5 @@
 .activity-section{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}.activity-row{display:flex;align-items:end;flex-wrap:wrap;gap:9px;margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:9px}.activity-row label{flex:1;min-width:min(100%,120px)}.activity-row .check-label{display:flex;flex-direction:row;align-items:center;min-width:auto;flex:0 0 auto}.activity-row input[type=checkbox]{width:18px;height:18px}.activity-row button{flex:0 0 auto}.domain h4{margin:14px 0 5px}
 
 .personnel-section{border:1px solid var(--line);padding:12px;margin:10px 0;border-radius:10px}.personnel-section h4{margin:0 0 8px}.personnel-section label{max-width:460px;margin:8px 0}.personnel-section button{margin-top:4px}
+
+.inventory-progress{padding:14px;margin:12px 0;background:#edf5f1;border-radius:10px}.inventory-progress progress{width:100%;height:16px;accent-color:var(--accent)}#inv-edit{scroll-margin-top:16px}#inv-edit form{padding:12px;border:1px solid var(--line);border-radius:10px}#inv-edit form button{margin-top:12px}#inv-edit [hidden]{display:none}#inv-group-progress button{background:white;color:var(--ink);border-color:var(--line)}

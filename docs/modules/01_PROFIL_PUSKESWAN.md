@@ -96,3 +96,6 @@ Jangan menampilkan nomor pribadi tenaga atau dokumen legalitas tidak-publik pada
 
 ## Lanjutan K1/K2 | Editor konsolidasi 24 November
 [Editor lima bagian](../../drafts/yandik-portal/review.html#profil-sdm) memakai alur M02 dan ID M05 per fasilitas/tahun, pilihan fiktif, histori sebelum/sesudah dan proyeksi status M05. Tidak menyalin isi prototipe lama; bukan seluruh Profiling atau verifikasi resmi. [19 QA lintas Profil/SDM](../../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Kode belum diuji; API, sumber nyata dan kelengkapan tetap belum.
+
+## Inventaris tahunan Puskeswan | 24 November 2026
+[Kontrak inventaris](../M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 15 QA baru, total 65 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.

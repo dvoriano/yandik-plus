@@ -2,11 +2,11 @@
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>YANDIK+ | Ruang kerja terpadu DEMO</title>
 <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./review.css">
-<script type="module" src="./review.mjs"></script></head><body>
+<script type="module" src="./review.mjs"></script><script type="module" src="./inventory-editor.mjs"></script></head><body>
 <a class="skip" href="#content">Langsung ke konten</a>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="./index.html">YANDIK<span>+</span><small>Katalog 15 modul</small></a><span class="badge">DEMO · Belum diuji</span></div></header>
 <div class="wrap review-shell"><aside class="review-nav"><nav aria-label="Modul DEMO">
-<a href="#layanan">Ringkasan APEL</a><a href="#profil-sdm">Profil &amp; SDM</a><a href="#koreksi">Pelaporan &amp; Koreksi</a>
+<a href="#layanan">Ringkasan APEL</a><a href="#profil-sdm">Profil &amp; SDM</a><a href="#inventaris">Inventaris Tahunan</a><a href="#koreksi">Pelaporan &amp; Koreksi</a>
 <a href="#pembinaan">Pembinaan &amp; antrean</a><a href="#dukungan">Dukungan &amp; Administrasi</a>
 <a href="#pengawasan">Register Pengawasan</a><a href="#pimpinan">Dashboard Pimpinan</a>
 <a href="#wilayah">Cakupan wilayah</a><a href="#pustaka">Pustaka &amp; Mode Lapangan</a>
@@ -24,6 +24,18 @@
 <div id="personnel-editor"></div><p id="personnel-feedback" role="status"></p>
 <p class="note">Penempatan berlaku mulai bulan terpilih; tanggal akhir eksklusif. Rekap SDM M05 dihitung pada Desember tahun terpilih, daftar tenaga aktif mengikuti bulan terpilih. Tidak ada identitas nyata atau bukti sertifikat.</p>
 <a href="../../prototypes/profil-puskeswan/index.html">Buka prototipe Profil terdahulu (skenario independen)</a></section>
+<section class="review-panel" id="inventaris"><h2>Inventaris Sarana dan Peralatan Puskeswan</h2>
+<p>Persyaratan minimal Lampiran III Permentan 64/2007, Pedoman cetakan 2020, hlm. 18–24. Pembaruan awal tahun per Puskeswan. Pilihan inventaris menggunakan master M05 yang sama; filter ini berdiri sendiri dari bulan laporan APEL.</p>
+<p class="note">DEMO: semua isian hanya dalam memori browser. Jangan isi data nyata. Data hilang saat halaman dimuat ulang; penyimpanan server dan akses kab/kota belum tersedia. Tidak ada penetapan kelayakan resmi. Jumlah minimum hanya yang eksplisit pada sumber. Butir berulang tidak dijumlahkan sebagai aset unik.</p>
+<div class="filter-row"><label>Tahun<select id="inv-year"></select></label><label>Wilayah<select id="inv-region"></select></label><label>Puskeswan<select id="inv-facility"></select></label></div>
+<div class="inventory-progress"><strong id="inv-progress"></strong><progress id="inv-meter" value="0" max="1" aria-label="Progres konfirmasi inventaris"></progress><p id="inv-source" class="note"></p></div>
+<div id="inv-actions" class="action-row"></div><p id="inv-feedback" role="status"></p>
+<details><summary>Progres setiap kelompok</summary><div id="inv-group-progress" class="action-row"></div></details>
+<div class="filter-row"><label>Kelompok<select id="inv-group"></select></label><label>Cari nama/kode<input id="inv-search" type="search" placeholder="Misalnya stetoscope"></label><label>Tampilkan<select id="inv-filter"><option value="ALL">Semua</option><option value="PENDING">Belum dikonfirmasi</option><option value="ATTENTION">Perlu perhatian</option></select></label></div>
+<div id="inv-list"></div><div id="inv-edit"></div>
+<details><summary>Rekap provinsi DEMO per tahun</summary><p>Jumlah butir, bukan jumlah aset atau nilai bantuan; tidak menganggap belum mengisi sebagai nol barang.</p><div id="inv-regional"></div></details>
+<details><summary>Riwayat revisi tahun terpilih</summary><div id="inv-history"></div></details>
+<p class="note">Versi katalog: <span id="inv-version"></span>. Status regulasi, istilah/duplikasi dan pemetaan final perlu ditelaah sebelum pemakaian resmi.</p><button id="inv-reset" type="button">Reset inventaris DEMO</button></section>
 <section class="review-panel" id="koreksi"><h2>Simulasi pelaporan dan koreksi</h2><p>Alur M05-1 / M05-16, perubahan hanya dalam memori. Gunakan angka fiktif. Empat kategori pelayanan, investigasi per kejadian/lokasi, dan pemeriksaan kurban per hewan. Ante dan post pada hewan yang sama dihitung sekali. Ledger APEL tetap tidak berubah. Tidak ada pengiriman resmi.</p>
 <div id="workflow-status"></div><form id="report-form"><fieldset id="report-controls" disabled><legend>Contoh jumlah pelayanan</legend><div class="filter-row">
 <label>Pengobatan<input name="pengobatan" type="number" min="0" max="100000" step="1" value="0" required></label>

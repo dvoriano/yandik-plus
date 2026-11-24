@@ -225,3 +225,6 @@ Peringkat pelayanan tinggi tidak otomatis mendominasi bantuan; fasilitas terpenc
 
 ## Lanjutan M04-I5 (19 November 2026)
 [Rancangan ID generasi dan repository logis per Puskeswan](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M04_I5_GENERATION_AND_PARTITIONS.md) telah ditulis, **BELUM DIUJI**. Pemisahan snapshot I4 menggunakan rujukan fasilitas dan arsip yang eksplisit, menolak paket lintas wilayah dan ID lama; SQLite DEMO masih berbagi penulis fisik. Hak akses asli, migrasi, koreksi resmi, dokumen, serta data produksi belum ditangani.
+
+## Inventaris tahunan Puskeswan | 24 November 2026
+[Kontrak inventaris](../M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 15 QA baru, total 65 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.

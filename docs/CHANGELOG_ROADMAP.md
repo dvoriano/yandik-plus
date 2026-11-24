@@ -394,3 +394,6 @@
 - Jangan menghapus bukti, laporan historis, atau definisi indikator yang sudah dipakai.
 - Bila modul ganti nama, pertahankan alias ID lama.
 - Aturan APEL historis tidak boleh diubah diam-diam; revisi harus versioned.
+
+## Inventaris tahunan Puskeswan | 24 November 2026
+[Kontrak inventaris](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 15 QA baru, total 65 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.

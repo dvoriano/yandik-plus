@@ -4,7 +4,7 @@
 
 ## Artefak
 - [Katalog 15 resource / usulan jalur API](../drafts/yandik-backend-contract/resources.json): grain, sumber, cakupan, batas write; seluruh path PROPOSED_NOT_BOUND.
-- [Rancangan DDL inti](../drafts/yandik-backend-contract/schema.sql): 15 tabel logis, constraint identitas/wilayah, grant, provenance, kandidat crosswalk, envelope revisi, periode APEL, inventaris, interval SDM, referensi dokumen/bukti, audit dan idempotensi. DDL tidak dieksekusi; belum skema typed domain lengkap.
+- [Rancangan DDL inti](../drafts/yandik-backend-contract/schema.sql): 16 tabel logis, constraint identitas/wilayah, grant, provenance, kandidat crosswalk, envelope revisi, periode APEL, inventaris, interval SDM, referensi dokumen/bukti, audit dan idempotensi. DDL tidak dieksekusi; belum skema typed domain lengkap.
 - [Kontrak Python](../drafts/yandik-backend-contract/contract.py): usulan evaluasi role/objek/revisi, reviewer berbeda, konversi tanggal penempatan dan kandidat crosswalk; selalu may_execute=false. Tidak ada login, penulis DB, handler HTTP, atau CRUD generik.
 - [22 QA unit](../drafts/yandik-backend-contract/test_contract.py) ditulis, 0 dijalankan; SQL/integrasi masih perlu QA tersendiri.
 

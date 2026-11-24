@@ -265,3 +265,6 @@ Setiap hasil mengikat ID kasus/suite, SHA yang benar-benar diuji, lingkungan, la
 
 ## 7. Kriteria selesai tahap QA
 Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, seluruh blocker jelas, tidak ada hasil yang diubah diam-diam. Preview dapat dinyatakan lulus hanya dalam cakupan demo dan commit itu; **tidak** membuktikan backend atau rilis. K4/K7 tetap tertunda. Sumber status resmi ROADMAP; TEST_BACKLOG tetap daftar rinci, matriks ini merupakan urutan kerja terarah.
+
+## Addendum setelah baseline Master QA
+25 kasus K4-A1 ditulis setelah inventaris 200 kasus prioritas. 0 dijalankan. Bukan hasil QA atau perubahan baseline historis. 17 memerlukan rehearsal SQLite; izin unit saja tidak cukup. Rujuk TEST_BACKLOG dan K4_A1_APEL_TYPED_WRITER_2026_2030.md. Preview ditunda owner.

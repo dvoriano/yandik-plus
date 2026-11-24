@@ -44,3 +44,7 @@ Wilayah → fasilitas → record domain → revisi → bukti dan audit. Identita
 
 ## Master QA K7
 [Master QA](MASTER_QA_YANDIK_2026_2030.md) Q30–Q36 mencatat DDL rehearsal dan blocker backend/rilis. 22 unit kontrak belum dijalankan. Tidak ada izin DB atau migrasi.
+
+## 2026-11-24 | K4-A1: penulis transaksi APEL bertipe DEMO
+- Owner menunda preview Codex; kembali fokus CODE_ONLY. [Kontrak](K4_A1_APEL_TYPED_WRITER_2026_2030.md): validator payload M05-0, satu tabel pendamping payload/revisi, penulis SQLite :memory: terisolasi untuk dua fixture record APEL, grant aktif, pemeriksaan revisi, replay, rollback, audit dan pemisahan ledger. 25 QA tertulis (8 validator + 17 rehearsal), 0 dijalankan. Bukan paritas M05-1, belum HTTP, DB riil, UI binding, otorisasi atau persistensi. K4/K7 tertunda; berikutnya typed inventory tahunan dan validasi katalog versi. [skip ci].
+

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A1 | APEL typed writer | 24 November 2026
+- 25 QA ditulis `drafts/yandik-backend-contract/test_apel_store.py`, 0 dijalankan. 8 pure validator, 17 SQLite memory rehearsal; perlu izin unit DAN DDL untuk seluruh suite. Tambahan QA: paritas JS/Python terhadap M05-0/1, state mapping, replay setelah revokasi, audit/receipt fault rollback, FK/attached guard, periode/owner, tidak menyentuh ledger. Belum concurrency lintas koneksi, auth, HTTP atau penyimpanan durable. Jangan menjalankan sekarang.
+
+
 ## 2026-11-24 | QA-A: percobaan preview terbatas, terblokir lingkungan
 - Owner menjawab `kerjakan` setelah usulan preview QA-A; cakupan hanya preview DEMO, bukan unit/SQL/CI/deploy. Snapshot target `fe0c77c016ad928907a55d5125c2138a04112d9b`. Checkout lokal gagal DNS GitHub; arsip tidak tersedia melalui lingkungan ini. Tidak ada browser dibuka, tidak ada hasil render atau PASS. Pemeriksaan sumber melalui konektor: tree tidak terpotong, 8 entry script dan 3 CSS review.html ditemukan, tidak ada ID HTML statis duplikat. Q01 BLOCKED_ENVIRONMENT; Q02–Q29 NOT_RUN. [Handoff Codex](QA_A_PREVIEW_HANDOFF_2026-11-24.md). QA-B/C/D/E tidak diizinkan atau dijalankan; PR tetap Draft. Berikutnya checkout snapshot di Codex dengan akses repo, preview Q01–Q04 dulu.
 

@@ -134,3 +134,7 @@ P0. Tidak melakukan auth terhadap website produksi; sumber risiko teridentifikas
 ## 2026-11-24 | K4: Kontrak integrasi backend/data DEMO
 - [Kontrak](../K4_KONTRAK_BACKEND_DATA_2026_2030.md): katalog 15 resource, usulan jalur API, DDL 16 tabel inti, evaluator Python baca/aksi kandidat berwilayah dengan deny default dan konversi interval akhir inklusif → eksklusif. 22 QA unit ditulis, 0 dijalankan. Tidak ada HTTP, DB, migrasi, login, writer atau izin operasi; melengkapi kontrak M00-G1–G9/M01-S2/M04-I2–I5 tanpa menggantinya. Source Flask berizin, typed domain schema, role server, rekonsiliasi dan QA tetap tertunda. CODE_ONLY [skip ci]. Berikutnya matriks QA Codex dan urutan integrasi, tanpa menjalankan tes.
 
+
+## 2026-11-24 | K4-A1: penulis transaksi APEL bertipe DEMO
+- Owner menunda preview Codex; kembali fokus CODE_ONLY. [Kontrak](../K4_A1_APEL_TYPED_WRITER_2026_2030.md): validator payload M05-0, satu tabel pendamping payload/revisi, penulis SQLite :memory: terisolasi untuk dua fixture record APEL, grant aktif, pemeriksaan revisi, replay, rollback, audit dan pemisahan ledger. 25 QA tertulis (8 validator + 17 rehearsal), 0 dijalankan. Bukan paritas M05-1, belum HTTP, DB riil, UI binding, otorisasi atau persistensi. K4/K7 tertunda; berikutnya typed inventory tahunan dan validasi katalog versi. [skip ci].
+

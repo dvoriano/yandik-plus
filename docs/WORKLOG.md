@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | K4-A1: penulis transaksi APEL bertipe DEMO
+- Owner menunda preview Codex; kembali fokus CODE_ONLY. [Kontrak](K4_A1_APEL_TYPED_WRITER_2026_2030.md): validator payload M05-0, satu tabel pendamping payload/revisi, penulis SQLite :memory: terisolasi untuk dua fixture record APEL, grant aktif, pemeriksaan revisi, replay, rollback, audit dan pemisahan ledger. 25 QA tertulis (8 validator + 17 rehearsal), 0 dijalankan. Bukan paritas M05-1, belum HTTP, DB riil, UI binding, otorisasi atau persistensi. K4/K7 tertunda; berikutnya typed inventory tahunan dan validasi katalog versi. [skip ci].
+
 ## 2026-11-24 | QA-A: percobaan preview terbatas, terblokir lingkungan
 - Owner menjawab `kerjakan` setelah usulan preview QA-A; cakupan hanya preview DEMO, bukan unit/SQL/CI/deploy. Snapshot target `fe0c77c016ad928907a55d5125c2138a04112d9b`. Checkout lokal gagal DNS GitHub; arsip tidak tersedia melalui lingkungan ini. Tidak ada browser dibuka, tidak ada hasil render atau PASS. Pemeriksaan sumber melalui konektor: tree tidak terpotong, 8 entry script dan 3 CSS review.html ditemukan, tidak ada ID HTML statis duplikat. Q01 BLOCKED_ENVIRONMENT; Q02–Q29 NOT_RUN. [Handoff Codex](QA_A_PREVIEW_HANDOFF_2026-11-24.md). QA-B/C/D/E tidak diizinkan atau dijalankan; PR tetap Draft. Berikutnya checkout snapshot di Codex dengan akses repo, preview Q01–Q04 dulu.
 

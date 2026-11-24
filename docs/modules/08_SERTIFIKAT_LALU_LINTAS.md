@@ -67,3 +67,7 @@ Status ditetapkan saat pengembangan. Jangan mengklaim sertifikat dikeluarkan oto
 ## 2026-11-24 | K4-A6: backend empat register teknis DEMO
 - [Kontrak](../K4_A6_REGIONAL_REGISTERS_2026_2030.md): typed snapshot regional read-only obat/praktik/surveilans/sertifikat, 7 fixture 2026 independen, coverage null, sidecar telaah internal ber-revisi dan audit, grant aktif/scope asal, replay/rollback, command namespace lintas stream. 20 QA tertulis (7 pure + 13 rehearsal), 0 dijalankan. Bukan migrasi M06/M07/M13/M14, iSIKHNAS/APEL sync, penerbitan, izin atau diagnosis; belum HTTP/auth/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-A7 pembinaan/administrasi.
 
+
+## 2026-11-24 | K4-C5: pengawasan dan layanan teknis regional
+- [Kontrak](../K4_C5_REGIONAL_FORMS_2026_2030.md): 4 panel sumber baca-saja dengan detail typed, filter dan histori, formulir klarifikasi/telaah/buka kembali, candidate actions server, reviewer DEMO kedua, 23 GET + 8 POST, retry/revisi shared. 8 QA backend + 8 JS baru, 0 dijalankan; manifest backend 288 (102+186). Tidak mengubah sumber, legalitas, diagnosis, sertifikat resmi, data riil atau integrasi HTTP. CODE_ONLY [skip ci]. Berikutnya K4-C6 pembinaan dan administrasi.
+

@@ -4,7 +4,7 @@ from api_dispatch import DraftAPI,bounded,error_status,READS,WRITES
 from api_projections import ProjectionStore,complete_sum
 def actor(code):return lambda:{"actor_id":"DEMO-ACTOR-"+code,"grant_id":"DEMO-GRANT-"+code}
 class PureTests(unittest.TestCase):
-    def test_routes(self):self.assertEqual((len(READS),len(WRITES)),(22,8))
+    def test_routes(self):self.assertEqual((len(READS),len(WRITES)),(23,8))
     def test_unknown(self):self.assertIsNone(complete_sum([{"n":1},{"n":None}],"n"))
     def test_zero(self):self.assertEqual(complete_sum([{"n":0}],"n"),0)
     def test_depth(self):self.assertFalse(bounded([[[[[[[[[0]]]]]]]]]))

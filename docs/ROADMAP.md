@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | K4-C5: pengawasan dan layanan teknis regional
+- [Kontrak](K4_C5_REGIONAL_FORMS_2026_2030.md): 4 panel sumber baca-saja dengan detail typed, filter dan histori, formulir klarifikasi/telaah/buka kembali, candidate actions server, reviewer DEMO kedua, 23 GET + 8 POST, retry/revisi shared. 8 QA backend + 8 JS baru, 0 dijalankan; manifest backend 288 (102+186). Tidak mengubah sumber, legalitas, diagnosis, sertifikat resmi, data riil atau integrasi HTTP. CODE_ONLY [skip ci]. Berikutnya K4-C6 pembinaan dan administrasi.
+
 ## 2026-11-24 | K4-C4: perluasan Support Puskeswan
 - [Kontrak](K4_C4_SUPPORT_CATALOG_2026_2030.md): 101 kandidat teknis alat satuan jumlah dari 198 butir, 97 ditahan untuk telaah satuan/stok/infrastruktur/duplikasi, 1.515 slot kosong (3×5×101), katalog scoped dan filter perhatian/usulan/telaah, typed form 10 tindakan kebutuhan sampai monitoring, batas kuantitas/revisi/sumber, 22 GET + 8 POST. 13 QA backend + 8 JS baru, 0 dijalankan; manifest 280 (102+178). Bukan eligibilitas anggaran, tidak menetapkan prioritas atau membeli barang, belum stok/BHP, rekonsiliasi M04, UI host/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C5 pengawasan dan layanan teknis.
 

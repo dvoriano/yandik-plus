@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C5 | Register regional dan telaah
+- 8 QA backend `drafts/yandik-backend-contract/test_regional_forms.py` + 8 JS `drafts/yandik-portal/tests/regional-form-model.test.mjs`, 0 dijalankan. Manual: 4 panel, typed detail, null coverage vs known zero, origin scope, history and redaction, no source edits/official issuance, county vs province vs admin, reopen separate reviewer, retry identical ID, conflict, stale async and mobile, regression 31 routes. Manifest backend 288 (102+186). No unit/DDL/preview authorization.
+
+
 ## K4-C4 | Support catalog dan formulir
 - 13 QA backend `drafts/yandik-backend-contract/test_support_catalog.py` (5 pure +8 rehearsal) dan 8 JS `drafts/yandik-portal/tests/support-form-model.test.mjs`, 0 dijalankan. Manual: 198 item classification, 101 candidate/97 pending, 1515 empty slots, old transport IDs, no duplicate refs, scoped source, absent vs unknown, no quantity invented, staged command actions, revision stale, partial shipping/receipt, handover/monitor, receipt after stale source, date order, retry/conflict, handoff larger snapshot, mobile, regression previous support and account. Manifest 280 (102 pure+178 rehearsal). Unit/DDL/preview remain unauthorized.
 

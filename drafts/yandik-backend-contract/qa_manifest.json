@@ -87,12 +87,18 @@
       "pure": 5,
       "rehearsal": 8,
       "status": "NOT_RUN"
+    },
+    {
+      "file": "test_regional_forms.py",
+      "pure": 0,
+      "rehearsal": 8,
+      "status": "NOT_RUN"
     }
   ],
   "totals": {
     "pure": 102,
-    "rehearsal": 178,
-    "all": 280,
+    "rehearsal": 186,
+    "all": 288,
     "executed": 0
   },
   "gates": [

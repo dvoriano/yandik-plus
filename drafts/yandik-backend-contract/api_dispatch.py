@@ -18,6 +18,7 @@ READS={
 "/api/v1/personnel":(("facility_id","year"),lambda s,q,r:s.staff_summary(q["facility_id"],q["year"],r)),
 "/api/v1/personnel/roster":(("facility_id","year"),lambda s,q,r:s.staff_roster(q["facility_id"],q["year"],r)),
 "/api/v1/personnel/history":(("staff_id",),lambda s,q,r:s.staff_history(q["staff_id"],r)),
+"/api/v1/regional/history":(("record_id",),lambda s,q,r:{"events":s.regional_history(q["record_id"],r),"synthetic":True,"official_authorization":False}),
 "/api/v1/support/catalog":(("facility_id","year"),lambda s,q,r:s.list_support(q["facility_id"],q["year"],r)),
 "/api/v1/support":(("record_id",),lambda s,q,r:s.view_support(q["record_id"],r)),
 "/api/v1/coaching":(("facility_id","year"),lambda s,q,r:{"activity_slots":s.list_coachdoc(q["facility_id"],q["year"],r)["activity_slots"],"synthetic":True}),

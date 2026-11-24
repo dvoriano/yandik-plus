@@ -307,3 +307,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C4
 13 backend + 8 JS declared, 0 executed; manifest 280 backend, 30 route candidates. QA gates remain closed.
+
+## Addendum K4-C5
+8 backend rehearsal + 8 JS declared, 0 executed. Backend manifest 288, 31 route candidates. No preview.

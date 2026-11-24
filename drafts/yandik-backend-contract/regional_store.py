@@ -4,7 +4,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 from support_store import SupportStore
 from apel_store import canonical,digest
-from apel_payload import require
+from apel_payload import require,Denied
 from regional_payload import VERSION,DOMAINS,REGIONS,CHECKS,normalize,command,transition,project
 SOURCE="DEMO-SOURCE-REGIONAL-REHEARSAL"
 class RegionalStore(SupportStore):
@@ -15,6 +15,9 @@ class RegionalStore(SupportStore):
             c.executescript((Path(__file__).resolve().parent/"regional_payload.sql").read_text("utf-8"))
             c.execute("BEGIN IMMEDIATE")
             c.execute("INSERT INTO contract_source VALUES(?,?,?,?,?)",(SOURCE,"NEW-REGIONAL-REHEARSAL",VERSION,digest({"schema":VERSION,"synthetic":True}),"UNVERIFIED_DEMO"))
+            # Independent reviewer for reopened discussions; synthetic, not an assigned official.
+            c.execute("INSERT INTO contract_actor VALUES('DEMO-ACTOR-REVIEW2',1)")
+            c.execute("INSERT INTO contract_grant VALUES('DEMO-GRANT-REVIEW2','DEMO-ACTOR-REVIEW2','provinsi_verifikator','province',NULL,NULL,1)")
             for domain in DOMAINS:
                 for region in REGIONS:
                     if domain=="surveillance" and region==REGIONS[1]:continue
@@ -49,6 +52,18 @@ class RegionalStore(SupportStore):
         return normalize(r["domain"],p,r["region_id"])
     def _head(self,rid):
         return self._db.execute("SELECT * FROM contract_regional_review WHERE record_id=? ORDER BY revision DESC LIMIT 1",(rid,)).fetchone()
+    def _regional_actions(self,s,r,head):
+        self._regional_scope(s,r["region_id"])
+        if head and head["source_digest"]!=r["payload_digest"]:return []
+        state=head["state"] if head else "NOT_REVIEWED"
+        choices=("request_clarification",) if s.role=="kab_kota" else ("record_discussion","reopen_discussion") if s.role=="provinsi_verifikator" else ()
+        out=[]
+        for action in choices:
+            if action=="record_discussion" and head and head["actor_id"]==s.actor_id:continue
+            try:transition(state,action)
+            except Denied:continue
+            out.append(action)
+        return out
     def _receipt_regional(self,rid,revision,replay):
         row=self._db.execute("SELECT state FROM contract_regional_review WHERE record_id=? AND revision=?",(rid,revision)).fetchone()
         require(row is not None,"RECEIPT_INVALID")
@@ -92,7 +107,7 @@ class RegionalStore(SupportStore):
                 rows=[]
                 for r in c.execute("SELECT * FROM contract_regional_snapshot WHERE domain=? AND region_id=? AND substr(period,1,4)=? ORDER BY id",(domain,region,str(year))).fetchall():
                     p=self._regional_payload(r);head=self._head(r["id"])
-                    rows.append({"record_id":r["id"],"source_digest":r["payload_digest"],"observation":project(domain,p),"review_revision":head["revision"] if head else 0,"review_state":head["state"] if head else "NOT_REVIEWED"})
+                    rows.append({"record_id":r["id"],"source_digest":r["payload_digest"],"observation":project(domain,p),"review_revision":head["revision"] if head else 0,"review_state":head["state"] if head else "NOT_REVIEWED","candidate_actions":self._regional_actions(s,r,head)})
             out={"domain":domain,"region_id":region,"year":year,"available":coverage is not None,"rows":rows,"record_count_demo":len(rows) if rows is not None else None,"synthetic":True,"source_read_only":True,"official_authorization":False,"may_publish":False}
             c.execute("COMMIT");return out
         except BaseException:

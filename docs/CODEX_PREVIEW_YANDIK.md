@@ -50,3 +50,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### MOD-11 Dashboard pimpinan (belum diuji)
 - `review.html#pimpinan`; buat kegiatan dan draf administrasi pada halaman yang sama, ubah inventaris, profil dan dukungan. Periksa ringkasan, cakupan dan reset; M04/register tidak mengikuti filter M05. Halaman coaching standalone adalah sesi berbeda.
+
+### MOD-12 GIS sintetis (belum diuji)
+- `review.html#wilayah`; periksa enam layer, filter, titik dan tombol detail, perubahan state sesi, data nol/kosong, register independen. Kisi bukan GPS, basemap atau wilayah nyata. Tidak ada lokasi kasus atau M04 pada titik M05.

@@ -54,3 +54,7 @@ GIS adalah alat analisis, bukan konfirmasi status penyakit; visualisasi lokasi P
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## 2026-11-24 | MOD-12 / M10 GIS sintetis DEMO
+- [GIS](../../drafts/yandik-portal/review.html#wilayah): kisi SVG fiktif 3 fasilitas master M05, 6 layer (fasilitas, pelayanan, pelaporan, dokter, perhatian inventaris, tindak lanjut pembinaan), filter tahun/wilayah, titik dan daftar detail baca-saja, legenda nol/kosong, proyeksi state sesi. Tidak ada koordinat GPS, batas administrasi nyata, jarak atau peta basemap. Register pengawasan termasuk surveilans hanya jumlah entri wilayah snapshot terpisah; M04 tidak dipetakan tanpa crosswalk. 18 QA unit tertulis, 0 dijalankan. Koordinat resmi, audit kualitas, role server dan aturan rilis publik belum ada. CODE_ONLY [skip ci]. Berikutnya MOD-14 notifikasi/mode lapangan DEMO.
+

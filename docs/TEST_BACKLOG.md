@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-12 / M10 GIS sintetis | 24 November 2026
+- 18 unit tertulis `drafts/yandik-portal/tests/gis.test.mjs`, 0 dijalankan. Browser tertunda: navigasi, SVG 320/375px, enam layer, filter tahun/wilayah, klik/tombol keyboard, pilihan keluar cakupan, perubahan inventaris/SDM/pembinaan, nol vs kosong, kegagalan provider, register wilayah tanpa sumber, reset; tanpa jaringan/peta nyata/koordinat sensitif. Audit GIS resmi dan otorisasi terpisah.
+
+
 ## MOD-11 / M08 Dashboard lintas modul | 24 November 2026
 - 17 unit tertulis `drafts/yandik-portal/tests/leadership.test.mjs`, 0 dijalankan. Browser tertunda: impor; filter tahunan/wilayah/fasilitas; nol/kosong/SDM parsial; perubahan profil, inventaris dan reset; kegiatan/dokumen dan sumber stale; perubahan tahap M04; sumber pengawasan kosong/gagal; pemisahan cakupan; navigasi, keyboard dan 320px; tidak ada penyimpanan atau API.
 

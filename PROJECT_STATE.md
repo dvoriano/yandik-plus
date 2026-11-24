@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | MOD-12 / M10 GIS sintetis DEMO
+- [GIS](drafts/yandik-portal/review.html#wilayah): kisi SVG fiktif 3 fasilitas master M05, 6 layer (fasilitas, pelayanan, pelaporan, dokter, perhatian inventaris, tindak lanjut pembinaan), filter tahun/wilayah, titik dan daftar detail baca-saja, legenda nol/kosong, proyeksi state sesi. Tidak ada koordinat GPS, batas administrasi nyata, jarak atau peta basemap. Register pengawasan termasuk surveilans hanya jumlah entri wilayah snapshot terpisah; M04 tidak dipetakan tanpa crosswalk. 18 QA unit tertulis, 0 dijalankan. Koordinat resmi, audit kualitas, role server dan aturan rilis publik belum ada. CODE_ONLY [skip ci]. Berikutnya MOD-14 notifikasi/mode lapangan DEMO.
+
 ## 2026-11-24 | MOD-11 / M08 Dashboard pimpinan lintas modul DEMO
 - [Dashboard](drafts/yandik-portal/review.html#pimpinan) dengan 8 indikator, filter tahunan/wilayah/fasilitas, detail per fasilitas dan proyeksi baca-saja state APEL/Profil/SDM, inventaris, pembinaan dan paperless dalam halaman yang sama. Skenario M04 dan snapshot empat register pengawasan tetap terpisah tanpa filter silang yang tidak sah. 17 QA unit tertulis, 0 dijalankan. Cakupan fasilitas-bulan tahunan bukan ketepatan waktu; kosong bukan nol pelayanan atau kekurangan; tidak ada skor/ranking, data asli, role server, ekspor resmi atau persistensi. CODE_ONLY [skip ci]. Berikutnya MOD-12 GIS sintetis.
 

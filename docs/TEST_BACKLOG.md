@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C7 | Template dokumen
+- 13 QA `drafts/yandik-backend-contract/test_document_templates.py` (7 pure +6 rehearsal), 0 dijalankan. Manual: 4 layout distinct, date Indonesian, zero/null, placeholder, metadata completeness, template pin/history, stale/refresh, rollback, immutable render, scope, historical preview, HTML text-only escaping, mobile accessibility, no actual issuance, regression C6 and previous A7. Manifest backend 310 (109+201). Unit/DDL/browser authorization pending.
+
+
 ## K4-C6 | Pembinaan dan paperless
 - 9 QA backend `drafts/yandik-backend-contract/test_coachdoc_forms.py` + 8 JS `drafts/yandik-portal/tests/coachdoc-form-model.test.mjs`, 0 dijalankan. Manual: slot kosong, peran plan/record/review/close, tanggal dan hitungan, empat jenis draf, metadata lengkap, stale/reopen/refresh, source pin dan revisi history, scope, retry/rollback, no official issuance, DOM mobile/accessibility and full regression. Manifest backend 297 (102+195). Unit/DDL/preview tetap tidak diizinkan.
 

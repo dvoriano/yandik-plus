@@ -313,3 +313,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C6
 9 backend rehearsal + 8 JS declared, 0 executed. Backend manifest 297. No preview.
+
+## Addendum K4-C7
+13 backend QA declared, 0 executed. Backend manifest 310 (109 pure+201 rehearsal). Structured document preview needs browser QA; no DOCX/PDF exports.

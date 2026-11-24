@@ -70,3 +70,7 @@ Jangan membuat pengganti SRIKANDI, pengadaan, atau keuangan. e-SPJ dan aktivitas
 ## 2026-11-24 | K4-C6: formulir pembinaan dan administrasi paperless
 - [Kontrak](../K4_C6_COACHDOC_FORMS_2026_2030.md): slot kosong terlihat, 5 tindakan pembinaan + 7 tindakan dokumen, 4 jenis draf per kegiatan, metadata bukti, revisi sumber/stale guard, baca histori revisi, kandidat aksi server, retry/revisi shared. 9 QA backend + 8 JS baru, 0 dijalankan; manifest backend 297 (102+195), API tetap 31. Belum template resmi, unggah bukti, tanda tangan, pengiriman, browser transport/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C7 penyempurnaan template dokumen.
 
+
+## 2026-11-24 | K4-C7: template dokumen paperless terstruktur
+- [Kontrak](../K4_C7_DOCUMENT_TEMPLATES_2026_2030.md): 4 format berbeda, label Indonesia, data dari snapshot sumber, placeholder nomor/tujuan/pihak resmi, metadata bukti, render JSON/digest per revisi immutable, identitas dan versi template terikat, preview terstruktur responsif. 13 QA backend (7 pure+6 rehearsal), 0 dijalankan; manifest 310 (109+201), API tetap 31. Tidak membuat DOCX/PDF, tanda tangan, pengiriman, atau dokumen resmi. CODE_ONLY [skip ci]. Berikutnya K4-C8 paket aplikasi terpadu dan handoff QA.
+

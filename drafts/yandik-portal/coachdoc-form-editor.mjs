@@ -1,5 +1,6 @@
 /** CODE_ONLY | DOM editor, no uploads, issuance, signature, send or download. */
 import {TYPES,TOPICS,RESULTS,RECOMMENDATIONS,COMPLETIONS,REASONS,EVIDENCE,DOCS,ACTIONS,fmt,missingEvidence,coachdocCommand,slotGroups,progress} from "./coachdoc-form-model.mjs";
+import {mountDocumentPreview} from "./document-preview.mjs";
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);return n;};
 function line(p,k,v){p.append(el("p",k+": "+fmt(v)));}
 function field(p,k,n){const l=el("label",k);l.append(n);p.append(l);return n;}
@@ -13,7 +14,7 @@ function history(p,r,read,ctx){
  const out=el("div");h.append(out);let generation=0;
  btn(h,"Baca revisi",async()=>{if(!n.reportValidity()||!ctx.clean())return;const g=++generation;out.replaceChildren(el("p","Memuat..."));
   try{const v=await read(r.resource==="coaching"?"coachingDetail":"documentDetail",{record_id:r.record_id,revision:n.valueAsNumber});if(g!==generation)return;
-   out.replaceChildren(el("p","Revisi "+v.revision+" (baca saja)"));if(v.resource==="documents")out.append(el("pre",v.draft_text??"Belum ada draf"));else showActivity(out,v.snapshot);
+   out.replaceChildren(el("p","Revisi "+v.revision+" (baca saja)"));if(v.resource==="documents")mountDocumentPreview(out,v);else showActivity(out,v.snapshot);
   }catch{if(g===generation)out.replaceChildren(el("p","Revisi tidak tersedia atau akses dibatasi."));}
  });
 }
@@ -53,7 +54,7 @@ export function mountDocuments(parent,rows,read,ctx){
    line(box,"Tahap kegiatan sumber",r.source_stage);line(box,"Revisi sumber terkini",r.source_current_revision);
    if(s){line(box,"Versi draf",s.version);line(box,"Revisi sumber terikat",s.source_revision);line(box,"Revisi dokumen",r.revision);
     if(r.source_changed)box.append(el("p","Draf ini bukan versi terkini. Telaah/arsip dibatasi; perbarui dari sumber atau buka kembali arsip sesuai kewenangan."));
-    box.append(el("pre",r.draft_text??"Belum tersedia"));
+    mountDocumentPreview(box,r);
     const evidence=el("ul");for(const k of EVIDENCE){const e=s.evidence.find(x=>x.kind===k);evidence.append(el("li",k+" · "+(e?e.ref:"Belum dicatat")));}box.append(evidence);
    }else box.append(el("p","Draf dibuat setelah hasil kegiatan tercatat."));
    actionForm(box,r,ctx);history(box,r,read,ctx);

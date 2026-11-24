@@ -38,3 +38,20 @@ test("K5 unavailable southern surveillance is not a zero count",async()=>{
  const v=await readDomain("surveillance",REGIONS[1]);assert.equal(v.available,false);assert.equal(v.rows,null);
 });
 test("K5 reject unknown domain or region",async()=>{await assert.rejects(readDomain("real",REGIONS[0]));await assert.rejects(readDomain("medicine","Real region"));});
+
+test("K2 selected draft counts are scoped and not ledger values",()=>{
+ let c=createDemoContext(),scope={...a,year:2028};
+ c=applyConsolidatedDemoAction(c,scope,"create_draft",{...zero,pengobatan:11});
+ assert.equal(readConsolidatedDemo(c,scope).draft_counts.pengobatan,11);
+ assert.equal(readConsolidatedDemo(c,{...scope,month:2}).draft_counts,null);
+});
+test("K3 independent M04 seven stages and M05 ledger unaffected",async()=>{
+ const m=await import("../../m04-integrated-workspace/workspace.mjs");
+ const f=await import("../../m04-integrated-workspace/fixtures.mjs");
+ let w=f.demoWorkspace();const ctx=createDemoContext(),before=JSON.stringify(ctx.dashboardFixture.ledger);
+ const id=f.MASTER[0].id;assert.ok(!ctx.facilities.some(x=>x.facility_id===id));
+ for(const action of m.ACTIONS)w=m.advanceDemo(w,id,action);
+ const d=m.viewWorkspace(w,{role:"provinsi_admin"},"2026-10",id).details;
+ assert.equal(d.handover.length,1);assert.equal(w.observations.length,1);
+ assert.equal(JSON.stringify(ctx.dashboardFixture.ledger),before);
+});

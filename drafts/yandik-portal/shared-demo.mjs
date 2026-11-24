@@ -51,9 +51,12 @@ export function readConsolidatedDemo(c,scope){
  });
  const followup=buildDemoFollowupView(correction);
  const ledgerMonth=dashboard.facility_rows[0].months[scope.month-1];
+ // Read only the four numeric draft fields from this synthetic in-memory record.
+ const draft=c.workflow.records.find(x=>x.facility_id===scope.facility_id&&x.period===period(scope))?.draft;
+ const draft_counts=draft?Object.fromEntries(FIELDS.map(k=>[k,draft.counts[k]])):null;
  return {schema:SCHEMA,synthetic:true,facility,period:period(scope),
   joined:join.rows[0],annual:dashboard.summary,ledgerMonth,
-  correction,followup,
+  correction,followup,draft_counts,
   source_status:{ledger:"M05-0/M05-14 (snapshot)",
    profile:"M05-15 (snapshot)",workflow:"M05-1/M05-16 (in-memory)",
    support:"M04-I1 (independent scenario; no ID crosswalk)"},

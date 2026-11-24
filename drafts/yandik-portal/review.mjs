@@ -41,8 +41,11 @@ async function startCore(){
   ]);
   $("sources").replaceChildren(el("p","ID: "+r.facility_id+" · Profil: "+fmt(r.profile_source_ref)+" · SDM: "+fmt(r.sdm_source_ref)),el("p","Ledger M05-0 tidak disinkronkan dengan workflow M05-1. Dukungan M04 tidak memiliki crosswalk identitas."));
   cards($("workflow-status"),[["Status workflow",c.report_state,"Tidak berarti laporan resmi"],["Revisi",c.revision,"Jejak simulasi"],["Jumlah terakhir terkirim",c.activity_count_last_submitted_demo,"Terpisah dari ledger"]]);
-  const available=m.nextActions(v);$("actions").replaceChildren(...available.map(action=>{
-   const button=el("button",actions[action]);button.type="button";
+  const available=m.nextActions(v);
+  for(const key of m.FIELDS){const input=$("report-form").elements.namedItem(key);input.value=v.draft_counts?.[key]??0;input.disabled=!available.some(a=>["create_draft","save_draft","revise_draft"].includes(a));}
+  $("report-controls").disabled=false;
+  $("actions").replaceChildren(...available.map(action=>{
+   const button=el("button",actions[action]);button.type="button";button.dataset.action=action;
    button.addEventListener("click",()=>{
     $("action-feedback").textContent="";
     try{
@@ -62,6 +65,12 @@ async function startCore(){
  $("scope-form").addEventListener("submit",e=>e.preventDefault());
  $("scope-form").addEventListener("change",()=>{syncFacility();$("action-feedback").textContent="";redraw();});
  $("report-form").addEventListener("submit",e=>e.preventDefault());
+ $("report-form").addEventListener("input",()=>{
+  for(const button of $("actions").querySelectorAll("button")){
+   if(["submit","resubmit"].includes(button.dataset.action))button.disabled=true;
+  }
+  $("action-feedback").textContent="Angka diubah. Simpan draf/revisi dahulu sebelum simulasi kirim.";
+ });
  $("reset").addEventListener("click",()=>{context=m.createDemoContext();$("report-form").reset();$("action-feedback").textContent="Simulasi dikembalikan ke fixture awal.";redraw();});
  render();$("scope-controls").disabled=false;$("report-controls").disabled=false;$("reset").disabled=false;
 }
@@ -79,3 +88,33 @@ async function domains(){
  }catch(e){if(g===generation)x.content.replaceChildren(el("p","Register DEMO tidak dapat dimuat: "+String(e.message),"error"));}}));
 }
 $("oversight-region").addEventListener("change",domains);domains();
+
+/** K3: preserve existing independent M04 scenario; never map M05 identifiers. */
+async function startSupport(){
+ const [m,f]=await Promise.all([import("../m04-integrated-workspace/workspace.mjs"),
+   import("../m04-integrated-workspace/fixtures.mjs")]);
+ let state=f.demoWorkspace();
+ const selector=$("support-facility");
+ selector.replaceChildren(...f.MASTER.map(x=>new Option(x.name,x.id)));
+ const labels={paket:"Susun paket",telaah:"Catat telaah",jadwal:"Buat jadwal",kirim:"Simulasi kirim",terima:"Simulasi terima",rujukan:"Catat referensi BAST",monitor:"Catat pemanfaatan"};
+ function render(){
+  // Independent fixture intentionally limited to its own 2026 scenario.
+  const d=m.viewWorkspace(state,{role:"provinsi_admin"},"2026-10",selector.value).details;
+  const next=[["paket",d.packages],["telaah",state.reviews.filter(x=>x.id==="DEMO-TELAAH-"+selector.value.slice(9))],["jadwal",d.schedule],["kirim",d.ship],["terima",d.receipt],["rujukan",d.handover],["monitor",state.observations.filter(x=>x.id==="DEMO-MON-"+selector.value.slice(9))]].find(([,rows])=>rows.length===0)?.[0];
+  cards($("support-summary"),[
+   ["Kebutuhan",d.needs.length,"Catatan skenario M04"],["Paket",d.packages.length,"Bahan rencana"],["Jadwal",d.schedule.length,"DEMO"],["Kirim / terima",d.ship.length+" / "+d.receipt.length,"Bukan distribusi nyata"],["Referensi serah terima",d.handover.length,"Bukan BAST sah"],["Pemantauan",d.monitor.length,"Catatan DEMO"]
+  ]);
+  $("support-actions").replaceChildren();
+  if(next){
+   const button=el("button",labels[next]);button.type="button";
+   button.addEventListener("click",()=>{try{state=m.advanceDemo(state,selector.value,next);render();$("support-feedback").textContent="Langkah "+labels[next]+" dicatat pada skenario M04 dalam memori.";}catch(e){$("support-feedback").textContent="Langkah belum tersedia: "+String(e.message);}});
+   $("support-actions").append(button);
+  }else $("support-actions").append(el("p","Seluruh tujuh tahap skenario telah dicatat dalam memori."));
+ }
+ function reset(){state=f.demoWorkspace();render();$("support-feedback").textContent="Skenario M04 dipulihkan.";}
+ selector.addEventListener("change",()=>{try{render();$("support-feedback").textContent="Skenario independen M04 terpilih.";}catch(e){$("support-feedback").textContent="Skenario tidak tersedia: "+String(e.message);$("support-actions").replaceChildren();}});
+ $("support-reset").addEventListener("click",()=>{try{reset();}catch(e){$("support-feedback").textContent="Reset gagal: "+String(e.message);}});
+ render();selector.disabled=false;$("support-reset").disabled=false;
+ $("support-feedback").textContent="Skenario M04 terpisah · Oktober 2026. Hanya kebutuhan yang lolos model DEMO dapat dilanjutkan.";
+}
+startSupport().catch(e=>{$("support-feedback").textContent="Model dukungan DEMO tidak dapat dimuat: "+String(e.message);});

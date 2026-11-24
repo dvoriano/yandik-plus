@@ -2,7 +2,7 @@
 
 **24 November 2026 | KODE DITULIS, BELUM DIUJI.**
 
-Halaman `index.html` adalah **pintu navigasi** ke prototipe yang sudah tersedia, bukan aplikasi baru atau integrasi backend. Tidak ada JavaScript, request eksternal, login, database, penulisan data atau hosting dalam katalog ini. Ruang Kerja Puskeswan yang sudah mendapat uji demo terbatas tetap digunakan tanpa perubahan kode.
+Halaman `index.html` adalah **pintu navigasi**. [Ruang kerja konsolidasi](review.html) menampilkan model M05, simulasi koreksi/dukungan dan empat register yang sudah ada dalam satu halaman (seluruh kode baru belum diuji). Katalog sendiri ke prototipe yang sudah tersedia, bukan aplikasi baru atau integrasi backend. Tidak ada JavaScript, request eksternal, login, database, penulisan data atau hosting dalam katalog ini. Ruang Kerja Puskeswan yang sudah mendapat uji demo terbatas tetap digunakan tanpa perubahan kode.
 
 - 15 modul ditampilkan dengan status yang berbeda: halaman/prototipe tersedia, ringkasan terbatas, kode model, dan spesifikasi.
 - Tautan memakai path relatif ke berkas HTML yang memang ada dalam tree sumber; tautan diperiksa secara statis saat penyusunan, **belum diuji di browser**.

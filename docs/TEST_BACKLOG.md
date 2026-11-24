@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C2 | Serah terima tanggung jawab
+- 20 QA `drafts/yandik-backend-contract/test_handoff.py` (5 pure + 15 memory rehearsal), 0 dijalankan. Skenario tambahan: peran terpisah, snapshot stale dari revisi record/akun, revokasi reviewer, expired proposal, digest mismatch, mixed owner, akun baru tanpa grant, duplikasi/replay, old session denial, immutable audit, rollback lintas grant/session/owner/receipt, command replay tiap domain, no SDM/ledger update. Manifest backend 261 deklarasi (97 pure +164 rehearsal), portal terpisah. Perlu izin unit/DDL; akses produksi dan UI belum tersedia.
+
+
 ## K4-C1 | Portal backend binding
 - 10 QA pure JS `drafts/yandik-portal/tests/backend-workspace-model.test.mjs`, 0 dijalankan. Tambahan manual: mount host authorization, no transport/no fallback, 12 menu/role, scope switch/stale async, unknown vs zero, input valid/zero, evidence refs, APEL draft/submit/review, lost ACK/conflict, dirty guard, accessibility and mobile, source M04 separation, backend revocation, full regression. Backend manifest 241 tetap; suite JS baru terpisah. Jangan jalankan browser/unit/DDL tanpa izin.
 

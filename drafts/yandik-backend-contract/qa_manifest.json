@@ -69,12 +69,18 @@
       "pure": 4,
       "rehearsal": 8,
       "status": "NOT_RUN"
+    },
+    {
+      "file": "test_handoff.py",
+      "pure": 5,
+      "rehearsal": 15,
+      "status": "NOT_RUN"
     }
   ],
   "totals": {
-    "pure": 92,
-    "rehearsal": 149,
-    "all": 241,
+    "pure": 97,
+    "rehearsal": 164,
+    "all": 261,
     "executed": 0
   },
   "gates": [

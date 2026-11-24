@@ -298,3 +298,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C1
 10 QA pure JS baru, 0 dijalankan. DOM host integration, parity dan full preview pending; backend 241 manifest terpisah.
+
+## Addendum K4-C2
+20 QA backend baru; manifest 261 (97 pure + 164 rehearsal), 0 dijalankan. UI/HTTP/handoff resmi tidak tersedia.

@@ -52,3 +52,7 @@
 ## 2026-11-24 | K4-A9: akun, grant dan siklus sesi DEMO
 - [Kontrak](K4_A9_ACCOUNT_SESSION_LIFECYCLE_2026_2030.md): AccountStore :memory:, admin/pimpinan fixture, akun dan grant satu aktif, scope master, token acak runtime (digest saja), kedaluwarsa 30 menit, logout/revokasi, admin command host-only, audit/replay/rollback. Dispatcher memakai resolver terikat instance pada AccountStore, raw callback ditolak. 24 QA tertulis (6 pure + 18 rehearsal), 0 dijalankan. 9/9 tahapan K4-A1–A9 kode awal tersedia, K4/K7 BELUM SELESAI/TERUJI. Belum auth/HTTP/CSRF, owner reassignment, DB riil atau persetujuan role. CODE_ONLY [skip ci]. Berikutnya K4-B konsolidasi statis kontrak, penutupan gap dan handoff QA tanpa eksekusi.
 
+
+## 2026-11-24 | K4-C2: serah terima penanggung jawab Puskeswan DEMO
+- [Kontrak](K4_C2_RESPONSIBILITY_HANDOFF_2026_2030.md): review provinsi + konfirmasi admin terpisah, snapshot akun/grant dan seluruh record fasilitas, digest/revisi/TTL 24 jam, alih owner tanpa mengubah payload, grant lama dan sesi dicabut atomik, grant baru dan histori per record/akun, replay dan rollback. 20 QA tertulis (5 pure + 15 rehearsal), manifest backend 261 (97+164), 0 dijalankan. Host-only, bukan mutasi SDM, belum UI/HTTP/persetujuan resmi/recovery petugas nonaktif. CODE_ONLY [skip ci]. Berikutnya K4-C3 formulir Profil, Inventaris dan SDM.
+

@@ -111,6 +111,7 @@ class InventoryStore(DemoStore):
             # Validate shape and value before hashing; scope is derived from stored record.
             if x["action"]=="save_item":normalize_item(x["payload"]["item_id"],x["payload"]["observation"],r["year"])
             fingerprint=digest({"resource":"inventory","command":x,"actor":s.actor_id,"catalog":CATALOG_DIGEST})
+            self._command_namespace_guard(s.actor_id,x["command_id"])
             old=c.execute("SELECT * FROM contract_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone()
             if old is not None:
                 require(old["record_id"]==rid and old["request_digest"]==fingerprint,"IDEMPOTENCY_CONFLICT")

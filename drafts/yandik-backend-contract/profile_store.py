@@ -73,6 +73,7 @@ class ProfileStore(InventoryStore):
             action=x["action"]
             payload=normalize(r["section"],x["payload"],r["year"]) if action=="save_draft" else None
             fingerprint=digest({"resource":"profiles","version":VERSION,"actor":s.actor_id,"command":{**x,"payload":payload}})
+            self._command_namespace_guard(s.actor_id,x["command_id"])
             old=c.execute("SELECT * FROM contract_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone()
             if old is not None:
                 require(old["record_id"]==rid and old["request_digest"]==fingerprint,"IDEMPOTENCY_CONFLICT")
@@ -104,6 +105,9 @@ class ProfileStore(InventoryStore):
             previous={"revision":reviewed,"payload":old,"current":reviewed==rev,"official_authorization":False}
         return {"record_id":r["id"],"section":r["section"],"revision":rev,"state":state if rev else "NOT_STARTED","payload":payload,"last_recorded_demo":previous}
 
+    def _sdm_summary(self,s,facility_id,year):
+        return {"status":"SOURCE_UNAVAILABLE","doctors":None,"paramedics":None}
+
     def view_profile(self,facility_id,year,resolve_demo_session):
         self._guard();require(type(year) is int and year in YEARS,"YEAR_INVALID")
         c=self._db;c.execute("BEGIN")
@@ -131,7 +135,7 @@ class ProfileStore(InventoryStore):
                 workflow.append({"record_id":row["id"],"month":row["month"],"revision":row["current_revision"],"state":ast if row["current_revision"] else "NOT_STARTED_DEMO"})
             out={"facility":dict(f),"year":year,"schema_version":VERSION,"sections":sections,"coverage":coverage(sections),
                  "inventory":inventory,"apel":{"workflow_refs":workflow,"ledger_status":"SOURCE_UNAVAILABLE","observed_service_total":None},
-                 "sdm":{"status":"SOURCE_UNAVAILABLE","doctors":None,"paramedics":None},
+                 "sdm":self._sdm_summary(s,facility_id,year),
                  "problems":{"status":"SEPARATE_REGISTER_PENDING"},"synthetic":True,"persistent":False,"official_authorization":False}
             c.execute("COMMIT");return out
         except BaseException:

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A4 | SDM typed writer
+- 26 QA `drafts/yandik-backend-contract/test_staff_store.py` (8 pure, 18 rehearsal), 0 dijalankan. Tambahan: interval eksklusif, coverage parsial/kosong, histori, role, kompetensi konflik, replay/revokasi, collision lintas resource, rollback, profil dan regresi APEL/inventaris/profil. Izin unit dan DDL terpisah; belum parity JS/Python atau data sah.
+
+
 ## K4-A3 | Profil typed writer
 - 26 QA `drafts/yandik-backend-contract/test_profile_store.py` (10 pure, 16 memory rehearsal), 0 dijalankan. Tambahan parity lima bagian portal + dua kesiapan, date/scope, per-section review/reopen, histori stale, grant revokasi/replay, rollback, referensi inventaris/APEL dan SDM unknown. Tidak menguji sumber riil. Izin unit dan DDL terpisah diperlukan.
 

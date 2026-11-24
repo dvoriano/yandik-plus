@@ -274,3 +274,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-A3
 26 kasus tambahan (10 pure, 16 rehearsal) setelah K4-A2; 0 dijalankan. Izin unit dan DDL terpisah diperlukan. TEST_BACKLOG tetap rinci. Preview ditunda.
+
+## Addendum K4-A4
+26 kasus tambahan, 0 dijalankan; regresi tiga writer dan hook profil perlu izin. 18 rehearsal memerlukan DDL. Preview tetap ditunda.

@@ -62,3 +62,7 @@ Data SDM bukan akun login; seseorang dapat punya akun tanpa harus duplikat kepeg
 
 ## Lanjutan K1/K2 | Editor konsolidasi 24 November
 [Daftar aktif dan mutasi DEMO](../../drafts/yandik-portal/review.html#profil-sdm) menggunakan interval penempatan M05-15, akhir eksklusif, histori sebelum/sesudah dan proyeksi Desember. Cakupan tidak dipromosikan dari parsial ke lengkap; catatan kompetensi bukan sertifikat. [19 QA lintas Profil/SDM](../../drafts/yandik-portal/tests/personnel.test.mjs), 0 dijalankan. Implementasi riil, impor, role/server, histori resmi dan bukti kompetensi belum. Status resmi mengikuti ROADMAP.
+
+## 2026-11-24 | K4-A4: backend SDM Veteriner DEMO
+- [Kontrak](../K4_A4_STAFF_TYPED_WRITER_2026_2030.md): master/interval eksklusif, histori mutasi, register/assign/end, catatan kompetensi, coverage tahunan, rekap profil dalam transaksi baca, grant aktif, replay dan rollback. 26 QA tertulis (8 pure + 18 memory rehearsal), 0 dijalankan. Bukan data pegawai/otorisasi resmi; belum API, impor, persetujuan mutasi, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A5 Support Puskeswan dengan crosswalk terpisah.
+

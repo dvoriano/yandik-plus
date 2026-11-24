@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | K4-A4: backend SDM Veteriner DEMO
+- [Kontrak](docs/K4_A4_STAFF_TYPED_WRITER_2026_2030.md): master/interval eksklusif, histori mutasi, register/assign/end, catatan kompetensi, coverage tahunan, rekap profil dalam transaksi baca, grant aktif, replay dan rollback. 26 QA tertulis (8 pure + 18 memory rehearsal), 0 dijalankan. Bukan data pegawai/otorisasi resmi; belum API, impor, persetujuan mutasi, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A5 Support Puskeswan dengan crosswalk terpisah.
+
 ## 2026-11-24 | K4-A3: backend Profil Puskeswan DEMO
 - [Kontrak](docs/K4_A3_PROFILE_TYPED_WRITER_2026_2030.md): validator 7 bagian, DDL profil/payload, shared memory writer 105 record kosong per fasilitas/tahun/bagian, histori, koreksi/reopen, rekap inventaris dan rujukan workflow APEL baca-saja; SDM/ledger null, register masalah pending. 26 QA tertulis (10 pure + 16 rehearsal), 0 dijalankan. Belum mapping form asli, auth/HTTP/DB riil/UI atau kebijakan resmi. CODE_ONLY [skip ci]. Berikutnya K4-A4 backend SDM dan histori mutasi.
 

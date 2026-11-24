@@ -41,3 +41,6 @@ Wilayah → fasilitas → record domain → revisi → bukti dan audit. Identita
 2. Mapping field dan grain, tipe/null, keunikan, namespace/ID, source version, klasifikasi dan pemilik; buat tabel mapping berizin di lingkungan terbatas. Jangan commit data/secret.
 3. Rehearsal disposable dengan data fiktif, negative access, rollback, duplikasi dan konkurensi, lalu bandingkan hitungan dan kualitas. Tidak ada migrasi historis yang telah dijalankan.
 4. Keputusan tertulis tentang engine/DDL, rencana backup dan rollback; izin testing dan rilis terpisah. K4/K7 tetap tertunda.
+
+## Master QA K7
+[Master QA](MASTER_QA_YANDIK_2026_2030.md) Q30–Q36 mencatat DDL rehearsal dan blocker backend/rilis. 22 unit kontrak belum dijalankan. Tidak ada izin DB atau migrasi.

@@ -1,0 +1,749 @@
+{
+  "schema": "YANDIK_QA_PLAN_1",
+  "baseline_commit": "3bee6913693f288a7650c50c52a9ae1fa3f217e0",
+  "execution_authorized": false,
+  "production_no_go": true,
+  "unit_suites": [
+    {
+      "path": "drafts/yandik-portal/tests/consolidated.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 31,
+      "description": "25 deklarasi + dua loop masing-masing empat domain",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/personnel.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 19,
+      "description": "Profil/SDM",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/inventory.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 16,
+      "description": "Inventaris",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/coaching.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 16,
+      "description": "Pembinaan",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/paperless.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 14,
+      "description": "Dokumen",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/library.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 17,
+      "description": "Pustaka",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/leadership.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 17,
+      "description": "Dashboard",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/gis.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 18,
+      "description": "GIS",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/notifications.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 20,
+      "description": "Notifikasi/antrean",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-portal/tests/navigation.test.mjs",
+      "runner": "node:test",
+      "planned_cases": 10,
+      "description": "Navigasi",
+      "status": "NOT_RUN"
+    },
+    {
+      "path": "drafts/yandik-backend-contract/test_contract.py",
+      "runner": "unittest",
+      "planned_cases": 22,
+      "description": "Kontrak backend",
+      "status": "NOT_RUN"
+    }
+  ],
+  "manual_cases": [
+    {
+      "id": "Q01",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "PREVIEW",
+      "depends": [],
+      "title": "Katalog dan impor portal",
+      "steps": "Checkout SHA; buka index.html dan review.html melalui loopback",
+      "expected": "15 MOD katalog, 12 menu kerja, tidak ada error impor yang memblokir; tidak ada jaringan eksternal",
+      "evidence": "console, screenshot katalog, daftar menu",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q02",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q01"
+      ],
+      "title": "Navigasi dan state sesi",
+      "steps": "Buka #layanan, ubah draf DEMO; pindah menu, Back/Forward, anchor langsung",
+      "expected": "Panel benar; state tersimpan dalam halaman; prototipe teknis terpisah di tab baru",
+      "evidence": "before/after, URL, console",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q03",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q01"
+      ],
+      "title": "HP dan aksesibilitas",
+      "steps": "320/375/768/1280 px; tab, Enter, fokus, menu mobile, tabel",
+      "expected": "Tidak ada overflow halaman; tabel dapat digulir; menu dapat dioperasikan keyboard",
+      "evidence": "4 screenshot, catatan keyboard",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q04",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q01"
+      ],
+      "title": "Batas DEMO",
+      "steps": "Pantau network dan storage saat seluruh alur; reload",
+      "expected": "Tidak ada data riil/API/pesan/persistensi; reload memulihkan fixture, bukan klaim autosave",
+      "evidence": "network log sintetis, storage checklist",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q05",
+      "priority": "P0",
+      "module": "MOD-01",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Profil tahunan",
+      "steps": "Pilih Alpha 2027; simpan bagian, ajukan, koreksi, telaah; ganti Beta/2030",
+      "expected": "Histori utuh, isolasi ID/tahun, snapshot bukan profil resmi",
+      "evidence": "status, histori, scope",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q06",
+      "priority": "P0",
+      "module": "MOD-01",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Inventaris tahunan",
+      "steps": "Isi 0/tersedia/tidak diketahui, minimum eksplisit, salin 2026 ke 2027, konfirmasi item/grup",
+      "expected": "198 butir/15 kelompok menurut katalog DEMO; salinan belum konfirmasi; jumlah butir bukan aset; pengajuan hanya lengkap",
+      "evidence": "rekap, source ref, histori",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q07",
+      "priority": "P0",
+      "module": "MOD-01",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q06"
+      ],
+      "title": "Kunci inventaris",
+      "steps": "Konfirmasi semua item fiktif, ajukan, coba edit, minta koreksi dan simpan",
+      "expected": "Tidak dapat edit saat diajukan; koreksi tidak menghapus histori; reset terisolasi",
+      "evidence": "status, histori",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q08",
+      "priority": "P0",
+      "module": "MOD-02",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Cakupan dan angka APEL",
+      "steps": "Bandingkan bulan laporan nol, ada pelayanan, dan belum melapor; pilih 2030",
+      "expected": "0 eksplisit berbeda dari null; tidak menaksir total; tidak ada skor resmi",
+      "evidence": "angka dan sumber per periode",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q09",
+      "priority": "P0",
+      "module": "MOD-02",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q08"
+      ],
+      "title": "Workflow pelaporan",
+      "steps": "Pilih periode belum ada draf; buat draf, kirim, koreksi, revisi, kirim ulang",
+      "expected": "Transisi/riwayat benar; ledger tetap; draf belum disimpan menahan kirim",
+      "evidence": "histori dan angka ledger sebelum/sesudah",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q10",
+      "priority": "P0",
+      "module": "MOD-02",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q09"
+      ],
+      "title": "Grain kegiatan",
+      "steps": "Tambah pasangan investigasi event/lokasi dan hewan ante/post; coba duplikat",
+      "expected": "Pasangan kejadian/lokasi unik; satu hewan ante+post sekali; penolakan duplikat",
+      "evidence": "contoh draf, pesan validasi",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q11",
+      "priority": "P0",
+      "module": "MOD-02",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q09"
+      ],
+      "title": "Draf belum disimpan",
+      "steps": "Edit angka; ubah filter lalu batalkan; ulang dan setujui; reset dengan batal",
+      "expected": "Batal mempertahankan scope/isian; setuju membuang secara eksplisit; tidak ada pengiriman diam-diam",
+      "evidence": "scope, isian dan dialog",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q12",
+      "priority": "P0",
+      "module": "MOD-03",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q05"
+      ],
+      "title": "Mutasi SDM",
+      "steps": "Mutasi tenaga DEMO aktif mulai bulan berikut; lihat sumber/tujuan dan rekap Desember",
+      "expected": "Interval tidak tumpang tindih; histori sebelumnya tetap; cakupan parsial bukan nol",
+      "evidence": "rekap bulan dan tahun",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q13",
+      "priority": "P1",
+      "module": "MOD-03",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q12"
+      ],
+      "title": "Kompetensi",
+      "steps": "Catat kompetensi contoh; coba duplikat dan mutasi mundur bertentangan",
+      "expected": "Tolak duplikat/konflik; bukan sertifikat kompetensi",
+      "evidence": "status dan histori",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q14",
+      "priority": "P0",
+      "module": "MOD-04",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Siklus support",
+      "steps": "Pada M04 pilih skenario layak, lanjut tujuh tahap; coba skenario tidak layak",
+      "expected": "Kebutuhan/paket hingga monitoring berurutan; blokir tahap tidak sah; bukan bantuan resmi",
+      "evidence": "tahap, alasan penolakan",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q15",
+      "priority": "P0",
+      "module": "MOD-04",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q14"
+      ],
+      "title": "Pemisahan master",
+      "steps": "Bandingkan M04 001/002/003 dengan M05 ALPHA/BETA/GAMMA; ubah tahap",
+      "expected": "Tidak join berdasarkan label; angka APEL/GIS M05 tidak berubah; dashboard hanya panel M04",
+      "evidence": "before/after lintas panel",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q16",
+      "priority": "P1",
+      "module": "MOD-05",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Register obat",
+      "steps": "Pilih wilayah dan entri; periksa detail/checklist, ubah wilayah saat memuat",
+      "expected": "Detail wilayah lama tidak muncul; kolom minimal; bukan inspeksi resmi",
+      "evidence": "scope dan detail",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q17",
+      "priority": "P1",
+      "module": "MOD-06",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Register praktik",
+      "steps": "Pilih entri praktik, baca checklist, ganti wilayah",
+      "expected": "Detail sesuai scope; tidak ada aksi izin/approval",
+      "evidence": "scope dan detail",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q18",
+      "priority": "P0",
+      "module": "MOD-07",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Surveilans sumber kosong",
+      "steps": "Bandingkan Utara dan Selatan; buka detail yang tersedia",
+      "expected": "Sumber tidak tersedia ≠ nol kasus; lokasi sensitif tidak tampil; tidak ada sinkronisasi",
+      "evidence": "status sumber dan kolom",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q19",
+      "priority": "P0",
+      "module": "MOD-08",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Register sertifikat",
+      "steps": "Buka permohonan DEMO dan detail",
+      "expected": "Tidak ada penerbitan, tanda tangan atau klaim sertifikat sah",
+      "evidence": "detail, aksi yang tersedia",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q20",
+      "priority": "P1",
+      "module": "MOD-09",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Pembinaan",
+      "steps": "Rencana kegiatan, hasil dengan hadir nol, telaah/koreksi, tindak lanjut dan tutup",
+      "expected": "Status dan histori konsisten; hadir nol berbeda dari belum dicatat",
+      "evidence": "rekap, histori",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q21",
+      "priority": "P1",
+      "module": "MOD-10",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q20"
+      ],
+      "title": "Dokumen dari sumber",
+      "steps": "Buat empat jenis draf dari kegiatan; metadata bukti fiktif; telaah/koreksi/arsip",
+      "expected": "Identitas berasal dari sumber; duplikat bukti ditolak; bukan dokumen resmi",
+      "evidence": "versi, metadata, status",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q22",
+      "priority": "P0",
+      "module": "MOD-10",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q21"
+      ],
+      "title": "Sumber dokumen berubah",
+      "steps": "Ubah sumber setelah draf; coba ajukan/arsip; refresh versi",
+      "expected": "Sumber stale memblokir tindakan; versi lama tetap; metadata baru diperiksa",
+      "evidence": "versi sebelum/sesudah",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q23",
+      "priority": "P0",
+      "module": "MOD-11",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q05",
+        "Q06",
+        "Q08",
+        "Q12",
+        "Q14",
+        "Q20",
+        "Q21"
+      ],
+      "title": "Dashboard lintas modul",
+      "steps": "Filter tahun/wilayah/fasilitas; bandingkan detail setelah edit sumber",
+      "expected": "Metrik terpisah; denominator benar; tidak menganggap unknown nol; M04/register independen",
+      "evidence": "rekonsiliasi kartu/detail",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q24",
+      "priority": "P1",
+      "module": "MOD-12",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q06",
+        "Q12",
+        "Q20"
+      ],
+      "title": "GIS sintetis",
+      "steps": "Pilih enam layer, filter wilayah/tahun, titik dan tombol; ubah sumber",
+      "expected": "Kisi fiktif; nol/unknown berbeda; tidak ada GPS/rute/lokasi kasus",
+      "evidence": "layer dan detail",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q25",
+      "priority": "P1",
+      "module": "MOD-13",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Pustaka satu sesi",
+      "steps": "Cari/filter 14 referensi dan 5 FAQ; favorit, usulan, telaah; kembali dari menu",
+      "expected": "Favorit/usulan sesi tetap; dua kandidat tanpa naskah resmi; tidak publikasi",
+      "evidence": "hasil cari dan versi",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q26",
+      "priority": "P0",
+      "module": "MOD-14",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q09",
+        "Q20",
+        "Q22"
+      ],
+      "title": "Pengingat",
+      "steps": "Pilih 9 Jan 2027 dan wilayah; bandingkan nol/missing; buat koreksi dan stale dokumen; tandai baca/mute",
+      "expected": "Tenggat Desember lintas tahun; dedupe, revisi baru, status stale dan sumber gagal terlihat; tidak mengirim pesan",
+      "evidence": "daftar kunci/status",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q27",
+      "priority": "P0",
+      "module": "MOD-14",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Antrean tiruan",
+      "steps": "Simpan jumlah nol offline, coba kirim, online, ACK hilang lalu retry",
+      "expected": "Satu revisi server tiruan; tidak mengubah APEL; bukan offline durable",
+      "evidence": "receipt, histori",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q28",
+      "priority": "P0",
+      "module": "MOD-14",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q27"
+      ],
+      "title": "Konflik antrean",
+      "steps": "Ubah sumber tiruan, kirim draf lama; buang atau buat draf baru",
+      "expected": "Konflik tidak menimpa sumber; requeue ID/revisi baru dan perlu klik kirim",
+      "evidence": "histori dan revisi",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q29",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "PREVIEW",
+      "depends": [
+        "Q02"
+      ],
+      "title": "Regresi lintas sesi",
+      "steps": "Reset pembinaan/dokumen; buat kegiatan baru; pindah menu; reset inti dan inventaris terpisah",
+      "expected": "Tidak reuse ID kegiatan/dokumen pada sesi; tidak menandai pengingat baru sebagai dibaca; reset tidak memengaruhi domain lain",
+      "evidence": "ID, status, panel terkait",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q30",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "UNIT_DDL",
+      "depends": [],
+      "title": "Rehearsal skema",
+      "steps": "Jalankan DDL hanya pada SQLite :memory: setelah izin khusus; insert fixture sintetik, FK, unik, overlap",
+      "expected": "FK aktif, duplikasi ditolak, interval bersebelahan diterima, histori update/delete ditolak; catat invariant yang belum ditegakkan",
+      "evidence": "output SQL sintetis",
+      "status": "NOT_RUN",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q31",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "BLOCKED_BACKEND",
+      "depends": [
+        "Q30"
+      ],
+      "title": "Auth dan akses objek",
+      "steps": "Setelah source sah: uji sesi palsu/nonaktif, role dari client, lintas fasilitas/wilayah, pimpinan detail, CSRF",
+      "expected": "Deny default, tidak ada kebocoran PII atau enumerasi; otorisasi ulang retry",
+      "evidence": "route/role matrix dan hasil negatif",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q32",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "BLOCKED_BACKEND",
+      "depends": [
+        "Q30",
+        "Q31"
+      ],
+      "title": "Transaksi dan audit",
+      "steps": "Setelah typed writer: dua penulis, revisi stale, command ID sama beda payload, fault injection, rollback",
+      "expected": "Revisi+audit+receipt atomik; retry tidak menggandakan; gagal tanpa state parsial",
+      "evidence": "log sintetis, revision count",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q33",
+      "priority": "P0",
+      "module": "MOD-02",
+      "phase": "BLOCKED_BACKEND",
+      "depends": [
+        "Q31",
+        "Q32"
+      ],
+      "title": "Migrasi dan rekonsiliasi",
+      "steps": "Setelah source sah: dry mapping namespace, histori, null/0, ledger/workflow, SDM interval inklusif",
+      "expected": "Tidak join otomatis; diff diverifikasi; nilai asli dan histori tetap; backup/restore dibuktikan",
+      "evidence": "mapping dan rekonsiliasi sintetis",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q34",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "BLOCKED_BACKEND",
+      "depends": [
+        "Q31",
+        "Q32"
+      ],
+      "title": "Keamanan file dan operasi",
+      "steps": "Setelah backend: CSRF, rate limit, password KDF, reset, uploads/downloads, secrets, audit akses, backup/restore",
+      "expected": "Tidak ada fallback password/secret; akses bukti per objek; log minim; restore sesuai rencana",
+      "evidence": "hasil security QA terisolasi",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q35",
+      "priority": "P1",
+      "module": "MOD-14",
+      "phase": "BLOCKED_BACKEND",
+      "depends": [
+        "Q31",
+        "Q32"
+      ],
+      "title": "PWA/offline nyata",
+      "steps": "Setelah implementasi dan izin: putus jaringan, reload, retry, konflik, logout, perangkat bersama",
+      "expected": "Draf durable aman, tidak bocor antar akun; sinkron idempoten; tidak cache token/PII",
+      "evidence": "bukti perangkat dan network",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    },
+    {
+      "id": "Q36",
+      "priority": "P0",
+      "module": "MOD-00",
+      "phase": "BLOCKED_RELEASE",
+      "depends": [
+        "Q31",
+        "Q32",
+        "Q33",
+        "Q34"
+      ],
+      "title": "Gerbang rilis",
+      "steps": "Review keputusan sumber, kelembagaan, QA, keamanan, rollback, persetujuan terpisah",
+      "expected": "Tidak ada merge/deploy tanpa keputusan eksplisit; demo lulus tidak sama dengan siap produksi",
+      "evidence": "register keputusan dan bukti",
+      "status": "BLOCKED",
+      "result": null,
+      "actual": null,
+      "evidence_ref": null,
+      "execution_commit": null
+    }
+  ],
+  "excluded": "Bukan inventaris seluruh tes repo; TEST_BACKLOG tetap kanonik untuk M00–M16 dan regresi historis. Tidak ada hasil eksekusi."
+}

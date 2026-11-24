@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## 2026-11-24 | K7: Master QA YANDIK+ 2026–2030
+- [Master QA](MASTER_QA_YANDIK_2026_2030.md) dan [matriks JSON](../drafts/yandik-qa/qa-plan.json): inventaris prioritas 11 file unit (178 portal + 22 backend = 200 kasus dirancang), 36 skenario manual/integrasi/gerbang (29 preview, 1 DDL rehearsal, 6 blocked backend/rilis), seluruh 15 MOD. Semua NOT_RUN/BLOCKED, 0 dijalankan; bukan inventaris seluruh repo atau pengganti TEST_BACKLOG. Gate izin terpisah preview/unit/DDL/backend/rilis, bukti per SHA dan stop rules P0. CODE_ONLY [skip ci]. Berikutnya izin eksplisit owner untuk preview Codex atau lanjut review kode tanpa eksekusi; K4/K7 tetap tertunda.
+
+
 ## K4 | Kontrak backend/data | 24 November 2026
 - 22 unit Python `drafts/yandik-backend-contract/test_contract.py` tertulis, 0 dijalankan. Setelah izin, periksa evaluator default deny/scope/owner/reviewer/revisi, tanggal dan crosswalk; SQL rehearsal hanya disposable memory: FK, uniqueness fasilitas/periode, grant mismatch, overlap interval, revision/audit/receipt rollback, immutable history, typed envelope/identity invariants, source document scope, konkurensi dan retry. Belum ada writer/HTTP; pengujian integrasi auth/CSRF/route menunggu source sah. Tidak ada klaim PASS.
 

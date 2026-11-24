@@ -1,0 +1,27 @@
+{
+  "schema": "YANDIK_QA_RESULT_TEMPLATE_1",
+  "status": "NOT_RUN",
+  "case_or_suite_id": null,
+  "tested_commit": null,
+  "environment": {
+    "runner": null,
+    "version": null,
+    "viewport": null,
+    "synthetic_only": true
+  },
+  "owner_scope_authorization_ref": null,
+  "executed_at": null,
+  "expected": null,
+  "actual": null,
+  "evidence_refs": [],
+  "severity": null,
+  "issue_ref": null,
+  "counts": {
+    "planned": null,
+    "executed": null,
+    "passed": null,
+    "failed": null,
+    "skipped": null
+  },
+  "production_authorization": false
+}

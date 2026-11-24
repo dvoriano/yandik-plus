@@ -33,3 +33,7 @@
 ## 2026-11-24 | K4: Kontrak integrasi backend/data DEMO
 - [Kontrak](K4_KONTRAK_BACKEND_DATA_2026_2030.md): katalog 15 resource, usulan jalur API, DDL 16 tabel inti, evaluator Python baca/aksi kandidat berwilayah dengan deny default dan konversi interval akhir inklusif → eksklusif. 22 QA unit ditulis, 0 dijalankan. Tidak ada HTTP, DB, migrasi, login, writer atau izin operasi; melengkapi kontrak M00-G1–G9/M01-S2/M04-I2–I5 tanpa menggantinya. Source Flask berizin, typed domain schema, role server, rekonsiliasi dan QA tetap tertunda. CODE_ONLY [skip ci]. Berikutnya matriks QA Codex dan urutan integrasi, tanpa menjalankan tes.
 
+
+## 2026-11-24 | K7: Master QA YANDIK+ 2026–2030
+- [Master QA](MASTER_QA_YANDIK_2026_2030.md) dan [matriks JSON](../drafts/yandik-qa/qa-plan.json): inventaris prioritas 11 file unit (178 portal + 22 backend = 200 kasus dirancang), 36 skenario manual/integrasi/gerbang (29 preview, 1 DDL rehearsal, 6 blocked backend/rilis), seluruh 15 MOD. Semua NOT_RUN/BLOCKED, 0 dijalankan; bukan inventaris seluruh repo atau pengganti TEST_BACKLOG. Gate izin terpisah preview/unit/DDL/backend/rilis, bukti per SHA dan stop rules P0. CODE_ONLY [skip ci]. Berikutnya izin eksplisit owner untuk preview Codex atau lanjut review kode tanpa eksekusi; K4/K7 tetap tertunda.
+

@@ -59,3 +59,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### Konsolidasi tahap 2 (belum diuji)
 - Mulai `review.html#layanan`; gunakan sidebar/menu mobile untuk semua modul pengguna, bukan membuka prototipe terpisah. Periksa hash langsung, Back/Forward, panel tetap mounted dan sumber independen. Katalog di tab baru. Pustaka tersedia pada `#pustaka`. QA tambahan di TEST_BACKLOG; tidak mengizinkan eksekusi.
+
+## Master QA K7 (terbaru)
+[Master QA](MASTER_QA_YANDIK_2026_2030.md) mengatur 29 skenario preview pada portal konsolidasi, termasuk Pustaka dan Pembinaan/Dokumen di review.html, bukan sesi standalone. Izin preview tidak mengizinkan unit, DDL atau CI. Langkah sebelumnya historis; gunakan urutan dan stop rules terbaru. 0 dijalankan.

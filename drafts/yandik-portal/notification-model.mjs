@@ -18,8 +18,8 @@ export function inbox(scope,providers,state=initial()){
  for(const r of get("monthly")){for(const m of r.months){if(m.status!=="BELUM_DILAPORKAN")continue;const due=reportDue(m.period);if(days(today,due)<=7&&m.period<today.slice(0,7))add("APEL",r,m.period,"Laporan belum tercatat",m.period+" · ledger DEMO, bukan status workflow","#koreksi",due);}}
  for(const r of get("inventory")){if(r.confirmed<r.total)add("INVENTORY",r,year,"Perbarui inventaris tahunan",r.confirmed+" / "+r.total+" butir dikonfirmasi; tanpa tenggat resmi","#inventaris");}
  for(const r of get("correction")){if(r.status==="CORRECTION_REQUESTED"||r.status==="REVISION_DRAFT")add("CORRECTION",r,r.period,"Perbaikan laporan",r.period+" · revisi "+r.revision+" · workflow terpisah","#koreksi",null,r.revision);}
- for(const r of get("coaching")){if(r.status==="FOLLOWUP_OPEN"&&r.due&&days(today,r.due)<=7)add("COACHING",r,r.id,"Tindak lanjut pembinaan",r.id+" · tenggat tercatat","#kegiatan",r.due,r.revision);}
- for(const r of get("documentTasks")){if(r.stale||["REVIEW","CORRECTION"].includes(r.status))add("DOCUMENT",r,r.id,r.stale?"Sumber dokumen berubah":r.status==="REVIEW"?"Draf menunggu telaah":"Dokumen perlu perbaikan",r.id+" · "+r.status,"#administrasi",null,r.revision);}
+ for(const r of get("coaching")){if(r.status==="FOLLOWUP_OPEN"&&r.due&&r.date<=today&&days(today,r.due)<=7)add("COACHING",r,r.id,"Tindak lanjut pembinaan",r.id+" · tenggat tercatat","#kegiatan",r.due,r.revision);}
+ for(const r of get("documentTasks")){if(r.stale||["REVIEW","CORRECTION"].includes(r.status))add("DOCUMENT",r,r.id,r.stale?"Sumber dokumen berubah":r.status==="REVIEW"?"Draf menunggu telaah":"Dokumen perlu perbaikan",r.id+" · "+r.status,"#administrasi",null,r.revision+"-"+(r.stale?"stale":"current"));}
  const order={OVERDUE:0,TODAY:1,UPCOMING:2,TASK:3},unique=[...new Map(items.map(x=>[x.key,x])).values()];
  return {items:unique.filter(x=>!state.muted.includes(x.type)).sort((a,b)=>order[a.priority]-order[b.priority]||(a.due??"").localeCompare(b.due??"")||a.key.localeCompare(b.key)),missing,mutedCount:unique.filter(x=>state.muted.includes(x.type)).length};
 }

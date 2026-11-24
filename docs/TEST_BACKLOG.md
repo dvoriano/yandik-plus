@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## Konsolidasi tahap 2 | 24 November 2026
+- 10 unit navigasi `drafts/yandik-portal/tests/navigation.test.mjs`, 0 dijalankan. Browser tertunda: hash langsung/Back/Forward, tiap menu, tautan internal, tab baru, panel tetap mounted, daftar kegiatan pada administrasi, pustaka sesi yang sama, mobile menu/keyboard/320px, perubahan cakupan batal/menerima, reset dan ID tidak dipakai ulang, status stale notification, sumber M04/ledger tetap terpisah. Uji kehilangan input dinamis saat filter/re-render; belum dijamin durable.
+
+
 ## MOD-14 / M09 Notifikasi & mode lapangan | 24 November 2026
 - 20 unit tertulis `drafts/yandik-portal/tests/notifications.test.mjs`, 0 dijalankan. Browser tertunda: filter tanggal/wilayah/fasilitas, Januari lintas tahun, nol vs belum tercatat, sumber gagal, dedupe, dibaca/preferensi, koreksi versi, perubahan inventaris/pembinaan/dokumen, antrean offline tiruan, retry/ACK hilang/konflik, reset dan reload, 320px/keyboard. Tidak menguji offline browser/PWA atau server nyata.
 

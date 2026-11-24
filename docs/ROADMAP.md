@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | Konsolidasi tahap 2: satu ruang kerja DEMO
+- [Audit gap 15 modul](KONSOLIDASI_TAHAP_2_2026-11-24.md), [portal](../drafts/yandik-portal/review.html): 12 kelompok navigasi hash untuk 14 modul pengguna, panel tetap mounted, pustaka tertanam, tautan utama APEL/Support/Pustaka ke ruang kerja; prototipe lama dipertahankan. Perbaikan statis konfirmasi draf/reset, urutan ID pembinaan/dokumen dan kunci notifikasi stale. 10 QA unit navigasi tertulis, 0 dijalankan; QA browser dan seluruh audit backend masih tertunda. Bukan audit seluruh baris atau bukti integrasi operasional. CODE_ONLY [skip ci]. Berikutnya kontrak integrasi backend/data dan matriks QA, tanpa menjalankan tes.
+
 ## 2026-11-24 | MOD-14 / M09 Notifikasi dan mode lapangan DEMO
 - [Panel](../drafts/yandik-portal/review.html#notifikasi) dengan pengingat ledger APEL (tanggal 9 bulan berikut sebagai contoh kebijakan DEMO), inventaris tahunan tanpa tenggat resmi, koreksi workflow, pembinaan dan dokumen; filter cakupan, tanggal simulasi, dedupe, dibaca/preferensi sesi. Antrean lapangan terisolasi dengan jaringan tiruan, revisi optimistis, konflik, ACK hilang dan retry idempoten. 20 QA unit tertulis, 0 dijalankan. Tidak ada service worker/PWA, penyimpanan offline permanen, push/WA/Telegram, server, sinkronisasi nyata atau perubahan ledger. CODE_ONLY [skip ci]. Berikutnya audit konsolidasi 15 modul, navigasi dan gap integrasi sebelum izin QA; K4/K7 tetap tertunda.
 

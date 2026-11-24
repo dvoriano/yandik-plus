@@ -91,3 +91,8 @@ K1–K3 dapat dirancang/ditulis dengan data sintetis sambil menunggu K4; **tidak
 
 ## Inventaris tahunan Puskeswan | 24 November 2026
 [Kontrak inventaris](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 16 QA baru, total 66 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.
+
+## Tahap 2 terbaru
+## 2026-11-24 | Konsolidasi tahap 2: satu ruang kerja DEMO
+- [Audit gap 15 modul](KONSOLIDASI_TAHAP_2_2026-11-24.md), [portal](../drafts/yandik-portal/review.html): 12 kelompok navigasi hash untuk 14 modul pengguna, panel tetap mounted, pustaka tertanam, tautan utama APEL/Support/Pustaka ke ruang kerja; prototipe lama dipertahankan. Perbaikan statis konfirmasi draf/reset, urutan ID pembinaan/dokumen dan kunci notifikasi stale. 10 QA unit navigasi tertulis, 0 dijalankan; QA browser dan seluruh audit backend masih tertunda. Bukan audit seluruh baris atau bukti integrasi operasional. CODE_ONLY [skip ci]. Berikutnya kontrak integrasi backend/data dan matriks QA, tanpa menjalankan tes.
+

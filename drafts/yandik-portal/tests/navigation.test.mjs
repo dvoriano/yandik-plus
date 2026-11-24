@@ -1,0 +1,11 @@
+import test from "node:test";import assert from "node:assert/strict";import {GROUPS,resolveRoute,sectionIds} from "../portal-navigation.mjs";
+test("12 kelompok navigasi",()=>assert.equal(GROUPS.length,12));
+test("identitas kelompok unik",()=>assert.equal(new Set(GROUPS.map(g=>g.id)).size,GROUPS.length));
+test("default layanan",()=>assert.equal(resolveRoute("").group.id,"layanan"));
+test("hash lama koreksi tetap benar",()=>assert.equal(resolveRoute("#koreksi").target,"koreksi"));
+test("filter utama tampil dengan profil",()=>assert.ok(resolveRoute("#profil-sdm").group.sections.includes("layanan")));
+test("administrasi mempertahankan daftar kegiatan",()=>assert.ok(resolveRoute("#administrasi").group.sections.includes("coach-list")));
+test("pustaka semua panel",()=>assert.equal(resolveRoute("#pustaka").group.sections.length,3));
+test("hash tidak dikenal aman",()=>assert.equal(resolveRoute("#bad").group.id,"layanan"));
+test("14 modul pengguna terwakili",()=>assert.equal(new Set(GROUPS.flatMap(g=>g.modules)).size,14));
+test("section ids unik",()=>assert.equal(sectionIds().length,new Set(sectionIds()).size));

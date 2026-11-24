@@ -56,3 +56,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### MOD-14 Notifikasi dan simulator lapangan (belum diuji)
 - `review.html#notifikasi` dan `#mode-lapangan`; periksa tanggal simulasi, scope, read/dedupe, perubahan state, antrean, konflik dan ACK hilang/retry. Tidak ada service worker, cache, penyimpanan offline, kanal pesan atau server nyata.
+
+### Konsolidasi tahap 2 (belum diuji)
+- Mulai `review.html#layanan`; gunakan sidebar/menu mobile untuk semua modul pengguna, bukan membuka prototipe terpisah. Periksa hash langsung, Back/Forward, panel tetap mounted dan sumber independen. Katalog di tab baru. Pustaka tersedia pada `#pustaka`. QA tambahan di TEST_BACKLOG; tidak mengizinkan eksekusi.

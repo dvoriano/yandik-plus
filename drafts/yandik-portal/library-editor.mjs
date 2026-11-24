@@ -1,8 +1,8 @@
 import {CATALOG} from "./library-catalog.mjs";
 import {initial,search,searchFAQ,favorite,report,propose,decide} from "./library-model.mjs";
-const $=id=>document.getElementById(id),el=(tag,t)=>{const n=document.createElement(tag);if(t!==undefined)n.textContent=String(t);return n;};
+const $=id=>document.getElementById("lib-"+id),el=(tag,t)=>{const n=document.createElement(tag);if(t!==undefined)n.textContent=String(t);return n;};
 const button=(t,fn)=>{const b=el("button",t);b.type="button";b.addEventListener("click",fn);return b;};
-const link=(t,url)=>{const a=el("a",t);a.href=url;return a;};
+const link=(t,url)=>{const a=el("a",t);a.href=location.pathname.endsWith("/review.html")&&url.startsWith("./review.html#")?url.slice("./review.html".length):url;if(!a.getAttribute("href").startsWith("#")){a.target="_blank";a.rel="noopener noreferrer";}return a;};
 const label=(t,input)=>{const n=el("label",t);n.append(input);return n;};
 const options=(n,items)=>n.replaceChildren(...items.map(([v,l])=>new Option(l,v)));
 let state=initial();

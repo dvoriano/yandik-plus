@@ -125,3 +125,8 @@ P0. Tidak melakukan auth terhadap website produksi; sumber risiko teridentifikas
 
 ## Lanjutan K1 | Identitas Profil/SDM 24 November
 [Editor konsolidasi](../../drafts/yandik-portal/review.html#profil-sdm) memakai ID master DEMO M05 dan validator sumber M05-15; hanya state memori, tanpa pemetaan M04 dan tanpa autentikasi server. 19 QA lintas Profil/SDM tertulis, 0 dijalankan. K4/K7 tetap tertunda.
+
+## Konsolidasi portal tahap 2 (24 November)
+## 2026-11-24 | Konsolidasi tahap 2: satu ruang kerja DEMO
+- [Audit gap 15 modul](../KONSOLIDASI_TAHAP_2_2026-11-24.md), [portal](../../drafts/yandik-portal/review.html): 12 kelompok navigasi hash untuk 14 modul pengguna, panel tetap mounted, pustaka tertanam, tautan utama APEL/Support/Pustaka ke ruang kerja; prototipe lama dipertahankan. Perbaikan statis konfirmasi draf/reset, urutan ID pembinaan/dokumen dan kunci notifikasi stale. 10 QA unit navigasi tertulis, 0 dijalankan; QA browser dan seluruh audit backend masih tertunda. Bukan audit seluruh baris atau bukti integrasi operasional. CODE_ONLY [skip ci]. Berikutnya kontrak integrasi backend/data dan matriks QA, tanpa menjalankan tes.
+

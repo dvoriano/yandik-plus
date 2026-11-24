@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C3 | Form tahunan
+- 6 QA backend `test_annual_forms.py` + 10 JS `tests/annual-form-model.test.mjs`, 0 dijalankan. Manual: 198 butir/15 kelompok, status unknown vs absent, stock vs asset, copy prior and group confirmation (including filtered rows), candidate actions, profile legal/date/coverage, scoped roster, transfer dates, retry lost ACK, conflict/dirty, permission changes, mobile/keyboard, regressions. Manifest backend 267 (97 pure+170 rehearsal); portal tests separate. Unit/DDL/browser require authorization.
+
+
 ## K4-C2 | Serah terima tanggung jawab
 - 20 QA `drafts/yandik-backend-contract/test_handoff.py` (5 pure + 15 memory rehearsal), 0 dijalankan. Skenario tambahan: peran terpisah, snapshot stale dari revisi record/akun, revokasi reviewer, expired proposal, digest mismatch, mixed owner, akun baru tanpa grant, duplikasi/replay, old session denial, immutable audit, rollback lintas grant/session/owner/receipt, command replay tiap domain, no SDM/ledger update. Manifest backend 261 deklarasi (97 pure +164 rehearsal), portal terpisah. Perlu izin unit/DDL; akses produksi dan UI belum tersedia.
 

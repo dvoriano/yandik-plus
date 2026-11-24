@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | K4-C3: formulir tahunan Profil, Inventaris dan SDM
+- [Kontrak](docs/K4_C3_ANNUAL_FORMS_2026_2030.md): 7 form profil, 198 butir/15 kelompok katalog dari backend, pencarian, salin tahun sebelumnya, konfirmasi butir/kelompok, telaah, roster SDM scoped, form penempatan/mutasi/kompetensi kandidat, retry ID tetap dan revision guard. 21 GET + 8 POST; 6 QA backend + 10 JS baru, 0 dijalankan. Manifest backend 267 (97+170). Belum browser transport, pengujian, data riil/role resmi. CODE_ONLY [skip ci]. Berikutnya K4-C4 perluasan Support Puskeswan.
+
 ## 2026-11-24 | K4-C2: serah terima penanggung jawab Puskeswan DEMO
 - [Kontrak](docs/K4_C2_RESPONSIBILITY_HANDOFF_2026_2030.md): review provinsi + konfirmasi admin terpisah, snapshot akun/grant dan seluruh record fasilitas, digest/revisi/TTL 24 jam, alih owner tanpa mengubah payload, grant lama dan sesi dicabut atomik, grant baru dan histori per record/akun, replay dan rollback. 20 QA tertulis (5 pure + 15 rehearsal), manifest backend 261 (97+164), 0 dijalankan. Host-only, bukan mutasi SDM, belum UI/HTTP/persetujuan resmi/recovery petugas nonaktif. CODE_ONLY [skip ci]. Berikutnya K4-C3 formulir Profil, Inventaris dan SDM.
 

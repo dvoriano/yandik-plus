@@ -107,3 +107,7 @@ Jangan menampilkan nomor pribadi tenaga atau dokumen legalitas tidak-publik pada
 ## 2026-11-24 | K4-A4: backend SDM Veteriner DEMO
 - [Kontrak](../K4_A4_STAFF_TYPED_WRITER_2026_2030.md): master/interval eksklusif, histori mutasi, register/assign/end, catatan kompetensi, coverage tahunan, rekap profil dalam transaksi baca, grant aktif, replay dan rollback. 26 QA tertulis (8 pure + 18 memory rehearsal), 0 dijalankan. Bukan data pegawai/otorisasi resmi; belum API, impor, persetujuan mutasi, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A5 Support Puskeswan dengan crosswalk terpisah.
 
+
+## 2026-11-24 | K4-C3: formulir tahunan Profil, Inventaris dan SDM
+- [Kontrak](../K4_C3_ANNUAL_FORMS_2026_2030.md): 7 form profil, 198 butir/15 kelompok katalog dari backend, pencarian, salin tahun sebelumnya, konfirmasi butir/kelompok, telaah, roster SDM scoped, form penempatan/mutasi/kompetensi kandidat, retry ID tetap dan revision guard. 21 GET + 8 POST; 6 QA backend + 10 JS baru, 0 dijalankan. Manifest backend 267 (97+170). Belum browser transport, pengujian, data riil/role resmi. CODE_ONLY [skip ci]. Berikutnya K4-C4 perluasan Support Puskeswan.
+

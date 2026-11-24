@@ -7,7 +7,7 @@ from revision_envelope import start_revision,finish_revision
 from copy import deepcopy
 import json
 from apel_store import DemoStore, digest, canonical, CMD, REC
-from apel_payload import require, exact, match
+from apel_payload import require, exact, match, Denied
 from contract import Record, plan_access
 from inventory_payload import CATALOG, VERSION, INDEX, GROUPS, YEARS, empty, normalize_item, copy_snapshot, summary
 SOURCE="DEMO-SOURCE-INVENTORY"
@@ -134,7 +134,18 @@ class InventoryStore(DemoStore):
         try:
             s=self._session(resolve_demo_session);r=self._inv_record(record_id);rev=r["current_revision"];state,n=self._inv_revision(record_id,rev)
             self._read_policy(s,r,state,rev)
-            out={"record_id":r["id"],"facility_id":r["facility_id"],"year":r["year"],"catalog_version":VERSION,"revision":rev,"state":state if rev else "NOT_STARTED",
+            actions=[]
+            for action in sorted(ACTIONS):
+                try:self._action_policy(s,r,state,n,action)
+                except Denied:continue
+                if action=="copy_prior":
+                    if rev!=0:continue
+                    try:self._copy_prior(r)
+                    except Denied:continue
+                if action in ("confirm_item","confirm_group") and not any(not x["confirmed"] for x in n["rows"].values()):continue
+                if action=="submit" and summary(n)["confirmed"]!=len(INDEX):continue
+                actions.append(action)
+            out={"record_id":r["id"],"facility_id":r["facility_id"],"year":r["year"],"catalog_version":VERSION,"revision":rev,"state":state if rev else "NOT_STARTED","candidate_actions":actions,"catalog":{"groups":CATALOG["groups"],"items":CATALOG["items"],"official_verified":False},
                  "rows":n["rows"],"copied_from":n["copied_from"],"county_review_recorded":n["county_reviewer"] is not None,**summary(n),"synthetic":True,"persistent":False}
             c.execute("COMMIT");return out
         except BaseException:

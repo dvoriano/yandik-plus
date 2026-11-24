@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | K4-C3: formulir tahunan Profil, Inventaris dan SDM
+- [Kontrak](K4_C3_ANNUAL_FORMS_2026_2030.md): 7 form profil, 198 butir/15 kelompok katalog dari backend, pencarian, salin tahun sebelumnya, konfirmasi butir/kelompok, telaah, roster SDM scoped, form penempatan/mutasi/kompetensi kandidat, retry ID tetap dan revision guard. 21 GET + 8 POST; 6 QA backend + 10 JS baru, 0 dijalankan. Manifest backend 267 (97+170). Belum browser transport, pengujian, data riil/role resmi. CODE_ONLY [skip ci]. Berikutnya K4-C4 perluasan Support Puskeswan.
+
 ## 2026-11-24 | K4-C2: serah terima penanggung jawab Puskeswan DEMO
 - [Kontrak](K4_C2_RESPONSIBILITY_HANDOFF_2026_2030.md): review provinsi + konfirmasi admin terpisah, snapshot akun/grant dan seluruh record fasilitas, digest/revisi/TTL 24 jam, alih owner tanpa mengubah payload, grant lama dan sesi dicabut atomik, grant baru dan histori per record/akun, replay dan rollback. 20 QA tertulis (5 pure + 15 rehearsal), manifest backend 261 (97+164), 0 dijalankan. Host-only, bukan mutasi SDM, belum UI/HTTP/persetujuan resmi/recovery petugas nonaktif. CODE_ONLY [skip ci]. Berikutnya K4-C3 formulir Profil, Inventaris dan SDM.
 

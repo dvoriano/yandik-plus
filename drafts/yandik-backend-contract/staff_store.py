@@ -136,3 +136,25 @@ class StaffStore(ProfileStore):
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")
             raise
+    def staff_roster(self,facility_id,year,resolve_demo_session):
+        """Scoped synthetic roster; full placement history remains province reviewer only."""
+        self._guard();require(type(year) is int and 2026<=year<=2030,"YEAR_INVALID")
+        c=self._db;c.execute("BEGIN")
+        try:
+            s=self._session(resolve_demo_session);self._facility_access(s,facility_id)
+            rows=[]
+            for item in c.execute("SELECT id FROM contract_staff ORDER BY id").fetchall():
+                sid=item["id"];snap=self._staff_snapshot(sid)
+                local=[p for p in snap["placements"] if p["facility_id"]==facility_id and p["start_date"]<=f"{year}-12-31" and (p["end_exclusive"] is None or p["end_exclusive"]>f"{year}-01-01")]
+                if s.role=="provinsi_verifikator":
+                    last=snap["placements"][-1] if snap["placements"] else None
+                    actions=["transfer","end_assignment"] if last and last["end_exclusive"] is None else ["assign"]
+                    rows.append({"staff_id":sid,"kind":snap["kind"],"revision":snap["revision"],"placements":local,"latest_placement":last,"candidate_actions":actions})
+                elif local:
+                    actions=["record_competency"] if s.role=="puskeswan" else []
+                    rows.append({"staff_id":sid,"kind":snap["kind"],"revision":snap["revision"],"placements":local,"candidate_actions":actions})
+            out={"facility_id":facility_id,"year":year,"rows":rows,"summary":self._sdm_summary(s,facility_id,year),"may_register_demo":s.role=="provinsi_verifikator","synthetic":True,"official_authorization":False}
+            c.execute("COMMIT");return out
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            raise

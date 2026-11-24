@@ -8,7 +8,7 @@ import json
 from inventory_store import InventoryStore, VERSION as INVENTORY_VERSION
 from inventory_payload import summary as inventory_summary
 from apel_store import canonical,digest,CMD,REC
-from apel_payload import require,exact,match
+from apel_payload import require,exact,match,Denied
 from contract import Record,plan_access
 from profile_payload import SECTIONS,YEARS,VERSION,normalize,coverage
 SOURCE="DEMO-SOURCE-PROFILE"
@@ -102,7 +102,13 @@ class ProfileStore(InventoryStore):
         if reviewed is not None:
             _,old=self._profile_revision(r,reviewed)
             previous={"revision":reviewed,"payload":old,"current":reviewed==rev,"official_authorization":False}
-        return {"record_id":r["id"],"section":r["section"],"revision":rev,"state":state if rev else "NOT_STARTED","payload":payload,"last_recorded_demo":previous}
+        actions=[]
+        for action in ("save_draft","submit","return_correction","record_review","reopen"):
+            if action!="save_draft" and payload is None:continue
+            try:self._profile_policy(s,r,state,rev,action,rev)
+            except Denied:continue
+            actions.append(action)
+        return {"record_id":r["id"],"section":r["section"],"revision":rev,"state":state if rev else "NOT_STARTED","payload":payload,"last_recorded_demo":previous,"candidate_actions":actions}
 
     def _support_refs(self,s,facility_id,year):
         # This hook returns only new rehearsal cases; never infer M04 crosswalk.

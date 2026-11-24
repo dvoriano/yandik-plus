@@ -2,6 +2,7 @@
  * No automatic startup, fetch, credentials, fallback, storage or production binding.
  */
 import {GROUPS} from "./portal-navigation.mjs";
+import {mountProfiles,mountInventory,mountStaff} from "./annual-form-editor.mjs";
 import {createPortalBackend} from "../yandik-backend-contract/portal_backend_provider.mjs";
 import {menus,scope,FIELDS,shown,chooseApel,reportCommand,workflowCommand} from "./backend-workspace-model.mjs";
 const node=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
@@ -18,7 +19,7 @@ const id=()=>{const bytes=crypto.getRandomValues(new Uint8Array(12));return "DEM
 export async function mountBackendWorkspace(root,{transport,executionAuthorized=false,allowCommands=false}={}){
  if(!root||executionAuthorized!==true||typeof transport!=="function")throw Error("HOST_REHEARSAL_REQUIRED");
  const api=createPortalBackend(transport);
- let generation=0,closed=false,busy=false,dirty=false,queue=null,selected=null,active=null;
+ let generation=0,closed=false,busy=false,dirty=false,queue=null,selected=null,active=null,annualPending=null;
  const message=node("p","Memuat identitas DEMO...");message.setAttribute("role","status");
  const nav=node("nav");nav.className="backend-nav";nav.setAttribute("aria-label","Menu backend DEMO");
  const filters=node("div");filters.className="filter-row";const panel=node("section");panel.className="review-panel";panel.setAttribute("aria-live","polite");
@@ -28,7 +29,7 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
  if(!identity.available){message.textContent="Sesi tidak tersedia. Tidak menggunakan data contoh pengganti.";return ()=>root.replaceChildren();}
  const core=identity.data,allowed=menus(core.role_demo);selected=scope(core);active=allowed[0];
  message.textContent="BACKEND DEMO · "+shown(core.role_demo)+" · tidak ada data resmi";
- function canLeave(){if(busy)return false;if(queue?.status==="PENDING"||queue?.status==="CONFLICT"){message.textContent="Selesaikan antrean atau konflik dahulu.";return false;}return !dirty||confirm("Buang isian belum disimpan?");}
+ function canLeave(){if(busy||annualPending)return false;if(queue?.status==="PENDING"||queue?.status==="CONFLICT"){message.textContent="Selesaikan antrean atau konflik dahulu.";return false;}return !dirty||confirm("Buang isian belum disimpan?");}
  function setScope(next){if(!canLeave()){renderFilters();return;}dirty=false;selected=scope(core,{...selected,...next});renderFilters();render();}
  function renderFilters(){
   const s=selected;filters.replaceChildren(select("Tahun",[2026,2027,2028,2029,2030].map(y=>[y,y]),s.year,v=>setScope({year:Number(v)})));
@@ -87,14 +88,38 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
    busy=true;const cmd=workflowCommand(r,action,id());const send=async()=>{try{const v=await api.command("apel",cmd);if(v.status===200){busy=false;await render();return;}feedback.textContent=shown(v.error);if(v.status>=500)throw Error("ACK_UNKNOWN");actions.replaceChildren(button("Baca ulang",()=>render()));}catch{feedback.textContent="Respons belum diketahui. Coba lagi dengan ID sama.";actions.replaceChildren(button("Coba lagi",()=>{if(!busy){busy=true;send();}}));}finally{busy=false;}};await send();
   }));
  }
+ function annualContext(out){
+  const feedback=node("p");feedback.setAttribute("role","status");out.append(feedback);
+  return {enabled:allowCommands===true,id,markDirty:()=>{dirty=true;},clean:()=>{if(dirty){feedback.textContent="Simpan isian yang berubah terlebih dahulu.";return false;}return !busy&&!annualPending;},error:m=>{feedback.textContent=shown(m);},send:async(resource,cmd)=>{
+   if(busy||annualPending)return;
+   annualPending={resource,cmd:structuredClone(cmd)};
+   const controls=[...out.querySelectorAll("button,input,select,textarea")],disabled=controls.map(n=>n.disabled);
+   const restore=()=>controls.forEach((n,i)=>n.disabled=disabled[i]);
+   const retry=node("div");out.append(retry);
+   async function attempt(){
+    if(busy)return;busy=true;retry.replaceChildren();controls.forEach(n=>n.disabled=true);
+    try{
+     const v=await api.command(resource,annualPending.cmd);
+     const expected=cmd.record_id??cmd.staff_id;
+     if(v.status===200&&v.data?.revision===cmd.expected_revision+1&&(v.data.record_id??v.data.staff_id)===expected){annualPending=null;dirty=false;busy=false;await render();return;}
+     if(v.status>=500||v.status===200)throw Error("ACK_UNKNOWN");
+     feedback.textContent=shown(v.error);
+     if(v.status===409){retry.append(button("Tinjau ulang data (buang perubahan lokal)",()=>{if(confirm("Muat ulang tanpa menimpa revisi?")){annualPending=null;dirty=false;render();}}));}
+     else{annualPending=null;restore();}
+    }catch{feedback.textContent="Respons belum diketahui. Coba ulang dengan ID yang sama.";retry.append(button("Coba lagi",attempt));}
+    finally{busy=false;}
+   }
+   await attempt();
+  }};
+ }
  async function render(){
   const g=++generation,s={...selected},name=active;panel.replaceChildren(node("h2",GROUPS.find(x=>x.id===name)?.label??"Ruang kerja"),node("p","Memuat sumber backend..."));
   const out=node("div");
   try{
    const q={facility_id:s.facility_id,year:s.year};
    if(["layanan","mode-lapangan"].includes(name)){const p=await profile(s),rid=chooseApel(p,s.month);if(!rid)throw Error("SOURCE_UNAVAILABLE");const r=await read("apel",{record_id:rid});renderReport(r,out,name==="mode-lapangan");}
-   else if(name==="profil-sdm"){const p=await profile(s);pairs(out,[["Puskeswan",p.facility.label],["Dokter hewan (Desember)",p.sdm.doctors],["Paramedik (Desember)",p.sdm.paramedics],["Cakupan SDM",p.sdm.status]]);table(out,["Bagian","Status","Revisi"],p.sections.map(x=>[x.section,x.state,x.revision]));}
-   else if(name==="inventaris"){const p=await profile(s);const r=await read("inventory",{record_id:p.inventory.record_id});pairs(out,[["Dikonfirmasi",r.confirmed],["Katalog",r.total],["Perlu perhatian",r.attention]]);table(out,["Butir","Status","Jumlah","Layak","Konfirmasi"],Object.entries(r.rows).map(([k,x])=>[k,x.status,x.total,x.usable,x.confirmed]));}
+   else if(name==="profil-sdm"){const p=await profile(s);pairs(out,[["Puskeswan",p.facility.label],["Dokter hewan (Desember)",p.sdm.doctors],["Paramedik (Desember)",p.sdm.paramedics],["Cakupan SDM",p.sdm.status]]);const roster=await read("roster",q);const ctx=annualContext(out);mountProfiles(out,p,ctx);out.append(node("h3","SDM Veteriner"));mountStaff(out,roster,core.facilities,ctx);}
+   else if(name==="inventaris"){const p=await profile(s);const r=await read("inventory",{record_id:p.inventory.record_id});mountInventory(out,r,annualContext(out));}
    else if(name==="dukungan"){const p=await profile(s);if(p.support_refs===null)throw Error("SOURCE_UNAVAILABLE");const rs=await Promise.all(p.support_refs.map(x=>read("support",{record_id:x.record_id})));table(out,["Butir","Tahap","Dikirim","Diterima baik","Rusak","Sumber berubah"],rs.map(r=>[r.item_id,r.snapshot.stage,r.summary.sent,r.summary.received_good,r.summary.received_damaged,r.source_changed]));out.append(node("p","Subset transportasi; bukan pemetaan M04 lama."));}
    else if(name==="pengawasan"){for(const d of ["medicine","practice","surveillance","certificates"]){out.append(node("h3",shown(d)));const r=await api.read(d,{region_id:s.region_id,year:s.year});if(!r.available||!r.data.available){out.append(node("p","Sumber belum tersedia."));continue;}table(out,["ID","Periode","Telaah"],r.data.rows.map(x=>[x.record_id,x.observation.period,x.review_state]));}}
    else if(name==="kegiatan"){const r=await read("coaching",q);table(out,["ID","Tanggal","Topik","Tahap","Kehadiran"],r.activity_slots.filter(x=>x.snapshot).map(x=>[x.record_id,x.snapshot.date,x.snapshot.topic,x.snapshot.stage,x.snapshot.attendance]));}

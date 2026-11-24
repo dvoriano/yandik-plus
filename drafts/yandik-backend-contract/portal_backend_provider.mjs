@@ -5,7 +5,7 @@
 import {createDraftClient,queueDraft,sendQueued} from "./api_client.mjs";
 const READS=Object.freeze({
  core:["core",[]],profiles:["profiles",["facility_id","year"]],inventory:["inventory",["record_id"]],
- apel:["apel",["record_id"]],personnel:["personnel",["facility_id","year"]],support:["support",["record_id"]],
+ apel:["apel",["record_id"]],personnel:["personnel",["facility_id","year"]],roster:["personnel/roster",["facility_id","year"]],support:["support",["record_id"]],
  medicine:["medicine",["region_id","year"]],practice:["practice",["region_id","year"]],surveillance:["surveillance",["region_id","year"]],
  certificates:["certificates",["region_id","year"]],coaching:["coaching",["facility_id","year"]],documents:["documents",["facility_id","year"]],
  leadership:["leadership",["year","region_id"]],gis:["gis",["year","region_id","layer"]],library:["library",["q"]],notifications:["notifications",["today"]]

@@ -75,12 +75,18 @@
       "pure": 5,
       "rehearsal": 15,
       "status": "NOT_RUN"
+    },
+    {
+      "file": "test_annual_forms.py",
+      "pure": 0,
+      "rehearsal": 6,
+      "status": "NOT_RUN"
     }
   ],
   "totals": {
     "pure": 97,
-    "rehearsal": 164,
-    "all": 261,
+    "rehearsal": 170,
+    "all": 267,
     "executed": 0
   },
   "gates": [

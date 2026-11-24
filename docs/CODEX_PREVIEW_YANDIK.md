@@ -62,3 +62,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ## Master QA K7 (terbaru)
 [Master QA](MASTER_QA_YANDIK_2026_2030.md) mengatur 29 skenario preview pada portal konsolidasi, termasuk Pustaka dan Pembinaan/Dokumen di review.html, bukan sesi standalone. Izin preview tidak mengizinkan unit, DDL atau CI. Langkah sebelumnya historis; gunakan urutan dan stop rules terbaru. 0 dijalankan.
+
+## Handoff QA-A
+[Percobaan 24 November dan prompt Codex](QA_A_PREVIEW_HANDOFF_2026-11-24.md). Preview diizinkan pada sesi ini tetapi checkout lingkungan terblokir. Tidak ada hasil browser. Izin tidak mencakup unit, SQL atau rilis.

@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | QA-A: percobaan preview terbatas, terblokir lingkungan
+- Owner menjawab `kerjakan` setelah usulan preview QA-A; cakupan hanya preview DEMO, bukan unit/SQL/CI/deploy. Snapshot target `fe0c77c016ad928907a55d5125c2138a04112d9b`. Checkout lokal gagal DNS GitHub; arsip tidak tersedia melalui lingkungan ini. Tidak ada browser dibuka, tidak ada hasil render atau PASS. Pemeriksaan sumber melalui konektor: tree tidak terpotong, 8 entry script dan 3 CSS review.html ditemukan, tidak ada ID HTML statis duplikat. Q01 BLOCKED_ENVIRONMENT; Q02–Q29 NOT_RUN. [Handoff Codex](QA_A_PREVIEW_HANDOFF_2026-11-24.md). QA-B/C/D/E tidak diizinkan atau dijalankan; PR tetap Draft. Berikutnya checkout snapshot di Codex dengan akses repo, preview Q01–Q04 dulu.
+
 ## 2026-11-24 | K7: Master QA YANDIK+ 2026–2030
 - [Master QA](MASTER_QA_YANDIK_2026_2030.md) dan [matriks JSON](../drafts/yandik-qa/qa-plan.json): inventaris prioritas 11 file unit (178 portal + 22 backend = 200 kasus dirancang), 36 skenario manual/integrasi/gerbang (29 preview, 1 DDL rehearsal, 6 blocked backend/rilis), seluruh 15 MOD. Semua NOT_RUN/BLOCKED, 0 dijalankan; bukan inventaris seluruh repo atau pengganti TEST_BACKLOG. Gate izin terpisah preview/unit/DDL/backend/rilis, bukti per SHA dan stop rules P0. CODE_ONLY [skip ci]. Berikutnya izin eksplisit owner untuk preview Codex atau lanjut review kode tanpa eksekusi; K4/K7 tetap tertunda.
 

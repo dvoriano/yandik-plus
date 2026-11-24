@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-09 / M15 Pembinaan dan Bimtek | 24 November 2026
+- 16 unit tertulis pada `drafts/yandik-portal/tests/coaching.test.mjs`, 0 dijalankan. Browser tertunda: navigasi dua pintu; filter tahun/wilayah/fasilitas; validasi rencana; simpan hasil termasuk hadir nol; koreksi dan telaah; tindak lanjut/histori dan reset; responsif/keyboard serta pembatas DEMO. Belum ada pengujian backend.
+
+
 **Berlaku mulai 11 November 2026 atas instruksi pemilik proyek.**
 
 **JANGAN JALANKAN CL, CI, test runner, workflow_dispatch, GitHub Actions manual, Node test, unittest, Chromium/Playwright atau tes browser untuk perubahan YANDIK+ baru sampai pemilik proyek memberi izin eksplisit.** Tidak perlu meminta setup lokal atau VPS. Hanya tulis kode GitHub dan tandai status.

@@ -1,0 +1,18 @@
+import test from "node:test";import assert from "node:assert/strict";import {initial,plan,change,list,summary} from "../coaching-model.mjs";
+const p={facility_id:"DEMO-PSW-ALPHA",date:"2027-01-02",type:"Pembinaan",topic:"Pelaporan APEL",owner:"Tim Pembina DEMO A",planned:5},make=()=>plan(initial(),p),id="DEMO-BIMTEK-1",r={attendance:0,result:"DEMO hasil",recommendation:"DEMO tindak lanjut",due:"2027-02-01"};
+test("master dan ID",()=>{assert.equal(make().records[0].region_id,"DEMO-REGION-UTARA");assert.equal(plan(make(),p).records[1].id,"DEMO-BIMTEK-2");});
+test("ID asing",()=>assert.throws(()=>plan(initial(),{...p,facility_id:"REAL"})));
+test("tanggal palsu",()=>assert.throws(()=>plan(initial(),{...p,date:"2027-02-30"})));
+test("tahun di luar cakupan",()=>assert.throws(()=>plan(initial(),{...p,date:"2031-01-01"})));
+test("jumlah negatif",()=>assert.throws(()=>plan(initial(),{...p,planned:-1})));
+test("nol hadir vs belum dicatat",()=>{assert.equal(summary(make().records).attendance,null);assert.equal(summary(change(make(),id,1,"record",r).records).attendance,0);});
+test("tenggat sebelum kegiatan",()=>assert.throws(()=>change(make(),id,1,"record",{...r,due:"2026-01-01"})));
+test("rekomendasi kosong",()=>assert.throws(()=>change(make(),id,1,"record",{...r,recommendation:" "})));
+test("revisi stale",()=>assert.throws(()=>change(make(),id,0,"record",r)));
+test("lompat tahap ditolak",()=>assert.throws(()=>change(make(),id,1,"close",{completion:"DEMO"})));
+test("alur lengkap",()=>{let s=change(make(),id,1,"record",r);s=change(s,id,2,"review");s=change(s,id,3,"close",{completion:"DEMO selesai"});assert.equal(s.records[0].status,"CLOSED_DEMO");assert.equal(s.records[0].history.length,4);});
+test("koreksi mempertahankan histori",()=>{let s=change(make(),id,1,"record",r);s=change(s,id,2,"return");assert.equal(s.records[0].attendance,null);assert.equal(s.records[0].history[2].previous.result,r.result);});
+test("filter tahun",()=>assert.equal(list(make(),{year:2026,region_id:"ALL",facility_id:"ALL"}).length,0));
+test("filter wilayah tidak cocok",()=>assert.throws(()=>list(make(),{year:2027,region_id:"DEMO-REGION-SELATAN",facility_id:p.facility_id})));
+test("filter fasilitas",()=>assert.equal(list(make(),{year:2027,region_id:"ALL",facility_id:p.facility_id}).length,1));
+test("state awal immutable",()=>{const s=initial();plan(s,p);assert.equal(s.records.length,0);});

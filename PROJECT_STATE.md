@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | MOD-09 / M15 Pembinaan dan Bimtek DEMO
+- [Halaman kerja](drafts/yandik-portal/coaching.html), model in-memory dengan master fasilitas M05, rencana, kehadiran agregat, draf hasil, rekomendasi, tenggat, telaah/koreksi dan tindak lanjut DEMO. 16 kasus unit ditulis, 0 dijalankan; QA browser tertunda. Belum ada histori peserta individu/SDM, bukti/dokumen, otorisasi, database atau sertifikat. Tidak mengubah ledger APEL atau inventaris. CODE_ONLY, [skip ci]. Berikutnya administrasi paperless/pustaka.
+
 ## INVENTARIS TAHUNAN PUSKESWAN | 24 NOVEMBER 2026
 - [Inventaris tahunan](drafts/yandik-portal/review.html#inventaris): 198 butir UI, 15 kelompok navigasi, seluruh A–J Lampiran III Permentan 64/2007 berdasarkan Pedoman 2020 hlm.18–24; [kontrak dan batas](docs/M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). Katalog sumber belum ditelaah resmi. Salin tahun lalu, konfirmasi ulang, kondisi/kuantitas, pencarian, progres, rekap provinsi dan revisi DEMO. State memori, belum backend/akses kab/kota atau persistensi. 16 QA baru, 66 kasus unit portal kumulatif, 0 dijalankan. K4/K7 tertunda; prioritas tambahan ini masuk MOD-01, bukan modul ke-16.
 

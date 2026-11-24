@@ -52,6 +52,9 @@ Penyusunan dokumen ini **tidak mengubah status pengembangan modul**, tidak menge
 - [x] README singkat pada `main` telah diperbarui langsung sesuai permintaan owner; README rinci tetap tersedia pada branch pengembangan. **Perubahan README tidak mengubah status kode, belum diuji ataupun persetujuan integrasi.**
 - Tidak ada pengujian, CL/CI, deploy, atau perubahan situs yang berjalan.
 
+## 2026-11-24 | MOD-09 / M15 Pembinaan dan Bimtek DEMO
+- [Halaman kerja](../drafts/yandik-portal/coaching.html), model in-memory dengan master fasilitas M05, rencana, kehadiran agregat, draf hasil, rekomendasi, tenggat, telaah/koreksi dan tindak lanjut DEMO. 16 kasus unit ditulis, 0 dijalankan; QA browser tertunda. Belum ada histori peserta individu/SDM, bukti/dokumen, otorisasi, database atau sertifikat. Tidak mengubah ledger APEL atau inventaris. CODE_ONLY, [skip ci]. Berikutnya administrasi paperless/pustaka.
+
 ## Arti status
 - **SELESAI:** keluaran/commit dan bukti telah ada untuk ruang lingkup yang disebut; dokumentasi selesai tidak berarti modul terimplementasi.
 - **SEDANG:** pekerjaan nyata sedang dilakukan; ada file/commit/issue yang dapat diperiksa.

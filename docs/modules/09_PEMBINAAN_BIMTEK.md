@@ -58,3 +58,7 @@ Sertifikat pelatihan hanya disiapkan sesuai ketentuan kegiatan; jangan dibuat se
 
 ## Lanjutan konsolidasi DEMO | 24 November 2026
 [Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Antrean bahan telaah berdasarkan workflow M05-17 tercatat per tahun/wilayah; belum penugasan, Bimtek atau notifikasi resmi. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).
+
+## 2026-11-24 | MOD-09 / M15 Pembinaan dan Bimtek DEMO
+- [Halaman kerja](../../drafts/yandik-portal/coaching.html), model in-memory dengan master fasilitas M05, rencana, kehadiran agregat, draf hasil, rekomendasi, tenggat, telaah/koreksi dan tindak lanjut DEMO. 16 kasus unit ditulis, 0 dijalankan; QA browser tertunda. Belum ada histori peserta individu/SDM, bukti/dokumen, otorisasi, database atau sertifikat. Tidak mengubah ledger APEL atau inventaris. CODE_ONLY, [skip ci]. Berikutnya administrasi paperless/pustaka.
+

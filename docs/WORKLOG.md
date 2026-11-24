@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | MOD-09 / M15 Pembinaan dan Bimtek DEMO
+- [Halaman kerja](../drafts/yandik-portal/coaching.html), model in-memory dengan master fasilitas M05, rencana, kehadiran agregat, draf hasil, rekomendasi, tenggat, telaah/koreksi dan tindak lanjut DEMO. 16 kasus unit ditulis, 0 dijalankan; QA browser tertunda. Belum ada histori peserta individu/SDM, bukti/dokumen, otorisasi, database atau sertifikat. Tidak mengubah ledger APEL atau inventaris. CODE_ONLY, [skip ci]. Berikutnya administrasi paperless/pustaka.
+
 ## 2026-11-24 | Inventaris tahunan Puskeswan
 Commit dasar `20f3882`; penyempurnaan berikut menampilkan nilai salinan, kondisi dan tahun sumber, konfirmasi individual, serta membatasi konfirmasi grup pada tampilan seluruh grup. Tidak diuji.
 [Panel inventaris](../drafts/yandik-portal/review.html#inventaris), [kontrak](M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). Transkripsi katalog Lampiran III A–J: 198 butir UI, 15 kelompok navigasi, minimum eksplisit saja; data tahunan salinan belum konfirmasi, progres dan telaah DEMO. 16 QA tertulis, 0 dijalankan; tidak ada data nyata, CI/CL, deploy atau perubahan produksi.

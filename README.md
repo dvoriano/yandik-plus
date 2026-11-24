@@ -70,6 +70,8 @@ YANDIK+ juga **tidak dimaksudkan menggantikan** aplikasi dan proses resmi sepert
 
 [Prototipe Ruang Kerja Puskeswan](drafts/yandik-workspace/) menyediakan ringkasan APEL, cakupan Profil dan SDM Veteriner, bahan pembinaan, serta akses ke simulasi Profil dan Dukungan. Prototipe memakai data fiktif dan alur utamanya telah diperiksa di Chromium lokal.
 
+**Preview terbaru:** [Ruang kerja konsolidasi DEMO](drafts/yandik-portal/review.html) menyatukan tampilan model APEL/Profil/SDM, simulasi pelaporan dan dukungan, empat register teknis, bahan pembinaan serta agregat wilayah. Kode baru belum diuji; model sumber tetap terpisah. [Panduan preview melalui Codex](docs/CODEX_PREVIEW_YANDIK.md).
+
 ## Dokumen proyek
 
 - [Ringkasan Eksekutif](docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md): penjelasan singkat untuk pimpinan dan pemangku kepentingan.

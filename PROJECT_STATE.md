@@ -6,6 +6,12 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## KONSOLIDASI K1–K6 | 24 NOVEMBER 2026
+- [Ruang kerja konsolidasi DEMO](drafts/yandik-portal/review.html) menggunakan model M05 dan M04 serta empat domain pengawasan yang telah tersedia; kode baru **BELUM DIUJI**. [Panduan preview Codex](docs/CODEX_PREVIEW_YANDIK.md).
+- K1 join ID APEL/profil/SDM dan satu cakupan filter; K2 simulasi draf/kirim/koreksi/revisi/kirim ulang untuk empat kategori layanan, jejak revisi dan bahan pembinaan; ledger tetap terpisah. K3 tujuh tahap M04 independen dengan selector terpisah. K5 empat register baca-saja berfilter wilayah. K6 agregat regional M05 dan tautan pustaka/SOP; belum peta GIS, notifikasi atau PWA.
+- [18 QA kasus dirancang](drafts/yandik-portal/tests/consolidated.test.mjs), **0 dijalankan**. K4 sumber Flask berizin, role/server/DB dan K7 tes/rilis tetap tertunda. Input investigasi/kurban, detail register, workflow Bimtek/arsip dan identitas lintas sumber belum lengkap; tidak mengklaim semua modul selesai.
+- Katalog dan code baru di `drafts/yandik-portal/`, commit `9a72422`, `795e19e`. Lihat [peta paket](docs/KONSOLIDASI_YANDIK_2026-11-24.md). CODE_ONLY, tanpa CI/CL, deployment atau perubahan main/produksi.
+
 ## KONSOLIDASI PENGEMBANGAN | 24 NOVEMBER 2026
 - [Audit inventaris 15 modul dan urutan konsolidasi K0–K7](docs/KONSOLIDASI_YANDIK_2026-11-24.md) berdasarkan snapshot `2aa35dd`: 612 file, 78 folder draf, 37 HTML, 3.471.961 byte sebelum kompresi; bukan satu aplikasi operasional.
 - [Katalog Portal YANDIK+](drafts/yandik-portal/) dibuat untuk mengarahkan ke beranda/prototipe yang sudah ada. 15 modul dengan status jujur dan tautan lokal. **KODE DITULIS, BELUM DIUJI**. Tidak mengganti kode Ruang Kerja atau bukti uji terdahulu.

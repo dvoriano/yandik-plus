@@ -7,6 +7,8 @@
 - [Katalog Portal YANDIK+](../drafts/yandik-portal/) untuk menemukan tampilan DEMO yang sudah ada (belum diuji sebagai katalog baru).
 - [Audit konsolidasi dan urutan K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) untuk mengerjakan gap nyata tanpa membuat ulang prototipe. ROADMAP tetap sumber status milestone.
 
+- [Ruang kerja konsolidasi DEMO](../drafts/yandik-portal/review.html) dan [panduan preview Codex](CODEX_PREVIEW_YANDIK.md): kode K1–K6 baru, belum diuji.
+
 ## Prinsip operasional
 - Semua perubahan disimpan melalui connector GitHub; **jangan minta** download, setup lokal, PowerShell, SSH, atau akses VPS untuk fase saat ini.
 - Website produksi **tidak diubah**, tidak otomatis di-deploy, tidak memakai data nyata.

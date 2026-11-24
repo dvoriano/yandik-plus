@@ -5,6 +5,8 @@ This is a build plan, **not evidence that features are already implemented**.
 ## Consolidation queue (24 November 2026)
 - Use [K0–K7 inventory and gap matrix](KONSOLIDASI_YANDIK_2026-11-24.md) to sequence existing backlog entries B-001–B-021; retain their acceptance criteria. K0 portal written, not tested. K1 shared identity/source, K2 reporting/profile/SDM UI, K3 support workflow, K4 authorized Flask/backend remain core blockers. K5–K7 extend and validate; do not create parallel implementation solely to show progress.
 
+**Update K1–K6:** [review workspace](../drafts/yandik-portal/review.html) written, 18 QA designed/0 run. Existing M05 join, correction workflow, independent M04 seven-stage scenario, four read registers, regional coverage and document links reused. Full input/categories, cross-source identity, domain details and PWA/GIS are pending; K4 source/auth/DB and K7 remain blocked. [Codex checklist](CODEX_PREVIEW_YANDIK.md).
+
 ## Ready-to-spec / implement
 ### B-001 | Sanitized source baseline (M00)
 - Import exact code snapshot structure under dedicated branch.

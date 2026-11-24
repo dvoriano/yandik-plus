@@ -1,3 +1,6 @@
+## 2026-11-24 | Konsolidasi K1–K6
+- [Ruang kerja DEMO](../drafts/yandik-portal/review.html) dan [panduan Codex](CODEX_PREVIEW_YANDIK.md) ditulis; [gap](KONSOLIDASI_YANDIK_2026-11-24.md). 18 QA, 0 dijalankan, K4/K7 tertunda; tidak ada source, backend atau integrasi resmi.
+
 ## 2026-11-24 | Konsolidasi repo dan katalog portal
 - [Audit 15 modul dan prioritas K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md); [portal navigasi](../drafts/yandik-portal/) ditulis, belum diuji. Tidak ada penghapusan prototipe, perubahan kode beranda atau status selesai operasional. CODE_ONLY [skip ci].
 

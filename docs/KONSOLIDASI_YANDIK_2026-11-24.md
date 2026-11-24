@@ -2,6 +2,23 @@
 
 **Audit inventaris GitHub dan peta pekerjaan, bukan pernyataan siap operasional.** Snapshot dasar branch [`develop/yandik-foundation`](https://github.com/dvoriano/yandik-plus/tree/2aa35dd4d52016474cf0c365cc4554601703078c) pada commit `2aa35dd4d52016474cf0c365cc4554601703078c`, recursive tree utuh: **612 blob/file, 769 entri tree (termasuk direktori), 78 folder langsung di drafts/, 37 file HTML, 3.471.961 byte total blob**. Ukuran tersebut bukan ukuran instalasi, database maupun file ZIP hasil kompresi. PR [#9](https://github.com/dvoriano/yandik-plus/pull/9) tetap Draft. Semua pekerjaan tetap sampai horizon 2030.
 
+## Pembaruan implementasi konsolidasi | 24 November 2026
+
+[Halaman kerja konsolidasi DEMO](../drafts/yandik-portal/review.html) ditulis dengan model lama, bukan salinan angka atau pengganti aplikasi. [Panduan preview Codex](CODEX_PREVIEW_YANDIK.md). Commit kode `9a72422` dan `795e19e`; **18 kasus QA unit dirancang (15 deklarasi test dengan satu loop 4 domain), 0 dijalankan**. Tidak ada bukti browser baru.
+
+| Paket | Keluaran baru | Sisa |
+|---|---|---|
+| K0 | Katalog 15 modul menautkan halaman konsolidasi dan empat register | QA navigasi |
+| K1 | `shared-demo.mjs` memakai M05-15 untuk join identitas APEL/profil/SDM dan filter tahun/wilayah/fasilitas/bulan; memisahkan ledger dari workflow | Crosswalk M04 ↔ M05 belum sah, rekonsiliasi sumber resmi belum |
+| K2 | Panel profil/SDM, input empat kategori pelayanan, alur draf/kirim/koreksi/revisi/kirim ulang dan histori M05-1/M05-16; usulan M05-17 | UI investigasi/kurban, kelengkapan profil, penempatan SDM, bukti, audit server dan uji belum |
+| K3 | Panel tujuh tahap M04-I1 dari paket hingga catatan pemanfaatan dengan state independen dan tombol eksplisit; tautan administrasi lama | Identitas dan snapshot independen, belum integrasi source/kewenangan/BAST |
+| K4 | Tetap menggunakan draf M00-G1–G9 | TERTUNDA: source berizin, auth server, DB, migrasi dan keamanan |
+| K5 | `domain-views.mjs` dan panel empat register baca-saja memakai M06-S1, M07-S1, M13-S1, M14-S1 dengan filter wilayah, kolom terbatas, dynamic import | Detail/edit domain, aturan resmi, review, API dan sumber nyata |
+| K6 | Bahan pembinaan dan antrean, agregat M05 per wilayah, pustaka dokumen dan tautan telaah SOP | GIS lokasi/peta, workflow Bimtek/arsip, pustaka berizin, notifikasi dan PWA belum |
+| K7 | Checklist preview Codex dan 18 QA tertulis | TERTUNDA pengujian baru, regresi, keamanan dan keputusan rilis |
+
+Simulasi browser murni dalam memori; reset/muat ulang tidak mengubah ledger atau database. Tidak ada pemetaan nama/ID otomatis dari M04 ke M05, pengiriman nyata, data pribadi, persetujuan, atau integrasi Flask. Angka regional hanya sumber M05, tanpa menjumlahkan jenis domain berbeda. Pekerjaan berikutnya: lengkapi input investigasi/kurban, detail register dan kontrak identitas eksplisit, lalu QA Codex setelah izin. Jangan tambah prototipe paralel tanpa kebutuhan.
+
 ## Ringkasan
 
 - `drafts/yandik-workspace/` sudah merupakan beranda kerja yang memakai M05-14/M05-15/M05-17. Catatan [QA lokal](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal) melaporkan hasil uji terbatas dengan izin owner pada 24 November; **audit ini tidak mengulang tes**.

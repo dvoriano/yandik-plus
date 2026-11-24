@@ -28,6 +28,8 @@ Semua modul memiliki **dokumen tersendiri**, bukan satu spesifikasi raksasa. Sta
 
 [Katalog Portal YANDIK+](../drafts/yandik-portal/) memetakan 15 modul ke halaman DEMO yang sudah tersedia atau menandai halaman yang belum ada. [Audit konsolidasi 24 November](KONSOLIDASI_YANDIK_2026-11-24.md) mencatat gap, urutan K0–K7, dan perbedaan antara kode MOD dengan milestone M. Ini bukan perubahan status resmi atau bukti semua modul sudah diintegrasikan.
 
+**Pembaruan 24 November:** [halaman kerja konsolidasi](../drafts/yandik-portal/review.html) menambahkan panel empat register DEMO, workflow laporan/koreksi, dukungan independen, agregat wilayah dan tautan pustaka. Seluruh perubahan belum diuji; tidak menjadikan modul operasional.
+
 ## Dokumen lintas modul
 - [Masterplan](MASTERPLAN.md)
 - [Roadmap status](ROADMAP.md)

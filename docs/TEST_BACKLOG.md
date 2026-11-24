@@ -10,6 +10,14 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## K1–K6 | Ruang kerja konsolidasi DEMO (18 kasus unit dirancang, 0 dijalankan)
+- K1: join identitas, filter silang wilayah, null/0, SDM parsial, cakupan regional kosong.
+- K2: transisi draf/kirim/koreksi/revisi/kirim ulang, validasi angka, transisi tidak sah, jejak, ledger tetap; draft counts terikat scope. QA browser tambahan: input belum disimpan menahan kirim, reset, navigasi.
+- K3: tujuh tahap M04 independen dan tidak mengubah ledger M05; kebutuhan yang tidak layak tidak dipaksa lanjut.
+- K5: 4 register domain, allowlist kolom, filter wilayah, surveilans tanpa sumber = null bukan nol, domain/wilayah invalid.
+- K6: agregat M05 saja; tautan dan batas pustaka/GIS/PWA; keyboard/responsivitas dan console.
+- [File QA](../drafts/yandik-portal/tests/consolidated.test.mjs) berisi 15 deklarasi test dengan loop empat domain (18 kasus). [Checklist visual](CODEX_PREVIEW_YANDIK.md). Tidak dijalankan, izin preview terdahulu tidak diwariskan.
+ 
 ## K0 | Katalog Portal YANDIK+ (7 kelompok QA tertulis, 0 dijalankan)
 
 [Checklist QA portal](../drafts/yandik-portal/README.md#qa-tertunda): muat lokal, 15 ID/status unik, tautan halaman, anchor dan keyboard, responsivitas/kontras, tidak ada koneksi/penyimpanan eksternal, serta regresi halaman lama. Pemetaan path dicek statis terhadap tree snapshot; **bukan bukti browser PASS**. Pengujian beranda yang dilaporkan di bawah tetap terbatas pada versi sebelumnya dan bukan pengujian portal baru.

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | Konsolidasi K1–K6: halaman kerja dan register DEMO
+[Halaman kerja](../drafts/yandik-portal/review.html) menggunakan kembali join M05, workflow koreksi dan bahan pembinaan; panel M04 tujuh tahap independen; empat register domain memakai model lama, dengan agregat M05 regional serta tautan pustaka. Komit `9a72422` dan `795e19e`. [18 QA dirancang](../drafts/yandik-portal/tests/consolidated.test.mjs), **0 dijalankan**. [Panduan preview Codex](CODEX_PREVIEW_YANDIK.md). Tidak ada crosswalk M04/M05, GIS lokasi, PWA/notifikasi, sumber resmi, login/server atau DB. Status K4/K7 tertunda. Kode baru belum diuji, [skip ci], tanpa deploy.
+ 
 ## 2026-11-24 | Konsolidasi inventaris dan katalog navigasi YANDIK+
 [Audit K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) memakai snapshot `2aa35dd` (612 blob/file, 37 HTML, 78 folder draf). [Portal](../drafts/yandik-portal/) berisi katalog 15 modul dan tautan ke beranda serta halaman lama; jalur file dicek terhadap recursive tree, **belum diuji di browser**. Tidak mengubah kode beranda yang sebelumnya mendapat uji lokal terbatas. Status milestone tetap di ROADMAP. CODE_ONLY [skip ci], tidak ada tes baru, CI/CL, deploy atau data riil.
 

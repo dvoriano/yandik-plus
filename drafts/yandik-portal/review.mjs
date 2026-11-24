@@ -42,7 +42,7 @@ async function startCore(){
   $("sources").replaceChildren(el("p","ID: "+r.facility_id+" · Profil: "+fmt(r.profile_source_ref)+" · SDM: "+fmt(r.sdm_source_ref)),el("p","Ledger M05-0 tidak disinkronkan dengan workflow M05-1. Dukungan M04 tidak memiliki crosswalk identitas."));
   cards($("workflow-status"),[["Status workflow",c.report_state,"Tidak berarti laporan resmi"],["Revisi",c.revision,"Jejak simulasi"],["Jumlah terakhir terkirim",c.activity_count_last_submitted_demo,"Terpisah dari ledger"]]);
   const available=m.nextActions(v);
-  for(const key of m.FIELDS){const input=$("report-form").elements.namedItem(key);input.value=v.draft_counts?.[key]??0;input.disabled=!available.some(a=>["create_draft","save_draft","revise_draft"].includes(a));}
+  for(const key of m.FIELDS){const input=$("report-form").elements.namedItem(key);input.value=v.draft_counts ? (v.draft_counts[key]??"") : "0";input.disabled=!available.some(a=>["create_draft","save_draft","revise_draft"].includes(a));}
   $("report-controls").disabled=false;
   $("actions").replaceChildren(...available.map(action=>{
    const button=el("button",actions[action]);button.type="button";button.dataset.action=action;

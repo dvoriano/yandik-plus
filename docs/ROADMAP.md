@@ -9,6 +9,10 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## Konsolidasi K1–K6: halaman kerja DEMO
+
+[Preview konsolidasi](../drafts/yandik-portal/review.html) **KODE DITULIS, BELUM DIUJI**. Join M05 dan workflow koreksi, panel M04 tujuh tahap independen, register M06/M07/M13/M14, bahan pembinaan dan agregat wilayah ditulis. 18 QA dirancang, 0 dijalankan. [Peta gap terbaru](KONSOLIDASI_YANDIK_2026-11-24.md) dan [panduan Codex](CODEX_PREVIEW_YANDIK.md). K4/K7 tertunda, K1–K3/K5/K6 masih parsial; tidak ada perubahan status resmi milestone.
+
 ## Konsolidasi 15 modul (24 November 2026)
 
 [Audit dan paket K0–K7](KONSOLIDASI_YANDIK_2026-11-24.md) memetakan bukti repo serta gap dari snapshot `2aa35dd`. [Katalog portal DEMO](../drafts/yandik-portal/) **KODE DITULIS, BELUM DIUJI**: pintu ke halaman yang sudah ada, bukan backend atau klaim penyelesaian modul. Urutan usulan: K1 kontrak identitas/sumber, K2 alur APEL/profil/SDM, K3 dukungan; K4 source Flask berizin dan backend; K5–K7 perluasan/QA. Milestone resmi dan kriteria penerimaan di bawah tetap berlaku.

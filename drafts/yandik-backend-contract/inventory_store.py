@@ -3,6 +3,7 @@ Shares APEL DemoStore core schema/grants, no external DB, no HTTP.
 """
 from datetime import datetime,timezone
 from pathlib import Path
+from revision_envelope import start_revision,finish_revision
 from copy import deepcopy
 import json
 from apel_store import DemoStore, digest, canonical, CMD, REC
@@ -120,12 +121,10 @@ class InventoryStore(DemoStore):
                 out=self._receipt(rid,old["result_revision"],True);c.execute("COMMIT");return out
             require(x["expected_revision"]==rev,"REVISION_CONFLICT")
             self._action_policy(s,r,state,snap,x["action"])
-            state,n=self._change(s,r,state,snap,x);new=rev+1;now=datetime.now(timezone.utc).isoformat();act=CORE_ACTION[x["action"]]
-            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,new,SOURCE,s.actor_id,act,state,now,digest(n)))
+            state,n=self._change(s,r,state,snap,x);act=CORE_ACTION[x["action"]]
+            new,now=start_revision(c,rid,rev,SOURCE,s.actor_id,act,state,n)
             c.execute("INSERT INTO contract_inventory_payload VALUES(?,?,?,?,?,?)",(rid,new,CATALOG_DIGEST,canonical(n),x["action"],x["reason_code"]))
-            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(new),rid,new,s.actor_id,act,now))
-            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(s.actor_id,x["command_id"],fingerprint,rid,new))
-            require(c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(new,rid,rev)).rowcount==1,"REVISION_CONFLICT")
+            finish_revision(c,rid,rev,new,s.actor_id,act,now,x["command_id"],fingerprint)
             out=self._receipt(rid,new,False);c.execute("COMMIT");return out
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")

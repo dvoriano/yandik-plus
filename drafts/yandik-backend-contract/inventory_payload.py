@@ -16,6 +16,7 @@ def empty():
 def quantity(v,kind):
     return type(v) in (int,float) and 0<=v<=1000000 and math.isfinite(v) and (kind=="area" or int(v)==v)
 def normalize_item(item_id,raw,year):
+    require(type(year) is int and year in YEARS,"YEAR_INVALID")
     require(isinstance(item_id,str) and item_id in INDEX and exact(raw,("status","total","usable","condition")),"ITEM_INVALID")
     item=INDEX[item_id];status=raw["status"];kind=item["kind"]
     require(status in ("AVAILABLE","ABSENT","UNKNOWN","CONTEXT_REVIEW"),"STATUS_INVALID")

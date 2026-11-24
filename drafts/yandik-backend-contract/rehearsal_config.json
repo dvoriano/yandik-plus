@@ -1,0 +1,17 @@
+{
+  "mode": "CODE_ONLY",
+  "synthetic_only": true,
+  "execution_authorized": false,
+  "production_authorization": false,
+  "http_registered": false,
+  "network_enabled": false,
+  "persistent": false,
+  "commands_enabled": false,
+  "session_ttl_seconds": 1800,
+  "year_min": 2026,
+  "year_max": 2030,
+  "store": "AccountStore",
+  "api_version": "v1",
+  "database": ":memory:",
+  "source_ledger": "UNAVAILABLE"
+}

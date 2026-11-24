@@ -292,3 +292,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-A9
 24 kasus tambahan, 0 dijalankan. 18 rehearsal perlu izin DDL. Seluruh A1–A9 masih code written, belum gate K4/K7. Preview ditunda.
+
+## Addendum K4-B
+Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Tidak menghitung ulang baseline portal/historical. Lihat TEST_BACKLOG dan manifest; semua gate tetap tertunda.

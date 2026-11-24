@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-B | Konsolidasi backend
+- 12 QA baru `drafts/yandik-backend-contract/test_consolidation.py` (4 pure + 8 rehearsal), 0 dijalankan; [manifest](../drafts/yandik-backend-contract/qa_manifest.json) berisi 241 QA backend (92 pure, 149 rehearsal) berdasarkan deklarasi 22 core + 207 A1–A9 + 12 B. QA tambahan manual: seluruh 5 envelope writer atomicity, 180 period coverage, scope/error parity, 28 route integration, bridge no fallback, ACK retry, lifecycle, owner transfer, regional reopen role, source manifest parity, multi-user/concurrency, source stale, missing coverage, security. Portal baseline dan historical suite tetap terpisah. Izin unit/DDL/preview terpisah; D/E blocked.
+
+
 ## K4-A9 | Account / grant / session lifecycle
 - 24 QA `drafts/yandik-backend-contract/test_account_store.py` (6 pure, 18 memory rehearsal), 0 dijalankan. Tambahan: host resolver trust, instance binding, expiry/logout, revoke across all writers including replay, disabled/reenabled grants, scope derivation, protected admin, receipt/history/rollback, raw token redaction, session clock, old fixture API regression, negative authorization all 28 routes. Izin unit/DDL terpisah. HTTP session/CSRF, secure cookies, password KDF or SSO, rate limits and ownership transfer require design/review before production.
 

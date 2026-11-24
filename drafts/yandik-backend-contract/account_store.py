@@ -58,8 +58,8 @@ class AccountStore(ProjectionStore):
         self._guard();c=self._db;c.execute("BEGIN IMMEDIATE")
         try:
             s=super()._session(resolve_trusted_fixture)
-            # Read verified grant ID from the trusted callback exactly once by capturing its return.
-            # super()._session provides actor/scope, so use unique active grant in this rehearsal.
+            # super()._session verifies the host callback and returns actor/scope.
+            # Use exactly one active grant; no client-supplied role or scope.
             grants=c.execute("SELECT id FROM contract_grant WHERE actor_id=? AND active=1",(s.actor_id,)).fetchall()
             require(len(grants)==1,"GRANT_AMBIGUOUS")
             now=self._now();raw=secrets.token_urlsafe(32);sid="DEMO-SESSION-"+secrets.token_hex(16).upper()

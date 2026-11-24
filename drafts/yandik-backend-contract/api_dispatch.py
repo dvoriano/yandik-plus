@@ -49,7 +49,7 @@ def bounded(value,depth=0):
 def error_status(code):
     if code in ("DEMO_SESSION_REQUIRED","DEMO_SESSION_INVALID"):return 401
     if code in ("REVISION_CONFLICT","IDEMPOTENCY_CONFLICT","SOURCE_CHANGED","INVENTORY_SOURCE_CHANGED"):return 409
-    if code.endswith("_NOT_AVAILABLE") or code in ("RECORD_NOT_AVAILABLE","CASE_NOT_AVAILABLE"):return 404
+    if code.endswith("_NOT_AVAILABLE") or code in ("RECORD_NOT_AVAILABLE","CASE_NOT_AVAILABLE"):return 403
     if code in ("ACCESS_DENIED","SCOPE_DENIED","AGGREGATE_ONLY","INVALID_CONTEXT","OWNER_DENIED","WRITER_DENIED","REVIEWER_DENIED","RECIPIENT_DENIED") or code.endswith("_DENIED"):return 403
     return 422
 class DraftAPI:
@@ -79,7 +79,7 @@ class DraftAPI:
         except Denied as exc:
             code=str(exc)
             status=403 if code=="COMMANDS_DISABLED" else error_status(code)
-            # Collapse missing/forbidden detail to avoid cross-scope record enumeration.
+            # Same status and message for missing/forbidden objects; timing and other paths still require QA.
             return response(status,code="ACCESS_OR_RECORD_UNAVAILABLE" if status in (403,404) else code)
         except (TypeError,ValueError,OverflowError):
             return response(422,code="INVALID_REQUEST")

@@ -4,6 +4,7 @@ Shared memory store; no approval, funding, delivery, BAST issuance or real sync.
 import json
 from datetime import datetime,timezone
 from pathlib import Path
+from revision_envelope import start_revision,finish_revision
 from staff_store import StaffStore
 from apel_store import canonical,digest
 from apel_payload import require
@@ -78,13 +79,11 @@ class SupportStore(StaffStore):
             if a in ("submit","county_review","plan_package","schedule","dispatch"):
                 require(snap["need"] is not None and snap["need"]["source"]==basis,"INVENTORY_SOURCE_CHANGED")
             n=change(snap,x,basis if a=="propose" else None)
-            next_rev=rev+1;now=datetime.now(timezone.utc).isoformat();act=CORE[a]
+            act=CORE[a]
             state="DRAFT" if n["stage"]=="DRAFT" else "SUBMITTED" if n["stage"]=="SUBMITTED" else "RECORDED_DEMO"
-            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,next_rev,SOURCE,s.actor_id,act,state,now,digest(n)))
+            next_rev,now=start_revision(c,rid,rev,SOURCE,s.actor_id,act,state,n)
             c.execute("INSERT INTO contract_support_payload VALUES(?,?,?,?,?,?)",(rid,next_rev,VERSION,a,canonical(n),canonical(x["payload"])))
-            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(next_rev),rid,next_rev,s.actor_id,act,now))
-            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(s.actor_id,x["command_id"],fingerprint,rid,next_rev))
-            require(c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(next_rev,rid,rev)).rowcount==1,"REVISION_CONFLICT")
+            finish_revision(c,rid,rev,next_rev,s.actor_id,act,now,x["command_id"],fingerprint)
             out=self._receipt_support(r,next_rev,False);c.execute("COMMIT");return out
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")

@@ -1,5 +1,5 @@
 -- CODE_ONLY. Logical SQLite rehearsal schema; NOT a migration for existing database.
--- No script in this directory executes it. Use only disposable synthetic memory DB after permission.
+-- Rehearsal stores execute this only when explicitly instantiated after permission. Never use a file DB.
 PRAGMA foreign_keys=ON;
 CREATE TABLE contract_region (
  id TEXT PRIMARY KEY CHECK(id GLOB 'DEMO-REGION-*'),

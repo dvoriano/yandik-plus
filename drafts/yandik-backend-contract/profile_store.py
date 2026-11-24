@@ -3,6 +3,7 @@ No auth/HTTP/migration or actual data. Existing source records are never edited 
 """
 from datetime import datetime,timezone
 from pathlib import Path
+from revision_envelope import start_revision,finish_revision
 import json
 from inventory_store import InventoryStore, VERSION as INVENTORY_VERSION
 from inventory_payload import summary as inventory_summary
@@ -84,12 +85,10 @@ class ProfileStore(InventoryStore):
             next_state=self._profile_policy(s,r,state,rev,action,rev)
             if action!="save_draft":
                 require(prior is not None,"DRAFT_REQUIRED");payload=prior
-            n=rev+1;now=datetime.now(timezone.utc).isoformat();core_action="return_correction" if action=="reopen" else action
-            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,n,SOURCE,s.actor_id,core_action,next_state,now,digest(payload)))
+            core_action="return_correction" if action=="reopen" else action
+            n,now=start_revision(c,rid,rev,SOURCE,s.actor_id,core_action,next_state,payload)
             c.execute("INSERT INTO contract_profile_payload VALUES(?,?,?,?,?,?)",(rid,n,VERSION,canonical(payload),action,x["reason_code"]))
-            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(n),rid,n,s.actor_id,core_action,now))
-            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(s.actor_id,x["command_id"],fingerprint,rid,n))
-            require(c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(n,rid,rev)).rowcount==1,"REVISION_CONFLICT")
+            finish_revision(c,rid,rev,n,s.actor_id,core_action,now,x["command_id"],fingerprint)
             out=self._receipt(rid,n,False);c.execute("COMMIT");return out
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")

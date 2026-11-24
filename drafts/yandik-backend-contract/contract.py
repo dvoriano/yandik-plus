@@ -45,7 +45,7 @@ class Record:
     synthetic: bool = True
 
 def _session_ok(s):
-    if not isinstance(s, Session) or s.active is not True or s.synthetic is not True or not matches(ACTOR,s.actor_id) or s.role not in ROLES:
+    if not isinstance(s, Session) or s.active is not True or s.synthetic is not True or not matches(ACTOR,s.actor_id) or not isinstance(s.role,str) or s.role not in ROLES:
         return False
     if s.role == "puskeswan":
         return matches(FACILITY,s.facility_id) and matches(REGION,s.region_id)
@@ -57,6 +57,7 @@ def _record_ok(r):
     return (isinstance(r, Record) and r.synthetic is True
             and matches(re.compile(r"DEMO-REC-[A-Z0-9_-]{1,60}"), r.record_id)
             and matches(REGION,r.region_id) and matches(ACTOR,r.owner_id)
+            and isinstance(r.resource,str) and isinstance(r.state,str) and r.state in ("DRAFT","SUBMITTED","CORRECTION","RECORDED_DEMO")
             and type(r.revision) is int and r.revision >= 0
             and ((r.resource in FACILITY_RESOURCES and matches(FACILITY,r.facility_id))
                  or (r.resource in REGIONAL_RESOURCES and r.facility_id is None)))
@@ -76,7 +77,7 @@ def plan_access(session, record, action, expected_revision=None):
         return out("SCOPE_DENIED")
     if action=="read":
         return out("READ_CANDIDATE",True)
-    if action not in ACTIONS or r.resource in REGIONAL_RESOURCES:
+    if not isinstance(action,str) or action not in ACTIONS or r.resource in REGIONAL_RESOURCES:
         return out("ACTION_DENIED")
     if type(expected_revision) is not int or expected_revision!=r.revision:
         return out("REVISION_CONFLICT")

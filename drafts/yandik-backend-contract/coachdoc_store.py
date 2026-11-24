@@ -2,6 +2,7 @@
 import json
 from datetime import datetime,timezone
 from pathlib import Path
+from revision_envelope import start_revision,finish_revision
 from regional_store import RegionalStore
 from apel_store import canonical,digest
 from apel_payload import require
@@ -78,18 +79,16 @@ class CoachDocStore(RegionalStore):
                 a=self._activity(r["activity_id"]);self._policy_cd(s,a,"read")
                 source=self._snapshot(a,a["current_revision"])
                 n=doc_change(snap,x,source,a["current_revision"],r["kind"])
-            nr=rev+1;now=datetime.now(timezone.utc).isoformat();core=CORE[act]
+            core=CORE[act]
             state="RECORDED_DEMO" if n["stage"] in ("FOLLOWUP_OPEN","CLOSED_DEMO","ARCHIVED_DEMO") else "SUBMITTED" if n["stage"] in ("RESULT_DRAFT","REVIEW") else "CORRECTION" if n["stage"]=="CORRECTION" else "DRAFT"
-            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,nr,SOURCE,s.actor_id,core,state,now,digest(n)))
+            nr,now=start_revision(c,rid,rev,SOURCE,s.actor_id,core,state,n)
             c.execute("INSERT INTO contract_coachdoc_payload VALUES(?,?,?,?,?,?)",(rid,nr,VERSION,act,canonical(n),canonical(x["payload"])))
             if resource=="documents":
                 c.execute("INSERT INTO contract_document_source VALUES(?,?,?,?)",(rid,nr,r["activity_id"],n["source_revision"]))
                 if act=="evidence":
                     # Metadata ID is generated from exact record/revision, not the client ref.
                     c.execute("INSERT INTO contract_evidence_ref VALUES(?,?,?,?)",("DEMO-EVIDENCE-"+rid+"-"+str(nr),rid,nr,"SYNTHETIC_METADATA_ONLY"))
-            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(nr),rid,nr,s.actor_id,core,now))
-            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(s.actor_id,x["command_id"],fingerprint,rid,nr))
-            require(c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(nr,rid,rev)).rowcount==1,"REVISION_CONFLICT")
+            finish_revision(c,rid,rev,nr,s.actor_id,core,now,x["command_id"],fingerprint)
             out=self._receipt_cd(r,nr,False);c.execute("COMMIT");return out
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")

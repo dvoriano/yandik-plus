@@ -1,0 +1,107 @@
+{
+  "status": "NOT_RUN",
+  "execution_authorized": false,
+  "source_baseline": "195238853158df3c9d927eefb3caea94c87246a9",
+  "scope": "K4 backend only; portal and historical module suites remain separate",
+  "suites": [
+    {
+      "file": "test_contract.py",
+      "pure": 22,
+      "rehearsal": 0,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_apel_store.py",
+      "pure": 8,
+      "rehearsal": 17,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_inventory_store.py",
+      "pure": 10,
+      "rehearsal": 14,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_profile_store.py",
+      "pure": 10,
+      "rehearsal": 16,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_staff_store.py",
+      "pure": 8,
+      "rehearsal": 18,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_support_store.py",
+      "pure": 6,
+      "rehearsal": 14,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_regional_store.py",
+      "pure": 7,
+      "rehearsal": 13,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_coachdoc_store.py",
+      "pure": 6,
+      "rehearsal": 16,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_api_dispatch.py",
+      "pure": 5,
+      "rehearsal": 15,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_account_store.py",
+      "pure": 6,
+      "rehearsal": 18,
+      "status": "NOT_RUN"
+    },
+    {
+      "file": "test_consolidation.py",
+      "pure": 4,
+      "rehearsal": 8,
+      "status": "NOT_RUN"
+    }
+  ],
+  "totals": {
+    "pure": 92,
+    "rehearsal": 149,
+    "all": 241,
+    "executed": 0
+  },
+  "gates": [
+    {
+      "id": "B-PURE",
+      "requires": "explicit unit authorization",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "C-MEMORY",
+      "requires": "explicit unit + SQLite DDL authorization",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A-PREVIEW",
+      "requires": "separate preview authorization",
+      "status": "DEFERRED"
+    },
+    {
+      "id": "D-INTEGRATION",
+      "requires": "authorized sanitized source, identity, UI binding, security and source parity",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "E-RELEASE",
+      "requires": "all relevant gate evidence and explicit owner authorization",
+      "status": "BLOCKED"
+    }
+  ]
+}

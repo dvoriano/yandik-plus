@@ -15,6 +15,23 @@ def year_ok(year):require(type(year) is int and 2026<=year<=2030,"YEAR_INVALID")
 def complete_sum(rows,key):
     return sum(r[key] for r in rows) if rows and all(type(r[key]) is int for r in rows) else None
 class ProjectionStore(CoachDocStore):
+    def __init__(self):
+        super().__init__()
+        c=self._db
+        try:
+            c.execute("BEGIN IMMEDIATE")
+            for f in c.execute("SELECT id,region_id FROM contract_facility ORDER BY id").fetchall():
+                suffix=f["id"].removeprefix("DEMO-PSW-")
+                for year in range(2026,2031):
+                    for month in range(1,13):
+                        if c.execute("SELECT 1 FROM contract_apel_period WHERE facility_id=? AND year=? AND month=?",(f["id"],year,month)).fetchone():continue
+                        rid=f"DEMO-REC-APEL-{suffix}-{year}-{month:02d}"
+                        c.execute("INSERT INTO contract_record VALUES(?,?,?,?,?,0,?)",(rid,"apel",f["id"],f["region_id"],f"{year}-{month:02d}","DEMO-ACTOR-"+suffix))
+                        c.execute("INSERT INTO contract_apel_period VALUES(?,?,?,?)",(rid,f["id"],year,month))
+            c.execute("COMMIT")
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            self.close();raise
     def _visible_facilities(self,s,region,allow_leader=False):
         require(s.role in ("puskeswan","kab_kota","provinsi_verifikator","provinsi_admin") or (allow_leader and s.role=="pimpinan"),"ACCESS_DENIED")
         require(region=="ALL" or self._db.execute("SELECT 1 FROM contract_region WHERE id=?",(region,)).fetchone() is not None,"REGION_INVALID")

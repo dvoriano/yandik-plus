@@ -20,8 +20,7 @@ SOURCE="DEMO-SOURCE-APEL-WORKFLOW"
 KEYS=("command_id","record_id","expected_revision","action","payload","reason_code")
 ACTIONS={"save_draft","submit","return_correction","record_review"}
 REASONS={"return_correction":{"CHECK_COUNTS_DEMO","CHECK_ACTIVITY_DEMO"},"record_review":{"REVIEW_RECORDED_DEMO"}}
-def canonical(x): return json.dumps(x,sort_keys=True,separators=(",",":"),ensure_ascii=True,allow_nan=False)
-def digest(x): return hashlib.sha256(canonical(x).encode("utf-8")).hexdigest()
+from revision_envelope import canonical,digest,start_revision,finish_revision
 def intent(x):
     require(exact(x,KEYS) and match(CMD,x["command_id"]) and match(REC,x["record_id"])
             and type(x["expected_revision"]) is int and 0<=x["expected_revision"]<10000
@@ -140,13 +139,9 @@ class DemoStore:
                 require(prior is not None,"DRAFT_REQUIRED")
                 payload=normalize(prior,row["facility_id"],period)
             require(payload is not None,"DRAFT_REQUIRED")
-            n=rev+1;now=datetime.now(timezone.utc).isoformat()
-            c.execute("INSERT INTO contract_revision VALUES(?,?,?,?,?,?,?,?)",(rid,n,SOURCE,session.actor_id,x["action"],next_state,now,digest(payload)))
+            n,now=start_revision(c,rid,rev,SOURCE,session.actor_id,x["action"],next_state,payload)
             c.execute("INSERT INTO contract_apel_payload VALUES(?,?,?,?)",(rid,n,canonical(payload),x["reason_code"]))
-            c.execute("INSERT INTO contract_audit VALUES(?,?,?,?,?,?)",("DEMO-AUDIT-"+rid+"-"+str(n),rid,n,session.actor_id,x["action"],now))
-            c.execute("INSERT INTO contract_command VALUES(?,?,?,?,?)",(session.actor_id,x["command_id"],fingerprint,rid,n))
-            updated=c.execute("UPDATE contract_record SET current_revision=? WHERE id=? AND current_revision=?",(n,rid,rev))
-            require(updated.rowcount==1,"REVISION_CONFLICT")
+            finish_revision(c,rid,rev,n,session.actor_id,x["action"],now,x["command_id"],fingerprint)
             receipt=self._receipt(rid,n,False)
             c.execute("COMMIT")
             return receipt

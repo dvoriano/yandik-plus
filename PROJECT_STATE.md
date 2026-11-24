@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | K4-B1–B6: konsolidasi backend, paket awal
+- [Hasil dan batas](docs/K4_B_CONSOLIDATION_2026_2030.md): audit sumber terfokus, slot APEL 180 (3×60, dua ID lama dipertahankan), validasi tahun/role, respons missing/scope seragam, shared envelope 5 writer, adapter 15 modul + inventory, host in-process nonaktif default, manifest 241 QA backend (92 pure + 149 rehearsal, 0 dijalankan). 12 QA baru (4+8). Belum audit runtime, binding portal, auth riil, source/ledger, owner transfer, migrasi, HTTP, security QA. B1–B6 paket kode awal ditulis, K4/K7 belum selesai/teruji. CODE_ONLY [skip ci]. Berikutnya K4-B review sisa gap dan handoff QA; tidak menjalankan tanpa izin.
+
 ## 2026-11-24 | K4-A9: akun, grant dan siklus sesi DEMO
 - [Kontrak](docs/K4_A9_ACCOUNT_SESSION_LIFECYCLE_2026_2030.md): AccountStore :memory:, admin/pimpinan fixture, akun dan grant satu aktif, scope master, token acak runtime (digest saja), kedaluwarsa 30 menit, logout/revokasi, admin command host-only, audit/replay/rollback. Dispatcher memakai resolver terikat instance pada AccountStore, raw callback ditolak. 24 QA tertulis (6 pure + 18 rehearsal), 0 dijalankan. 9/9 tahapan K4-A1–A9 kode awal tersedia, K4/K7 BELUM SELESAI/TERUJI. Belum auth/HTTP/CSRF, owner reassignment, DB riil atau persetujuan role. CODE_ONLY [skip ci]. Berikutnya K4-B konsolidasi statis kontrak, penutupan gap dan handoff QA tanpa eksekusi.
 

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A7 | Coaching / paperless typed writer
+- 22 QA `drafts/yandik-backend-contract/test_coachdoc_store.py` (6 pure + 16 rehearsal), 0 dijalankan. Tambahan: scope, date/order, return result, source stale, revision FK, evidence metadata, archive/reopen/refresh, old revision retrieval, replay/revocation, rollback, cross-stream command collision, no official issuance, regression previous stores. Izin unit dan DDL terpisah; belum parity JS/Python dan integrasi UI.
+
+
 ## K4-A6 | Regional register backend
 - 20 QA `drafts/yandik-backend-contract/test_regional_store.py` (7 pure + 13 rehearsal), 0 dijalankan. Tambahan: parity sumber lama, scope origin, grant revocation, coverage missing, read-only snapshot, separation of duty, receipt collision lintas stream, immutable history, source digest, rollback, regresi store terdahulu. Unit/DDL perlu izin terpisah. Tidak menguji kewenangan, standar, data riil, atau penerbitan.
 

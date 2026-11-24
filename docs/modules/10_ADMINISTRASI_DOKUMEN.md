@@ -62,3 +62,7 @@ Jangan membuat pengganti SRIKANDI, pengadaan, atau keuangan. e-SPJ dan aktivitas
 ## 2026-11-24 | MOD-10 / M12 Administrasi paperless DEMO
 - [Ruang kerja](../../drafts/yandik-portal/coaching.html#administrasi) berbagi state kegiatan MOD-09 pada halaman yang sama. Empat jenis naskah teks, snapshot revisi sumber, metadata empat jenis bukti fiktif, telaah/koreksi, arsip simulasi, versi lama dan pencarian. Sumber berubah mengunci pengajuan; versi baru wajib diperiksa. 14 QA unit ditulis, 0 dijalankan. Belum DOCX/PDF, file bukti, database/otorisasi, SRIKANDI atau e-SPJ; M16 tetap evaluasi. CODE_ONLY [skip ci]. Berikutnya pustaka regulasi/SOP.
 
+
+## 2026-11-24 | K4-A7: backend pembinaan dan administrasi DEMO
+- [Kontrak](../K4_A7_COACHING_PAPERLESS_2026_2030.md): 30 slot kegiatan dan 120 slot draf kosong, typed rencana/hasil/telaah/tindak lanjut, 4 jenis draf, metadata bukti, FK revisi sumber, stale/refresh/reopen, histori dan scope, transaksi/replay/rollback. 22 QA tertulis (6 pure + 16 rehearsal), 0 dijalankan. Belum parity UI, SOP, dokumen resmi, upload, HTTP, login, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A8 integrasi API kandidat dan proyeksi read-only.
+

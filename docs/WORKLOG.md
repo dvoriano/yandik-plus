@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | K4-C6: formulir pembinaan dan administrasi paperless
+- [Kontrak](K4_C6_COACHDOC_FORMS_2026_2030.md): slot kosong terlihat, 5 tindakan pembinaan + 7 tindakan dokumen, 4 jenis draf per kegiatan, metadata bukti, revisi sumber/stale guard, baca histori revisi, kandidat aksi server, retry/revisi shared. 9 QA backend + 8 JS baru, 0 dijalankan; manifest backend 297 (102+195), API tetap 31. Belum template resmi, unggah bukti, tanda tangan, pengiriman, browser transport/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C7 penyempurnaan template dokumen.
+
 ## 2026-11-24 | K4-C5: pengawasan dan layanan teknis regional
 - [Kontrak](K4_C5_REGIONAL_FORMS_2026_2030.md): 4 panel sumber baca-saja dengan detail typed, filter dan histori, formulir klarifikasi/telaah/buka kembali, candidate actions server, reviewer DEMO kedua, 23 GET + 8 POST, retry/revisi shared. 8 QA backend + 8 JS baru, 0 dijalankan; manifest backend 288 (102+186). Tidak mengubah sumber, legalitas, diagnosis, sertifikat resmi, data riil atau integrasi HTTP. CODE_ONLY [skip ci]. Berikutnya K4-C6 pembinaan dan administrasi.
 

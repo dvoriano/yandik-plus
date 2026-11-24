@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C6 | Pembinaan dan paperless
+- 9 QA backend `drafts/yandik-backend-contract/test_coachdoc_forms.py` + 8 JS `drafts/yandik-portal/tests/coachdoc-form-model.test.mjs`, 0 dijalankan. Manual: slot kosong, peran plan/record/review/close, tanggal dan hitungan, empat jenis draf, metadata lengkap, stale/reopen/refresh, source pin dan revisi history, scope, retry/rollback, no official issuance, DOM mobile/accessibility and full regression. Manifest backend 297 (102+195). Unit/DDL/preview tetap tidak diizinkan.
+
+
 ## K4-C5 | Register regional dan telaah
 - 8 QA backend `drafts/yandik-backend-contract/test_regional_forms.py` + 8 JS `drafts/yandik-portal/tests/regional-form-model.test.mjs`, 0 dijalankan. Manual: 4 panel, typed detail, null coverage vs known zero, origin scope, history and redaction, no source edits/official issuance, county vs province vs admin, reopen separate reviewer, retry identical ID, conflict, stale async and mobile, regression 31 routes. Manifest backend 288 (102+186). No unit/DDL/preview authorization.
 

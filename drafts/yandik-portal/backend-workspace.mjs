@@ -5,6 +5,7 @@ import {GROUPS} from "./portal-navigation.mjs";
 import {mountProfiles,mountInventory,mountStaff} from "./annual-form-editor.mjs";
 import {mountSupport} from "./support-form-editor.mjs";
 import {mountRegional} from "./regional-form-editor.mjs";
+import {mountCoaching,mountDocuments} from "./coachdoc-form-editor.mjs";
 import {createPortalBackend} from "../yandik-backend-contract/portal_backend_provider.mjs";
 import {menus,scope,FIELDS,shown,chooseApel,reportCommand,workflowCommand} from "./backend-workspace-model.mjs";
 const node=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
@@ -124,8 +125,8 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
    else if(name==="inventaris"){const p=await profile(s);const r=await read("inventory",{record_id:p.inventory.record_id});mountInventory(out,r,annualContext(out));}
    else if(name==="dukungan"){const catalog=await read("supportCatalog",q);await mountSupport(out,catalog,read,annualContext(out));}
    else if(name==="pengawasan"){await mountRegional(out,s.region_id,s.year,read,annualContext(out));}
-   else if(name==="kegiatan"){const r=await read("coaching",q);table(out,["ID","Tanggal","Topik","Tahap","Kehadiran"],r.activity_slots.filter(x=>x.snapshot).map(x=>[x.record_id,x.snapshot.date,x.snapshot.topic,x.snapshot.stage,x.snapshot.attendance]));}
-   else if(name==="administrasi"){const r=await read("documents",q);for(const x of r.document_slots.filter(x=>x.snapshot)){const box=node("details");box.append(node("summary",shown(x.kind)+" · "+shown(x.snapshot.stage)+(x.source_changed?" · sumber berubah":"")),node("pre",x.draft_text));out.append(box);}if(!out.children.length)out.append(node("p","Belum ada draf tercatat."));}
+   else if(name==="kegiatan"){const r=await read("coaching",q);mountCoaching(out,r.activity_slots,read,annualContext(out));}
+   else if(name==="administrasi"){const r=await read("documents",q);mountDocuments(out,r.document_slots,read,annualContext(out));}
    else if(name==="pimpinan"){const r=await read("leadership",{year:s.year,region_id:"ALL"});pairs(out,[["Fasilitas DEMO",r.facilities_demo],["Pelayanan",r.observed_services],["Bulan laporan",r.apel_reported_months],...Object.entries(r.totals).map(([k,v])=>[shown(k),v])]);}
    else if(name==="wilayah"){const r=await read("gis",{year:s.year,region_id:s.region_id,layer:"sdm"});out.append(node("p","Lapisan SDM · kisi ilustrasi, bukan koordinat geografis."));table(out,["Puskeswan","Dokter hewan","Status"],r.points.map(x=>[x.label,x.value,x.state]));}
    else if(name==="pustaka"){const r=await read("library",{q:""});table(out,["Judul","Kategori","Status"],r.items.map(x=>[x.title,x.category,x.status]));}

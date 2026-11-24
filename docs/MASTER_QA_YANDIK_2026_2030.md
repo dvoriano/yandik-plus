@@ -310,3 +310,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C5
 8 backend rehearsal + 8 JS declared, 0 executed. Backend manifest 288, 31 route candidates. No preview.
+
+## Addendum K4-C6
+9 backend rehearsal + 8 JS declared, 0 executed. Backend manifest 297. No preview.

@@ -93,12 +93,18 @@
       "pure": 0,
       "rehearsal": 8,
       "status": "NOT_RUN"
+    },
+    {
+      "file": "test_coachdoc_forms.py",
+      "pure": 0,
+      "rehearsal": 9,
+      "status": "NOT_RUN"
     }
   ],
   "totals": {
     "pure": 102,
-    "rehearsal": 186,
-    "all": 288,
+    "rehearsal": 195,
+    "all": 297,
     "executed": 0
   },
   "gates": [

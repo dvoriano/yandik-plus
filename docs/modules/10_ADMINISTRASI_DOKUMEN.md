@@ -66,3 +66,7 @@ Jangan membuat pengganti SRIKANDI, pengadaan, atau keuangan. e-SPJ dan aktivitas
 ## 2026-11-24 | K4-A7: backend pembinaan dan administrasi DEMO
 - [Kontrak](../K4_A7_COACHING_PAPERLESS_2026_2030.md): 30 slot kegiatan dan 120 slot draf kosong, typed rencana/hasil/telaah/tindak lanjut, 4 jenis draf, metadata bukti, FK revisi sumber, stale/refresh/reopen, histori dan scope, transaksi/replay/rollback. 22 QA tertulis (6 pure + 16 rehearsal), 0 dijalankan. Belum parity UI, SOP, dokumen resmi, upload, HTTP, login, DB riil atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A8 integrasi API kandidat dan proyeksi read-only.
 
+
+## 2026-11-24 | K4-C6: formulir pembinaan dan administrasi paperless
+- [Kontrak](../K4_C6_COACHDOC_FORMS_2026_2030.md): slot kosong terlihat, 5 tindakan pembinaan + 7 tindakan dokumen, 4 jenis draf per kegiatan, metadata bukti, revisi sumber/stale guard, baca histori revisi, kandidat aksi server, retry/revisi shared. 9 QA backend + 8 JS baru, 0 dijalankan; manifest backend 297 (102+195), API tetap 31. Belum template resmi, unggah bukti, tanda tangan, pengiriman, browser transport/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C7 penyempurnaan template dokumen.
+

@@ -5,8 +5,8 @@ from pathlib import Path
 from revision_envelope import start_revision,finish_revision
 from regional_store import RegionalStore
 from apel_store import canonical,digest
-from apel_payload import require
-from coachdoc_payload import VERSION,DOC_TYPES,intent,coach_change,doc_change,draft_text
+from apel_payload import require,Denied
+from coachdoc_payload import VERSION,DOC_TYPES,EVIDENCE,intent,coach_change,doc_change,draft_text
 SOURCE="DEMO-SOURCE-COACHDOC-REHEARSAL"
 OWNER=("record","create","refresh","evidence","submit")
 REVIEWER=("plan","review","return_result","close","return_doc","archive","reopen")
@@ -95,12 +95,42 @@ class CoachDocStore(RegionalStore):
             raise
     def apply_coaching(self,command,resolve_demo_session):return self._apply_cd("coaching",command,resolve_demo_session)
     def apply_document(self,command,resolve_demo_session):return self._apply_cd("documents",command,resolve_demo_session)
+    def _candidate_cd(self,s,r,snap,source=None,source_rev=None):
+        stage=snap["stage"] if snap else None
+        if r["resource"]=="coaching":
+            candidates={None:["plan"],"PLANNED":["record"],"RESULT_DRAFT":["review","return_result"],"FOLLOWUP_OPEN":["close"]}.get(stage,[])
+        else:
+            ready=source is not None and source["result"] is not None and source["attendance"] is not None
+            stale=snap is not None and snap["source_revision"]!=source_rev
+            if snap is None:candidates=["create"] if ready else []
+            elif stage=="ARCHIVED_DEMO":candidates=["reopen"]
+            elif stale:candidates=["refresh"] if ready else []
+            else:
+                kinds={e["kind"] for e in snap["evidence"]}
+                candidates=[]
+                if stage in ("DRAFT","CORRECTION"):
+                    if kinds!=set(EVIDENCE):candidates.append("evidence")
+                    else:candidates.append("submit")
+                    if stage=="CORRECTION" and ready:candidates.append("refresh")
+                elif stage=="REVIEW":
+                    candidates=["return_doc"]
+                    if ready and source["stage"] in ("FOLLOWUP_OPEN","CLOSED_DEMO"):candidates.append("archive")
+        out=[]
+        for action in candidates:
+            try:self._policy_cd(s,r,action)
+            except Denied:continue
+            out.append(action)
+        return out
     def _view_cd(self,s,r,revision=None):
         self._policy_cd(s,r,"read");rev=r["current_revision"] if revision is None else revision
         require(type(rev) is int and 0<=rev<=r["current_revision"],"REVISION_INVALID")
         snap=self._snapshot(r,rev);out={"record_id":r["id"],"resource":r["resource"],"facility_id":r["facility_id"],"revision":rev,"current_revision":r["current_revision"],"snapshot":snap,"synthetic":True,"official_authorization":False}
+        if r["resource"]=="coaching":
+            out.update(year=r["year"],slot=r["slot"],candidate_actions=self._candidate_cd(s,r,snap) if rev==r["current_revision"] else [])
         if r["resource"]=="documents":
             a=self._activity(r["activity_id"]);self._policy_cd(s,a,"read")
+            source=self._snapshot(a,a["current_revision"])
+            out.update(year=a["year"],slot=a["slot"],source_current_revision=a["current_revision"],source_stage=source["stage"] if source else None,candidate_actions=self._candidate_cd(s,r,snap,source,a["current_revision"]) if rev==r["current_revision"] else [])
             label=self._db.execute("SELECT label FROM contract_facility WHERE id=?",(r["facility_id"],)).fetchone()[0]
             out.update(activity_id=a["id"],kind=r["kind"],source_changed=snap is not None and snap["source_revision"]!=a["current_revision"],draft_text=draft_text(snap,label,a["id"]) if snap else None)
         return out

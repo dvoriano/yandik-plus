@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | MOD-10 / M12 Administrasi paperless DEMO
+- [Ruang kerja](../drafts/yandik-portal/coaching.html#administrasi) berbagi state kegiatan MOD-09 pada halaman yang sama. Empat jenis naskah teks, snapshot revisi sumber, metadata empat jenis bukti fiktif, telaah/koreksi, arsip simulasi, versi lama dan pencarian. Sumber berubah mengunci pengajuan; versi baru wajib diperiksa. 14 QA unit ditulis, 0 dijalankan. Belum DOCX/PDF, file bukti, database/otorisasi, SRIKANDI atau e-SPJ; M16 tetap evaluasi. CODE_ONLY [skip ci]. Berikutnya pustaka regulasi/SOP.
+
 ## 2026-11-24 | MOD-09 / M15 Pembinaan dan Bimtek DEMO
 - [Halaman kerja](../drafts/yandik-portal/coaching.html), model in-memory dengan master fasilitas M05, rencana, kehadiran agregat, draf hasil, rekomendasi, tenggat, telaah/koreksi dan tindak lanjut DEMO. 16 kasus unit ditulis, 0 dijalankan; QA browser tertunda. Belum ada histori peserta individu/SDM, bukti/dokumen, otorisasi, database atau sertifikat. Tidak mengubah ledger APEL atau inventaris. CODE_ONLY, [skip ci]. Berikutnya administrasi paperless/pustaka.
 

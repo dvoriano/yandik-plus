@@ -1,0 +1,17 @@
+import test from "node:test";import assert from "node:assert/strict";import {initial,plan,change} from "../coaching-model.mjs";import {empty,create,action,stale,draftText,search,EVIDENCE} from "../paperless-model.mjs";
+const id="DEMO-BIMTEK-1",p={facility_id:"DEMO-PSW-ALPHA",date:"2027-01-02",type:"Pembinaan",topic:"Pelaporan APEL",owner:"Tim Pembina DEMO A",planned:5};
+const planned=()=>plan(initial(),p),coaching=()=>change(planned(),id,1,"record",{attendance:0,result:"DEMO hasil",recommendation:"DEMO rekomendasi",due:"2027-02-01"}),make=c=>create(empty(),c,id,"Laporan hasil"),doc="DEMO-DOC-1",run=(s,c,a,p={})=>action(s,c,doc,s.docs[0].revision,a,p),complete=(s,c)=>EVIDENCE.reduce((x,k,i)=>run(x,c,"evidence",{kind:k,ref:"DEMO-"+i}),s);
+test("sumber rencana tanpa hasil ditolak",()=>assert.throws(()=>make(planned())));
+test("sumber tidak dikenal",()=>assert.throws(()=>create(empty(),coaching(),"OTHER","Laporan hasil")));
+test("jenis tidak dikenal",()=>assert.throws(()=>create(empty(),coaching(),id,"lain")));
+test("identitas dan hadir nol diturunkan",()=>{const s=make(coaching());assert.match(draftText(s.docs[0]),/Hadir.*0|Kehadiran tercatat: 0/);assert.match(draftText(s.docs[0]),/Puskeswan DEMO Alpha/);});
+test("jenis sama tidak ganda",()=>{const c=coaching();assert.throws(()=>create(make(c),c,id,"Laporan hasil"));});
+test("kode bukti bukan DEMO ditolak",()=>{const c=coaching();assert.throws(()=>run(make(c),c,"evidence",{kind:EVIDENCE[0],ref:"REAL"}));});
+test("bukti duplikat ditolak",()=>{const c=coaching(),s=complete(make(c),c);assert.throws(()=>run(s,c,"evidence",{kind:EVIDENCE[0],ref:"DEMO-99"}));});
+test("metadata belum lengkap",()=>{const c=coaching();assert.throws(()=>run(make(c),c,"submit"));});
+test("sumber berubah mengunci submit",()=>{const c=coaching(),s=complete(make(c),c),next=change(c,id,2,"review");assert.equal(stale(s.docs[0],next),true);assert.throws(()=>run(s,next,"submit"));});
+test("versi lama dipertahankan",()=>{const c=coaching(),s=make(c),next=change(c,id,2,"review"),fresh=run(s,next,"refresh");assert.equal(fresh.docs[0].versions.length,2);assert.equal(draftText(fresh.docs[0],1),draftText(s.docs[0]));});
+test("arsip butuh hasil ditelaah",()=>{const c=coaching(),s=run(complete(make(c),c),c,"submit");assert.throws(()=>run(s,c,"archive",{note:"DEMO"}));});
+test("alur arsip dan buka revisi",()=>{const c=change(coaching(),id,2,"review"),s=run(complete(make(c),c),c,"submit"),a=run(s,c,"archive",{note:"DEMO telaah"});assert.equal(a.docs[0].status,"ARCHIVED_DEMO");assert.equal(run(a,c,"reopen").docs[0].status,"CORRECTION");});
+test("revisi usang ditolak",()=>{const c=coaching();assert.throws(()=>action(make(c),c,doc,0,"submit"));});
+test("pencarian tahun dan kode",()=>{const s=make(coaching()),f={year:2027,region_id:"ALL",facility_id:"ALL",q:"demo-doc"};assert.equal(search(s,f).length,1);assert.equal(search(s,{...f,year:2026}).length,0);});

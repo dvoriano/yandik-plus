@@ -58,3 +58,7 @@ Jangan membuat pengganti SRIKANDI, pengadaan, atau keuangan. e-SPJ dan aktivitas
 
 ## Lanjutan konsolidasi DEMO | 24 November 2026
 [Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Tabel kebutuhan dan rekap tahapan M04 di ruang kerja dengan identitas independen; belum BAST sah atau arsip resmi. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).
+
+## 2026-11-24 | MOD-10 / M12 Administrasi paperless DEMO
+- [Ruang kerja](../../drafts/yandik-portal/coaching.html#administrasi) berbagi state kegiatan MOD-09 pada halaman yang sama. Empat jenis naskah teks, snapshot revisi sumber, metadata empat jenis bukti fiktif, telaah/koreksi, arsip simulasi, versi lama dan pencarian. Sumber berubah mengunci pengajuan; versi baru wajib diperiksa. 14 QA unit ditulis, 0 dijalankan. Belum DOCX/PDF, file bukti, database/otorisasi, SRIKANDI atau e-SPJ; M16 tetap evaluasi. CODE_ONLY [skip ci]. Berikutnya pustaka regulasi/SOP.
+

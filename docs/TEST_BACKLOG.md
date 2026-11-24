@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-10 / M12 Paperless | 24 November 2026
+- 14 unit tertulis `drafts/yandik-portal/tests/paperless.test.mjs`, 0 dijalankan. Browser tertunda: akses dari katalog; buat kegiatan dan hasil; buat empat draf tanpa input ulang identitas; nol kehadiran; isi metadata dan cegah duplikat; telaah/koreksi; perubahan sumber dan versi lama; arsip/buka revisi; pencarian cakupan; reset bersama; keyboard/320px; tidak ada jaringan atau file asli.
+
+
 ## MOD-09 / M15 Pembinaan dan Bimtek | 24 November 2026
 - 16 unit tertulis pada `drafts/yandik-portal/tests/coaching.test.mjs`, 0 dijalankan. Browser tertunda: navigasi dua pintu; filter tahun/wilayah/fasilitas; validasi rencana; simpan hasil termasuk hadir nol; koreksi dan telaah; tindak lanjut/histori dan reset; responsif/keyboard serta pembatas DEMO. Belum ada pengujian backend.
 

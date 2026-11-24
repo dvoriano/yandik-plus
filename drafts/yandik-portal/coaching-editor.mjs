@@ -1,7 +1,9 @@
 import {DEMO_FACILITIES as F} from "../m05-apel-dashboard-ui/fixtures.mjs";
 import {TYPES,TOPICS,OWNERS,YEARS,initial,plan,change,list,summary} from "./coaching-model.mjs";
 const $=id=>document.getElementById(id),el=(tag,text)=>{const x=document.createElement(tag);if(text!==undefined)x.textContent=String(text);return x;},choices=a=>a.map(x=>[x,x]),opts=(x,a)=>x.replaceChildren(...a.map(([v,l])=>new Option(l,v)));
+import {mountPaperless} from "./paperless-editor.mjs";
 let state=initial();
+const paperless=mountPaperless({root:$("paperless"),getCoaching:()=>state,getScope:()=>({year:+$("cy").value,region_id:$("cr").value,facility_id:$("cf").value})});
 const labels={PLANNED:"Rencana",RESULT_DRAFT:"Draf hasil",FOLLOWUP_OPEN:"Tindak lanjut terbuka",CLOSED_DEMO:"Ditutup DEMO"};
 function field(form,label,type,options){const l=el("label",label),x=el(options?"select":type==="textarea"?"textarea":"input");x.required=true;if(options)opts(x,options);else if(type==="textarea")x.maxLength=300;else{x.type=type;if(type==="number"){x.min=0;x.max=1000;x.step=1;}if(type==="date"){x.min="2026-01-01";x.max="2030-12-31";}}l.append(x);form.append(l);return x;}
 function button(text,fn){const b=el("button",text);b.type="button";b.addEventListener("click",fn);return b;}
@@ -14,8 +16,8 @@ if(r.status==="PLANNED"){const form=el("form");form.className="filter-row";const
 else if(r.status==="RESULT_DRAFT")a.append(button("Catat telaah DEMO",()=>act(()=>change(state,r.id,r.revision,"review"))),button("Minta perbaikan",()=>act(()=>change(state,r.id,r.revision,"return"))));
 else if(r.status==="FOLLOWUP_OPEN"){const form=el("form"),note=field(form,"Hasil tindak lanjut DEMO","textarea");submit(form,"Catat penutupan DEMO",()=>change(state,r.id,r.revision,"close",{completion:note.value}));a.append(form);}
 const h=el("details");h.append(el("summary","Riwayat revisi"));for(const x of r.history)h.append(el("p",x.revision+" · "+x.action+(x.previous?.result?" · Hasil sebelumnya: "+x.previous.result:"")));a.append(h);return a;}
-function render(){const rows=list(state,{year:+$("cy").value,region_id:$("cr").value,facility_id:$("cf").value}),s=summary(rows);$("stats").textContent="Kegiatan "+s.activities+" · Rencana "+s.planned+" · Draf hasil "+s.review+" · Tindak lanjut "+s.open+" · Ditutup "+s.closed+" · Kehadiran "+(s.attendance??"—")+" (bukan orang unik)";$("records").replaceChildren(...(rows.length?rows.map(card):[el("p","Belum ada kegiatan pada cakupan ini.")]));}
+function render(){const rows=list(state,{year:+$("cy").value,region_id:$("cr").value,facility_id:$("cf").value}),s=summary(rows);$("stats").textContent="Kegiatan "+s.activities+" · Rencana "+s.planned+" · Draf hasil "+s.review+" · Tindak lanjut "+s.open+" · Ditutup "+s.closed+" · Kehadiran "+(s.attendance??"—")+" (bukan orang unik)";$("records").replaceChildren(...(rows.length?rows.map(card):[el("p","Belum ada kegiatan pada cakupan ini.")]));paperless.render();}
 opts($("cy"),choices(YEARS));opts($("cr"),[["ALL","Semua wilayah"],...new Map(F.map(f=>[f.region_id,f.region_label]))]);facilities();for(const id of ["cy","cr","cf"])$(id).addEventListener("change",()=>{if(id==="cr")facilities();render();});
 const form=$("plan"),target=field(form,"Puskeswan sasaran","",F.map(f=>[f.facility_id,f.facility_label])),d=field(form,"Tanggal","date"),type=field(form,"Jenis","",choices(TYPES)),topic=field(form,"Topik","",choices(TOPICS)),owner=field(form,"Penanggung jawab","",choices(OWNERS)),n=field(form,"Rencana peserta","number");
 submit(form,"Buat rencana DEMO",()=>{const next=plan(state,{facility_id:target.value,date:d.value,type:type.value,topic:topic.value,owner:owner.value,planned:n.valueAsNumber});$("cy").value=d.value.slice(0,4);$("cr").value="ALL";facilities();$("cf").value=target.value;form.reset();return next;});
-$("reset").addEventListener("click",()=>{if(confirm("Hapus semua catatan simulasi?"))act(initial);});render();
+$("reset").addEventListener("click",()=>{if(confirm("Hapus semua kegiatan dan arsip simulasi?")){paperless.reset();act(initial);}});render();

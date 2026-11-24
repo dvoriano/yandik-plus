@@ -316,3 +316,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C7
 13 backend QA declared, 0 executed. Backend manifest 310 (109 pure+201 rehearsal). Structured document preview needs browser QA; no DOCX/PDF exports.
+
+## Addendum K4-C8
+9 backend +4 JS declared, 0 executed. Backend manifest 319 (115 pure+204 rehearsal). Integrated browser rehearsal is a separate A+C authorization, NOT existing fixture preview. See K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md. D/E remain blocked.

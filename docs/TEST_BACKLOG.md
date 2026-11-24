@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C8 | Paket dan handoff
+- 9 backend QA `drafts/yandik-backend-contract/test_codex_rehearsal.py` (6 pure+3 memory) dan 4 JS `drafts/yandik-portal/tests/backend-client-retry.test.mjs`, 0 dijalankan. Backend manifest 319 (115+204). Manual: exact static allowlist, blocked external/navigation, no actual socket/listener, no browser token exposure, actor context separation, default off, session expiry, read-only vs commands, cross-actor workflow same host, malformed ACK, stale/dirty/conflict, all 12 menu/31 API, mobile, no real data, no network/upload/print, cleanup. Separate owner authorization for fixture-only visual, pure, memory DDL, integrated browser+memory, D source integration, E release. No CI/CL.
+
+
 ## K4-C7 | Template dokumen
 - 13 QA `drafts/yandik-backend-contract/test_document_templates.py` (7 pure +6 rehearsal), 0 dijalankan. Manual: 4 layout distinct, date Indonesian, zero/null, placeholder, metadata completeness, template pin/history, stale/refresh, rollback, immutable render, scope, historical preview, HTML text-only escaping, mobile accessibility, no actual issuance, regression C6 and previous A7. Manifest backend 310 (109+201). Unit/DDL/browser authorization pending.
 

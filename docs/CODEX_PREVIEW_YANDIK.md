@@ -65,3 +65,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ## Handoff QA-A
 [Percobaan 24 November dan prompt Codex](QA_A_PREVIEW_HANDOFF_2026-11-24.md). Preview diizinkan pada sesi ini tetapi checkout lingkungan terblokir. Tidak ada hasil browser. Izin tidak mencakup unit, SQL atau rilis.
+
+## Paket backend terintegrasi K4-C8 (belum diuji)
+[Handoff terbaru](K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md). `review.html` tetap preview fixture murni; `backend-review.html` memerlukan runner virtual-origin + memory host dan izin A+C terpisah. Jangan menjalankan perintah panduan sebelum izin eksplisit.

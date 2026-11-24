@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | K4-C8: paket aplikasi terpadu dan handoff QA
+- [Panduan](K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md): manifest 18 aset statis, audit impor terfokus, runner Playwright lokal virtual-origin tanpa HTTP listener, host AccountStore satu :memory: dengan konteks aktor terpisah, explicit authorization/read-only default, tidak auto-install. Semua 23 GET +8 POST provider aliases, retry APEL unified dan ACK malformed pending. 9 QA backend +4 JS baru, 0 dijalankan; manifest backend 319 (115+204). K4-C1–C8 kode awal tersedia 8/8, bukan siap jalan atau selesai K4/K7. Gate A/B/C tetap belum dijalankan; preview terpisah, D/E blocked. CODE_ONLY [skip ci]. Berikutnya keputusan owner cakupan QA; tidak otomatis menjalankan.
+
 ## 2026-11-24 | K4-C7: template dokumen paperless terstruktur
 - [Kontrak](K4_C7_DOCUMENT_TEMPLATES_2026_2030.md): 4 format berbeda, label Indonesia, data dari snapshot sumber, placeholder nomor/tujuan/pihak resmi, metadata bukti, render JSON/digest per revisi immutable, identitas dan versi template terikat, preview terstruktur responsif. 13 QA backend (7 pure+6 rehearsal), 0 dijalankan; manifest 310 (109+201), API tetap 31. Tidak membuat DOCX/PDF, tanda tangan, pengiriman, atau dokumen resmi. CODE_ONLY [skip ci]. Berikutnya K4-C8 paket aplikasi terpadu dan handoff QA.
 

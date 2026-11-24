@@ -32,7 +32,7 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
  if(!identity.available){message.textContent="Sesi tidak tersedia. Tidak menggunakan data contoh pengganti.";return ()=>root.replaceChildren();}
  const core=identity.data,allowed=menus(core.role_demo);selected=scope(core);active=allowed[0];
  message.textContent="BACKEND DEMO · "+shown(core.role_demo)+" · tidak ada data resmi";
- function canLeave(){if(busy||annualPending)return false;if(queue?.status==="PENDING"||queue?.status==="CONFLICT"){message.textContent="Selesaikan antrean atau konflik dahulu.";return false;}return !dirty||confirm("Buang isian belum disimpan?");}
+ function canLeave(){if(busy||annualPending){message.textContent="Selesaikan perintah tertunda terlebih dahulu.";return false;}if(queue?.status==="PENDING"||queue?.status==="CONFLICT"){message.textContent="Selesaikan antrean atau konflik dahulu.";return false;}return !dirty||confirm("Buang isian belum disimpan?");}
  function setScope(next){if(!canLeave()){renderFilters();return;}dirty=false;selected=scope(core,{...selected,...next});renderFilters();render();}
  function renderFilters(){
   const s=selected;filters.replaceChildren(select("Tahun",[2026,2027,2028,2029,2030].map(y=>[y,y]),s.year,v=>setScope({year:Number(v)})));
@@ -85,11 +85,14 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
     queue=api.queue(cmd);transmit(queue);
    }catch(e){feedback.textContent=shown(e.message);}
   }));
-  if(allowCommands===true&&!fieldMode)for(const action of r.candidate_actions.filter(a=>a!=="save_draft"))actions.append(button(shown(action),async()=>{
-   if(busy||dirty){feedback.textContent="Simpan perubahan terlebih dahulu.";return;}
-   if(!confirm("Catat tindakan DEMO ini?"))return;
-   busy=true;const cmd=workflowCommand(r,action,id());const send=async()=>{try{const v=await api.command("apel",cmd);if(v.status===200){busy=false;await render();return;}feedback.textContent=shown(v.error);if(v.status>=500)throw Error("ACK_UNKNOWN");actions.replaceChildren(button("Baca ulang",()=>render()));}catch{feedback.textContent="Respons belum diketahui. Coba lagi dengan ID sama.";actions.replaceChildren(button("Coba lagi",()=>{if(!busy){busy=true;send();}}));}finally{busy=false;}};await send();
-  }));
+  if(allowCommands===true&&!fieldMode){
+   const ctx=annualContext(target);
+   for(const action of r.candidate_actions.filter(a=>a!=="save_draft"))actions.append(button(shown(action),()=>{
+    if(!ctx.clean()||queue)return;
+    if(!confirm("Catat tindakan DEMO ini?"))return;
+    try{ctx.send("apel",workflowCommand(r,action,id()));}catch(e){ctx.error(e.message);}
+   }));
+  }
  }
  function annualContext(out){
   const feedback=node("p");feedback.setAttribute("role","status");out.append(feedback);

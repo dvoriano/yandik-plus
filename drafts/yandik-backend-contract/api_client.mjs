@@ -27,7 +27,7 @@ export async function sendQueued(client,entry){
  if(r.status===200&&r.data?.record_id===entry.command.record_id&&r.data?.revision===entry.command.expected_revision+1)
   return {...entry,status:"ACK_DEMO",receipt:r.data,error:null};
  if(r.status===409)return {...entry,status:"CONFLICT",error:r.error};
- if(r.status>=500)return {...entry,status:"PENDING",error:"ACK_UNKNOWN_RETRY_SAME_COMMAND"};
+ if(r.status>=500||r.status===200)return {...entry,status:"PENDING",error:"ACK_UNKNOWN_RETRY_SAME_COMMAND"};
  return {...entry,status:"REVIEW_REQUIRED",error:r.error??"RECEIPT_INVALID"};
 }
 // No rebase from unseen remote revision. User reviews latest record and constructs

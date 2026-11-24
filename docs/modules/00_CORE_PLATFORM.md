@@ -154,3 +154,7 @@ P0. Tidak melakukan auth terhadap website produksi; sumber risiko teridentifikas
 ## 2026-11-24 | K4-C2: serah terima penanggung jawab Puskeswan DEMO
 - [Kontrak](../K4_C2_RESPONSIBILITY_HANDOFF_2026_2030.md): review provinsi + konfirmasi admin terpisah, snapshot akun/grant dan seluruh record fasilitas, digest/revisi/TTL 24 jam, alih owner tanpa mengubah payload, grant lama dan sesi dicabut atomik, grant baru dan histori per record/akun, replay dan rollback. 20 QA tertulis (5 pure + 15 rehearsal), manifest backend 261 (97+164), 0 dijalankan. Host-only, bukan mutasi SDM, belum UI/HTTP/persetujuan resmi/recovery petugas nonaktif. CODE_ONLY [skip ci]. Berikutnya K4-C3 formulir Profil, Inventaris dan SDM.
 
+
+## 2026-11-24 | K4-C8: paket aplikasi terpadu dan handoff QA
+- [Panduan](../K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md): manifest 18 aset statis, audit impor terfokus, runner Playwright lokal virtual-origin tanpa HTTP listener, host AccountStore satu :memory: dengan konteks aktor terpisah, explicit authorization/read-only default, tidak auto-install. Semua 23 GET +8 POST provider aliases, retry APEL unified dan ACK malformed pending. 9 QA backend +4 JS baru, 0 dijalankan; manifest backend 319 (115+204). K4-C1–C8 kode awal tersedia 8/8, bukan siap jalan atau selesai K4/K7. Gate A/B/C tetap belum dijalankan; preview terpisah, D/E blocked. CODE_ONLY [skip ci]. Berikutnya keputusan owner cakupan QA; tidak otomatis menjalankan.
+

@@ -105,12 +105,18 @@
       "pure": 7,
       "rehearsal": 6,
       "status": "NOT_RUN"
+    },
+    {
+      "file": "test_codex_rehearsal.py",
+      "pure": 6,
+      "rehearsal": 3,
+      "status": "NOT_RUN"
     }
   ],
   "totals": {
-    "pure": 109,
-    "rehearsal": 201,
-    "all": 310,
+    "pure": 115,
+    "rehearsal": 204,
+    "all": 319,
     "executed": 0
   },
   "gates": [

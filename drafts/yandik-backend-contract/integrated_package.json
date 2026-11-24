@@ -1,0 +1,68 @@
+{
+  "package": "YANDIK+ integrated synthetic rehearsal",
+  "status": "CODE_WRITTEN_NOT_RUN",
+  "baseline": "dca0247bb60650c4fc576693cfa085c1c3e4b306",
+  "execution_authorized": false,
+  "production_authorization": false,
+  "real_data_allowed": false,
+  "persistent": false,
+  "network_service": false,
+  "transport": "Playwright page binding; static virtual origin requests fulfilled from exact allowlist",
+  "entry": "drafts/yandik-portal/backend-review.html",
+  "backend": "drafts/yandik-backend-contract/rehearsal_host.py",
+  "runner": "drafts/yandik-backend-contract/codex_rehearsal.py",
+  "virtual_origin": "http://127.0.0.1:8765",
+  "static_files": [
+    "drafts/yandik-portal/backend-review.html",
+    "drafts/yandik-portal/styles.css",
+    "drafts/yandik-portal/review.css",
+    "drafts/yandik-portal/backend-workspace.css",
+    "drafts/yandik-portal/backend-workspace.mjs",
+    "drafts/yandik-portal/backend-workspace-model.mjs",
+    "drafts/yandik-portal/portal-navigation.mjs",
+    "drafts/yandik-portal/annual-form-editor.mjs",
+    "drafts/yandik-portal/annual-form-model.mjs",
+    "drafts/yandik-portal/support-form-editor.mjs",
+    "drafts/yandik-portal/support-form-model.mjs",
+    "drafts/yandik-portal/regional-form-editor.mjs",
+    "drafts/yandik-portal/regional-form-model.mjs",
+    "drafts/yandik-portal/coachdoc-form-editor.mjs",
+    "drafts/yandik-portal/coachdoc-form-model.mjs",
+    "drafts/yandik-portal/document-preview.mjs",
+    "drafts/yandik-backend-contract/api_client.mjs",
+    "drafts/yandik-backend-contract/portal_backend_provider.mjs"
+  ],
+  "fixture_actors": [
+    "ALPHA",
+    "BETA",
+    "GAMMA",
+    "KAB-UTARA",
+    "KAB-SELATAN",
+    "REVIEW",
+    "REVIEW2",
+    "ADMIN",
+    "LEADER"
+  ],
+  "runtime_requirements": {
+    "python": "3.10+",
+    "sqlite": "Python standard library",
+    "playwright": "optional Python package with locally installed compatible Chromium; no auto install",
+    "node": "modern Node.js 20+ for separate JS QA only"
+  },
+  "api": {
+    "get": 23,
+    "post": 8
+  },
+  "qa": {
+    "backend_manifest": "drafts/yandik-backend-contract/qa_manifest.json",
+    "portal_suite_directory": "drafts/yandik-portal/tests/",
+    "preview": "NOT_RUN"
+  },
+  "limitations": [
+    "No Flask, real authentication, network API, actual data, file uploads, production release",
+    "Virtual origin is intercepted inside isolated Playwright context; no listening socket, no public browser port",
+    "Separate per-actor context; one in-memory host; actor selected at process startup, never through browser",
+    "No public deployment, no CI, no tests run",
+    "Admin account lifecycle and handoff host-only; not browser panels"
+  ]
+}

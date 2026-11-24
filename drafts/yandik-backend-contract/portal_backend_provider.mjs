@@ -4,8 +4,8 @@
  */
 import {createDraftClient,queueDraft,sendQueued} from "./api_client.mjs";
 const READS=Object.freeze({
- core:["core",[]],profiles:["profiles",["facility_id","year"]],inventory:["inventory",["record_id"]],
- apel:["apel",["record_id"]],personnel:["personnel",["facility_id","year"]],roster:["personnel/roster",["facility_id","year"]],support:["support",["record_id"]],supportCatalog:["support/catalog",["facility_id","year"]],
+ core:["core",[]],profiles:["profiles",["facility_id","year"]],profileHistory:["profiles/history",["record_id"]],inventory:["inventory",["record_id"]],
+ apel:["apel",["record_id"]],personnel:["personnel",["facility_id","year"]],roster:["personnel/roster",["facility_id","year"]],staffHistory:["personnel/history",["staff_id"]],support:["support",["record_id"]],supportCatalog:["support/catalog",["facility_id","year"]],
  regionalHistory:["regional/history",["record_id"]],medicine:["medicine",["region_id","year"]],practice:["practice",["region_id","year"]],surveillance:["surveillance",["region_id","year"]],
  certificates:["certificates",["region_id","year"]],coaching:["coaching",["facility_id","year"]],documents:["documents",["facility_id","year"]],coachingDetail:["coaching/detail",["record_id","revision"]],documentDetail:["documents/detail",["record_id","revision"]],
  leadership:["leadership",["year","region_id"]],gis:["gis",["year","region_id","layer"]],library:["library",["q"]],notifications:["notifications",["today"]]

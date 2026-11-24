@@ -1,8 +1,8 @@
 /** K1/K2/K5 QA written, NOT executed. */
 import test from "node:test";
 import assert from "node:assert/strict";
-import {createDemoContext,readConsolidatedDemo,applyConsolidatedDemoAction,readRegionalCoverage,nextActions} from "../shared-demo.mjs";
-import {readDomain,DOMAINS,REGIONS} from "../domain-views.mjs";
+import {createDemoContext,readConsolidatedDemo,applyConsolidatedDemoAction,readRegionalCoverage,nextActions,readRecordedFollowupQueue} from "../shared-demo.mjs";
+import {readDomain,readDomainDetail,DOMAINS,REGIONS} from "../domain-views.mjs";
 const a={year:2026,month:1,region_id:"DEMO-REGION-UTARA",facility_id:"DEMO-PSW-ALPHA"};
 const zero={pengobatan:0,vaksinasi:0,penyuluhan:0,layanan_lain:0};
 test("K1 joined master scope and distinct workflow ledger",()=>{
@@ -55,3 +55,39 @@ test("K3 independent M04 seven stages and M05 ledger unaffected",async()=>{
  assert.equal(d.handover.length,1);assert.equal(w.observations.length,1);
  assert.equal(JSON.stringify(ctx.dashboardFixture.ledger),before);
 });
+
+const activityScope={...a,year:2028};
+const extras={investigations:[{event_id:"DEMO-EVENT-01",location_id:"DEMO-LOCATION-01"},
+ {event_id:"DEMO-EVENT-01",location_id:"DEMO-LOCATION-02"}],
+ kurban_animals:[{animal_id:"DEMO-ANIMAL-01",ante:true,post:true}]};
+test("K2 two event-location pairs and one ante+post animal count three",()=>{
+ let c=createDemoContext();c=applyConsolidatedDemoAction(c,activityScope,"create_draft",zero,extras);
+ c=applyConsolidatedDemoAction(c,activityScope,"submit",zero);
+ const v=readConsolidatedDemo(c,activityScope);
+ assert.equal(v.correction.activity_count_last_submitted_demo,3);
+ assert.equal(v.ledgerMonth.observed_demo_events,null);
+});
+test("K2 duplicate event-location pair rejected",()=>assert.throws(()=>applyConsolidatedDemoAction(
+ createDemoContext(),activityScope,"create_draft",zero,{...extras,investigations:[extras.investigations[0],extras.investigations[0]]})));
+test("K2 duplicate animal rejected",()=>assert.throws(()=>applyConsolidatedDemoAction(
+ createDemoContext(),activityScope,"create_draft",zero,{...extras,kurban_animals:[extras.kurban_animals[0],extras.kurban_animals[0]]})));
+test("K2 animal must have ante or post",()=>assert.throws(()=>applyConsolidatedDemoAction(
+ createDemoContext(),activityScope,"create_draft",zero,{investigations:[],kurban_animals:[{animal_id:"DEMO-ANIMAL-01",ante:false,post:false}]})));
+test("K2 preserves activities on correction and omitted extra payload",()=>{
+ let c=createDemoContext();for(const action of ["create_draft","submit","return_correction"])c=applyConsolidatedDemoAction(c,activityScope,action,zero,extras);
+ c=applyConsolidatedDemoAction(c,activityScope,"revise_draft",zero);
+ assert.deepEqual(readConsolidatedDemo(c,activityScope).draft_activities,extras);
+});
+test("K2 reject non-DEMO event ID",()=>assert.throws(()=>applyConsolidatedDemoAction(
+ createDemoContext(),activityScope,"create_draft",zero,{...extras,investigations:[{event_id:"REAL",location_id:"DEMO-LOCATION-01"}]})));
+test("K6 queue contains recorded workflow only and selected territory",()=>{
+ const queue=readRecordedFollowupQueue(createDemoContext(),a);
+ assert.ok(queue.length>0);assert.ok(queue.every(x=>x.period.startsWith("2026")&&x.facility_label!=="Puskeswan DEMO Gamma"));
+ assert.deepEqual(readRecordedFollowupQueue(createDemoContext(),{...a,year:2030}),[]);
+});
+for(const domain of DOMAINS)test("K5 detail "+domain,async()=>{
+ const v=await readDomain(domain,REGIONS[0]);const d=await readDomainDetail(domain,REGIONS[0],v.items[0].id);
+ assert.ok(d.fields.length);assert.equal(d.official_authorization,false);assert.equal(d.may_write,false);
+});
+test("K5 deny out-of-region detail",async()=>await assert.rejects(readDomainDetail("medicine",REGIONS[1],"DEMO-MED-ALPHA")));
+test("K5 no source denies surveillance detail",async()=>await assert.rejects(readDomainDetail("surveillance",REGIONS[1],"DEMO-EVENT-ALPHA")));

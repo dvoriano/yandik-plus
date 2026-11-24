@@ -1,5 +1,6 @@
 /** CODE_ONLY: no browser or test executed for this change. */
-import {readDomain,DOMAINS} from "./domain-views.mjs";
+import {readDomain,readDomainDetail,DOMAINS} from "./domain-views.mjs";
+import {mountActivityEditor} from "./activity-editor.mjs";
 const $=id=>document.getElementById(id);
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n;};
 const fmt=v=>v===null||v===undefined?"—":typeof v==="number"?new Intl.NumberFormat("id-ID").format(v):String(v);
@@ -21,6 +22,7 @@ const actions={create_draft:"Buat draf DEMO",save_draft:"Simpan draf DEMO",submi
 async function startCore(){
  const m=await import("./shared-demo.mjs");
  let context=m.createDemoContext();
+ const editor=mountActivityEditor({investigations:$("investigations"),animals:$("kurban-animals"),addInvestigation:$("add-investigation"),addAnimal:$("add-animal")});
  const opts=(target,items,value)=>{target.replaceChildren(...items.map(([v,l])=>new Option(l,v)));if(items.some(([v])=>String(v)===String(value)))target.value=String(value);};
  opts($("year"),m.YEARS.map(y=>[y,y]),2026);
  opts($("month"),Array.from({length:12},(_,i)=>[i+1,new Intl.DateTimeFormat("id-ID",{month:"long",timeZone:"UTC"}).format(new Date(Date.UTC(2026,i,1)))]),1);
@@ -43,6 +45,7 @@ async function startCore(){
   cards($("workflow-status"),[["Status workflow",c.report_state,"Tidak berarti laporan resmi"],["Revisi",c.revision,"Jejak simulasi"],["Jumlah terakhir terkirim",c.activity_count_last_submitted_demo,"Terpisah dari ledger"]]);
   const available=m.nextActions(v);
   for(const key of m.FIELDS){const input=$("report-form").elements.namedItem(key);input.value=v.draft_counts ? (v.draft_counts[key]??"") : "0";input.disabled=!available.some(a=>["create_draft","save_draft","revise_draft"].includes(a));}
+  editor.render(v.draft_activities,available.some(a=>["create_draft","save_draft","revise_draft"].includes(a)));
   $("report-controls").disabled=false;
   $("actions").replaceChildren(...available.map(action=>{
    const button=el("button",actions[action]);button.type="button";button.dataset.action=action;
@@ -50,27 +53,32 @@ async function startCore(){
     $("action-feedback").textContent="";
     try{
      const counts=Object.fromEntries(m.FIELDS.map(k=>[k,$("report-form").elements.namedItem(k).valueAsNumber]));
-     context=m.applyConsolidatedDemoAction(context,scope(),action,counts);
+     context=m.applyConsolidatedDemoAction(context,scope(),action,counts,editor.read());
      $("action-feedback").textContent="Perubahan DEMO dicatat dalam memori.";render();
     }catch(e){$("action-feedback").textContent="Tindakan DEMO ditolak: "+String(e.message);}
    });return button;
   }));
   table($("history"),["Revisi","Tindakan","Status"],c.history.map(h=>[h.revision,actions[h.action]??h.action,h.status]),"Riwayat workflow terpilih");
   table($("followup"),["Usulan pembahasan","Peran yang dikonsultasikan","Status"],v.followup.advisory_proposals.map(p=>[p.subject,p.role_to_consult,p.status]),"Bahan telaah, bukan tugas terkirim");
+  const queue=m.readRecordedFollowupQueue(context,scope());
+  table($("followup-queue"),["Puskeswan","Bulan","Bahan telaah","Peran","Status"],queue.map(p=>[p.facility_label,p.period,p.subject,p.role_to_consult,p.status]),"Catatan workflow wilayah terpilih");
   const regions=m.readRegionalCoverage(context,scope().year);
   table($("regional"),["Wilayah","Puskeswan","Bulan terlapor","Bulan diharapkan","Layanan tercatat","Profil ada","SDM lengkap"],regions.map(g=>[g.region,g.facilities,g.reported,g.expected,g.service,g.profiles,g.sdm]),"Agregat sumber M05 DEMO");
   table($("coverage"),["Wilayah","Fasilitas DEMO","Cakupan laporan"],regions.map(g=>[g.region,g.facilities,g.reported+" / "+g.expected]),"Cakupan tanpa koordinat");
  }
- const redraw=()=>{try{render();}catch(e){$("core-status").textContent="Model DEMO tidak dapat dimuat: "+String(e.message);$("report-controls").disabled=true;for(const id of ["summary","sources","workflow-status","actions","history","followup","regional","coverage"])$(id).replaceChildren();}};
+ const redraw=()=>{try{render();}catch(e){$("core-status").textContent="Model DEMO tidak dapat dimuat: "+String(e.message);$("report-controls").disabled=true;for(const id of ["summary","sources","workflow-status","actions","history","followup","followup-queue","regional","coverage"])$(id).replaceChildren();}};
  $("scope-form").addEventListener("submit",e=>e.preventDefault());
  $("scope-form").addEventListener("change",()=>{syncFacility();$("action-feedback").textContent="";redraw();});
  $("report-form").addEventListener("submit",e=>e.preventDefault());
- $("report-form").addEventListener("input",()=>{
+ const markDirty=()=>{
   for(const button of $("actions").querySelectorAll("button")){
    if(["submit","resubmit"].includes(button.dataset.action))button.disabled=true;
   }
-  $("action-feedback").textContent="Angka diubah. Simpan draf/revisi dahulu sebelum simulasi kirim.";
- });
+  $("action-feedback").textContent="Isian diubah. Simpan draf/revisi dahulu sebelum simulasi kirim.";
+ };
+ $("report-form").addEventListener("input",markDirty);
+ $("report-form").addEventListener("change",markDirty);
+ editor.onChange(markDirty);
  $("reset").addEventListener("click",()=>{context=m.createDemoContext();$("report-form").reset();$("action-feedback").textContent="Simulasi dikembalikan ke fixture awal.";redraw();});
  render();$("scope-controls").disabled=false;$("report-controls").disabled=false;$("reset").disabled=false;
 }
@@ -85,6 +93,25 @@ async function domains(){
   x.title.textContent=v.title;
   table(x.content,v.columns.map(c=>c.label),v.rows,v.source+" · "+region);
   if(v.note)x.content.append(el("p",v.note,"note"));
+  if(v.available&&v.items.length){
+   const label=el("label","Pilih entri untuk telaah","single-label"),select=el("select");
+   select.append(new Option("Pilih entri",""),...v.items.map(item=>new Option(item.label,item.id)));
+   label.append(select);
+   const detail=el("div");x.content.append(label,detail);
+   let request=0;
+   select.addEventListener("change",async()=>{
+    const token=++request;detail.replaceChildren();
+    if(!select.value)return;
+    detail.append(el("p","Memuat bahan telaah..."));
+    try{
+     const d=await readDomainDetail(x.key,region,select.value);
+     if(g!==generation||token!==request)return;
+     detail.replaceChildren(el("h4",d.title),el("p",d.note,"note"));
+     const main=el("div");detail.append(main);table(main,["Keterangan","Nilai"],d.fields,"Detail DEMO");
+     for(const group of d.groups){const container=el("div");detail.append(el("h4",group.title),container);table(container,group.columns,group.rows,group.title);}
+    }catch(e){if(g===generation&&token===request)detail.replaceChildren(el("p","Telaah tidak dapat dimuat: "+String(e.message),"error"));}
+   });
+  }
  }catch(e){if(g===generation)x.content.replaceChildren(el("p","Register DEMO tidak dapat dimuat: "+String(e.message),"error"));}}));
 }
 $("oversight-region").addEventListener("change",domains);domains();
@@ -104,6 +131,12 @@ async function startSupport(){
   cards($("support-summary"),[
    ["Kebutuhan",d.needs.length,"Catatan skenario M04"],["Paket",d.packages.length,"Bahan rencana"],["Jadwal",d.schedule.length,"DEMO"],["Kirim / terima",d.ship.length+" / "+d.receipt.length,"Bukan distribusi nyata"],["Referensi serah terima",d.handover.length,"Bukan BAST sah"],["Pemantauan",d.monitor.length,"Catatan DEMO"]
   ]);
+  table($("support-needs"),["Kebutuhan","Jumlah","Satuan","Status"],d.needs.map(n=>[n.item,n.quantity,n.unit,n.status]),"Kebutuhan dari skenario M04");
+  table($("support-stages"),["Tahap","Catatan tersedia"],[
+   ["Paket",d.packages.length],["Telaah",state.reviews.filter(x=>x.id==="DEMO-TELAAH-"+selector.value.slice(9)).length],
+   ["Jadwal",d.schedule.length],["Kirim",d.ship.length],["Terima",d.receipt.length],
+   ["Referensi serah terima",d.handover.length],["Pemantauan",d.monitor.length]
+  ],"Rekap tahap simulasi, bukan status anggaran");
   $("support-actions").replaceChildren();
   if(next){
    const button=el("button",labels[next]);button.type="button";
@@ -112,7 +145,7 @@ async function startSupport(){
   }else $("support-actions").append(el("p","Seluruh tujuh tahap skenario telah dicatat dalam memori."));
  }
  function reset(){state=f.demoWorkspace();render();$("support-feedback").textContent="Skenario M04 dipulihkan.";}
- selector.addEventListener("change",()=>{try{render();$("support-feedback").textContent="Skenario independen M04 terpilih.";}catch(e){$("support-feedback").textContent="Skenario tidak tersedia: "+String(e.message);$("support-actions").replaceChildren();}});
+ selector.addEventListener("change",()=>{try{render();$("support-feedback").textContent="Skenario independen M04 terpilih.";}catch(e){$("support-feedback").textContent="Skenario tidak tersedia: "+String(e.message);$("support-actions").replaceChildren();for(const id of ["support-summary","support-needs","support-stages"])$(id).replaceChildren();}});
  $("support-reset").addEventListener("click",()=>{try{reset();}catch(e){$("support-feedback").textContent="Reset gagal: "+String(e.message);}});
  render();selector.disabled=false;$("support-reset").disabled=false;
  $("support-feedback").textContent="Skenario M04 terpisah · Oktober 2026. Hanya kebutuhan yang lolos model DEMO dapat dilanjutkan.";

@@ -51,12 +51,13 @@ export function readConsolidatedDemo(c,scope){
  });
  const followup=buildDemoFollowupView(correction);
  const ledgerMonth=dashboard.facility_rows[0].months[scope.month-1];
- // Read only the four numeric draft fields from this synthetic in-memory record.
+ // Read the selected synthetic draft only; do not copy ledger records.
  const draft=c.workflow.records.find(x=>x.facility_id===scope.facility_id&&x.period===period(scope))?.draft;
  const draft_counts=draft?Object.fromEntries(FIELDS.map(k=>[k,draft.counts[k]])):null;
  return {schema:SCHEMA,synthetic:true,facility,period:period(scope),
   joined:join.rows[0],annual:dashboard.summary,ledgerMonth,
   correction,followup,draft_counts,
+  draft_activities:draft?{investigations:structuredClone(draft.investigations),kurban_animals:structuredClone(draft.kurban_animals)}:null,
   source_status:{ledger:"M05-0/M05-14 (snapshot)",
    profile:"M05-15 (snapshot)",workflow:"M05-1/M05-16 (in-memory)",
    support:"M04-I1 (independent scenario; no ID crosswalk)"},
@@ -72,7 +73,7 @@ const transitions={
 export function nextActions(view){return [...(transitions[view.correction.report_state]??[])];}
 /** Explicit click only. Caller provides synthetic integers; no raw notes,
  * credentials, real sessions, uploads, external API or local persistence. */
-export function applyConsolidatedDemoAction(c,scope,action,counts){
+export function applyConsolidatedDemoAction(c,scope,action,counts,activities){
  const view=readConsolidatedDemo(c,scope);
  if(!nextActions(view).includes(action))throw Error("TRANSITION_DENIED");
  const write=["create_draft","save_draft","revise_draft"].includes(action);
@@ -82,10 +83,27 @@ export function applyConsolidatedDemoAction(c,scope,action,counts){
      FIELDS.some(k=>!Object.hasOwn(counts,k)||
         !Number.isSafeInteger(counts[k])||counts[k]<0||counts[k]>100000))
     throw Error("DEMO_COUNTS_INVALID");
+  const prior=c.workflow.records.find(x=>x.facility_id===scope.facility_id&&x.period===view.period)?.draft;
+  const extra=activities??view.draft_activities??{investigations:[],kurban_animals:[]};
+  if(!extra||Object.keys(extra).length!==2||
+     !Array.isArray(extra.investigations)||!Array.isArray(extra.kurban_animals)||
+     extra.investigations.length>100||extra.kurban_animals.length>100)
+    throw Error("DEMO_ACTIVITIES_INVALID");
+  const safeId=x=>typeof x==="string"&&/^DEMO-[A-Z0-9_-]{1,40}$/.test(x);
+  if(extra.investigations.some(x=>!x||Object.keys(x).length!==2||
+    !safeId(x.event_id)||!safeId(x.location_id))||
+    extra.kurban_animals.some(x=>!x||Object.keys(x).length!==3||
+    !safeId(x.animal_id)||typeof x.ante!=="boolean"||typeof x.post!=="boolean"))
+   throw Error("DEMO_ACTIVITIES_INVALID");
+  // M05-0 via M05-1 enforces unique event/location pairs and animals,
+  // at least one examination per animal and consistency of explicit zero.
   payload={report:{facility_id:scope.facility_id,period:view.period,
-   declared_no_activity:FIELDS.every(k=>counts[k]===0),
+   declared_no_activity:FIELDS.every(k=>counts[k]===0)&&
+      extra.investigations.length===0&&extra.kurban_animals.length===0,
    counts:Object.fromEntries(FIELDS.map(k=>[k,counts[k]])),
-   investigations:[],kurban_animals:[],evidence_refs:[]}};
+   investigations:structuredClone(extra.investigations),
+   kurban_animals:structuredClone(extra.kurban_animals),
+   evidence_refs:structuredClone(prior?.evidence_refs??[])}};
  }else if(action==="return_correction"){
   payload={reason:"Periksa kembali angka pada contoh laporan DEMO."};
  }
@@ -109,4 +127,21 @@ export function readRegionalCoverage(c,year){
     profiles:joined.profile_sdm_summary.profile_available_demo,
     sdm:joined.profile_sdm_summary.sdm_complete_demo};
  });
+}
+
+/** Queue only already-created workflow records; not a compliance list. */
+export function readRecordedFollowupQueue(c,scope){
+ validate(c,scope);
+ const facilities=new Map(c.facilities.filter(f=>f.region_id===scope.region_id)
+  .map(f=>[f.facility_id,f]));
+ const records=c.workflow.records.filter(r=>r.year===scope.year&&facilities.has(r.facility_id));
+ return records.flatMap(record=>{
+  const f=facilities.get(record.facility_id);
+  const view=readConsolidatedDemo(c,{year:scope.year,month:Number(record.period.slice(5)),
+   region_id:f.region_id,facility_id:f.facility_id});
+  return view.followup.advisory_proposals.map(p=>({
+   facility_label:f.facility_label,period:p.period,subject:p.subject,
+   role_to_consult:p.role_to_consult,status:p.status
+  }));
+ }).sort((a,b)=>(a.period+"|"+a.facility_label).localeCompare(b.period+"|"+b.facility_label));
 }

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## QA-P1 | Hasil aktual 24 November 2026 (mengoreksi status NOT_RUN historis)
+- [Bukti](QA_PARTIAL_2026-11-24.md): `test_contract` 22/22, `test_apel_store` 25/25, backend-client-retry JS 4/4 PASS_SCOPED pada `fd066c2`; 47 backend tests run/pass (30 pure,17 rehearsal), 272 backend belum dijalankan. Browser paperless komponen terisolasi 2 viewport/4 fixture lulus terbatas; full preview blocked. Tidak ada tes AccountStore, integrasi penuh, CI/CL atau produksi. Hasil tidak diwariskan ke perubahan source atau suite lain. Izin tahap selanjutnya tetap dibatasi sesuai owner.
+
+
 ## K4-C8 | Paket dan handoff
 - 9 backend QA `drafts/yandik-backend-contract/test_codex_rehearsal.py` (6 pure+3 memory) dan 4 JS `drafts/yandik-portal/tests/backend-client-retry.test.mjs`, 0 dijalankan. Backend manifest 319 (115+204). Manual: exact static allowlist, blocked external/navigation, no actual socket/listener, no browser token exposure, actor context separation, default off, session expiry, read-only vs commands, cross-actor workflow same host, malformed ACK, stale/dirty/conflict, all 12 menu/31 API, mobile, no real data, no network/upload/print, cleanup. Separate owner authorization for fixture-only visual, pure, memory DDL, integrated browser+memory, D source integration, E release. No CI/CL.
 

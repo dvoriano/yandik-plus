@@ -68,3 +68,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ## Paket backend terintegrasi K4-C8 (belum diuji)
 [Handoff terbaru](K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md). `review.html` tetap preview fixture murni; `backend-review.html` memerlukan runner virtual-origin + memory host dan izin A+C terpisah. Jangan menjalankan perintah panduan sebelum izin eksplisit.
+
+## QA-P1 | Percobaan aktual berikutnya
+[Hasil](QA_PARTIAL_2026-11-24.md). Checkout gagal DNS; virtual-origin browser navigation diblokir administrator. Komponen paperless diuji via local set_content harness tanpa navigasi, bukan full preview. 47 backend dan 4 JS pass scoped. Untuk preview full perlu workspace Codex dengan checkout repo yang diizinkan; jangan bypass pembatasan lingkungan. Jalankan tahapan berdasarkan izin, bukan semua gate otomatis.

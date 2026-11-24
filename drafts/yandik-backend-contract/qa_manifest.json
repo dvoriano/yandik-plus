@@ -1,5 +1,5 @@
 {
-  "status": "NOT_RUN",
+  "status": "PARTIAL_RUN",
   "execution_authorized": false,
   "source_baseline": "195238853158df3c9d927eefb3caea94c87246a9",
   "scope": "K4 backend only; portal and historical module suites remain separate",
@@ -8,13 +8,23 @@
       "file": "test_contract.py",
       "pure": 22,
       "rehearsal": 0,
-      "status": "NOT_RUN"
+      "status": "PASS_SCOPED",
+      "executed": 22,
+      "passed": 22,
+      "failed": 0,
+      "tested_commit": "fd066c2f4ededcbd2b8d0526a7a5e4b8412477fb",
+      "evidence": "docs/QA_PARTIAL_2026-11-24.md"
     },
     {
       "file": "test_apel_store.py",
       "pure": 8,
       "rehearsal": 17,
-      "status": "NOT_RUN"
+      "status": "PASS_SCOPED",
+      "executed": 25,
+      "passed": 25,
+      "failed": 0,
+      "tested_commit": "fd066c2f4ededcbd2b8d0526a7a5e4b8412477fb",
+      "evidence": "docs/QA_PARTIAL_2026-11-24.md"
     },
     {
       "file": "test_inventory_store.py",
@@ -117,23 +127,26 @@
     "pure": 115,
     "rehearsal": 204,
     "all": 319,
-    "executed": 0
+    "executed": 47,
+    "passed": 47,
+    "failed": 0,
+    "not_run": 272
   },
   "gates": [
     {
       "id": "B-PURE",
       "requires": "explicit unit authorization",
-      "status": "NOT_RUN"
+      "status": "PARTIAL_RUN"
     },
     {
       "id": "C-MEMORY",
       "requires": "explicit unit + SQLite DDL authorization",
-      "status": "NOT_RUN"
+      "status": "PARTIAL_RUN"
     },
     {
       "id": "A-PREVIEW",
       "requires": "separate preview authorization",
-      "status": "DEFERRED"
+      "status": "BLOCKED_ENVIRONMENT_FULL_PREVIEW_COMPONENT_PASS"
     },
     {
       "id": "D-INTEGRATION",

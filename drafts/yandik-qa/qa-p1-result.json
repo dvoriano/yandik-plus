@@ -1,0 +1,102 @@
+{
+  "status": "PARTIAL_RUN",
+  "tested_commit": "fd066c2f4ededcbd2b8d0526a7a5e4b8412477fb",
+  "date": "2026-11-24",
+  "authorization_scope": "Owner requested continuation of preview and testing. Limited local synthetic component checks; no broad CI/CL, deployment, real database, or release authorization.",
+  "environment": {
+    "python": "3.13.5",
+    "node": "22.16.0",
+    "chromium": "144.0.7559.96",
+    "database": "isolated :memory: only for APEL",
+    "checkout": "BLOCKED_ENVIRONMENT: git ls-remote Could not resolve host github.com",
+    "integrated_preview": "BLOCKED_ENVIRONMENT: virtual-origin navigation ERR_BLOCKED_BY_ADMINISTRATOR; no complete checkout"
+  },
+  "verified_blobs": {
+    "drafts/yandik-backend-contract/contract.py": "8c50ada0e96e81ae8900edeee06467fefefae70e",
+    "drafts/yandik-backend-contract/test_contract.py": "7af8a77e8736eebf87a4bfb68131ae880856410b",
+    "drafts/yandik-backend-contract/apel_payload.py": "e9702f60d7ebba1a5bb26d3bc4d00d387de18a1c",
+    "drafts/yandik-backend-contract/revision_envelope.py": "8ecb62d991179566362c3b2f366c54d927c98e76",
+    "drafts/yandik-backend-contract/apel_payload.sql": "db67efccba194d06e4ae6ca5b01817f0c1b401b0",
+    "drafts/yandik-backend-contract/schema.sql": "b75cd420dbdb71cf67a204b204b641139e79e8aa",
+    "drafts/yandik-backend-contract/apel_store.py": "faa155a8ba6eb2bfabde1a5a35960c43f435e49f",
+    "drafts/yandik-backend-contract/test_apel_store.py": "b0b7370117fe6f532416d1f2c37d64487dd97bcc",
+    "drafts/yandik-backend-contract/api_client.mjs": "51e29b6105e5326d65c955343b37f2b27ab31fb3",
+    "drafts/yandik-portal/tests/backend-client-retry.test.mjs": "612f856a00b7fbc5b7efeb2e363e8ec08599c48c",
+    "drafts/yandik-portal/document-preview.mjs": "e60e9e3fb8054a1f18bce66ad67aa9fc159afb37",
+    "drafts/yandik-portal/backend-workspace.css": "723d5f1b13386d594cc44f79f5032cea055db21f"
+  },
+  "runs": [
+    {
+      "command": "python -B -m unittest -v test_contract",
+      "cwd": "drafts/yandik-backend-contract",
+      "actual": 22,
+      "pass": 22,
+      "fail": 0,
+      "pure": 22,
+      "memory": 0
+    },
+    {
+      "command": "python -B -m unittest -v test_apel_store",
+      "cwd": "drafts/yandik-backend-contract",
+      "actual": 25,
+      "pass": 25,
+      "fail": 0,
+      "pure": 8,
+      "memory": 17
+    },
+    {
+      "command": "node --test drafts/yandik-portal/tests/backend-client-retry.test.mjs",
+      "cwd": "isolated copied subset root",
+      "actual": 4,
+      "pass": 4,
+      "fail": 0
+    }
+  ],
+  "backend": {
+    "declared": 319,
+    "executed": 47,
+    "passed": 47,
+    "failed": 0,
+    "not_run": 272,
+    "pure_executed": 30,
+    "memory_executed": 17
+  },
+  "browser_component": {
+    "status": "PASS_SCOPED",
+    "method": "Chromium page.set_content local harness: byte-verified component source and CSS inlined; hand-authored synthetic JSON fixture and surrounding test shell; no backend/HTTP/portal mount",
+    "viewports": [
+      1280,
+      375
+    ],
+    "templates_rendered_per_viewport": 4,
+    "horizontal_overflow": false,
+    "stale_history_labels": true,
+    "rejected_may_send_true": true,
+    "html_like_value_rendered_as_literal": true,
+    "page_errors": [],
+    "screenshots": [
+      {
+        "name": "yandik-paperless-desktop.png",
+        "sha256": "f557f9eb4523b081311dd37692b185ccd1d8ad5b89e2ccb01c7d996524f136f4"
+      },
+      {
+        "name": "yandik-paperless-mobile.png",
+        "sha256": "1e068b094024e987ad503c77ac05e9ffb36ebb70bd6a4adf48cc9ff21c28a7cd"
+      }
+    ],
+    "screenshots_delivered_in_chat_not_in_repo": true
+  },
+  "not_verified": [
+    "Full checkout",
+    "AccountStore and full schema integration",
+    "Codex runner",
+    "all 12 menu navigation",
+    "document backend renderer output",
+    "full backend API and session lifecycle",
+    "other suites",
+    "production behavior"
+  ],
+  "ci_run": false,
+  "production_touched": false,
+  "source_changes": false
+}

@@ -319,3 +319,6 @@ Manifest K4 backend 241 declared (92 pure, 149 memory rehearsal), 0 executed. Ti
 
 ## Addendum K4-C8
 9 backend +4 JS declared, 0 executed. Backend manifest 319 (115 pure+204 rehearsal). Integrated browser rehearsal is a separate A+C authorization, NOT existing fixture preview. See K4_C8_INTEGRATED_PACKAGE_QA_HANDOFF_2026_2030.md. D/E remain blocked.
+
+## QA-P1 | Bukti parsial aktual (24 November 2026)
+[Hasil](QA_PARTIAL_2026-11-24.md): 47/319 backend pass, 4 JS pass terpisah, paperless component 2 viewport pass scoped. Status NOT_RUN historis di atas tetap berlaku pada saat dicatat; B/C partial, full preview blocked, D/E blocked. Tidak ada gate K7 penuh lulus.

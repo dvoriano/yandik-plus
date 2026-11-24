@@ -280,3 +280,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-A5
 20 kasus tambahan, 0 dijalankan. 14 rehearsal memerlukan izin DDL. Regresi schema dan writer sebelum integrasi. Preview ditunda.
+
+## Addendum K4-A6
+20 kasus tambahan, 0 dijalankan. 13 rehearsal memerlukan izin DDL. Regresi command namespace lintas stream. Preview ditunda.

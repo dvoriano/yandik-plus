@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | K4-A6: backend empat register teknis DEMO
+- [Kontrak](docs/K4_A6_REGIONAL_REGISTERS_2026_2030.md): typed snapshot regional read-only obat/praktik/surveilans/sertifikat, 7 fixture 2026 independen, coverage null, sidecar telaah internal ber-revisi dan audit, grant aktif/scope asal, replay/rollback, command namespace lintas stream. 20 QA tertulis (7 pure + 13 rehearsal), 0 dijalankan. Bukan migrasi M06/M07/M13/M14, iSIKHNAS/APEL sync, penerbitan, izin atau diagnosis; belum HTTP/auth/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-A7 pembinaan/administrasi.
+
 ## 2026-11-24 | K4-A5: backend Support Puskeswan DEMO
 - [Kontrak](docs/K4_A5_SUPPORT_TYPED_WRITER_2026_2030.md): stream baru 30 case fixture per fasilitas/tahun/dua item, sumber inventaris terkonfirmasi terikat revisi, usulan/telaah kab/kota/paket/jadwal/kirim/terima/metadata BAST/monitoring, batas kuantitas, source stale, audit/replay/rollback. 20 QA tertulis (6 pure + 14 rehearsal), 0 dijalankan. Bukan migrasi M04, crosswalk, bantuan resmi, HTTP, DB riil atau otorisasi. CODE_ONLY [skip ci]. Berikutnya K4-A6 pengawasan/layanan teknis.
 

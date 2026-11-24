@@ -102,8 +102,9 @@ class DemoStore:
         return result["next_state"]
     def _command_namespace_guard(self,actor_id,command_id):
         # StaffStore may add its own stream; older stores have no such table.
-        if self._db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='contract_staff_command'").fetchone():
-            require(self._db.execute("SELECT 1 FROM contract_staff_command WHERE actor_id=? AND command_id=?",(actor_id,command_id)).fetchone() is None,"IDEMPOTENCY_CONFLICT")
+        for table in ("contract_staff_command","contract_regional_command"):
+            if self._db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",(table,)).fetchone():
+                require(self._db.execute("SELECT 1 FROM "+table+" WHERE actor_id=? AND command_id=?",(actor_id,command_id)).fetchone() is None,"IDEMPOTENCY_CONFLICT")
     def _receipt(self,rid,revision,replay):
         row=self._db.execute("SELECT state FROM contract_revision WHERE record_id=? AND revision=?",(rid,revision)).fetchone()
         require(row is not None,"RECEIPT_INVALID")

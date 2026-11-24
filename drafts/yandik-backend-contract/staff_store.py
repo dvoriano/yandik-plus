@@ -66,6 +66,8 @@ class StaffStore(ProfileStore):
             # Command IDs are globally reserved per actor across the common workflow
             # and personnel stream. Other rehearsal writers reserve this namespace reciprocally.
             require(c.execute("SELECT 1 FROM contract_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone() is None,"IDEMPOTENCY_CONFLICT")
+            if c.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='contract_regional_command'").fetchone():
+                require(c.execute("SELECT 1 FROM contract_regional_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone() is None,"IDEMPOTENCY_CONFLICT")
             old=c.execute("SELECT * FROM contract_staff_command WHERE actor_id=? AND command_id=?",(s.actor_id,x["command_id"])).fetchone()
             if old is not None:
                 require(old["staff_id"]==sid and old["request_digest"]==fingerprint,"IDEMPOTENCY_CONFLICT")

@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A6 | Regional register backend
+- 20 QA `drafts/yandik-backend-contract/test_regional_store.py` (7 pure + 13 rehearsal), 0 dijalankan. Tambahan: parity sumber lama, scope origin, grant revocation, coverage missing, read-only snapshot, separation of duty, receipt collision lintas stream, immutable history, source digest, rollback, regresi store terdahulu. Unit/DDL perlu izin terpisah. Tidak menguji kewenangan, standar, data riil, atau penerbitan.
+
+
 ## K4-A5 | Support typed writer
 - 20 QA `drafts/yandik-backend-contract/test_support_store.py` (6 pure + 14 rehearsal), 0 dijalankan. Tambahan QA source pin/stale sebelum dan setelah kirim, partial receipt per shipment, duplicate metadata, monitoring terbaru, unit terpisah, scope, revisi/replay/revokasi, collision lintas stream, rollback, regresi writer sebelumnya. Tidak membuktikan integrasi M04-I2/I6, pengadaan/BAST resmi, crosswalk atau keamanan server. Izin unit/DDL terpisah diperlukan.
 

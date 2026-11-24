@@ -70,3 +70,7 @@ Contoh cakupan: PMK, rabies, Jembrana, ASF, LSD, AI, brucellosis. Jangan menyaji
 
 ## Lanjutan konsolidasi DEMO | 24 November 2026
 [Halaman kerja](../../drafts/yandik-portal/review.html) diperluas. Detail event dan usulan telaah memakai M13-S1, tanpa konfirmasi penyakit atau iSIKHNAS. KODE DITULIS, BELUM DIUJI; 13 kasus tambahan QA lintas konsolidasi, 0 dijalankan. [Panduan preview](../CODEX_PREVIEW_YANDIK.md).
+
+## 2026-11-24 | K4-A6: backend empat register teknis DEMO
+- [Kontrak](../K4_A6_REGIONAL_REGISTERS_2026_2030.md): typed snapshot regional read-only obat/praktik/surveilans/sertifikat, 7 fixture 2026 independen, coverage null, sidecar telaah internal ber-revisi dan audit, grant aktif/scope asal, replay/rollback, command namespace lintas stream. 20 QA tertulis (7 pure + 13 rehearsal), 0 dijalankan. Bukan migrasi M06/M07/M13/M14, iSIKHNAS/APEL sync, penerbitan, izin atau diagnosis; belum HTTP/auth/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-A7 pembinaan/administrasi.
+

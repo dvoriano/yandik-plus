@@ -12,3 +12,7 @@ Pilih tahun dan Puskeswan dari master DEMO M05. Jika ada data tahun sebelumnya, 
 - Validasi regulasi terkini dan katalog (termasuk rujukan berulang, komponen majemuk, unit lokal, stok layak/expired) bersama penanggung jawab. Bukti foto/dokumen bila diperlukan, upload terotorisasi; tanpa data pribadi pada repo.
 - Integrasi kebutuhan Support Puskeswan melalui ID master yang sah dan review manual; jangan otomatis menyalin ke M04 yang memakai ID lain atau menjadikan kekurangan sebagai persetujuan anggaran. Rekap ekspor dan dashboard per kab/kota pada backend resmi.
 - [QA unit](../drafts/yandik-portal/tests/inventory.test.mjs): 16 kasus ditulis, 0 dijalankan. Browser: HP 320/375 px, cari, filter, simpan, salin tahun, konfirmasi per grup, lock/revisi, history dan scope; uji keyboard dan kehilangan data saat reload (memori saja). K4/K7 tetap tertunda.
+
+## 2026-11-24 | K4-A2: backend inventaris tahunan DEMO
+- [Kontrak](K4_A2_INVENTORY_TYPED_WRITER_2026_2030.md): snapshot katalog 198 butir/15 kelompok dari JS, validator typed, DDL payload, writer SQLite :memory: berbagi fondasi APEL, 15 record fasilitas-tahun, salin/konfirmasi, histori, calon telaah kab/kota kemudian provinsi, replay dan rollback. 24 QA tertulis (10 pure + 14 rehearsal), 0 dijalankan. Belum paritas UI, kewenangan, login/HTTP, DB riil, M04 atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A3 Profil Puskeswan bertipe.
+

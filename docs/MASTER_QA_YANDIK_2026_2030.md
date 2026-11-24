@@ -268,3 +268,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum setelah baseline Master QA
 25 kasus K4-A1 ditulis setelah inventaris 200 kasus prioritas. 0 dijalankan. Bukan hasil QA atau perubahan baseline historis. 17 memerlukan rehearsal SQLite; izin unit saja tidak cukup. Rujuk TEST_BACKLOG dan K4_A1_APEL_TYPED_WRITER_2026_2030.md. Preview ditunda owner.
+
+## Addendum K4-A2
+24 kasus tambahan setelah baseline 200 dan K4-A1; 0 dijalankan. 14 rehearsal butuh izin SQL/DDL selain unit. Rujuk TEST_BACKLOG. Preview ditunda.

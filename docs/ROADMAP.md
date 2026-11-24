@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | K4-A2: backend inventaris tahunan DEMO
+- [Kontrak](K4_A2_INVENTORY_TYPED_WRITER_2026_2030.md): snapshot katalog 198 butir/15 kelompok dari JS, validator typed, DDL payload, writer SQLite :memory: berbagi fondasi APEL, 15 record fasilitas-tahun, salin/konfirmasi, histori, calon telaah kab/kota kemudian provinsi, replay dan rollback. 24 QA tertulis (10 pure + 14 rehearsal), 0 dijalankan. Belum paritas UI, kewenangan, login/HTTP, DB riil, M04 atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A3 Profil Puskeswan bertipe.
+
 ## 2026-11-24 | K4-A1: penulis transaksi APEL bertipe DEMO
 - Owner menunda preview Codex; kembali fokus CODE_ONLY. [Kontrak](K4_A1_APEL_TYPED_WRITER_2026_2030.md): validator payload M05-0, satu tabel pendamping payload/revisi, penulis SQLite :memory: terisolasi untuk dua fixture record APEL, grant aktif, pemeriksaan revisi, replay, rollback, audit dan pemisahan ledger. 25 QA tertulis (8 validator + 17 rehearsal), 0 dijalankan. Bukan paritas M05-1, belum HTTP, DB riil, UI binding, otorisasi atau persistensi. K4/K7 tertunda; berikutnya typed inventory tahunan dan validasi katalog versi. [skip ci].
 

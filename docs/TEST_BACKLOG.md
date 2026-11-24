@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A2 | Inventaris typed writer
+- 24 QA `drafts/yandik-backend-contract/test_inventory_store.py` (10 pure, 14 memory rehearsal), 0 dijalankan. Tambahan: parity katalog/JS, digest versi, copy draf dan tahun terakhir, confirm group attestation, scope kab/kota, dua tahap/reopen, ulang telaah setelah koreksi, command collision lintas APEL, revokasi/replay, immutable history, rollback dan isolasi. Izin terpisah unit/DDL diperlukan.
+
+
 ## K4-A1 | APEL typed writer | 24 November 2026
 - 25 QA ditulis `drafts/yandik-backend-contract/test_apel_store.py`, 0 dijalankan. 8 pure validator, 17 SQLite memory rehearsal; perlu izin unit DAN DDL untuk seluruh suite. Tambahan QA: paritas JS/Python terhadap M05-0/1, state mapping, replay setelah revokasi, audit/receipt fault rollback, FK/attached guard, periode/owner, tidak menyentuh ledger. Belum concurrency lintas koneksi, auth, HTTP atau penyimpanan durable. Jangan menjalankan sekarang.
 

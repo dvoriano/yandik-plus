@@ -5,3 +5,6 @@
 QA awal: 18 skenario (14 deklarasi langsung + 4 domain), **0 dijalankan**. K4 source Flask, keamanan/login/DB asli dan K7 QA/rilis tetap terblokir. Untuk Codex lihat `docs/CODEX_PREVIEW_YANDIK.md`. Jangan gunakan data nyata atau mengaktifkan deploy.
 ## Lanjutan K2/K3/K5/K6
 Editor pasangan investigasi/kurban menggunakan pilihan ID fiktif, validator M05-0/M05-1, tanpa upload. Draf lama tetap membawa daftar aktivitas dan referensi bukti; ledger tidak berubah. Empat register mendapat selector detail/checklist baca-saja; antrean pembinaan berasal dari record workflow tahun/wilayah terpilih; kebutuhan dan tujuh tahap M04 tampil terpisah. Tambahan QA: 13 kasus dirancang (10 deklarasi dengan satu loop empat domain); total 31 kasus, 0 dijalankan. Catatan sebelumnya tentang UI tanpa investigasi/kurban telah disusul perubahan ini; bukan bukti parity Juknis atau integrasi produksi.
+
+## Editor Profil/SDM K1/K2
+Editor lima bagian M02 menggunakan ID dan tahun M05, tanpa menyalin isi fixture lama; proyeksi status dan revisi sintetis, bukan kelengkapan Profiling 2026. Mutasi penempatan terbuka memakai batas akhir eksklusif; validator M05-15 memeriksa seluruh fixture hasil perubahan. Kompetensi adalah catatan topik DEMO, bukan sertifikat. Riwayat memuat keadaan sebelum/sesudah dalam memori. Reset mengembalikan laporan/profil/SDM ke fixture. K4 dan K7 tetap tertunda.

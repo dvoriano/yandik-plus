@@ -10,6 +10,7 @@ import {buildDemoCorrectionWorkflowFixture,demoM0516Adapters} from "../m05-repor
 import {buildDemoCorrectionContext} from "../m05-report-correction/correction.mjs";
 import {applyDemoCommand} from "../m05-apel-workflow/workflow.mjs";
 import {buildDemoFollowupView} from "../m05-followup-review/followup.mjs";
+import {emptyPersonnelEdits} from "./personnel-model.mjs";
 
 export const SCHEMA="YANDIK-CONSOLIDATION-DEMO-UNTESTED-1";
 export const YEARS=Object.freeze([2026,2027,2028,2029,2030]);
@@ -24,7 +25,7 @@ export function createDemoContext(){
  if(checked.rows.length!==options.facilities.length)throw Error("MASTER_MISMATCH");
  return {schema:SCHEMA,synthetic:true,dashboardFixture,profileFixture,workflow,
    facilities:options.facilities,regions:options.regions,
-   sequence:0,persistent:false,official_authorization:false};
+   sequence:0,personnelEdits:emptyPersonnelEdits(),persistent:false,official_authorization:false};
 }
 function validate(c,scope){
  if(c?.schema!==SCHEMA||c.synthetic!==true||c.persistent!==false||

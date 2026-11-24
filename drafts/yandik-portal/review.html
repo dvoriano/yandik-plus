@@ -6,7 +6,7 @@
 <a class="skip" href="#content">Langsung ke konten</a>
 <header class="top"><div class="wrap top-inner"><a class="brand" href="./index.html">YANDIK<span>+</span><small>Katalog 15 modul</small></a><span class="badge">DEMO · Belum diuji</span></div></header>
 <div class="wrap review-shell"><aside class="review-nav"><nav aria-label="Modul DEMO">
-<a href="#layanan">APEL, Profil &amp; SDM</a><a href="#koreksi">Pelaporan &amp; Koreksi</a>
+<a href="#layanan">Ringkasan APEL</a><a href="#profil-sdm">Profil &amp; SDM</a><a href="#koreksi">Pelaporan &amp; Koreksi</a>
 <a href="#pembinaan">Pembinaan &amp; antrean</a><a href="#dukungan">Dukungan &amp; Administrasi</a>
 <a href="#pengawasan">Register Pengawasan</a><a href="#pimpinan">Dashboard Pimpinan</a>
 <a href="#wilayah">Cakupan wilayah</a><a href="#pustaka">Pustaka &amp; Mode Lapangan</a>
@@ -19,6 +19,11 @@
 <label>Tahun<select id="year"></select></label><label>Bulan<select id="month"></select></label>
 <label>Wilayah<select id="region"></select></label><label>Puskeswan<select id="facility"></select></label>
 </div></fieldset></form><div id="summary" class="review-cards"></div><div id="sources"></div></section>
+<section class="review-panel" id="profil-sdm"><h2>Profil Puskeswan &amp; SDM Veteriner</h2>
+<p>Gunakan filter utama. Editor lima bagian memakai contoh baru per fasilitas/tahun; isi snapshot lama tidak ditebak. Status telaah hanya simulasi, bukan profil lengkap atau verifikasi instansi.</p>
+<div id="personnel-editor"></div><p id="personnel-feedback" role="status"></p>
+<p class="note">Penempatan berlaku mulai bulan terpilih; tanggal akhir eksklusif. Rekap SDM M05 dihitung pada Desember tahun terpilih, daftar tenaga aktif mengikuti bulan terpilih. Tidak ada identitas nyata atau bukti sertifikat.</p>
+<a href="../../prototypes/profil-puskeswan/index.html">Buka prototipe Profil terdahulu (skenario independen)</a></section>
 <section class="review-panel" id="koreksi"><h2>Simulasi pelaporan dan koreksi</h2><p>Alur M05-1 / M05-16, perubahan hanya dalam memori. Gunakan angka fiktif. Empat kategori pelayanan, investigasi per kejadian/lokasi, dan pemeriksaan kurban per hewan. Ante dan post pada hewan yang sama dihitung sekali. Ledger APEL tetap tidak berubah. Tidak ada pengiriman resmi.</p>
 <div id="workflow-status"></div><form id="report-form"><fieldset id="report-controls" disabled><legend>Contoh jumlah pelayanan</legend><div class="filter-row">
 <label>Pengobatan<input name="pengobatan" type="number" min="0" max="100000" step="1" value="0" required></label>
@@ -28,7 +33,7 @@
 </div>
 <div class="activity-section"><h3>Investigasi</h3><p class="note">Pilih pasangan kejadian dan lokasi fiktif. Pasangan yang sama tidak boleh diulang.</p><div id="investigations"></div><button type="button" id="add-investigation">Tambah kejadian/lokasi</button></div>
 <div class="activity-section"><h3>Pemeriksaan kurban (Kesmavet)</h3><p class="note">Pilih ID hewan fiktif; centang ante, post, atau keduanya. Satu baris per hewan.</p><div id="kurban-animals"></div><button type="button" id="add-animal">Tambah hewan</button></div>
-<div id="actions" class="action-row"></div></fieldset></form><p id="action-feedback" role="status"></p><button type="button" id="reset" disabled>Reset seluruh simulasi laporan</button><h3>Jejak revisi</h3><div id="history"></div></section>
+<div id="actions" class="action-row"></div></fieldset></form><p id="action-feedback" role="status"></p><button type="button" id="reset" disabled>Reset simulasi laporan, profil &amp; SDM</button><h3>Jejak revisi</h3><div id="history"></div></section>
 <section class="review-panel" id="pembinaan"><h2>Bahan pembinaan &amp; antrean perhatian</h2><p>Usulan dihitung dari konteks laporan terpilih, bukan tugas resmi, tenggat atau notifikasi yang dikirim.</p><div id="followup"></div><h3>Antrean bahan telaah wilayah dan tahun terpilih</h3><p class="note">Hanya berasal dari workflow DEMO yang sudah memiliki catatan. Bukan daftar seluruh laporan yang belum masuk, bukan penugasan resmi.</p><div id="followup-queue"></div></section>
 <section class="review-panel" id="dukungan"><h2>Dukungan &amp; Administrasi</h2><p>M04 memakai identitas DEMO-PSW-001/002/003 dan sumber sendiri, berbeda dengan ID ALPHA/BETA/GAMMA pada M05. Tidak ada crosswalk resmi; angka dan kebutuhan kedua skenario tidak dijumlahkan.</p><label class="single-label">Puskeswan pada skenario M04<select id="support-facility" disabled></select></label><p id="support-feedback" role="status">Memuat simulasi dukungan...</p><div id="support-summary"></div><h3>Daftar kebutuhan dan catatan tahap</h3><div id="support-needs"></div><div id="support-stages"></div><div class="action-row" id="support-actions"></div><button type="button" id="support-reset" disabled>Reset skenario dukungan</button><div class="action-row"><a href="../m04-integrated-workspace/index.html">Buka simulasi dukungan tujuh tahap</a><a href="../m04-admin-dashboard/index.html">Antrean administrasi</a><a href="../m04-support-lifecycle/index.html">Rincian siklus dukungan</a><a href="../m03-s4-fairness/index.html">Telaah prioritas</a></div></section>
 <section class="review-panel" id="pengawasan"><h2>Register Pengawasan &amp; Layanan Teknis</h2><p>Wilayah di bawah adalah filter register DEMO, bukan identitas pemakai. Obat, klinik, surveilans dan sertifikat memakai sumber masing-masing, bukan data gabungan.</p><label class="single-label">Wilayah register<select id="oversight-region"><option>Wilayah DEMO Utara</option><option>Wilayah DEMO Selatan</option></select></label><div id="domains"></div><p class="note">Tidak ada izin praktik, hasil inspeksi resmi, konfirmasi penyakit, sinkronisasi iSIKHNAS atau penerbitan sertifikat.</p></section>

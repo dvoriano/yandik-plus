@@ -21,7 +21,8 @@ function cards(target,entries){target.replaceChildren(...entries.map(([title,val
 const actions={create_draft:"Buat draf DEMO",save_draft:"Simpan draf DEMO",submit:"Simulasi kirim",return_correction:"Simulasi minta koreksi (verifikator)",revise_draft:"Simpan revisi",resubmit:"Simulasi kirim ulang"};
 async function startCore(){
  const m=await import("./shared-demo.mjs");
- let context=m.createDemoContext();
+ const personnel=await import("./personnel-editor.mjs");
+ let context=m.createDemoContext(),reportDirty=false;
  const editor=mountActivityEditor({investigations:$("investigations"),animals:$("kurban-animals"),addInvestigation:$("add-investigation"),addAnimal:$("add-animal")});
  const opts=(target,items,value)=>{target.replaceChildren(...items.map(([v,l])=>new Option(l,v)));if(items.some(([v])=>String(v)===String(value)))target.value=String(value);};
  opts($("year"),m.YEARS.map(y=>[y,y]),2026);
@@ -32,6 +33,7 @@ async function startCore(){
  const scope=()=>({year:Number($("year").value),month:Number($("month").value),region_id:$("region").value,facility_id:$("facility").value});
  function read(){return m.readConsolidatedDemo(context,scope());}
  function render(){
+  reportDirty=false;
   const v=read(),r=v.joined,c=v.correction;
   $("core-status").textContent=v.facility.facility_label+" · "+v.period+" · contoh data terpisah per sumber";
   cards($("summary"),[
@@ -62,15 +64,20 @@ async function startCore(){
   table($("followup"),["Usulan pembahasan","Peran yang dikonsultasikan","Status"],v.followup.advisory_proposals.map(p=>[p.subject,p.role_to_consult,p.status]),"Bahan telaah, bukan tugas terkirim");
   const queue=m.readRecordedFollowupQueue(context,scope());
   table($("followup-queue"),["Puskeswan","Bulan","Bahan telaah","Peran","Status"],queue.map(p=>[p.facility_label,p.period,p.subject,p.role_to_consult,p.status]),"Catatan workflow wilayah terpilih");
+  personnel.renderPersonnelEditor($("personnel-editor"),context,scope(),(next)=>{
+   if(reportDirty)throw Error("Simpan draf laporan dahulu agar isian tidak hilang.");
+   context=next;$("personnel-feedback").textContent="Perubahan Profil/SDM DEMO tercatat dalam memori.";render();
+  },(error)=>{$("personnel-feedback").textContent="Tindakan ditolak: "+String(error.message);});
   const regions=m.readRegionalCoverage(context,scope().year);
   table($("regional"),["Wilayah","Puskeswan","Bulan terlapor","Bulan diharapkan","Layanan tercatat","Profil ada","SDM lengkap"],regions.map(g=>[g.region,g.facilities,g.reported,g.expected,g.service,g.profiles,g.sdm]),"Agregat sumber M05 DEMO");
   table($("coverage"),["Wilayah","Fasilitas DEMO","Cakupan laporan"],regions.map(g=>[g.region,g.facilities,g.reported+" / "+g.expected]),"Cakupan tanpa koordinat");
  }
- const redraw=()=>{try{render();}catch(e){$("core-status").textContent="Model DEMO tidak dapat dimuat: "+String(e.message);$("report-controls").disabled=true;for(const id of ["summary","sources","workflow-status","actions","history","followup","followup-queue","regional","coverage"])$(id).replaceChildren();}};
+ const redraw=()=>{try{render();}catch(e){$("core-status").textContent="Model DEMO tidak dapat dimuat: "+String(e.message);$("report-controls").disabled=true;for(const id of ["summary","sources","workflow-status","actions","history","followup","followup-queue","personnel-editor","regional","coverage"])$(id).replaceChildren();}};
  $("scope-form").addEventListener("submit",e=>e.preventDefault());
- $("scope-form").addEventListener("change",()=>{syncFacility();$("action-feedback").textContent="";redraw();});
+ $("scope-form").addEventListener("change",()=>{syncFacility();$("action-feedback").textContent="";$("personnel-feedback").textContent="";redraw();});
  $("report-form").addEventListener("submit",e=>e.preventDefault());
  const markDirty=()=>{
+  reportDirty=true;
   for(const button of $("actions").querySelectorAll("button")){
    if(["submit","resubmit"].includes(button.dataset.action))button.disabled=true;
   }
@@ -79,7 +86,7 @@ async function startCore(){
  $("report-form").addEventListener("input",markDirty);
  $("report-form").addEventListener("change",markDirty);
  editor.onChange(markDirty);
- $("reset").addEventListener("click",()=>{context=m.createDemoContext();$("report-form").reset();$("action-feedback").textContent="Simulasi dikembalikan ke fixture awal.";redraw();});
+ $("reset").addEventListener("click",()=>{context=m.createDemoContext();$("report-form").reset();$("action-feedback").textContent="Simulasi laporan, profil dan SDM dikembalikan ke fixture awal.";$("personnel-feedback").textContent="";redraw();});
  render();$("scope-controls").disabled=false;$("report-controls").disabled=false;$("reset").disabled=false;
 }
 startCore().catch(e=>{$("core-status").textContent="Model inti DEMO tidak dapat dimuat: "+String(e.message);});

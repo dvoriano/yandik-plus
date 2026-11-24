@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-C4 | Support catalog dan formulir
+- 13 QA backend `drafts/yandik-backend-contract/test_support_catalog.py` (5 pure +8 rehearsal) dan 8 JS `drafts/yandik-portal/tests/support-form-model.test.mjs`, 0 dijalankan. Manual: 198 item classification, 101 candidate/97 pending, 1515 empty slots, old transport IDs, no duplicate refs, scoped source, absent vs unknown, no quantity invented, staged command actions, revision stale, partial shipping/receipt, handover/monitor, receipt after stale source, date order, retry/conflict, handoff larger snapshot, mobile, regression previous support and account. Manifest 280 (102 pure+178 rehearsal). Unit/DDL/preview remain unauthorized.
+
+
 ## K4-C3 | Form tahunan
 - 6 QA backend `test_annual_forms.py` + 10 JS `tests/annual-form-model.test.mjs`, 0 dijalankan. Manual: 198 butir/15 kelompok, status unknown vs absent, stock vs asset, copy prior and group confirmation (including filtered rows), candidate actions, profile legal/date/coverage, scoped roster, transfer dates, retry lost ACK, conflict/dirty, permission changes, mobile/keyboard, regressions. Manifest backend 267 (97 pure+170 rehearsal); portal tests separate. Unit/DDL/browser require authorization.
 

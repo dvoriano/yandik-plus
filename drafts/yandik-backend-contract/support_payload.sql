@@ -1,9 +1,13 @@
 -- CODE_ONLY. No migration; companion schema for new synthetic cases only.
+CREATE TABLE contract_support_catalog (
+ item_id TEXT PRIMARY KEY,
+ classification TEXT NOT NULL CHECK(classification='COUNTABLE_EQUIPMENT_CANDIDATE')
+);
 CREATE TABLE contract_support_case (
  record_id TEXT PRIMARY KEY,
  facility_id TEXT NOT NULL,
  year INTEGER NOT NULL CHECK(year BETWEEN 2026 AND 2030),
- item_id TEXT NOT NULL CHECK(item_id IN ('A.4.a','A.4.b')),
+ item_id TEXT NOT NULL REFERENCES contract_support_catalog(item_id),
  FOREIGN KEY(record_id,facility_id) REFERENCES contract_record(id,facility_id),
  UNIQUE(facility_id,year,item_id)
 );
@@ -19,3 +23,6 @@ CREATE TABLE contract_support_payload (
 );
 CREATE TRIGGER contract_support_payload_update_deny BEFORE UPDATE ON contract_support_payload BEGIN SELECT RAISE(ABORT,'HISTORY_IMMUTABLE'); END;
 CREATE TRIGGER contract_support_payload_delete_deny BEFORE DELETE ON contract_support_payload BEGIN SELECT RAISE(ABORT,'HISTORY_IMMUTABLE'); END;
+
+CREATE TRIGGER contract_support_catalog_update_deny BEFORE UPDATE ON contract_support_catalog BEGIN SELECT RAISE(ABORT,'CATALOG_IMMUTABLE'); END;
+CREATE TRIGGER contract_support_catalog_delete_deny BEFORE DELETE ON contract_support_catalog BEGIN SELECT RAISE(ABORT,'CATALOG_IMMUTABLE'); END;

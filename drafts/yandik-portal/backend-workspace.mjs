@@ -3,6 +3,7 @@
  */
 import {GROUPS} from "./portal-navigation.mjs";
 import {mountProfiles,mountInventory,mountStaff} from "./annual-form-editor.mjs";
+import {mountSupport} from "./support-form-editor.mjs";
 import {createPortalBackend} from "../yandik-backend-contract/portal_backend_provider.mjs";
 import {menus,scope,FIELDS,shown,chooseApel,reportCommand,workflowCommand} from "./backend-workspace-model.mjs";
 const node=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
@@ -120,7 +121,7 @@ export async function mountBackendWorkspace(root,{transport,executionAuthorized=
    if(["layanan","mode-lapangan"].includes(name)){const p=await profile(s),rid=chooseApel(p,s.month);if(!rid)throw Error("SOURCE_UNAVAILABLE");const r=await read("apel",{record_id:rid});renderReport(r,out,name==="mode-lapangan");}
    else if(name==="profil-sdm"){const p=await profile(s);pairs(out,[["Puskeswan",p.facility.label],["Dokter hewan (Desember)",p.sdm.doctors],["Paramedik (Desember)",p.sdm.paramedics],["Cakupan SDM",p.sdm.status]]);const roster=await read("roster",q);const ctx=annualContext(out);mountProfiles(out,p,ctx);out.append(node("h3","SDM Veteriner"));mountStaff(out,roster,core.facilities,ctx);}
    else if(name==="inventaris"){const p=await profile(s);const r=await read("inventory",{record_id:p.inventory.record_id});mountInventory(out,r,annualContext(out));}
-   else if(name==="dukungan"){const p=await profile(s);if(p.support_refs===null)throw Error("SOURCE_UNAVAILABLE");const rs=await Promise.all(p.support_refs.map(x=>read("support",{record_id:x.record_id})));table(out,["Butir","Tahap","Dikirim","Diterima baik","Rusak","Sumber berubah"],rs.map(r=>[r.item_id,r.snapshot.stage,r.summary.sent,r.summary.received_good,r.summary.received_damaged,r.source_changed]));out.append(node("p","Subset transportasi; bukan pemetaan M04 lama."));}
+   else if(name==="dukungan"){const catalog=await read("supportCatalog",q);await mountSupport(out,catalog,read,annualContext(out));}
    else if(name==="pengawasan"){for(const d of ["medicine","practice","surveillance","certificates"]){out.append(node("h3",shown(d)));const r=await api.read(d,{region_id:s.region_id,year:s.year});if(!r.available||!r.data.available){out.append(node("p","Sumber belum tersedia."));continue;}table(out,["ID","Periode","Telaah"],r.data.rows.map(x=>[x.record_id,x.observation.period,x.review_state]));}}
    else if(name==="kegiatan"){const r=await read("coaching",q);table(out,["ID","Tanggal","Topik","Tahap","Kehadiran"],r.activity_slots.filter(x=>x.snapshot).map(x=>[x.record_id,x.snapshot.date,x.snapshot.topic,x.snapshot.stage,x.snapshot.attendance]));}
    else if(name==="administrasi"){const r=await read("documents",q);for(const x of r.document_slots.filter(x=>x.snapshot)){const box=node("details");box.append(node("summary",shown(x.kind)+" · "+shown(x.snapshot.stage)+(x.source_changed?" · sumber berubah":"")),node("pre",x.draft_text));out.append(box);}if(!out.children.length)out.append(node("p","Belum ada draf tercatat."));}

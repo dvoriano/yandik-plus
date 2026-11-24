@@ -7,7 +7,9 @@ from pathlib import Path
 from revision_envelope import start_revision,finish_revision
 from staff_store import StaffStore
 from apel_store import canonical,digest
-from apel_payload import require
+from apel_payload import require,Denied
+from support_catalog import classification,shortage
+from support_payload import ACTIONS
 from inventory_payload import INDEX,assessment,VERSION as INV_VERSION
 from support_payload import VERSION,ITEMS,ATTENTION,OWNER_ACTIONS,PROVINCE_ACTIONS,intent,empty,change,project
 SOURCE="DEMO-SOURCE-SUPPORT-REHEARSAL"
@@ -20,6 +22,7 @@ class SupportStore(StaffStore):
             c.executescript((Path(__file__).resolve().parent/"support_payload.sql").read_text("utf-8"))
             c.execute("BEGIN IMMEDIATE")
             c.execute("INSERT INTO contract_source VALUES(?,?,?,?,?)",(SOURCE,"NEW-SUPPORT-REHEARSAL",VERSION,digest({"schema":VERSION,"items":ITEMS}),"UNVERIFIED_DEMO"))
+            c.executemany("INSERT INTO contract_support_catalog VALUES(?,'COUNTABLE_EQUIPMENT_CANDIDATE')",[(item,) for item in ITEMS])
             for name,reg in (("ALPHA","UTARA"),("BETA","UTARA"),("GAMMA","SELATAN")):
                 for year in range(2026,2031):
                     for item in ITEMS:
@@ -74,7 +77,8 @@ class SupportStore(StaffStore):
                 require(old["record_id"]==rid and old["request_digest"]==fingerprint,"IDEMPOTENCY_CONFLICT")
                 out=self._receipt_support(r,old["result_revision"],True);c.execute("COMMIT");return out
             require(x["expected_revision"]==rev,"REVISION_CONFLICT")
-            basis=self._inventory_basis(s,r)
+            # Receipt, handover and monitoring preserve physical history even if inventory source changes.
+            basis=self._inventory_basis(s,r) if a in ("propose","submit","county_review","plan_package","schedule","dispatch") else None
             if a=="propose":require(basis["assessment"] in ATTENTION,"CONFIRMED_GAP_REQUIRED")
             if a in ("submit","county_review","plan_package","schedule","dispatch"):
                 require(snap["need"] is not None and snap["need"]["source"]==basis,"INVENTORY_SOURCE_CHANGED")
@@ -93,7 +97,53 @@ class SupportStore(StaffStore):
         try:
             s=self._session(resolve_demo_session);r=self._support_record(record_id);self._support_policy(s,r,"read")
             rev=r["current_revision"];snap=self._support_revision(r,rev);basis=self._inventory_basis(s,r)
-            out={"record_id":r["id"],"facility_id":r["facility_id"],"year":r["year"],"item_id":r["item_id"],"unit":INDEX[r["item_id"]]["unit"],"revision":rev,"snapshot":snap,"summary":project(snap),"current_inventory_basis":basis,"source_changed":snap["need"] is not None and snap["need"]["source"]!=basis,"legacy_m04_linked":False,"synthetic":True,"official_authorization":False}
+            out={"record_id":r["id"],"facility_id":r["facility_id"],"year":r["year"],"item_id":r["item_id"],"label":INDEX[r["item_id"]]["label"],"unit":INDEX[r["item_id"]]["unit"],"revision":rev,"snapshot":snap,"summary":project(snap),"current_inventory_basis":basis,"source_changed":snap["need"] is not None and snap["need"]["source"]!=basis,"candidate_actions":self._support_actions(s,r,snap,basis),"legacy_m04_linked":False,"synthetic":True,"official_authorization":False,"funding_eligible":None}
+            c.execute("COMMIT");return out
+        except BaseException:
+            if c.in_transaction:c.execute("ROLLBACK")
+            raise
+
+    def _support_actions(self,s,r,snap,basis):
+        stage=snap["stage"];m=project(snap);fresh=snap["need"] is not None and snap["need"]["source"]==basis
+        candidates=[]
+        if stage=="DRAFT" and basis is not None and basis["assessment"] in ATTENTION:candidates.append("propose")
+        if stage=="DRAFT" and fresh:candidates.append("submit")
+        if stage=="SUBMITTED" and fresh:candidates.append("county_review")
+        if stage=="COUNTY_REVIEWED" and fresh:candidates.append("plan_package")
+        if stage=="PACKAGE_PLANNED" and fresh:candidates.append("schedule")
+        if stage in ("SCHEDULED","LIFECYCLE") and fresh and m["not_sent"] is not None and m["not_sent"]>0:candidates.append("dispatch")
+        if stage=="LIFECYCLE" and m["awaiting_receipt"]>0:candidates.append("receive")
+        if any(not any(h["receipt_ref"]==x["receipt_ref"] for h in snap["handovers"]) for x in snap["receipts"]):candidates.append("handover")
+        if any(x["good"]>0 and any(h["receipt_ref"]==x["receipt_ref"] for h in snap["handovers"]) for x in snap["receipts"]):candidates.append("monitor")
+        if stage in ("SUBMITTED","COUNTY_REVIEWED","PACKAGE_PLANNED","SCHEDULED") and not snap["shipments"]:candidates.append("return_draft")
+        out=[]
+        for action in candidates:
+            try:self._support_policy(s,r,action)
+            except Denied:continue
+            out.append(action)
+        return out
+
+    def list_support(self,facility_id,year,resolve_demo_session):
+        """One scoped transaction, one inventory source; no per-item remote fetch."""
+        self._guard();require(type(year) is int and 2026<=year<=2030,"YEAR_INVALID")
+        c=self._db;c.execute("BEGIN")
+        try:
+            s=self._session(resolve_demo_session);self._facility_access(s,facility_id)
+            invref=c.execute("SELECT record_id FROM contract_inventory_year WHERE facility_id=? AND year=? AND catalog_version=?",(facility_id,year,INV_VERSION)).fetchone()
+            require(invref is not None,"INVENTORY_SOURCE_MISSING")
+            inv=self._inv_record(invref[0]);rev=inv["current_revision"];state,inventory=self._inv_revision(inv["id"],rev);self._read_policy(s,inv,state,rev)
+            cases={x["item_id"]:x["record_id"] for x in c.execute("SELECT record_id,item_id FROM contract_support_case WHERE facility_id=? AND year=?",(facility_id,year))}
+            require(set(cases)==set(ITEMS),"SUPPORT_CATALOG_MISMATCH")
+            rows=[]
+            for k,item in INDEX.items():
+                obs=inventory["rows"].get(k);rating=assessment(item,obs);rid=cases.get(k)
+                row={"item_id":k,"label":item["label"],"group":item["group"],"unit":item["unit"],"classification":classification(item),"assessment":rating,"minimum_gap":shortage(item,obs),"record_id":rid,"revision":None,"stage":None,"candidate_actions":[],"funding_eligible":None}
+                if rid:
+                    r=self._support_record(rid);self._support_policy(s,r,"read");current=r["current_revision"];snap=self._support_revision(r,current)
+                    basis={"record_id":inv["id"],"revision":rev,"catalog_version":INV_VERSION,"item_id":k,"assessment":rating,"observation":obs}
+                    row.update(revision=current,stage=snap["stage"] if current else "NOT_STARTED",source_changed=snap["need"] is not None and snap["need"]["source"]!=basis,candidate_actions=self._support_actions(s,r,snap,basis))
+                rows.append(row)
+            out={"facility_id":facility_id,"year":year,"inventory_record_id":inv["id"],"inventory_revision":rev,"catalog_total":len(INDEX),"candidate_total":len(ITEMS),"rows":rows,"synthetic":True,"official_authorization":False,"may_allocate":False}
             c.execute("COMMIT");return out
         except BaseException:
             if c.in_transaction:c.execute("ROLLBACK")

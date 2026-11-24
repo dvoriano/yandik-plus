@@ -232,3 +232,7 @@ Peringkat pelayanan tinggi tidak otomatis mendominasi bantuan; fasilitas terpenc
 ## 2026-11-24 | K4-A5: backend Support Puskeswan DEMO
 - [Kontrak](../K4_A5_SUPPORT_TYPED_WRITER_2026_2030.md): stream baru 30 case fixture per fasilitas/tahun/dua item, sumber inventaris terkonfirmasi terikat revisi, usulan/telaah kab/kota/paket/jadwal/kirim/terima/metadata BAST/monitoring, batas kuantitas, source stale, audit/replay/rollback. 20 QA tertulis (6 pure + 14 rehearsal), 0 dijalankan. Bukan migrasi M04, crosswalk, bantuan resmi, HTTP, DB riil atau otorisasi. CODE_ONLY [skip ci]. Berikutnya K4-A6 pengawasan/layanan teknis.
 
+
+## 2026-11-24 | K4-C4: perluasan Support Puskeswan
+- [Kontrak](../K4_C4_SUPPORT_CATALOG_2026_2030.md): 101 kandidat teknis alat satuan jumlah dari 198 butir, 97 ditahan untuk telaah satuan/stok/infrastruktur/duplikasi, 1.515 slot kosong (3×5×101), katalog scoped dan filter perhatian/usulan/telaah, typed form 10 tindakan kebutuhan sampai monitoring, batas kuantitas/revisi/sumber, 22 GET + 8 POST. 13 QA backend + 8 JS baru, 0 dijalankan; manifest 280 (102+178). Bukan eligibilitas anggaran, tidak menetapkan prioritas atau membeli barang, belum stok/BHP, rekonsiliasi M04, UI host/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C5 pengawasan dan layanan teknis.
+

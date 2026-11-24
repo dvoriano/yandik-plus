@@ -7,7 +7,7 @@ from inventory_payload import INDEX,assessment
 from apel_store import CMD,REC
 
 VERSION="DEMO-SUPPORT-SINGLE-ITEM-V1"
-ITEMS=("A.4.a","A.4.b")
+from support_catalog import ITEMS
 ATTENTION=("ABSENT","BELOW_MINIMUM","UNUSABLE","PARTIAL_USABLE")
 REF=re.compile(r"DEMO-[A-Z0-9_-]{1,40}")
 REASONS=("REPLACE_DAMAGED_DEMO","FILL_GAP_DEMO","REVIEW_CONDITION_DEMO")
@@ -67,6 +67,7 @@ def change(s,x,source=None):
         require(stage in ("SCHEDULED","LIFECYCLE"),"SCHEDULE_REQUIRED")
         require(not any(v["shipment_ref"]==p["shipment_ref"] for v in n["shipments"]),"DUPLICATE_SHIPMENT")
         require(p["quantity"]<=project(n)["not_sent"],"SHIPMENT_LIMIT")
+        require(p["sent_on"]>=n["schedule"]["planned_on"],"SHIPMENT_DATE_ORDER")
         n["shipments"].append(dict(p));n["stage"]="LIFECYCLE"
     elif a=="receive":
         require(stage=="LIFECYCLE","SHIPMENT_REQUIRED")

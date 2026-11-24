@@ -6,6 +6,9 @@
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
 
+## 2026-11-24 | K4-C4: perluasan Support Puskeswan
+- [Kontrak](docs/K4_C4_SUPPORT_CATALOG_2026_2030.md): 101 kandidat teknis alat satuan jumlah dari 198 butir, 97 ditahan untuk telaah satuan/stok/infrastruktur/duplikasi, 1.515 slot kosong (3×5×101), katalog scoped dan filter perhatian/usulan/telaah, typed form 10 tindakan kebutuhan sampai monitoring, batas kuantitas/revisi/sumber, 22 GET + 8 POST. 13 QA backend + 8 JS baru, 0 dijalankan; manifest 280 (102+178). Bukan eligibilitas anggaran, tidak menetapkan prioritas atau membeli barang, belum stok/BHP, rekonsiliasi M04, UI host/HTTP/DB riil. CODE_ONLY [skip ci]. Berikutnya K4-C5 pengawasan dan layanan teknis.
+
 ## 2026-11-24 | K4-C3: formulir tahunan Profil, Inventaris dan SDM
 - [Kontrak](docs/K4_C3_ANNUAL_FORMS_2026_2030.md): 7 form profil, 198 butir/15 kelompok katalog dari backend, pencarian, salin tahun sebelumnya, konfirmasi butir/kelompok, telaah, roster SDM scoped, form penempatan/mutasi/kompetensi kandidat, retry ID tetap dan revision guard. 21 GET + 8 POST; 6 QA backend + 10 JS baru, 0 dijalankan. Manifest backend 267 (97+170). Belum browser transport, pengujian, data riil/role resmi. CODE_ONLY [skip ci]. Berikutnya K4-C4 perluasan Support Puskeswan.
 

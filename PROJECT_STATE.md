@@ -1,10 +1,14 @@
 # PROJECT STATE | YANDIK+ (BACA PERTAMA PADA CHAT BARU)
 
-**Terakhir diperbarui:** 23 November 2026, WIB  
+**Terakhir diperbarui:** 24 November 2026, WIB\
 **Kanonik:** repository [dvoriano/yandik-plus](https://github.com/dvoriano/yandik-plus) (**metadata GitHub PUBLIC per pemeriksaan 19 November 2026; jangan masukkan data riil/rahasia**)  
 **Branch kerja:** [develop/yandik-foundation](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation)  
 **Pull Request aktif:** [#9 (DRAFT)](https://github.com/dvoriano/yandik-plus/pull/9) → `main`. **Jangan merge otomatis.**  
 **Milestone aktif:** **M00, M01, M02 dan M03 SEDANG** (semuanya pengembangan GitHub, tidak di-deploy); status resmi di ROADMAP. ([Issue #1](https://github.com/dvoriano/yandik-plus/issues/1)).
+
+## PEMBARUAN RUANG KERJA PUSKESWAN DEMO | 24 NOVEMBER 2026
+- [Ruang Kerja Puskeswan](drafts/yandik-workspace/) menyatukan ringkasan APEL, cakupan profil/SDM, dan contoh bahan pembinaan. Filter tahun, wilayah, dan Puskeswan memakai data fiktif dari M05-14, M05-15, dan M05-17. Tautan mengarah ke dashboard APEL serta simulasi Profil dan Dukungan yang sudah ada.
+- Pemilik mengizinkan uji demo lokal untuk perubahan ini. Chromium lulus untuk beranda, filter dan reset, laporan nol dan data kosong, lebar 320/375 piksel, navigasi tiga modul dan satu langkah simulasi Dukungan. [Cakupan uji](docs/TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal). Pengujian menyeluruh modul dan backend belum dilakukan. CI/CL dan deploy tetap di luar cakupan.
 
 ## PEMBARUAN M00-G9 | GERBANG METADATA SOURCE FLASK DEMO | 23 NOVEMBER 2026
 - **M00-G9 KODE DITULIS, BELUM DIUJI:** [preflight metadata Flask DEMO](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-flask-intake-preflight), [41 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-flask-intake-preflight/tests/test_preflight.py) (**0 dijalankan**), [spesifikasi](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md). Pemeriksaan hanya untuk deklarasi nama file/path, tipe, hash **klaim**, dependency/entrypoint, serta inventaris rute DEMO. Path traversal, symlink, nama berkas sensitif tertentu, field ekstra, duplikasi, dan status izin palsu ditolak. **Tidak membaca source, tidak memindai isi/rahasia sebenarnya, tidak mengautentikasi pemilik atau menjalankan Flask.**

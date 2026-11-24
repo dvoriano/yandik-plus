@@ -1,6 +1,6 @@
 # ROADMAP & PROGRES YANDIK+ | Sumber Status Utama
 
-**Diperbarui:** 23 November 2026 (WIB)  
+**Diperbarui:** 24 November 2026 (WIB)\
 **Ruang lingkup:** pengembangan **langsung di GitHub**, tanpa VPS, perangkat lokal, atau deployment.  
 **Mulai sesi baru:** [PROJECT_STATE.md](../PROJECT_STATE.md) → dokumen ini → [WORKLOG.md](WORKLOG.md) → [Issue #1](https://github.com/dvoriano/yandik-plus/issues/1).  
 **Acuan:** [MASTERPLAN](MASTERPLAN.md) · [Indeks 15 modul](MODULES_INDEX.md) · [Riwayat perubahan](CHANGELOG_ROADMAP.md).
@@ -8,6 +8,10 @@
 **Audit kondisi 15 modul (23 November 2026):** [BELUM SELESAI](STATUS_AUDIT_2026-11-23.md). Kontrak M05-15/16/17, M00-G1/G2/G3/G4/G5/G6/G7/G8/G9, M06-S1, M07-S1, M14-S1 dan M13-S1/S2/S3 sudah ditulis, **belum diuji**; bukan bukti integrasi operasional.
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
+
+## Ruang Kerja Puskeswan DEMO (24 November 2026)
+
+[Prototipe beranda](../drafts/yandik-workspace/) menghubungkan tampilan APEL, profil dan SDM, serta bahan pembinaan dengan data fiktif. Alur utama telah diuji secara lokal di Chromium dengan izin pemilik. Milestone tetap mengikuti kriteria masing-masing. Login, database dan integrasi produksi masih dalam pengembangan. [Cakupan uji demo](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal).
 
 ## Dokumen penjelasan untuk pembaca nonteknis (11 November 2026)
 

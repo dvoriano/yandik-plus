@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | Ruang Kerja Puskeswan DEMO
+[Prototipe beranda](../drafts/yandik-workspace/) menampilkan ringkasan dan grafik APEL, status profil/SDM serta bahan pembinaan dengan filter tahun, wilayah dan Puskeswan. Dengan izin pemilik, [uji Chromium lokal](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal) meliputi filter/reset, data nol/kosong, layar sempit, navigasi ke tiga modul dan satu langkah simulasi Dukungan. Perubahan berada di branch pengembangan, dengan commit bertanda `[skip ci]`.
+
 ## 2026-11-23 | M00-G9 pratinjau metadata source Flask dan kontrol keamanan
 **KODE DITULIS, BELUM DIUJI.** [M00-G9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-flask-intake-preflight) berisi model Python, fixture metadata file/rute fiktif, [41 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-flask-intake-preflight/tests/test_preflight.py) (**0 dijalankan**). Manifest hanyalah deklarasi, bukan pemindaian/izin source. Penolakan metadata rahasia tertentu, file traversal/symlink, route invalid, duplikat dan klaim persetujuan palsu; status selalu NO_GO untuk import/deploy. [Spesifikasi](M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md), [gerbang source Flask](M00_FLASK_SOURCE_ACCEPTANCE_GATE_2026_2030.md). Commit kode dan hardening ditulis di `drafts/` dengan [skip ci]; tidak ada tes, CI/CL, Flask legacy, server, DB atau produksi disentuh. Source nyata belum tersedia sebagai salinan terotorisasi dan disanitasi.
 

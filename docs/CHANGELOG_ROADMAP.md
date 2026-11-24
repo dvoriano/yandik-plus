@@ -1,3 +1,6 @@
+## 2026-11-24 | Beranda Ruang Kerja Puskeswan DEMO
+- [Beranda](../drafts/yandik-workspace/) menyajikan ringkasan APEL, Profil/SDM dan bahan pembinaan melalui filter bersama. Halaman menyediakan akses ke Dashboard APEL serta simulasi Profil dan Dukungan. Data fiktif. Uji alur utama dijalankan di Chromium lokal sesuai izin pengguna. [Cakupan uji](TEST_BACKLOG.md#ruang-kerja-puskeswan--uji-demo-lokal).
+
 ## 2026-11-23 | M00-G9 deklarasi metadata penerimaan Flask DEMO
 - [Preflight M00-G9](https://github.com/dvoriano/yandik-plus/tree/develop/yandik-foundation/drafts/m00-flask-intake-preflight) dan [41 QA tertulis](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/drafts/m00-flask-intake-preflight/tests/test_preflight.py), **0 dijalankan**. Nama file/path, SHA dan inventory route hanya klaim sintetik; tidak ada scan file, izin, integrasi atau migrasi. Penguatan nama sensitif & tipe route ditulis. [Spesifikasi](M00_G9_FLASK_INTAKE_METADATA_DEMO_2026_2030.md), CODE_ONLY [skip ci].
 

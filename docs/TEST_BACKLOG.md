@@ -10,6 +10,19 @@
 - **TERUJI SEBELUMNYA:** capaian terakhir yang sudah punya run SUCCESS; tidak berlaku otomatis untuk kode yang baru ditambahkan.
 - **BUTUH KEPUTUSAN:** memerlukan review pemilik proses/kebijakan, tidak cukup dengan tes teknis.
 
+## Ruang Kerja Puskeswan | Uji demo lokal
+
+Izin pengguna pada 24 November 2026 mencakup membuka dan menguji alur utama [ruang kerja DEMO](../drafts/yandik-workspace/) di workspace lokal.
+
+| Pemeriksaan | Hasil |
+|---|---|
+| Beranda 2026 memuat tiga fasilitas, 12 bulan, 16 laporan dan tiga laporan nol | Lulus di Chromium |
+| Filter fasilitas/wilayah menghapus pilihan yang tidak cocok, dan reset memulihkan cakupan awal | Lulus di Chromium |
+| Cakupan 2030 menampilkan data layanan dan SDM yang belum tersedia serta keadaan kosong pembinaan | Lulus di Chromium |
+| Navigasi ke Pembinaan memperbarui lokasi, tanpa overflow halaman pada lebar 320 dan 375 piksel | Lulus di Chromium |
+| Dashboard APEL, Simulasi Profil, dan Simulasi Dukungan terbuka; satu langkah Dukungan memperbarui data simulasi dalam memori | Lulus di Chromium |
+| Uji aksesibilitas menyeluruh, regresi semua modul, dan uji dengan pengguna | Belum dijalankan |
+
 ## Antrean M00-G9 | Metadata Intake Flask DEMO (41 QA tertulis, 0 dijalankan)
 
 | ID | Kelompok verifikasi tertunda | Status |

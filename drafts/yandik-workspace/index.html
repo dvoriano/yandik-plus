@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+  <title>YANDIK+ | Ruang Kerja Puskeswan</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+  <aside class="sidebar">
+    <a class="brand" href="#konten" aria-label="YANDIK+ · Beranda">
+      <span class="brand-mark" aria-hidden="true">Y<span>+</span></span>
+      <span><strong>YANDIK<span>+</span></strong><small>Kesehatan Hewan</small></span>
+    </a>
+    <nav aria-label="Navigasi ruang kerja">
+      <a href="#konten" aria-current="location">Ringkasan</a>
+      <a href="#cakupan">Profil &amp; SDM</a>
+      <a href="#pembinaan">Pembinaan</a>
+    </nav>
+    <nav class="simulation-nav" aria-label="Simulasi dan dashboard terperinci">
+      <p>MODUL DEMO</p>
+      <a href="../m05-apel-dashboard-ui/index.html">Dashboard APEL</a>
+      <a href="../../prototypes/profil-puskeswan/index.html">Simulasi Profil</a>
+      <a href="../m04-integrated-workspace/index.html">Simulasi Dukungan</a>
+    </nav>
+    <div class="sidebar-note">Puskeswan · Sumatera Barat</div>
+  </aside>
+
+  <main id="konten" tabindex="-1">
+    <header class="page-heading">
+      <p class="eyebrow"><span aria-hidden="true"></span> RUANG KERJA DIGITAL</p>
+      <div class="page-title">
+        <div>
+          <h1>Ringkasan Puskeswan</h1>
+          <p>Pantau layanan APEL, cakupan profil dan SDM, serta bahan pembinaan dalam satu ruang kerja.</p>
+        </div>
+        <strong class="demo-badge">Data fiktif</strong>
+      </div>
+    </header>
+
+    <form id="filters" aria-label="Filter ringkasan">
+      <fieldset id="filter-controls" disabled>
+        <legend class="sr-only">Cakupan data</legend>
+        <label>Tahun<select id="year" name="year"><option value="2026">2026</option></select></label>
+        <label>Wilayah<select id="region" name="region"><option value="ALL">Semua wilayah</option></select></label>
+        <label>Puskeswan<select id="facility" name="facility"><option value="ALL">Semua Puskeswan</option></select></label>
+        <button type="reset">Atur ulang</button>
+      </fieldset>
+    </form>
+    <p id="load-state" class="scope" role="status">Memuat data demo…</p>
+    <noscript><p>Aktifkan JavaScript untuk membuka ruang kerja demo.</p></noscript>
+
+    <div id="workspace" hidden>
+      <section class="metrics" id="metrics" aria-label="Ringkasan data demo"></section>
+
+      <div class="split">
+        <section class="panel trend" aria-labelledby="trend-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="trend-title">Pelayanan bulanan</h2>
+              <p>Layanan yang tercatat dalam laporan APEL demo.</p>
+            </div>
+            <a href="../m05-apel-dashboard-ui/index.html" class="text-link">Lihat dashboard APEL</a>
+          </div>
+          <p id="trend-empty" class="empty" hidden>Belum ada laporan APEL untuk cakupan ini.</p>
+          <figure aria-labelledby="trend-title">
+            <ol id="months" class="months"></ol>
+            <figcaption>0 = laporan nol <span aria-hidden="true">·</span> — = belum ada laporan</figcaption>
+          </figure>
+        </section>
+
+        <section class="panel coverage" aria-labelledby="coverage-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="coverage-title">Status pelaporan</h2>
+              <p>Satu entri per Puskeswan setiap bulan.</p>
+            </div>
+          </div>
+          <div id="coverage-track" class="coverage-track" aria-hidden="true"></div>
+          <dl id="coverage-list" class="coverage-list"></dl>
+        </section>
+      </div>
+
+      <section class="panel section-panel" id="cakupan" aria-labelledby="profile-title">
+        <div class="panel-heading">
+          <div>
+            <h2 id="profile-title">Profil &amp; SDM Veteriner</h2>
+            <p>Jumlah tenaga ditampilkan bila cakupan SDM lengkap pada akhir tahun pelaporan.</p>
+          </div>
+          <a href="../../prototypes/profil-puskeswan/index.html" class="text-link">Buka simulasi Profil</a>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tabel cakupan profil dan SDM">
+          <table>
+            <thead><tr>
+              <th scope="col">Puskeswan</th>
+              <th scope="col">Profil</th>
+              <th scope="col">Cakupan SDM</th>
+              <th scope="col" class="numeric">Dokter hewan</th>
+              <th scope="col" class="numeric">Paramedik</th>
+            </tr></thead>
+            <tbody id="profiles"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel section-panel" id="pembinaan" aria-labelledby="followup-title">
+        <div class="panel-heading">
+          <div>
+            <h2 id="followup-title">Bahan pembinaan</h2>
+            <p>Contoh usulan telaah atas status laporan, profil, dan SDM.</p>
+          </div>
+          <span id="followup-count" class="count"></span>
+        </div>
+        <div id="followup"></div>
+      </section>
+    </div>
+    <footer>YANDIK+ · Prototipe pelayanan kesehatan hewan · Data fiktif</footer>
+  </main>
+</body>
+</html>

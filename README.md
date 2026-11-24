@@ -64,6 +64,10 @@ Repository ini berisi **kode pengembangan, prototipe, dan dokumen rancangan**, b
 
 YANDIK+ juga **tidak dimaksudkan menggantikan** aplikasi dan proses resmi seperti iSIKHNAS, SRIKANDI, sistem perizinan, pengadaan, atau penerbitan dokumen oleh pejabat berwenang. Kesesuaian dengan tata kelola SPBE, keamanan data, dan ketentuan instansi harus ditelaah sebelum penerapan nyata.
 
+## Ruang kerja DEMO
+
+[Prototipe Ruang Kerja Puskeswan](drafts/yandik-workspace/) menyediakan ringkasan APEL, cakupan Profil dan SDM Veteriner, bahan pembinaan, serta akses ke simulasi Profil dan Dukungan. Prototipe memakai data fiktif dan alur utamanya telah diperiksa di Chromium lokal.
+
 ## Dokumen proyek
 
 - [Ringkasan Eksekutif](docs/RINGKASAN_EKSEKUTIF_YANDIK_PLUS.md): penjelasan singkat untuk pimpinan dan pemangku kepentingan.

@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | MOD-13 / M11 Pustaka digital DEMO
+- [Pustaka](../drafts/yandik-portal/library.html): 14 entri (12 dokumen pengembangan bertautan repo, 2 kandidat rujukan tanpa naskah resmi), 5 FAQ, pencarian kata kunci/jenis/status tanpa AI, favorit sesi, tautan ruang kerja, usulan koreksi dan draf revisi/telaah DEMO yang tidak menerbitkan perubahan katalog. 17 QA unit ditulis, 0 dijalankan. Belum ada sumber regulasi terkini tervalidasi, materi Bimtek resmi, pengelola terotorisasi, unggah/persistensi, AI atau publikasi. CODE_ONLY [skip ci]. Berikutnya MOD-11 dashboard pimpinan lintas domain dengan metrik terpisah.
+
 ## 2026-11-24 | MOD-10 / M12 Administrasi paperless DEMO
 - [Ruang kerja](../drafts/yandik-portal/coaching.html#administrasi) berbagi state kegiatan MOD-09 pada halaman yang sama. Empat jenis naskah teks, snapshot revisi sumber, metadata empat jenis bukti fiktif, telaah/koreksi, arsip simulasi, versi lama dan pencarian. Sumber berubah mengunci pengajuan; versi baru wajib diperiksa. 14 QA unit ditulis, 0 dijalankan. Belum DOCX/PDF, file bukti, database/otorisasi, SRIKANDI atau e-SPJ; M16 tetap evaluasi. CODE_ONLY [skip ci]. Berikutnya pustaka regulasi/SOP.
 

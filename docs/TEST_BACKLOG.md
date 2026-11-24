@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-13 / M11 Pustaka digital | 24 November 2026
+- 17 unit tertulis `drafts/yandik-portal/tests/library.test.mjs`, 0 dijalankan. Browser tertunda: navigasi katalog/ruang kerja; tautan 12 dokumen dan rute tugas; filter/pencarian/FAQ/favorit; sumber belum tersedia dan status tanpa klaim berlaku; usulan duplikat, revisi, telaah/kembalikan tanpa publikasi; reset dan reload; 320px/keyboard; tanpa AI atau unggah. Pemeriksaan substansi regulasi dan persetujuan pengelola terpisah.
+
+
 ## MOD-10 / M12 Paperless | 24 November 2026
 - 14 unit tertulis `drafts/yandik-portal/tests/paperless.test.mjs`, 0 dijalankan. Browser tertunda: akses dari katalog; buat kegiatan dan hasil; buat empat draf tanpa input ulang identitas; nol kehadiran; isi metadata dan cegah duplikat; telaah/koreksi; perubahan sumber dan versi lama; arsip/buka revisi; pencarian cakupan; reset bersama; keyboard/320px; tidak ada jaringan atau file asli.
 

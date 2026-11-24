@@ -55,3 +55,7 @@ Jangan mengunggah data pribadi ke model eksternal tanpa dasar dan pengendalian y
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## 2026-11-24 | MOD-13 / M11 Pustaka digital DEMO
+- [Pustaka](../../drafts/yandik-portal/library.html): 14 entri (12 dokumen pengembangan bertautan repo, 2 kandidat rujukan tanpa naskah resmi), 5 FAQ, pencarian kata kunci/jenis/status tanpa AI, favorit sesi, tautan ruang kerja, usulan koreksi dan draf revisi/telaah DEMO yang tidak menerbitkan perubahan katalog. 17 QA unit ditulis, 0 dijalankan. Belum ada sumber regulasi terkini tervalidasi, materi Bimtek resmi, pengelola terotorisasi, unggah/persistensi, AI atau publikasi. CODE_ONLY [skip ci]. Berikutnya MOD-11 dashboard pimpinan lintas domain dengan metrik terpisah.
+

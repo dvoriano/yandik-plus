@@ -44,3 +44,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### Paperless MOD-10 (belum diuji)
 - Buka `coaching.html#administrasi`, buat kegiatan dan draf hasil terlebih dahulu. Uji pembuatan naskah, bukti fiktif, koreksi, perubahan sumber dan versi, arsip simulasi, pencarian dan reset bersama. Tidak ada DOCX/PDF atau integrasi resmi.
+
+### Pustaka digital MOD-13 (belum diuji)
+- Buka `library.html`; uji kata kunci, kategori/status, tautan dokumen, FAQ, favorit, koreksi/telaah simulasi dan reset. Dua kandidat regulasi/pedoman tidak memiliki naskah resmi dalam pustaka. Jangan tafsirkan telaah DEMO sebagai pengesahan atau publikasi.

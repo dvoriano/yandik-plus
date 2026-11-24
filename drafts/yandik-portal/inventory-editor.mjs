@@ -1,4 +1,5 @@
 /** Independent inventory panel using the canonical M05 demo master. No storage/network. */
+import {register,notify} from "./leadership-bridge.mjs";
 import {GROUPS,CATALOG_VERSION} from "./inventory-catalog.mjs";
 import {YEARS,createInventory,readInventory,saveItem,copyPrior,confirmItem,confirmGroup,transition,regionalInventory} from "./inventory-model.mjs";
 import {DEMO_FACILITIES} from "../m05-apel-dashboard-ui/fixtures.mjs";
@@ -16,6 +17,7 @@ function describe(row){
 const states={DRAFT:"Draf",CORRECTION:"Perbaikan",SUBMITTED:"Diajukan DEMO",RECORDED_DEMO:"Dicatat DEMO",NOT_STARTED:"Belum mulai"};
 function table(target,head,rows){const w=el("div",undefined,"table-wrap"),t=el("table"),h=el("thead"),tr=el("tr");for(const v of head){const x=el("th",v);x.scope="col";tr.append(x);}h.append(tr);t.append(h);const b=el("tbody");for(const row of rows){const line=el("tr");for(const v of row){const td=el("td");td.append(v instanceof Node?v:document.createTextNode(String(v??"—")));line.append(td);}b.append(line);}t.append(b);w.append(t);target.replaceChildren(w);}
 let state=createInventory(),selected=null;
+register("inventory",s=>regionalInventory(state,s.year,s.region_id).filter(r=>s.facility_id==="ALL"||r.facility_id===s.facility_id));
 const scope=()=>({year:Number($("inv-year").value),region_id:$("inv-region").value,facility_id:$("inv-facility").value});
 function facility(){set($("inv-facility"),DEMO_FACILITIES.filter(f=>f.region_id===$("inv-region").value).map(f=>[f.facility_id,f.facility_label]),$("inv-facility").value);}
 function act(fn,message){try{state=fn();selected=null;render();$("inv-feedback").textContent=message;}catch(e){$("inv-feedback").textContent="Belum dapat dilakukan: "+e.message;}}
@@ -64,7 +66,7 @@ function render(){
  }else $("inv-actions").append(button("Buka revisi DEMO",()=>act(()=>transition(state,s,"reopen"),"Revisi dibuka.")));
  table($("inv-regional"),["Wilayah","Puskeswan","Status","Dikonfirmasi","Perlu perhatian"],regionalInventory(state,s.year).map(x=>[x.region_label,x.facility_label,states[x.status],x.confirmed+"/"+x.total,x.attention]));
  const hist=v.history.slice().reverse().map(x=>[x.revision,x.action,x.item_id??(x.item_ids?.join(", ")??x.year??"—")]);table($("inv-history"),["Revisi","Tindakan","Butir/tahun"],hist);
- $("inv-version").textContent=CATALOG_VERSION;
+ $("inv-version").textContent=CATALOG_VERSION;notify();
 }
 set($("inv-year"),YEARS.map(y=>[y,y]),2027);
 set($("inv-region"),[...new Map(DEMO_FACILITIES.map(f=>[f.region_id,f.region_label]))],DEMO_FACILITIES[0].region_id);

@@ -53,3 +53,7 @@ Indikator tidak boleh menggunakan angka tanpa periode atau menggabungkan satuan 
 
 **Standar bersama:** [UX paperless](../UX_PAPERLESS.md), [Workflow Engine](../WORKFLOW_ENGINE.md), [Keamanan & data](../SECURITY_AND_DATA.md).  
 **Penegasan:** tidak terhubung VPS, tidak menggunakan data pribadi/produksi; implementasi dan tes dilakukan pada data dummy. Perubahan scope melalui [changelog](../CHANGELOG_ROADMAP.md).
+
+## 2026-11-24 | MOD-11 / M08 Dashboard pimpinan lintas modul DEMO
+- [Dashboard](../../drafts/yandik-portal/review.html#pimpinan) dengan 8 indikator, filter tahunan/wilayah/fasilitas, detail per fasilitas dan proyeksi baca-saja state APEL/Profil/SDM, inventaris, pembinaan dan paperless dalam halaman yang sama. Skenario M04 dan snapshot empat register pengawasan tetap terpisah tanpa filter silang yang tidak sah. 17 QA unit tertulis, 0 dijalankan. Cakupan fasilitas-bulan tahunan bukan ketepatan waktu; kosong bukan nol pelayanan atau kekurangan; tidak ada skor/ranking, data asli, role server, ekspor resmi atau persistensi. CODE_ONLY [skip ci]. Berikutnya MOD-12 GIS sintetis.
+

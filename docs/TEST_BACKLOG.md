@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## MOD-11 / M08 Dashboard lintas modul | 24 November 2026
+- 17 unit tertulis `drafts/yandik-portal/tests/leadership.test.mjs`, 0 dijalankan. Browser tertunda: impor; filter tahunan/wilayah/fasilitas; nol/kosong/SDM parsial; perubahan profil, inventaris dan reset; kegiatan/dokumen dan sumber stale; perubahan tahap M04; sumber pengawasan kosong/gagal; pemisahan cakupan; navigasi, keyboard dan 320px; tidak ada penyimpanan atau API.
+
+
 ## MOD-13 / M11 Pustaka digital | 24 November 2026
 - 17 unit tertulis `drafts/yandik-portal/tests/library.test.mjs`, 0 dijalankan. Browser tertunda: navigasi katalog/ruang kerja; tautan 12 dokumen dan rute tugas; filter/pencarian/FAQ/favorit; sumber belum tersedia dan status tanpa klaim berlaku; usulan duplikat, revisi, telaah/kembalikan tanpa publikasi; reset dan reload; 320px/keyboard; tanpa AI atau unggah. Pemeriksaan substansi regulasi dan persetujuan pengelola terpisah.
 

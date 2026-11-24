@@ -47,3 +47,6 @@ CODE_ONLY berlaku sampai izin eksplisit diberikan untuk cakupan QA terkait. Jang
 
 ### Pustaka digital MOD-13 (belum diuji)
 - Buka `library.html`; uji kata kunci, kategori/status, tautan dokumen, FAQ, favorit, koreksi/telaah simulasi dan reset. Dua kandidat regulasi/pedoman tidak memiliki naskah resmi dalam pustaka. Jangan tafsirkan telaah DEMO sebagai pengesahan atau publikasi.
+
+### MOD-11 Dashboard pimpinan (belum diuji)
+- `review.html#pimpinan`; buat kegiatan dan draf administrasi pada halaman yang sama, ubah inventaris, profil dan dukungan. Periksa ringkasan, cakupan dan reset; M04/register tidak mengikuti filter M05. Halaman coaching standalone adalah sesi berbeda.

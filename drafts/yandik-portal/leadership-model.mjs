@@ -1,0 +1,8 @@
+/** MOD-11/M08. Separate units, coverage and unknown values. */
+const sum=(rows,key)=>rows.reduce((n,r)=>n+r[key],0);
+const observed=(rows,key)=>{const known=rows.filter(r=>Number.isFinite(r[key]));return known.length?sum(known,key):null;};
+export function coreMetrics(rows){return {facilities:rows.length,reported:sum(rows,"reported_months"),expected:rows.length*12,service:observed(rows,"observed_demo_events"),profiles:rows.filter(r=>r.profile_source_ref!==null&&r.profile_source_ref!==undefined).length,sdm:rows.filter(r=>Number.isFinite(r.doctors)&&Number.isFinite(r.paramedics)).length,doctors:rows.every(r=>Number.isFinite(r.doctors))&&rows.length?sum(rows,"doctors"):null,paramedics:rows.every(r=>Number.isFinite(r.paramedics))&&rows.length?sum(rows,"paramedics"):null};}
+export function inventoryMetrics(rows){const confirmed=sum(rows,"confirmed");return {facilities:rows.length,started:rows.filter(r=>r.status!=="NOT_STARTED").length,complete:rows.filter(r=>r.total>0&&r.confirmed===r.total).length,confirmed,expected:sum(rows,"total"),attention:confirmed?sum(rows,"attention"):null};}
+export function coachingMetrics(rows){return {activities:rows.length,recorded:rows.filter(r=>r.attendance!==null).length,attendance:observed(rows,"attendance"),open:rows.filter(r=>r.status==="FOLLOWUP_OPEN").length,closed:rows.filter(r=>r.status==="CLOSED_DEMO").length};}
+export function documentMetrics(rows){return {documents:rows.length,review:rows.filter(r=>r.status==="REVIEW"&&!r.stale).length,archived:rows.filter(r=>r.status==="ARCHIVED_DEMO"&&!r.stale).length,stale:rows.filter(r=>r.stale).length};}
+export function pct(n,d){return d>0?Math.round(n/d*1000)/10:null;}

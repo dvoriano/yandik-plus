@@ -2,6 +2,9 @@
 
 **Cara membaca:** entri terbaru paling atas. Hanya catat sesuatu yang **betul-betul terjadi di GitHub**; pastikan tautan atau path bukti ada. Status milestone resmi tetap di [ROADMAP.md](ROADMAP.md).
 
+## 2026-11-24 | MOD-11 / M08 Dashboard pimpinan lintas modul DEMO
+- [Dashboard](../drafts/yandik-portal/review.html#pimpinan) dengan 8 indikator, filter tahunan/wilayah/fasilitas, detail per fasilitas dan proyeksi baca-saja state APEL/Profil/SDM, inventaris, pembinaan dan paperless dalam halaman yang sama. Skenario M04 dan snapshot empat register pengawasan tetap terpisah tanpa filter silang yang tidak sah. 17 QA unit tertulis, 0 dijalankan. Cakupan fasilitas-bulan tahunan bukan ketepatan waktu; kosong bukan nol pelayanan atau kekurangan; tidak ada skor/ranking, data asli, role server, ekspor resmi atau persistensi. CODE_ONLY [skip ci]. Berikutnya MOD-12 GIS sintetis.
+
 ## 2026-11-24 | MOD-13 / M11 Pustaka digital DEMO
 - [Pustaka](../drafts/yandik-portal/library.html): 14 entri (12 dokumen pengembangan bertautan repo, 2 kandidat rujukan tanpa naskah resmi), 5 FAQ, pencarian kata kunci/jenis/status tanpa AI, favorit sesi, tautan ruang kerja, usulan koreksi dan draf revisi/telaah DEMO yang tidak menerbitkan perubahan katalog. 17 QA unit ditulis, 0 dijalankan. Belum ada sumber regulasi terkini tervalidasi, materi Bimtek resmi, pengelola terotorisasi, unggah/persistensi, AI atau publikasi. CODE_ONLY [skip ci]. Berikutnya MOD-11 dashboard pimpinan lintas domain dengan metrik terpisah.
 

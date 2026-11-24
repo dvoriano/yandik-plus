@@ -1,4 +1,6 @@
 /** CODE_ONLY: no browser or test executed for this change. */
+import {register,notify} from "./leadership-bridge.mjs";
+import {buildIntegratedDemoView} from "../m05-profile-sdm/integration.mjs";
 import {readDomain,readDomainDetail,DOMAINS} from "./domain-views.mjs";
 import {mountActivityEditor} from "./activity-editor.mjs";
 const $=id=>document.getElementById(id);
@@ -23,6 +25,7 @@ async function startCore(){
  const m=await import("./shared-demo.mjs");
  const personnel=await import("./personnel-editor.mjs");
  let context=m.createDemoContext(),reportDirty=false;
+ register("core",s=>buildIntegratedDemoView({...s,dashboardFixture:context.dashboardFixture,profileFixture:context.profileFixture}).rows);
  const editor=mountActivityEditor({investigations:$("investigations"),animals:$("kurban-animals"),addInvestigation:$("add-investigation"),addAnimal:$("add-animal")});
  const opts=(target,items,value)=>{target.replaceChildren(...items.map(([v,l])=>new Option(l,v)));if(items.some(([v])=>String(v)===String(value)))target.value=String(value);};
  opts($("year"),m.YEARS.map(y=>[y,y]),2026);
@@ -70,7 +73,7 @@ async function startCore(){
   },(error)=>{$("personnel-feedback").textContent="Tindakan ditolak: "+String(error.message);});
   const regions=m.readRegionalCoverage(context,scope().year);
   table($("regional"),["Wilayah","Puskeswan","Bulan terlapor","Bulan diharapkan","Layanan tercatat","Profil ada","SDM lengkap"],regions.map(g=>[g.region,g.facilities,g.reported,g.expected,g.service,g.profiles,g.sdm]),"Agregat sumber M05 DEMO");
-  table($("coverage"),["Wilayah","Fasilitas DEMO","Cakupan laporan"],regions.map(g=>[g.region,g.facilities,g.reported+" / "+g.expected]),"Cakupan tanpa koordinat");
+  table($("coverage"),["Wilayah","Fasilitas DEMO","Cakupan laporan"],regions.map(g=>[g.region,g.facilities,g.reported+" / "+g.expected]),"Cakupan tanpa koordinat");notify();
  }
  const redraw=()=>{try{render();}catch(e){$("core-status").textContent="Model DEMO tidak dapat dimuat: "+String(e.message);$("report-controls").disabled=true;for(const id of ["summary","sources","workflow-status","actions","history","followup","followup-queue","personnel-editor","regional","coverage"])$(id).replaceChildren();}};
  $("scope-form").addEventListener("submit",e=>e.preventDefault());
@@ -128,6 +131,7 @@ async function startSupport(){
  const [m,f]=await Promise.all([import("../m04-integrated-workspace/workspace.mjs"),
    import("../m04-integrated-workspace/fixtures.mjs")]);
  let state=f.demoWorkspace();
+ register("support",()=>f.MASTER.map(x=>{const d=m.viewWorkspace(state,{role:"provinsi_admin"},"2026-10",x.id).details;return {name:x.name,needs:d.profile===null?null:d.needs.length,packages:d.packages.length,ship:d.ship.length,receipt:d.receipt.length,handover:d.handover.length,monitor:d.monitor.length};}));
  const selector=$("support-facility");
  selector.replaceChildren(...f.MASTER.map(x=>new Option(x.name,x.id)));
  const labels={paket:"Susun paket",telaah:"Catat telaah",jadwal:"Buat jadwal",kirim:"Simulasi kirim",terima:"Simulasi terima",rujukan:"Catat referensi BAST",monitor:"Catat pemanfaatan"};
@@ -149,7 +153,7 @@ async function startSupport(){
    const button=el("button",labels[next]);button.type="button";
    button.addEventListener("click",()=>{try{state=m.advanceDemo(state,selector.value,next);render();$("support-feedback").textContent="Langkah "+labels[next]+" dicatat pada skenario M04 dalam memori.";}catch(e){$("support-feedback").textContent="Langkah belum tersedia: "+String(e.message);}});
    $("support-actions").append(button);
-  }else $("support-actions").append(el("p","Seluruh tujuh tahap skenario telah dicatat dalam memori."));
+  }else $("support-actions").append(el("p","Seluruh tujuh tahap skenario telah dicatat dalam memori."));notify();
  }
  function reset(){state=f.demoWorkspace();render();$("support-feedback").textContent="Skenario M04 dipulihkan.";}
  selector.addEventListener("change",()=>{try{render();$("support-feedback").textContent="Skenario independen M04 terpilih.";}catch(e){$("support-feedback").textContent="Skenario tidak tersedia: "+String(e.message);$("support-actions").replaceChildren();for(const id of ["support-summary","support-needs","support-stages"])$(id).replaceChildren();}});

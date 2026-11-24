@@ -99,3 +99,7 @@ Jangan menampilkan nomor pribadi tenaga atau dokumen legalitas tidak-publik pada
 
 ## Inventaris tahunan Puskeswan | 24 November 2026
 [Kontrak inventaris](../M02_INVENTARIS_TAHUNAN_PUSKESWAN.md). 198 butir UI A–J, salin tahun sebelumnya dengan konfirmasi, rekap kondisi/gap dan histori DEMO. Gunakan panel `review.html#inventaris`; 16 QA baru, total 66 kasus unit portal, 0 dijalankan. Belum ada penyimpanan, autentikasi server, sumber nyata atau persetujuan bantuan. Preview setelah izin; cek alur salin/konfirmasi, pencarian, minimum eksplisit, lock/revisi dan scope. M04 tetap independen.
+
+## 2026-11-24 | K4-A3: backend Profil Puskeswan DEMO
+- [Kontrak](../K4_A3_PROFILE_TYPED_WRITER_2026_2030.md): validator 7 bagian, DDL profil/payload, shared memory writer 105 record kosong per fasilitas/tahun/bagian, histori, koreksi/reopen, rekap inventaris dan rujukan workflow APEL baca-saja; SDM/ledger null, register masalah pending. 26 QA tertulis (10 pure + 16 rehearsal), 0 dijalankan. Belum mapping form asli, auth/HTTP/DB riil/UI atau kebijakan resmi. CODE_ONLY [skip ci]. Berikutnya K4-A4 backend SDM dan histori mutasi.
+

@@ -271,3 +271,6 @@ Semua kasus P0 pada scope yang disetujui harus PASS dengan bukti, P1 ditriase, s
 
 ## Addendum K4-A2
 24 kasus tambahan setelah baseline 200 dan K4-A1; 0 dijalankan. 14 rehearsal butuh izin SQL/DDL selain unit. Rujuk TEST_BACKLOG. Preview ditunda.
+
+## Addendum K4-A3
+26 kasus tambahan (10 pure, 16 rehearsal) setelah K4-A2; 0 dijalankan. Izin unit dan DDL terpisah diperlukan. TEST_BACKLOG tetap rinci. Preview ditunda.

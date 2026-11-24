@@ -1,5 +1,9 @@
 # TEST BACKLOG | Menumpuk Kode Dulu, Periksa Bersama Nanti
 
+## K4-A3 | Profil typed writer
+- 26 QA `drafts/yandik-backend-contract/test_profile_store.py` (10 pure, 16 memory rehearsal), 0 dijalankan. Tambahan parity lima bagian portal + dua kesiapan, date/scope, per-section review/reopen, histori stale, grant revokasi/replay, rollback, referensi inventaris/APEL dan SDM unknown. Tidak menguji sumber riil. Izin unit dan DDL terpisah diperlukan.
+
+
 ## K4-A2 | Inventaris typed writer
 - 24 QA `drafts/yandik-backend-contract/test_inventory_store.py` (10 pure, 14 memory rehearsal), 0 dijalankan. Tambahan: parity katalog/JS, digest versi, copy draf dan tahun terakhir, confirm group attestation, scope kab/kota, dua tahap/reopen, ulang telaah setelah koreksi, command collision lintas APEL, revokasi/replay, immutable history, rollback dan isolasi. Izin terpisah unit/DDL diperlukan.
 

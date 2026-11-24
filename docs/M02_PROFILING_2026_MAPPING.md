@@ -56,3 +56,7 @@ Prototype saat ini baru memiliki **Legalitas, Bangunan, Peralatan klinik, Obat/B
 - [SDM Veteriner](modules/03_SDM_VETERINER.md)
 - [APEL](modules/02_APEL_PUSKESWAN.md)
 - [Support Puskeswan](modules/04_SUPPORT_PUSKESWAN.md)
+
+## 2026-11-24 | K4-A3: backend Profil Puskeswan DEMO
+- [Kontrak](K4_A3_PROFILE_TYPED_WRITER_2026_2030.md): validator 7 bagian, DDL profil/payload, shared memory writer 105 record kosong per fasilitas/tahun/bagian, histori, koreksi/reopen, rekap inventaris dan rujukan workflow APEL baca-saja; SDM/ledger null, register masalah pending. 26 QA tertulis (10 pure + 16 rehearsal), 0 dijalankan. Belum mapping form asli, auth/HTTP/DB riil/UI atau kebijakan resmi. CODE_ONLY [skip ci]. Berikutnya K4-A4 backend SDM dan histori mutasi.
+

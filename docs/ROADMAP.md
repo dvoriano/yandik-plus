@@ -9,6 +9,9 @@
 
 **MODE KERJA TERBARU:** [CODE_ONLY_MODE](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/CODE_ONLY_MODE.md). Kode baru hanya ditulis di GitHub, **tanpa CL/CI/tes dulu**, dan semua pemeriksaan ditumpuk pada [TEST_BACKLOG](https://github.com/dvoriano/yandik-plus/blob/develop/yandik-foundation/docs/TEST_BACKLOG.md). Bukti 176 tes lama hanya berlaku sampai M03-S3; tidak ada klaim tes M03-S4.
 
+## 2026-11-24 | K4-A3: backend Profil Puskeswan DEMO
+- [Kontrak](K4_A3_PROFILE_TYPED_WRITER_2026_2030.md): validator 7 bagian, DDL profil/payload, shared memory writer 105 record kosong per fasilitas/tahun/bagian, histori, koreksi/reopen, rekap inventaris dan rujukan workflow APEL baca-saja; SDM/ledger null, register masalah pending. 26 QA tertulis (10 pure + 16 rehearsal), 0 dijalankan. Belum mapping form asli, auth/HTTP/DB riil/UI atau kebijakan resmi. CODE_ONLY [skip ci]. Berikutnya K4-A4 backend SDM dan histori mutasi.
+
 ## 2026-11-24 | K4-A2: backend inventaris tahunan DEMO
 - [Kontrak](K4_A2_INVENTORY_TYPED_WRITER_2026_2030.md): snapshot katalog 198 butir/15 kelompok dari JS, validator typed, DDL payload, writer SQLite :memory: berbagi fondasi APEL, 15 record fasilitas-tahun, salin/konfirmasi, histori, calon telaah kab/kota kemudian provinsi, replay dan rollback. 24 QA tertulis (10 pure + 14 rehearsal), 0 dijalankan. Belum paritas UI, kewenangan, login/HTTP, DB riil, M04 atau persistensi. CODE_ONLY [skip ci]. Berikutnya K4-A3 Profil Puskeswan bertipe.
 
